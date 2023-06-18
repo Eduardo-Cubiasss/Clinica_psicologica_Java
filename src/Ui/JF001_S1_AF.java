@@ -28,23 +28,164 @@ public class JF001_S1_AF extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
+        JP001_S1_AF = new javax.swing.JPanel();
+        TxtUsuario_JF001_S1_AF = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        Btn1_JF001_S1_AF = new javax.swing.JButton();
+        Btn2_JF001_S1_AF = new javax.swing.JButton();
+        btn4_JF001_S1_AF = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        btn3_JF001_S1_AF = new javax.swing.JButton();
+        Pass_JF001_S1_AF = new javax.swing.JPasswordField();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+
+        jLabel4.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        jLabel4.setText("“Cuando no somos capaces ya de cambiar una situación, nos enfrentamos al reto de cambiar nosotros mismos”");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 255, 255));
         setExtendedState(6);
+
+        JP001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
+        JP001_S1_AF.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 153), new java.awt.Color(0, 102, 102), new java.awt.Color(0, 153, 153), new java.awt.Color(0, 102, 102)));
+        JP001_S1_AF.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        JP001_S1_AF.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        TxtUsuario_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        TxtUsuario_JF001_S1_AF.setText("Usuario");
+        TxtUsuario_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        TxtUsuario_JF001_S1_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TxtUsuario_JF001_S1_AF.setSelectionColor(new java.awt.Color(0, 0, 0));
+        TxtUsuario_JF001_S1_AF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtUsuario_JF001_S1_AFActionPerformed(evt);
+            }
+        });
+        JP001_S1_AF.add(TxtUsuario_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 361, 37));
+
+        jLabel1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel1.setText("Iniciar Sesión");
+        JP001_S1_AF.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel9.setText("Contraseña");
+        JP001_S1_AF.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+
+        Btn1_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        Btn1_JF001_S1_AF.setText("Registrarse");
+        Btn1_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        Btn1_JF001_S1_AF.setBorderPainted(false);
+        Btn1_JF001_S1_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn1_JF001_S1_AF.setInheritsPopupMenu(true);
+        JP001_S1_AF.add(Btn1_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 230, 30));
+
+        Btn2_JF001_S1_AF.setBackground(new java.awt.Color(0, 153, 153));
+        Btn2_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        Btn2_JF001_S1_AF.setForeground(new java.awt.Color(255, 255, 255));
+        Btn2_JF001_S1_AF.setText("Iniciar sesión");
+        Btn2_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 50, true));
+        Btn2_JF001_S1_AF.setBorderPainted(false);
+        Btn2_JF001_S1_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn2_JF001_S1_AF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn2_JF001_S1_AFActionPerformed(evt);
+            }
+        });
+        JP001_S1_AF.add(Btn2_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 228, 30));
+
+        btn4_JF001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
+        btn4_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        btn4_JF001_S1_AF.setForeground(new java.awt.Color(204, 204, 204));
+        btn4_JF001_S1_AF.setText("Se te ha olvidado la contraseña?");
+        btn4_JF001_S1_AF.setBorderPainted(false);
+        btn4_JF001_S1_AF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn4_JF001_S1_AFActionPerformed(evt);
+            }
+        });
+        JP001_S1_AF.add(btn4_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel3.setText("Bienvenido a la experiencia con");
+        JP001_S1_AF.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, -1, 20));
+
+        btn3_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        btn3_JF001_S1_AF.setText("Registrate como administrador");
+        btn3_JF001_S1_AF.setBorderPainted(false);
+        btn3_JF001_S1_AF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn3_JF001_S1_AFActionPerformed(evt);
+            }
+        });
+        JP001_S1_AF.add(btn3_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 257, 33));
+
+        Pass_JF001_S1_AF.setText("Contraseña");
+        Pass_JF001_S1_AF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Pass_JF001_S1_AFActionPerformed(evt);
+            }
+        });
+        JP001_S1_AF.add(Pass_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 360, 40));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fda.PNG"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        JP001_S1_AF.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 180, 120));
+
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setText("“Cuando no somos capaces ya de cambiar una situación\n, nos enfrentamos al reto de cambiar nosotros mismos”");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        JP001_S1_AF.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 550, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JP001_S1_AF, javax.swing.GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(JP001_S1_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void TxtUsuario_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtUsuario_JF001_S1_AFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtUsuario_JF001_S1_AFActionPerformed
+
+    private void btn3_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3_JF001_S1_AFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn3_JF001_S1_AFActionPerformed
+
+    private void Pass_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pass_JF001_S1_AFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Pass_JF001_S1_AFActionPerformed
+
+    private void Btn2_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn2_JF001_S1_AFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn2_JF001_S1_AFActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void btn4_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4_JF001_S1_AFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn4_JF001_S1_AFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -82,5 +223,18 @@ public class JF001_S1_AF extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btn1_JF001_S1_AF;
+    private javax.swing.JButton Btn2_JF001_S1_AF;
+    private javax.swing.JPanel JP001_S1_AF;
+    private javax.swing.JPasswordField Pass_JF001_S1_AF;
+    private javax.swing.JTextField TxtUsuario_JF001_S1_AF;
+    private javax.swing.JButton btn3_JF001_S1_AF;
+    private javax.swing.JButton btn4_JF001_S1_AF;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
