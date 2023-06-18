@@ -66,7 +66,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         });
         JP001_S1_AF.add(TxtUsuario_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 361, 37));
 
-        jLabel1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Iniciar Sesión");
         JP001_S1_AF.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
@@ -108,7 +108,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
                 btn4_JF001_S1_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(btn4_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+        JP001_S1_AF.add(btn4_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 180, 10));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel3.setText("Bienvenido a la experiencia con");
