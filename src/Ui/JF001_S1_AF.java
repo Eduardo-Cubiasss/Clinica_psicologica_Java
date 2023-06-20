@@ -36,11 +36,14 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         Btn1_JF001_S1_AF = new javax.swing.JButton();
         Btn2_JF001_S1_AF = new javax.swing.JButton();
         btn4_JF001_S1_AF = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         btn3_JF001_S1_AF = new javax.swing.JButton();
         Pass_JF001_S1_AF = new javax.swing.JPasswordField();
+        kGradientPanel1 = new keeptoo.KGradientPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
 
         jLabel4.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
         jLabel4.setText("“Cuando no somos capaces ya de cambiar una situación, nos enfrentamos al reto de cambiar nosotros mismos”");
@@ -64,31 +67,32 @@ public class JF001_S1_AF extends javax.swing.JFrame {
                 TxtUsuario_JF001_S1_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(TxtUsuario_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 361, 37));
+        JP001_S1_AF.add(TxtUsuario_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 400, 40));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Iniciar Sesión");
-        JP001_S1_AF.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
+        JP001_S1_AF.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 140, 30));
 
         jLabel9.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 102, 102));
         jLabel9.setText("Contraseña");
-        JP001_S1_AF.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
+        JP001_S1_AF.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, -1));
 
+        Btn1_JF001_S1_AF.setBackground(new java.awt.Color(204, 204, 204));
         Btn1_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         Btn1_JF001_S1_AF.setText("Registrarse");
         Btn1_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         Btn1_JF001_S1_AF.setBorderPainted(false);
         Btn1_JF001_S1_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn1_JF001_S1_AF.setInheritsPopupMenu(true);
-        JP001_S1_AF.add(Btn1_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 230, 30));
+        JP001_S1_AF.add(Btn1_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 200, 30));
 
-        Btn2_JF001_S1_AF.setBackground(new java.awt.Color(0, 153, 153));
+        Btn2_JF001_S1_AF.setBackground(new java.awt.Color(0, 102, 102));
         Btn2_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         Btn2_JF001_S1_AF.setForeground(new java.awt.Color(255, 255, 255));
         Btn2_JF001_S1_AF.setText("Iniciar sesión");
-        Btn2_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 50, true));
+        Btn2_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 50, true));
         Btn2_JF001_S1_AF.setBorderPainted(false);
         Btn2_JF001_S1_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn2_JF001_S1_AF.addActionListener(new java.awt.event.ActionListener() {
@@ -96,66 +100,93 @@ public class JF001_S1_AF extends javax.swing.JFrame {
                 Btn2_JF001_S1_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(Btn2_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 228, 30));
+        JP001_S1_AF.add(Btn2_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 228, 30));
 
         btn4_JF001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn4_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        btn4_JF001_S1_AF.setForeground(new java.awt.Color(204, 204, 204));
-        btn4_JF001_S1_AF.setText("Se te ha olvidado la contraseña?");
+        btn4_JF001_S1_AF.setForeground(new java.awt.Color(0, 102, 102));
+        btn4_JF001_S1_AF.setText("¿Se te ha olvidado la contraseña?");
         btn4_JF001_S1_AF.setBorderPainted(false);
         btn4_JF001_S1_AF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn4_JF001_S1_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(btn4_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 180, 10));
-
-        jLabel3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel3.setText("Bienvenido a la experiencia con");
-        JP001_S1_AF.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, -1, 20));
+        JP001_S1_AF.add(btn4_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 210, 20));
 
         btn3_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         btn3_JF001_S1_AF.setText("Registrate como administrador");
+        btn3_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btn3_JF001_S1_AF.setBorderPainted(false);
         btn3_JF001_S1_AF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn3_JF001_S1_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(btn3_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 257, 33));
+        JP001_S1_AF.add(btn3_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 257, 33));
 
         Pass_JF001_S1_AF.setText("Contraseña");
+        Pass_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         Pass_JF001_S1_AF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Pass_JF001_S1_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(Pass_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 360, 40));
+        JP001_S1_AF.add(Pass_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 400, 40));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fda.PNG"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        JP001_S1_AF.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 180, 120));
+        kGradientPanel1.setkEndColor(new java.awt.Color(0, 102, 102));
+        kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 255));
 
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("“Cuando no somos capaces ya de cambiar una situación\n, nos enfrentamos al reto de cambiar nosotros mismos”");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        JP001_S1_AF.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 550, 50));
+        jLabel3.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel3.setText("Bienvenido a la experiencia con");
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logitooo 2 (1).png"))); // NOI18N
+
+        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
+        kGradientPanel1.setLayout(kGradientPanel1Layout);
+        kGradientPanel1Layout.setHorizontalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(66, 66, 66))
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+        kGradientPanel1Layout.setVerticalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addComponent(jLabel3)
+                .addGap(44, 44, 44)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(200, Short.MAX_VALUE))
+        );
+
+        JP001_S1_AF.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 470, 590));
+
+        jLabel2.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel2.setText("“Cuando no somos capaces ya de cambiar una situación, ");
+        JP001_S1_AF.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 280, 30));
+
+        jLabel6.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel6.setText(" nos enfrentamos al reto de cambiar nosotros mismos”");
+        JP001_S1_AF.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 310, -1));
+
+        jTextField3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        JP001_S1_AF.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 340, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JP001_S1_AF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 737, Short.MAX_VALUE)
+            .addComponent(JP001_S1_AF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(JP001_S1_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(JP001_S1_AF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -176,10 +207,6 @@ public class JF001_S1_AF extends javax.swing.JFrame {
     private void Btn2_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn2_JF001_S1_AFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn2_JF001_S1_AFActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void btn4_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4_JF001_S1_AFActionPerformed
         // TODO add your handling code here:
@@ -232,7 +259,10 @@ public class JF001_S1_AF extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField3;
+    private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }

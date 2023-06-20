@@ -51,12 +51,12 @@ public class JF005_S2_RH extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("MINDLINK");
-        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 89, 247, 65));
+        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 247, 65));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("<html>\nBienvenido a la mejor experiencia\n<br>\n\n\n\n");
-        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
+        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, -1, -1));
 
         JP001_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_RH.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -189,7 +189,7 @@ public class JF005_S2_RH extends javax.swing.JFrame {
         kGradientPanel1.add(JP001_S1_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, -10, 450, 620));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logitooo 2 (1).png"))); // NOI18N
-        kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 450, 270));
+        kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 450, 270));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

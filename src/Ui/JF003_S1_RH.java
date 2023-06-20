@@ -40,6 +40,7 @@ public class JF003_S1_RH extends javax.swing.JFrame {
         Btn2_JF003_S1_RH = new javax.swing.JButton();
         Btn1_JF003_S1_RH = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -135,6 +136,11 @@ public class JF003_S1_RH extends javax.swing.JFrame {
         jButton3.setForeground(new java.awt.Color(0, 102, 102));
         jButton3.setText("¿Quieres probar otro método de recuperación?");
         jButton3.setBorder(null);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel11.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel11.setText("Elige el correo con el que te asociaste");
 
         javax.swing.GroupLayout JP001_S1_RHLayout = new javax.swing.GroupLayout(JP001_S1_RH);
         JP001_S1_RH.setLayout(JP001_S1_RHLayout);
@@ -150,20 +156,22 @@ public class JF003_S1_RH extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addGap(115, 115, 115))))
             .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TxtCorreoRegister_JF003_S1_RH)
-                    .addComponent(jLabel10)
-                    .addComponent(TxtCodigoCorreo_JF003_S1_RH2, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
-                    .addComponent(PassField_ConfirmarContra_JF003_S1_RH))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(JP001_S1_RHLayout.createSequentialGroup()
                 .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JP001_S1_RHLayout.createSequentialGroup()
                         .addGap(141, 141, 141)
                         .addComponent(Btn1_JF003_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(JP001_S1_RHLayout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(TxtCorreoRegister_JF003_S1_RH)
+                        .addComponent(jLabel10)
+                        .addComponent(TxtCodigoCorreo_JF003_S1_RH2, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+                        .addComponent(PassField_ConfirmarContra_JF003_S1_RH)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         JP001_S1_RHLayout.setVerticalGroup(
             JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,7 +180,9 @@ public class JF003_S1_RH extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(41, 41, 41)
                 .addComponent(TxtCorreoRegister_JF003_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11)
+                .addGap(25, 25, 25)
                 .addComponent(TxtCodigoCorreo_JF003_S1_RH2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(jLabel10)
@@ -184,7 +194,7 @@ public class JF003_S1_RH extends javax.swing.JFrame {
                 .addComponent(Btn1_JF003_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Btn2_JF003_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         kGradientPanel1.add(JP001_S1_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, -10, 450, 620));
@@ -266,6 +276,7 @@ public class JF003_S1_RH extends javax.swing.JFrame {
     private javax.swing.JTextField TxtCorreoRegister_JF003_S1_RH;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

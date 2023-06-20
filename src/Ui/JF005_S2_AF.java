@@ -49,7 +49,7 @@ public class JF005_S2_AF extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("¿Qué desea realizar hoy administrador?");
-        JP001_S1_AF.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, -1));
+        JP001_S1_AF.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(44, 102, 110));
 
@@ -57,34 +57,34 @@ public class JF005_S2_AF extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 920, Short.MAX_VALUE)
+            .addGap(0, 980, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        JP001_S1_AF.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 30));
+        JP001_S1_AF.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 30));
 
         btnG004_S1_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dd.PNG"))); // NOI18N
         btnG004_S1_AF.setText("jButton1");
-        JP001_S1_AF.add(btnG004_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 140, 180));
+        JP001_S1_AF.add(btnG004_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 140, 180));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/stats.PNG"))); // NOI18N
         jButton2.setText("jButton2");
-        JP001_S1_AF.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 150, 180));
+        JP001_S1_AF.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 140, 180));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ad.PNG"))); // NOI18N
         jButton3.setText("jButton3");
-        JP001_S1_AF.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, 170, 180));
+        JP001_S1_AF.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 150, 180));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/AC.PNG"))); // NOI18N
         jButton4.setText("jButton4");
-        JP001_S1_AF.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 160, 170, 180));
+        JP001_S1_AF.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, 170, 180));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cm.PNG"))); // NOI18N
         jButton5.setText("jButton5");
-        JP001_S1_AF.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 160, 160, 180));
+        JP001_S1_AF.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 200, 160, 180));
 
         jPanel3.setBackground(new java.awt.Color(200, 232, 232));
 
@@ -96,24 +96,24 @@ public class JF005_S2_AF extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(412, Short.MAX_VALUE)
+                .addContainerGap(441, Short.MAX_VALUE)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(382, 382, 382))
+                .addGap(413, 413, 413))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 8, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        JP001_S1_AF.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 920, 100));
+        JP001_S1_AF.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 980, 90));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
         jLabel3.setText("jLabel3");
-        JP001_S1_AF.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 40, 170, 90));
+        JP001_S1_AF.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 40, 170, 90));
 
-        getContentPane().add(JP001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 448));
+        getContentPane().add(JP001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
