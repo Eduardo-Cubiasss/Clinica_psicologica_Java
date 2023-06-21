@@ -187,7 +187,7 @@ public class JF007_S2_RH extends javax.swing.JFrame {
             }
         });
     }
-
+        
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn001_JF007_S2_RH;
     private javax.swing.JPanel JP007_0_S2_RH;
@@ -199,3 +199,4 @@ public class JF007_S2_RH extends javax.swing.JFrame {
     private keeptoo.KGradientPanel kGradientPanel2;
     // End of variables declaration//GEN-END:variables
 }
+        
