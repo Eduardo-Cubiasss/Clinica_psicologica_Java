@@ -335,6 +335,9 @@
                 </Property>
                 <Property name="inheritsPopupMenu" type="boolean" value="true"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn1_JF002_S1_RHActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="Btn2_JF002_S1_RH">
               <Properties>

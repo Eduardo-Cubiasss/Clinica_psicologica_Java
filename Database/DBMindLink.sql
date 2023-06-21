@@ -81,7 +81,7 @@ IDEmpleado int,
 IDPaciente int
 );
 Create table TbClinicas(
-IDClinica int identity(1,1) primary key,
+IDClinica int primary key,
 NombreClinica varchar(300)Not null,
 Ubicacion Varchar(1000), 
 Dueño nvarchar(100),
@@ -148,7 +148,7 @@ IDUsuario int
 );
 Create Table TbTipoUsuarios(
 IDTipoUsuario int identity(1,1) primary key,
-Cargo varchar(60),
+Cargo int unique, 
 );
 Create Table TbAgendasPersonales(
 IDAgendaPersonal int identity(1,1) primary key,
@@ -165,7 +165,7 @@ IDEmpleado int
 );
 Create Table TbComentarios(
 IDComentario int identity(1,1) primary key,
-Mensaje varchar(1000),
+Mensaje varchar(200),
 Fecha date,
 IDPaciente int
 );
@@ -185,6 +185,7 @@ NombreMedicamento varchar(500)
 
 Insert into TbMedicamentos values ('Penedol')
 Select * from TbMedicamentos
+delete TbMedicamentos
 
 Alter table TbArticulos Add constraint fk_IDEmpleado_TBArt
 Foreign key (IDEmpleado) References TbEmpleados(IDEmpleado);

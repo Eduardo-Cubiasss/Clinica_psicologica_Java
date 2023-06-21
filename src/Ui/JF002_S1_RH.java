@@ -1,14 +1,22 @@
 package Ui;
 
+import javax.swing.JTextField;
+
 
 public class JF002_S1_RH extends javax.swing.JFrame {
-
+    public String Nombre;
+    public String Usuario;
+    public String Contraseña;
+    public String RContraseña;
+    public String IdClinica;
+    
     
     public JF002_S1_RH() {
+       
         initComponents();
-       
-       
-        
+    
+    }
+    private void initComponents() {
         
     }
 
@@ -122,6 +130,11 @@ public class JF002_S1_RH extends javax.swing.JFrame {
         Btn1_JF002_S1_RH.setBorderPainted(false);
         Btn1_JF002_S1_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn1_JF002_S1_RH.setInheritsPopupMenu(true);
+        Btn1_JF002_S1_RH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn1_JF002_S1_RHActionPerformed(evt);
+            }
+        });
 
         Btn2_JF002_S1_RH.setBackground(new java.awt.Color(0, 153, 153));
         Btn2_JF002_S1_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
@@ -245,15 +258,22 @@ public class JF002_S1_RH extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtNombre_JF002_S1_RHActionPerformed
 
+    private void Btn1_JF002_S1_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn1_JF002_S1_RHActionPerformed
+        // TODO add your handling code here:
+        Nombre = TxtNombre_JF002_S1_RH.getText();
+        Usuario = TxtUsuario_JF002_S1_RH2.getText();
+        Contraseña = PassField_Contraseña_JF002_S1_RH.getText();
+        RContraseña = PassField_ConfirmarContra_JF002_S1_RH.getText();
+        IdClinica = TxtID_JF002_S1_RH3.getText();
+    }//GEN-LAST:event_Btn1_JF002_S1_RHActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JF002_S1_RH().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new JF002_S1_RH().setVisible(true);
         });
     }
     
