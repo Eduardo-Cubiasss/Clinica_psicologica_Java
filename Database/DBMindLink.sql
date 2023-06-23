@@ -317,9 +317,6 @@ CREATE PROCEDURE RegistrarAdmin
 	@o VARCHAR(5)
 AS
 BEGIN
-    -- Insertar datos en la tabla TbAdministrador
-    INSERT INTO TbAdministrador (Nombre, IDClinica, IDUsuario)
-    VALUES (@a, @o, @e)
 
     -- Insertar datos en la tabla TbClinicas si no existe
     IF NOT EXISTS (SELECT 1 FROM TbClinicas WHERE IDClinica = @o)
@@ -329,11 +326,18 @@ BEGIN
     END
 
     -- Insertar datos en la tabla TbUsuarios si no existe
-    IF NOT EXISTS (SELECT 1 FROM TbUsuarios WHERE IDUsuario = @e)
+    IF NOT EXISTS (SELECT 1 FROM TbUsuarios WHERE UserName = @e)
     BEGIN
         INSERT INTO TbUsuarios (Username, Contraseña)
         VALUES (@e, @i)
     END
+	-- Obtener el IDUsuario basado en el Username
+    DECLARE @IDUsuario INT
+    SET @IDUsuario = (SELECT IDUsuario FROM TbUsuarios WHERE Username = @e)
+	-- Insertar datos en la tabla TbAdministrador
+    INSERT INTO TbAdministrador (Nombre, IDClinica, IDUsuario)
+    VALUES (@a, @o, @IDUsuario)
+
 END
 
 Drop Procedure RegistrarAdmin
