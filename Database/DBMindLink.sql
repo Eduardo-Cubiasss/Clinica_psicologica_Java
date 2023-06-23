@@ -310,33 +310,33 @@ Ya esta bien aaaa
 /*
 Desde aquí comienzan los procesos almacenados
 */
-CREATE PROCEDURE RegistrarAdmin
-    @a VARCHAR(90),
-    @e VARCHAR(50),
-    @i Varbinary(max),
-	@o VARCHAR(5)
+CREATE PROCEDURE PDRegistrarAdmin
+    @nombreTbA VARCHAR(90),
+    @UsernameTbU VARCHAR(50),
+    @ContraseñaTbU Varbinary(max),
+	@IdTbCli VARCHAR(5)
 AS
 BEGIN
 
     -- Insertar datos en la tabla TbClinicas si no existe
-    IF NOT EXISTS (SELECT 1 FROM TbClinicas WHERE IDClinica = @o)
+    IF NOT EXISTS (SELECT 1 FROM TbClinicas WHERE IDClinica = @IdTbCli)
     BEGIN
         INSERT INTO TbClinicas (IDClinica)
-        VALUES (@o)
+        VALUES (@IdTbCli)
     END
 
     -- Insertar datos en la tabla TbUsuarios si no existe
-    IF NOT EXISTS (SELECT 1 FROM TbUsuarios WHERE UserName = @e)
+    IF NOT EXISTS (SELECT 1 FROM TbUsuarios WHERE UserName = @UsernameTbU)
     BEGIN
         INSERT INTO TbUsuarios (Username, Contraseña)
-        VALUES (@e, @i)
+        VALUES (@UsernameTbU, @ContraseñaTbU)
     END
 	-- Obtener el IDUsuario basado en el Username
     DECLARE @IDUsuario INT
-    SET @IDUsuario = (SELECT IDUsuario FROM TbUsuarios WHERE Username = @e)
+    SET @IDUsuario = (SELECT IDUsuario FROM TbUsuarios WHERE Username = @UsernameTbU)
 	-- Insertar datos en la tabla TbAdministrador
     INSERT INTO TbAdministrador (Nombre, IDClinica, IDUsuario)
-    VALUES (@a, @o, @IDUsuario)
+    VALUES (@nombreTbA, @IdTbCli, @IDUsuario)
 
 END
 

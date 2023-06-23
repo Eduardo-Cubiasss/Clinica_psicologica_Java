@@ -1,6 +1,6 @@
 package Ui;
 
-import javax.swing.JTextField;
+
 
 
 public class JF002_S1_RH extends javax.swing.JFrame {

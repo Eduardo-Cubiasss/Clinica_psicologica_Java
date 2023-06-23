@@ -32,14 +32,16 @@ public class JF002_S1_GY {
         Connection conn;
         try {
             conn = (Connection) ConnectionSQL.getConexion();
-            ps = conn.prepareStatement("INSERT INTO TbUsuarios VALUES (?), (?)");
+            ps = conn.prepareStatement("EXEC PDRegistrarAdmin (?), (?),(?), (?)");
             ps.setString(1, usuario);
-            ps.setString(2, contraseña);
+            ps.setString(2, contraseñaSH1);
+            
             /*
             ps = conn.prepareStatement("INSERT INTO TbAdministrador VALUES (?), (?), (?), (?), (?), (?), (?), (?)");
             ps.setString(1, nombre);
             ps.SetString();
             */
+            
             ps.executeUpdate();
         }
         catch (Exception e){

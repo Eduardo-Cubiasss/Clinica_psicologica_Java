@@ -71,7 +71,6 @@ public class JF005_S2_AF extends javax.swing.JFrame {
         JP001_S1_AF.add(btnG004_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 140, 180));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/stats.PNG"))); // NOI18N
-        jButton2.setText("jButton2");
         JP001_S1_AF.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 140, 180));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ad.PNG"))); // NOI18N
