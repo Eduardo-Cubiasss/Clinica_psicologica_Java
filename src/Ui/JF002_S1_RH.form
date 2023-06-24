@@ -336,6 +336,7 @@
                 <Property name="inheritsPopupMenu" type="boolean" value="true"/>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Btn1_JF002_S1_RHMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn1_JF002_S1_RHActionPerformed"/>
               </Events>
             </Component>

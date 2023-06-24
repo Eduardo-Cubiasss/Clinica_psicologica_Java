@@ -5,6 +5,7 @@ go
 
 */
 
+
 Create database dbMindLink
 go
 
@@ -92,7 +93,7 @@ Logo image
 Create table TbUsuarios(
 IDUsuario int identity(1,1) primary key,
 UserName varchar(50) unique,
-Contraseña varbinary(max),
+Contraseña varbinary(64),
 FotoPerfil image,
 IDContacto int
 );
@@ -181,8 +182,8 @@ IDMedicamento int identity(1,1) primary key,
 NombreMedicamento varchar(500)
 );
 
-Insert into TbAdministrador 
-Select * from TbMedicamentos
+--Insert into TbAdministrador 
+--Select * from TbMedicamentos
 
 Alter table TbArticulos Add constraint fk_IDEmpleado_TBArt
 Foreign key (IDEmpleado) References TbEmpleados(IDEmpleado);
@@ -313,7 +314,7 @@ Desde aquí comienzan los procesos almacenados
 CREATE PROCEDURE PDRegistrarAdmin
     @nombreTbA VARCHAR(90),
     @UsernameTbU VARCHAR(50),
-    @ContraseñaTbU Varbinary(max),
+    @ContraseñaTbU NVARCHAR(90),
 	@IdTbCli VARCHAR(5)
 AS
 BEGIN
@@ -328,8 +329,12 @@ BEGIN
     -- Insertar datos en la tabla TbUsuarios si no existe
     IF NOT EXISTS (SELECT 1 FROM TbUsuarios WHERE UserName = @UsernameTbU)
     BEGIN
-        INSERT INTO TbUsuarios (Username, Contraseña)
-        VALUES (@UsernameTbU, @ContraseñaTbU)
+	-- Con esto declaramos la variable que contendra el Hash
+		DECLARE @HashContraseñaTbU VARBINARY (64);
+		SET @HashContraseñaTbU = HASHBYTES('SHA2_256', @ContraseñaTbU);
+    -- Con las dos lineas de abajo mandamos a almacenar el Username y la contraseña con Hash
+		INSERT INTO TbUsuarios (Username, Contraseña)
+        VALUES (@UsernameTbU, @HashContraseñaTbU)
     END
 	-- Obtener el IDUsuario basado en el Username
     DECLARE @IDUsuario INT
@@ -340,20 +345,70 @@ BEGIN
 
 END
 
-Drop Procedure RegistrarAdmin
+EXEC PDRegistrarAdmin 'Antonio Perez', 'AntonioLiendra1', 'Contraseña', '52281'
+/* esto es para comprobar que el PDResgistrarAdmin funciona jejeje
+Drop Procedure PDRegistrarAdmin
 Select * from TbUsuarios
 Select * from TbAdministrador
 Select * from TbClinicas
 Delete TbUsuarios
 Delete TbAdministrador
 Delete TbClinicas
-
-	
+ 
+	esto es para reiniciar los PK en 0
 DBCC CHECKIDENT ('TbUsuarios', RESEED, 0);
 DBCC CHECKIDENT ('TbAdministrador', RESEED, 0);
 
+Create table TbUsuarios(
+IDUsuario int identity(1,1) primary key,
+UserName varchar(50) unique,
+Contraseña varbinary(64),
+FotoPerfil image,
+IDContacto int
+);
 
-EXEC RegistrarAdmin 'Antonio Perez', 'AntonioLiendra1', 0x0F00000002F11831, '52281'
+*/
+
+--Aqui empieza el proceso para logear todo tipo de usuario, admin, empleado, usuario
+Create PROCEDURE PDLogear
+    @UsernameIngresado VARCHAR(50),
+    @ContraseñaIngresado NVARCHAR(90),
+	@acceso BIT OUTPUT
+AS
+BEGIN
+	DECLARE @IDUsuario INT;
+	DECLARE @username VARCHAR(50);
+	SET @IDUsuario = (SELECT IDUsuario FROM TbUsuarios WHERE Username = @UsernameIngresado);
+	SET @username = (SELECT UserName FROM TbUsuarios Where IDUsuario = @IDUsuario);
+
+	IF(@username = @UsernameIngresado)
+		BEGIN
+			-- Con esto declaramos la variable que contendra el Hash
+			DECLARE @HashContraseñaTbU VARBINARY (64);
+			DECLARE @Contraseñareal VARBINARY (64);
+			SET @HashContraseñaTbU = HASHBYTES('SHA2_256', @ContraseñaIngresado);
+			SET @Contraseñareal = (SELECT Contraseña FROM TbUsuarios WHERE IDUsuario = @IDUsuario);
+ -- Con las lineas de abajo mandamos veremos si la contraseña mandada ya hasheada coincide con la resgitrada
+				IF(@HashContraseñaTbU = @Contraseñareal)
+					BEGIN
+						SET @acceso = 1;
+					END
+				ELSE
+					BEGIN
+						SET @acceso = 0;
+					END
+		END
+		ELSE
+		BEGIN
+			SET @acceso = 0;
+		END
+END
+
+DECLARE @resultado BIT;
+EXEC PDLogear 'AntonioLiendra1', 'Contraseña', @resultado OUTPUT;
+SELECT @resultado AS Acceso;
+
+DROP Procedure PDLogear
 /*
 Desde aquí comienzan las vistas
 

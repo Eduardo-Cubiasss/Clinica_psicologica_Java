@@ -1,4 +1,5 @@
 package Ui;
+import ux.JF002_S1_GY;
 
 
 
@@ -130,6 +131,11 @@ public class JF002_S1_RH extends javax.swing.JFrame {
         Btn1_JF002_S1_RH.setBorderPainted(false);
         Btn1_JF002_S1_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn1_JF002_S1_RH.setInheritsPopupMenu(true);
+        Btn1_JF002_S1_RH.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Btn1_JF002_S1_RHMouseClicked(evt);
+            }
+        });
         Btn1_JF002_S1_RH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn1_JF002_S1_RHActionPerformed(evt);
@@ -266,6 +272,10 @@ public class JF002_S1_RH extends javax.swing.JFrame {
         RContraseña = PassField_ConfirmarContra_JF002_S1_RH.getText();
         IdClinica = TxtID_JF002_S1_RH3.getText();
     }//GEN-LAST:event_Btn1_JF002_S1_RHActionPerformed
+
+    private void Btn1_JF002_S1_RHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn1_JF002_S1_RHMouseClicked
+        JF002_S1_GY.RegistrarUsuarios();
+    }//GEN-LAST:event_Btn1_JF002_S1_RHMouseClicked
 
     /**
      * @param args the command line arguments

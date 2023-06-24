@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import Ui.JF002_S1_RH;
 import java.sql.Connection;
 
+
 /**
  *
  * @author 50369
@@ -22,8 +23,7 @@ public class JF002_S1_GY {
        String usuario = variables.Usuario;
        String contraseña = variables.Contraseña;
        String rcontra = variables.RContraseña;
-       String idclincia = variables.IdClinica;
-       String vacio = "elemento vacio";
+       String idclinica = variables.IdClinica;
        
        if(contraseña.equals(rcontra))
        {
@@ -33,15 +33,10 @@ public class JF002_S1_GY {
         try {
             conn = (Connection) ConnectionSQL.getConexion();
             ps = conn.prepareStatement("EXEC PDRegistrarAdmin (?), (?),(?), (?)");
-            ps.setString(1, usuario);
-            ps.setString(2, contraseñaSH1);
-            
-            /*
-            ps = conn.prepareStatement("INSERT INTO TbAdministrador VALUES (?), (?), (?), (?), (?), (?), (?), (?)");
-            ps.setString(1, nombre);
-            ps.SetString();
-            */
-            
+            ps.setString(1,nombre);
+            ps.setString(2, usuario);
+            ps.setString(3, contraseña);
+            ps.setString(4, idclinica);            
             ps.executeUpdate();
         }
         catch (Exception e){
