@@ -180,13 +180,14 @@ public class JF007_S2_RH extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(JF007_S2_RH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
      JScrollBar001_JF007_S2_RH  //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JF007_S2_RH().setVisible(true);
-            }
+        /* Create and display the form*/
+             java.awt.EventQueue.invokeLater(new Runnable(){
+                public void run(){
+                    new JF007_S2_RH().setVisible(true);
+                }
         });
     }
+        
         
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn001_JF007_S2_RH;

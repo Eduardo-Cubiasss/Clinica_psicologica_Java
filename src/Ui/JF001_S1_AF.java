@@ -10,10 +10,9 @@ package Ui;
  * @author 50369
  */
 public class JF001_S1_AF extends javax.swing.JFrame {
-
-    /**
-     * Creates new form JF001_S1_AF
-     */
+    public String UserName;
+    public String Contraseña;
+    
     public JF001_S1_AF() {
         initComponents();
         
@@ -96,6 +95,11 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         Btn2_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 50, true));
         Btn2_JF001_S1_AF.setBorderPainted(false);
         Btn2_JF001_S1_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn2_JF001_S1_AF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Btn2_JF001_S1_AFMouseClicked(evt);
+            }
+        });
         Btn2_JF001_S1_AF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn2_JF001_S1_AFActionPerformed(evt);
@@ -211,7 +215,14 @@ public class JF001_S1_AF extends javax.swing.JFrame {
 
     private void btn4_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4_JF001_S1_AFActionPerformed
         // TODO add your handling code here:
+        UserName = TxtUsuario_JF001_S1_AF.getText();
+        Contraseña= Pass_JF001_S1_AF.getText();
     }//GEN-LAST:event_btn4_JF001_S1_AFActionPerformed
+
+    private void Btn2_JF001_S1_AFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn2_JF001_S1_AFMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_Btn2_JF001_S1_AFMouseClicked
 
     /**
      * @param args the command line arguments

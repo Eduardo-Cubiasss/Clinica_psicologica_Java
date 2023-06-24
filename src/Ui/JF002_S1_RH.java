@@ -17,9 +17,6 @@ public class JF002_S1_RH extends javax.swing.JFrame {
         initComponents();
     
     }
-    private void initComponents() {
-        
-    }
 
    
     @SuppressWarnings("unchecked")
@@ -271,10 +268,11 @@ public class JF002_S1_RH extends javax.swing.JFrame {
         Contraseña = PassField_Contraseña_JF002_S1_RH.getText();
         RContraseña = PassField_ConfirmarContra_JF002_S1_RH.getText();
         IdClinica = TxtID_JF002_S1_RH3.getText();
+        JF002_S1_GY.RegistrarUsuarios();
     }//GEN-LAST:event_Btn1_JF002_S1_RHActionPerformed
 
     private void Btn1_JF002_S1_RHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn1_JF002_S1_RHMouseClicked
-        JF002_S1_GY.RegistrarUsuarios();
+        
     }//GEN-LAST:event_Btn1_JF002_S1_RHMouseClicked
 
     /**
@@ -282,8 +280,10 @@ public class JF002_S1_RH extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         
-        java.awt.EventQueue.invokeLater(() -> {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
             new JF002_S1_RH().setVisible(true);
+            }
         });
     }
     

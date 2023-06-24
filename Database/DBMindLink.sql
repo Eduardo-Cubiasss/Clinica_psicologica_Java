@@ -403,12 +403,16 @@ BEGIN
 			SET @acceso = 0;
 		END
 END
-
-DECLARE @resultado BIT;
+/*
+Esto es namas para comprobar que funciona el proceso
+DECLARE @resultado INT;
 EXEC PDLogear 'AntonioLiendra1', 'Contraseña', @resultado OUTPUT;
 SELECT @resultado AS Acceso;
+*/
 
+--Esto borra el proceso jejejeje
 DROP Procedure PDLogear
+
 /*
 Desde aquí comienzan las vistas
 
