@@ -99,10 +99,10 @@ public class JF006_S2_AF extends javax.swing.JFrame {
             .addGap(0, 62, Short.MAX_VALUE)
         );
 
-        Btn3_JF006_S2_AF.setBackground(new java.awt.Color(200, 232, 232));
+        Btn3_JF006_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn3_JF006_S2_AF.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         Btn3_JF006_S2_AF.setForeground(new java.awt.Color(51, 51, 51));
-        Btn3_JF006_S2_AF.setText("Eliminar anuncios");
+        Btn3_JF006_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/DeleteAds.png"))); // NOI18N
         Btn3_JF006_S2_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 50, true));
         Btn3_JF006_S2_AF.setBorderPainted(false);
         Btn3_JF006_S2_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -112,10 +112,10 @@ public class JF006_S2_AF extends javax.swing.JFrame {
             }
         });
 
-        Btn2_JF006_S2_AF.setBackground(new java.awt.Color(200, 232, 232));
+        Btn2_JF006_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn2_JF006_S2_AF.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         Btn2_JF006_S2_AF.setForeground(new java.awt.Color(51, 51, 51));
-        Btn2_JF006_S2_AF.setText("Agregar anuncios");
+        Btn2_JF006_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/AddS.png"))); // NOI18N
         Btn2_JF006_S2_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 50, true));
         Btn2_JF006_S2_AF.setBorderPainted(false);
         Btn2_JF006_S2_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -162,10 +162,10 @@ public class JF006_S2_AF extends javax.swing.JFrame {
                                 .addGap(215, 215, 215)))
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(305, 305, 305)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Btn2_JF006_S2_AF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Btn3_JF006_S2_AF, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE))
+                        .addGap(292, 292, 292)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Btn2_JF006_S2_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Btn3_JF006_S2_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -180,11 +180,11 @@ public class JF006_S2_AF extends javax.swing.JFrame {
                         .addComponent(kGradientPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
-                .addComponent(Btn2_JF006_S2_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addComponent(Btn3_JF006_S2_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(162, 162, 162)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addComponent(Btn2_JF006_S2_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(Btn3_JF006_S2_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(138, 138, 138)
                 .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 

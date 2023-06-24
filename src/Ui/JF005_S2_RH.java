@@ -108,18 +108,20 @@ public class JF005_S2_RH extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(0, 102, 102));
         jLabel10.setText("Confirmar nueva contraseña");
 
-        Btn2_JF005_S2_RH.setBackground(new java.awt.Color(0, 153, 153));
+        Btn2_JF005_S2_RH.setBackground(new java.awt.Color(255, 255, 255));
         Btn2_JF005_S2_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         Btn2_JF005_S2_RH.setForeground(new java.awt.Color(255, 255, 255));
+        Btn2_JF005_S2_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Registrarse2.png"))); // NOI18N
         Btn2_JF005_S2_RH.setText("Registrarse");
         Btn2_JF005_S2_RH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         Btn2_JF005_S2_RH.setBorderPainted(false);
         Btn2_JF005_S2_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn2_JF005_S2_RH.setInheritsPopupMenu(true);
 
-        Btn1_JF005_S2_RH.setBackground(new java.awt.Color(0, 153, 153));
+        Btn1_JF005_S2_RH.setBackground(new java.awt.Color(255, 255, 255));
         Btn1_JF005_S2_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         Btn1_JF005_S2_RH.setForeground(new java.awt.Color(255, 255, 255));
+        Btn1_JF005_S2_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnIngresar2.png"))); // NOI18N
         Btn1_JF005_S2_RH.setText("Ingresar");
         Btn1_JF005_S2_RH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 50, true));
         Btn1_JF005_S2_RH.setBorderPainted(false);
@@ -140,6 +142,9 @@ public class JF005_S2_RH extends javax.swing.JFrame {
         JP001_S1_RHLayout.setHorizontalGroup(
             JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JP001_S1_RHLayout.createSequentialGroup()
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 101, Short.MAX_VALUE))
+            .addGroup(JP001_S1_RHLayout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(TxtTelefonoRegister_JF005_S2_RH)
@@ -147,22 +152,17 @@ public class JF005_S2_RH extends javax.swing.JFrame {
                     .addComponent(TxtCodigoTel_JF005_S2_RH, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
                     .addComponent(PassField_ConfirmarContra_JF005_S2_RH))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addComponent(Btn1_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 101, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
-                        .addComponent(Btn2_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(142, 142, 142))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
                         .addComponent(jLabel4)
-                        .addGap(111, 111, 111))))
+                        .addGap(111, 111, 111))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
+                        .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Btn2_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Btn1_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(118, 118, 118))))
         );
         JP001_S1_RHLayout.setVerticalGroup(
             JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,11 +179,11 @@ public class JF005_S2_RH extends javax.swing.JFrame {
                 .addComponent(PassField_ConfirmarContra_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
-                .addComponent(Btn1_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(35, 35, 35)
+                .addComponent(Btn1_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Btn2_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         kGradientPanel1.add(JP001_S1_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, -10, 450, 620));

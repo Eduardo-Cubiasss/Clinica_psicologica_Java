@@ -79,14 +79,15 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         jLabel9.setText("Contraseña");
         JP001_S1_AF.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, -1));
 
-        Btn1_JF001_S1_AF.setBackground(new java.awt.Color(204, 204, 204));
+        Btn1_JF001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn1_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        Btn1_JF001_S1_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Registrarse2.png"))); // NOI18N
         Btn1_JF001_S1_AF.setText("Registrarse");
         Btn1_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         Btn1_JF001_S1_AF.setBorderPainted(false);
         Btn1_JF001_S1_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn1_JF001_S1_AF.setInheritsPopupMenu(true);
-        JP001_S1_AF.add(Btn1_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 200, 30));
+        JP001_S1_AF.add(Btn1_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 200, 40));
 
         Btn2_JF001_S1_AF.setBackground(new java.awt.Color(0, 102, 102));
         Btn2_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
@@ -118,6 +119,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         btn3_JF001_S1_AF.setText("Registrate como administrador");
         btn3_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btn3_JF001_S1_AF.setBorderPainted(false);
+        btn3_JF001_S1_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn3_JF001_S1_AF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn3_JF001_S1_AFActionPerformed(evt);
