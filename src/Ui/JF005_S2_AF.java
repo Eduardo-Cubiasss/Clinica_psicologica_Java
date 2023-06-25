@@ -106,7 +106,7 @@ public class JF005_S2_AF extends javax.swing.JFrame {
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        JP001_S1_AF.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 980, 90));
+        JP001_S1_AF.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 980, 90));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
         jLabel3.setText("jLabel3");

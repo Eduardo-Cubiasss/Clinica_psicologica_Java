@@ -27,21 +27,96 @@ public class JF016_S2_AF extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        btn5_JF016_S2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        btn1_JF016_S2 = new javax.swing.JButton();
+        btn2_JF016_S2 = new javax.swing.JButton();
+        btn3_JF016_S2 = new javax.swing.JButton();
+        btn4_JF016_S2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn5_JF016_S2.setBackground(new java.awt.Color(255, 255, 255));
+        btn5_JF016_S2.setForeground(new java.awt.Color(255, 255, 255));
+        btn5_JF016_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector.png"))); // NOI18N
+        btn5_JF016_S2.setBorderPainted(false);
+        jPanel2.add(btn5_JF016_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 30, 170, 90));
+
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel1.setText("Solicitudes Aprobadas");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, -1));
+
+        btn1_JF016_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rec.PNG"))); // NOI18N
+        jPanel2.add(btn1_JF016_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 195, 180, 80));
+
+        btn2_JF016_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pro.PNG"))); // NOI18N
+        btn2_JF016_S2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2_JF016_S2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn2_JF016_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 180, 80));
+
+        btn3_JF016_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/re.PNG"))); // NOI18N
+        jPanel2.add(btn3_JF016_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 180, 100));
+
+        btn4_JF016_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/si.PNG"))); // NOI18N
+        jPanel2.add(btn4_JF016_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 110, 60));
+
+        jScrollPane1.setBorder(null);
+
+        jTable1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Zeus Figueroa", "             Solicitud de incapacidad"},
+                {"Sandra Tomate", "             Solicitud de incapacidad"},
+                {"Eduardo Cumbias", "             Solicitud de incapacidad"},
+                {"Allan Galdamez", "             Solicitud de incapacidad"},
+                {"Christopher Juárez", "             Solicitud de incapacidad"}
+            },
+            new String [] {
+                "", ""
+            }
+        ));
+        jTable1.setAlignmentX(0.8F);
+        jTable1.setAlignmentY(0.8F);
+        jTable1.setColumnSelectionAllowed(true);
+        jTable1.setFillsViewportHeight(true);
+        jTable1.setFocusable(false);
+        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable1.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        jTable1.setShowHorizontalLines(false);
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 580, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 970, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 601, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn2_JF016_S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2_JF016_S2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn2_JF016_S2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +154,15 @@ public class JF016_S2_AF extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn1_JF016_S2;
+    private javax.swing.JButton btn2_JF016_S2;
+    private javax.swing.JButton btn3_JF016_S2;
+    private javax.swing.JButton btn4_JF016_S2;
+    private javax.swing.JButton btn5_JF016_S2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
