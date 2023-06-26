@@ -388,7 +388,7 @@ BEGIN
 			DECLARE @Contraseñareal VARBINARY (64);
 			SET @HashContraseñaTbU = HASHBYTES('SHA2_256', @ContraseñaIngresado);
 			SET @Contraseñareal = (SELECT Contraseña FROM TbUsuarios WHERE IDUsuario = @IDUsuario);
- -- Con las lineas de abajo mandamos veremos si la contraseña mandada ya hasheada coincide con la resgitrada
+ -- Con las lineas de abajo, veremos si la contraseña mandada ya hasheada coincide con la resgitrada
 				IF(@HashContraseñaTbU = @Contraseñareal)
 					BEGIN
 						SET @acceso = 1;

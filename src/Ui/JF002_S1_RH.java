@@ -1,5 +1,6 @@
 package Ui;
 import ux.JF002_S1_GY;
+import ux.Abrirvistas;
 
 
 
@@ -269,6 +270,7 @@ public class JF002_S1_RH extends javax.swing.JFrame {
         RContraseña = PassField_ConfirmarContra_JF002_S1_RH.getText();
         IdClinica = TxtID_JF002_S1_RH3.getText();
         JF002_S1_GY.RegistrarUsuarios();
+        Abrirvistas.abrirJF001();
     }//GEN-LAST:event_Btn1_JF002_S1_RHActionPerformed
 
     private void Btn1_JF002_S1_RHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn1_JF002_S1_RHMouseClicked

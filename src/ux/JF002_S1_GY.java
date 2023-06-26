@@ -9,6 +9,8 @@ import Database.ConnectionSQL;
 import java.sql.PreparedStatement;
 import Ui.JF002_S1_RH;
 import java.sql.Connection;
+import javax.swing.JFrame;
+import Ui.JF001_S1_AF;
 
 
 /**
@@ -16,6 +18,7 @@ import java.sql.Connection;
  * @author 50369
  */
 public class JF002_S1_GY {
+    
     
     public static void RegistrarUsuarios(){
        JF002_S1_RH variables = new JF002_S1_RH();
@@ -38,6 +41,8 @@ public class JF002_S1_GY {
             ps.setString(3, contraseña);
             ps.setString(4, idclinica);            
             ps.executeUpdate();
+            System.out.println("Lo lograste");
+            
         }
         catch (Exception e){
               System.out.println("Error #0002");

@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package Ui;
+import ux.JF001_S1_GY;
+import ux.Abrirvistas;
+import org.netbeans.lib.awtextra.AbsoluteLayout;
 
 /**
  *
@@ -50,6 +53,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 255, 255));
         setExtendedState(6);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JP001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_AF.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 153), new java.awt.Color(0, 102, 102), new java.awt.Color(0, 153, 153), new java.awt.Color(0, 102, 102)));
@@ -183,16 +187,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         jTextField3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         JP001_S1_AF.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 340, 60));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JP001_S1_AF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JP001_S1_AF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(JP001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -203,6 +198,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
 
     private void btn3_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3_JF001_S1_AFActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_btn3_JF001_S1_AFActionPerformed
 
     private void Pass_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pass_JF001_S1_AFActionPerformed
@@ -211,12 +207,14 @@ public class JF001_S1_AF extends javax.swing.JFrame {
 
     private void Btn2_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn2_JF001_S1_AFActionPerformed
         // TODO add your handling code here:
+        UserName = TxtUsuario_JF001_S1_AF.getText();
+        Contraseña= Pass_JF001_S1_AF.getText();
+        JF001_S1_GY.IniciarSesion();
+        Abrirvistas.abrirJF002();
     }//GEN-LAST:event_Btn2_JF001_S1_AFActionPerformed
 
     private void btn4_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4_JF001_S1_AFActionPerformed
         // TODO add your handling code here:
-        UserName = TxtUsuario_JF001_S1_AF.getText();
-        Contraseña= Pass_JF001_S1_AF.getText();
     }//GEN-LAST:event_btn4_JF001_S1_AFActionPerformed
 
     private void Btn2_JF001_S1_AFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn2_JF001_S1_AFMouseClicked
