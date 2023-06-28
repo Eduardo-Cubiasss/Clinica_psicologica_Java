@@ -30,13 +30,13 @@ public class JF005_S2_AF extends javax.swing.JFrame {
         JP001_S1_AF = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        btnG004_S1_AF = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btn01_JF005_S2_AF = new javax.swing.JButton();
+        btn02_JF005_S2_AF = new javax.swing.JButton();
+        btn03_JF005_S2_AF = new javax.swing.JButton();
+        btn04_JF005_S2_AF = new javax.swing.JButton();
+        btn05_JF005_S2_AF = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
+        btn06_JF005_S2_AF = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,44 +66,48 @@ public class JF005_S2_AF extends javax.swing.JFrame {
 
         JP001_S1_AF.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 30));
 
-        btnG004_S1_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dd.PNG"))); // NOI18N
-        btnG004_S1_AF.setText("jButton1");
-        JP001_S1_AF.add(btnG004_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 140, 180));
+        btn01_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
+        btn01_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnPersonal.png"))); // NOI18N
+        btn01_JF005_S2_AF.setBorderPainted(false);
+        JP001_S1_AF.add(btn01_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 150, 180));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/stats.PNG"))); // NOI18N
-        JP001_S1_AF.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 140, 180));
+        btn02_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
+        btn02_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnEstadisticas.png"))); // NOI18N
+        btn02_JF005_S2_AF.setBorderPainted(false);
+        JP001_S1_AF.add(btn02_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 150, 180));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ad.PNG"))); // NOI18N
-        jButton3.setText("jButton3");
-        JP001_S1_AF.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 150, 180));
+        btn03_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
+        btn03_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnAnuncios.png"))); // NOI18N
+        btn03_JF005_S2_AF.setBorderPainted(false);
+        JP001_S1_AF.add(btn03_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 150, 180));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/AC.PNG"))); // NOI18N
-        jButton4.setText("jButton4");
-        JP001_S1_AF.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, 170, 180));
+        btn04_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
+        btn04_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnAcercaDClinic.png"))); // NOI18N
+        btn04_JF005_S2_AF.setBorderPainted(false);
+        JP001_S1_AF.add(btn04_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 170, 180));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cm.PNG"))); // NOI18N
-        jButton5.setText("jButton5");
-        JP001_S1_AF.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 200, 160, 180));
+        btn05_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
+        btn05_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnComents.png"))); // NOI18N
+        btn05_JF005_S2_AF.setBorderPainted(false);
+        JP001_S1_AF.add(btn05_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 200, 160, 180));
 
         jPanel3.setBackground(new java.awt.Color(200, 232, 232));
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cssa.PNG"))); // NOI18N
-        jButton6.setText("jButton6");
+        btn06_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cssa.PNG"))); // NOI18N
+        btn06_JF005_S2_AF.setText("jButton6");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(441, Short.MAX_VALUE)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(413, 413, 413))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(425, 425, 425)
+                .addComponent(btn06_JF005_S2_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(429, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(btn06_JF005_S2_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 90, Short.MAX_VALUE)
         );
 
         JP001_S1_AF.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 980, 90));
@@ -155,12 +159,12 @@ public class JF005_S2_AF extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JP001_S1_AF;
-    private javax.swing.JButton btnG004_S1_AF;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton btn01_JF005_S2_AF;
+    private javax.swing.JButton btn02_JF005_S2_AF;
+    private javax.swing.JButton btn03_JF005_S2_AF;
+    private javax.swing.JButton btn04_JF005_S2_AF;
+    private javax.swing.JButton btn05_JF005_S2_AF;
+    private javax.swing.JButton btn06_JF005_S2_AF;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;

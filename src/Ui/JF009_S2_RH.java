@@ -34,7 +34,7 @@ public class JF009_S2_RH extends javax.swing.JFrame {
         Btn1_JF009_S2_RH = new javax.swing.JButton();
         Btn2_JF009_S2_RH = new javax.swing.JButton();
         Btn4_JF009_S2_RH = new javax.swing.JButton();
-        TxtTipoUsuario_JF009_S2_RH = new javax.swing.JTextField();
+        TxtCorreoE_JF009_S2_RH = new javax.swing.JTextField();
         LabelNumGenerado_JF009_S2_RH = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         LabelImagenPerfil_JF009_S2_RH = new javax.swing.JLabel();
@@ -49,6 +49,9 @@ public class JF009_S2_RH extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         Btn3_JF009_S2_RH1 = new javax.swing.JButton();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
+        TxtTipoUsuario_JF009_S2_RH1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -104,54 +107,64 @@ public class JF009_S2_RH extends javax.swing.JFrame {
         });
         jPanel1.add(Btn4_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, 220, 50));
 
-        TxtTipoUsuario_JF009_S2_RH.setForeground(new java.awt.Color(102, 102, 102));
-        TxtTipoUsuario_JF009_S2_RH.setText("Insertar tipo de usuario");
-        TxtTipoUsuario_JF009_S2_RH.setBorder(null);
-        jPanel1.add(TxtTipoUsuario_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 270, 280, 50));
+        TxtCorreoE_JF009_S2_RH.setForeground(new java.awt.Color(102, 102, 102));
+        TxtCorreoE_JF009_S2_RH.setText("Insertar el correo electrónico");
+        TxtCorreoE_JF009_S2_RH.setBorder(null);
+        jPanel1.add(TxtCorreoE_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 280, 40));
 
         LabelNumGenerado_JF009_S2_RH.setBackground(new java.awt.Color(153, 153, 153));
         LabelNumGenerado_JF009_S2_RH.setText("Num");
-        jPanel1.add(LabelNumGenerado_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, 120, 40));
+        jPanel1.add(LabelNumGenerado_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 280, 120, 40));
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel5.setText("Número de ID generado");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, 190, 20));
+        jLabel5.setText("Correo electrónico");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 190, 20));
         jPanel1.add(LabelImagenPerfil_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 240, 240));
 
         TxtNombre_JF009_S2_RH.setForeground(new java.awt.Color(102, 102, 102));
         TxtNombre_JF009_S2_RH.setText("Insertar nombre de usuario");
         TxtNombre_JF009_S2_RH.setBorder(null);
-        jPanel1.add(TxtNombre_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 270, 50));
+        jPanel1.add(TxtNombre_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, 270, 40));
 
         TxtContraseña_JF009_S2_RH.setForeground(new java.awt.Color(102, 102, 102));
         TxtContraseña_JF009_S2_RH.setText("Insertar contraseña");
         TxtContraseña_JF009_S2_RH.setBorder(null);
-        jPanel1.add(TxtContraseña_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, 270, 50));
+        jPanel1.add(TxtContraseña_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, 270, 40));
 
         jLabel7.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel7.setText("Usuario");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 90, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 90, -1));
 
         jLabel8.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel8.setText("Contraseña");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 90, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 90, -1));
 
         jLabel9.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel9.setText("Tipo de usuario");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 130, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 400, 420, 10));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 420, 10));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 420, 10));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 130, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 390, 420, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 420, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 420, 10));
 
         jSeparator4.setForeground(new java.awt.Color(102, 102, 102));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 420, 10));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 420, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 420, 10));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 420, 10));
 
         Btn3_JF009_S2_RH1.setBackground(new java.awt.Color(255, 255, 255));
         Btn3_JF009_S2_RH1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Agregar.png"))); // NOI18N
         Btn3_JF009_S2_RH1.setBorderPainted(false);
         Btn3_JF009_S2_RH1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(Btn3_JF009_S2_RH1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 270, 50));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, 420, 10));
+
+        jLabel6.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel6.setText("Número de ID generado");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 190, 20));
+
+        TxtTipoUsuario_JF009_S2_RH1.setForeground(new java.awt.Color(102, 102, 102));
+        TxtTipoUsuario_JF009_S2_RH1.setText("Insertar tipo de usuario");
+        TxtTipoUsuario_JF009_S2_RH1.setBorder(null);
+        jPanel1.add(TxtTipoUsuario_JF009_S2_RH1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, 280, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -214,11 +227,13 @@ public class JF009_S2_RH extends javax.swing.JFrame {
     private javax.swing.JLabel LabelImagenPerfil_JF009_S2_RH;
     private javax.swing.JLabel LabelNumGenerado_JF009_S2_RH;
     private javax.swing.JTextField TxtContraseña_JF009_S2_RH;
+    private javax.swing.JTextField TxtCorreoE_JF009_S2_RH;
     private javax.swing.JTextField TxtNombre_JF009_S2_RH;
-    private javax.swing.JTextField TxtTipoUsuario_JF009_S2_RH;
+    private javax.swing.JTextField TxtTipoUsuario_JF009_S2_RH1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -228,6 +243,7 @@ public class JF009_S2_RH extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }

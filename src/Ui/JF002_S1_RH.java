@@ -121,10 +121,10 @@ public class JF002_S1_RH extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(0, 102, 102));
         jLabel12.setText("Confirmar contraseña");
 
-        Btn1_JF002_S1_RH.setBackground(new java.awt.Color(0, 153, 153));
+        Btn1_JF002_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
         Btn1_JF002_S1_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         Btn1_JF002_S1_RH.setForeground(new java.awt.Color(255, 255, 255));
-        Btn1_JF002_S1_RH.setText("Registrarse");
+        Btn1_JF002_S1_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/RegistrarseClarito.png"))); // NOI18N
         Btn1_JF002_S1_RH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         Btn1_JF002_S1_RH.setBorderPainted(false);
         Btn1_JF002_S1_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -140,10 +140,10 @@ public class JF002_S1_RH extends javax.swing.JFrame {
             }
         });
 
-        Btn2_JF002_S1_RH.setBackground(new java.awt.Color(0, 153, 153));
+        Btn2_JF002_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
         Btn2_JF002_S1_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         Btn2_JF002_S1_RH.setForeground(new java.awt.Color(255, 255, 255));
-        Btn2_JF002_S1_RH.setText("Iniciar sesión");
+        Btn2_JF002_S1_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/IniciarSesionTrns.png"))); // NOI18N
         Btn2_JF002_S1_RH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 50, true));
         Btn2_JF002_S1_RH.setBorderPainted(false);
         Btn2_JF002_S1_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -153,16 +153,8 @@ public class JF002_S1_RH extends javax.swing.JFrame {
         JP001_S1_RHLayout.setHorizontalGroup(
             JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(Btn1_JF002_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addComponent(Btn2_JF002_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(98, 98, 98)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(JP001_S1_RHLayout.createSequentialGroup()
                 .addGap(64, 64, 64)
@@ -182,7 +174,14 @@ public class JF002_S1_RH extends javax.swing.JFrame {
                                 .addComponent(jLabel1)
                                 .addComponent(PassField_ConfirmarContra_JF002_S1_RH)
                                 .addComponent(TxtID_JF002_S1_RH3, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
-                                .addComponent(TxtNombre_JF002_S1_RH)))
+                                .addComponent(TxtNombre_JF002_S1_RH))
+                            .addGroup(JP001_S1_RHLayout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(JP001_S1_RHLayout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(Btn2_JF002_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(Btn1_JF002_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         JP001_S1_RHLayout.setVerticalGroup(
@@ -210,11 +209,11 @@ public class JF002_S1_RH extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TxtID_JF002_S1_RH3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(Btn1_JF002_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Btn2_JF002_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(Btn1_JF002_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Btn2_JF002_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         kGradientPanel1.add(JP001_S1_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, -8, 468, 610));
@@ -229,8 +228,8 @@ public class JF002_S1_RH extends javax.swing.JFrame {
         jLabel3.setText("<html>\nBienvenido a la mejor experiencia\n<br>\n\n\n\n");
         kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 160, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logitooo 2 (1).png"))); // NOI18N
-        kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 435, 199));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogitoGrande.png"))); // NOI18N
+        kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 430, 199));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

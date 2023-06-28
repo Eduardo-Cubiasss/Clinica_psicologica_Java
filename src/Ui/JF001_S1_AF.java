@@ -90,12 +90,12 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         Btn1_JF001_S1_AF.setBorderPainted(false);
         Btn1_JF001_S1_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btn1_JF001_S1_AF.setInheritsPopupMenu(true);
-        JP001_S1_AF.add(Btn1_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 200, 40));
+        JP001_S1_AF.add(Btn1_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 200, 40));
 
-        Btn2_JF001_S1_AF.setBackground(new java.awt.Color(0, 102, 102));
+        Btn2_JF001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn2_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         Btn2_JF001_S1_AF.setForeground(new java.awt.Color(255, 255, 255));
-        Btn2_JF001_S1_AF.setText("Iniciar sesión");
+        Btn2_JF001_S1_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnIngresarClari.png"))); // NOI18N
         Btn2_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 50, true));
         Btn2_JF001_S1_AF.setBorderPainted(false);
         Btn2_JF001_S1_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -109,7 +109,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
                 Btn2_JF001_S1_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(Btn2_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 228, 30));
+        JP001_S1_AF.add(Btn2_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 220, 40));
 
         btn4_JF001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn4_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
@@ -123,8 +123,9 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         });
         JP001_S1_AF.add(btn4_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 210, 20));
 
+        btn3_JF001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn3_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        btn3_JF001_S1_AF.setText("Registrate como administrador");
+        btn3_JF001_S1_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnRegisterAdmin.png"))); // NOI18N
         btn3_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btn3_JF001_S1_AF.setBorderPainted(false);
         btn3_JF001_S1_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -133,7 +134,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
                 btn3_JF001_S1_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(btn3_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 257, 33));
+        JP001_S1_AF.add(btn3_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 290, 33));
 
         Pass_JF001_S1_AF.setText("Contraseña");
         Pass_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -150,42 +151,42 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel3.setText("Bienvenido a la experiencia con");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logitooo 2 (1).png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogitoGrande.png"))); // NOI18N
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap(90, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(66, 66, 66))
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(92, 92, 92)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 30, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(118, 118, 118)
+                .addGap(117, 117, 117)
                 .addComponent(jLabel3)
-                .addGap(40, 40, 40)
+                .addGap(49, 49, 49)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
 
         JP001_S1_AF.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 470, 590));
 
         jLabel2.setForeground(new java.awt.Color(0, 102, 102));
         jLabel2.setText("“Cuando no somos capaces ya de cambiar una situación, ");
-        JP001_S1_AF.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 280, 30));
+        JP001_S1_AF.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 280, 30));
 
         jLabel6.setForeground(new java.awt.Color(0, 102, 102));
         jLabel6.setText(" nos enfrentamos al reto de cambiar nosotros mismos”");
-        JP001_S1_AF.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 310, -1));
+        JP001_S1_AF.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 310, -1));
 
         jTextField3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        JP001_S1_AF.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 340, 60));
+        JP001_S1_AF.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 340, 60));
 
         getContentPane().add(JP001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
