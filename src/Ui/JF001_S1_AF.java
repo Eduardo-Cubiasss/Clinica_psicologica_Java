@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Ui;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import ux.JF001_S1_GY;
 import ux.Abrirvistas;
 import org.netbeans.lib.awtextra.AbsoluteLayout;
@@ -15,7 +17,7 @@ import org.netbeans.lib.awtextra.AbsoluteLayout;
 public class JF001_S1_AF extends javax.swing.JFrame {
     public String UserName;
     public String Contraseña;
-    
+    JFrame ventanaActual = (JFrame) SwingUtilities.getWindowAncestor(this);
     public JF001_S1_AF() {
         initComponents();
         
@@ -35,7 +37,6 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         TxtUsuario_JF001_S1_AF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        Btn1_JF001_S1_AF = new javax.swing.JButton();
         Btn2_JF001_S1_AF = new javax.swing.JButton();
         btn4_JF001_S1_AF = new javax.swing.JButton();
         btn3_JF001_S1_AF = new javax.swing.JButton();
@@ -45,7 +46,6 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
 
         jLabel4.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
         jLabel4.setText("“Cuando no somos capaces ya de cambiar una situación, nos enfrentamos al reto de cambiar nosotros mismos”");
@@ -81,16 +81,6 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(0, 102, 102));
         jLabel9.setText("Contraseña");
         JP001_S1_AF.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, -1));
-
-        Btn1_JF001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
-        Btn1_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        Btn1_JF001_S1_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Registrarse2.png"))); // NOI18N
-        Btn1_JF001_S1_AF.setText("Registrarse");
-        Btn1_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        Btn1_JF001_S1_AF.setBorderPainted(false);
-        Btn1_JF001_S1_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Btn1_JF001_S1_AF.setInheritsPopupMenu(true);
-        JP001_S1_AF.add(Btn1_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 200, 40));
 
         Btn2_JF001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn2_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
@@ -134,7 +124,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
                 btn3_JF001_S1_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(btn3_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 290, 33));
+        JP001_S1_AF.add(btn3_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 290, 33));
 
         Pass_JF001_S1_AF.setText("Contraseña");
         Pass_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -185,9 +175,6 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         jLabel6.setText(" nos enfrentamos al reto de cambiar nosotros mismos”");
         JP001_S1_AF.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 310, -1));
 
-        jTextField3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        JP001_S1_AF.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 340, 60));
-
         getContentPane().add(JP001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -198,7 +185,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
     }//GEN-LAST:event_TxtUsuario_JF001_S1_AFActionPerformed
 
     private void btn3_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3_JF001_S1_AFActionPerformed
-        // TODO add your handling code here:
+        Abrirvistas.abrir("JF003_S1_RH", ventanaActual);
         
     }//GEN-LAST:event_btn3_JF001_S1_AFActionPerformed
 
@@ -211,7 +198,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         UserName = TxtUsuario_JF001_S1_AF.getText();
         Contraseña= Pass_JF001_S1_AF.getText();
         JF001_S1_GY.IniciarSesion();
-        Abrirvistas.abrirJF002();
+        
     }//GEN-LAST:event_Btn2_JF001_S1_AFActionPerformed
 
     private void btn4_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4_JF001_S1_AFActionPerformed
@@ -259,7 +246,6 @@ public class JF001_S1_AF extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn1_JF001_S1_AF;
     private javax.swing.JButton Btn2_JF001_S1_AF;
     private javax.swing.JPanel JP001_S1_AF;
     private javax.swing.JPasswordField Pass_JF001_S1_AF;
@@ -273,7 +259,6 @@ public class JF001_S1_AF extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField3;
     private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }

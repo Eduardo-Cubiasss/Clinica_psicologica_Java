@@ -4,17 +4,20 @@
  * and open the template in the editor.
  */
 package Ui;
+import javax.swing.JFrame;
+import ux.Abrirvistas;
+import javax.swing.SwingUtilities;
 
 /**
  *
  * @author allan
  */
-public class JF005_S2_AF extends javax.swing.JFrame {
-
+public class JF004_S2_AF extends javax.swing.JFrame {
+    JFrame ventanaActual = (JFrame) SwingUtilities.getWindowAncestor(this);
     /**
      * Creates new form JF004_S1_AF
      */
-    public JF005_S2_AF() {
+    public JF004_S2_AF() {
         initComponents();
     }
 
@@ -69,32 +72,62 @@ public class JF005_S2_AF extends javax.swing.JFrame {
         btn01_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn01_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnPersonal.png"))); // NOI18N
         btn01_JF005_S2_AF.setBorderPainted(false);
+        btn01_JF005_S2_AF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn01_JF005_S2_AFActionPerformed(evt);
+            }
+        });
         JP001_S1_AF.add(btn01_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 150, 180));
 
         btn02_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn02_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnEstadisticas.png"))); // NOI18N
         btn02_JF005_S2_AF.setBorderPainted(false);
+        btn02_JF005_S2_AF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn02_JF005_S2_AFActionPerformed(evt);
+            }
+        });
         JP001_S1_AF.add(btn02_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 150, 180));
 
         btn03_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn03_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnAnuncios.png"))); // NOI18N
         btn03_JF005_S2_AF.setBorderPainted(false);
+        btn03_JF005_S2_AF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn03_JF005_S2_AFActionPerformed(evt);
+            }
+        });
         JP001_S1_AF.add(btn03_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 150, 180));
 
         btn04_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn04_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnAcercaDClinic.png"))); // NOI18N
         btn04_JF005_S2_AF.setBorderPainted(false);
+        btn04_JF005_S2_AF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn04_JF005_S2_AFActionPerformed(evt);
+            }
+        });
         JP001_S1_AF.add(btn04_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 170, 180));
 
         btn05_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn05_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnComents.png"))); // NOI18N
         btn05_JF005_S2_AF.setBorderPainted(false);
+        btn05_JF005_S2_AF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn05_JF005_S2_AFActionPerformed(evt);
+            }
+        });
         JP001_S1_AF.add(btn05_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 200, 160, 180));
 
         jPanel3.setBackground(new java.awt.Color(200, 232, 232));
 
         btn06_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cssa.PNG"))); // NOI18N
         btn06_JF005_S2_AF.setText("jButton6");
+        btn06_JF005_S2_AF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn06_JF005_S2_AFActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -121,6 +154,32 @@ public class JF005_S2_AF extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn01_JF005_S2_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn01_JF005_S2_AFActionPerformed
+        Abrirvistas.abrir("JF008_S2_AF", ventanaActual);
+    }//GEN-LAST:event_btn01_JF005_S2_AFActionPerformed
+
+    private void btn02_JF005_S2_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn02_JF005_S2_AFActionPerformed
+        Abrirvistas.abrir("JF022_S3_AF", ventanaActual);
+    }//GEN-LAST:event_btn02_JF005_S2_AFActionPerformed
+
+    private void btn03_JF005_S2_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn03_JF005_S2_AFActionPerformed
+        Abrirvistas.abrir("JF006_S2_AF", ventanaActual);
+    }//GEN-LAST:event_btn03_JF005_S2_AFActionPerformed
+
+    private void btn04_JF005_S2_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn04_JF005_S2_AFActionPerformed
+        Abrirvistas.abrir("JF013_S2_RH", ventanaActual);
+    }//GEN-LAST:event_btn04_JF005_S2_AFActionPerformed
+
+    private void btn05_JF005_S2_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn05_JF005_S2_AFActionPerformed
+        
+    Abrirvistas.abrir("JF007_S2_RH", ventanaActual);
+    }//GEN-LAST:event_btn05_JF005_S2_AFActionPerformed
+
+    private void btn06_JF005_S2_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn06_JF005_S2_AFActionPerformed
+
+    Abrirvistas.abrir("JF008_S2_AF", ventanaActual);
+    }//GEN-LAST:event_btn06_JF005_S2_AFActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -138,21 +197,23 @@ public class JF005_S2_AF extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JF005_S2_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JF004_S2_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JF005_S2_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JF004_S2_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JF005_S2_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JF004_S2_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JF005_S2_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JF004_S2_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JF005_S2_AF().setVisible(true);
+                new JF004_S2_AF().setVisible(true);
             }
         });
     }

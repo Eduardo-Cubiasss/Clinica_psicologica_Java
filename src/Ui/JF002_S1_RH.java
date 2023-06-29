@@ -1,24 +1,60 @@
 package Ui;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import ux.JF002_S1_GY;
-import ux.Abrirvistas;
 
 
 
 
 public class JF002_S1_RH extends javax.swing.JFrame {
-    public String Nombre;
-    public String Usuario;
-    public String Contraseña;
-    public String RContraseña;
-    public String IdClinica;
+        
+    private String nombre;
+    private String usuario;
+    private String contraseña;
+    private String rContraseña;
+    private String idClinica;
+    private JFrame ventanaActual;
     
+    public void obtenerTexto() {
+        nombre = TxtNombre_JF002_S1_RH.getText();
+        usuario = TxtUsuario_JF002_S1_RH2.getText();
+        contraseña = PassField_Contraseña_JF002_S1_RH.getText();
+        rContraseña = PassField_ConfirmarContra_JF002_S1_RH.getText();
+        idClinica = TxtID_JF002_S1_RH3.getText();
+        ventanaActual = (JFrame) SwingUtilities.getWindowAncestor(this);
+    }
+    public JFrame getVentana() {
+        return ventanaActual;
+    }
     
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public String getRContraseña() {
+        return rContraseña;
+    }
+
+    public String getIdClinica() {
+        return idClinica;
+    }
+
     public JF002_S1_RH() {
        
         initComponents();
     
+
     }
 
+    
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -263,13 +299,8 @@ public class JF002_S1_RH extends javax.swing.JFrame {
 
     private void Btn1_JF002_S1_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn1_JF002_S1_RHActionPerformed
         // TODO add your handling code here:
-        Nombre = TxtNombre_JF002_S1_RH.getText();
-        Usuario = TxtUsuario_JF002_S1_RH2.getText();
-        Contraseña = PassField_Contraseña_JF002_S1_RH.getText();
-        RContraseña = PassField_ConfirmarContra_JF002_S1_RH.getText();
-        IdClinica = TxtID_JF002_S1_RH3.getText();
         JF002_S1_GY.RegistrarUsuarios();
-        Abrirvistas.abrirJF001();
+        
     }//GEN-LAST:event_Btn1_JF002_S1_RHActionPerformed
 
     private void Btn1_JF002_S1_RHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn1_JF002_S1_RHMouseClicked
