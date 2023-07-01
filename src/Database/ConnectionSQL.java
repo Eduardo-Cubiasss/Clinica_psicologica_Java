@@ -13,8 +13,8 @@ import java.sql.*;
  */
 public class ConnectionSQL {
     public static Connection getConexion(){
-    String conexionUrl  = "jdbc:sqlserver://localhost:1433;" // <- Editar por su puerto de SQL
-                            + "databaseName=dbMindLink;" // <- Editar por su base de datos
+    String conexionUrl  = "jdbc:sqlserver://localhost:53266;" // <- Editar por su puerto de SQL
+                            + "databaseName=dbMindLink3;" // <- Editar por su base de datos
                             + "user=user1;"
                             + "password=user1;" 
                             + "encrypt=true;trustServerCertificate=true";

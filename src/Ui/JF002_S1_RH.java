@@ -2,6 +2,7 @@ package Ui;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import ux.JF002_S1_GY;
+import ux.Abrirvistas;
 
 
 
@@ -24,26 +25,32 @@ public class JF002_S1_RH extends javax.swing.JFrame {
         ventanaActual = (JFrame) SwingUtilities.getWindowAncestor(this);
     }
     public JFrame getVentana() {
+        obtenerTexto();
         return ventanaActual;
     }
     
     public String getNombre() {
+        obtenerTexto();
         return nombre;
     }
 
     public String getUsuario() {
+        obtenerTexto();
         return usuario;
     }
 
     public String getContraseña() {
+        obtenerTexto();
         return contraseña;
     }
 
     public String getRContraseña() {
+        obtenerTexto();
         return rContraseña;
     }
 
     public String getIdClinica() {
+        obtenerTexto();
         return idClinica;
     }
 
@@ -127,6 +134,7 @@ public class JF002_S1_RH extends javax.swing.JFrame {
         });
 
         PassField_ConfirmarContra_JF002_S1_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        PassField_ConfirmarContra_JF002_S1_RH.setToolTipText("");
         PassField_ConfirmarContra_JF002_S1_RH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         PassField_Contraseña_JF002_S1_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
@@ -183,6 +191,11 @@ public class JF002_S1_RH extends javax.swing.JFrame {
         Btn2_JF002_S1_RH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 50, true));
         Btn2_JF002_S1_RH.setBorderPainted(false);
         Btn2_JF002_S1_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn2_JF002_S1_RH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn2_JF002_S1_RHActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout JP001_S1_RHLayout = new javax.swing.GroupLayout(JP001_S1_RH);
         JP001_S1_RH.setLayout(JP001_S1_RHLayout);
@@ -299,6 +312,7 @@ public class JF002_S1_RH extends javax.swing.JFrame {
 
     private void Btn1_JF002_S1_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn1_JF002_S1_RHActionPerformed
         // TODO add your handling code here:
+        obtenerTexto();
         JF002_S1_GY.RegistrarUsuarios();
         
     }//GEN-LAST:event_Btn1_JF002_S1_RHActionPerformed
@@ -306,6 +320,10 @@ public class JF002_S1_RH extends javax.swing.JFrame {
     private void Btn1_JF002_S1_RHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn1_JF002_S1_RHMouseClicked
         
     }//GEN-LAST:event_Btn1_JF002_S1_RHMouseClicked
+
+    private void Btn2_JF002_S1_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn2_JF002_S1_RHActionPerformed
+        Abrirvistas.abrir("JF001_S1_AF", ventanaActual);
+    }//GEN-LAST:event_Btn2_JF002_S1_RHActionPerformed
 
     /**
      * @param args the command line arguments

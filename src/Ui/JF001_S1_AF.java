@@ -185,7 +185,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
     }//GEN-LAST:event_TxtUsuario_JF001_S1_AFActionPerformed
 
     private void btn3_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3_JF001_S1_AFActionPerformed
-        Abrirvistas.abrir("JF003_S1_RH", ventanaActual);
+        
         
     }//GEN-LAST:event_btn3_JF001_S1_AFActionPerformed
 
@@ -198,7 +198,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         UserName = TxtUsuario_JF001_S1_AF.getText();
         Contraseña= Pass_JF001_S1_AF.getText();
         JF001_S1_GY.IniciarSesion();
-        
+        Abrirvistas.abrir("JF004_S1_RH", ventanaActual);
     }//GEN-LAST:event_Btn2_JF001_S1_AFActionPerformed
 
     private void btn4_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4_JF001_S1_AFActionPerformed

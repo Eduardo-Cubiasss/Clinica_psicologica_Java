@@ -16,8 +16,9 @@ import javax.swing.JFrame;
  * @author 50369
  */
 public class JF002_S1_GY {
-    
+
     public static void RegistrarUsuarios() {
+
         JF002_S1_RH variables = new JF002_S1_RH();
         variables.obtenerTexto();
         String nombre = variables.getNombre();
@@ -29,8 +30,8 @@ public class JF002_S1_GY {
 
         if (contraseña.equals(rcontra)) {
 
-            PreparedStatement ps;
-            Connection conn;
+            Connection conn = null;
+            PreparedStatement ps = null;
             try {
                 conn = (Connection) ConnectionSQL.getConexion();
                 ps = conn.prepareStatement("EXEC PDRegistrarAdmin ?, ?, ?, ?");
@@ -40,12 +41,26 @@ public class JF002_S1_GY {
                 ps.setString(4, idclinica);
                 ps.executeUpdate();
                 System.out.println("Lo lograste");
-                Abrirvistas.abrir("JF001_S1_AF",ventanaActual);
-                
+                Abrirvistas.abrir("JF001_S1_AF", ventanaActual);
 
             } catch (Exception e) {
                 System.out.println("Error #J001GU");
                 e.printStackTrace();
+            } finally {
+                if (ps != null) {
+                    try {
+                        ps.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (conn != null) {
+                    try {
+                        conn.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         } else {
             System.out.println("Error #0001: Las contraseñas no coinciden, vuelva a intentarlo");
