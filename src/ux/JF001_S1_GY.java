@@ -30,7 +30,7 @@ public class JF001_S1_GY {
         try {
 
             conn = ConnectionSQL.getConexion();
-            ps = conn.prepareStatement("DECLARE @resultado BIT; EXEC PDLogear ?, ?, @resultado OUTPUT;");
+            ps = conn.prepareStatement("DECLARE @resultado BIT; DECLARE @ventana INT; EXEC PDLogear ?, ?, @resultado OUTPUT, @ventana;");
             ps.setString(1, user);
             ps.setString(2, pass);
 
@@ -40,6 +40,8 @@ public class JF001_S1_GY {
 
             if (rs.next()) {
                 acceso = rs.getBoolean("Acceso");
+                PreparedStatement psConsulta2 = conn.prepareStatement("SELECT @ventana AS abrirventana;");
+                ResultSet rs1 = psConsulta2.executeQuery();
             }
             ps.executeUpdate();
             /**

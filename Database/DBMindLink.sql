@@ -375,14 +375,16 @@ Select * from TbClinicas
 CREATE PROCEDURE PDLogear
     @UsernameIngresado VARCHAR(50),
     @ContraseñaIngresado NVARCHAR(90),
-    @acceso BIT OUTPUT
+    @acceso BIT OUTPUT,
+	@abrirventana INT OUTPUT
 AS
 BEGIN
     DECLARE @IDUsuario INT;
     DECLARE @username VARCHAR(50);
 
-    -- Agrega la declaración de la variable @resultado aquí
+    -- Agrega la declaración de la variable @resultado y @ventana aquí
     DECLARE @resultado BIT;
+	DECLARE @ventana INT;
 
     SET @IDUsuario = (SELECT IDUsuario FROM TbUsuarios WHERE Username = @UsernameIngresado);
     SET @username = (SELECT UserName FROM TbUsuarios Where IDUsuario = @IDUsuario);
@@ -410,15 +412,34 @@ BEGIN
     BEGIN
         SET @resultado = 0;
     END
-
+	DECLARE @AdminExist int;
+	DECLARE @SecretExist int;
+	SET @AdminExist = (SELECT IDUsuario FROM TbAdministrador Where IDUsuario = @IDUsuario);
+	SET @SecretExist = (SELECT IDUsuario FROM TbAdministrador Where IDUsuario = @IDUsuario);
+		IF(@IDUsuario = @AdminExist)
+			BEGIN
+				SET @abrirventana = 1;
+		END
+		ELSE IF (@IDUsuario = @SecretExist)
+			BEGIN
+				SET @abrirventana = 2;
+		END
+		ELSE
+			BEGIN
+				SET @abrirventana = 3;
+		END
+	SET @abrirventana = @ventana;
     SET @acceso = @resultado;
 END
 
 
 
 DECLARE @resultado BIT;
-EXEC PDLogear 'AntonioLiendra1', 'Contraseña', @resultado OUTPUT;
+DECLARE @ventana INT;
+EXEC PDLogear 'AntonioLiendra1', 'Contraseña', @resultado OUTPUT, @ventana OUTPUT;
 SELECT @resultado AS acceso;
+SELECT @ventana AS abrirventana;
+
 PRINT @resultado;
 
 ---Aqui comienza otro proceso, este es para registrar pacientes

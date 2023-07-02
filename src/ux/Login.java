@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Database;
+package ux;
 
 /**
  *
  * @author 50369
  */
-public class Encryptacion {
+public class Login {
     
 }

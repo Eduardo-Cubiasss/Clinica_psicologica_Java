@@ -1,8 +1,11 @@
 package Ui;
+import Database.Administrador;
+import Database.Clinica;
+import Database.Procesos_almacenados;
+import Database.Usuarios;
 import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-import ux.JF002_S1_GY;
 import ux.Abrirvistas;
+import ux.RegAdmin_JF002;
 
 
 
@@ -16,44 +19,7 @@ public class JF002_S1_RH extends javax.swing.JFrame {
     private String idClinica;
     private JFrame ventanaActual;
     
-    public void obtenerTexto() {
-        nombre = TxtNombre_JF002_S1_RH.getText();
-        usuario = TxtUsuario_JF002_S1_RH2.getText();
-        contraseña = PassField_Contraseña_JF002_S1_RH.getText();
-        rContraseña = PassField_ConfirmarContra_JF002_S1_RH.getText();
-        idClinica = TxtID_JF002_S1_RH3.getText();
-        ventanaActual = (JFrame) SwingUtilities.getWindowAncestor(this);
-    }
-    public JFrame getVentana() {
-        obtenerTexto();
-        return ventanaActual;
-    }
-    
-    public String getNombre() {
-        obtenerTexto();
-        return nombre;
-    }
-
-    public String getUsuario() {
-        obtenerTexto();
-        return usuario;
-    }
-
-    public String getContraseña() {
-        obtenerTexto();
-        return contraseña;
-    }
-
-    public String getRContraseña() {
-        obtenerTexto();
-        return rContraseña;
-    }
-
-    public String getIdClinica() {
-        obtenerTexto();
-        return idClinica;
-    }
-
+   
     public JF002_S1_RH() {
        
         initComponents();
@@ -312,8 +278,7 @@ public class JF002_S1_RH extends javax.swing.JFrame {
 
     private void Btn1_JF002_S1_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn1_JF002_S1_RHActionPerformed
         // TODO add your handling code here:
-        obtenerTexto();
-        JF002_S1_GY.RegistrarUsuarios();
+        
         
     }//GEN-LAST:event_Btn1_JF002_S1_RHActionPerformed
 
@@ -332,7 +297,16 @@ public class JF002_S1_RH extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-            new JF002_S1_RH().setVisible(true);
+            Administrador modelAdmin = new Administrador();
+            Usuarios modelUsers = new Usuarios();
+            Clinica modelClinica = new Clinica();
+            JF002_S1_RH vistaJF002 = new JF002_S1_RH();
+            Procesos_almacenados Procesos = new Procesos_almacenados();
+                System.out.println("Antes de ejecutar control");
+            RegAdmin_JF002 RegistrarAdmin= new RegAdmin_JF002(modelAdmin, modelUsers, modelClinica, vistaJF002, Procesos);
+                System.out.println("Después de ejecutar control");
+              vistaJF002.setVisible(true);
+            
             }
         });
     }
@@ -340,14 +314,14 @@ public class JF002_S1_RH extends javax.swing.JFrame {
      
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn1_JF002_S1_RH;
-    private javax.swing.JButton Btn2_JF002_S1_RH;
+    public javax.swing.JButton Btn1_JF002_S1_RH;
+    public javax.swing.JButton Btn2_JF002_S1_RH;
     private javax.swing.JPanel JP001_S1_RH;
-    private javax.swing.JPasswordField PassField_ConfirmarContra_JF002_S1_RH;
-    private javax.swing.JPasswordField PassField_Contraseña_JF002_S1_RH;
-    private javax.swing.JTextField TxtID_JF002_S1_RH3;
-    private javax.swing.JTextField TxtNombre_JF002_S1_RH;
-    private javax.swing.JTextField TxtUsuario_JF002_S1_RH2;
+    public javax.swing.JPasswordField PassField_ConfirmarContra_JF002_S1_RH;
+    public javax.swing.JPasswordField PassField_Contraseña_JF002_S1_RH;
+    public javax.swing.JTextField TxtID_JF002_S1_RH3;
+    public javax.swing.JTextField TxtNombre_JF002_S1_RH;
+    public javax.swing.JTextField TxtUsuario_JF002_S1_RH2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
