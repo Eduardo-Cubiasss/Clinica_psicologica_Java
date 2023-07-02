@@ -7,14 +7,14 @@ package Ui;
 
 /**
  *
- * @author allan
+ * @author LENOVO
  */
-public class JF012_A_AF extends javax.swing.JFrame {
+public class JF029_A_S3_RH extends javax.swing.JFrame {
 
     /**
-     * Creates new form JF012_A_AF
+     * Creates new form JF029_A_S3_RH
      */
-    public JF012_A_AF() {
+    public JF029_A_S3_RH() {
         initComponents();
     }
 
@@ -32,8 +32,8 @@ public class JF012_A_AF extends javax.swing.JFrame {
         btn3_JF012_A = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btn1_JF012_A = new javax.swing.JButton();
-        btn2_JF012_A = new javax.swing.JButton();
+        btn1_JF029_RH = new javax.swing.JButton();
+        btn2_JF029_RH = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -61,28 +61,28 @@ public class JF012_A_AF extends javax.swing.JFrame {
         btn3_JF012_A.setForeground(new java.awt.Color(255, 255, 255));
         btn3_JF012_A.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector.png"))); // NOI18N
         btn3_JF012_A.setBorderPainted(false);
-        jPanel1.add(btn3_JF012_A, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        jPanel1.add(btn3_JF012_A, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, 170, 90));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 170, 90));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel1.setText("¿Deseas actualizar el usuario seleccionado?");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
+        jLabel1.setText("¿Deseas eliminar el artículo seleccionado?");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, -1, -1));
 
-        btn1_JF012_A.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Y.PNG"))); // NOI18N
-        btn1_JF012_A.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(btn1_JF012_A, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 130, 120));
+        btn1_JF029_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Y.PNG"))); // NOI18N
+        btn1_JF029_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(btn1_JF029_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 130, 120));
 
-        btn2_JF012_A.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/x.PNG"))); // NOI18N
-        btn2_JF012_A.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(btn2_JF012_A, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 120, 120));
+        btn2_JF029_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/x.PNG"))); // NOI18N
+        btn2_JF029_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(btn2_JF029_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 120, 120));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ddd.PNG"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 570, 310));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 600, 310));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/li.PNG"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 580, 40));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 580, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,27 +115,27 @@ public class JF012_A_AF extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JF012_A_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JF029_A_S3_RH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JF012_A_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JF029_A_S3_RH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JF012_A_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JF029_A_S3_RH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JF012_A_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JF029_A_S3_RH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JF012_A_AF().setVisible(true);
+                new JF029_A_S3_RH().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1_JF012_A;
-    private javax.swing.JButton btn2_JF012_A;
+    private javax.swing.JButton btn1_JF029_RH;
+    private javax.swing.JButton btn2_JF029_RH;
     private javax.swing.JButton btn3_JF012_A;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
