@@ -4,19 +4,21 @@
  * and open the template in the editor.
  */
 package Ui;
+import Database.Procesos_almacenados;
+import Database.Usuarios;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-import ux.JF001_S1_GY;
 import ux.Abrirvistas;
 import org.netbeans.lib.awtextra.AbsoluteLayout;
+import ux.Login;
 
 /**
  *
  * @author 50369
  */
 public class JF001_S1_AF extends javax.swing.JFrame {
-    public String UserName;
-    public String Contraseña;
+    private String UserName;
+    private String Contraseña;
     JFrame ventanaActual = (JFrame) SwingUtilities.getWindowAncestor(this);
     public JF001_S1_AF() {
         initComponents();
@@ -195,10 +197,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
 
     private void Btn2_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn2_JF001_S1_AFActionPerformed
         // TODO add your handling code here:
-        UserName = TxtUsuario_JF001_S1_AF.getText();
-        Contraseña= Pass_JF001_S1_AF.getText();
-        JF001_S1_GY.IniciarSesion();
-        Abrirvistas.abrir("JF004_S1_RH", ventanaActual);
+
     }//GEN-LAST:event_Btn2_JF001_S1_AFActionPerformed
 
     private void btn4_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4_JF001_S1_AFActionPerformed
@@ -241,16 +240,20 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new JF001_S1_AF().setVisible(true);
+                Usuarios modelUsers = new Usuarios();
+                Procesos_almacenados Procesos = new Procesos_almacenados();
+                JF001_S1_AF vistaJF001 = new JF001_S1_AF();
+                Login Logear = new Login(modelUsers, vistaJF001, Procesos);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn2_JF001_S1_AF;
+    public javax.swing.JButton Btn2_JF001_S1_AF;
     private javax.swing.JPanel JP001_S1_AF;
-    private javax.swing.JPasswordField Pass_JF001_S1_AF;
-    private javax.swing.JTextField TxtUsuario_JF001_S1_AF;
-    private javax.swing.JButton btn3_JF001_S1_AF;
+    public javax.swing.JPasswordField Pass_JF001_S1_AF;
+    public javax.swing.JTextField TxtUsuario_JF001_S1_AF;
+    public javax.swing.JButton btn3_JF001_S1_AF;
     private javax.swing.JButton btn4_JF001_S1_AF;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

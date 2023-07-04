@@ -7,6 +7,7 @@ package Database;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -50,5 +51,46 @@ public class Procesos_almacenados {
                 }
             }
         }
+    }
+    public static int Logear(Usuarios modelousuarios){
+        
+        int acceso = 0;
+        int nivelusuario = 0;
+        PreparedStatement ps;
+        Connection conn;
+        try {
+            conn = ConnectionSQL.getConexion();
+            ps = conn.prepareStatement("DECLARE @resultado INT; DECLARE @ventana INT; EXEC PDLogear ?, ?, @resultado OUTPUT, @ventana OUTPUT;");
+            ps.setString(1, modelousuarios.getUserName());
+            ps.setString(2, modelousuarios.getContraseña());
+
+            // Realizar una consulta adicional para obtener el resultado
+           // PreparedStatement psConsulta = conn.prepareStatement("SELECT @resultado AS acceso;");
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                acceso = rs.getInt("acceso");
+                nivelusuario = rs.getInt("abrirventana");
+                //PreparedStatement psConsulta2 = conn.prepareStatement("SELECT @ventana AS abrirventana;");
+                //ResultSet rs1 = psConsulta2.executeQuery();
+                System.out.println(acceso);
+                System.out.println(nivelusuario);
+            }
+            //ps.executeUpdate();
+            /**
+             * conn = (Connection) ConnectionSQL.getConexion(); conn =
+             * (Connection) ConnectionSQL.getConexion(); ps =
+             * conn.prepareStatement("DECLARE @resultados BIT; EXEC PDLogear
+             * (?), (?), @resultados OUTPUT"); ps.setString(1, user);
+             * ps.setString(2, pass); ps.executeUpdate();
+             *
+             * ps = conn.prepareStatement("SELECT @resultado AS Acceso"); ps=
+             * get.boolean(1, acceso);
+             */
+        } catch (Exception e) {
+            System.out.println("Error #0001");
+            e.printStackTrace();
+        }
+        return 0;
     }
 }
