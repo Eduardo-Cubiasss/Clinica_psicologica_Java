@@ -46,7 +46,7 @@ public class JF031_S3_RH extends javax.swing.JFrame {
         Btn1_JF031_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector (1).png"))); // NOI18N
         Btn1_JF031_S3_RH.setBorderPainted(false);
         Btn1_JF031_S3_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(Btn1_JF031_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(Btn1_JF031_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
@@ -139,13 +139,13 @@ public class JF031_S3_RH extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn1_JF031_S3_RH;
-    private javax.swing.JButton Btn2_JF031_S3_RH1;
-    private javax.swing.JButton Btn3_JF031_S3_RH2;
-    private javax.swing.JButton Btn4_JF031_S3_RH;
-    private javax.swing.JPanel JP01_JF031_S3_RH;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JButton Btn1_JF031_S3_RH;
+    public javax.swing.JButton Btn2_JF031_S3_RH1;
+    public javax.swing.JButton Btn3_JF031_S3_RH2;
+    public javax.swing.JButton Btn4_JF031_S3_RH;
+    public javax.swing.JPanel JP01_JF031_S3_RH;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

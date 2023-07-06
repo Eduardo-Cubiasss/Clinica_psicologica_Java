@@ -147,15 +147,15 @@ public class JF014_S2_AF extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1_JF014_S2;
-    private javax.swing.JButton btn2_JF014_S2;
-    private javax.swing.JButton btn3_JF014_S2;
-    private javax.swing.JButton btn4_JF014_S2;
-    private javax.swing.JButton btn5_JF014_S2;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JButton btn1_JF014_S2;
+    public javax.swing.JButton btn2_JF014_S2;
+    public javax.swing.JButton btn3_JF014_S2;
+    public javax.swing.JButton btn4_JF014_S2;
+    public javax.swing.JButton btn5_JF014_S2;
+    public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel2;
+    public javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

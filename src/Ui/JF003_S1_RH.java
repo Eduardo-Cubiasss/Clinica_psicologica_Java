@@ -246,12 +246,12 @@ public class JF003_S1_RH extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn1_JF003_S1_RH;
-    private javax.swing.JButton Btn2_JF003_S1_RH;
+    public javax.swing.JButton Btn1_JF003_S1_RH;
+    public javax.swing.JButton Btn2_JF003_S1_RH;
     private javax.swing.JPanel JP001_S1_RH;
-    private javax.swing.JPasswordField PassField_ConfirmarContra_JF003_S1_RH;
-    private javax.swing.JTextField TxtCodigoCorreo_JF003_S1_RH2;
-    private javax.swing.JTextField TxtCorreoRegister_JF003_S1_RH;
+    public javax.swing.JPasswordField PassField_ConfirmarContra_JF003_S1_RH;
+    public javax.swing.JTextField TxtCodigoCorreo_JF003_S1_RH2;
+    public javax.swing.JTextField TxtCorreoRegister_JF003_S1_RH;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -81,8 +81,8 @@ public class JP011_1_S2_RH extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollBar SvrollBar1_JP011_1_S2_RH;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    public javax.swing.JScrollBar SvrollBar1_JP011_1_S2_RH;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

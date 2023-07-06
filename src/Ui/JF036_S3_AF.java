@@ -54,17 +54,17 @@ public class JF036_S3_AF extends javax.swing.JFrame {
         jPanel1.add(btn3_JF012_A, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 21, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 170, 90));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 170, 90));
 
         jPanel4.setBackground(new java.awt.Color(200, 232, 232));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setBackground(new java.awt.Color(200, 232, 232));
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pkk.PNG"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/meds 1.png"))); // NOI18N
         jLabel6.setText("jLabel6");
-        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 100, -1));
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 180, 180));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(753, 0, 150, 600));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 0, 220, 600));
 
         jPanel2.setBackground(new java.awt.Color(200, 232, 232));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

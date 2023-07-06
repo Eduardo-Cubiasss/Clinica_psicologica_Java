@@ -178,22 +178,22 @@ public class JF010_S2_AF extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1_JF010_AF;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
+    public javax.swing.JButton btn1_JF010_AF;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JLabel jLabel7;
+    public javax.swing.JLabel jLabel9;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JLabel lb_Ape;
-    private javax.swing.JLabel lb_Nom;
+    public javax.swing.JLabel lb_Ape;
+    public javax.swing.JLabel lb_Nom;
     private javax.swing.JLabel lb_chino;
-    private javax.swing.JLabel lb_dias;
-    private javax.swing.JLabel lb_eda;
-    private javax.swing.JLabel lb_ofi;
+    public javax.swing.JLabel lb_dias;
+    public javax.swing.JLabel lb_eda;
+    public javax.swing.JLabel lb_ofi;
     // End of variables declaration//GEN-END:variables
 }

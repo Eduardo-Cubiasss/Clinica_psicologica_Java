@@ -76,9 +76,9 @@ public class JP015_S2_RH extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel JLDescripcion_JP015_S2_RH;
-    private javax.swing.JLabel JLImagen_JP015_S2_RH;
-    private javax.swing.JLabel JLNombre_JP015_S2_RH;
-    private javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel JLDescripcion_JP015_S2_RH;
+    public javax.swing.JLabel JLImagen_JP015_S2_RH;
+    public javax.swing.JLabel JLNombre_JP015_S2_RH;
+    public javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

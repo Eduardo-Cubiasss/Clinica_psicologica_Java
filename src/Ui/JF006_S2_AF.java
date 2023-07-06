@@ -239,14 +239,14 @@ public class JF006_S2_AF extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn1_JF003_S1_RH;
-    private javax.swing.JButton Btn2_JF006_S2_AF;
-    private javax.swing.JButton Btn3_JF006_S2_AF;
-    private javax.swing.JButton btn001_JF006_S2_AF;
+    public javax.swing.JButton Btn2_JF006_S2_AF;
+    public javax.swing.JButton Btn3_JF006_S2_AF;
+    public javax.swing.JButton btn001_JF006_S2_AF;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel1;
     private keeptoo.KGradientPanel kGradientPanel1;
     private keeptoo.KGradientPanel kGradientPanel2;
     // End of variables declaration//GEN-END:variables

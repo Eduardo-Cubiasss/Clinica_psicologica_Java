@@ -220,30 +220,30 @@ public class JF009_S2_RH extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn1_JF009_S2_RH;
-    private javax.swing.JButton Btn2_JF009_S2_RH;
-    private javax.swing.JButton Btn3_JF009_S2_RH1;
-    private javax.swing.JButton Btn4_JF009_S2_RH;
-    private javax.swing.JLabel LabelImagenPerfil_JF009_S2_RH;
-    private javax.swing.JLabel LabelNumGenerado_JF009_S2_RH;
-    private javax.swing.JTextField TxtContraseña_JF009_S2_RH;
-    private javax.swing.JTextField TxtCorreoE_JF009_S2_RH;
-    private javax.swing.JTextField TxtNombre_JF009_S2_RH;
-    private javax.swing.JTextField TxtTipoUsuario_JF009_S2_RH1;
+    public javax.swing.JButton Btn1_JF009_S2_RH;
+    public javax.swing.JButton Btn2_JF009_S2_RH;
+    public javax.swing.JButton Btn3_JF009_S2_RH1;
+    public javax.swing.JButton Btn4_JF009_S2_RH;
+    public javax.swing.JLabel LabelImagenPerfil_JF009_S2_RH;
+    public javax.swing.JLabel LabelNumGenerado_JF009_S2_RH;
+    public javax.swing.JTextField TxtContraseña_JF009_S2_RH;
+    public javax.swing.JTextField TxtCorreoE_JF009_S2_RH;
+    public javax.swing.JTextField TxtNombre_JF009_S2_RH;
+    public javax.swing.JTextField TxtTipoUsuario_JF009_S2_RH1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabel7;
+    public javax.swing.JLabel jLabel8;
+    public javax.swing.JLabel jLabel9;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JSeparator jSeparator1;
+    public javax.swing.JSeparator jSeparator2;
+    public javax.swing.JSeparator jSeparator3;
+    public javax.swing.JSeparator jSeparator4;
+    public javax.swing.JSeparator jSeparator5;
+    public javax.swing.JSeparator jSeparator6;
     private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }

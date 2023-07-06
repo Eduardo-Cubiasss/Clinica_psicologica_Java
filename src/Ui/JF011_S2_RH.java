@@ -224,16 +224,16 @@ public class JF011_S2_RH extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn1_JF011_S2_RH;
-    private javax.swing.JButton Btn2_JF011_S2_RH;
-    private javax.swing.JButton Btn3_JF011_S2_RH;
-    private javax.swing.JButton Btn4_JF011_S2_RH;
-    private javax.swing.JPanel JP011_0_S2_RH;
+    public javax.swing.JButton Btn1_JF011_S2_RH;
+    public javax.swing.JButton Btn2_JF011_S2_RH;
+    public javax.swing.JButton Btn3_JF011_S2_RH;
+    public javax.swing.JButton Btn4_JF011_S2_RH;
+    public javax.swing.JPanel JP011_0_S2_RH;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel1;
     private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }

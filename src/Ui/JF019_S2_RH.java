@@ -151,11 +151,11 @@ public class JF019_S2_RH extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn1_JF019_S2_RH;
-    private javax.swing.JButton Btn2_JF019_S2_RH;
-    private javax.swing.JPanel JPSolicitud_JP019_S2_RH;
-    private javax.swing.JLabel JlLogo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JButton Btn1_JF019_S2_RH;
+    public javax.swing.JButton Btn2_JF019_S2_RH;
+    public javax.swing.JPanel JPSolicitud_JP019_S2_RH;
+    public javax.swing.JLabel JlLogo;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

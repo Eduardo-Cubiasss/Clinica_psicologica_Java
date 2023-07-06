@@ -118,12 +118,12 @@ public class JP031_S3_RH extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel JL_Correo_JF031_S3_RH;
-    private javax.swing.JLabel JL_Edad_JF031_S3_RH;
-    private javax.swing.JLabel JL_Nombre_JF031_S3_RH;
-    private javax.swing.JLabel JL_Telefono_JF031_S3_RH;
-    private javax.swing.JLabel JL_image_JF031_S3_RH;
-    private javax.swing.JButton btn01_JP031_S3_RH;
-    private javax.swing.JTextField txtEscribirMensaje_JP031_S3_RH;
+    public javax.swing.JLabel JL_Correo_JF031_S3_RH;
+    public javax.swing.JLabel JL_Edad_JF031_S3_RH;
+    public javax.swing.JLabel JL_Nombre_JF031_S3_RH;
+    public javax.swing.JLabel JL_Telefono_JF031_S3_RH;
+    public javax.swing.JLabel JL_image_JF031_S3_RH;
+    public javax.swing.JButton btn01_JP031_S3_RH;
+    public javax.swing.JTextField txtEscribirMensaje_JP031_S3_RH;
     // End of variables declaration//GEN-END:variables
 }

@@ -215,22 +215,22 @@ public class JF025_S3_RH extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn1_JF025_S3_RH;
-    private javax.swing.JPanel JP01_Foto_JF025_S3_RH;
-    private javax.swing.JPanel JP02_Firma_JF025_S3_RH;
-    private javax.swing.JTextField TxtContraNueva_JF025_S3_RH;
-    private javax.swing.JTextField TxtContraseñaActual_JF025_S3_RH;
-    private javax.swing.JTextField TxtDescrip_JF025_S3_RH;
-    private javax.swing.JButton btn02_JF025_S3_RH;
-    private javax.swing.JButton btn03_JF025_S3_RH;
-    private javax.swing.JButton btn04_JF025_S3_RH;
-    private javax.swing.JButton btn05_JF025_S3_RH;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private keeptoo.KGradientPanel kGradientPanel1;
+    public javax.swing.JButton Btn1_JF025_S3_RH;
+    public javax.swing.JPanel JP01_Foto_JF025_S3_RH;
+    public javax.swing.JPanel JP02_Firma_JF025_S3_RH;
+    public javax.swing.JTextField TxtContraNueva_JF025_S3_RH;
+    public javax.swing.JTextField TxtContraseñaActual_JF025_S3_RH;
+    public javax.swing.JTextField TxtDescrip_JF025_S3_RH;
+    public javax.swing.JButton btn02_JF025_S3_RH;
+    public javax.swing.JButton btn03_JF025_S3_RH;
+    public javax.swing.JButton btn04_JF025_S3_RH;
+    public javax.swing.JButton btn05_JF025_S3_RH;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JPanel jPanel1;
+    public keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }

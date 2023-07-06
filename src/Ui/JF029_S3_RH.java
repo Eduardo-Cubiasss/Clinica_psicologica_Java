@@ -176,13 +176,13 @@ public class JF029_S3_RH extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn1_JF029_S3_RH;
-    private javax.swing.JPanel JP01_JP029_S3_RH;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JSlider jSlider1;
-    private keeptoo.KGradientPanel kGradientPanel1;
+    public javax.swing.JButton Btn1_JF029_S3_RH;
+    public javax.swing.JPanel JP01_JP029_S3_RH;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JSlider jSlider1;
+    public keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }

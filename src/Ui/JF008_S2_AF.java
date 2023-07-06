@@ -173,17 +173,17 @@ public class JF008_S2_AF extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn001_JF008_S2_AF;
-    private javax.swing.JButton Btn001_JF008_S3_AF;
+    public javax.swing.JButton Btn001_JF008_S3_AF;
     private javax.swing.JButton Btn002_JF008_S3_AF;
     private javax.swing.JButton Btn003_JF008_S3_AF;
-    private javax.swing.JButton Btn004_JF008_S3_AF;
-    private javax.swing.JButton Btn005_JF008_S3_AF;
-    private javax.swing.JButton Btn006_JF008_S3_AF;
-    private javax.swing.JButton Btn007_JF008_S3_AF;
+    public javax.swing.JButton Btn004_JF008_S3_AF;
+    public javax.swing.JButton Btn005_JF008_S3_AF;
+    public javax.swing.JButton Btn006_JF008_S3_AF;
+    public javax.swing.JButton Btn007_JF008_S3_AF;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables

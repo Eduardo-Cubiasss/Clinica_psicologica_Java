@@ -55,6 +55,9 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JLabel" name="JLImagen_JP015_S2_RH">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="JLNombre_JP015_S2_RH">
       <Properties>
@@ -63,6 +66,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Zeus Figueroa"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -74,6 +80,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Solicitud de incapacidad"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="JLDescripcion_JP015_S2_RH">
       <Properties>
@@ -82,6 +91,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Descripcion"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

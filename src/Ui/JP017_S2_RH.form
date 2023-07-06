@@ -46,6 +46,9 @@
           <Color blue="f6" green="f6" red="f6" type="rgb"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -84,6 +87,9 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JLabel" name="JLImagen_JP017_S2_RH">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="JLNombre_JP017_S2_RH">
           <Properties>
@@ -92,6 +98,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Zeus Figueroa"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -103,6 +112,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Solicitud de incapacidad"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="JLDescripcion_JP017_S2_RH">
           <Properties>
@@ -111,6 +123,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Descripcion"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

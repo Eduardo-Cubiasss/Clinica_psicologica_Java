@@ -111,11 +111,11 @@ public class JP007_2_S2_RH extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel JL_Contenido_JF007_S2_RH;
-    private javax.swing.JLabel JL_Foto_JF007_S2_RH2;
-    private javax.swing.JLabel JL_Nombre_JF007_S2_RH1;
-    private javax.swing.JLabel JL_Tiempo_JF007_S2_RH;
+    public javax.swing.JLabel JL_Contenido_JF007_S2_RH;
+    public javax.swing.JLabel JL_Foto_JF007_S2_RH2;
+    public javax.swing.JLabel JL_Nombre_JF007_S2_RH1;
+    public javax.swing.JLabel JL_Tiempo_JF007_S2_RH;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel5;
+    public javax.swing.JPanel jPanel5;
     // End of variables declaration//GEN-END:variables
 }

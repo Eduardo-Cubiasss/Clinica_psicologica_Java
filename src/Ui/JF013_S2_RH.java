@@ -224,18 +224,18 @@ public class JF013_S2_RH extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn001_JF013_S2_RH;
-    private javax.swing.JButton Btn2_JF013_S2_RH;
-    private javax.swing.JButton Btn3_JF013_S2_RH1;
-    private javax.swing.JButton Btn4_JF013_S2_RH2;
-    private javax.swing.JLabel JLFoto_JF013_S2_RH;
-    private javax.swing.JTextField TxtDescripcion2_JF013_S2_RH;
-    private javax.swing.JTextField TxtDescripcion_JF013_S2_RH;
-    private javax.swing.JTextField TxtTitulo_JF013_S2_RH;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JButton Btn001_JF013_S2_RH;
+    public javax.swing.JButton Btn2_JF013_S2_RH;
+    public javax.swing.JButton Btn3_JF013_S2_RH1;
+    public javax.swing.JButton Btn4_JF013_S2_RH2;
+    public javax.swing.JLabel JLFoto_JF013_S2_RH;
+    public javax.swing.JTextField TxtDescripcion2_JF013_S2_RH;
+    public javax.swing.JTextField TxtDescripcion_JF013_S2_RH;
+    public javax.swing.JTextField TxtTitulo_JF013_S2_RH;
+    public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

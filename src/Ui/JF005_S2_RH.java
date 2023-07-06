@@ -258,12 +258,12 @@ public class JF005_S2_RH extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn1_JF005_S2_RH;
-    private javax.swing.JButton Btn2_JF005_S2_RH;
-    private javax.swing.JPanel JP001_S1_RH;
-    private javax.swing.JPasswordField PassField_ConfirmarContra_JF005_S2_RH;
-    private javax.swing.JTextField TxtCodigoTel_JF005_S2_RH;
-    private javax.swing.JTextField TxtTelefonoRegister_JF005_S2_RH;
+    public javax.swing.JButton Btn1_JF005_S2_RH;
+    public javax.swing.JButton Btn2_JF005_S2_RH;
+    public javax.swing.JPanel JP001_S1_RH;
+    public javax.swing.JPasswordField PassField_ConfirmarContra_JF005_S2_RH;
+    public javax.swing.JTextField TxtCodigoTel_JF005_S2_RH;
+    public javax.swing.JTextField TxtTelefonoRegister_JF005_S2_RH;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

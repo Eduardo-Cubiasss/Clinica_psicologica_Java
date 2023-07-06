@@ -236,16 +236,16 @@ public class JF028_S3_AF extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn1_JF028_S3_AF;
-    private javax.swing.JButton Btn2_JF028_S3_AF;
-    private javax.swing.JButton Btn3_JF028_S3_AF;
-    private javax.swing.JButton Btn4_JF028_S3_AF;
-    private javax.swing.JButton Btn5_JF028_S3_AF;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JButton Btn1_JF028_S3_AF;
+    public javax.swing.JButton Btn2_JF028_S3_AF;
+    public javax.swing.JButton Btn3_JF028_S3_AF;
+    public javax.swing.JButton Btn4_JF028_S3_AF;
+    public javax.swing.JButton Btn5_JF028_S3_AF;
+    public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

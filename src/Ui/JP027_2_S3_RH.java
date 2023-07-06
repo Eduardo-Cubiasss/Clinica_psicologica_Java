@@ -85,10 +85,10 @@ public class JP027_2_S3_RH extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel JL_ID_JP027_S3_RH;
-    private javax.swing.JLabel JL_Nombre_JP027_S3_RH;
-    private javax.swing.JLabel JL_fecha_JP027_S3_RH;
-    private javax.swing.JLabel JL_image_JP027_S3_RH;
-    private javax.swing.JButton btn_01_JP027_S3_RH;
+    public javax.swing.JLabel JL_ID_JP027_S3_RH;
+    public javax.swing.JLabel JL_Nombre_JP027_S3_RH;
+    public javax.swing.JLabel JL_fecha_JP027_S3_RH;
+    public javax.swing.JLabel JL_image_JP027_S3_RH;
+    public javax.swing.JButton btn_01_JP027_S3_RH;
     // End of variables declaration//GEN-END:variables
 }

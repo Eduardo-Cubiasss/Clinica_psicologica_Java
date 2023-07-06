@@ -134,14 +134,14 @@ public class JF012_A_AF extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1_JF012_A;
-    private javax.swing.JButton btn2_JF012_A;
-    private javax.swing.JButton btn3_JF012_A;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    public javax.swing.JButton btn1_JF012_A;
+    public javax.swing.JButton btn2_JF012_A;
+    public javax.swing.JButton btn3_JF012_A;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
