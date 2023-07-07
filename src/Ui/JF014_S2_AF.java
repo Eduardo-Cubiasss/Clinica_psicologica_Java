@@ -58,13 +58,18 @@ public class JF014_S2_AF extends javax.swing.JFrame {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, -1, -1));
 
         btn1_JF014_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rec.PNG"))); // NOI18N
-        jPanel2.add(btn1_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 195, 180, 80));
+        jPanel2.add(btn1_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 195, 170, 80));
 
         btn2_JF014_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pro.PNG"))); // NOI18N
-        jPanel2.add(btn2_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 180, 80));
+        btn2_JF014_S2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2_JF014_S2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn2_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 170, 80));
 
         btn3_JF014_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/re.PNG"))); // NOI18N
-        jPanel2.add(btn3_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 180, 100));
+        jPanel2.add(btn3_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 170, 100));
 
         btn4_JF014_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/m.PNG"))); // NOI18N
         jPanel2.add(btn4_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 511, 110, 60));
@@ -110,6 +115,10 @@ public class JF014_S2_AF extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn2_JF014_S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2_JF014_S2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn2_JF014_S2ActionPerformed
 
     /**
      * @param args the command line arguments

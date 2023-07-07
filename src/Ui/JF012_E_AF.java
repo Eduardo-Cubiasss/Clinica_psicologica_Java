@@ -30,7 +30,7 @@ public class JF012_E_AF extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        btn3_JF012 = new javax.swing.JButton();
+        btn3_JF012E = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         btn1_JF012_E = new javax.swing.JButton();
@@ -56,11 +56,11 @@ public class JF012_E_AF extends javax.swing.JPanel {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 1010, 50));
 
-        btn3_JF012.setBackground(new java.awt.Color(255, 255, 255));
-        btn3_JF012.setForeground(new java.awt.Color(255, 255, 255));
-        btn3_JF012.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector.png"))); // NOI18N
-        btn3_JF012.setBorderPainted(false);
-        jPanel1.add(btn3_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        btn3_JF012E.setBackground(new java.awt.Color(255, 255, 255));
+        btn3_JF012E.setForeground(new java.awt.Color(255, 255, 255));
+        btn3_JF012E.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector.png"))); // NOI18N
+        btn3_JF012E.setBorderPainted(false);
+        jPanel1.add(btn3_JF012E, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, 170, 90));
@@ -97,7 +97,7 @@ public class JF012_E_AF extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btn1_JF012_E;
     public javax.swing.JButton btn2_JF012_E;
-    public javax.swing.JButton btn3_JF012;
+    public javax.swing.JButton btn3_JF012E;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

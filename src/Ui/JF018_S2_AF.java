@@ -57,7 +57,7 @@ public class JF018_S2_AF extends javax.swing.JFrame {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, -1));
 
         btn1_JF018_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rec.PNG"))); // NOI18N
-        jPanel2.add(btn1_JF018_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 195, 180, 80));
+        jPanel2.add(btn1_JF018_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 170, 80));
 
         btn2_JF018_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pro.PNG"))); // NOI18N
         btn2_JF018_S2.addActionListener(new java.awt.event.ActionListener() {
@@ -65,10 +65,10 @@ public class JF018_S2_AF extends javax.swing.JFrame {
                 btn2_JF018_S2ActionPerformed(evt);
             }
         });
-        jPanel2.add(btn2_JF018_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 180, 80));
+        jPanel2.add(btn2_JF018_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 170, 80));
 
         btn3_JF018_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/re.PNG"))); // NOI18N
-        jPanel2.add(btn3_JF018_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 180, 100));
+        jPanel2.add(btn3_JF018_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 170, 100));
 
         btn4_JF018_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/si.PNG"))); // NOI18N
         jPanel2.add(btn4_JF018_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, 110, 60));
@@ -98,7 +98,7 @@ public class JF018_S2_AF extends javax.swing.JFrame {
         jTable1.setShowHorizontalLines(false);
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 550, 120));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 550, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

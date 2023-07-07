@@ -57,7 +57,7 @@ public class JF016_S2_AF extends javax.swing.JFrame {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, -1));
 
         btn1_JF016_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rec.PNG"))); // NOI18N
-        jPanel2.add(btn1_JF016_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 195, 180, 80));
+        jPanel2.add(btn1_JF016_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 195, 170, 80));
 
         btn2_JF016_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pro.PNG"))); // NOI18N
         btn2_JF016_S2.addActionListener(new java.awt.event.ActionListener() {
@@ -65,10 +65,10 @@ public class JF016_S2_AF extends javax.swing.JFrame {
                 btn2_JF016_S2ActionPerformed(evt);
             }
         });
-        jPanel2.add(btn2_JF016_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 180, 80));
+        jPanel2.add(btn2_JF016_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 170, 80));
 
         btn3_JF016_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/re.PNG"))); // NOI18N
-        jPanel2.add(btn3_JF016_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 180, 100));
+        jPanel2.add(btn3_JF016_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 170, 100));
 
         btn4_JF016_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/si.PNG"))); // NOI18N
         jPanel2.add(btn4_JF016_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 110, 60));

@@ -27,6 +27,7 @@ public class JF026_S3_AF extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         Btn001_JF026_S3_AF = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -34,6 +35,8 @@ public class JF026_S3_AF extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+
+        jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -170,6 +173,7 @@ public class JF026_S3_AF extends javax.swing.JFrame {
     public javax.swing.JButton Btn001_JF026_S3_AF;
     public com.toedter.calendar.JCalendar jCalendar1;
     public javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;

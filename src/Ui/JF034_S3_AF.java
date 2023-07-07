@@ -32,7 +32,7 @@ public class JF034_S3_AF extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jSlider1 = new javax.swing.JSlider();
         jPanel5 = new javax.swing.JPanel();
-        btn3_JF012_A = new javax.swing.JButton();
+        btn1_JF034_AF = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,11 +64,11 @@ public class JF034_S3_AF extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 740, 410));
 
-        btn3_JF012_A.setBackground(new java.awt.Color(255, 255, 255));
-        btn3_JF012_A.setForeground(new java.awt.Color(255, 255, 255));
-        btn3_JF012_A.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector.png"))); // NOI18N
-        btn3_JF012_A.setBorderPainted(false);
-        jPanel1.add(btn3_JF012_A, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        btn1_JF034_AF.setBackground(new java.awt.Color(255, 255, 255));
+        btn1_JF034_AF.setForeground(new java.awt.Color(255, 255, 255));
+        btn1_JF034_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector.png"))); // NOI18N
+        btn1_JF034_AF.setBorderPainted(false);
+        jPanel1.add(btn1_JF034_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 170, 90));
@@ -123,7 +123,7 @@ public class JF034_S3_AF extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btn3_JF012_A;
+    public javax.swing.JButton btn1_JF034_AF;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;
