@@ -287,7 +287,7 @@ public class JF002_S1_RH extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn1_JF002_S1_RHMouseClicked
 
     private void Btn2_JF002_S1_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn2_JF002_S1_RHActionPerformed
-        Abrirvistas.abrir("JF001_S1_AF", ventanaActual);
+        ux.Abrirvistas.abrir("JF001_S1_AF");
     }//GEN-LAST:event_Btn2_JF002_S1_RHActionPerformed
 
     /**

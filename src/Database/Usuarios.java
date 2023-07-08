@@ -15,7 +15,26 @@ public class Usuarios {
     private String Contraseña;
     private String FotoPerfil;
     private int IDContacto;
+    private int acceso;
+    private int resultado;
 
+    public int getAcceso() {
+        return acceso;
+    }
+
+    public void setAcceso(int acceso) {
+        this.acceso = acceso;
+    }
+
+    public int getResultado() {
+        return resultado;
+    }
+
+    public void setResultado(int resultado) {
+        this.resultado = resultado;
+    }
+     
+    
     public int getIDUsuario() {
         return IDUsuario;
     }
@@ -55,5 +74,6 @@ public class Usuarios {
     public void setIDContacto(int IDContacto) {
         this.IDContacto = IDContacto;
     }
+    
     
 }

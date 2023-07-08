@@ -171,7 +171,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
 
         jLabel2.setForeground(new java.awt.Color(0, 102, 102));
         jLabel2.setText("“Cuando no somos capaces ya de cambiar una situación, ");
-        JP001_S1_AF.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 280, 30));
+        JP001_S1_AF.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, -1, 30));
 
         jLabel6.setForeground(new java.awt.Color(0, 102, 102));
         jLabel6.setText(" nos enfrentamos al reto de cambiar nosotros mismos”");
@@ -239,11 +239,14 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JF001_S1_AF().setVisible(true);
+                
                 Usuarios modelUsers = new Usuarios();
                 Procesos_almacenados Procesos = new Procesos_almacenados();
                 JF001_S1_AF vistaJF001 = new JF001_S1_AF();
+                System.out.println("Antes de que se ejecute controlador");
                 Login Logear = new Login(modelUsers, vistaJF001, Procesos);
+                System.out.println("Dejpue");
+                vistaJF001.setVisible(true);
             }
         });
     }

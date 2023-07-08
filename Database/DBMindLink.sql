@@ -355,7 +355,7 @@ Ya esta bien aaaa
 /*
 Desde aquí comienzan los procesos almacenados
 */
-CREATE PROCEDURE PDRegistrarAdmin
+ALTER PROCEDURE PDRegistrarAdmin
     @nombreTbA VARCHAR(90),
     @UsernameTbU VARCHAR(50),
     @ContraseñaTbU VARCHAR(90),
@@ -375,10 +375,12 @@ BEGIN
     BEGIN
 	-- Con esto declaramos la variable que contendra el Hash
 		DECLARE @HashContraseñaTbU VARBINARY (64);
+		DECLARE @newHash VARBINARY(64);
 		SET @HashContraseñaTbU = HASHBYTES('SHA2_256', @ContraseñaTbU);
+		SET @newHash = HASHBYTES('SHA2_256', @HashContraseñaTbU);
     -- Con las dos lineas de abajo mandamos a almacenar el Username y la contraseña con Hash
 		INSERT INTO TbUsuarios (Username, Contraseña)
-        VALUES (@UsernameTbU, @HashContraseñaTbU)
+        VALUES (@UsernameTbU, @newHash)
     END
 	-- Obtener el IDUsuario basado en el Username
     DECLARE @IDUsuario INT
@@ -394,9 +396,8 @@ EXEC PDRegistrarAdmin 'Orlando', 'Pepito', 'Contraseña', '52281'
 /* esto es para comprobar que el PDResgistrarAdmin funciona jejeje
 Drop Procedure PDRegistrarAdmin
 
-
-Delete TbUsuarios
 Delete TbAdministrador
+Delete TbUsuarios
 Delete TbClinicas
  
 	esto es para reiniciar los PK en 0
@@ -411,14 +412,17 @@ Contraseña varbinary(64),
 FotoPerfil image,
 IDContacto int
 );
-Select * from TbUsuarios
 Select * from TbAdministrador
 Select * from TbClinicas
+Select * from TbUsuarios
+Select * from TbSecretaria
+Insert into TbUsuarios values ('JuanaGalindo', '');
+Insert into TbSecretaria values ('Juana','','','','','');
 */
 
 --Aqui empieza el proceso para logear todo tipo de usuario, admin, empleado, usuario
 
-CREATE PROCEDURE PDLogear
+ALTER PROCEDURE PDLogear
     @UsernameIngresado VARCHAR(50),
     @ContraseñaIngresado VARCHAR(90),
     @abrirventana INT OUTPUT,
@@ -450,13 +454,15 @@ BEGIN
         -- Con esto declaramos la variable que contendrá el Hash
         DECLARE @HashContraseñaTbU VARBINARY(64);
         DECLARE @Contraseñareal VARBINARY(64);
+		DECLARE @newHash VARBINARY(64);
 
         SET @HashContraseñaTbU = HASHBYTES('SHA2_256', @ContraseñaIngresado);
+		SET @newHash = HASHBYTES('SHA2_256', @HashContraseñaTbU);
         SET @Contraseñareal = (SELECT Contraseña FROM TbUsuarios WHERE IDUsuario = @IDUsuario);
 	--	PRINT @HashContraseñaTbU
 		--PRINT @Contraseñareal
         -- Con las líneas de abajo, veremos si la contraseña mandada ya hasheada coincide con la registrada
-        IF (@HashContraseñaTbU = @Contraseñareal)
+        IF (@newHash = @Contraseñareal)
         BEGIN
 		
             IF (@IDUsuario = @AdminExist)
@@ -561,12 +567,74 @@ END
 
 EXEC PDRegistrarpaciente 'Juan','CagaLindo','9-10-2001','52281','Juanes','contraseña', '+503 7689 6281';
 
-Select * from TbContactos;
-Select * from TbUsuarios;
-Select * from TbClinicas;
-Select * from TbPacientes;
-DROP Procedure PDRegistrarpaciente
+--Select * from TbContactos;
+--Select * from TbUsuarios;
+--Select * from TbClinicas;
+--Select * from TbPacientes;
+--DROP Procedure PDRegistrarpaciente
+
+/*
+Aqui empieza el proceso para Crear o actualizar un usuario de tipo empleado:
+*/
+CREATE PROCEDURE PDCrearActualizarUsuario
+    @nombreUsuario VARCHAR(50),
+    @contraseña VARCHAR(50)
+AS
+BEGIN
+    -- Verificar si el usuario ya existe en la tabla
+    IF EXISTS (SELECT 1 FROM dbo.TbUsuarios WHERE UserName = @nombreUsuario)
+    BEGIN
+        -- Actualizar la contraseña existente
+        UPDATE dbo.TbUsuarios
+        SET Contraseña = CONVERT(VARBINARY(MAX), @contraseña)
+        WHERE UserName = @nombreUsuario
+    END
+    ELSE
+    BEGIN
+        -- Insertar un nuevo registro
+        INSERT INTO dbo.TbUsuarios (UserName, Contraseña)
+        VALUES (@nombreUsuario, CONVERT(VARBINARY(MAX), @contraseña))
+    END
+END
+
+
+EXEC CrearActualizarUsuario @nombreUsuario = 'ejemplo_usuario', @contraseña = 'ejemplo_contraseña';
+--- DROP Procedure PDCrearActualizarUsuario
+
+/*
+El siguiente proceso es para solo ACTUALIZAR la contraseña de los usuarios, más no crear usuarios, solo actualizar
+*/
+CREATE PROCEDURE PDActualizarUsuario
+    @nombreUsuario VARCHAR(50),
+    @contraseña VARCHAR(50)
+AS
+BEGIN
+    -- Verificar si el usuario ya existe en la tabla
+    IF EXISTS (SELECT 1 FROM dbo.TbUsuarios WHERE UserName = @nombreUsuario)
+    BEGIN
+        -- Actualizar la contraseña existente
+        UPDATE dbo.TbUsuarios
+        SET Contraseña = CONVERT(VARBINARY(MAX), @contraseña)
+        WHERE UserName = @nombreUsuario
+    END
+    ELSE
+    BEGIN
+        -- Insertar un nuevo registro
+        INSERT INTO dbo.TbUsuarios (UserName, Contraseña)
+        VALUES (@nombreUsuario, CONVERT(VARBINARY(MAX), @contraseña))
+    END
+END
 /*
 Desde aquí comienzan las vistas
 
 */
+--Esta vista es para ver el usuario, la contraseña y el cargo de un empleado
+CREATE VIEW VistaUsuarios
+AS
+SELECT u.UserName, u.Contraseña, t.Cargo
+FROM TbUsuarios u
+INNER JOIN TbTipoUsuarios t ON t.IDTipoUsuario = t.IDTipoUsuario
+
+--Esto es para seleccionar la vista:
+--SELECT * FROM VistaUsuarios
+-- DROP VIEW VistaUsuarios

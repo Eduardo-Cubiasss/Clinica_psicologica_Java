@@ -54,11 +54,37 @@ public class Procesos_almacenados {
     }
     public static int Logear(Usuarios modelousuarios){
         
-        int acceso = 0;
+       int acceso = 0;
         int nivelusuario = 0;
         PreparedStatement ps;
         Connection conn;
         try {
+            conn = ConnectionSQL.getConexion();
+            ps = conn.prepareStatement("DECLARE @resultado INT; DECLARE @ventana INT; EXEC PDLogear ?, ?, @resultado OUTPUT, @ventana OUTPUT;");
+            ps.setString(1, modelousuarios.getUserName());
+            ps.setString(2, modelousuarios.getContraseña());
+
+            ResultSet rs = ps.executeQuery("SELECT @resultado AS acceso");
+            ResultSet rs1 = ps.executeQuery("SELECT @ventana AS abrirventana");
+
+            while(rs.next()) {
+                acceso = rs.getInt(1); // Obtener el valor de la variable de salida @resultado
+                modelousuarios.setAcceso(acceso);
+                System.out.println(acceso);
+            }
+            while(rs1.next()){
+                nivelusuario = rs1.getInt(1);
+                modelousuarios.setResultado(nivelusuario);
+                System.out.println(nivelusuario);
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error #0001");
+            e.printStackTrace();
+        }
+        return 0;
+            /*
+            
             conn = ConnectionSQL.getConexion();
             ps = conn.prepareStatement("DECLARE @resultado INT; DECLARE @ventana INT; EXEC PDLogear ?, ?, @resultado OUTPUT, @ventana OUTPUT;");
             ps.setString(1, modelousuarios.getUserName());
@@ -86,11 +112,13 @@ public class Procesos_almacenados {
              *
              * ps = conn.prepareStatement("SELECT @resultado AS Acceso"); ps=
              * get.boolean(1, acceso);
-             */
+             
         } catch (Exception e) {
             System.out.println("Error #0001");
             e.printStackTrace();
         }
         return 0;
+        */
+            
     }
 }
