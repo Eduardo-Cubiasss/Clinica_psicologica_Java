@@ -55,7 +55,7 @@ public class Procesos_almacenados {
     public static int Logear(Usuarios modelousuarios){
         
        int acceso = 0;
-        int nivelusuario = 0;
+       int nivelusuario = 0;
         PreparedStatement ps;
         Connection conn;
         try {
@@ -79,7 +79,7 @@ public class Procesos_almacenados {
             }
 
         } catch (Exception e) {
-            System.out.println("Error #0001");
+            System.out.println("Error #J00DA");
             e.printStackTrace();
         }
         return 0;
@@ -121,4 +121,75 @@ public class Procesos_almacenados {
         */
             
     }
+    public static boolean RecCorreo (Usuarios ModelUsers, Contactos ModelContactos)
+    {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        try {
+            conn = (Connection) ConnectionSQL.getConexion();
+            ps = conn.prepareStatement("Exec PDActualizarContraGmail ?, ?;");
+            ps.setString(1, ModelUsers.getContraseña());
+            ps.setString(2, ModelContactos.getCorreo());
+            System.out.println("Exitooo");
+            ps.executeUpdate();
+            System.out.println("Lo lograste");
+            return true;
+
+        } catch (SQLException e) {
+            System.out.println("Error #J001DA");
+            System.out.println(e.toString());
+            return false;
+        } finally {
+            if (ps != null) {
+                try {
+                    ps.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+     public static boolean RecTelefono (Usuarios ModelUsers, Contactos ModelContactos)
+    {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        try {
+            conn = (Connection) ConnectionSQL.getConexion();
+            ps = conn.prepareStatement("Exec PDActualizarContraNum ?, ?;");
+            ps.setString(1, ModelUsers.getContraseña());
+            ps.setString(2, ModelContactos.getNumTelefonico());
+            System.out.println("Exitooo");
+            ps.executeUpdate();
+            System.out.println("Lo lograste");
+            return true;
+
+        } catch (SQLException e) {
+            System.out.println("Error #J001DA");
+            System.out.println(e.toString());
+            return false;
+        } finally {
+            if (ps != null) {
+                try {
+                    ps.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    
 }
