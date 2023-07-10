@@ -42,7 +42,7 @@ public class JF040_S3_AF extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 10, 170, 90));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, 170, 90));
 
         Btn001_JF042_1_S3_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn001_JF042_1_S3_AF.setForeground(new java.awt.Color(255, 255, 255));
@@ -51,7 +51,7 @@ public class JF040_S3_AF extends javax.swing.JFrame {
         jPanel1.add(Btn001_JF042_1_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ab1.PNG"))); // NOI18N
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 450, 70, 70));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 450, 70, 70));
 
         jPanel2.setBackground(new java.awt.Color(200, 232, 232));
 
@@ -66,7 +66,7 @@ public class JF040_S3_AF extends javax.swing.JFrame {
             .addGap(0, 53, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 990, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 890, -1));
 
         jPanel3.setBackground(new java.awt.Color(200, 232, 232));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -89,9 +89,9 @@ public class JF040_S3_AF extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 660, 390));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 630, 390));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 680, 410));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 650, 410));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
