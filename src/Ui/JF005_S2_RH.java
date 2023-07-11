@@ -33,12 +33,11 @@ public class JF005_S2_RH extends javax.swing.JFrame {
         JP001_S1_RH = new javax.swing.JPanel();
         TxtTelefonoRegister_JF005_S2_RH = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        TxtCodigoTel_JF005_S2_RH = new javax.swing.JTextField();
-        PassField_ConfirmarContra_JF005_S2_RH = new javax.swing.JPasswordField();
-        jLabel10 = new javax.swing.JLabel();
         Btn2_JF005_S2_RH = new javax.swing.JButton();
         Btn1_JF005_S2_RH = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btn3_JF005_S2_RH = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,34 +78,9 @@ public class JF005_S2_RH extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 153));
         jLabel4.setText("RECUPERA TU CONTRASEÑA");
-
-        TxtCodigoTel_JF005_S2_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        TxtCodigoTel_JF005_S2_RH.setForeground(new java.awt.Color(153, 153, 153));
-        TxtCodigoTel_JF005_S2_RH.setText("Código enviado a tu número de telefono");
-        TxtCodigoTel_JF005_S2_RH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        TxtCodigoTel_JF005_S2_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        TxtCodigoTel_JF005_S2_RH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtCodigoTel_JF005_S2_RHActionPerformed(evt);
-            }
-        });
-
-        PassField_ConfirmarContra_JF005_S2_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        PassField_ConfirmarContra_JF005_S2_RH.setForeground(new java.awt.Color(153, 153, 153));
-        PassField_ConfirmarContra_JF005_S2_RH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        PassField_ConfirmarContra_JF005_S2_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        PassField_ConfirmarContra_JF005_S2_RH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PassField_ConfirmarContra_JF005_S2_RHActionPerformed(evt);
-            }
-        });
-
-        jLabel10.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel10.setText("Confirmar nueva contraseña");
 
         Btn2_JF005_S2_RH.setBackground(new java.awt.Color(255, 255, 255));
         Btn2_JF005_S2_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
@@ -132,58 +106,62 @@ public class JF005_S2_RH extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setForeground(new java.awt.Color(0, 102, 102));
-        jButton3.setText("¿Quieres probar otro método de recuperación?");
-        jButton3.setBorder(null);
+        btn3_JF005_S2_RH.setBackground(new java.awt.Color(255, 255, 255));
+        btn3_JF005_S2_RH.setForeground(new java.awt.Color(0, 102, 102));
+        btn3_JF005_S2_RH.setText("¿Quieres probar otro método de recuperación?");
+        btn3_JF005_S2_RH.setBorder(null);
+
+        jLabel6.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel6.setText("<html> Sigue las siguientes indicaciones para recuperar tu contraseña <br>    ");
+
+        jLabel11.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel11.setText("Elige el número de teléfono con el que te asociaste");
 
         javax.swing.GroupLayout JP001_S1_RHLayout = new javax.swing.GroupLayout(JP001_S1_RH);
         JP001_S1_RH.setLayout(JP001_S1_RHLayout);
         JP001_S1_RHLayout.setHorizontalGroup(
             JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 101, Short.MAX_VALUE))
-            .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TxtTelefonoRegister_JF005_S2_RH)
-                    .addComponent(jLabel10)
-                    .addComponent(TxtCodigoTel_JF005_S2_RH, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
-                    .addComponent(PassField_ConfirmarContra_JF005_S2_RH))
+                .addGap(80, 80, 80)
+                .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(53, Short.MAX_VALUE)
                 .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(111, 111, 111))
+                        .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TxtTelefonoRegister_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11))
+                        .addGap(48, 48, 48))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
                         .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Btn2_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Btn1_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(118, 118, 118))))
+                        .addGap(118, 118, 118))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
+                        .addComponent(btn3_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38))))
         );
         JP001_S1_RHLayout.setVerticalGroup(
             JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(69, 69, 69)
                 .addComponent(jLabel4)
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(TxtTelefonoRegister_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(TxtCodigoTel_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(PassField_ConfirmarContra_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(29, 29, 29)
                 .addComponent(Btn1_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Btn2_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btn3_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(203, Short.MAX_VALUE))
         );
 
         kGradientPanel1.add(JP001_S1_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, -10, 450, 620));
@@ -199,7 +177,7 @@ public class JF005_S2_RH extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 536, Short.MAX_VALUE)
         );
 
         pack();
@@ -208,14 +186,6 @@ public class JF005_S2_RH extends javax.swing.JFrame {
     private void TxtTelefonoRegister_JF005_S2_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTelefonoRegister_JF005_S2_RHActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtTelefonoRegister_JF005_S2_RHActionPerformed
-
-    private void TxtCodigoTel_JF005_S2_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCodigoTel_JF005_S2_RHActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtCodigoTel_JF005_S2_RHActionPerformed
-
-    private void PassField_ConfirmarContra_JF005_S2_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassField_ConfirmarContra_JF005_S2_RHActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PassField_ConfirmarContra_JF005_S2_RHActionPerformed
 
     private void Btn1_JF005_S2_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn1_JF005_S2_RHActionPerformed
         // TODO add your handling code here:
@@ -261,15 +231,14 @@ public class JF005_S2_RH extends javax.swing.JFrame {
     public javax.swing.JButton Btn1_JF005_S2_RH;
     public javax.swing.JButton Btn2_JF005_S2_RH;
     public javax.swing.JPanel JP001_S1_RH;
-    public javax.swing.JPasswordField PassField_ConfirmarContra_JF005_S2_RH;
-    public javax.swing.JTextField TxtCodigoTel_JF005_S2_RH;
     public javax.swing.JTextField TxtTelefonoRegister_JF005_S2_RH;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JButton btn3_JF005_S2_RH;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }
