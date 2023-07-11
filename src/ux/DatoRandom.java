@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ux;
+import Database.Contactos;
 import java.util.Random;
 
 /**
@@ -12,8 +13,13 @@ import java.util.Random;
  */
 public class DatoRandom {
     private static final String ALLOWED_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    private Contactos ModelContactos;
     
-    public static String generateRandomData(int length) {
+    public DatoRandom(Contactos ModelContactos) {
+        this.ModelContactos = ModelContactos;
+    }
+    
+    public static String generateRandomData(Contactos modelContactos, int length) {
         Random random = new Random();
         StringBuilder stringBuilder = new StringBuilder(length);
         
@@ -23,6 +29,10 @@ public class DatoRandom {
             stringBuilder.append(randomChar);
         }
         
+        String Dato = ux.DatoRandom.generateRandomData(modelContactos, 5);
+        modelContactos.setNumeroRandom(Dato);
+        
         return stringBuilder.toString();
     }
 }
+

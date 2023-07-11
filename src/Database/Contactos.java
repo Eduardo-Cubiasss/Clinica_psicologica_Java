@@ -13,7 +13,34 @@ public class Contactos {
 
     private int IDContacto;
     private String Correo;
+    private String CorreoVal;
     private String NumTelefonico;
+    private String NumTelefonicoVal;
+    private String NumeroRandom;
+
+    public String getNumeroRandom() {
+        return NumeroRandom;
+    }
+
+    public void setNumeroRandom(String NumeroRandom) {
+        this.NumeroRandom = NumeroRandom;
+    }
+
+    public String getCorreoVal() {
+        return CorreoVal;
+    }
+
+    public void setCorreoVal(String CorreoVal) {
+        this.CorreoVal = CorreoVal;
+    }
+
+    public String getNumTelefonicoVal() {
+        return NumTelefonicoVal;
+    }
+
+    public void setNumTelefonicoVal(String NumTelefonicoVal) {
+        this.NumTelefonicoVal = NumTelefonicoVal;
+    }
 
     public int getIDContacto() {
         return IDContacto;

@@ -43,8 +43,7 @@ public class Login implements ActionListener {
             if (Acceso == 1) {
                 switch (Nivel) {
                     case 1:
-                        JF004_S2_AF frame = new JF004_S2_AF();
-                        frame.setVisible(true);
+                        Abrirvistas.abrir("JF004_S2_AF");
                         break;
                     case 2:
                         Abrirvistas.abrir("JF039_S3_RH");

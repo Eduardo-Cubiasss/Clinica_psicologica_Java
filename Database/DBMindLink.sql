@@ -100,10 +100,10 @@ Contraseña varbinary(64),
 FotoPerfil image,
 IDContacto int
 );
-Create table TbContactos(
+ALTER table TbContactos(
 IDContacto int identity(1,1) primary key,
 Correo varchar(300),
-NumTelefonico nvarchar(14)
+NumTelefonico varchar(14)
 );
 Create table TbGenero(
 IDGenero int identity(1,1) primary key,
@@ -696,6 +696,51 @@ BEGIN
 END
 
 EXEC PDActualizarContraNum '69839847','Papitaaaaa'
+
+/*Este proceso es para devolver un valor 1 en caso de que el correo sea encontrado en la db
+*/
+
+CREATE PROCEDURE PdBuscarCorreo
+	@Correo VARCHAR(300),
+	@Correoexistente INT OUTPUT
+	AS
+	BEGIN
+		DECLARE @CorreoExis INT;
+		SET @CorreoExis = 0;
+		IF EXISTS (SELECT 1 FROM dbo.TbContactos WHERE Correo = @Correo)
+		BEGIN
+			SET @CorreoExis = 1;
+		END
+	SET @Correoexistente = @CorreoExis
+
+END
+
+DECLARE @CorreoExis INT;
+EXEC PdBuscarCorreo 'guayito.palom0@gmail.com', @CorreoExis OUTPUT;
+SELECT @CorreoExis AS Correoexistente;
+
+/*Este proceso es para devolver un valor 1 en caso de que el correo sea encontrado en la db
+*/
+
+CREATE PROCEDURE PdBuscarNum
+	@Numero VARCHAR(300),
+	@NumeroExistente INT OUTPUT
+	AS
+	BEGIN
+		DECLARE @NumeroExis INT;
+		SET @NumeroExis= 0;
+		IF EXISTS (SELECT 1 FROM dbo.TbContactos WHERE NumTelefonico= @Numero)
+		BEGIN
+			SET @NumeroExis = 1;
+		END
+	SET @NumeroExistente = @NumeroExis
+
+END
+
+DECLARE @NumeroExis INT;
+EXEC PdBuscarNum '69839847', @NumeroExis OUTPUT;
+SELECT @NumeroExis AS NumeroExistente;
+
 /*
 Desde aquí comienzan las vistas
 

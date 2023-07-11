@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,7 +34,7 @@ public class Procesos_almacenados {
             return true;
 
         } catch (SQLException e) {
-            System.out.println("Error #J001GU");
+            JOptionPane.showMessageDialog(null, "Error J001GU", "Error al crear el usuario", JOptionPane.INFORMATION_MESSAGE);
             System.out.println(e.toString());
             return false;
         } finally {
@@ -77,8 +78,8 @@ public class Procesos_almacenados {
 
                 modelousuarios.setAcceso(1);
                 modelousuarios.setResultado(2);
-                System.out.println("ACESOOOOOOOOO"+rs.getInt("acceso") );
-                  //  System.out.println("ACESOOOOOOOOO"+rs.getInt("abrirventana") );
+                System.out.println("ACESOOOOOOOOO" + rs.getInt("acceso"));
+                //  System.out.println("ACESOOOOOOOOO"+rs.getInt("abrirventana") );
 
             }
             /*
@@ -90,45 +91,10 @@ public class Procesos_almacenados {
 
         } catch (Exception e) {
             System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Credenciales incorrectas", JOptionPane.INFORMATION_MESSAGE);
             e.printStackTrace();
         }
         return 0;
-        /*
-            
-            conn = ConnectionSQL.getConexion();
-            ps = conn.prepareStatement("DECLARE @resultado INT; DECLARE @ventana INT; EXEC PDLogear ?, ?, @resultado OUTPUT, @ventana OUTPUT;");
-            ps.setString(1, modelousuarios.getUserName());
-            ps.setString(2, modelousuarios.getContraseña());
-
-            // Realizar una consulta adicional para obtener el resultado
-           // PreparedStatement psConsulta = conn.prepareStatement("SELECT @resultado AS acceso;");
-            ResultSet rs = ps.executeQuery();
-
-            if (rs.next()) {
-                acceso = rs.getInt("acceso");
-                nivelusuario = rs.getInt("abrirventana");
-                //PreparedStatement psConsulta2 = conn.prepareStatement("SELECT @ventana AS abrirventana;");
-                //ResultSet rs1 = psConsulta2.executeQuery();
-                System.out.println(acceso);
-                System.out.println(nivelusuario);
-            }
-            //ps.executeUpdate();
-            /**
-             * conn = (Connection) ConnectionSQL.getConexion(); conn =
-             * (Connection) ConnectionSQL.getConexion(); ps =
-             * conn.prepareStatement("DECLARE @resultados BIT; EXEC PDLogear
-             * (?), (?), @resultados OUTPUT"); ps.setString(1, user);
-             * ps.setString(2, pass); ps.executeUpdate();
-             *
-             * ps = conn.prepareStatement("SELECT @resultado AS Acceso"); ps=
-             * get.boolean(1, acceso);
-             
-        } catch (Exception e) {
-            System.out.println("Error #0001");
-            e.printStackTrace();
-        }
-        return 0;
-         */
 
     }
 
@@ -146,7 +112,7 @@ public class Procesos_almacenados {
             return true;
 
         } catch (SQLException e) {
-            System.out.println("Error #J001GU");
+            JOptionPane.showMessageDialog(null, "J001GU", "Error al actualizar contraseña", JOptionPane.INFORMATION_MESSAGE);
             System.out.println(e.toString());
             return false;
         } finally {
@@ -181,7 +147,7 @@ public class Procesos_almacenados {
             return true;
 
         } catch (SQLException e) {
-            System.out.println("Error #J001DA");
+            JOptionPane.showMessageDialog(null, "J001DA ", "Error al enviar mensaje", JOptionPane.INFORMATION_MESSAGE);
             System.out.println(e.toString());
             return false;
         } finally {
@@ -201,5 +167,82 @@ public class Procesos_almacenados {
             }
         }
     }
+
+    public boolean ValCorreo(Contactos ModelContactos) {
+        int CorreoVal = 0;
+        PreparedStatement ps;
+        Connection conn;
+        try {
+            conn = ConnectionSQL.getConexion();
+            ps = conn.prepareStatement("DECLARE @CorreoExis INT; EXEC PdBuscarCorreo ?, @CorreoExis OUTPUT; SELECT @CorreoExis AS Correoexistente;");
+            ps.setString(1, ModelContactos.getCorreoVal());
+
+            //ResultSet rs = ps.executeQuery("SELECT @resultado AS acceso");
+            //ResultSet rs1 = ps.executeQuery("SELECT @ventana AS abrirventana");
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                // acceso = rs.getInt(1); // Obtener el valor de la variable de salida @resultado
+                // modelousuarios.setAcceso(acceso);
+                //System.out.println(acceso);
+                if (CorreoVal == 1) {
+                    ModelContactos.setCorreo(ModelContactos.getCorreoVal());
+                } else {
+                    JOptionPane.showMessageDialog(null, "J022DA ", "Error al enviar correo", JOptionPane.INFORMATION_MESSAGE);
+                }
+
+            }
+            /*
+            while(rs1.next()){
+                nivelusuario = rs1.getInt(1);
+                modelousuarios.setResultado(nivelusuario);
+                System.out.println(nivelusuario);
+            }*/
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "J00DA ", "Error con la base de datos", JOptionPane.INFORMATION_MESSAGE);
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean valTelefono(Contactos ModelContactos) {
+        int TelefonoVal = 0;
+        PreparedStatement ps;
+        Connection conn;
+        try {
+            conn = ConnectionSQL.getConexion();
+            ps = conn.prepareStatement("DECLARE @CorreoExis INT; EXEC PdBuscarCorreo ?, @CorreoExis OUTPUT; SELECT @CorreoExis AS Correoexistente;");
+            ps.setString(1, ModelContactos.getNumTelefonicoVal());
+
+            //ResultSet rs = ps.executeQuery("SELECT @resultado AS acceso");
+            //ResultSet rs1 = ps.executeQuery("SELECT @ventana AS abrirventana");
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                // acceso = rs.getInt(1); // Obtener el valor de la variable de salida @resultado
+                // modelousuarios.setAcceso(acceso);
+                //System.out.println(acceso);
+                if (TelefonoVal == 1) {
+                    ModelContactos.setNumTelefonico(ModelContactos.getNumTelefonicoVal());
+                } else {
+                    JOptionPane.showMessageDialog(null, "J022DA ", "Error al enviar mensaje", JOptionPane.INFORMATION_MESSAGE);
+                }
+
+            }
+            /*
+            while(rs1.next()){
+                nivelusuario = rs1.getInt(1);
+                modelousuarios.setResultado(nivelusuario);
+                System.out.println(nivelusuario);
+            }*/
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "J00DA ", "Error con la base de datos", JOptionPane.INFORMATION_MESSAGE);
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
 }
