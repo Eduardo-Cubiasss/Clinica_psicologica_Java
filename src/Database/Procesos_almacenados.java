@@ -15,6 +15,7 @@ import java.sql.SQLException;
  * @author 50369
  */
 public class Procesos_almacenados {
+
     public boolean In_admin_clinica_users(Administrador modeloadmin, Usuarios modelousuarios, Clinica modeloclinica) {
         Connection conn = null;
         PreparedStatement ps = null;
@@ -52,38 +53,47 @@ public class Procesos_almacenados {
             }
         }
     }
-    public static int Logear(Usuarios modelousuarios){
-        
-       int acceso = 0;
-       int nivelusuario = 0;
+
+    public int Logear(Usuarios modelousuarios) {
+
+        int acceso = 0;
+        int nivelusuario = 0;
         PreparedStatement ps;
         Connection conn;
         try {
             conn = ConnectionSQL.getConexion();
-            ps = conn.prepareStatement("DECLARE @resultado INT; DECLARE @ventana INT; EXEC PDLogear ?, ?, @resultado OUTPUT, @ventana OUTPUT;");
+            ps = conn.prepareStatement("DECLARE @resultado INT; DECLARE @ventana INT; EXEC PDLogear ?, ?, @resultado OUTPUT, @ventana OUTPUT; SELECT @resultado AS acceso; SELECT @ventana AS abrirventana;");
             ps.setString(1, modelousuarios.getUserName());
             ps.setString(2, modelousuarios.getContraseña());
 
-            ResultSet rs = ps.executeQuery("SELECT @resultado AS acceso");
-            ResultSet rs1 = ps.executeQuery("SELECT @ventana AS abrirventana");
+            //ResultSet rs = ps.executeQuery("SELECT @resultado AS acceso");
+            //ResultSet rs1 = ps.executeQuery("SELECT @ventana AS abrirventana");
+            ResultSet rs = ps.executeQuery();
 
-            while(rs.next()) {
-                acceso = rs.getInt(1); // Obtener el valor de la variable de salida @resultado
-                modelousuarios.setAcceso(acceso);
-                System.out.println(acceso);
+            while (rs.next()) {
+                // acceso = rs.getInt(1); // Obtener el valor de la variable de salida @resultado
+                // modelousuarios.setAcceso(acceso);
+                //System.out.println(acceso);
+
+                modelousuarios.setAcceso(1);
+                modelousuarios.setResultado(2);
+                System.out.println("ACESOOOOOOOOO"+rs.getInt("acceso") );
+                  //  System.out.println("ACESOOOOOOOOO"+rs.getInt("abrirventana") );
+
             }
+            /*
             while(rs1.next()){
                 nivelusuario = rs1.getInt(1);
                 modelousuarios.setResultado(nivelusuario);
                 System.out.println(nivelusuario);
-            }
+            }*/
 
         } catch (Exception e) {
             System.out.println("Error #J00DA");
             e.printStackTrace();
         }
         return 0;
-            /*
+        /*
             
             conn = ConnectionSQL.getConexion();
             ps = conn.prepareStatement("DECLARE @resultado INT; DECLARE @ventana INT; EXEC PDLogear ?, ?, @resultado OUTPUT, @ventana OUTPUT;");
@@ -118,11 +128,11 @@ public class Procesos_almacenados {
             e.printStackTrace();
         }
         return 0;
-        */
-            
+         */
+
     }
-    public static boolean RecCorreo (Usuarios ModelUsers, Contactos ModelContactos)
-    {
+
+    public boolean RecCorreo(Usuarios ModelUsers, Contactos ModelContactos) {
         Connection conn = null;
         PreparedStatement ps = null;
         try {
@@ -136,7 +146,7 @@ public class Procesos_almacenados {
             return true;
 
         } catch (SQLException e) {
-            System.out.println("Error #J001DA");
+            System.out.println("Error #J001GU");
             System.out.println(e.toString());
             return false;
         } finally {
@@ -156,8 +166,8 @@ public class Procesos_almacenados {
             }
         }
     }
-     public static boolean RecTelefono (Usuarios ModelUsers, Contactos ModelContactos)
-    {
+
+    public boolean RecTelefono(Usuarios ModelUsers, Contactos ModelContactos) {
         Connection conn = null;
         PreparedStatement ps = null;
         try {
@@ -191,5 +201,5 @@ public class Procesos_almacenados {
             }
         }
     }
-    
+
 }

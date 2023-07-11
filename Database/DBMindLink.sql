@@ -520,9 +520,10 @@ END
 
 DECLARE @resultado INT;
 DECLARE @ventana INT;
-EXEC PDLogear 'Guayito', 'Papitas fritas', @ventana OUTPUT, @resultado OUTPUT;
+EXEC PDLogear 'Guayito', 'Contraseña', @ventana OUTPUT, @resultado OUTPUT;
 SELECT @resultado AS acceso;
 SELECT @ventana AS abrirventana;
+
 
 select * from TbAdministrador
 select* from TbUsuarios
@@ -541,6 +542,7 @@ DECLARE @resultado INT;
 --DROP Procedure PDLogear
 ---
 --- Aqui empieza el proceso de registrar pacientes
+
 CREATE PROCEDURE PDRegistrarpaciente
     @nombreTbP VARCHAR(90),
 	@apellidoTbp VARCHAR(90),
@@ -566,7 +568,7 @@ BEGIN
 			SET @newHash = HASHBYTES('SHA2_256', @HashContraseñaTbU);
 			INSERT INTO TbContactos (NumTelefonico)
 			VALUES (@Numtel)
-			DECLARE @Numerotel INT
+			DECLARE @Numerotel NVARCHAR
 			SET @Numerotel = (SELECT IDContacto FROM TbContactos WHERE @NumTel = @Numerotel)
 			-- Con las dos lineas de abajo mandamos a almacenar el Username y la contraseña con Hash
 			INSERT INTO TbUsuarios (Username, Contraseña, IDContacto)
@@ -584,7 +586,7 @@ BEGIN
 END
 
 
-EXEC PDRegistrarpaciente 'Juan','CagaLindo','9-10-2001','52281','Juanes','contraseña', '+503 7689 6281';
+EXEC PDRegistrarpaciente 'Luis','CagaLindo','9-10-2001','52281','Pepito','contraseña', ' 7689 6281';
 
 --Select * from TbContactos;
 --Select * from TbUsuarios;
