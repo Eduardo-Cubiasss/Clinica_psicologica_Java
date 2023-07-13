@@ -37,16 +37,22 @@ public class RecGmail implements ActionListener {
         this.vistaJF003 = vistaJF003;
         this.Procesos = Procesos;
         this.vistaJF003.Btn1_JF003_2_S1_RH.addActionListener(this);
+        System.out.println("Furula");
     }
-
+ 
     @Override
     public void actionPerformed(ActionEvent e) {
+        System.out.println("Diii");
         if (e.getSource() == vistaJF003.Btn1_JF003_2_S1_RH) {
+            System.out.println("Funciona creo");
             modelUsers.setContraseña(vistaJF003.PassField_ConfirmarContra_JF003_3_S1_RH1.getText());
-
+            System.out.println(ModelContactos.getNumeroRandom());
+            System.out.println(vistaJF003.TxtCodigoCorreo_JF003_2_S1_RH2.getText());
             ModelContactos.setCorreo(ModelContactos.getCorreo());
             if (ModelContactos.getNumeroRandom().equals(vistaJF003.TxtCodigoCorreo_JF003_2_S1_RH2.getText())) {
                 Procesos.RecCorreo(modelUsers, ModelContactos);
+                JOptionPane.showMessageDialog(null, "Intenta iniciar sesión por favor", "Sugerencia", JOptionPane.INFORMATION_MESSAGE);
+                Abrirvistas.abrir("JF002_S1_RH");
             }
 
         }

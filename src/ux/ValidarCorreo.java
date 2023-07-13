@@ -17,13 +17,14 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
+import ux.DatoRandom;
 
 /**
  *
  * @author 50369
  */
 public class ValidarCorreo implements ActionListener{
-    private Contactos ModelContactos;
+    private Contactos ModelContactos;  
     private JF003_S1_RH vistaJF003;
     private Procesos_almacenados Procesos;
     public ValidarCorreo (Contactos ModelContactos, JF003_S1_RH vistaJF003, Procesos_almacenados Procesos)
@@ -45,6 +46,8 @@ public class ValidarCorreo implements ActionListener{
         if(CorreoNoVer.equals(Correo))
         {
             try {
+                DatoRandom datoRandom = new  DatoRandom(ModelContactos, 5);
+                ModelContactos.setNumeroRandom(dato);
                 String Nrandom = ModelContactos.getNumeroRandom();
                 //Preparar las cosas
                 String correoEmisor = "mindlinkoficial@gmail.com";
@@ -77,8 +80,9 @@ public class ValidarCorreo implements ActionListener{
                 t.close();
 
                 JOptionPane.showMessageDialog(null, "Correo enviado");
+                Abrirvistas.abrir("JF003_2_S1_RH");
             } catch (Exception i) {
-                System.out.println(i.toString());
+                System.out.println("ESTE ES EL ERROR" + i.toString());
                 JOptionPane.showMessageDialog(null, "J022DA ", "Error al enviar correo", JOptionPane.INFORMATION_MESSAGE);
             }
         }

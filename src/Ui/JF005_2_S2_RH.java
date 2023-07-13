@@ -5,6 +5,9 @@
  */
 package Ui;
 
+import javax.swing.JTextField;
+import ux.Validaciones;
+
 /**
  *
  * @author LENOVO
@@ -16,6 +19,8 @@ public class JF005_2_S2_RH extends javax.swing.JFrame {
      */
     public JF005_2_S2_RH() {
         initComponents();
+        
+        Validaciones validaciones = new Validaciones(TxtCodigoTel_JF005_2_S2_RH, "SoloNumeros");
     }
 
     /**
@@ -68,7 +73,6 @@ public class JF005_2_S2_RH extends javax.swing.JFrame {
 
         TxtCodigoTel_JF005_2_S2_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         TxtCodigoTel_JF005_2_S2_RH.setForeground(new java.awt.Color(153, 153, 153));
-        TxtCodigoTel_JF005_2_S2_RH.setText("Código enviado a tu número de telefono");
         TxtCodigoTel_JF005_2_S2_RH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         TxtCodigoTel_JF005_2_S2_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         TxtCodigoTel_JF005_2_S2_RH.addActionListener(new java.awt.event.ActionListener() {
@@ -162,8 +166,8 @@ public class JF005_2_S2_RH extends javax.swing.JFrame {
 
         kGradientPanel1.add(JP001_S1_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, -10, 450, 550));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logitooo 2 (1).png"))); // NOI18N
-        kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 450, 270));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logitooo 2.png"))); // NOI18N
+        kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 450, 270));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -212,8 +216,7 @@ public class JF005_2_S2_RH extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(JF005_2_S2_RH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
+        //</editor-fold>    
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

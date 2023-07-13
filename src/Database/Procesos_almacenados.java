@@ -17,6 +17,8 @@ import javax.swing.JOptionPane;
  */
 public class Procesos_almacenados {
 
+    int CorreoVal = 0;
+
     public boolean In_admin_clinica_users(Administrador modeloadmin, Usuarios modelousuarios, Clinica modeloclinica) {
         Connection conn = null;
         PreparedStatement ps = null;
@@ -169,7 +171,7 @@ public class Procesos_almacenados {
     }
 
     public boolean ValCorreo(Contactos ModelContactos) {
-        int CorreoVal = 0;
+
         PreparedStatement ps;
         Connection conn;
         try {
@@ -181,16 +183,20 @@ public class Procesos_almacenados {
             //ResultSet rs1 = ps.executeQuery("SELECT @ventana AS abrirventana");
             ResultSet rs = ps.executeQuery();
 
+            System.out.println(ModelContactos.getCorreoVal());
+            System.out.println(ModelContactos.getCorreo());
             while (rs.next()) {
-                // acceso = rs.getInt(1); // Obtener el valor de la variable de salida @resultado
-                // modelousuarios.setAcceso(acceso);
-                //System.out.println(acceso);
-                if (CorreoVal == 1) {
+                int Correo1 = rs.getInt("Correoexistente");
+
+                if (Correo1 == 1) {
                     ModelContactos.setCorreo(ModelContactos.getCorreoVal());
                 } else {
+                    System.out.println("Erroraso en modelo");
+
                     JOptionPane.showMessageDialog(null, "J022DA ", "Error al enviar correo", JOptionPane.INFORMATION_MESSAGE);
                 }
-
+                System.out.println(ModelContactos.getCorreoVal());
+                System.out.println(ModelContactos.getCorreo());
             }
             /*
             while(rs1.next()){
@@ -243,6 +249,5 @@ public class Procesos_almacenados {
         }
         return false;
     }
-
 
 }

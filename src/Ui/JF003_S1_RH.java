@@ -5,6 +5,10 @@
  */
 package Ui;
 
+import Database.Contactos;
+import Database.Procesos_almacenados;
+import Database.Usuarios;
+import ux.ValidarCorreo;
 
 /**
  *
@@ -226,10 +230,14 @@ public class JF003_S1_RH extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JF003_S1_RH().setVisible(true);
+                Contactos ModelContactos = new Contactos();
+                JF003_S1_RH vistaJF003 = new JF003_S1_RH();
+                Procesos_almacenados Procesos = new Procesos_almacenados();
+                ValidarCorreo Validar = new ValidarCorreo(ModelContactos, vistaJF003, Procesos);
+                vistaJF003.setVisible(true);
             }
         });
     }

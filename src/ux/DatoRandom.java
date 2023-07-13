@@ -19,7 +19,7 @@ public class DatoRandom {
         this.ModelContactos = ModelContactos;
     }
     
-    public static String generateRandomData(Contactos modelContactos, int length) {
+    public String DatoRandom (Contactos ModelContactos, int length) {
         Random random = new Random();
         StringBuilder stringBuilder = new StringBuilder(length);
         
@@ -29,8 +29,6 @@ public class DatoRandom {
             stringBuilder.append(randomChar);
         }
         
-        String Dato = ux.DatoRandom.generateRandomData(modelContactos, 5);
-        modelContactos.setNumeroRandom(Dato);
         
         return stringBuilder.toString();
     }

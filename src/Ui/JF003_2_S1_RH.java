@@ -5,6 +5,11 @@
  */
 package Ui;
 
+import Database.Contactos;
+import Database.Procesos_almacenados;
+import Database.Usuarios;
+import ux.RecGmail;
+
 /**
  *
  * @author LENOVO
@@ -246,7 +251,13 @@ public class JF003_2_S1_RH extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JF003_2_S1_RH().setVisible(true);
+                Usuarios modelUsers = new Usuarios();
+                Contactos ModelContactos = new Contactos();
+                JF003_2_S1_RH vistaJF003 = new JF003_2_S1_RH();
+                Procesos_almacenados Procesos = new Procesos_almacenados();
+                RecGmail Gmail = new RecGmail(modelUsers, ModelContactos, vistaJF003, Procesos);
+                vistaJF003.setVisible(true);
+                System.out.println("Yeaaaa");
             }
         });
     }

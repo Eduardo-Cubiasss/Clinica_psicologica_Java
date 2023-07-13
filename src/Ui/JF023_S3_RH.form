@@ -108,7 +108,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btn08_JF023_S3_RH" max="32767" attributes="0"/>
+                  <Component id="btn08_JF023_S3_RH" pref="70" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>

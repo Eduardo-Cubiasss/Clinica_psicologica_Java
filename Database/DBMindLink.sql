@@ -413,6 +413,9 @@ EXEC PDRegistrarAdmin 'Orlando', 'Pepito', 'Contraseña', '52281'
 /* esto es para comprobar que el PDResgistrarAdmin funciona jejeje
 Drop Procedure PDRegistrarAdmin
 
+INSERT INTO TbContactos Values ('Guayito.palom0@gmail.com', '69839847')
+SELECT * FRom TbContactos
+INSERT INTO TbUsuarios IDContacto(1)
 Delete TbAdministrador
 Delete TbUsuarios
 Delete TbClinicas
@@ -620,9 +623,12 @@ END
 /*
 Esto nada más lo hice pa entender cómo se conecta un Foreign key a una registro existente
 INSERT INTO TbContactos Values ('guayito.palom0@gmail.com','69839847')
+INSERT INTO TbContactos Values ('juanpflapi@gmail.com', '8328932')
 Select * from TbContactos
-UPDATE TbUsuarios SET IDContacto = 1 WHERE UserName = 'Guayito'
+UPDATE TbUsuarios SET IDContacto = 3 WHERE UserName = 'Pepito'
+SELECT * FROM TbUsuarios where UserName = 'Pepito'
 SELECT * FROM TbUsuarios where UserName = 'Guayito'
+use DbMindLink
 EXEC CrearActualizarUsuario @nombreUsuario = 'ejemplo_usuario', @contraseña = 'ejemplo_contraseña';
 --- DROP Procedure PDCrearActualizarUsuario
 */
