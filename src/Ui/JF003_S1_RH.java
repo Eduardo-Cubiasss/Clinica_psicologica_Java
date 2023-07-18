@@ -8,6 +8,7 @@ package Ui;
 import Database.Contactos;
 import Database.Procesos_almacenados;
 import Database.Usuarios;
+import ux.DatoRandom;
 import ux.ValidarCorreo;
 
 /**
@@ -237,6 +238,7 @@ public class JF003_S1_RH extends javax.swing.JFrame {
                 JF003_S1_RH vistaJF003 = new JF003_S1_RH();
                 Procesos_almacenados Procesos = new Procesos_almacenados();
                 ValidarCorreo Validar = new ValidarCorreo(ModelContactos, vistaJF003, Procesos);
+                System.out.println("Se envia correo y termina el proceso dde enviar codigo y verificar correo");
                 vistaJF003.setVisible(true);
             }
         });

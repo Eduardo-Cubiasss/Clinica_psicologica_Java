@@ -42,19 +42,21 @@ public class ValidarCorreo implements ActionListener{
         Procesos.ValCorreo(ModelContactos);
         String CorreoNoVer = ModelContactos.getCorreoVal();
         String Correo = ModelContactos.getCorreo();
+        DatoRandom datoRandom = new DatoRandom(ModelContactos);
+        datoRandom.DatoRandom(ModelContactos, 5);
         
+        System.out.println("Aqui se genera el código de verificacion y el codigo es" + ModelContactos.getNumeroRandom());
         if(CorreoNoVer.equals(Correo))
         {
             try {
-                DatoRandom datoRandom = new  DatoRandom(ModelContactos, 5);
-                ModelContactos.setNumeroRandom(dato);
                 String Nrandom = ModelContactos.getNumeroRandom();
+                System.out.println(Nrandom + " Aqui esta el código dde verificacion que se manda a llamar con un get");
                 //Preparar las cosas
                 String correoEmisor = "mindlinkoficial@gmail.com";
                 String contraseñaEmisor = "inblyssyqjiszhds";
                 String CorreoReceptor = vistaJF003.TxtCorreoRegister_JF003_S1_RH.getText();
                 String asunto = "Recuperación de contraseña";
-                String mensaje = "Bievenido a la recuperación de contaseña, si olvidaste la contraseña ingresa este código para acceder y cambiar la contraseña: " + Nrandom;
+                String mensaje = "Bievenido a la recuperación de contraseña, si olvidaste la contraseña ingresa este código para acceder y cambiar la contraseña: " + Nrandom;
 
                 //Configurar SMTP
                 Properties props = new Properties();

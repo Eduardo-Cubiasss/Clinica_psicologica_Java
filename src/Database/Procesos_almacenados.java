@@ -108,7 +108,7 @@ public class Procesos_almacenados {
             ps = conn.prepareStatement("Exec PDActualizarContraGmail ?, ?;");
             ps.setString(1, ModelUsers.getContraseña());
             ps.setString(2, ModelContactos.getCorreo());
-            System.out.println("Exitooo");
+            System.out.println("Exitooo en el cambio de contraseña");
             ps.executeUpdate();
             System.out.println("Lo lograste");
             return true;

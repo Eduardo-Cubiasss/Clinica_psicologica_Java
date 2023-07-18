@@ -590,7 +590,6 @@ END
 
 
 EXEC PDRegistrarpaciente 'Luis','CagaLindo','9-10-2001','52281','Pepito','contraseña', ' 7689 6281';
-
 --Select * from TbContactos;
 --Select * from TbUsuarios;
 --Select * from TbClinicas;
@@ -627,6 +626,7 @@ INSERT INTO TbContactos Values ('juanpflapi@gmail.com', '8328932')
 Select * from TbContactos
 UPDATE TbUsuarios SET IDContacto = 3 WHERE UserName = 'Pepito'
 SELECT * FROM TbUsuarios where UserName = 'Pepito'
+SELECT * FROM TbPacientes 
 SELECT * FROM TbUsuarios where UserName = 'Guayito'
 use DbMindLink
 EXEC CrearActualizarUsuario @nombreUsuario = 'ejemplo_usuario', @contraseña = 'ejemplo_contraseña';
@@ -751,6 +751,113 @@ SELECT @NumeroExis AS NumeroExistente;
 Desde aquí comienzan las vistas
 
 */
+
+/*
+Procesos de Chris para Android:
+*/
+/*
+Pantalla de notas:
+Un proceso que almacene los datos 
+ingresados en notas y una vista que muestre la 
+nota que el usuario recien acaba de ingresar  
+para que este se muestre en el sector de notas.
+*/
+
+/*
+Creamos el procedimiento
+*/
+
+CREATE PROCEDURE PDInsertarAgendaPersonal(
+    @Contenido varchar(100),  
+	@username1 varchar(50)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    DECLARE @FechaActual date = GETDATE();
+	DECLARE @username VARCHAR(50);
+	DECLARE @IDUsuario INT;
+	DECLARE @PacienteExit INT;
+
+
+	SET @IDUsuario = (SELECT IDUsuario FROM TbUsuarios WHERE Username = @username1);
+	SET @PacienteExit = (SELECT IDPaciente FROM TbPacientes WHERE IDUsuario = @IDUsuario);
+
+    INSERT INTO TbAgendasPersonales (Contenido, Fecha, IDPaciente )
+    VALUES (@Contenido, @FechaActual, @PacienteExit);
+END;
+
+
+EXEC PDInsertarAgendaPersonal 'Contenido de la agenda', 'Pepito';
+
+
+/*
+Un proceso donde se pueda enviar datos a la base de datos
+en la tabla correspondiente y hacer una vista donde se pueda
+ver los comentarios que otros usarios ya habian mandado 
+a la base de datos y tambien muestre el comentario que 
+acaba de ingresar el usuario.
+*/
+
+ALTER PROCEDURE PDGuardarComentario
+    @mensaje varchar(1000),
+	@Username varchar (50)
+AS
+BEGIN
+    DECLARE @fechaActual datetime
+	DECLARE @IDUsuario INT;
+	DECLARE @PacienteExit INT;
+
+    SET @fechaActual = GETDATE()
+	SET @IDUsuario = (SELECT IDUsuario FROM TbUsuarios WHERE Username = @Username);
+	SET @PacienteExit = (SELECT IDPaciente FROM TbPacientes WHERE IDUsuario = @IDUsuario);
+    INSERT INTO TbComentarios (Mensaje, Fecha, IDPaciente)
+    VALUES (@mensaje, @fechaActual, @PacienteExit)
+END
+
+EXEC PDGuardarComentario 'Este es un comentario de ejemplo', 'Pepito';
+--Se generaron 30 comentarios, investigar por qué
+
+/*
+Un proceso donde almacena los datos ingresados por 
+el usuario y quede guardado en la base de datos en
+la tabla correspondiente.
+*/
+
+--Creamos el procedimiento que guarde los datos
+
+create PROCEDURE PDInsertarAcercademi (
+    @Nombre varchar(90),
+    @Apellido varchar(90),
+    @CorreoElectronico varchar(90),
+    @DUI varchar(20)
+)
+AS
+BEGIN
+    SET NOCOUNT ON;
+ END
+END;
+
+EX
+    IF NOT EXISTS (SELECT 1 FROM TbPacientes WHERE DUI = @DUI)
+    BEGIN
+        INSERT INTO TbPacientes (Nombre, Apellido, CorreoElectronico, FNacimiento, DUI)
+        VALUES (@Nombre, @Apellido, @CorreoElectronico, GETDATE(), @DUI);
+   EC PDInsertarPaciente 'Nombre del paciente', 'Apellido del paciente', 'correo@example.com', '123456789';
+
+/*
+Creamos la vista
+*/
+
+CREATE VIEW VistaNota
+AS
+SELECT Contenido, Fecha, IDPaciente
+FROM TbAgendasPersonales
+WHERE Fecha = (SELECT MAX(Fecha) FROM TbAgendasPersonales)
+
+SELECT * FROM VistaNota
+
+
 --Esta vista es para ver el usuario, la contraseña y el cargo de un empleado
 CREATE VIEW VistaUsuarios
 AS
@@ -758,6 +865,60 @@ SELECT u.UserName, u.Contraseña, t.Cargo
 FROM TbUsuarios u
 INNER JOIN TbTipoUsuarios t ON t.IDTipoUsuario = t.IDTipoUsuario
 
+/*
+Vista de anuncio:
+Una vista que muestres los anuncios que el Admin 
+guardada en la base de datos para que este se muestre en la app de android
+*/
+
+--Queda pendiente revisar que solo se muestre un anuncio a la vez
+CREATE VIEW VistaAnuncios
+AS
+SELECT IDAnuncio, Titulo, Descripcion, Imagen, Fecha
+FROM TbAnuncio
+
+SELECT * FROM VistaAnuncios
+
+/*Duda: Aqui preguntarle a guayito sobre la magen del anuncio!*/
+
+/*
+Vista de calendario de cita:
+Una vista ya que el calendario
+debe de marcar una cita que el usuario 
+debe ir a la clinica entonces supongo que la 
+vista debe de buscar en la base de datos la fecha
+de la cita que el cliente debe ir.
+*/
+
+CREATE VIEW VistaFechaCitaCliente
+AS
+SELECT Fecha, IDPaciente
+FROM TbCitas
+--Investigar cómo poner la vista en base de un idpaciente especifico
+
+SELECT * FROM VistaFechaCitaCliente
+
+
+
+
+CREATE VIEW VistaComentarios
+AS
+SELECT IDComentario, Mensaje, Fecha, Username
+FROM TbComentarios
+INNER JOIN TbUsuario
+
+--Fumar mucho weed y pensar cómo funcionará
+
+SELECT * FROM VistaComentarios;
+
+CREATE VIEW VistaPacientes AS
+SELECT IDPaciente, Nombre, Apellido, CorreoElectronico, FNacimiento, DUI
+FROM TbPacientes;
+
+SELECT * FROM VistaPacientes;
+
+
 --Esto es para seleccionar la vista:
 --SELECT * FROM VistaUsuarios
 -- DROP VIEW VistaUsuarios
+

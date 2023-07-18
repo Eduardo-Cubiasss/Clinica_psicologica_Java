@@ -251,6 +251,7 @@ public class JF003_2_S1_RH extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                System.out.println("Se envian cositas a la clase RecGmail");
                 Usuarios modelUsers = new Usuarios();
                 Contactos ModelContactos = new Contactos();
                 JF003_2_S1_RH vistaJF003 = new JF003_2_S1_RH();
