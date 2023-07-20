@@ -4,25 +4,45 @@
  * and open the template in the editor.
  */
 package Ui;
-import Database.Procesos_almacenados;
-import Database.Usuarios;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-import ux.Abrirvistas;
-import org.netbeans.lib.awtextra.AbsoluteLayout;
+
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import ux.Login;
 
 /**
  *
  * @author 50369
  */
-public class JF001_S1_AF extends javax.swing.JFrame {
-    private String UserName;
-    private String Contraseña;
-    JFrame ventanaActual = (JFrame) SwingUtilities.getWindowAncestor(this);
-    public JF001_S1_AF() {
+public class JP001_S1_AFP extends javax.swing.JPanel {
+    
+    private Login controlador;
+    
+    public JButton getBtn2_JF001_S1_AF() {
+        return Btn2_JF001_S1_AF;
+    }
+    
+    public JButton getbtn3_JF001_S1_AF() {
+        return btn3_JF001_S1_AF;
+    }
+
+    public JTextField getTxtUsuario_JF001_S1_AF() {
+        return TxtUsuario_JF001_S1_AF;
+    }
+
+    public JPasswordField getPass_JF001_S1_AF() {
+        return Pass_JF001_S1_AF;
+    }
+    
+    public JP001_S1_AFP(Login controlador) {
+        this.controlador = controlador;
+        // Resto del código del constructor
+    }
+    /**
+     * Creates new form JP001_S1_AFP
+     */
+    public JP001_S1_AFP() {
         initComponents();
-        
     }
 
     /**
@@ -33,9 +53,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
-        jLabel4 = new javax.swing.JLabel();
         JP001_S1_AF = new javax.swing.JPanel();
         TxtUsuario_JF001_S1_AF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -50,18 +68,14 @@ public class JF001_S1_AF extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
-        jLabel4.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jLabel4.setText("“Cuando no somos capaces ya de cambiar una situación, nos enfrentamos al reto de cambiar nosotros mismos”");
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(51, 255, 255));
-        setExtendedState(6);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setMaximumSize(new java.awt.Dimension(1120, 540));
+        setLayout(new java.awt.CardLayout());
 
         JP001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_AF.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 153), new java.awt.Color(0, 102, 102), new java.awt.Color(0, 153, 153), new java.awt.Color(0, 102, 102)));
         JP001_S1_AF.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        JP001_S1_AF.setLayout(new java.awt.GridBagLayout());
+        JP001_S1_AF.setMaximumSize(new java.awt.Dimension(1136, 1252));
+        JP001_S1_AF.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TxtUsuario_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         TxtUsuario_JF001_S1_AF.setText("Usuario");
@@ -73,37 +87,17 @@ public class JF001_S1_AF extends javax.swing.JFrame {
                 TxtUsuario_JF001_S1_AFActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 9;
-        gridBagConstraints.ipadx = 397;
-        gridBagConstraints.ipady = 23;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(30, 50, 0, 0);
-        JP001_S1_AF.add(TxtUsuario_JF001_S1_AF, gridBagConstraints);
+        JP001_S1_AF.add(TxtUsuario_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 106, 438, 40));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Iniciar Sesión");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(40, 44, 0, 0);
-        JP001_S1_AF.add(jLabel1, gridBagConstraints);
+        JP001_S1_AF.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 46, 140, -1));
 
         jLabel9.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 102, 102));
         jLabel9.setText("Contraseña");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 60, 0, 0);
-        JP001_S1_AF.add(jLabel9, gridBagConstraints);
+        JP001_S1_AF.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 166, -1, -1));
 
         Btn2_JF001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn2_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
@@ -122,15 +116,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
                 Btn2_JF001_S1_AFActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = -97;
-        gridBagConstraints.ipady = -105;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(40, 14, 0, 0);
-        JP001_S1_AF.add(Btn2_JF001_S1_AF, gridBagConstraints);
+        JP001_S1_AF.add(Btn2_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 286, 220, 40));
 
         btn4_JF001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn4_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
@@ -142,15 +128,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
                 btn4_JF001_S1_AFActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 27;
-        gridBagConstraints.ipady = -5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 30, 0, 0);
-        JP001_S1_AF.add(btn4_JF001_S1_AF, gridBagConstraints);
+        JP001_S1_AF.add(btn4_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 226, 210, 20));
 
         btn3_JF001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn3_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
@@ -163,14 +141,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
                 btn3_JF001_S1_AFActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.ipady = -10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(50, 100, 0, 0);
-        JP001_S1_AF.add(btn3_JF001_S1_AF, gridBagConstraints);
+        JP001_S1_AF.add(btn3_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 376, -1, 33));
 
         Pass_JF001_S1_AF.setText("Contraseña");
         Pass_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -179,15 +150,7 @@ public class JF001_S1_AF extends javax.swing.JFrame {
                 Pass_JF001_S1_AFActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 9;
-        gridBagConstraints.ipadx = 397;
-        gridBagConstraints.ipady = 23;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 50, 0, 0);
-        JP001_S1_AF.add(Pass_JF001_S1_AF, gridBagConstraints);
+        JP001_S1_AF.add(Pass_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 186, 450, 40));
 
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 102, 102));
         kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 255));
@@ -216,115 +179,46 @@ public class JF001_S1_AF extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(49, 49, 49)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(504, Short.MAX_VALUE))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 9;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 10;
-        gridBagConstraints.ipadx = 30;
-        gridBagConstraints.ipady = 164;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 70, 0, 0);
-        JP001_S1_AF.add(kGradientPanel1, gridBagConstraints);
+        JP001_S1_AF.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 530, 600));
 
         jLabel2.setForeground(new java.awt.Color(0, 102, 102));
         jLabel2.setText("“Cuando no somos capaces ya de cambiar una situación, ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.ipady = 15;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(57, 110, 0, 0);
-        JP001_S1_AF.add(jLabel2, gridBagConstraints);
+        JP001_S1_AF.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 466, -1, 30));
 
         jLabel6.setForeground(new java.awt.Color(0, 102, 102));
         jLabel6.setText(" nos enfrentamos al reto de cambiar nosotros mismos”");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 8;
-        gridBagConstraints.ipadx = 36;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 110, 0, 0);
-        JP001_S1_AF.add(jLabel6, gridBagConstraints);
+        JP001_S1_AF.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 496, 310, -1));
 
-        getContentPane().add(JP001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        pack();
+        add(JP001_S1_AF, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void TxtUsuario_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtUsuario_JF001_S1_AFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtUsuario_JF001_S1_AFActionPerformed
 
+    private void Btn2_JF001_S1_AFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn2_JF001_S1_AFMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn2_JF001_S1_AFMouseClicked
+
+    private void Btn2_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn2_JF001_S1_AFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn2_JF001_S1_AFActionPerformed
+
+    private void btn4_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4_JF001_S1_AFActionPerformed
+        
+    }//GEN-LAST:event_btn4_JF001_S1_AFActionPerformed
+
     private void btn3_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3_JF001_S1_AFActionPerformed
-        
-        
+
     }//GEN-LAST:event_btn3_JF001_S1_AFActionPerformed
 
     private void Pass_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pass_JF001_S1_AFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Pass_JF001_S1_AFActionPerformed
 
-    private void Btn2_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn2_JF001_S1_AFActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_Btn2_JF001_S1_AFActionPerformed
-
-    private void btn4_JF001_S1_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4_JF001_S1_AFActionPerformed
-        Abrirvistas.abrir("JF003_S1_RH");
-    }//GEN-LAST:event_btn4_JF001_S1_AFActionPerformed
-
-    private void Btn2_JF001_S1_AFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btn2_JF001_S1_AFMouseClicked
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_Btn2_JF001_S1_AFMouseClicked
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JF001_S1_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JF001_S1_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JF001_S1_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JF001_S1_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                
-                Usuarios modelUsers = new Usuarios();
-                Procesos_almacenados Procesos = new Procesos_almacenados();
-                JF001_S1_AF vistaJF001 = new JF001_S1_AF();
-                System.out.println("Antes de que se ejecute controlador");
-                Login Logear = new Login(modelUsers, vistaJF001, Procesos);
-                System.out.println("Dejpue");
-                vistaJF001.setVisible(true);
-                
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton Btn2_JF001_S1_AF;
@@ -336,7 +230,6 @@ public class JF001_S1_AF extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;

@@ -9,9 +9,12 @@ import Database.Administrador;
 import Database.Clinica;
 import Database.Procesos_almacenados;
 import Database.Usuarios;
-import Ui.JF002_S1_RH;
+import Ui.JP002_S1_RHP;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -19,32 +22,50 @@ import java.awt.event.ActionListener;
  */
 public class RegAdmin_JF002 implements ActionListener {
 
-    private Administrador modelAdmin;
+       private Administrador modelAdmin;
     private Usuarios modelUsers;
     private Clinica modelClinica;
-    private JF002_S1_RH vistaJF002;
+    private JP002_S1_RHP vistaJP002;
+    private JPanel JPContenido;
     private Procesos_almacenados Procesos;
 
-    public RegAdmin_JF002(Administrador modelAdmin, Usuarios modelUsers, Clinica modelClinica, JF002_S1_RH vistaJF002, Procesos_almacenados Procesos) {
+    public RegAdmin_JF002(Administrador modelAdmin, Usuarios modelUsers, Clinica modelClinica, JP002_S1_RHP vistaJP002, JPanel JPContenido, Procesos_almacenados Procesos) {
         this.modelAdmin = modelAdmin;
         this.modelUsers = modelUsers;
         this.modelClinica = modelClinica;
-        this.vistaJF002 = vistaJF002;
+        this.vistaJP002 = vistaJP002;
+        this.JPContenido = JPContenido;
         this.Procesos = Procesos;
-        this.vistaJF002.Btn1_JF002_S1_RH.addActionListener(this);
+
+        // Asociar el controlador a los botones de la vista
+        this.vistaJP002.getBtn1_JF002_S1_RH().addActionListener(this);
+        this.vistaJP002.getBtn2_JF002_S1_RH().addActionListener(this);
     }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == vistaJF002.Btn1_JF002_S1_RH) {
-            modelAdmin.setNombre(vistaJF002.TxtNombre_JF002_S1_RH.getText());
-            modelUsers.setUserName(vistaJF002.TxtUsuario_JF002_S1_RH2.getText());
-            modelUsers.setContraseña(vistaJF002.PassField_Contraseña_JF002_S1_RH.getText());
-            modelClinica.setIDClinica(vistaJF002.TxtID_JF002_S1_RH3.getText());
+        if (e.getSource() == vistaJP002.getBtn1_JF002_S1_RH()) {
+            modelAdmin.setNombre(vistaJP002.getTxtNombre_JF002_S1_RH().getText());
+            modelUsers.setUserName(vistaJP002.getTxtUsuario_JF002_S1_RH2().getText());
+            modelUsers.setContraseña(new String(vistaJP002.getPassField_Contraseña_JF002_S1_RH().getPassword()));
+            modelClinica.setIDClinica(vistaJP002.getTxtID_JF002_S1_RH3().getText());
 
-            System.out.println("antes de ejecutar el metodo");
+            System.out.println("Antes de ejecutar el método");
             Procesos.In_admin_clinica_users(modelAdmin, modelUsers, modelClinica);
-            System.out.println("Después de ejecutar");
+            System.out.println("Después de ejecutar el método");
+
+            // Aquí puedes agregar el código para cambiar de panel si es necesario.
+            // Por ejemplo, si deseas regresar al panel de inicio de sesión:
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
+
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "No se pudo crear tu usuario", "Error J000DA", JOptionPane.ERROR_MESSAGE);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
+
         }
     }
+    
 }

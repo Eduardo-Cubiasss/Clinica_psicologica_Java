@@ -7,11 +7,17 @@ package ux;
 
 import Database.Procesos_almacenados;
 import Database.Usuarios;
-import Ui.JF001_S1_AF;
 import Ui.JF004_S2_AF;
+import Ui.JP001_S1_AFP;
+import Ui.JP002_S1_RHP;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -20,30 +26,42 @@ import javax.swing.JOptionPane;
 public class Login implements ActionListener {
 
     private Usuarios modelUsers;
-    private JF001_S1_AF vistaJF001;
+    private JButton btnLogin;
+    private JButton btnregistarse;
+    private JTextField txtUsuario;
+    private JPasswordField txtContraseña;
+    private JPanel JPContenido;
     private Procesos_almacenados Procesos;
+    private JP002_S1_RHP panelRegistro;
 
-    public Login(Usuarios modelUsers, JF001_S1_AF vistaJF001, Procesos_almacenados Procesos) {
-        this.vistaJF001 = vistaJF001;
-        this.Procesos = Procesos;
+    public Login(Usuarios modelUsers, JButton btnLogin, JTextField txtUsuario, JPasswordField txtContraseña,
+            JPanel JPContenido, Procesos_almacenados Procesos, JButton btnregistarse) {
         this.modelUsers = modelUsers;
-        this.vistaJF001.Btn2_JF001_S1_AF.addActionListener(this);
+        this.btnLogin = btnLogin;
+        this.btnregistarse = btnregistarse;
+        this.txtUsuario = txtUsuario;
+        this.txtContraseña = txtContraseña;
+        this.JPContenido = JPContenido;
+        this.Procesos = Procesos;
+
+        // Agrega el ActionListener al botón btnLogin
+        this.btnLogin.addActionListener(this);
+        this.btnregistarse.addActionListener(this);
     }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == vistaJF001.Btn2_JF001_S1_AF) {
-            System.out.println("Llega hasta aqui");
-            modelUsers.setUserName(vistaJF001.TxtUsuario_JF001_S1_AF.getText());
-            modelUsers.setContraseña(vistaJF001.Pass_JF001_S1_AF.getText());
+        if (e.getSource() == btnLogin) {
+            modelUsers.setUserName(txtUsuario.getText());
+            modelUsers.setContraseña(new String(txtContraseña.getPassword()));
             Procesos.Logear(modelUsers);
             int Acceso = modelUsers.getAcceso();
             int Nivel = modelUsers.getResultado();
-            System.out.println("Llega hata aki");
             if (Acceso == 1) {
                 switch (Nivel) {
                     case 1:
-                        Abrirvistas.abrir("JF004_S2_AF");
+                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
                         break;
                     case 2:
                         Abrirvistas.abrir("JF039_S3_RH");
@@ -53,15 +71,16 @@ public class Login implements ActionListener {
                         break;
 
                     default:
-                        JOptionPane.showMessageDialog(null, "Tu usuario es de tipo paciente, usa la aplicación de movil para acceder a él por favor", "Usuario invalido", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Tu usuario es de tipo paciente, usa la aplicación de móvil para acceder a él por favor", "Usuario inválido", JOptionPane.INFORMATION_MESSAGE);
                         break;
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Se sugiere visitar la página donde se explica a detalle cada error que puede experimentar usted como usuario", "ERROR JF001DA", JOptionPane.INFORMATION_MESSAGE);
             }
-
-            
-
+        }
+        else if(e.getSource() == btnregistarse)
+        {
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
         }
     }
 }

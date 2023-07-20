@@ -40,27 +40,35 @@ public class RecGmail implements ActionListener {
         System.out.println("Se hace this en las clases");
     }
 
+    
+    /*Aqui te deji¿o el link de nuestro repositorio https://github.com/L3AC/VetSoft-Java.git Gerson :)*/
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Ocurre al presionar el boton");
-        modelUsers.setContraseña(vistaJF003.PassField_ConfirmarContra_JF003_3_S1_RH1.getText());
-        System.out.println(ModelContactos.getNumeroRandom());
-        System.out.println(vistaJF003.TxtCodigoCorreo_JF003_2_S1_RH2.getText());
-        System.out.println("Los dos codigo de arriba son los que existen en el codigo enviado por el usuario y el codigo de la tabla contactos");
-        ModelContactos.setCorreo(ModelContactos.getCorreo());
-        String Codigofake = vistaJF003.TxtCodigoCorreo_JF003_2_S1_RH2.getText();
-        String Codigoreal = ModelContactos.getNumeroRandom();
-        System.out.println(Codigofake + " " + Codigoreal);
-        if (Codigoreal.equals(Codigofake)) {
-            System.out.println("Sea metio al if porque ambos codigos son iguales");
-            Procesos.RecCorreo(modelUsers, ModelContactos);
-            JOptionPane.showMessageDialog(null, "Intenta iniciar sesión por favor", "Sugerencia", JOptionPane.INFORMATION_MESSAGE);
+        
+        if (e.getSource() == vistaJF003.Btn1_JF003_2_S1_RH) {
+            JOptionPane.showMessageDialog(null," oslddfsdfs", "J001GU", JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("Ocurre al presionar el boton");
+            System.out.println(ModelContactos.getNumeroRandom());
+            System.out.println(vistaJF003.TxtCodigoCorreo_JF003_2_S1_RH2.getText());
+            System.out.println("Los dos codigo de arriba son los que existen en el codigo enviado por el usuario y el codigo de la tabla contactos");         
+            String Codigofake = vistaJF003.TxtCodigoCorreo_JF003_2_S1_RH2.getText();
+            String Codigoreal = ModelContactos.getNumeroRandom();
+            JOptionPane.showMessageDialog(null, Codigofake + " " + Codigoreal, "J001GU", JOptionPane.INFORMATION_MESSAGE);
+            if (Codigoreal.equals(Codigofake)) {
+                ModelContactos.setCorreo(ModelContactos.getCorreo());
+                modelUsers.setContraseña(vistaJF003.PassField_ConfirmarContra_JF003_3_S1_RH1.getText());
+                System.out.println("Sea metio al if porque ambos codigos son iguales");
+                Procesos.RecCorreo(modelUsers, ModelContactos);
+                JOptionPane.showMessageDialog(null, "Intenta iniciar sesión por favor", "Sugerencia", JOptionPane.INFORMATION_MESSAGE);
+                Abrirvistas.abrir("JF002_S1_RH");
+            } else {
+                JOptionPane.showMessageDialog(null, "Intentalo de nuevo", "J001GU", JOptionPane.INFORMATION_MESSAGE);
+                Abrirvistas.abrir("JF003_S1_RH");
+            }
+
+        } else if (e.getSource() == vistaJF003.Btn2_JF003_2_S1_RH) {
             Abrirvistas.abrir("JF002_S1_RH");
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Intentalo de nuevo", "J001GU", JOptionPane.INFORMATION_MESSAGE);
-            Abrirvistas.abrir("JF003_S1_RH");
         }
 
     }
