@@ -4,20 +4,19 @@
  * and open the template in the editor.
  */
 package Ui;
-import javax.swing.JFrame;
+
 import ux.Abrirvistas;
-import javax.swing.SwingUtilities;
 
 /**
  *
- * @author allan
+ * @author 50369
  */
-public class JF004_S2_AF extends javax.swing.JFrame {
-    JFrame ventanaActual = (JFrame) SwingUtilities.getWindowAncestor(this);
+public class JP004_S2_AF extends javax.swing.JPanel {
+
     /**
-     * Creates new form JF004_S1_AF
+     * Creates new form JP004_S2_AF
      */
-    public JF004_S2_AF() {
+    public JP004_S2_AF() {
         initComponents();
     }
 
@@ -42,8 +41,7 @@ public class JF004_S2_AF extends javax.swing.JFrame {
         btn06_JF005_S2_AF = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new java.awt.CardLayout());
 
         JP001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_AF.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 153), new java.awt.Color(0, 102, 102), new java.awt.Color(0, 153, 153), new java.awt.Color(0, 102, 102)));
@@ -149,9 +147,7 @@ public class JF004_S2_AF extends javax.swing.JFrame {
         jLabel3.setText("jLabel3");
         JP001_S1_AF.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 40, 170, 90));
 
-        getContentPane().add(JP001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 560));
-
-        pack();
+        add(JP001_S1_AF, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn01_JF005_S2_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn01_JF005_S2_AFActionPerformed
@@ -171,52 +167,15 @@ public class JF004_S2_AF extends javax.swing.JFrame {
     }//GEN-LAST:event_btn04_JF005_S2_AFActionPerformed
 
     private void btn05_JF005_S2_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn05_JF005_S2_AFActionPerformed
-        
-    Abrirvistas.abrir("JF007_S2_RH");
+
+        Abrirvistas.abrir("JF007_S2_RH");
     }//GEN-LAST:event_btn05_JF005_S2_AFActionPerformed
 
     private void btn06_JF005_S2_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn06_JF005_S2_AFActionPerformed
 
-    Abrirvistas.abrir("JF008_S2_AF");
+        Abrirvistas.abrir("JF008_S2_AF");
     }//GEN-LAST:event_btn06_JF005_S2_AFActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JF004_S2_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JF004_S2_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JF004_S2_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JF004_S2_AF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JF004_S2_AF().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel JP001_S1_AF;
