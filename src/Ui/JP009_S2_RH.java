@@ -35,7 +35,6 @@ public class JP009_S2_RH extends javax.swing.JPanel {
         Btn2_JF009_S2_RH = new javax.swing.JButton();
         Btn4_JF009_S2_RH = new javax.swing.JButton();
         TxtCorreoE_JF009_S2_RH = new javax.swing.JTextField();
-        LabelNumGenerado_JF009_S2_RH = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         LabelImagenPerfil_JF009_S2_RH = new javax.swing.JLabel();
         TxtNombre_JF009_S2_RH = new javax.swing.JTextField();
@@ -52,6 +51,7 @@ public class JP009_S2_RH extends javax.swing.JPanel {
         jSeparator6 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
         TxtTipoUsuario_JF009_S2_RH1 = new javax.swing.JTextField();
+        LabelNumGenerado_JF009_S2_RH = new javax.swing.JLabel();
 
         setLayout(new java.awt.CardLayout());
 
@@ -111,10 +111,6 @@ public class JP009_S2_RH extends javax.swing.JPanel {
         TxtCorreoE_JF009_S2_RH.setBorder(null);
         jPanel3.add(TxtCorreoE_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 280, 40));
 
-        LabelNumGenerado_JF009_S2_RH.setBackground(new java.awt.Color(153, 153, 153));
-        LabelNumGenerado_JF009_S2_RH.setText("Num");
-        jPanel3.add(LabelNumGenerado_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 280, 120, 40));
-
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel5.setText("Correo electrónico");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 190, 20));
@@ -165,6 +161,10 @@ public class JP009_S2_RH extends javax.swing.JPanel {
         TxtTipoUsuario_JF009_S2_RH1.setBorder(null);
         jPanel3.add(TxtTipoUsuario_JF009_S2_RH1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, 280, 40));
 
+        LabelNumGenerado_JF009_S2_RH.setBackground(new java.awt.Color(153, 153, 153));
+        LabelNumGenerado_JF009_S2_RH.setText("Num");
+        jPanel3.add(LabelNumGenerado_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 280, 120, 40));
+
         add(jPanel3, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
@@ -191,8 +191,6 @@ public class JP009_S2_RH extends javax.swing.JPanel {
     public javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabel8;
     public javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     public javax.swing.JPanel jPanel3;
     public javax.swing.JSeparator jSeparator1;
     public javax.swing.JSeparator jSeparator2;
@@ -200,8 +198,6 @@ public class JP009_S2_RH extends javax.swing.JPanel {
     public javax.swing.JSeparator jSeparator4;
     public javax.swing.JSeparator jSeparator5;
     public javax.swing.JSeparator jSeparator6;
-    private keeptoo.KGradientPanel kGradientPanel1;
-    private keeptoo.KGradientPanel kGradientPanel2;
     private keeptoo.KGradientPanel kGradientPanel3;
     // End of variables declaration//GEN-END:variables
 }

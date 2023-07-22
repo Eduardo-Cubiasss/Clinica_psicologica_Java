@@ -33,11 +33,11 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        txtCorreoElectronico_jp0048_RH = new javax.swing.JTextField();
+        txtActiLabo_JP0048 = new javax.swing.JTextField();
+        txtNumTel_JP0048 = new javax.swing.JTextField();
+        txtFechaNa_JP0048 = new javax.swing.JTextField();
+        txtDui_JP0048 = new javax.swing.JTextField();
         kGradientPanel2 = new keeptoo.KGradientPanel();
         btn02_JF048_S3_RH = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -59,25 +59,25 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jLabel4.setText("Llena el formulario que nos servirá más adelante");
 
-        jTextField1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jTextField1.setText("Correo Electronico");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtCorreoElectronico_jp0048_RH.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        txtCorreoElectronico_jp0048_RH.setText("Correo Electronico");
+        txtCorreoElectronico_jp0048_RH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtCorreoElectronico_jp0048_RHActionPerformed(evt);
             }
         });
 
-        jTextField2.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jTextField2.setText("Actividad Laboral");
+        txtActiLabo_JP0048.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        txtActiLabo_JP0048.setText("Actividad Laboral");
 
-        jTextField3.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jTextField3.setText("Número telefónico");
+        txtNumTel_JP0048.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        txtNumTel_JP0048.setText("Número telefónico");
 
-        jTextField4.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jTextField4.setText("Fecha de nacimiento");
+        txtFechaNa_JP0048.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        txtFechaNa_JP0048.setText("Fecha de nacimiento");
 
-        jTextField5.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jTextField5.setText("Dui");
+        txtDui_JP0048.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        txtDui_JP0048.setText("Dui");
 
         kGradientPanel2.setkEndColor(new java.awt.Color(0, 153, 153));
         kGradientPanel2.setkStartColor(new java.awt.Color(0, 153, 153));
@@ -86,7 +86,7 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         btn02_JF048_S3_RH.setBackground(new java.awt.Color(0, 153, 153));
         btn02_JF048_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log out.png"))); // NOI18N
         btn02_JF048_S3_RH.setBorderPainted(false);
-        kGradientPanel2.add(btn02_JF048_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 165, -1));
+        kGradientPanel2.add(btn02_JF048_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 165, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mp1.PNG"))); // NOI18N
 
@@ -106,14 +106,14 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
-                            .addComponent(jTextField3))
+                            .addComponent(txtCorreoElectronico_jp0048_RH)
+                            .addComponent(txtDui_JP0048, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                            .addComponent(txtNumTel_JP0048))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-                                .addComponent(jTextField2))
+                                .addComponent(txtFechaNa_JP0048, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                                .addComponent(txtActiLabo_JP0048))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(45, 45, 45)
@@ -127,7 +127,7 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -138,15 +138,15 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
                         .addComponent(jLabel4)
                         .addGap(63, 63, 63)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCorreoElectronico_jp0048_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtActiLabo_JP0048, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(79, 79, 79)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNumTel_JP0048, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtFechaNa_JP0048, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(44, 44, 44)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDui_JP0048, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(103, 103, 103)
                 .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -155,9 +155,9 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtCorreoElectronico_jp0048_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoElectronico_jp0048_RHActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtCorreoElectronico_jp0048_RHActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -169,11 +169,11 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     public keeptoo.KGradientPanel kGradientPanel2;
+    public javax.swing.JTextField txtActiLabo_JP0048;
+    public javax.swing.JTextField txtCorreoElectronico_jp0048_RH;
+    public javax.swing.JTextField txtDui_JP0048;
+    public javax.swing.JTextField txtFechaNa_JP0048;
+    public javax.swing.JTextField txtNumTel_JP0048;
     // End of variables declaration//GEN-END:variables
 }

@@ -37,7 +37,7 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         btn2_JF024 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtBuscar_JP024 = new javax.swing.JTextField();
 
         setLayout(new java.awt.CardLayout());
 
@@ -102,9 +102,9 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 40, 40));
 
-        jTextField1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jTextField1.setText("          S");
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 420, 50));
+        txtBuscar_JP024.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        txtBuscar_JP024.setText("          S");
+        jPanel1.add(txtBuscar_JP024, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 420, 50));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
@@ -125,6 +125,6 @@ public class JP024_S3_AF extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     public javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTable1;
-    public javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField txtBuscar_JP024;
     // End of variables declaration//GEN-END:variables
 }
