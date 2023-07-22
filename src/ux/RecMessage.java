@@ -1,18 +1,15 @@
 
 import com.twilio.converter.Promoter;
 import com.twilio.rest.api.v2010.account.Message;
-ipackage ux;mport com.twilio.type.PhoneNumber;
+package ux;mport com.twilio.type.PhoneNumber;
 package ux;
 import java.net.URI;
 import java.math.BigDecimal;
 import ux.DatoRandom;
 
-/**
- *
- * @author 50369
- */
+/*
 
-
+ 
 public class RecMessage {
 
     public static final String ACCOUNT_SID = "ACa9d7e2e2781f6317f9f5fd560cc7445d";
@@ -27,6 +24,5 @@ public class RecMessage {
                         .create();
 
         System.out.println(message.getSid());
-    }
 
 }

@@ -51,21 +51,21 @@ public class JP008_S2_AF extends javax.swing.JPanel {
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1118, Short.MAX_VALUE)
+            .addGap(0, 898, Short.MAX_VALUE)
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 38, Short.MAX_VALUE)
         );
 
-        jPanel1.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 1120, 40));
+        jPanel1.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 900, 40));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, 170, 90));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, 170, 90));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("Personal Clinica");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, -1, -1));
 
         Btn001_JF008_S3_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn001_JF008_S3_AF.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -75,20 +75,20 @@ public class JP008_S2_AF extends javax.swing.JPanel {
         Btn001_JF008_S3_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(Btn001_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        Btn004_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ai.PNG"))); // NOI18N
-        jPanel1.add(Btn004_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 460, 270, 70));
+        Btn004_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/admin.PNG"))); // NOI18N
+        jPanel1.add(Btn004_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 460, 220, 70));
 
-        Btn005_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/act.PNG"))); // NOI18N
-        jPanel1.add(Btn005_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, 260, 80));
+        Btn005_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actuuu.PNG"))); // NOI18N
+        jPanel1.add(Btn005_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 470, 210, 60));
 
-        Btn006_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/eli.PNG"))); // NOI18N
-        jPanel1.add(Btn006_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 470, 230, 60));
+        Btn006_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ei.PNG"))); // NOI18N
+        jPanel1.add(Btn006_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 190, 50));
 
-        Btn007_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agf.PNG"))); // NOI18N
-        jPanel1.add(Btn007_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 240, 70));
+        Btn007_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aggg.PNG"))); // NOI18N
+        jPanel1.add(Btn007_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 200, 50));
 
         jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.LINE_AXIS));
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 850, 230));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 840, 230));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents

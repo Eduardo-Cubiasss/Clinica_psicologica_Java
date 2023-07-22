@@ -42,6 +42,7 @@ public class JP005_3_S2_RH extends javax.swing.JPanel {
 
         setLayout(new java.awt.CardLayout());
 
+        kGradientPanel1.setBackground(new java.awt.Color(255, 153, 51));
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 102, 102));
         kGradientPanel1.setkGradientFocus(50);
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 204, 204));
@@ -50,12 +51,12 @@ public class JP005_3_S2_RH extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("MINDLINK");
-        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 89, 247, 65));
+        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 99, 220, 70));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("<html>\nBienvenido a la mejor experiencia\n<br>\n\n\n\n");
-        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
+        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
 
         JP001_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_RH.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -159,13 +160,13 @@ public class JP005_3_S2_RH extends javax.swing.JPanel {
                 .addComponent(Btn1_JF005_3_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Btn2_JF005_3_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
-        kGradientPanel1.add(JP001_S1_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, -10, 450, 550));
+        kGradientPanel1.add(JP001_S1_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 450, 600));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogitoGrande.png"))); // NOI18N
-        kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 430, 200));
+        kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 220, 440, 210));
 
         add(kGradientPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents

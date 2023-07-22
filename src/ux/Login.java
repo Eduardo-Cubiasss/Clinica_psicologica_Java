@@ -7,7 +7,6 @@ package ux;
 
 import Database.Procesos_almacenados;
 import Database.Usuarios;
-import Ui.JF004_S2_AF;
 import Ui.JP001_S1_AFP;
 import Ui.JP002_S1_RHP;
 import java.awt.CardLayout;
