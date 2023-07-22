@@ -1,15 +1,32 @@
-
 package ux;
 
-import Ui.JP001_S1_AFP;
+import java.awt.Color;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import javax.swing.JTextField;
 
 public class Hints {
-   
-         private void TxtUsuario_JF001_S1_AFMousePressed(java.awt.event.MouseEvent evt) {                                                    
-        if ( TxtUsuario_JF001_S1.getText().equals("Ingrese su usuario")){
-            TxtUsuario_JF001_S1.setText("");
-            TxtUsuario_JF001_S1.setForeground(color gray);
-        }
-    
-}
+
+    public static void addHint(JTextField textField, String hint) {
+        textField.setText(hint);
+        textField.setForeground(Color.GRAY);
+
+        textField.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (textField.getText().equals(hint)) {
+                    textField.setText("");
+                    textField.setForeground(Color.BLACK);
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (textField.getText().isEmpty()) {
+                    textField.setText(hint);
+                    textField.setForeground(Color.GRAY);
+                }
+            }
+        });
+    }
 }

@@ -64,6 +64,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace pref="190" max="32767" attributes="0"/>
                   <Component id="JP001_S1_RH" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -78,7 +79,7 @@
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" pref="199" max="-2" attributes="0"/>
               </Group>
-              <Component id="JP001_S1_RH" min="-2" max="-2" attributes="0"/>
+              <Component id="JP001_S1_RH" alignment="1" min="-2" max="-2" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>

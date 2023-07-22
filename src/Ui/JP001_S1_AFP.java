@@ -179,7 +179,7 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,10 +229,7 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
     }//GEN-LAST:event_Pass_JF001_S1_AFActionPerformed
 
     private void TxtUsuario_JF001_S1_AFMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtUsuario_JF001_S1_AFMousePressed
-        if ( TxtUsuario_JF001_S1.getText().equals("Ingrese su usuario")){
-            TxtUsuario_JF001_S1.setText("");
-            TxtUsuario_JF001_S1.setForeground(color gray);
-        }
+
     
     }//GEN-LAST:event_TxtUsuario_JF001_S1_AFMousePressed
 

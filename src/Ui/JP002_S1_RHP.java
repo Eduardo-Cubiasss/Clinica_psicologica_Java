@@ -290,6 +290,7 @@ public class JP002_S1_RHP extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE)
                 .addComponent(JP001_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         kGradientPanel1Layout.setVerticalGroup(
@@ -301,7 +302,7 @@ public class JP002_S1_RHP extends javax.swing.JPanel {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(JP001_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(JP001_S1_RH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         add(kGradientPanel1, "card2");
@@ -337,21 +338,21 @@ public class JP002_S1_RHP extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn1_JF002_S1_RH;
-    private javax.swing.JButton Btn2_JF002_S1_RH;
+    public javax.swing.JButton Btn1_JF002_S1_RH;
+    public javax.swing.JButton Btn2_JF002_S1_RH;
     private javax.swing.JPanel JP001_S1_RH;
-    private javax.swing.JPasswordField PassField_ConfirmarContra_JF002_S1_RH;
-    private javax.swing.JPasswordField PassField_Contraseña_JF002_S1_RH;
-    private javax.swing.JTextField TxtID_JF002_S1_RH3;
-    private javax.swing.JTextField TxtNombre_JF002_S1_RH;
-    private javax.swing.JTextField TxtUsuario_JF002_S1_RH2;
+    public javax.swing.JPasswordField PassField_ConfirmarContra_JF002_S1_RH;
+    public javax.swing.JPasswordField PassField_Contraseña_JF002_S1_RH;
+    public javax.swing.JTextField TxtID_JF002_S1_RH3;
+    public javax.swing.JTextField TxtNombre_JF002_S1_RH;
+    public javax.swing.JTextField TxtUsuario_JF002_S1_RH2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private keeptoo.KGradientPanel kGradientPanel1;
