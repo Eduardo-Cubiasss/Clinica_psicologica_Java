@@ -10,10 +10,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-/**
- *
- * @author 50369
- */
+
 //donde dice implements KeyListener no debes crearlo para cada validación debido a que yo lo que 
 //hice fue importar absolutamente todos los eventos pertenecientes a KeyListener
 public class Validaciones implements KeyListener {
