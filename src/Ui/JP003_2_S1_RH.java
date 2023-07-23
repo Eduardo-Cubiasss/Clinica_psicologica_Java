@@ -5,16 +5,43 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import ux.RecGmail;
+
 /**
  *
  * @author 50369
  */
 public class JP003_2_S1_RH extends javax.swing.JPanel {
+    
+    
+    private RecGmail controlador;
+    
+    public JTextField getTxtCodigoCorreo_JF003_2_S1_RH2()
+    {
+        return TxtCodigoCorreo_JF003_2_S1_RH2;
+    }
+    public JTextField PassField_ConfirmarContra_JF003_3_S1_RH1()
+    {
+        return PassField_ConfirmarContra_JF003_3_S1_RH1;
+    }
+    public JButton getBtn2_JF003_2_S1_RH() {
+        return Btn2_JF003_2_S1_RH;
+    }
 
+    public JButton getBtn1_JF003_2_S1_RH() {
+        return Btn1_JF003_2_S1_RH;
+    }
+
+    public JButton getBtn3_JF003_2_S1_RH() {
+        return Btn3_JF003_2_S1_RH;
+    }
     /**
      * Creates new form JP003_2_S1_RH
      */
-    public JP003_2_S1_RH() {
+    public JP003_2_S1_RH(RecGmail controlador) {
+        this.controlador = controlador;
         initComponents();
     }
 
@@ -34,7 +61,7 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         TxtCodigoCorreo_JF003_2_S1_RH2 = new javax.swing.JTextField();
         Btn1_JF003_2_S1_RH = new javax.swing.JButton();
-        btn2_JF003_2_S1_RH = new javax.swing.JButton();
+        Btn3_JF003_2_S1_RH = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         Btn2_JF003_2_S1_RH = new javax.swing.JButton();
@@ -92,11 +119,11 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
             }
         });
 
-        btn2_JF003_2_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
-        btn2_JF003_2_S1_RH.setForeground(new java.awt.Color(0, 102, 102));
-        btn2_JF003_2_S1_RH.setText("¿Quieres probar otro método de recuperación?");
-        btn2_JF003_2_S1_RH.setBorder(null);
-        btn2_JF003_2_S1_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn3_JF003_2_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
+        Btn3_JF003_2_S1_RH.setForeground(new java.awt.Color(0, 102, 102));
+        Btn3_JF003_2_S1_RH.setText("¿Quieres probar otro método de recuperación?");
+        Btn3_JF003_2_S1_RH.setBorder(null);
+        Btn3_JF003_2_S1_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel11.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 102, 102));
@@ -158,7 +185,7 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(49, 49, 49))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
-                        .addComponent(btn2_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Btn3_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(90, 90, 90))))
         );
         JP001_S1_RHLayout.setVerticalGroup(
@@ -181,7 +208,7 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Btn2_JF003_2_S1_RH)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn2_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Btn3_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(111, Short.MAX_VALUE))
         );
 
@@ -209,10 +236,10 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton Btn1_JF003_2_S1_RH;
     public javax.swing.JButton Btn2_JF003_2_S1_RH;
+    private javax.swing.JButton Btn3_JF003_2_S1_RH;
     private javax.swing.JPanel JP001_S1_RH;
     public javax.swing.JPasswordField PassField_ConfirmarContra_JF003_3_S1_RH1;
     public javax.swing.JTextField TxtCodigoCorreo_JF003_2_S1_RH2;
-    private javax.swing.JButton btn2_JF003_2_S1_RH;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;

@@ -60,13 +60,14 @@ public class Login implements ActionListener {
             if (Acceso == 1) {
                 switch (Nivel) {
                     case 1:
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
+                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
                         break;
                     case 2:
-                        Abrirvistas.abrir("JF039_S3_RH");
+                        
+                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
                         break;
                     case 3:
-                        Abrirvistas.abrir("JF023_S3_RH");
+                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
                         break;
 
                     default:

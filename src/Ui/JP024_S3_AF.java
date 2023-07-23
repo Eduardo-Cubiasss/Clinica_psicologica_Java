@@ -5,16 +5,45 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import ux.BuscadorPacientes;
+
 /**
  *
  * @author 50369
  */
 public class JP024_S3_AF extends javax.swing.JPanel {
+    
+    private BuscadorPacientes controlador;
+    
+    public JButton getBtn3_JF024() {
+        return btn3_JF024;
+    }
 
+    public JTextField getTxtBuscar_JP024() {
+        return txtBuscar_JP024;
+    }
+
+    public JButton getBtn1_JF024() {
+        return btn1_JF024;
+    }
+
+    public JButton getBtn2_JF024() {
+        return btn2_JF024;
+    }
+
+
+    public JTable getJTable1() {
+        return jTable1;
+    }
     /**
      * Creates new form JP024_S3_AF
      */
-    public JP024_S3_AF() {
+    public JP024_S3_AF(BuscadorPacientes controlador) {
+        this.controlador = controlador;
         initComponents();
     }
 
@@ -100,7 +129,7 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 980, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 40, 40));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 40, 50));
 
         txtBuscar_JP024.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         txtBuscar_JP024.setText("          S");

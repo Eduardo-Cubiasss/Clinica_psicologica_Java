@@ -7,8 +7,6 @@ import java.net.URI;
 import java.math.BigDecimal;
 import ux.DatoRandom;
 
-/*
-
  
 public class RecMessage {
 
@@ -24,5 +22,7 @@ public class RecMessage {
                         .create();
 
         System.out.println(message.getSid());
+
+}
 
 }

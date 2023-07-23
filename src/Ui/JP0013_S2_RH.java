@@ -5,16 +5,49 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import ux.AcercaDeLaClinica;
+
 /**
  *
  * @author 50369
  */
 public class JP0013_S2_RH extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP0013_S2_RH
-     */
-    public JP0013_S2_RH() {
+    private AcercaDeLaClinica controlador;
+    
+    public JButton getBtn001_JF013_S2_RH() {
+        return Btn001_JF013_S2_RH;
+    }
+
+    public JTextField getTxtDescripcion_JF013_S2_RH1() {
+        return TxtDescripcion_JF013_S2_RH1;
+    }
+
+    public JTextField getTxUbicacion_JF013_S2_RH() {
+        return TxUbicacion_JF013_S2_RH;
+    }
+
+    public JTextField getTxtTitulo_JF013_S2_RH() {
+        return TxtTitulo_JF013_S2_RH;
+    }
+
+    public JTextField getTxtDescripcion2_JF013_S2_RH() {
+        return TxtDescripcion2_JF013_S2_RH;
+    }
+
+    public JLabel getJLFoto_JF013_S2_RH() {
+        return JLFoto_JF013_S2_RH;
+    }
+
+    public JButton getBtn4_JF013_S2_RH2() {
+        return Btn4_JF013_S2_RH2;
+    }
+    
+    public JP0013_S2_RH(AcercaDeLaClinica controlador) {
+        this.controlador = controlador;
         initComponents();
     }
 
@@ -28,176 +61,171 @@ public class JP0013_S2_RH extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        kGradientPanel1 = new keeptoo.KGradientPanel();
-        jLabel4 = new javax.swing.JLabel();
+        Btn001_JF013_S2_RH = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        Btn1_JF009_S2_RH = new javax.swing.JButton();
-        Btn2_JF009_S2_RH = new javax.swing.JButton();
-        Btn4_JF009_S2_RH = new javax.swing.JButton();
-        TxtCorreoE_JF009_S2_RH = new javax.swing.JTextField();
-        LabelNumGenerado_JF009_S2_RH = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        LabelImagenPerfil_JF009_S2_RH = new javax.swing.JLabel();
-        TxtNombre_JF009_S2_RH = new javax.swing.JTextField();
-        TxtContraseña_JF009_S2_RH = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
-        jSeparator3 = new javax.swing.JSeparator();
-        jSeparator4 = new javax.swing.JSeparator();
-        jSeparator5 = new javax.swing.JSeparator();
-        Btn3_JF009_S2_RH1 = new javax.swing.JButton();
-        jSeparator6 = new javax.swing.JSeparator();
-        jLabel6 = new javax.swing.JLabel();
-        TxtTipoUsuario_JF009_S2_RH1 = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        Btn4_JF013_S2_RH2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        JLFoto_JF013_S2_RH = new javax.swing.JLabel();
+        TxtDescripcion2_JF013_S2_RH = new javax.swing.JTextField();
+        TxtTitulo_JF013_S2_RH = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        TxUbicacion_JF013_S2_RH = new javax.swing.JTextField();
+        TxtDescripcion_JF013_S2_RH1 = new javax.swing.JTextField();
 
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        kGradientPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 153, 153));
-        kGradientPanel1.setkStartColor(new java.awt.Color(148, 177, 181));
+        Btn001_JF013_S2_RH.setBackground(new java.awt.Color(255, 255, 255));
+        Btn001_JF013_S2_RH.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Btn001_JF013_S2_RH.setForeground(new java.awt.Color(0, 102, 102));
+        Btn001_JF013_S2_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/uim_clinic-medical (3).png"))); // NOI18N
+        Btn001_JF013_S2_RH.setBorder(null);
+        Btn001_JF013_S2_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
-        kGradientPanel1.setLayout(kGradientPanel1Layout);
-        kGradientPanel1Layout.setHorizontalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 968, Short.MAX_VALUE)
-        );
-        kGradientPanel1Layout.setVerticalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 28, Short.MAX_VALUE)
-        );
+        jLabel1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel1.setText("Ubicación");
 
-        jPanel1.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 970, 30));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 0, 170, 90));
+        Btn4_JF013_S2_RH2.setBackground(new java.awt.Color(0, 153, 153));
+        Btn4_JF013_S2_RH2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/EditPencil.png"))); // NOI18N
+        Btn4_JF013_S2_RH2.setBorderPainted(false);
+        Btn4_JF013_S2_RH2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel1.setText("Agregar perfiles de usuario");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Acerca de la clínica");
 
-        Btn1_JF009_S2_RH.setBackground(new java.awt.Color(255, 255, 255));
-        Btn1_JF009_S2_RH.setForeground(new java.awt.Color(255, 255, 255));
-        Btn1_JF009_S2_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector (1).png"))); // NOI18N
-        Btn1_JF009_S2_RH.setBorderPainted(false);
-        Btn1_JF009_S2_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(Btn1_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 80));
-
-        Btn2_JF009_S2_RH.setBackground(new java.awt.Color(255, 255, 255));
-        Btn2_JF009_S2_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ph_note-pencil-bold.png"))); // NOI18N
-        Btn2_JF009_S2_RH.setBorderPainted(false);
-        Btn2_JF009_S2_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(Btn2_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 60, 50));
-
-        Btn4_JF009_S2_RH.setBackground(new java.awt.Color(255, 255, 255));
-        Btn4_JF009_S2_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cancelar.png"))); // NOI18N
-        Btn4_JF009_S2_RH.setBorderPainted(false);
-        Btn4_JF009_S2_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Btn4_JF009_S2_RH.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentShown(java.awt.event.ComponentEvent evt) {
-                Btn4_JF009_S2_RHComponentShown(evt);
+        TxtDescripcion2_JF013_S2_RH.setBackground(new java.awt.Color(0, 153, 153));
+        TxtDescripcion2_JF013_S2_RH.setText("Inserte una descripción adicional acerca de la clinica");
+        TxtDescripcion2_JF013_S2_RH.setBorder(null);
+        TxtDescripcion2_JF013_S2_RH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtDescripcion2_JF013_S2_RHActionPerformed(evt);
             }
         });
-        jPanel1.add(Btn4_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 490, 220, 50));
 
-        TxtCorreoE_JF009_S2_RH.setForeground(new java.awt.Color(102, 102, 102));
-        TxtCorreoE_JF009_S2_RH.setText("Insertar el correo electrónico");
-        TxtCorreoE_JF009_S2_RH.setBorder(null);
-        jPanel1.add(TxtCorreoE_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 280, 40));
+        TxtTitulo_JF013_S2_RH.setBackground(new java.awt.Color(0, 153, 153));
+        TxtTitulo_JF013_S2_RH.setText("Nombre de la clinica");
+        TxtTitulo_JF013_S2_RH.setBorder(null);
 
-        LabelNumGenerado_JF009_S2_RH.setBackground(new java.awt.Color(153, 153, 153));
-        LabelNumGenerado_JF009_S2_RH.setText("Num");
-        jPanel1.add(LabelNumGenerado_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 280, 120, 40));
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(116, 116, 116))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(TxtDescripcion2_JF013_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(JLFoto_JF013_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Btn4_JF013_S2_RH2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 53, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addContainerGap(71, Short.MAX_VALUE)
+                    .addComponent(TxtTitulo_JF013_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(49, 49, 49)))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addComponent(TxtDescripcion2_JF013_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(JLFoto_JF013_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(Btn4_JF013_S2_RH2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(83, 83, 83)
+                    .addComponent(TxtTitulo_JF013_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(474, Short.MAX_VALUE)))
+        );
 
-        jLabel5.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel5.setText("Correo electrónico");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 190, 20));
-        jPanel1.add(LabelImagenPerfil_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 240, 240));
+        jLabel3.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel3.setText("Descripción");
 
-        TxtNombre_JF009_S2_RH.setForeground(new java.awt.Color(102, 102, 102));
-        TxtNombre_JF009_S2_RH.setText("Insertar nombre de usuario");
-        TxtNombre_JF009_S2_RH.setBorder(null);
-        jPanel1.add(TxtNombre_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, 270, 40));
+        TxUbicacion_JF013_S2_RH.setBorder(null);
 
-        TxtContraseña_JF009_S2_RH.setForeground(new java.awt.Color(102, 102, 102));
-        TxtContraseña_JF009_S2_RH.setText("Insertar contraseña");
-        TxtContraseña_JF009_S2_RH.setBorder(null);
-        jPanel1.add(TxtContraseña_JF009_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 170, 270, 40));
+        TxtDescripcion_JF013_S2_RH1.setBorder(null);
 
-        jLabel7.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel7.setText("Usuario");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 90, -1));
-
-        jLabel8.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel8.setText("Contraseña");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 90, -1));
-
-        jLabel9.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel9.setText("Tipo de usuario");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 130, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 390, 420, 10));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 420, 10));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 420, 10));
-
-        jSeparator4.setForeground(new java.awt.Color(102, 102, 102));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 420, 10));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 420, 10));
-
-        Btn3_JF009_S2_RH1.setBackground(new java.awt.Color(255, 255, 255));
-        Btn3_JF009_S2_RH1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Agregar.png"))); // NOI18N
-        Btn3_JF009_S2_RH1.setBorderPainted(false);
-        Btn3_JF009_S2_RH1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(Btn3_JF009_S2_RH1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 270, 50));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, 420, 10));
-
-        jLabel6.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel6.setText("Número de ID generado");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, 190, 20));
-
-        TxtTipoUsuario_JF009_S2_RH1.setForeground(new java.awt.Color(102, 102, 102));
-        TxtTipoUsuario_JF009_S2_RH1.setText("Insertar tipo de usuario");
-        TxtTipoUsuario_JF009_S2_RH1.setBorder(null);
-        jPanel1.add(TxtTipoUsuario_JF009_S2_RH1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, 280, 40));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Btn001_JF013_S2_RH)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(TxUbicacion_JF013_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(223, 223, 223)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(97, 97, 97)
+                    .addComponent(TxtDescripcion_JF013_S2_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(519, Short.MAX_VALUE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Btn001_JF013_S2_RH)
+                    .addComponent(jLabel3))
+                .addGap(249, 249, 249)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(TxUbicacion_JF013_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(111, 111, 111)
+                    .addComponent(TxtDescripcion_JF013_S2_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(315, Short.MAX_VALUE)))
+        );
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Btn4_JF009_S2_RHComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_Btn4_JF009_S2_RHComponentShown
+    private void TxtDescripcion2_JF013_S2_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtDescripcion2_JF013_S2_RHActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Btn4_JF009_S2_RHComponentShown
+    }//GEN-LAST:event_TxtDescripcion2_JF013_S2_RHActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton Btn1_JF009_S2_RH;
-    public javax.swing.JButton Btn2_JF009_S2_RH;
-    public javax.swing.JButton Btn3_JF009_S2_RH1;
-    public javax.swing.JButton Btn4_JF009_S2_RH;
-    public javax.swing.JLabel LabelImagenPerfil_JF009_S2_RH;
-    public javax.swing.JLabel LabelNumGenerado_JF009_S2_RH;
-    public javax.swing.JTextField TxtContraseña_JF009_S2_RH;
-    public javax.swing.JTextField TxtCorreoE_JF009_S2_RH;
-    public javax.swing.JTextField TxtNombre_JF009_S2_RH;
-    public javax.swing.JTextField TxtTipoUsuario_JF009_S2_RH1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
-    public javax.swing.JLabel jLabel5;
-    public javax.swing.JLabel jLabel6;
-    public javax.swing.JLabel jLabel7;
-    public javax.swing.JLabel jLabel8;
-    public javax.swing.JLabel jLabel9;
+    public javax.swing.JButton Btn001_JF013_S2_RH;
+    public javax.swing.JButton Btn4_JF013_S2_RH2;
+    public javax.swing.JLabel JLFoto_JF013_S2_RH;
+    public javax.swing.JTextField TxUbicacion_JF013_S2_RH;
+    public javax.swing.JTextField TxtDescripcion2_JF013_S2_RH;
+    public javax.swing.JTextField TxtDescripcion_JF013_S2_RH1;
+    public javax.swing.JTextField TxtTitulo_JF013_S2_RH;
+    public javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
     public javax.swing.JPanel jPanel1;
-    public javax.swing.JSeparator jSeparator1;
-    public javax.swing.JSeparator jSeparator2;
-    public javax.swing.JSeparator jSeparator3;
-    public javax.swing.JSeparator jSeparator4;
-    public javax.swing.JSeparator jSeparator5;
-    public javax.swing.JSeparator jSeparator6;
-    private keeptoo.KGradientPanel kGradientPanel1;
+    public javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

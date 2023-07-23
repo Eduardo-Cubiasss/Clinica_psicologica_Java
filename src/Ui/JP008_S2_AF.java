@@ -5,16 +5,47 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import ux.ModificarEmpleados;
+
 /**
  *
  * @author 50369
  */
 public class JP008_S2_AF extends javax.swing.JPanel {
+    
+    private ModificarEmpleados controlador;
+    
+    
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+    
+    public JButton getBtn001_JF008_S3_AF() {
+        return Btn001_JF008_S3_AF;
+    }
 
+    public JButton getBtn007_JF008_S3_AF() {
+        return Btn007_JF008_S3_AF;
+    }
+
+    public JButton getBtn006_JF008_S3_AF() {
+        return Btn006_JF008_S3_AF;
+    }
+
+    public JButton getBtn005_JF008_S3_AF() {
+        return Btn005_JF008_S3_AF;
+    }
+
+    public JButton getBtn004_JF008_S3_AF() {
+        return Btn004_JF008_S3_AF;
+    }
     /**
      * Creates new form JP008_S2_AF
      */
-    public JP008_S2_AF() {
+    public JP008_S2_AF(ModificarEmpleados controlador) {
+        this.controlador = controlador;
         initComponents();
     }
 

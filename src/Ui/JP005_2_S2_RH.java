@@ -5,16 +5,34 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import ux.ValidarNum;
+
 /**
  *
  * @author 50369
  */
 public class JP005_2_S2_RH extends javax.swing.JPanel {
+    private ValidarNum controlador;
+    
+    public JTextField getTxtCodigoTel_JF005_2_S2_RH() {
+        return TxtCodigoTel_JF005_2_S2_RH;
+    }
 
-    /**
-     * Creates new form JP005_2_S2_RH
-     */
-    public JP005_2_S2_RH() {
+    public JButton getBtn1_JF005_2_S2_RH() {
+        return Btn1_JF005_2_S2_RH;
+    }
+
+    public JButton getBtn2_JF005_2_S2_RH() {
+        return Btn2_JF005_2_S2_RH;
+    }
+
+    public JButton getBtn3_JF005_2_S2_RH() {
+        return btn3_JF005_2_S2_RH;
+    }
+    public JP005_2_S2_RH(ValidarNum controlador) {
+        this.controlador = controlador;
         initComponents();
     }
 

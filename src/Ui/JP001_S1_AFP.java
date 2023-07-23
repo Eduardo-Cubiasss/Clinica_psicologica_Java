@@ -37,7 +37,7 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
     
     public JP001_S1_AFP(Login controlador) {
         this.controlador = controlador;
-        // Resto del código del constructor
+        
     }
     /**
      * Creates new form JP001_S1_AFP
@@ -75,7 +75,9 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
         JP001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_AF.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 153), new java.awt.Color(0, 102, 102), new java.awt.Color(0, 153, 153), new java.awt.Color(0, 102, 102)));
         JP001_S1_AF.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        JP001_S1_AF.setMaximumSize(new java.awt.Dimension(1136, 1252));
+        JP001_S1_AF.setMaximumSize(new java.awt.Dimension(1120, 540));
+        JP001_S1_AF.setMinimumSize(new java.awt.Dimension(1120, 540));
+        JP001_S1_AF.setPreferredSize(new java.awt.Dimension(1120, 540));
         JP001_S1_AF.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TxtUsuario_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
@@ -94,17 +96,17 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
                 TxtUsuario_JF001_S1_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(TxtUsuario_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 400, 40));
+        JP001_S1_AF.add(TxtUsuario_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 400, 40));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Iniciar Sesión");
-        JP001_S1_AF.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 140, -1));
+        JP001_S1_AF.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 140, -1));
 
         jLabel9.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 102, 102));
         jLabel9.setText("Contraseña");
-        JP001_S1_AF.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        JP001_S1_AF.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, -1));
 
         Btn2_JF001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn2_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
@@ -123,7 +125,7 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
                 Btn2_JF001_S1_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(Btn2_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 220, 40));
+        JP001_S1_AF.add(Btn2_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 220, 40));
 
         btn4_JF001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn4_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
@@ -135,7 +137,7 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
                 btn4_JF001_S1_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(btn4_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 210, 20));
+        JP001_S1_AF.add(btn4_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 210, 20));
 
         btn3_JF001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn3_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
@@ -148,7 +150,7 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
                 btn3_JF001_S1_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(btn3_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, -1, 33));
+        JP001_S1_AF.add(btn3_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, -1, 33));
 
         Pass_JF001_S1_AF.setForeground(new java.awt.Color(204, 204, 204));
         Pass_JF001_S1_AF.setText("Contraseña");
@@ -158,7 +160,7 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
                 Pass_JF001_S1_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(Pass_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 400, 40));
+        JP001_S1_AF.add(Pass_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 400, 40));
 
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 102, 102));
         kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 255));
@@ -179,7 +181,7 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,18 +190,18 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
                 .addComponent(jLabel3)
                 .addGap(45, 45, 45)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
 
-        JP001_S1_AF.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, 470, 600));
+        JP001_S1_AF.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 0, 490, 650));
 
         jLabel2.setForeground(new java.awt.Color(0, 102, 102));
         jLabel2.setText("“Cuando no somos capaces ya de cambiar una situación, ");
-        JP001_S1_AF.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, -1, 30));
+        JP001_S1_AF.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, -1, 30));
 
         jLabel6.setForeground(new java.awt.Color(0, 102, 102));
         jLabel6.setText(" nos enfrentamos al reto de cambiar nosotros mismos”");
-        JP001_S1_AF.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 440, 310, -1));
+        JP001_S1_AF.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, 310, -1));
 
         add(JP001_S1_AF, "card2");
     }// </editor-fold>//GEN-END:initComponents

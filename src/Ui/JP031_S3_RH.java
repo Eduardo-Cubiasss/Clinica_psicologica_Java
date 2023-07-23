@@ -5,16 +5,48 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import ux.Ver_Expediente2;
+
 /**
  *
  * @author LENOVO
  */
 public class JP031_S3_RH extends javax.swing.JPanel {
+     private Ver_Expediente2 controlador;
+     
+      public JLabel getJL_image_JF031_S3_RH() {
+        return JL_image_JF031_S3_RH;
+    }
 
-    /**
-     * Creates new form JP031_S3_RH
-     */
+    public JLabel getJL_Nombre_JF031_S3_RH() {
+        return JL_Nombre_JF031_S3_RH;
+    }
+
+    public JLabel getJL_Edad_JF031_S3_RH() {
+        return JL_Edad_JF031_S3_RH;
+    }
+
+    public JLabel getJL_Correo_JF031_S3_RH() {
+        return JL_Correo_JF031_S3_RH;
+    }
+
+    public JLabel getJL_Telefono_JF031_S3_RH() {
+        return JL_Telefono_JF031_S3_RH;
+    }
+
+    public JTextField getTxtEscribirMensaje_JP031_S3_RH() {
+        return txtEscribirMensaje_JP031_S3_RH;
+    }
+
+    public JButton getBtn01_JP031_S3_RH() {
+        return btn01_JP031_S3_RH;
+    }
+    
     public JP031_S3_RH() {
+        Ver_Expediente2 controlador;
         initComponents();
     }
 

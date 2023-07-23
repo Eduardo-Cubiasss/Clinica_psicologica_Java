@@ -5,18 +5,44 @@
  */
 package Ui;
 
+import javax.swing.JButton;
 import ux.Abrirvistas;
+import ux.Menu_Administrador;
 
 /**
  *
  * @author 50369
  */
 public class JP004_S2_AF extends javax.swing.JPanel {
+    
+    public Menu_Administrador controlador;
+    
+    public JButton getBtn01_JF005_S2_AF() {
+        return btn01_JF005_S2_AF;
+    }
 
-    /**
-     * Creates new form JP004_S2_AF
-     */
-    public JP004_S2_AF() {
+    public JButton getBtn02_JF005_S2_AF() {
+        return btn02_JF005_S2_AF;
+    }
+
+    public JButton getBtn03_JF005_S2_AF() {
+        return btn03_JF005_S2_AF;
+    }
+
+    public JButton getBtn04_JF005_S2_AF() {
+        return btn04_JF005_S2_AF;
+    }
+
+    public JButton getBtn05_JF005_S2_AF() {
+        return btn05_JF005_S2_AF;
+    }
+
+    public JButton getbtn08_JF023_S3_RH() {
+        return btn08_JF023_S3_RH;
+    }
+    
+    public JP004_S2_AF(Menu_Administrador controlador) {
+        this.controlador = controlador;
         initComponents();
     }
 
@@ -31,41 +57,31 @@ public class JP004_S2_AF extends javax.swing.JPanel {
 
         JP001_S1_AF = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         btn01_JF005_S2_AF = new javax.swing.JButton();
         btn02_JF005_S2_AF = new javax.swing.JButton();
         btn03_JF005_S2_AF = new javax.swing.JButton();
         btn04_JF005_S2_AF = new javax.swing.JButton();
         btn05_JF005_S2_AF = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        btn06_JF005_S2_AF = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        kGradientPanel2 = new keeptoo.KGradientPanel();
+        btn08_JF023_S3_RH = new javax.swing.JButton();
+        kGradientPanel1 = new keeptoo.KGradientPanel();
 
+        setMaximumSize(new java.awt.Dimension(1120, 540));
+        setMinimumSize(new java.awt.Dimension(1120, 540));
+        setPreferredSize(new java.awt.Dimension(1120, 540));
         setLayout(new java.awt.CardLayout());
 
         JP001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_AF.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 153), new java.awt.Color(0, 102, 102), new java.awt.Color(0, 153, 153), new java.awt.Color(0, 102, 102)));
         JP001_S1_AF.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        JP001_S1_AF.setMinimumSize(new java.awt.Dimension(1120, 540));
+        JP001_S1_AF.setPreferredSize(new java.awt.Dimension(1120, 540));
         JP001_S1_AF.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("¿Qué desea realizar hoy administrador?");
-        JP001_S1_AF.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, -1, -1));
-
-        jPanel1.setBackground(new java.awt.Color(44, 102, 110));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        JP001_S1_AF.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 40));
+        JP001_S1_AF.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, -1, -1));
 
         btn01_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn01_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnPersonal.png"))); // NOI18N
@@ -75,7 +91,7 @@ public class JP004_S2_AF extends javax.swing.JPanel {
                 btn01_JF005_S2_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(btn01_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 150, 180));
+        JP001_S1_AF.add(btn01_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 150, 180));
 
         btn02_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn02_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnEstadisticas.png"))); // NOI18N
@@ -85,7 +101,7 @@ public class JP004_S2_AF extends javax.swing.JPanel {
                 btn02_JF005_S2_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(btn02_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 150, 180));
+        JP001_S1_AF.add(btn02_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 150, 180));
 
         btn03_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn03_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnAnuncios.png"))); // NOI18N
@@ -95,7 +111,7 @@ public class JP004_S2_AF extends javax.swing.JPanel {
                 btn03_JF005_S2_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(btn03_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 150, 180));
+        JP001_S1_AF.add(btn03_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 150, 180));
 
         btn04_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn04_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnAcercaDClinic.png"))); // NOI18N
@@ -105,7 +121,7 @@ public class JP004_S2_AF extends javax.swing.JPanel {
                 btn04_JF005_S2_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(btn04_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 210, 170, 180));
+        JP001_S1_AF.add(btn04_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 170, 180));
 
         btn05_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn05_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnComents.png"))); // NOI18N
@@ -115,37 +131,50 @@ public class JP004_S2_AF extends javax.swing.JPanel {
                 btn05_JF005_S2_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(btn05_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 210, 160, 180));
-
-        jPanel3.setBackground(new java.awt.Color(200, 232, 232));
-
-        btn06_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cssa.PNG"))); // NOI18N
-        btn06_JF005_S2_AF.setText("jButton6");
-        btn06_JF005_S2_AF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn06_JF005_S2_AFActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(410, Short.MAX_VALUE)
-                .addComponent(btn06_JF005_S2_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(364, 364, 364))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btn06_JF005_S2_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 90, Short.MAX_VALUE)
-        );
-
-        JP001_S1_AF.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 900, 90));
+        JP001_S1_AF.add(btn05_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 210, 160, 180));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
         jLabel3.setText("jLabel3");
-        JP001_S1_AF.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 60, 170, 90));
+        JP001_S1_AF.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 50, 170, 90));
+
+        kGradientPanel2.setkEndColor(new java.awt.Color(0, 153, 153));
+        kGradientPanel2.setkStartColor(new java.awt.Color(0, 153, 153));
+
+        btn08_JF023_S3_RH.setBackground(new java.awt.Color(0, 153, 153));
+        btn08_JF023_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log out.png"))); // NOI18N
+        btn08_JF023_S3_RH.setBorderPainted(false);
+
+        javax.swing.GroupLayout kGradientPanel2Layout = new javax.swing.GroupLayout(kGradientPanel2);
+        kGradientPanel2.setLayout(kGradientPanel2Layout);
+        kGradientPanel2Layout.setHorizontalGroup(
+            kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(kGradientPanel2Layout.createSequentialGroup()
+                .addGap(444, 444, 444)
+                .addComponent(btn08_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(551, Short.MAX_VALUE))
+        );
+        kGradientPanel2Layout.setVerticalGroup(
+            kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btn08_JF023_S3_RH, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+        );
+
+        JP001_S1_AF.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 1160, 80));
+
+        kGradientPanel1.setkEndColor(new java.awt.Color(0, 153, 153));
+        kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
+        kGradientPanel1.setLayout(kGradientPanel1Layout);
+        kGradientPanel1Layout.setHorizontalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1160, Short.MAX_VALUE)
+        );
+        kGradientPanel1Layout.setVerticalGroup(
+            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        JP001_S1_AF.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 30));
 
         add(JP001_S1_AF, "card2");
     }// </editor-fold>//GEN-END:initComponents
@@ -171,11 +200,6 @@ public class JP004_S2_AF extends javax.swing.JPanel {
         Abrirvistas.abrir("JF007_S2_RH");
     }//GEN-LAST:event_btn05_JF005_S2_AFActionPerformed
 
-    private void btn06_JF005_S2_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn06_JF005_S2_AFActionPerformed
-
-        Abrirvistas.abrir("JF008_S2_AF");
-    }//GEN-LAST:event_btn06_JF005_S2_AFActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel JP001_S1_AF;
@@ -184,10 +208,10 @@ public class JP004_S2_AF extends javax.swing.JPanel {
     public javax.swing.JButton btn03_JF005_S2_AF;
     public javax.swing.JButton btn04_JF005_S2_AF;
     public javax.swing.JButton btn05_JF005_S2_AF;
-    public javax.swing.JButton btn06_JF005_S2_AF;
+    public javax.swing.JButton btn08_JF023_S3_RH;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
+    public keeptoo.KGradientPanel kGradientPanel1;
+    public keeptoo.KGradientPanel kGradientPanel2;
     // End of variables declaration//GEN-END:variables
 }

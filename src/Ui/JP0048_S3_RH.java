@@ -5,16 +5,53 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+import ux.primer_uso;
+
 /**
  *
  * @author 50369
  */
 public class JP0048_S3_RH extends javax.swing.JPanel {
+    
+     private primer_uso controlador; 
+    
+     public JTextField getTxtCorreoElectronico_jp0048_RH() {
+        return txtCorreoElectronico_jp0048_RH;
+    }
 
-    /**
-     * Creates new form JP0048_S3_RH
-     */
-    public JP0048_S3_RH() {
+    public JTextField getTxtNumTel_JP0048() {
+        return txtNumTel_JP0048;
+    }
+
+    public JTextField getTxtDui_JP0048() {
+        return txtDui_JP0048;
+    }
+
+    public JTextField getTxtActiLabo_JP0048() {
+        return txtActiLabo_JP0048;
+    }
+
+    public JTextField getTxtFechaNa_JP0048() {
+        return txtFechaNa_JP0048;
+    }
+
+    public JComboBox getJComboBox1() {
+        return jComboBox1;
+    }
+
+    public JButton getJButton1() {
+        return jButton1;
+    }
+
+    public JButton getBtn02_JF048_S3_RH() {
+        return btn02_JF048_S3_RH;
+    }
+     
+    public JP0048_S3_RH(primer_uso controlador) {
+        this.controlador = controlador;
         initComponents();
     }
 
@@ -86,7 +123,7 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         btn02_JF048_S3_RH.setBackground(new java.awt.Color(0, 153, 153));
         btn02_JF048_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log out.png"))); // NOI18N
         btn02_JF048_S3_RH.setBorderPainted(false);
-        kGradientPanel2.add(btn02_JF048_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 165, -1));
+        kGradientPanel2.add(btn02_JF048_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 165, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mp1.PNG"))); // NOI18N
 
@@ -109,7 +146,7 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
                             .addComponent(txtCorreoElectronico_jp0048_RH)
                             .addComponent(txtDui_JP0048, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
                             .addComponent(txtNumTel_JP0048))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtFechaNa_JP0048, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)

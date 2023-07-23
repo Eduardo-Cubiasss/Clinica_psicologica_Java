@@ -5,16 +5,59 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import ux.AgregarEmpleados;
+
 /**
  *
  * @author 50369
  */
 public class JP009_S2_RH extends javax.swing.JPanel {
+    
+    private AgregarEmpleados controlador;
+    
+    public JButton getBtn1_JF009_S2_RH() {
+        return Btn1_JF009_S2_RH;
+    }
 
-    /**
-     * Creates new form JP009_S2_RH
-     */
-    public JP009_S2_RH() {
+    public JButton getBtn2_JF009_S2_RH() {
+        return Btn2_JF009_S2_RH;
+    }
+
+    public JTextField getTxtNombre_JF009_S2_RH() {
+        return TxtNombre_JF009_S2_RH;
+    }
+
+    public JTextField getTxtContraseña_JF009_S2_RH() {
+        return TxtContraseña_JF009_S2_RH;
+    }
+
+    public JTextField getTxtTipoUsuario_JF009_S2_RH1() {
+        return TxtTipoUsuario_JF009_S2_RH1;
+    }
+
+    public JLabel getLabelNumGenerado_JF009_S2_RH() {
+        return LabelNumGenerado_JF009_S2_RH;
+    }
+
+    public JTextField getTxtCorreoE_JF009_S2_RH() {
+        return TxtCorreoE_JF009_S2_RH;
+    }
+
+    public JButton getBtn3_JF009_S2_RH1() {
+        return Btn3_JF009_S2_RH1;
+    }
+
+    public JButton getBtn4_JF009_S2_RH() {
+        return Btn4_JF009_S2_RH;
+    }
+
+    
+    public JP009_S2_RH(AgregarEmpleados controlador) {
+        this.controlador = controlador;
         initComponents();
     }
 

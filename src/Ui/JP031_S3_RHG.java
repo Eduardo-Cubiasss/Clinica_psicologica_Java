@@ -5,16 +5,39 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import ux.Ver_Expediente;
+
 /**
  *
  * @author 50369
  */
 public class JP031_S3_RHG extends javax.swing.JPanel {
+    private Ver_Expediente controlador;
 
-    /**
-     * Creates new form JP031_S3_RHG
-     */
-    public JP031_S3_RHG() {
+    public JButton getBtn1_JF031_S3_RH() {
+        return Btn1_JF031_S3_RH;
+    }
+
+    public JPanel getJP01_JF031_S3_RH() {
+        return JP01_JF031_S3_RH;
+    }
+
+    public JButton getBtn2_JF031_S3_RH1() {
+        return Btn2_JF031_S3_RH1;
+    }
+
+    public JButton getBtn3_JF031_S3_RH2() {
+        return Btn3_JF031_S3_RH2;
+    }
+
+    public JButton getBtn4_JF031_S3_RH() {
+        return Btn4_JF031_S3_RH;
+    }
+    
+    public JP031_S3_RHG(Ver_Expediente controlador) {
+        this.controlador = controlador;
         initComponents();
     }
 

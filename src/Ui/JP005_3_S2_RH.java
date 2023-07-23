@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package Ui;
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import ux.RecMessage;
 
 /**
  *
@@ -11,10 +14,24 @@ package Ui;
  */
 public class JP005_3_S2_RH extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP005_3_S2_RH
-     */
-    public JP005_3_S2_RH() {
+    private RecMessage controlador;
+    
+   public JPasswordField getPassField2_ConfirmarContra_JF002_3_S2_RH1() {
+        return PassField2_ConfirmarContra_JF002_3_S2_RH1;
+    }
+
+    public JPasswordField getPassField_ConfirmarContra_JF003_3_S2_RH1() {
+        return PassField_ConfirmarContra_JF003_3_S2_RH1;
+    }
+
+    public JButton getBtn1_JF005_3_S2_RH() {
+        return Btn1_JF005_3_S2_RH;
+    }
+
+    public JButton getBtn2_JF005_3_S2_RH() {
+        return Btn2_JF005_3_S2_RH;
+    }
+    public JP005_3_S2_RH(RecMessage controlador) {
         initComponents();
     }
 
