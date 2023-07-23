@@ -51,6 +51,9 @@ public class Validaciones implements KeyListener {
             case "SoloLetras":
                 //Aqui pondras el codigo para solo letras y así sucesivamente
                 break;
+            case "clinica":
+                
+                break;
         }
     }
 
