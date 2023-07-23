@@ -4,6 +4,7 @@ import Database.Administrador;
 import Database.Clinica;
 import Database.Procesos_almacenados;
 import Database.Usuarios;
+import javax.swing.JTextField;
 import Ui.JF_000_S7_GU;
 import Ui.JP001_S1_AFP;
 import Ui.JP002_S1_RHP;
@@ -14,6 +15,15 @@ public class Inicializador {
     private RegAdmin_JF002 controladorRegistrar;
     private Hints_Herencia hintsHerencia;
     private JF_000_S7_GU vista;
+    
+    JTextField textField1 = new JTextField();
+    ExtensionCorreo validacionCorreo = new ExtensionCorreo(textField1);
+    
+    JTextField textField = new JTextField();
+    int limiteCaracteres = 12;
+    LimiteCaracteres validacionLimite = new LimiteCaracteres(textField, limiteCaracteres);
+
+    
 
     public Inicializador(JF_000_S7_GU vista) {
         this.vista = vista;
