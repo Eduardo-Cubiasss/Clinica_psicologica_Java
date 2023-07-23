@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 //donde dice implements KeyListener no debes crearlo para cada validación debido a que yo lo que 
 //hice fue importar absolutamente todos los eventos pertenecientes a KeyListener
 public class Validaciones implements KeyListener {
-
+       
     //Con la linea de abajo estamos creando una variable que esta vacia, yo desde otras clases le daré valor a esa variable
     //para que interactue con los objetos 
     private JTextField textfieldenviado;
@@ -27,10 +27,19 @@ public class Validaciones implements KeyListener {
         //Con this es como actualizar una variable por así decirlo, de lo contrario estariamos usando una variable vacia en el procesp
         this.textfieldenviado = textfieldenviado;
         this.CasoValidacion = CasoValidacion;
+        
+        
         textfieldenviado.addKeyListener(this);
+    
+       
     }
 
     //Solo toca los case, no necesitas crear variables ni nada de eso, solo usa los case:)
+
+    /**
+     *
+     * @param e
+     */
     @Override
     public void keyTyped(KeyEvent e) {
         switch (CasoValidacion) {
@@ -48,10 +57,15 @@ public class Validaciones implements KeyListener {
                 }
 
                 break;
+                
             case "SoloLetras":
-                //Aqui pondras el codigo para solo letras y así sucesivamente
+                 
+        char c = e.getKeyChar();
+        if (!Character.isLetter(c) && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+            e.consume(); // Ignora el evento si no es una letra o una tecla de borrado
+        }
                 break;
-            case "clinica":
+            case "Limitantes":
                 
                 break;
         }
@@ -81,4 +95,6 @@ public class Validaciones implements KeyListener {
         }
 
     }
+    
+    
 }
