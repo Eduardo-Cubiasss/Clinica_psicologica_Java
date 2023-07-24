@@ -34,15 +34,15 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
     public JPasswordField getPass_JF001_S1_AF() {
         return Pass_JF001_S1_AF;
     }
-    
-    public JP001_S1_AFP(Login controlador) {
-        this.controlador = controlador;
-        
+    public JButton getbtn4_JF001_S1_AF() {
+        return btn4_JF001_S1_AF;
     }
+    
     /**
      * Creates new form JP001_S1_AFP
      */
-    public JP001_S1_AFP() {
+    public JP001_S1_AFP(Login controlador) {
+        this.controlador = controlador;
         initComponents();
     }
 

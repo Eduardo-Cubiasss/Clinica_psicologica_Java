@@ -27,6 +27,7 @@ public class Login implements ActionListener {
     private Usuarios modelUsers;
     private JButton btnLogin;
     private JButton btnregistarse;
+    private JButton btnreccontra;
     private JTextField txtUsuario;
     private JPasswordField txtContraseña;
     private JPanel JPContenido;
@@ -34,7 +35,7 @@ public class Login implements ActionListener {
     private JP002_S1_RHP panelRegistro;
 
     public Login(Usuarios modelUsers, JButton btnLogin, JTextField txtUsuario, JPasswordField txtContraseña,
-            JPanel JPContenido, Procesos_almacenados Procesos, JButton btnregistarse) {
+            JPanel JPContenido, Procesos_almacenados Procesos, JButton btnregistarse, JButton btnreccontra) {
         this.modelUsers = modelUsers;
         this.btnLogin = btnLogin;
         this.btnregistarse = btnregistarse;
@@ -42,10 +43,12 @@ public class Login implements ActionListener {
         this.txtContraseña = txtContraseña;
         this.JPContenido = JPContenido;
         this.Procesos = Procesos;
+        this.btnreccontra = btnreccontra;
 
         // Agrega el ActionListener al botón btnLogin
         this.btnLogin.addActionListener(this);
         this.btnregistarse.addActionListener(this);
+        this.btnreccontra.addActionListener(this);
     }
 
 
@@ -81,6 +84,10 @@ public class Login implements ActionListener {
         else if(e.getSource() == btnregistarse)
         {
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
+        }
+                else if(e.getSource() == btnreccontra)
+        {
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelvalCorreo");
         }
     }
 }

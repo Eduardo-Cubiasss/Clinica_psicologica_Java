@@ -2,15 +2,19 @@ package ux;
 
 import Database.Administrador;
 import Database.Clinica;
+import Database.Contactos;
 import Database.Procesos_almacenados;
 import Database.Usuarios;
 import javax.swing.JTextField;
 import Ui.JF_000_S7_GU;
 import Ui.JP001_S1_AFP;
 import Ui.JP002_S1_RHP;
+import Ui.JP003_2_S1_RH;
+import Ui.JP003_S1_RH;
 import Ui.JP004_S2_AF;
 import Ui.JP023_S3_RH;
 import Ui.JP039_S3_RH;
+import Ui.SplashScreen;
 
 public class Inicializador {
 
@@ -19,6 +23,8 @@ public class Inicializador {
     private Menu_Administrador controladorMenuAd;
     private Menu_Terapeuta controladorMenuTp;
     private Menu_Secretaria controladorMenuSec;
+    private ValidarCorreo controladorValCorreo;
+    private RecGmail controladorCorreoenviado;
     private Hints_Herencia hintsHerencia;
     private JF_000_S7_GU vista;
 
@@ -37,8 +43,12 @@ public class Inicializador {
         Procesos_almacenados Procesos = new Procesos_almacenados();
         Administrador modelAdmin = new Administrador();
         Clinica modelClinica = new Clinica();
+        Contactos ModelContactos = new Contactos();
 
         // Crea una instancia del JPanel JP001_S1_AFP
+        SplashScreen panelSplash = new SplashScreen();
+        vista.JPContenido.add(panelSplash, "panelSplash");
+    
         JP001_S1_AFP panelInicioSesion = new JP001_S1_AFP(controladorLogin);
         vista.JPContenido.add(panelInicioSesion, "panelInicioSesion");
         
@@ -53,11 +63,17 @@ public class Inicializador {
         
         JP039_S3_RH panelMenuSec = new JP039_S3_RH(controladorMenuSec);
         vista.JPContenido.add(panelMenuSec, "panelMenuSec");
+        
+        JP003_S1_RH panelvalCorreo = new JP003_S1_RH(controladorValCorreo);
+        vista.JPContenido.add(panelvalCorreo, "panelvalCorreo");
+
+        JP003_2_S1_RH panelCorreoenviado = new JP003_2_S1_RH(controladorCorreoenviado);
+        vista.JPContenido.add(panelCorreoenviado, "panelCorreoenviado");
 
         // Crea una instancia del controlador Login y pasa los componentes necesarios
        controladorLogin = new Login(modelUsers, panelInicioSesion.getBtn2_JF001_S1_AF(),
                 panelInicioSesion.getTxtUsuario_JF001_S1_AF(), panelInicioSesion.getPass_JF001_S1_AF(),
-                vista.JPContenido, Procesos, panelInicioSesion.getbtn3_JF001_S1_AF());
+                vista.JPContenido, Procesos, panelInicioSesion.getbtn3_JF001_S1_AF(), panelInicioSesion.getbtn4_JF001_S1_AF());
 
 
         // Crea una instancia del controlador RegAdmin_JF002 y pasa los modelos necesarios
@@ -65,6 +81,8 @@ public class Inicializador {
         controladorMenuAd = new Menu_Administrador(vista.JPContenido);
         controladorMenuTp = new Menu_Terapeuta(vista.JPContenido);
         controladorMenuSec = new Menu_Secretaria(vista.JPContenido);
+        controladorValCorreo = new ValidarCorreo(ModelContactos,panelvalCorreo, Procesos, vista.JPContenido);
+        controladorCorreoenviado = new RecGmail(modelUsers,ModelContactos, panelCorreoenviado, Procesos, vista.JPContenido);
         
         // Asocia la instancia de JP002_S1_RHP al JPContenido
         vista.JPContenido.add(panelRegistro, "panelRegistro");
@@ -75,7 +93,13 @@ public class Inicializador {
         // Asocia la instancia de JP023_S3_RH al JPContenido
         vista.JPContenido.add(panelMenuTp, "panelMenuTp");
         
-        vista.JPContenido.add(panelMenuSec, "panelMenuSec");
+        vista.JPContenido.add(panelMenuAdmin, "panelMenuAdmin");
+        
+        vista.JPContenido.add(panelvalCorreo, "panelvalCorreo");
+        
+        vista.JPContenido.add(panelCorreoenviado, "panelCorreoenviado");
+        
+        
 
         // Aquí mandamos todos los paneles
         //hintsHerencia = new Hints_Herencia(panelInicioSesion, panelRegistro);

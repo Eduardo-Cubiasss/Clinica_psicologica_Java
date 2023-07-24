@@ -61,14 +61,17 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         TxtCodigoCorreo_JF003_2_S1_RH2 = new javax.swing.JTextField();
         Btn1_JF003_2_S1_RH = new javax.swing.JButton();
-        Btn3_JF003_2_S1_RH = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         Btn2_JF003_2_S1_RH = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         PassField_ConfirmarContra_JF003_3_S1_RH1 = new javax.swing.JPasswordField();
+        Btn3_JF003_2_S1_RH = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
+        setMaximumSize(new java.awt.Dimension(1120, 540));
+        setMinimumSize(new java.awt.Dimension(1120, 540));
+        setPreferredSize(new java.awt.Dimension(1120, 540));
         setLayout(new java.awt.CardLayout());
 
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 102, 102));
@@ -119,12 +122,6 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
             }
         });
 
-        Btn3_JF003_2_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
-        Btn3_JF003_2_S1_RH.setForeground(new java.awt.Color(0, 102, 102));
-        Btn3_JF003_2_S1_RH.setText("¿Quieres probar otro método de recuperación?");
-        Btn3_JF003_2_S1_RH.setBorder(null);
-        Btn3_JF003_2_S1_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
         jLabel11.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 102, 102));
         jLabel11.setText("Ingresa el código enviado al correo asociado");
@@ -156,42 +153,48 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
             }
         });
 
+        Btn3_JF003_2_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
+        Btn3_JF003_2_S1_RH.setForeground(new java.awt.Color(0, 102, 102));
+        Btn3_JF003_2_S1_RH.setText("¿Quieres probar otro método de recuperación?");
+        Btn3_JF003_2_S1_RH.setBorder(null);
+        Btn3_JF003_2_S1_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn3_JF003_2_S1_RH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn3_JF003_2_S1_RHActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout JP001_S1_RHLayout = new javax.swing.GroupLayout(JP001_S1_RH);
         JP001_S1_RH.setLayout(JP001_S1_RHLayout);
         JP001_S1_RHLayout.setHorizontalGroup(
             JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Btn2_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Btn1_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel10)
-                            .addComponent(PassField_ConfirmarContra_JF003_3_S1_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtCodigoCorreo_JF003_2_S1_RH2, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(52, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(82, 82, 82)
                 .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
                         .addComponent(jLabel4)
-                        .addGap(77, 77, 77))
+                        .addGap(28, 28, 28))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(JP001_S1_RHLayout.createSequentialGroup()
+                            .addGap(56, 56, 56)
+                            .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Btn2_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Btn1_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel11)
+                        .addComponent(jLabel10)
+                        .addComponent(PassField_ConfirmarContra_JF003_3_S1_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TxtCodigoCorreo_JF003_2_S1_RH2, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Btn3_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90))))
+                        .addGap(34, 34, 34)))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
         JP001_S1_RHLayout.setVerticalGroup(
             JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
+                .addGap(84, 84, 84)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -207,12 +210,12 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
                 .addComponent(Btn1_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Btn2_JF003_2_S1_RH)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(Btn3_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
 
-        kGradientPanel1.add(JP001_S1_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(546, -10, 440, 540));
+        kGradientPanel1.add(JP001_S1_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 570, 650));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogitoGrande.png"))); // NOI18N
         kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 430, 200));
@@ -231,6 +234,10 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
     private void PassField_ConfirmarContra_JF003_3_S1_RH1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassField_ConfirmarContra_JF003_3_S1_RH1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PassField_ConfirmarContra_JF003_3_S1_RH1ActionPerformed
+
+    private void Btn3_JF003_2_S1_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn3_JF003_2_S1_RHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn3_JF003_2_S1_RHActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

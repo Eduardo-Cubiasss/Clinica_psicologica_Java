@@ -100,13 +100,13 @@ public class Procesos_almacenados {
 
     }
 
-    public boolean RecCorreo(Usuarios ModelUsers, Contactos ModelContactos) {
+    public boolean RecCorreo(Usuarios modelUsers, Contactos ModelContactos) {
         Connection conn = null;
         PreparedStatement ps = null;
         try {
             conn = (Connection) ConnectionSQL.getConexion();
             ps = conn.prepareStatement("Exec PDActualizarContraGmail ?, ?;");
-            ps.setString(1, ModelUsers.getContraseña());
+            ps.setString(1, modelUsers.getContraseña());
             ps.setString(2, ModelContactos.getCorreo());
             System.out.println("Exitooo en el cambio de contraseña");
             ps.executeUpdate();

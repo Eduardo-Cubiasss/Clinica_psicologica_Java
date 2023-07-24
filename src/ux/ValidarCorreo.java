@@ -8,6 +8,8 @@ package ux;
 import Database.Contactos;
 import Database.Procesos_almacenados;
 import Ui.JF003_S1_RH;
+import Ui.JP003_S1_RH;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Properties;
@@ -17,6 +19,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import ux.DatoRandom;
 
 /**
@@ -26,13 +29,15 @@ import ux.DatoRandom;
 public class ValidarCorreo implements ActionListener {
 
     private Contactos ModelContactos;
-    private JF003_S1_RH vistaJF003;
+    private JP003_S1_RH vistaJF003;
     private Procesos_almacenados Procesos;
+    private JPanel JPContenido;
 
-    public ValidarCorreo(Contactos ModelContactos, JF003_S1_RH vistaJF003, Procesos_almacenados Procesos) {
+    public ValidarCorreo(Contactos ModelContactos, JP003_S1_RH vistaJF003, Procesos_almacenados Procesos, JPanel JPContenido) {
         this.ModelContactos = ModelContactos;
         this.Procesos = Procesos;
         this.vistaJF003 = vistaJF003;
+        this.JPContenido = JPContenido;
         this.vistaJF003.Btn1_JF003_S1_RH.addActionListener(this);
         this.vistaJF003.Btn2_JF003_S1_RH.addActionListener(this);
     }
@@ -52,7 +57,7 @@ public class ValidarCorreo implements ActionListener {
             if (CorreoNoVer.equals(Correo)) {
                 try {
                     String Nrandom = ModelContactos.getNumeroRandom();
-                    System.out.println(Nrandom + " Aqui esta el código dde verificacion que se manda a llamar con un get");
+                    
                     //Preparar las cosas
                     String correoEmisor = "mindlinkoficial@gmail.com";
                     String contraseñaEmisor = "inblyssyqjiszhds";
@@ -84,16 +89,16 @@ public class ValidarCorreo implements ActionListener {
                     t.close();
 
                     JOptionPane.showMessageDialog(null, "Correo enviado");
-                    Abrirvistas.abrir("JF003_2_S1_RH");
+                    ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelCorreoenviado");
                 } catch (Exception i) {
-                    System.out.println("ESTE ES EL ERROR" + i.toString());
+                    
                     JOptionPane.showMessageDialog(null, "J022DA ", "Error al enviar correo", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         }
         else if (e.getSource() == vistaJF003.Btn2_JF003_S1_RH)
         {
-            Abrirvistas.abrir("JF002_S1_RH");
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
         }
 
     }
