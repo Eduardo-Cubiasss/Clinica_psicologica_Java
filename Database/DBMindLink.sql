@@ -442,7 +442,7 @@ Insert into TbSecretaria values ('Juana','','','','','');
 
 --Aqui empieza el proceso para logear todo tipo de usuario, admin, empleado, usuario
 
-CREATE PROCEDURE PDLogear
+ALTER PROCEDURE PDLogear
     @UsernameIngresado VARCHAR(50),
     @ContraseñaIngresado VARCHAR(90),
     @abrirventana INT OUTPUT,
@@ -462,11 +462,12 @@ BEGIN
     DECLARE @TerapeExist INT;
 
     -- Con esto seleccionamos de cada tabla de cada nivel de usuario si existe un ID como el ingresado
-    SET @IDUsuario = (SELECT IDUsuario FROM TbUsuarios WHERE Username = @UsernameIngresado);
-    SET @username = (SELECT UserName FROM TbUsuarios WHERE IDUsuario = @IDUsuario);
-    SET @AdminExist = (SELECT IDUsuario FROM TbAdministrador WHERE IDUsuario = @IDUsuario);
-    SET @SecretExist = (SELECT IDUsuario FROM TbSecretaria WHERE IDUsuario = @IDUsuario);
-    SET @TerapeExist = (SELECT IDUsuario FROM TbTerapeutas WHERE IDUsuario = @IDUsuario);
+    SET @IDUsuario = (SELECT TOP 1 IDUsuario FROM TbUsuarios WHERE Username = @UsernameIngresado);
+	SET @username = (SELECT TOP 1 UserName FROM TbUsuarios WHERE IDUsuario = @IDUsuario);
+	SET @AdminExist = (SELECT TOP 1 IDUsuario FROM TbAdministrador WHERE IDUsuario = @IDUsuario);
+	SET @SecretExist = (SELECT TOP 1 IDUsuario FROM TbSecretaria WHERE IDUsuario = @IDUsuario);
+	SET @TerapeExist = (SELECT TOP 1 IDUsuario FROM TbTerapeutas WHERE IDUsuario = @IDUsuario);
+
 
     IF (@username = @UsernameIngresado)
     BEGIN
@@ -523,7 +524,7 @@ END
 
 DECLARE @resultado INT;
 DECLARE @ventana INT;
-EXEC PDLogear 'Guayito', 'Contraseña', @ventana OUTPUT, @resultado OUTPUT;
+EXEC PDLogear 'Guayito', 'Melocoton', @ventana OUTPUT, @resultado OUTPUT;
 SELECT @resultado AS acceso;
 SELECT @ventana AS abrirventana;
 
@@ -666,7 +667,7 @@ BEGIN
 	END
 END
 
-Exec PDActualizarContraGmail'guayito.palom0@gmail.com', 'Melocoton';
+Exec PDActualizarContraGmail 'guayito.palom0@gmail.com', 'Melocoton';
 SELECT * from TbUsuarios
 
 /*
