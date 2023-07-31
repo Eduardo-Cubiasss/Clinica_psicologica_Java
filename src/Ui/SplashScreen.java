@@ -8,11 +8,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import ux.Inicializador;
 
 public class SplashScreen extends javax.swing.JPanel {
 
-    private JLabel jLabel11;
     private int segundosRestantes = 6;
+     private JPanel JPContenido;
 
     public SplashScreen() {
         initComponents();
@@ -25,12 +26,13 @@ public class SplashScreen extends javax.swing.JPanel {
             public void actionPerformed(ActionEvent e) {
                 segundosRestantes--;
                 if (segundosRestantes <= 0) {
-                    ((CardLayout) getParent().getLayout()).show(getParent(), "panelInicioSesion");
+                    // Oculta el SplashScreen después de que han pasado los 6 segundos
+                     ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
                 }
             }
         });
-        timer.start();
-    }
+        timer.setRepeats(true);
+        timer.start();}
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -55,7 +57,7 @@ public class SplashScreen extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

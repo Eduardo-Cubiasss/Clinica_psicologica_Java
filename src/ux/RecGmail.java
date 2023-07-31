@@ -8,8 +8,6 @@ package ux;
 import Database.Contactos;
 import Database.Procesos_almacenados;
 import Database.Usuarios;
-import Ui.JF003_2_S1_RH;
-import Ui.JF003_S1_RH;
 import Ui.JP003_2_S1_RH;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;

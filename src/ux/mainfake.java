@@ -6,6 +6,9 @@
 package ux;
 
 import Ui.JF_000_S7_GU;
+import Ui.SplashScreen;
+import java.awt.CardLayout;
+import javax.swing.Timer;
 
 /**
  *
@@ -16,13 +19,10 @@ public class mainfake {
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                // Crea una instancia del JFrame JF_000_S7_GY
-                JF_000_S7_GU jFrame = new JF_000_S7_GU();
-
-                // Haz visible el JFrame
-                jFrame.setVisible(true);
+                // Crea una instancia del JFrame JF_000_S7_GU
+               JF_000_S7_GU vista = new JF_000_S7_GU();
+               vista.setVisible(true);
             }
         });
     }
 }
-

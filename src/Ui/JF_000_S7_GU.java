@@ -50,7 +50,6 @@ public class JF_000_S7_GU extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(1120, 666));
         setMinimumSize(new java.awt.Dimension(1120, 666));
         setUndecorated(true);
 
@@ -107,7 +106,7 @@ public class JF_000_S7_GU extends javax.swing.JFrame {
                 .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(JPContenido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPContenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         JPbarra5Layout.setVerticalGroup(
             JPbarra5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,7 +154,7 @@ public class JF_000_S7_GU extends javax.swing.JFrame {
          jButton12.setBackground(Color.white); 
     }//GEN-LAST:event_jButton12MouseExited
     private void jButton11MouseExited(java.awt.event.MouseEvent evt) {                                      
-         jButton11.setBackground(Color.white); 
+       
     }  
     private void jButton12MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseEntered
        jButton12.setBackground(new Color(44, 102, 110)); 
@@ -200,27 +199,12 @@ public class JF_000_S7_GU extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JPanel JPContenido;
-    public javax.swing.JPanel JPbarra;
-    public javax.swing.JPanel JPbarra1;
-    public javax.swing.JPanel JPbarra2;
-    public javax.swing.JPanel JPbarra3;
-    public javax.swing.JPanel JPbarra4;
     public javax.swing.JPanel JPbarra5;
-    public javax.swing.JButton jButton1;
-    public javax.swing.JButton jButton10;
     public javax.swing.JButton jButton11;
     public javax.swing.JButton jButton12;
-    public javax.swing.JButton jButton2;
-    public javax.swing.JButton jButton3;
-    public javax.swing.JButton jButton4;
-    public javax.swing.JButton jButton5;
-    public javax.swing.JButton jButton6;
-    public javax.swing.JButton jButton7;
-    public javax.swing.JButton jButton8;
-    public javax.swing.JButton jButton9;
     // End of variables declaration//GEN-END:variables
 
     public void jButton2MouseExited() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 }

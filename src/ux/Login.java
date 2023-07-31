@@ -25,38 +25,29 @@ import javax.swing.JTextField;
 public class Login implements ActionListener {
 
     private Usuarios modelUsers;
-    private JButton btnLogin;
-    private JButton btnregistarse;
-    private JButton btnreccontra;
-    private JTextField txtUsuario;
-    private JPasswordField txtContraseña;
     private JPanel JPContenido;
     private Procesos_almacenados Procesos;
-    private JP002_S1_RHP panelRegistro;
+    private JP001_S1_AFP panelRegistro;
 
-    public Login(Usuarios modelUsers, JButton btnLogin, JTextField txtUsuario, JPasswordField txtContraseña,
-            JPanel JPContenido, Procesos_almacenados Procesos, JButton btnregistarse, JButton btnreccontra) {
+    public Login(Usuarios modelUsers,JPanel JPContenido, Procesos_almacenados Procesos, 
+            JP001_S1_AFP panelRegistro) {
         this.modelUsers = modelUsers;
-        this.btnLogin = btnLogin;
-        this.btnregistarse = btnregistarse;
-        this.txtUsuario = txtUsuario;
-        this.txtContraseña = txtContraseña;
         this.JPContenido = JPContenido;
         this.Procesos = Procesos;
-        this.btnreccontra = btnreccontra;
+        this.panelRegistro = panelRegistro;
 
         // Agrega el ActionListener al botón btnLogin
-        this.btnLogin.addActionListener(this);
-        this.btnregistarse.addActionListener(this);
-        this.btnreccontra.addActionListener(this);
+        this.panelRegistro.getBtn2_JF001_S1_AF().addActionListener(this);
+        this.panelRegistro.getbtn3_JF001_S1_AF().addActionListener(this);
+        this.panelRegistro.getbtn4_JF001_S1_AF().addActionListener(this);
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == btnLogin) {
-            modelUsers.setUserName(txtUsuario.getText());
-            modelUsers.setContraseña(new String(txtContraseña.getPassword()));
+        if (e.getSource() == panelRegistro.getBtn2_JF001_S1_AF()) {
+            modelUsers.setUserName(panelRegistro.getTxtUsuario_JF001_S1_AF().getText());
+            modelUsers.setContraseña(new String(panelRegistro.getPass_JF001_S1_AF().getPassword()));
             Procesos.Logear(modelUsers);
             int Acceso = modelUsers.getAcceso();
             int Nivel = modelUsers.getResultado();
@@ -81,11 +72,11 @@ public class Login implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Se sugiere visitar la página donde se explica a detalle cada error que puede experimentar usted como usuario", "ERROR JF001DA", JOptionPane.INFORMATION_MESSAGE);
             }
         }
-        else if(e.getSource() == btnregistarse)
+        else if(e.getSource() == panelRegistro.getbtn3_JF001_S1_AF())
         {
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
         }
-                else if(e.getSource() == btnreccontra)
+                else if(e.getSource() == panelRegistro.getbtn4_JF001_S1_AF())
         {
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelvalCorreo");
         }

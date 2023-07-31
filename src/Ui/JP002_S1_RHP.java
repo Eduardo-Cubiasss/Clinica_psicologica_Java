@@ -46,15 +46,13 @@ public class JP002_S1_RHP extends javax.swing.JPanel {
         return Btn2_JF002_S1_RH;
     }
 
-    public JP002_S1_RHP(RegAdmin_JF002 controlador) {
-        this.controlador = controlador;
-        initComponents();
-    }
+    
 
     /**
      * Creates new form JP002_S1_RHP
      */
-    public JP002_S1_RHP() {
+    public JP002_S1_RHP (RegAdmin_JF002 controlador) {
+        this.controlador = controlador;
         initComponents();
     }
 
