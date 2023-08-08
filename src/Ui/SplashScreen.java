@@ -13,26 +13,28 @@ import ux.Inicializador;
 public class SplashScreen extends javax.swing.JPanel {
 
     private int segundosRestantes = 6;
-     private JPanel JPContenido;
+    private JPanel JPContenido;
 
-    public SplashScreen() {
+    public SplashScreen(JPanel JPContenido) {
+        this.JPContenido = JPContenido;
         initComponents();
         startContador();
     }
 
-    private void startContador() {
+    public void startContador() {
         Timer timer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 segundosRestantes--;
                 if (segundosRestantes <= 0) {
                     // Oculta el SplashScreen después de que han pasado los 6 segundos
-                     ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
+                    ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
                 }
             }
         });
         timer.setRepeats(true);
-        timer.start();}
+        timer.start();
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

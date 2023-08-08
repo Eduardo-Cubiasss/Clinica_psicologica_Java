@@ -39,7 +39,7 @@ public class Inicializador {
 
     public Inicializador(JF_000_S7_GU vista) {
         this.vista = vista;
-        SplashScreen panelSplash = new SplashScreen();
+         SplashScreen panelSplash = new SplashScreen(vista.JPContenido);
         // Crea las instancias de los modelos
         Usuarios modelUsers = new Usuarios();
         Procesos_almacenados Procesos = new Procesos_almacenados();
@@ -48,8 +48,7 @@ public class Inicializador {
         Contactos ModelContactos = new Contactos();
         
         vista.JPContenido.add(panelSplash, "panelSplash");
-         ((CardLayout) vista.JPContenido.getLayout()).show(vista.JPContenido, "panelSplash");
-        
+                 
         JP001_S1_AFP panelInicioSesion = new JP001_S1_AFP(controladorLogin);
         vista.JPContenido.add(panelInicioSesion, "panelInicioSesion");
 
@@ -84,13 +83,6 @@ public class Inicializador {
         // Aquí mandamos todos los paneles
         hintsHerencia = new Hints_Herencia(panelInicioSesion, panelRegistro);
 
-        // Mostrar el panel que desees, por ejemplo:
-        mostrarPanel("panelInicioSesion");
     }
 
-    // Agregar este método para mostrar el panel deseado usando el CardLayout
-    private void mostrarPanel(String panelName) {
-        CardLayout cardLayout = (CardLayout) vista.JPContenido.getLayout();
-        cardLayout.show(vista.JPContenido, panelName);
-    }
 }
