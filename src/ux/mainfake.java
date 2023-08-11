@@ -19,6 +19,7 @@ public class mainfake {
                 SplashScreen splashScreen = new SplashScreen(vista.JPContenido);
 
                 // Mostrar el panel que desees, por ejemplo:
+                
                 mostrarPanel("panelSplash", vista.JPContenido);
 
                 // Hace la ventana JF_000_S7_GU visible
@@ -29,6 +30,7 @@ public class mainfake {
 
     // Agregar este método para mostrar el panel deseado usando el CardLayout
     private static void mostrarPanel(String panelName, JPanel JPContenido) {
+            
         CardLayout cardLayout = (CardLayout) JPContenido.getLayout();
         cardLayout.show(JPContenido, panelName);
     }

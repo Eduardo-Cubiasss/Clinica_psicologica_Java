@@ -39,16 +39,16 @@ public class Inicializador {
 
     public Inicializador(JF_000_S7_GU vista) {
         this.vista = vista;
-         SplashScreen panelSplash = new SplashScreen(vista.JPContenido);
+        SplashScreen panelSplash = new SplashScreen(vista.JPContenido);
         // Crea las instancias de los modelos
         Usuarios modelUsers = new Usuarios();
         Procesos_almacenados Procesos = new Procesos_almacenados();
         Administrador modelAdmin = new Administrador();
         Clinica modelClinica = new Clinica();
         Contactos ModelContactos = new Contactos();
-        
+
         vista.JPContenido.add(panelSplash, "panelSplash");
-                 
+
         JP001_S1_AFP panelInicioSesion = new JP001_S1_AFP(controladorLogin);
         vista.JPContenido.add(panelInicioSesion, "panelInicioSesion");
 
