@@ -97,6 +97,7 @@ public class ValidarCorreo implements ActionListener {
         }
         else if (e.getSource() == vistaJF003.Btn2_JF003_S1_RH)
         {
+            JPContenido.remove(vistaJF003);
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
         }
 

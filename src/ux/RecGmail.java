@@ -63,14 +63,18 @@ public class RecGmail implements ActionListener {
                 System.out.println("Sea metio al if porque ambos codigos son iguales");
                 Procesos.RecCorreo(modelUsers, ModelContactos);
                 JOptionPane.showMessageDialog(null, "Intenta iniciar sesión por favor", "Sugerencia", JOptionPane.INFORMATION_MESSAGE);
+                JPContenido.remove(vistaJF003);
                 ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
+                
             } else {
                 JOptionPane.showMessageDialog(null, "Intentalo de nuevo", "J001GU", JOptionPane.INFORMATION_MESSAGE);
-               ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelvalCorreo");
+                JPContenido.remove(vistaJF003);
+                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelvalCorreo");
             }
 
         } else if (e.getSource() == vistaJF003.Btn2_JF003_2_S1_RH) {
-              ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
+            JPContenido.remove(vistaJF003);  
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
         }
 
     }

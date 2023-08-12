@@ -6,7 +6,6 @@
 package Ui;
 
 import javax.swing.JButton;
-import ux.Abrirvistas;
 import ux.Menu_Administrador;
 
 /**
@@ -180,24 +179,24 @@ public class JP004_S2_AF extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn01_JF005_S2_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn01_JF005_S2_AFActionPerformed
-        Abrirvistas.abrir("JF008_S2_AF");
+        
     }//GEN-LAST:event_btn01_JF005_S2_AFActionPerformed
 
     private void btn02_JF005_S2_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn02_JF005_S2_AFActionPerformed
-        Abrirvistas.abrir("JF022_S3_AF");
+        
     }//GEN-LAST:event_btn02_JF005_S2_AFActionPerformed
 
     private void btn03_JF005_S2_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn03_JF005_S2_AFActionPerformed
-        Abrirvistas.abrir("JF006_S2_AF");
+       
     }//GEN-LAST:event_btn03_JF005_S2_AFActionPerformed
 
     private void btn04_JF005_S2_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn04_JF005_S2_AFActionPerformed
-        Abrirvistas.abrir("JF013_S2_RH");
+       
     }//GEN-LAST:event_btn04_JF005_S2_AFActionPerformed
 
     private void btn05_JF005_S2_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn05_JF005_S2_AFActionPerformed
 
-        Abrirvistas.abrir("JF007_S2_RH");
+        
     }//GEN-LAST:event_btn05_JF005_S2_AFActionPerformed
 
 

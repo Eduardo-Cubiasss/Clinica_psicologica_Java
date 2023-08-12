@@ -54,16 +54,21 @@ public class Login implements ActionListener {
                 switch (Nivel) {
                     case 1:
                         JPContenido.remove(panelRegistro);
-                        JPContenido.remove(panelRegistro);
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
+                        JPContenido.revalidate();
+                         JPContenido.repaint();
                         break;
                     case 2:
                         JPContenido.remove(panelRegistro);
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
+                        JPContenido.revalidate();
+                         JPContenido.repaint();
                         break;
                     case 3:
                         JPContenido.remove(panelRegistro);
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
+                        JPContenido.revalidate();
+                         JPContenido.repaint();
                         break;
 
                     default:
@@ -76,9 +81,14 @@ public class Login implements ActionListener {
         } else if (e.getSource() == panelRegistro.getbtn3_JF001_S1_AF()) {
             JPContenido.remove(panelRegistro);
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+                         
         } else if (e.getSource() == panelRegistro.getbtn4_JF001_S1_AF()) {
             JPContenido.remove(panelRegistro);
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelvalCorreo");
+            JPContenido.revalidate();
+            JPContenido.repaint();
         }
     }
 }

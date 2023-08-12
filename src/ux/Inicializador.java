@@ -16,10 +16,13 @@ import Ui.JP023_S3_RH;
 import Ui.JP039_S3_RH;
 import Ui.SplashScreen;
 import java.awt.CardLayout;
+import java.util.Stack;
 import javax.swing.JPanel;
 
 public class Inicializador {
-
+    
+    
+    private PanelHistory panelHistory;
     private Login controladorLogin;
     private RegAdmin_JF002 controladorRegistrar;
     private Menu_Administrador controladorMenuAd;
@@ -29,6 +32,7 @@ public class Inicializador {
     private RecGmail controladorCorreoenviado;
     private Hints_Herencia hintsHerencia;
     private JF_000_S7_GU vista;
+    
 
     JTextField textField1 = new JTextField();
     ExtensionCorreo validacionCorreo = new ExtensionCorreo(textField1);
@@ -39,6 +43,10 @@ public class Inicializador {
 
     public Inicializador(JF_000_S7_GU vista) {
         this.vista = vista;
+        panelHistory = new PanelHistory();
+        
+        
+        //Me quede en la parte en que configuraba los controladores, me queda configurar las clases der cada controlador para que acoplen a panelHistorial
         SplashScreen panelSplash = new SplashScreen(vista.JPContenido);
         // Crea las instancias de los modelos
         Usuarios modelUsers = new Usuarios();
@@ -74,7 +82,7 @@ public class Inicializador {
         controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion);
         // Crea una instancia del controlador RegAdmin_JF002 y pasa los modelos necesarios
         controladorRegistrar = new RegAdmin_JF002(modelAdmin, modelUsers, modelClinica, panelRegistro, vista.JPContenido, Procesos);
-        controladorMenuAd = new Menu_Administrador(vista.JPContenido);
+        controladorMenuAd = new Menu_Administrador(vista.JPContenido, panelMenuAdmin);
         controladorMenuTp = new Menu_Terapeuta(vista.JPContenido);
         controladorMenuSec = new Menu_Secretaria(vista.JPContenido);
         controladorValCorreo = new ValidarCorreo(ModelContactos, panelvalCorreo, Procesos, vista.JPContenido);

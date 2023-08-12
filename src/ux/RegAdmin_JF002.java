@@ -57,13 +57,26 @@ public class RegAdmin_JF002 implements ActionListener {
 
             // Aquí puedes agregar el código para cambiar de panel si es necesario.
             // Por ejemplo, si deseas regresar al panel de inicio de sesión:
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
+            JPContenido.remove(vistaJP002);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
+            JPContenido.revalidate();
+            JPContenido.repaint();
 
+        }
+        else if(e.getSource() == vistaJP002.getBtn2_JF002_S1_RH())
+        {
+            JPContenido.remove(vistaJP002);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
+            JPContenido.revalidate();
+            JPContenido.repaint();
         }
         else
         {
             JOptionPane.showMessageDialog(null, "No se pudo crear tu usuario", "Error J000DA", JOptionPane.ERROR_MESSAGE);
+            JPContenido.remove(vistaJP002);
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
+            JPContenido.revalidate();
+            JPContenido.repaint();
 
         }
     }

@@ -305,7 +305,7 @@ public class JP002_S1_RHP extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn2_JF002_S1_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn2_JF002_S1_RHActionPerformed
-        ux.Abrirvistas.abrir("JF001_S1_AF");
+        
     }//GEN-LAST:event_Btn2_JF002_S1_RHActionPerformed
 
     private void Btn1_JF002_S1_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn1_JF002_S1_RHActionPerformed

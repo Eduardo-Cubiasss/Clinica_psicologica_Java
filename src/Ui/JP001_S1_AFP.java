@@ -153,7 +153,6 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
         JP001_S1_AF.add(btn3_JF001_S1_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, -1, 33));
 
         Pass_JF001_S1_AF.setForeground(new java.awt.Color(204, 204, 204));
-        Pass_JF001_S1_AF.setText("Contraseña");
         Pass_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         Pass_JF001_S1_AF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
