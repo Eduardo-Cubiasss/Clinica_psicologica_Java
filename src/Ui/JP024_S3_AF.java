@@ -68,6 +68,9 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         txtBuscar_JP024 = new javax.swing.JTextField();
 
+        setMaximumSize(new java.awt.Dimension(1100, 540));
+        setMinimumSize(new java.awt.Dimension(1100, 540));
+        setPreferredSize(new java.awt.Dimension(1100, 540));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -80,11 +83,11 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         jPanel1.add(btn3_JF024, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 170, 90));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 10, 170, 90));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("Escribe el nombre o ID del paciente");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, -1, -1));
 
         jTable1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -97,12 +100,12 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 450, 40));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 450, 40));
 
         btn1_JF024.setBackground(new java.awt.Color(255, 255, 255));
         btn1_JF024.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ph_note-pencil-bold.png"))); // NOI18N
         btn1_JF024.setBorderPainted(false);
-        jPanel1.add(btn1_JF024, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 210, -1, -1));
+        jPanel1.add(btn1_JF024, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 240, -1, -1));
 
         btn2_JF024.setBackground(new java.awt.Color(255, 255, 255));
         btn2_JF024.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pe.PNG"))); // NOI18N
@@ -111,7 +114,7 @@ public class JP024_S3_AF extends javax.swing.JPanel {
                 btn2_JF024ActionPerformed(evt);
             }
         });
-        jPanel1.add(btn2_JF024, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, 47, 61));
+        jPanel1.add(btn2_JF024, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 280, 47, 61));
 
         jPanel2.setBackground(new java.awt.Color(200, 232, 232));
 
@@ -126,14 +129,14 @@ public class JP024_S3_AF extends javax.swing.JPanel {
             .addGap(0, 44, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 980, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 1100, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 40, 50));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 40, 50));
 
         txtBuscar_JP024.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         txtBuscar_JP024.setText("          S");
-        jPanel1.add(txtBuscar_JP024, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 420, 50));
+        jPanel1.add(txtBuscar_JP024, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 420, 50));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents

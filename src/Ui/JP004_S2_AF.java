@@ -64,7 +64,6 @@ public class JP004_S2_AF extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         kGradientPanel2 = new keeptoo.KGradientPanel();
         btn08_JF023_S3_RH = new javax.swing.JButton();
-        kGradientPanel1 = new keeptoo.KGradientPanel();
 
         setMaximumSize(new java.awt.Dimension(1120, 540));
         setMinimumSize(new java.awt.Dimension(1120, 540));
@@ -72,7 +71,6 @@ public class JP004_S2_AF extends javax.swing.JPanel {
         setLayout(new java.awt.CardLayout());
 
         JP001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
-        JP001_S1_AF.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 153, 153), new java.awt.Color(0, 102, 102), new java.awt.Color(0, 153, 153), new java.awt.Color(0, 102, 102)));
         JP001_S1_AF.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         JP001_S1_AF.setMinimumSize(new java.awt.Dimension(1120, 540));
         JP001_S1_AF.setPreferredSize(new java.awt.Dimension(1120, 540));
@@ -147,10 +145,10 @@ public class JP004_S2_AF extends javax.swing.JPanel {
         kGradientPanel2.setLayout(kGradientPanel2Layout);
         kGradientPanel2Layout.setHorizontalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel2Layout.createSequentialGroup()
-                .addGap(444, 444, 444)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
+                .addContainerGap(501, Short.MAX_VALUE)
                 .addComponent(btn08_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(551, Short.MAX_VALUE))
+                .addGap(494, 494, 494))
         );
         kGradientPanel2Layout.setVerticalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,22 +156,6 @@ public class JP004_S2_AF extends javax.swing.JPanel {
         );
 
         JP001_S1_AF.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 1160, 80));
-
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 153, 153));
-        kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
-        kGradientPanel1.setLayout(kGradientPanel1Layout);
-        kGradientPanel1Layout.setHorizontalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1160, Short.MAX_VALUE)
-        );
-        kGradientPanel1Layout.setVerticalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
-        JP001_S1_AF.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 30));
 
         add(JP001_S1_AF, "card2");
     }// </editor-fold>//GEN-END:initComponents
@@ -210,7 +192,6 @@ public class JP004_S2_AF extends javax.swing.JPanel {
     public javax.swing.JButton btn08_JF023_S3_RH;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    public keeptoo.KGradientPanel kGradientPanel1;
     public keeptoo.KGradientPanel kGradientPanel2;
     // End of variables declaration//GEN-END:variables
 }

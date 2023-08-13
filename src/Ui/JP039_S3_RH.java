@@ -122,7 +122,7 @@ public class JP039_S3_RH extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Calibri", 2, 14)); // NOI18N
         jLabel2.setText("¡Aprende a utilizar el sistema!");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 40, 170, 90));
@@ -154,13 +154,13 @@ public class JP039_S3_RH extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel3.setText("¿Qué desea realizar hoy secretari@?");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, -1));
 
         btn09_JF039_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn09_JF039_S3_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         btn09_JF039_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pdf2.png"))); // NOI18N
         btn09_JF039_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn09_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 80, 80));
+        jPanel1.add(btn09_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 80, 80));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents

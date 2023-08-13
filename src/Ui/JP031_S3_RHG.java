@@ -62,6 +62,7 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(968, 560));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Btn1_JF031_S3_RH.setBackground(new java.awt.Color(255, 255, 255));

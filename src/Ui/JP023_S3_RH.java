@@ -84,7 +84,6 @@ public class JP023_S3_RH extends javax.swing.JPanel {
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 153, 153));
         kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 255));
@@ -99,8 +98,6 @@ public class JP023_S3_RH extends javax.swing.JPanel {
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 30, Short.MAX_VALUE)
         );
-
-        jPanel1.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 30));
 
         kGradientPanel2.setkEndColor(new java.awt.Color(0, 153, 153));
         kGradientPanel2.setkStartColor(new java.awt.Color(0, 153, 153));
@@ -123,54 +120,99 @@ public class JP023_S3_RH extends javax.swing.JPanel {
             .addComponent(btn08_JF023_S3_RH, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
         );
 
-        jPanel1.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 1120, 80));
-
         jLabel2.setFont(new java.awt.Font("Calibri", 2, 14)); // NOI18N
         jLabel2.setText("¡Aprende a utilizar el sistema!");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 40, 170, 90));
 
         btn07_JF023_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn07_JF023_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnPruebas.png"))); // NOI18N
         btn07_JF023_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn07_JF023_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 240, 150, 180));
 
         btn02_JF023_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn02_JF023_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnCalendario.png"))); // NOI18N
         btn02_JF023_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn02_JF023_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 150, 180));
 
         btn03_JF023_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn03_JF023_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnPacientes.png"))); // NOI18N
         btn03_JF023_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn03_JF023_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 150, 180));
 
         btn04_JF023_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn04_JF023_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnApoyo.png"))); // NOI18N
         btn04_JF023_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn04_JF023_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 150, 180));
 
         btn05_JF023_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn05_JF023_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnPerfil.png"))); // NOI18N
         btn05_JF023_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn05_JF023_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 150, 180));
 
         btn06_JF023_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn06_JF023_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnSolicitudesInc.png"))); // NOI18N
         btn06_JF023_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn06_JF023_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 240, 150, 180));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel3.setText("¿Qué desea realizar hoy?");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, -1, -1));
 
         btn09_JF023_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn09_JF023_S3_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         btn09_JF023_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pdf2.png"))); // NOI18N
         btn09_JF023_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn09_JF023_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 80, 80));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(380, 380, 380)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel2)))
+                .addGap(310, 310, 310)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(470, 470, 470)
+                .addComponent(btn09_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(btn02_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(btn03_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(btn04_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(btn05_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(btn06_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(btn07_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, 0)
+                        .addComponent(jLabel2))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btn09_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn02_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn03_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn04_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn05_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn06_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn07_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(110, 110, 110)
+                .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
