@@ -46,7 +46,7 @@ public class Inicializador {
         panelHistory = new PanelHistory();
         
         
-        //Me quede en la parte en que configuraba los controladores, me queda configurar las clases der cada controlador para que acoplen a panelHistorial
+        //Me quede en la parte en que configuraba los controladores, me queda configurar las clases der cada controlador para que acoplen a panelH¬istorial
         SplashScreen panelSplash = new SplashScreen(vista.JPContenido);
         // Crea las instancias de los modelos
         Usuarios modelUsers = new Usuarios();
@@ -79,10 +79,10 @@ public class Inicializador {
         vista.JPContenido.add(panelCorreoenviado, "panelCorreoenviado");
 
         // Crea una instancia del controlador Login y pasa los componentes necesarios
-        controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion);
+        controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion, panelHistory);
         // Crea una instancia del controlador RegAdmin_JF002 y pasa los modelos necesarios
-        controladorRegistrar = new RegAdmin_JF002(modelAdmin, modelUsers, modelClinica, panelRegistro, vista.JPContenido, Procesos);
-        controladorMenuAd = new Menu_Administrador(vista.JPContenido, panelMenuAdmin);
+        controladorRegistrar = new RegAdmin_JF002(modelAdmin, modelUsers, modelClinica, panelRegistro, vista.JPContenido, Procesos, panelHistory);
+        controladorMenuAd = new Menu_Administrador(vista.JPContenido, panelMenuAdmin, panelHistory);
         controladorMenuTp = new Menu_Terapeuta(vista.JPContenido);
         controladorMenuSec = new Menu_Secretaria(vista.JPContenido);
         controladorValCorreo = new ValidarCorreo(ModelContactos, panelvalCorreo, Procesos, vista.JPContenido);

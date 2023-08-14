@@ -28,15 +28,16 @@ public class Login implements ActionListener {
     private JPanel JPContenido;
     private Procesos_almacenados Procesos;
     private JP001_S1_AFP panelRegistro;
+    private PanelHistory panelHistory;
 
     public Login(Usuarios modelUsers, JPanel JPContenido, Procesos_almacenados Procesos,
-            JP001_S1_AFP panelRegistro) {
+            JP001_S1_AFP panelRegistro, PanelHistory panelHistory) {
         this.modelUsers = modelUsers;
         this.JPContenido = JPContenido;
         this.Procesos = Procesos;
         this.panelRegistro = panelRegistro;
+        this.panelHistory = panelHistory;
 
-        // Agrega el ActionListener al botón btnLogin
         this.panelRegistro.getBtn2_JF001_S1_AF().addActionListener(this);
         this.panelRegistro.getbtn3_JF001_S1_AF().addActionListener(this);
         this.panelRegistro.getbtn4_JF001_S1_AF().addActionListener(this);
@@ -54,38 +55,38 @@ public class Login implements ActionListener {
                 switch (Nivel) {
                     case 1:
                         JPContenido.remove(panelRegistro);
+                        panelHistory.pushPanel("panelMenuTp");
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
-                        JPContenido.revalidate();
-                         JPContenido.repaint();
                         break;
                     case 2:
                         JPContenido.remove(panelRegistro);
+                        panelHistory.pushPanel("panelMenuAdmin");
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
-                        JPContenido.revalidate();
-                         JPContenido.repaint();
                         break;
                     case 3:
                         JPContenido.remove(panelRegistro);
+                        panelHistory.pushPanel("panelMenuSec");
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
-                        JPContenido.revalidate();
-                         JPContenido.repaint();
                         break;
-
                     default:
                         JOptionPane.showMessageDialog(null, "Tu usuario es de tipo paciente, usa la aplicación de móvil para acceder a él por favor", "Usuario inválido", JOptionPane.INFORMATION_MESSAGE);
                         break;
                 }
+                JPContenido.revalidate();
+                JPContenido.repaint();
             } else {
                 JOptionPane.showMessageDialog(null, "Se sugiere visitar la página donde se explica a detalle cada error que puede experimentar usted como usuario", "ERROR JF001DA", JOptionPane.INFORMATION_MESSAGE);
             }
         } else if (e.getSource() == panelRegistro.getbtn3_JF001_S1_AF()) {
             JPContenido.remove(panelRegistro);
+            panelHistory.pushPanel("panelRegistro");
+            panelHistory.pushPanel("panelInicioSesion");
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
             JPContenido.revalidate();
             JPContenido.repaint();
-                         
         } else if (e.getSource() == panelRegistro.getbtn4_JF001_S1_AF()) {
             JPContenido.remove(panelRegistro);
+            panelHistory.pushPanel("panelvalCorreo");
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelvalCorreo");
             JPContenido.revalidate();
             JPContenido.repaint();

@@ -123,7 +123,7 @@ public class JP005_NumTel_S2_RH extends javax.swing.JPanel {
                         .addComponent(jLabel11)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                         .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
                                 .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,10 +176,10 @@ public class JP005_NumTel_S2_RH extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn1_JF005_S2_RH;
-    private javax.swing.JButton Btn2_JF005_S2_RH;
-    private javax.swing.JPanel JP001_S1_RH;
-    private javax.swing.JTextField TxtTelefonoRegister_JF005_S2_RH;
+    public javax.swing.JButton Btn1_JF005_S2_RH;
+    public javax.swing.JButton Btn2_JF005_S2_RH;
+    public javax.swing.JPanel JP001_S1_RH;
+    public javax.swing.JTextField TxtTelefonoRegister_JF005_S2_RH;
     private javax.swing.JButton btn3_JF005_S2_RH;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel4;

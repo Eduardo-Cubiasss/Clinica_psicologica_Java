@@ -20,10 +20,12 @@ public class Menu_Administrador implements ActionListener {
 
     private JPanel JPContenido;
     private JP004_S2_AF panel;
-    public Menu_Administrador(JPanel JPContenido, JP004_S2_AF panel) {
+    private PanelHistory panelHistory; 
+
+    public Menu_Administrador(JPanel JPContenido, JP004_S2_AF panel, PanelHistory panelHistory) {
         this.JPContenido = JPContenido;
         this.panel = panel;
-
+        this.panelHistory = panelHistory; 
 
         this.panel.btn01_JF005_S2_AF.addActionListener(this);
         this.panel.btn02_JF005_S2_AF.addActionListener(this);
@@ -46,11 +48,15 @@ public class Menu_Administrador implements ActionListener {
         } else if (e.getSource() == panel.getBtn05_JF005_S2_AF()) {
             // Código para la acción del botón Btn05_JF005_S2_AF
         } else if (e.getSource() == panel.getbtn08_JF023_S3_RH()) {
+            // Agrega el panel actual al historial antes de cambiar de panel
+            panelHistory.pushPanel("panelMenuAdmin");
+
             JPContenido.remove(panel);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
+            // Recupera el panel anterior del historial y muéstralo
+            String previousPanel = panelHistory.popPanel();
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, previousPanel);
             JPContenido.revalidate();
             JPContenido.repaint();
         }
-
     }
 }
