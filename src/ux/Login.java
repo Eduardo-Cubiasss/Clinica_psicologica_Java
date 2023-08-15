@@ -29,7 +29,11 @@ public class Login implements ActionListener {
     private Procesos_almacenados Procesos;
     private JP001_S1_AFP panelRegistro;
     private PanelHistory panelHistory;
-
+    
+    public void enableLoginPanel() {
+        panelRegistro.setEnabled(true);
+    }
+    
     public Login(Usuarios modelUsers, JPanel JPContenido, Procesos_almacenados Procesos,
             JP001_S1_AFP panelRegistro, PanelHistory panelHistory) {
         this.modelUsers = modelUsers;
@@ -54,18 +58,18 @@ public class Login implements ActionListener {
             if (Acceso == 1) {
                 switch (Nivel) {
                     case 1:
-                        JPContenido.remove(panelRegistro);
+                        panelRegistro.setEnabled(false);
                         panelHistory.pushPanel("panelMenuTp");
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
                         break;
                     case 2:
-                        JPContenido.remove(panelRegistro);
+                        panelRegistro.setEnabled(false);
                         panelHistory.pushPanel("panelMenuAdmin");
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
                         break;
                     case 3:
                         JPContenido.remove(panelRegistro);
-                        panelHistory.pushPanel("panelMenuSec");
+                        panelRegistro.setEnabled(false);
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
                         break;
                     default:
@@ -78,14 +82,14 @@ public class Login implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Se sugiere visitar la página donde se explica a detalle cada error que puede experimentar usted como usuario", "ERROR JF001DA", JOptionPane.INFORMATION_MESSAGE);
             }
         } else if (e.getSource() == panelRegistro.getbtn3_JF001_S1_AF()) {
-            JPContenido.remove(panelRegistro);
+            panelRegistro.setEnabled(false);
             panelHistory.pushPanel("panelRegistro");
             panelHistory.pushPanel("panelInicioSesion");
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
             JPContenido.revalidate();
             JPContenido.repaint();
         } else if (e.getSource() == panelRegistro.getbtn4_JF001_S1_AF()) {
-            JPContenido.remove(panelRegistro);
+            panelRegistro.setEnabled(false);
             panelHistory.pushPanel("panelvalCorreo");
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelvalCorreo");
             JPContenido.revalidate();

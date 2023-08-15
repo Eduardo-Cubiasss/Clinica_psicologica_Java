@@ -19,9 +19,11 @@ import java.awt.CardLayout;
 import java.util.Stack;
 import javax.swing.JPanel;
 
+
+
 public class Inicializador {
     
-    
+    private HabilitarPaneles habilitarPaneles;
     private PanelHistory panelHistory;
     private Login controladorLogin;
     private RegAdmin_JF002 controladorRegistrar;
@@ -44,7 +46,7 @@ public class Inicializador {
     public Inicializador(JF_000_S7_GU vista) {
         this.vista = vista;
         panelHistory = new PanelHistory();
-        
+        habilitarPaneles = new HabilitarPaneles();
         
         //Me quede en la parte en que configuraba los controladores, me queda configurar las clases der cada controlador para que acoplen a panelH¬istorial
         SplashScreen panelSplash = new SplashScreen(vista.JPContenido);
@@ -58,24 +60,31 @@ public class Inicializador {
         vista.JPContenido.add(panelSplash, "panelSplash");
 
         JP001_S1_AFP panelInicioSesion = new JP001_S1_AFP(controladorLogin);
+        habilitarPaneles.agregarPanel("panelInicioSesion", panelInicioSesion);
         vista.JPContenido.add(panelInicioSesion, "panelInicioSesion");
 
         JP002_S1_RHP panelRegistro = new JP002_S1_RHP(controladorRegistrar);
+        habilitarPaneles.agregarPanel("panelRegistro", panelRegistro);
         vista.JPContenido.add(panelRegistro, "panelRegistro");
 
         JP004_S2_AF panelMenuAdmin = new JP004_S2_AF(controladorMenuAd);
+        habilitarPaneles.agregarPanel("panelMenuAdmin", panelMenuAdmin);
         vista.JPContenido.add(panelMenuAdmin, "panelMenuAdmin");
 
         JP023_S3_RH panelMenuTp = new JP023_S3_RH(controladorMenuTp);
+        habilitarPaneles.agregarPanel("panelMenuTp", panelMenuTp);
         vista.JPContenido.add(panelMenuTp, "panelMenuTp");
 
         JP039_S3_RH panelMenuSec = new JP039_S3_RH(controladorMenuSec);
+        habilitarPaneles.agregarPanel("panelMenuSec", panelMenuSec);
         vista.JPContenido.add(panelMenuSec, "panelMenuSec");
 
         JP003_S1_RH panelvalCorreo = new JP003_S1_RH(controladorValCorreo);
+        habilitarPaneles.agregarPanel("panelvalCorreo", panelvalCorreo);
         vista.JPContenido.add(panelvalCorreo, "panelvalCorreo");
 
         JP003_2_S1_RH panelCorreoenviado = new JP003_2_S1_RH(controladorCorreoenviado);
+        habilitarPaneles.agregarPanel("panelCorreoenviado", panelCorreoenviado);
         vista.JPContenido.add(panelCorreoenviado, "panelCorreoenviado");
 
         // Crea una instancia del controlador Login y pasa los componentes necesarios

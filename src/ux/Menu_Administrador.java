@@ -51,7 +51,7 @@ public class Menu_Administrador implements ActionListener {
             // Agrega el panel actual al historial antes de cambiar de panel
             panelHistory.pushPanel("panelMenuAdmin");
 
-            JPContenido.remove(panel);
+            panel.setEnabled(false);
             // Recupera el panel anterior del historial y muéstralo
             String previousPanel = panelHistory.popPanel();
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, previousPanel);

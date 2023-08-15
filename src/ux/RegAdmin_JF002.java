@@ -22,15 +22,16 @@ import javax.swing.JPanel;
  */
 public class RegAdmin_JF002 implements ActionListener {
 
-       private Administrador modelAdmin;
+    private Administrador modelAdmin;
     private Usuarios modelUsers;
     private Clinica modelClinica;
     private JP002_S1_RHP vistaJP002;
     private JPanel JPContenido;
     private Procesos_almacenados Procesos;
     private PanelHistory panelHistory;
+    private HabilitarPaneles PanelesManager; 
 
-    public RegAdmin_JF002(Administrador modelAdmin, Usuarios modelUsers, Clinica modelClinica, JP002_S1_RHP vistaJP002, 
+    public RegAdmin_JF002(Administrador modelAdmin, Usuarios modelUsers, Clinica modelClinica, JP002_S1_RHP vistaJP002,
             JPanel JPContenido, Procesos_almacenados Procesos, PanelHistory panelHistory) {
         this.modelAdmin = modelAdmin;
         this.modelUsers = modelUsers;
@@ -45,45 +46,50 @@ public class RegAdmin_JF002 implements ActionListener {
         this.vistaJP002.getBtn2_JF002_S1_RH().addActionListener(this);
     }
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vistaJP002.getBtn1_JF002_S1_RH()) {
-        modelAdmin.setNombre(vistaJP002.getTxtNombre_JF002_S1_RH().getText());
-        modelUsers.setUserName(vistaJP002.getTxtUsuario_JF002_S1_RH2().getText());
-        modelUsers.setContraseña(new String(vistaJP002.getPassField_Contraseña_JF002_S1_RH().getPassword()));
-        modelClinica.setIDClinica(vistaJP002.getTxtID_JF002_S1_RH3().getText());
+            modelAdmin.setNombre(vistaJP002.getTxtNombre_JF002_S1_RH().getText());
+            modelUsers.setUserName(vistaJP002.getTxtUsuario_JF002_S1_RH2().getText());
+            modelUsers.setContraseña(new String(vistaJP002.getPassField_Contraseña_JF002_S1_RH().getPassword()));
+            modelClinica.setIDClinica(vistaJP002.getTxtID_JF002_S1_RH3().getText());
 
-        System.out.println("Antes de ejecutar el método");
-        Procesos.In_admin_clinica_users(modelAdmin, modelUsers, modelClinica);
-        System.out.println("Después de ejecutar el método");
+            System.out.println("Antes de ejecutar el método");
+            Procesos.In_admin_clinica_users(modelAdmin, modelUsers, modelClinica);
+            System.out.println("Después de ejecutar el método");
 
-        // Agrega el panel actual al historial antes de cambiar de panel
-        panelHistory.pushPanel("vistaJP002");
+            // Agrega el panel actual al historial antes de cambiar de panel
+            panelHistory.pushPanel("vistaJP002");
 
-        JPContenido.remove(vistaJP002);
-        // Muestra el panel "panelMenuAdmin"
-        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
-        JPContenido.revalidate();
-        JPContenido.repaint();
+            vistaJP002.setEnabled(false);
+            // Muestra el panel "panelMenuAdmin"
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
+            System.out.println("Llega hasata aqui, abre panelMenuAdmin");
+            JPContenido.revalidate();
+            JPContenido.repaint();
 
-    } else if (e.getSource() == vistaJP002.getBtn2_JF002_S1_RH()) {
-        JPContenido.remove(vistaJP002);
-        // Recupera el panel anterior del historial y muéstralo
-        String previousPanel = panelHistory.popPanel();
-        ((CardLayout) JPContenido.getLayout()).show(JPContenido, previousPanel);
-        JPContenido.revalidate();
-        JPContenido.repaint();
-    } else {
-        JOptionPane.showMessageDialog(null, "No se pudo crear tu usuario", "Error J000DA", JOptionPane.ERROR_MESSAGE);
-        JPContenido.remove(vistaJP002);
-        // Recupera el panel anterior del historial y muéstralo
-        String previousPanel = panelHistory.popPanel();
-        ((CardLayout) JPContenido.getLayout()).show(JPContenido, previousPanel);
-        JPContenido.revalidate();
-        JPContenido.repaint();
+        } else if (e.getSource() == vistaJP002.getBtn2_JF002_S1_RH()) {
+            PanelesManager.deshabilitarPanel("panelRegistro");
+            // Recupera el panel anterior del historial y muéstralo
+            String previousPanel = panelHistory.popPanel();
+            PanelesManager.habilitarPanel("panelInicioSesion");
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
+            System.out.println("Llega hasta donde se invoca panelInicioSesion");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+        } else {
+            JOptionPane.showMessageDialog(null, "No se pudo crear tu usuario", "Error J000DA", JOptionPane.ERROR_MESSAGE);
+            PanelesManager.deshabilitarPanel("panelRegistro");
+            // Recupera el panel anterior del historial y muéstralo
+            String previousPanel = panelHistory.popPanel();
+            PanelesManager.habilitarPanel("panelInicioSesion");
+            
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
+            System.out.println("Llega hasta donde se invoca panelInicioSesion");
+            JPContenido.revalidate();
+            JPContenido.repaint();
 
+        }
     }
-    }
-    
+
 }
