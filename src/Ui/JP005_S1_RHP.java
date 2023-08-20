@@ -82,6 +82,7 @@ public class JP005_S1_RHP extends javax.swing.JPanel {
         Btn1_JF005_2_S2_RH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 50, true));
         Btn1_JF005_2_S2_RH.setBorderPainted(false);
         Btn1_JF005_2_S2_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn1_JF005_2_S2_RH.setEnabled(false);
         Btn1_JF005_2_S2_RH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn1_JF005_2_S2_RHActionPerformed(evt);
@@ -133,7 +134,7 @@ public class JP005_S1_RHP extends javax.swing.JPanel {
                         .addComponent(btn3_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(JP001_S1_RHLayout.createSequentialGroup()
                         .addGap(165, 165, 165)
-                        .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Btn1_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Btn2_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -165,9 +166,9 @@ public class JP005_S1_RHP extends javax.swing.JPanel {
                 .addComponent(TxtCodigoTel_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
                 .addComponent(Btn1_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Btn2_JF005_2_S2_RH)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(23, 23, 23)
                 .addComponent(btn3_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(146, Short.MAX_VALUE))
             .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

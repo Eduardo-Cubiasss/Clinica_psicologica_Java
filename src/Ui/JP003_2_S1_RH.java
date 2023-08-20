@@ -97,11 +97,12 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
         Btn1_JF003_2_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
         Btn1_JF003_2_S1_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         Btn1_JF003_2_S1_RH.setForeground(new java.awt.Color(255, 255, 255));
-        Btn1_JF003_2_S1_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnIngresar2.png"))); // NOI18N
+        Btn1_JF003_2_S1_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnIngresar3Chikito.png"))); // NOI18N
         Btn1_JF003_2_S1_RH.setText("Ingresar");
         Btn1_JF003_2_S1_RH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 50, true));
         Btn1_JF003_2_S1_RH.setBorderPainted(false);
         Btn1_JF003_2_S1_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn1_JF003_2_S1_RH.setEnabled(false);
         Btn1_JF003_2_S1_RH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn1_JF003_2_S1_RHActionPerformed(evt);
@@ -179,10 +180,12 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
                                     .addComponent(jLabel11))))
                         .addGroup(JP001_S1_RHLayout.createSequentialGroup()
                             .addGap(154, 154, 154)
-                            .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(Btn2_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Btn1_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(85, 85, 85)))
+                            .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Btn1_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(JP001_S1_RHLayout.createSequentialGroup()
+                                    .addGap(10, 10, 10)
+                                    .addComponent(Btn2_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(46, 46, 46)))
                     .addGroup(JP001_S1_RHLayout.createSequentialGroup()
                         .addGap(124, 124, 124)
                         .addComponent(jLabel4))
@@ -209,14 +212,12 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
                 .addComponent(PassField_ConfirmarContra_JF003_3_S1_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(Btn1_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Btn2_JF003_2_S1_RH)
-                .addGap(18, 18, 18)
+                .addGap(23, 23, 23)
                 .addComponent(Btn3_JF003_2_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         add(JP001_S1_RH, "card2");

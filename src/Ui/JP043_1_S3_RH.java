@@ -34,11 +34,15 @@ public class JP043_1_S3_RH extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
 
-        setMaximumSize(new java.awt.Dimension(1040, 649));
-        setMinimumSize(new java.awt.Dimension(1040, 649));
+        setMaximumSize(new java.awt.Dimension(1120, 540));
+        setMinimumSize(new java.awt.Dimension(1120, 540));
+        setPreferredSize(new java.awt.Dimension(1120, 540));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
 
         btn1_JF043_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn1_JF043_S3_RH.setForeground(new java.awt.Color(255, 255, 255));
@@ -53,11 +57,11 @@ public class JP043_1_S3_RH extends javax.swing.JPanel {
         JP01_JF043_S3_RH.setLayout(JP01_JF043_S3_RHLayout);
         JP01_JF043_S3_RHLayout.setHorizontalGroup(
             JP01_JF043_S3_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 790, Short.MAX_VALUE)
+            .addGap(0, 921, Short.MAX_VALUE)
         );
         JP01_JF043_S3_RHLayout.setVerticalGroup(
             JP01_JF043_S3_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 290, Short.MAX_VALUE)
+            .addGap(0, 373, Short.MAX_VALUE)
         );
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
@@ -87,13 +91,13 @@ public class JP043_1_S3_RH extends javax.swing.JPanel {
                 .addComponent(btn1_JF043_S3_RH)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(316, 316, 316)
+                .addGap(335, 335, 335)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(110, 110, 110)
                 .addComponent(JP01_JF043_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 89, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,7 +110,7 @@ public class JP043_1_S3_RH extends javax.swing.JPanel {
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(62, 62, 62)
                 .addComponent(JP01_JF043_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 

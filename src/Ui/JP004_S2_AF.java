@@ -72,6 +72,7 @@ public class JP004_S2_AF extends javax.swing.JPanel {
 
         JP001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_AF.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        JP001_S1_AF.setMaximumSize(new java.awt.Dimension(1120, 540));
         JP001_S1_AF.setMinimumSize(new java.awt.Dimension(1120, 540));
         JP001_S1_AF.setPreferredSize(new java.awt.Dimension(1120, 540));
         JP001_S1_AF.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

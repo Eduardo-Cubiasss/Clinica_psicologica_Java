@@ -38,12 +38,15 @@ public class JP018_S2_AF extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setMaximumSize(new java.awt.Dimension(1100, 540));
-        setMinimumSize(new java.awt.Dimension(1100, 540));
-        setPreferredSize(new java.awt.Dimension(1100, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 540));
+        setMinimumSize(new java.awt.Dimension(1120, 540));
+        setPreferredSize(new java.awt.Dimension(1120, 540));
         setLayout(new java.awt.CardLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setMaximumSize(new java.awt.Dimension(1120, 540));
+        jPanel2.setMinimumSize(new java.awt.Dimension(1120, 540));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1120, 540));
 
         btn5_JF018_S2.setBackground(new java.awt.Color(255, 255, 255));
         btn5_JF018_S2.setForeground(new java.awt.Color(255, 255, 255));
@@ -104,7 +107,7 @@ public class JP018_S2_AF extends javax.swing.JPanel {
                         .addComponent(btn5_JF018_S2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addGap(253, 253, 253)
+                        .addGap(275, 275, 275)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,7 +116,7 @@ public class JP018_S2_AF extends javax.swing.JPanel {
                             .addComponent(btn3_JF018_S2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(168, 168, 168)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 202, Short.MAX_VALUE)))
+                        .addGap(0, 222, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(492, 492, 492)
@@ -130,8 +133,8 @@ public class JP018_S2_AF extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
                         .addComponent(jLabel1)))
                 .addGap(60, 60, 60)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)

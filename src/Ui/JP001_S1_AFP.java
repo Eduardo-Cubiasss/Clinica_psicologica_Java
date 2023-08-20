@@ -107,10 +107,11 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
         Btn2_JF001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn2_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         Btn2_JF001_S1_AF.setForeground(new java.awt.Color(255, 255, 255));
-        Btn2_JF001_S1_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnIngresarClari.png"))); // NOI18N
+        Btn2_JF001_S1_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnIngresar3.png"))); // NOI18N
         Btn2_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 50, true));
         Btn2_JF001_S1_AF.setBorderPainted(false);
         Btn2_JF001_S1_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn2_JF001_S1_AF.setEnabled(false);
         Btn2_JF001_S1_AF.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Btn2_JF001_S1_AFMouseClicked(evt);
@@ -198,9 +199,6 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
                         .addGap(43, 43, 43)
                         .addComponent(btn4_JF001_S1_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(JP001_S1_AFLayout.createSequentialGroup()
-                        .addGap(149, 149, 149)
-                        .addComponent(Btn2_JF001_S1_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(JP001_S1_AFLayout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addGroup(JP001_S1_AFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
@@ -212,8 +210,11 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
                         .addGroup(JP001_S1_AFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
                             .addGroup(JP001_S1_AFLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btn3_JF001_S1_AF)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(JP001_S1_AFLayout.createSequentialGroup()
+                                    .addGap(33, 33, 33)
+                                    .addComponent(Btn2_JF001_S1_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(JP001_S1_AFLayout.createSequentialGroup()
                         .addGap(190, 190, 190)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -235,8 +236,8 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
                 .addComponent(Pass_JF001_S1_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn4_JF001_S1_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(Btn2_JF001_S1_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(Btn2_JF001_S1_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn3_JF001_S1_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
