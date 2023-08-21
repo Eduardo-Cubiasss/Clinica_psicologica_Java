@@ -56,12 +56,18 @@ public class JP005_2_S2_RH extends javax.swing.JPanel {
         kGradientPanel1 = new keeptoo.KGradientPanel();
         jLabel5 = new javax.swing.JLabel();
 
+        setMaximumSize(new java.awt.Dimension(1120, 540));
+        setMinimumSize(new java.awt.Dimension(1120, 540));
+        setPreferredSize(new java.awt.Dimension(1120, 540));
         setLayout(new java.awt.CardLayout());
 
         JP001_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_RH.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         JP001_S1_RH.setForeground(new java.awt.Color(153, 153, 255));
         JP001_S1_RH.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        JP001_S1_RH.setMaximumSize(new java.awt.Dimension(1120, 540));
+        JP001_S1_RH.setMinimumSize(new java.awt.Dimension(1120, 540));
+        JP001_S1_RH.setPreferredSize(new java.awt.Dimension(1120, 540));
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 153));
@@ -90,11 +96,12 @@ public class JP005_2_S2_RH extends javax.swing.JPanel {
         Btn1_JF005_2_S2_RH.setBackground(new java.awt.Color(255, 255, 255));
         Btn1_JF005_2_S2_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         Btn1_JF005_2_S2_RH.setForeground(new java.awt.Color(255, 255, 255));
-        Btn1_JF005_2_S2_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnIngresar2.png"))); // NOI18N
+        Btn1_JF005_2_S2_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnIngresar3Chikito.png"))); // NOI18N
         Btn1_JF005_2_S2_RH.setText("Ingresar");
         Btn1_JF005_2_S2_RH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 50, true));
         Btn1_JF005_2_S2_RH.setBorderPainted(false);
         Btn1_JF005_2_S2_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn1_JF005_2_S2_RH.setEnabled(false);
         Btn1_JF005_2_S2_RH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn1_JF005_2_S2_RHActionPerformed(evt);
@@ -130,28 +137,29 @@ public class JP005_2_S2_RH extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(btn3_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 90, Short.MAX_VALUE))
-                    .addGroup(JP001_S1_RHLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(TxtCodigoTel_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
                                 .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(80, 80, 80))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
-                                        .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(Btn1_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Btn2_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(158, 158, 158)))
-                                .addComponent(jLabel11))
+                                    .addComponent(TxtCodigoTel_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(JP001_S1_RHLayout.createSequentialGroup()
+                                        .addGap(62, 62, 62)
+                                        .addComponent(Btn2_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel11))
+                                .addGap(105, 105, 105))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
                                 .addComponent(jLabel4)
-                                .addGap(116, 116, 116))))))
+                                .addGap(116, 116, 116))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
+                                .addComponent(Btn1_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(129, 129, 129))))
+                    .addGroup(JP001_S1_RHLayout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn3_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 116, Short.MAX_VALUE))))
         );
         JP001_S1_RHLayout.setVerticalGroup(
             JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,9 +172,9 @@ public class JP005_2_S2_RH extends javax.swing.JPanel {
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TxtCodigoTel_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(48, 48, 48)
                 .addComponent(Btn1_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Btn2_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn3_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)

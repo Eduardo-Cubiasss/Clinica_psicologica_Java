@@ -68,12 +68,15 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         txtBuscar_JP024 = new javax.swing.JTextField();
 
-        setMaximumSize(new java.awt.Dimension(1100, 540));
-        setMinimumSize(new java.awt.Dimension(1100, 540));
-        setPreferredSize(new java.awt.Dimension(1100, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 540));
+        setMinimumSize(new java.awt.Dimension(1120, 540));
+        setPreferredSize(new java.awt.Dimension(1120, 540));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn3_JF024.setBackground(new java.awt.Color(255, 255, 255));
@@ -129,7 +132,7 @@ public class JP024_S3_AF extends javax.swing.JPanel {
             .addGap(0, 44, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 1100, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 1120, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 40, 50));

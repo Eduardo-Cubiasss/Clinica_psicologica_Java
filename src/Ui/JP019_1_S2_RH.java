@@ -34,11 +34,15 @@ public class JP019_1_S2_RH extends javax.swing.JPanel {
         JPSolicitud_JP019_S2_RH = new javax.swing.JPanel();
         Btn2_JF019_S2_RH = new javax.swing.JButton();
 
-        setMaximumSize(new java.awt.Dimension(1032, 625));
-        setMinimumSize(new java.awt.Dimension(1032, 625));
+        setMaximumSize(new java.awt.Dimension(1120, 540));
+        setMinimumSize(new java.awt.Dimension(1120, 540));
+        setPreferredSize(new java.awt.Dimension(1120, 540));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
 
         Btn1_JF019_S2_RH.setBackground(new java.awt.Color(255, 255, 255));
         Btn1_JF019_S2_RH.setForeground(new java.awt.Color(255, 255, 255));
@@ -83,13 +87,13 @@ public class JP019_1_S2_RH extends javax.swing.JPanel {
                 .addComponent(Btn1_JF019_S2_RH)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(231, 231, 231)
+                .addGap(268, 268, 268)
                 .addComponent(JlLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(102, 102, 102)
+                .addGap(144, 144, 144)
                 .addComponent(JPSolicitud_JP019_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addContainerGap(183, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,9 +105,9 @@ public class JP019_1_S2_RH extends javax.swing.JPanel {
                             .addComponent(Btn1_JF019_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(10, 10, 10)))
                     .addComponent(JlLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(36, 36, 36)
                 .addComponent(JPSolicitud_JP019_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         add(jPanel1, "card2");

@@ -38,10 +38,14 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setMaximumSize(new java.awt.Dimension(890, 510));
-        setMinimumSize(new java.awt.Dimension(890, 510));
+        setMaximumSize(new java.awt.Dimension(1120, 540));
+        setMinimumSize(new java.awt.Dimension(1120, 540));
+        setPreferredSize(new java.awt.Dimension(1120, 540));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setMaximumSize(new java.awt.Dimension(1120, 540));
+        jPanel2.setMinimumSize(new java.awt.Dimension(1120, 540));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1120, 540));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn5_JF014_S2.setBackground(new java.awt.Color(255, 255, 255));
@@ -51,11 +55,11 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         jPanel2.add(btn5_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, 170, 90));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, 170, 90));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("Solicitudes de los empleados");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, -1, -1));
 
         btn1_JF014_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rec.PNG"))); // NOI18N
         jPanel2.add(btn1_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 170, 80));
@@ -73,7 +77,7 @@ public class JP014_S2_AF extends javax.swing.JPanel {
 
         btn4_JF014_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/m.PNG"))); // NOI18N
         btn4_JF014_S2.setBorder(null);
-        jPanel2.add(btn4_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 450, 110, 60));
+        jPanel2.add(btn4_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 450, 110, 60));
 
         jScrollPane1.setBorder(null);
 
@@ -100,7 +104,7 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         jTable1.setShowHorizontalLines(false);
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 560, 120));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 560, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

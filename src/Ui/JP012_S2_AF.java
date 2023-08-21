@@ -39,11 +39,15 @@ public class JP012_S2_AF extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
 
-        setMaximumSize(new java.awt.Dimension(980, 570));
-        setMinimumSize(new java.awt.Dimension(980, 570));
+        setMaximumSize(new java.awt.Dimension(1120, 540));
+        setMinimumSize(new java.awt.Dimension(1120, 540));
+        setPreferredSize(new java.awt.Dimension(1120, 540));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn3_JF012.setBackground(new java.awt.Color(255, 255, 255));
@@ -53,11 +57,11 @@ public class JP012_S2_AF extends javax.swing.JPanel {
         jPanel1.add(btn3_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 20, 170, 90));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, 170, 90));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("Escribe el nombre o ID del empleado");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, -1, -1));
 
         jTable1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -70,12 +74,12 @@ public class JP012_S2_AF extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 450, 40));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 450, 40));
 
         btn1_JF012.setBackground(new java.awt.Color(255, 255, 255));
         btn1_JF012.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ph_note-pencil-bold.png"))); // NOI18N
         btn1_JF012.setBorderPainted(false);
-        jPanel1.add(btn1_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 210, -1, -1));
+        jPanel1.add(btn1_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 250, -1, -1));
 
         btn2_JF012.setBackground(new java.awt.Color(255, 255, 255));
         btn2_JF012.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pe.PNG"))); // NOI18N
@@ -84,7 +88,7 @@ public class JP012_S2_AF extends javax.swing.JPanel {
                 btn2_JF012ActionPerformed(evt);
             }
         });
-        jPanel1.add(btn2_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, 47, 61));
+        jPanel1.add(btn2_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 290, 47, 61));
 
         jPanel2.setBackground(new java.awt.Color(200, 232, 232));
 
@@ -99,14 +103,14 @@ public class JP012_S2_AF extends javax.swing.JPanel {
             .addGap(0, 44, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 980, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 1120, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 40, 40));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 40, 40));
 
         jTextField1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jTextField1.setText("          S");
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 420, 50));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 420, 50));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents

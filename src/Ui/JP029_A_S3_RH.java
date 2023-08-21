@@ -37,11 +37,15 @@ public class JP029_A_S3_RH extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        setMaximumSize(new java.awt.Dimension(1010, 600));
-        setMinimumSize(new java.awt.Dimension(1010, 600));
+        setMaximumSize(new java.awt.Dimension(1120, 540));
+        setMinimumSize(new java.awt.Dimension(1120, 540));
+        setPreferredSize(new java.awt.Dimension(1120, 540));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(200, 232, 232));
@@ -50,14 +54,14 @@ public class JP029_A_S3_RH extends javax.swing.JPanel {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1010, Short.MAX_VALUE)
+            .addGap(0, 1120, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 1010, 50));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 1120, 50));
 
         btn3_JF012_A.setBackground(new java.awt.Color(255, 255, 255));
         btn3_JF012_A.setForeground(new java.awt.Color(255, 255, 255));
@@ -66,25 +70,25 @@ public class JP029_A_S3_RH extends javax.swing.JPanel {
         jPanel1.add(btn3_JF012_A, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 170, 90));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, 170, 90));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("¿Deseas eliminar el artículo seleccionado?");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, -1, -1));
 
         btn1_JF029_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Y.PNG"))); // NOI18N
         btn1_JF029_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(btn1_JF029_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 130, 120));
+        jPanel1.add(btn1_JF029_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 130, 120));
 
         btn2_JF029_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/x.PNG"))); // NOI18N
         btn2_JF029_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(btn2_JF029_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 270, 120, 120));
+        jPanel1.add(btn2_JF029_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 120, 120));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ddd.PNG"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 600, 310));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 600, 310));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/li.PNG"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 580, 40));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 580, 40));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents

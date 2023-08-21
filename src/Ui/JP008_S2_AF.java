@@ -69,9 +69,15 @@ public class JP008_S2_AF extends javax.swing.JPanel {
         Btn007_JF008_S3_AF = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
+        setMaximumSize(new java.awt.Dimension(1120, 540));
+        setMinimumSize(new java.awt.Dimension(1120, 540));
+        setPreferredSize(new java.awt.Dimension(1120, 540));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         kGradientPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
@@ -107,7 +113,7 @@ public class JP008_S2_AF extends javax.swing.JPanel {
         jPanel1.add(Btn001_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         Btn004_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/admin.PNG"))); // NOI18N
-        jPanel1.add(Btn004_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 530, 220, 70));
+        jPanel1.add(Btn004_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 520, 220, 70));
 
         Btn005_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actuuu.PNG"))); // NOI18N
         jPanel1.add(Btn005_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 210, 60));
