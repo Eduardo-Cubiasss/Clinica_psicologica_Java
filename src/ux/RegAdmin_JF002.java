@@ -61,8 +61,9 @@ public class RegAdmin_JF002 implements ActionListener {
             // Agrega el panel actual al historial antes de cambiar de panel
             panelHistory.pushPanel("vistaJP002");
 
-            vistaJP002.setEnabled(false);
+            PanelesManager.deshabilitarPanel("panelRegistro");
             // Muestra el panel "panelMenuAdmin"
+            PanelesManager.habilitarPanel("panelMenuAdmin");
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
             System.out.println("Llega hasata aqui, abre panelMenuAdmin");
             JPContenido.revalidate();

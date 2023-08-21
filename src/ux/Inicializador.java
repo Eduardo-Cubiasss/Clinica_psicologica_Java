@@ -88,7 +88,7 @@ public class Inicializador {
         vista.JPContenido.add(panelCorreoenviado, "panelCorreoenviado");
 
         // Crea una instancia del controlador Login y pasa los componentes necesarios
-        controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion, panelHistory);
+        controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion, panelHistory, habilitarPaneles);
         // Crea una instancia del controlador RegAdmin_JF002 y pasa los modelos necesarios
         controladorRegistrar = new RegAdmin_JF002(modelAdmin, modelUsers, modelClinica, panelRegistro, vista.JPContenido, Procesos, panelHistory);
         controladorMenuAd = new Menu_Administrador(vista.JPContenido, panelMenuAdmin, panelHistory);

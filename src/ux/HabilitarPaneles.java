@@ -16,7 +16,7 @@ public class HabilitarPaneles {
     private HashMap<String, JPanel> paneles;
 
     public HabilitarPaneles() {
-        paneles = new HashMap<>();
+        this.paneles = new HashMap<>();
     }
 
     public void agregarPanel(String nombre, JPanel panel) {
