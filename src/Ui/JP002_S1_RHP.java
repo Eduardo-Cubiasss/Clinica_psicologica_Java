@@ -167,7 +167,6 @@ public class JP002_S1_RHP extends javax.swing.JPanel {
         Btn1_JF002_S1_RH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         Btn1_JF002_S1_RH.setBorderPainted(false);
         Btn1_JF002_S1_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Btn1_JF002_S1_RH.setEnabled(false);
         Btn1_JF002_S1_RH.setInheritsPopupMenu(true);
         Btn1_JF002_S1_RH.setMaximumSize(new java.awt.Dimension(1120, 540));
         Btn1_JF002_S1_RH.setMinimumSize(new java.awt.Dimension(1120, 540));

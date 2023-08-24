@@ -11,10 +11,10 @@ import javax.swing.JPanel;
  *
  * @author 50369
  */
-public class ValidarNum {
+public class Anuncios1 {
     private JPanel JPContenido;
     
-    public ValidarNum(JPanel JPContenido)
+    public Anuncios1(JPanel JPContenido)
     {
         this.JPContenido = JPContenido;
     }

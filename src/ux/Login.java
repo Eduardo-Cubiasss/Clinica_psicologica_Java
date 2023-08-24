@@ -7,6 +7,7 @@ package ux;
 
 import Database.Procesos_almacenados;
 import Database.Usuarios;
+import Ui.JF_000_S7_GU;
 import Ui.JP001_S1_AFP;
 import Ui.JP002_S1_RHP;
 import java.awt.CardLayout;
@@ -30,19 +31,21 @@ public class Login implements ActionListener {
     private JP001_S1_AFP panelRegistro;
     private PanelHistory panelHistory;
     private HabilitarPaneles PanelesManager; 
+    private JF_000_S7_GU vista;
     
     public void enableLoginPanel() {
         panelRegistro.setEnabled(true);
     }
     
     public Login(Usuarios modelUsers, JPanel JPContenido, Procesos_almacenados Procesos,
-            JP001_S1_AFP panelRegistro, PanelHistory panelHistory, HabilitarPaneles PanelesManager) {
+            JP001_S1_AFP panelRegistro, PanelHistory panelHistory, HabilitarPaneles PanelesManager, JF_000_S7_GU vista) {
         this.modelUsers = modelUsers;
         this.JPContenido = JPContenido;
         this.Procesos = Procesos;
         this.panelRegistro = panelRegistro;
         this.panelHistory = panelHistory;
         this.PanelesManager = PanelesManager;
+        this.vista = vista;
 
         this.panelRegistro.getBtn2_JF001_S1_AF().addActionListener(this);
         this.panelRegistro.getbtn3_JF001_S1_AF().addActionListener(this);
@@ -60,21 +63,18 @@ public class Login implements ActionListener {
             if (Acceso == 1) {
                 switch (Nivel) {
                     case 1:
-                        PanelesManager.deshabilitarPanel("panelInicioSesion");
-                        panelHistory.pushPanel("panelMenuTp");
-                        PanelesManager.habilitarPanel("panelMenuTp");
+                       PanelesManager.copiaPanel("panelInicioSesion");
+                       JPContenido.remove(panelRegistro);
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
                         break;
                     case 2:
-                        PanelesManager.deshabilitarPanel("panelInicioSesion");
-                        panelHistory.pushPanel("panelMenuAdmin");
-                        PanelesManager.habilitarPanel("panelMenuAdmin");
+                       PanelesManager.copiaPanel("panelInicioSesion");
+                       JPContenido.remove(panelRegistro);
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
                         break;
                     case 3:
-                        PanelesManager.deshabilitarPanel("panelInicioSesion");
-                        panelHistory.pushPanel("panelMenuSec");
-                        PanelesManager.habilitarPanel("panelMenuSec");
+                       PanelesManager.copiaPanel("panelInicioSesion");
+                       JPContenido.remove(panelRegistro);
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
                         break;
                     default:
@@ -83,26 +83,27 @@ public class Login implements ActionListener {
                 }
                 JPContenido.revalidate();
                 JPContenido.repaint();
+                PanelesManager.restaurarPanelEliminado(vista);
             } else {
-                JOptionPane.showMessageDialog(null, "Se sugiere visitar la página donde se explica a detalle cada error que puede experimentar usted como usuario", "ERROR JF001DA", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null,   "Se sugiere visitar la página donde se explica a detalle cada error que puede experimentar usted como usuario", "ERROR JF001DA", JOptionPane.INFORMATION_MESSAGE);
             }
         } else if (e.getSource() == panelRegistro.getbtn3_JF001_S1_AF()) {
             
-            panelHistory.pushPanel("panelRegistro");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.habilitarPanel("panelRegistro");
+            PanelesManager.copiaPanel("panelInicioSesion");
+            JPContenido.remove(panelRegistro);
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
-            PanelesManager.deshabilitarPanel("panelInicioSesion");
+            System.out.println("Abro panelRegisro");
             JPContenido.revalidate();
             JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado(vista);
         } else if (e.getSource() == panelRegistro.getbtn4_JF001_S1_AF()) {
-            PanelesManager.deshabilitarPanel("panelInicioSesion");
-            panelHistory.pushPanel("panelvalCorreo");
-            PanelesManager.habilitarPanel("panelMenuSec");
+            //PanelesManager.eliminarPanel("panelInicioSesion");
+            PanelesManager.copiaPanel("panelInicioSesion");
+            JPContenido.remove(panelRegistro);
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelvalCorreo");
             JPContenido.revalidate();
             JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado(vista);
         }
     }
 }

@@ -12,6 +12,8 @@ import Ui.JP002_S1_RHP;
 import Ui.JP003_2_S1_RH;
 import Ui.JP003_S1_RH;
 import Ui.JP004_S2_AF;
+import Ui.JP005_2_S2_RH;
+import Ui.JP021_S3_RH;
 import Ui.JP023_S3_RH;
 import Ui.JP039_S3_RH;
 import Ui.SplashScreen;
@@ -32,9 +34,12 @@ public class Inicializador {
     private Menu_Secretaria controladorMenuSec;
     private ValidarCorreo controladorValCorreo;
     private RecGmail controladorCorreoenviado;
+    private ValidarNum controladorRec_tel1;
+    private Anuncios1 controladorAnuncios1;
     private Hints_Herencia hintsHerencia;
     private JF_000_S7_GU vista;
-    
+    private Stack<JPanel> historialPaneles = new Stack<>();
+
 
     JTextField textField1 = new JTextField();
     ExtensionCorreo validacionCorreo = new ExtensionCorreo(textField1);
@@ -71,6 +76,10 @@ public class Inicializador {
         habilitarPaneles.agregarPanel("panelMenuAdmin", panelMenuAdmin);
         vista.JPContenido.add(panelMenuAdmin, "panelMenuAdmin");
 
+        JP005_2_S2_RH panelRec1Telefono = new JP005_2_S2_RH(controladorRec_tel1);
+        habilitarPaneles.agregarPanel("panelRec1Telefono", panelRec1Telefono);
+        vista.JPContenido.add(panelRec1Telefono, "panelRec1Telefono");
+        
         JP023_S3_RH panelMenuTp = new JP023_S3_RH(controladorMenuTp);
         habilitarPaneles.agregarPanel("panelMenuTp", panelMenuTp);
         vista.JPContenido.add(panelMenuTp, "panelMenuTp");
@@ -86,18 +95,23 @@ public class Inicializador {
         JP003_2_S1_RH panelCorreoenviado = new JP003_2_S1_RH(controladorCorreoenviado);
         habilitarPaneles.agregarPanel("panelCorreoenviado", panelCorreoenviado);
         vista.JPContenido.add(panelCorreoenviado, "panelCorreoenviado");
-
-        // Crea una instancia del controlador Login y pasa los componentes necesarios
-        controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion, panelHistory, habilitarPaneles);
-        // Crea una instancia del controlador RegAdmin_JF002 y pasa los modelos necesarios
-        controladorRegistrar = new RegAdmin_JF002(modelAdmin, modelUsers, modelClinica, panelRegistro, vista.JPContenido, Procesos, panelHistory);
+        
+        JP021_S3_RH panelAnuncios1 = new JP021_S3_RH(controladorAnuncios1);
+        habilitarPaneles.agregarPanel("panelAnuncios1", panelAnuncios1);
+        vista.JPContenido.add(panelAnuncios1, "panelAnuncios1");
+        
+        controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion, panelHistory, habilitarPaneles, vista);
+        controladorRegistrar = new RegAdmin_JF002(modelAdmin, modelUsers, modelClinica, panelRegistro, vista.JPContenido, Procesos, panelHistory, vista);
         controladorMenuAd = new Menu_Administrador(vista.JPContenido, panelMenuAdmin, panelHistory);
         controladorMenuTp = new Menu_Terapeuta(vista.JPContenido);
         controladorMenuSec = new Menu_Secretaria(vista.JPContenido);
         controladorValCorreo = new ValidarCorreo(ModelContactos, panelvalCorreo, Procesos, vista.JPContenido);
         controladorCorreoenviado = new RecGmail(modelUsers, ModelContactos, panelCorreoenviado, Procesos, vista.JPContenido);
-
+        controladorRec_tel1 = new ValidarNum(vista.JPContenido);
+        controladorAnuncios1 = new Anuncios1(vista.JPContenido);
+        
         // Aquí mandamos todos los paneles
+        
         hintsHerencia = new Hints_Herencia(panelInicioSesion, panelRegistro);
 
     }

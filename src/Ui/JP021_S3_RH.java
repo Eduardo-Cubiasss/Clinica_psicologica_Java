@@ -5,16 +5,18 @@
  */
 package Ui;
 
+import ux.Anuncios1;
+
 /**
  *
  * @author LENOVO
  */
 public class JP021_S3_RH extends javax.swing.JPanel {
-
+    private Anuncios1 controlador;
     /**
      * Creates new form JP021_S3_RH
      */
-    public JP021_S3_RH() {
+    public JP021_S3_RH(Anuncios1 controlador) {
         initComponents();
     }
 
