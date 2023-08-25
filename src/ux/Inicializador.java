@@ -101,7 +101,7 @@ public class Inicializador {
         vista.JPContenido.add(panelAnuncios1, "panelAnuncios1");
         
         controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion, panelHistory, habilitarPaneles, vista);
-        controladorRegistrar = new RegAdmin_JF002(modelAdmin, modelUsers, modelClinica, panelRegistro, vista.JPContenido, Procesos, panelHistory, vista);
+        controladorRegistrar = new RegAdmin_JF002(modelAdmin, modelUsers, modelClinica, panelRegistro, vista.JPContenido, Procesos, panelHistory, habilitarPaneles , vista);
         controladorMenuAd = new Menu_Administrador(vista.JPContenido, panelMenuAdmin, panelHistory);
         controladorMenuTp = new Menu_Terapeuta(vista.JPContenido);
         controladorMenuSec = new Menu_Secretaria(vista.JPContenido);

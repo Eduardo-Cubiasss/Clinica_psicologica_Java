@@ -27,7 +27,7 @@ public class SplashScreen extends javax.swing.JPanel {
                 segundosRestantes--;
                 if (segundosRestantes <= 0) {
                     // Oculta el SplashScreen después de que han pasado los 6 segundos
-                    ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelAnuncios1");
+                    ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
                 }
             }
         });

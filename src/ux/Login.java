@@ -63,17 +63,17 @@ public class Login implements ActionListener {
             if (Acceso == 1) {
                 switch (Nivel) {
                     case 1:
-                       PanelesManager.copiaPanel("panelInicioSesion");
+                       PanelesManager.copiaPanel("JP001_S1_AFP");
                        JPContenido.remove(panelRegistro);
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
                         break;
                     case 2:
-                       PanelesManager.copiaPanel("panelInicioSesion");
+                       PanelesManager.copiaPanel("JP001_S1_AFP");
                        JPContenido.remove(panelRegistro);
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
                         break;
                     case 3:
-                       PanelesManager.copiaPanel("panelInicioSesion");
+                       PanelesManager.copiaPanel("JP001_S1_AFP");
                        JPContenido.remove(panelRegistro);
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
                         break;
@@ -89,16 +89,19 @@ public class Login implements ActionListener {
             }
         } else if (e.getSource() == panelRegistro.getbtn3_JF001_S1_AF()) {
             
-            PanelesManager.copiaPanel("panelInicioSesion");
+            PanelesManager.copiaPanel("JP001_S1_AFP");
+            System.out.println("Si copia el inicio sesiom");
             JPContenido.remove(panelRegistro);
+            System.out.println("Si elimina el panel");
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
             System.out.println("Abro panelRegisro");
             JPContenido.revalidate();
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado(vista);
+            System.out.println("Se restaura panel");
         } else if (e.getSource() == panelRegistro.getbtn4_JF001_S1_AF()) {
             //PanelesManager.eliminarPanel("panelInicioSesion");
-            PanelesManager.copiaPanel("panelInicioSesion");
+            PanelesManager.copiaPanel("JP001_S1_AFP");
             JPContenido.remove(panelRegistro);
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelvalCorreo");
             JPContenido.revalidate();
