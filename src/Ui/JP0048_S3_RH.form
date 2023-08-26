@@ -296,7 +296,6 @@
               <Image iconType="3" name="/imagenes/btnEmpecemos.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
-            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>

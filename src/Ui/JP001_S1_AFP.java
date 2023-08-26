@@ -111,7 +111,6 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
         Btn2_JF001_S1_AF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 50, true));
         Btn2_JF001_S1_AF.setBorderPainted(false);
         Btn2_JF001_S1_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Btn2_JF001_S1_AF.setEnabled(false);
         Btn2_JF001_S1_AF.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Btn2_JF001_S1_AFMouseClicked(evt);

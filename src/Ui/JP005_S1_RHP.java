@@ -82,7 +82,6 @@ public class JP005_S1_RHP extends javax.swing.JPanel {
         Btn1_JF005_2_S2_RH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 50, true));
         Btn1_JF005_2_S2_RH.setBorderPainted(false);
         Btn1_JF005_2_S2_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Btn1_JF005_2_S2_RH.setEnabled(false);
         Btn1_JF005_2_S2_RH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn1_JF005_2_S2_RHActionPerformed(evt);

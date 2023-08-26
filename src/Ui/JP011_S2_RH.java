@@ -82,7 +82,6 @@ public class JP011_S2_RH extends javax.swing.JPanel {
         Btn3_JF011_S2_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/BotonAgregarCambios.png"))); // NOI18N
         Btn3_JF011_S2_RH.setBorderPainted(false);
         Btn3_JF011_S2_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Btn3_JF011_S2_RH.setEnabled(false);
 
         Btn4_JF011_S2_RH.setBackground(new java.awt.Color(255, 255, 255));
         Btn4_JF011_S2_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ac_1.png"))); // NOI18N

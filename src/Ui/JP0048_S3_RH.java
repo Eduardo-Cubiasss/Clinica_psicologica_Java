@@ -156,7 +156,6 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         btnEmpecemos.setBackground(new java.awt.Color(255, 255, 255));
         btnEmpecemos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnEmpecemos.png"))); // NOI18N
         btnEmpecemos.setBorderPainted(false);
-        btnEmpecemos.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
