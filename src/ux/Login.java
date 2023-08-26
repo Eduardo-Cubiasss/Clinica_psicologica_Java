@@ -98,6 +98,7 @@ public class Login implements ActionListener {
             JPContenido.revalidate();
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado(vista);
+            System.out.println();
             System.out.println("Se restaura panel");
         } else if (e.getSource() == panelRegistro.getbtn4_JF001_S1_AF()) {
             //PanelesManager.eliminarPanel("panelInicioSesion");
