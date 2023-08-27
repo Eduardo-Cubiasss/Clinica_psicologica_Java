@@ -136,11 +136,11 @@ public class JP012_A_AF extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btn1_JF012_A;
-    public javax.swing.JButton btn2_JF012_A;
+    private javax.swing.JButton btn1_JF012_A;
+    private javax.swing.JButton btn2_JF012_A;
     public javax.swing.JButton btn3_JF012_A;
-    public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;

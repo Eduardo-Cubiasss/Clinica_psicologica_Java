@@ -73,7 +73,7 @@
                               <Component id="btn1_JF012_A" min="-2" pref="130" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
                           <Component id="btn3_JF012_A" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
                           <Component id="jLabel3" min="-2" pref="580" max="-2" attributes="0"/>

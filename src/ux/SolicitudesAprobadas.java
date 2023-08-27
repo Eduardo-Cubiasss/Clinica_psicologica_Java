@@ -9,13 +9,14 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author 50369
+ * @author LENOVO
  */
-public class AcercaDeLaClinica {
+public class SolicitudesAprobadas {
     private JPanel JPContenido;
     
-    public AcercaDeLaClinica(JPanel JPContenido)
+    public SolicitudesAprobadas(JPanel JPContenido)
     {
         this.JPContenido = JPContenido;
     }
+    
 }

@@ -9,13 +9,14 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author 50369
+ * @author LENOVO
  */
-public class AcercaDeLaClinica {
+public class EstadisticaDeCitas {
     private JPanel JPContenido;
     
-    public AcercaDeLaClinica(JPanel JPContenido)
+    public EstadisticaDeCitas(JPanel JPContenido)
     {
         this.JPContenido = JPContenido;
     }
+    
 }
