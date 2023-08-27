@@ -15,6 +15,7 @@ import Ui.JP004_S2_AF;
 import Ui.JP005_2_S2_RH;
 import Ui.JP023_S3_RH;
 import Ui.JP039_S3_RH;
+import Ui.JP035_1_S3_RH;
 
 import javax.swing.JPanel;
 import java.util.Stack;
@@ -34,6 +35,7 @@ public class Inicializador {
     private RecGmail controladorCorreoenviado;
     private ValidarNum controladorRec_tel1;
     private Anuncios1 controladorAnuncios1;
+    private VisualizarNotas controladorvisualizarnotas;
     private Hints_Herencia hintsHerencia;
     private JF_000_S7_GU vista;
     private Stack<JPanel> historialPaneles = new Stack<>();
@@ -45,6 +47,7 @@ public class Inicializador {
     private  JP005_2_S2_RH panel5;
     private  JP023_S3_RH panel23;
     private  JP039_S3_RH paenl39;
+    private  JP035_1_S3_RH panel35p;
     
     // Paneles vacios
     private JPanel JP1;
@@ -53,6 +56,7 @@ public class Inicializador {
     private JPanel JP5;
     private JPanel JP23;
     private JPanel JP39;
+    private JPanel JP35p;
     
     public Inicializador(JF_000_S7_GU vista) {
         this.vista = vista;
@@ -73,6 +77,7 @@ public class Inicializador {
         panelesInicializador.setJP005_2_S2_RH(panel5);
         panelesInicializador.setJP023_S3_RH(panel23);
         panelesInicializador.setJP039_S3_RH(paenl39);
+        panelesInicializador.setJP035_1_S3_RH(panel35p);
         
         // Asignar paneles desde PanelesInicializador
         this.JP1 = panelesInicializador.getJP001_S1_AFP();
@@ -81,6 +86,7 @@ public class Inicializador {
         this.JP5 = panelesInicializador.getJP005_2_S2_RH();
         this.JP23 = panelesInicializador.getJP023_S3_RH();
         this.JP39 = panelesInicializador.getJP039_S3_RH();
+        this.JP35p = panelesInicializador.getJP035_1_S3_RH();
         
         
         
@@ -94,6 +100,7 @@ public class Inicializador {
         JP039_S3_RH panelMenuSec = new JP039_S3_RH(controladorMenuSec);
         JP003_S1_RH panelvalCorreo = new JP003_S1_RH(controladorValCorreo);
         JP003_2_S1_RH panelCorreoenviado = new JP003_2_S1_RH(controladorCorreoenviado);
+        JP035_1_S3_RH panelVisualizarNotas = new JP035_1_S3_RH(controladorvisualizarnotas);
         vista.JPContenido.add(panelSplash, "panelSplash");
         
         
@@ -107,6 +114,7 @@ public class Inicializador {
         controladorCorreoenviado = new RecGmail(modelUsers, ModelContactos, panelCorreoenviado, Procesos, vista.JPContenido);
         controladorRec_tel1 = new ValidarNum(vista.JPContenido);
         controladorAnuncios1 = new Anuncios1(vista.JPContenido);
+        controladorvisualizarnotas = new VisualizarNotas(vista.JPContenido);
 
         
 
@@ -124,5 +132,8 @@ public class Inicializador {
         vista.JPContenido.add(panelMenuTp, "panelMenuTp");
         habilitarPaneles.agregarPanel("panelMenuSec", panelMenuSec);
         vista.JPContenido.add(panelMenuSec, "panelMenuSec");
+        habilitarPaneles.agregarPanel("panelVisualizarNotas", panelVisualizarNotas);
+        vista.JPContenido.add(panelVisualizarNotas, "panelVisualizarNotas");
+        
     }
 }

@@ -5,6 +5,9 @@
  */
 package Ui;
 
+import ux.PanelesInicializador;
+import ux.VisualizarNotas;
+
 /**
  *
  * @author LENOVO
@@ -14,8 +17,17 @@ public class JP035_1_S3_RH extends javax.swing.JPanel {
     /**
      * Creates new form JP035_1_S3_RH
      */
-    public JP035_1_S3_RH() {
+    private VisualizarNotas controlador;
+    private PanelesInicializador str;
+    
+    public JP035_1_S3_RH(VisualizarNotas controlador) {
         initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP035_1_S3_RH(this);
     }
 
     /**
