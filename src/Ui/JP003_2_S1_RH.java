@@ -8,6 +8,8 @@ package Ui;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import ux.RecGmail;
+import ux.PanelesInicializador;
+import Ui.JP003_2_S1_RH;
 
 /**
  *
@@ -15,9 +17,9 @@ import ux.RecGmail;
  */
 public class JP003_2_S1_RH extends javax.swing.JPanel {
     
-    
+    private JP003_2_S1_RH panel;
     private RecGmail controlador;
-    
+    private PanelesInicializador str;
     public JTextField getTxtCodigoCorreo_JF003_2_S1_RH2()
     {
         return TxtCodigoCorreo_JF003_2_S1_RH2;
@@ -37,12 +39,17 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
     public JButton getBtn3_JF003_2_S1_RH() {
         return Btn3_JF003_2_S1_RH;
     }
+    
     /**
      * Creates new form JP003_2_S1_RH
      */
     public JP003_2_S1_RH(RecGmail controlador) {
         this.controlador = controlador;
+         str = new PanelesInicializador();
         initComponents();
+        
+        // Establecer el valor de str aquí después de haberlo creado
+        str.setJP001_S1_AFP(this);
     }
 
     /**

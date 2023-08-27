@@ -5,6 +5,7 @@
  */
 package ux;
 
+import Ui.JP003_2_S1_RH;
 import javax.swing.JPanel;
 
 /**
@@ -60,10 +61,30 @@ public class PanelesInicializador {
     public void setJP039_S3_RH(JPanel JP039_S3_RH) {
         this.JP039_S3_RH = JP039_S3_RH;
     }
+
+    public JPanel getJP003_2_S1_RH() {
+        return JP003_2_S1_RH;
+    }
+
+    public void setJP003_2_S1_RH(JPanel JP003_2_S1_RH) {
+        this.JP003_2_S1_RH = JP003_2_S1_RH;
+    }
+
+    public JPanel getJP003_S1_RH() {
+        return JP003_S1_RH;
+    }
+
+    public void setJP003_S1_RH(JPanel JP003_S1_RH) {
+        this.JP003_S1_RH = JP003_S1_RH;
+    }
+    
     private JPanel JP001_S1_AFP; 
     private JPanel JP002_S1_RHP; 
     private JPanel JP004_S2_AF; 
     private JPanel JP005_2_S2_RH; 
     private JPanel JP023_S3_RH; 
     private JPanel JP039_S3_RH; 
+    private JPanel JP003_2_S1_RH;
+    private JPanel JP003_S1_RH;
+    
 }

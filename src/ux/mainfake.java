@@ -6,6 +6,7 @@ import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
+import ux.Inicializador;
 
 public class mainfake {
 
@@ -14,7 +15,7 @@ public class mainfake {
             public void run() {
                 // Crea una instancia del JFrame JF_000_S7_GU
                 JF_000_S7_GU vista = new JF_000_S7_GU();
-
+                
                 // Crea una instancia del SplashScreen y muestra antes que otros paneles
                 SplashScreen splashScreen = new SplashScreen(vista.JPContenido);
 

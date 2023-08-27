@@ -20,6 +20,8 @@ import javax.swing.JPanel;
 import java.util.Stack;
 
 public class Inicializador {
+    
+    // Se inicializan controladores y clases para el control de paneles
     private PanelesInicializador panelesInicializador;
     private HabilitarPaneles habilitarPaneles;
     private PanelHistory panelHistory;
@@ -35,15 +37,23 @@ public class Inicializador {
     private Hints_Herencia hintsHerencia;
     private JF_000_S7_GU vista;
     private Stack<JPanel> historialPaneles = new Stack<>();
-
-    // Paneles
-    private JPanel JP001_S1_AFP;
-    private JPanel JP002_S1_RHP;
-    private JPanel JP004_S2_AF;
-    private JPanel JP005_2_S2_RH;
-    private JPanel JP023_S3_RH;
-    private JPanel JP039_S3_RH;
-
+    
+    //Variables que contienen paneles
+    private JP001_S1_AFP panel1;
+    private  JP002_S1_RHP panel2;
+    private  JP004_S2_AF panel4;
+    private  JP005_2_S2_RH panel5;
+    private  JP023_S3_RH panel23;
+    private  JP039_S3_RH paenl39;
+    
+    // Paneles vacios
+    private JPanel JP1;
+    private JPanel JP2;
+    private JPanel JP4;
+    private JPanel JP5;
+    private JPanel JP23;
+    private JPanel JP39;
+    
     public Inicializador(JF_000_S7_GU vista) {
         this.vista = vista;
         panelHistory = new PanelHistory();
@@ -55,7 +65,25 @@ public class Inicializador {
         Clinica modelClinica = new Clinica();
         Contactos ModelContactos = new Contactos();
         panelesInicializador = new PanelesInicializador();
-
+        
+        //Insetamos el valor de los paneles sin modificacion alguna
+        panelesInicializador.setJP001_S1_AFP(panel1);
+        panelesInicializador.setJP002_S1_RHP(panel2);
+        panelesInicializador.setJP004_S2_AF(panel4);
+        panelesInicializador.setJP005_2_S2_RH(panel5);
+        panelesInicializador.setJP023_S3_RH(panel23);
+        panelesInicializador.setJP039_S3_RH(paenl39);
+        
+        // Asignar paneles desde PanelesInicializador
+        this.JP1 = panelesInicializador.getJP001_S1_AFP();
+        this.JP2 = panelesInicializador.getJP002_S1_RHP();
+        this.JP4 = panelesInicializador.getJP004_S2_AF();
+        this.JP5 = panelesInicializador.getJP005_2_S2_RH();
+        this.JP23 = panelesInicializador.getJP023_S3_RH();
+        this.JP39 = panelesInicializador.getJP039_S3_RH();
+        
+        
+        
         // Paneles
         SplashScreen panelSplash = new SplashScreen(vista.JPContenido);
         JP001_S1_AFP panelInicioSesion = new JP001_S1_AFP(controladorLogin);
@@ -67,6 +95,7 @@ public class Inicializador {
         JP003_S1_RH panelvalCorreo = new JP003_S1_RH(controladorValCorreo);
         JP003_2_S1_RH panelCorreoenviado = new JP003_2_S1_RH(controladorCorreoenviado);
         vista.JPContenido.add(panelSplash, "panelSplash");
+        
         
         // Controladores
         controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion, panelHistory, habilitarPaneles, vista);

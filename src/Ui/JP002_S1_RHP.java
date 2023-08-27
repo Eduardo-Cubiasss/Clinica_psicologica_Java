@@ -8,6 +8,7 @@ package Ui;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import ux.PanelesInicializador;
 import ux.RegAdmin_JF002;
 
 /**
@@ -17,7 +18,9 @@ import ux.RegAdmin_JF002;
 public class JP002_S1_RHP extends javax.swing.JPanel {
 
     private RegAdmin_JF002 controlador;
-
+    private JP002_S1_RHP panel;
+    private PanelesInicializador str;
+    
     public JTextField getTxtNombre_JF002_S1_RH() {
         return TxtNombre_JF002_S1_RH;
     }
@@ -53,7 +56,11 @@ public class JP002_S1_RHP extends javax.swing.JPanel {
      */
     public JP002_S1_RHP (RegAdmin_JF002 controlador) {
         this.controlador = controlador;
+         str = new PanelesInicializador();
         initComponents();
+        
+        // Establecer el valor de str aquí después de haberlo creado
+        str.setJP001_S1_AFP(this);
     }
 
     /**
