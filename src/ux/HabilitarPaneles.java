@@ -91,6 +91,9 @@ public class HabilitarPaneles {
             case "JP035_1_S3_RH":
                 sts.setJP035_1_S3_RH(obtenerPanel(nombrePanel));
                 break;
+            case "JP027_S3_RH":
+                sts.setJP027_S3_RH(obtenerPanel(nombrePanel));
+                break;
             default:
                 // Manejo para otros paneles si es necesario
                 break;
@@ -99,7 +102,7 @@ public class HabilitarPaneles {
 }
 
 
-    public void restaurarPanelEliminado(JF_000_S7_GU vista) {
+    public void restaurarPanelEliminado() {
         if (nombreUltimoPanelEliminado != null) {
             // Restaura el panel original usando el nombre almacenado
             JPanel copia = obtenerPanelCopia(nombreUltimoPanelEliminado);
@@ -110,12 +113,20 @@ public class HabilitarPaneles {
                 for (Component componente : componentesCopia) {
                     panelOriginal.add(componente);
                 }
+                System.out.println(componentesCopia + " oli");
                 agregarPanel(nombreUltimoPanelEliminado, panelOriginal);
                 configurarPanel(nombreUltimoPanelEliminado);
                 vista.JPContenido.add(panelOriginal); // Agrega el panel anterior
                 vista.JPContenido.revalidate();
                 vista.JPContenido.repaint();
             }
+            else{
+                System.out.println("no contiene nada la copia o el panel");
+            }
+        }
+        else
+        {
+            System.out.println("No ta eliminado, simple");
         }
     }
 }

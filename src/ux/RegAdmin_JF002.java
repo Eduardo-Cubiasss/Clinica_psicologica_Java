@@ -70,7 +70,7 @@ public class RegAdmin_JF002 implements ActionListener {
             System.out.println("Llega hasata aqui, abre panelMenuAdmin");
             JPContenido.revalidate();
             JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado(vista);
+            PanelesManager.restaurarPanelEliminado();
 
         } else if (e.getSource() == vistaJP002.getBtn2_JF002_S1_RH()) {
             PanelesManager.copiaPanel("JP002_S1_RHP");
@@ -81,7 +81,7 @@ public class RegAdmin_JF002 implements ActionListener {
             System.out.println("Abre inicio de sesion");
             JPContenido.revalidate();
             JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado(vista);
+            PanelesManager.restaurarPanelEliminado();
             System.out.println("Se restauran componentes y panel de registrar admin");
         } else {
             JOptionPane.showMessageDialog(null, "No se pudo crear tu usuario", "Error J000DA", JOptionPane.ERROR_MESSAGE);
@@ -92,7 +92,7 @@ public class RegAdmin_JF002 implements ActionListener {
             System.out.println("Llega hasta donde se invoca panelInicioSesion");
             JPContenido.revalidate();
             JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado(vista);
+            PanelesManager.restaurarPanelEliminado();
 
         }
     }

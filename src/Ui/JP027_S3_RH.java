@@ -5,17 +5,45 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import ux.DocumentosDeApoyo;
+import ux.PanelesInicializador;
+
 /**
  *
  * @author LENOVO
  */
 public class JP027_S3_RH extends javax.swing.JPanel {
+    private DocumentosDeApoyo controlador;
+    private PanelesInicializador str;
 
-    /**
-     * Creates new form JP027_S3_RH
-     */
-    public JP027_S3_RH() {
+    public JPanel getJP01_JP027_S3_RH() {
+        return JP01_JP027_S3_RH;
+    }
+
+    public JButton getBtn02_JF027_S3_RH() {
+        return Btn02_JF027_S3_RH;
+    }
+
+    public JButton getBtn03_JF027_S3_RH() {
+        return Btn03_JF027_S3_RH;
+    }
+
+    public JButton getBtn001_JF027_S3_RH() {
+        return Btn001_JF027_S3_RH;
+    }
+    
+    
+    
+    public JP027_S3_RH(DocumentosDeApoyo controlador) {
+        this.controlador = controlador;
+        // Crear una instancia de PanelesInicializador
+        str = new PanelesInicializador();
         initComponents();
+        
+        // Establecer el valor de str aquí después de haberlo creado
+        str.setJP027_S3_RH(this);
     }
 
     /**
@@ -36,7 +64,6 @@ public class JP027_S3_RH extends javax.swing.JPanel {
         Btn03_JF027_S3_RH = new javax.swing.JButton();
         Btn02_JF027_S3_RH = new javax.swing.JButton();
         JP01_JP027_S3_RH = new javax.swing.JPanel();
-        JS01_S3_RH = new javax.swing.JSlider();
 
         setMaximumSize(new java.awt.Dimension(1120, 540));
         setMinimumSize(new java.awt.Dimension(1120, 540));
@@ -57,7 +84,7 @@ public class JP027_S3_RH extends javax.swing.JPanel {
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 51, Short.MAX_VALUE)
         );
 
         kGradientPanel2.setkEndColor(new java.awt.Color(0, 153, 153));
@@ -103,20 +130,7 @@ public class JP027_S3_RH extends javax.swing.JPanel {
         });
 
         JP01_JP027_S3_RH.setBackground(new java.awt.Color(246, 246, 246));
-
-        javax.swing.GroupLayout JP01_JP027_S3_RHLayout = new javax.swing.GroupLayout(JP01_JP027_S3_RH);
-        JP01_JP027_S3_RH.setLayout(JP01_JP027_S3_RHLayout);
-        JP01_JP027_S3_RHLayout.setHorizontalGroup(
-            JP01_JP027_S3_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 985, Short.MAX_VALUE)
-        );
-        JP01_JP027_S3_RHLayout.setVerticalGroup(
-            JP01_JP027_S3_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 335, Short.MAX_VALUE)
-        );
-
-        JS01_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
-        JS01_S3_RH.setForeground(new java.awt.Color(255, 255, 255));
+        JP01_JP027_S3_RH.setName("JPviewDocs"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -124,28 +138,25 @@ public class JP027_S3_RH extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(kGradientPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(Btn001_JF027_S3_RH)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(256, 256, 256)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Btn02_JF027_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(Btn03_JF027_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(282, 282, 282))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(JP01_JP027_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(JS01_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 863, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(73, Short.MAX_VALUE))
+                        .addGap(269, 269, 269)
+                        .addComponent(Btn02_JF027_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(Btn03_JF027_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(Btn001_JF027_S3_RH)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 364, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(256, 256, 256)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(JP01_JP027_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 964, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,15 +169,13 @@ public class JP027_S3_RH extends javax.swing.JPanel {
                         .addComponent(jLabel1)
                         .addComponent(Btn001_JF027_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30)
-                .addComponent(JP01_JP027_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(JS01_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(JP01_JP027_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Btn02_JF027_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Btn03_JF027_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Btn02_JF027_S3_RH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btn03_JF027_S3_RH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         add(jPanel1, "card2");
@@ -182,7 +191,6 @@ public class JP027_S3_RH extends javax.swing.JPanel {
     public javax.swing.JButton Btn02_JF027_S3_RH;
     public javax.swing.JButton Btn03_JF027_S3_RH;
     public javax.swing.JPanel JP01_JP027_S3_RH;
-    public javax.swing.JSlider JS01_S3_RH;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;

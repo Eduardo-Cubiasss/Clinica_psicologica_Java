@@ -65,7 +65,7 @@ public class Procesos_almacenados {
         Connection conn;
         try {
             conn = ConnectionSQL.getConexion();
-            ps = conn.prepareStatement("DECLARE @resultado INT; DECLARE @ventana INT; EXEC PDLogear ?, ?, @resultado OUTPUT, @ventana OUTPUT; SELECT @resultado AS acceso; SELECT @ventana AS abrirventana;");
+            ps = conn.prepareStatement("DECLARE @resultado INT; DECLARE @ventana INT; EXEC PDLogear ?, ?, @resultado OUTPUT, @ventana   ; SELECT @resultado AS acceso; SELECT @ventana AS abrirventana;");
             ps.setString(1, modelousuarios.getUserName());
             ps.setString(2, modelousuarios.getContraseña());
 

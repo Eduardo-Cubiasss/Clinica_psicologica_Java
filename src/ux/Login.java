@@ -65,12 +65,12 @@ public class Login implements ActionListener {
                     case 1:
                        PanelesManager.copiaPanel("JP001_S1_AFP");
                        JPContenido.remove(panelRegistro);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
+                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
                         break;
                     case 2:
                        PanelesManager.copiaPanel("JP001_S1_AFP");
                        JPContenido.remove(panelRegistro);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
+                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
                         break;
                     case 3:
                        PanelesManager.copiaPanel("JP001_S1_AFP");
@@ -83,7 +83,7 @@ public class Login implements ActionListener {
                 }
                 JPContenido.revalidate();
                 JPContenido.repaint();
-                PanelesManager.restaurarPanelEliminado(vista);
+                PanelesManager.restaurarPanelEliminado();
             } else {
                 JOptionPane.showMessageDialog(null,   "Se sugiere visitar la página donde se explica a detalle cada error que puede experimentar usted como usuario", "ERROR JF001DA", JOptionPane.INFORMATION_MESSAGE);
             }
@@ -97,7 +97,7 @@ public class Login implements ActionListener {
             System.out.println("Abro panelRegisro");
             JPContenido.revalidate();
             JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado(vista);
+            PanelesManager.restaurarPanelEliminado();
             System.out.println();
             System.out.println("Se restaura panel");
         } else if (e.getSource() == panelRegistro.getbtn4_JF001_S1_AF()) {
@@ -107,7 +107,7 @@ public class Login implements ActionListener {
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelvalCorreo");
             JPContenido.revalidate();
             JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado(vista);
+            PanelesManager.restaurarPanelEliminado();
         }
     }
 }

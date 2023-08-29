@@ -35,13 +35,19 @@ public class JP027_2_S3_RH extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
+        JL_Nombre_JP027_S3_RH.setBackground(new java.awt.Color(0, 102, 102));
         JL_Nombre_JP027_S3_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        JL_Nombre_JP027_S3_RH.setForeground(new java.awt.Color(0, 102, 102));
         JL_Nombre_JP027_S3_RH.setText("Nombre:");
 
+        JL_fecha_JP027_S3_RH.setBackground(new java.awt.Color(0, 102, 102));
         JL_fecha_JP027_S3_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        JL_fecha_JP027_S3_RH.setForeground(new java.awt.Color(0, 102, 102));
         JL_fecha_JP027_S3_RH.setText("Fecha:");
 
+        JL_ID_JP027_S3_RH.setBackground(new java.awt.Color(0, 102, 102));
         JL_ID_JP027_S3_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        JL_ID_JP027_S3_RH.setForeground(new java.awt.Color(0, 102, 102));
         JL_ID_JP027_S3_RH.setText("ID");
 
         btn_01_JP027_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
