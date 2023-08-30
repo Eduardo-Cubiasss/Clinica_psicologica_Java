@@ -100,7 +100,8 @@ Contraseña varbinary(64),
 FotoPerfil image,
 IDContacto int
 );
-ALTER table TbContactos(
+
+CREATE table TbContactos(
 IDContacto int identity(1,1) primary key,
 Correo varchar(300),
 NumTelefonico varchar(14)
@@ -827,7 +828,8 @@ la tabla correspondiente.
 
 --Creamos el procedimiento que guarde los datos
 
-create PROCEDURE PDInsertarAcercademi (
+-- Crear el procedimiento almacenado para insertar datos del paciente
+CREATE PROCEDURE PDInsertarAcercademi (
     @Nombre varchar(90),
     @Apellido varchar(90),
     @CorreoElectronico varchar(90),
@@ -836,15 +838,18 @@ create PROCEDURE PDInsertarAcercademi (
 AS
 BEGIN
     SET NOCOUNT ON;
- END
-END;
 
-EX
+    -- Verificar si el paciente ya existe en la tabla
     IF NOT EXISTS (SELECT 1 FROM TbPacientes WHERE DUI = @DUI)
     BEGIN
         INSERT INTO TbPacientes (Nombre, Apellido, CorreoElectronico, FNacimiento, DUI)
         VALUES (@Nombre, @Apellido, @CorreoElectronico, GETDATE(), @DUI);
-   EC PDInsertarPaciente 'Nombre del paciente', 'Apellido del paciente', 'correo@example.com', '123456789';
+    END
+END;
+
+-- Ejecutar el procedimiento para insertar un paciente de ejemplo
+EXEC PDInsertarAcercademi 'Nombre del paciente', 'Apellido del paciente', 'correo@example.com', '123456789';
+
 
 /*
 Creamos la vista
