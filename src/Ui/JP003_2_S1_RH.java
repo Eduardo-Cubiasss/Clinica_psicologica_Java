@@ -49,7 +49,7 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
         initComponents();
         
         // Establecer el valor de str aquí después de haberlo creado
-        str.setJP001_S1_AFP(this);
+        str.setJP003_2_S1_RH(this);
     }
 
     /**

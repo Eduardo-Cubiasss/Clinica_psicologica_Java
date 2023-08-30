@@ -31,16 +31,18 @@ public class RecGmail implements ActionListener {
     private Contactos ModelContactos;
     private JP003_2_S1_RH vistaJF003;
     private Procesos_almacenados Procesos;
+    private HabilitarPaneles PanelesManager;
     private JPanel JPContenido;
 
-    public RecGmail(Usuarios modelUsers, Contactos ModelContactos, JP003_2_S1_RH vistaJF003, Procesos_almacenados Procesos, JPanel JPContenido) {
+    public RecGmail(Usuarios modelUsers, Contactos ModelContactos, JP003_2_S1_RH vistaJF003, Procesos_almacenados Procesos, JPanel JPContenido, HabilitarPaneles PanelesManager) {
         this.modelUsers = modelUsers;
         this.ModelContactos = ModelContactos;
         this.vistaJF003 = vistaJF003;
         this.Procesos = Procesos;
         this.JPContenido = JPContenido;
+        this.PanelesManager = PanelesManager;
         this.vistaJF003.Btn1_JF003_2_S1_RH.addActionListener(this);
-        System.out.println("Se hace this en las clases");
+        
     }
 
     
@@ -63,18 +65,32 @@ public class RecGmail implements ActionListener {
                 System.out.println("Sea metio al if porque ambos codigos son iguales");
                 Procesos.RecCorreo(modelUsers, ModelContactos);
                 JOptionPane.showMessageDialog(null, "Intenta iniciar sesión por favor", "Sugerencia", JOptionPane.INFORMATION_MESSAGE);
-                JPContenido.remove(vistaJF003);
-                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
+                PanelesManager.copiaPanel("JP003_2_S1_RH");
+            JPContenido.remove(vistaJF003);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
                 
             } else {
                 JOptionPane.showMessageDialog(null, "Intentalo de nuevo", "J001GU", JOptionPane.INFORMATION_MESSAGE);
+                PanelesManager.copiaPanel("JP003_2_S1_RH");
+            JPContenido.remove(vistaJF003);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelvalCorreo");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
                 JPContenido.remove(vistaJF003);
                 ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelvalCorreo");
             }
 
         } else if (e.getSource() == vistaJF003.Btn2_JF003_2_S1_RH) {
             JPContenido.remove(vistaJF003);  
+            PanelesManager.copiaPanel("JP003_2_S1_RH");
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
         }
 
     }

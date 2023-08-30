@@ -7,6 +7,7 @@ package Ui;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import ux.PanelesInicializador;
 import ux.ValidarCorreo;
 
 /**
@@ -16,6 +17,7 @@ import ux.ValidarCorreo;
 public class JP003_S1_RH extends javax.swing.JPanel {
     
     private ValidarCorreo controlador;
+    private PanelesInicializador str;
     
     public JTextField getTxtCorreoRegister_JF003_S1_RH() {
         return TxtCorreoRegister_JF003_S1_RH;
@@ -37,7 +39,11 @@ public class JP003_S1_RH extends javax.swing.JPanel {
      */
     public JP003_S1_RH(ValidarCorreo controlador) {
         this.controlador = controlador;
+         str = new PanelesInicializador();
         initComponents();
+        
+        // Establecer el valor de str aquí después de haberlo creado
+        str.setJP003_S1_RH(this);
     }
 
     /**

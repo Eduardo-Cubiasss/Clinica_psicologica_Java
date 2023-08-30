@@ -45,6 +45,8 @@ public class Inicializador {
     //Variables que contienen paneles
     private JP001_S1_AFP panel1;
     private  JP002_S1_RHP panel2;
+    private  JP003_S1_RH panel3;
+    private  JP003_2_S1_RH panel3_2;
     private  JP004_S2_AF panel4;
     private  JP005_2_S2_RH panel5;
     private  JP023_S3_RH panel23;
@@ -55,6 +57,8 @@ public class Inicializador {
     // Paneles vacios
     private JPanel JP1;
     private JPanel JP2;
+    private JPanel JP3_1;
+    private JPanel JP3_2;
     private JPanel JP4;
     private JPanel JP5;
     private JPanel JP23;
@@ -77,6 +81,8 @@ public class Inicializador {
         //Insetamos el valor de los paneles sin modificacion alguna
         panelesInicializador.setJP001_S1_AFP(panel1);
         panelesInicializador.setJP002_S1_RHP(panel2);
+        panelesInicializador.setJP003_S1_RH(panel3);
+        panelesInicializador.setJP003_2_S1_RH(panel3_2);
         panelesInicializador.setJP004_S2_AF(panel4);
         panelesInicializador.setJP005_2_S2_RH(panel5);
         panelesInicializador.setJP023_S3_RH(panel23);
@@ -87,6 +93,8 @@ public class Inicializador {
         // Asignar paneles desde PanelesInicializador
         this.JP1 = panelesInicializador.getJP001_S1_AFP();
         this.JP2 = panelesInicializador.getJP002_S1_RHP();
+        this.JP3_1 = panelesInicializador.getJP003_S1_RH();
+        this.JP3_2 = panelesInicializador.getJP003_2_S1_RH();
         this.JP4 = panelesInicializador.getJP004_S2_AF();
         this.JP5 = panelesInicializador.getJP005_2_S2_RH();
         this.JP23 = panelesInicializador.getJP023_S3_RH();
@@ -117,8 +125,8 @@ public class Inicializador {
         controladorMenuAd = new Menu_Administrador(vista.JPContenido, panelMenuAdmin, habilitarPaneles);
         controladorMenuTp = new Menu_Terapeuta(vista.JPContenido, panelMenuTp, habilitarPaneles);
         controladorMenuSec = new Menu_Secretaria(vista.JPContenido);
-        controladorValCorreo = new ValidarCorreo(ModelContactos, panelvalCorreo, Procesos, vista.JPContenido);
-        controladorCorreoenviado = new RecGmail(modelUsers, ModelContactos, panelCorreoenviado, Procesos, vista.JPContenido);
+        controladorValCorreo = new ValidarCorreo(ModelContactos, panelvalCorreo, Procesos, vista.JPContenido, habilitarPaneles);
+        controladorCorreoenviado = new RecGmail(modelUsers, ModelContactos, panelCorreoenviado, Procesos, vista.JPContenido, habilitarPaneles);
         controladorRec_tel1 = new ValidarNum(vista.JPContenido);
         controladorAnuncios1 = new Anuncios1(vista.JPContenido);
         controladorvisualizarnotas = new VisualizarNotas(vista.JPContenido);
@@ -134,6 +142,10 @@ public class Inicializador {
         vista.JPContenido.add(panelRegistro, "panelRegistro");
         habilitarPaneles.agregarPanel("panelMenuAdmin", panelMenuAdmin);
         vista.JPContenido.add(panelMenuAdmin, "panelMenuAdmin");
+        habilitarPaneles.agregarPanel("panelvalCorreo", panelvalCorreo);
+        vista.JPContenido.add(panelvalCorreo, "panelvalCorreo");
+        habilitarPaneles.agregarPanel("panelCorreoenviado", panelCorreoenviado);
+        vista.JPContenido.add(panelCorreoenviado, "panelCorreoenviado");
         habilitarPaneles.agregarPanel("panelRec1Telefono", panelRec1Telefono);
         vista.JPContenido.add(panelRec1Telefono, "panelRec1Telefono");
         habilitarPaneles.agregarPanel("panelMenuTp", panelMenuTp);

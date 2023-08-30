@@ -70,6 +70,12 @@ public class HabilitarPaneles {
             case "JP002_S1_RHP":
                 sts.setJP002_S1_RHP(obtenerPanel(nombrePanel));
                 break;
+            case "JP003_2_S1_RH":
+                sts.setJP003_2_S1_RH(obtenerPanel(nombrePanel));
+                break;
+            case "JP003_S1_RH":
+                sts.setJP003_S1_RH(obtenerPanel(nombrePanel));
+                break;
             case "JP004_S2_AF":
                 sts.setJP004_S2_AF(obtenerPanel(nombrePanel));
                 break;
@@ -82,12 +88,7 @@ public class HabilitarPaneles {
             case "JP039_S3_RH":
                 sts.setJP039_S3_RH(obtenerPanel(nombrePanel));
                 break;
-            case "JP003_2_S1_RH":
-                sts.setJP003_2_S1_RH(obtenerPanel(nombrePanel));
-                break;
-            case "JP003_S1_RH":
-                sts.setJP003_S1_RH(obtenerPanel(nombrePanel));
-                break;
+           
             case "JP035_1_S3_RH":
                 sts.setJP035_1_S3_RH(obtenerPanel(nombrePanel));
                 break;

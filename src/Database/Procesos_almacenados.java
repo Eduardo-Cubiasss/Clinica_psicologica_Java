@@ -106,8 +106,8 @@ public class Procesos_almacenados {
         try {
             conn = (Connection) ConnectionSQL.getConexion();
             ps = conn.prepareStatement("Exec PDActualizarContraGmail ?, ?;");
-            ps.setString(1, modelUsers.getContraseña());
-            ps.setString(2, ModelContactos.getCorreo());
+            ps.setString(1, ModelContactos.getCorreo());
+            ps.setString(2, modelUsers.getContraseña());
             System.out.println("Exitooo en el cambio de contraseña");
             ps.executeUpdate();
             System.out.println("Lo lograste");
@@ -190,10 +190,11 @@ public class Procesos_almacenados {
 
                 if (Correo1 == 1) {
                     ModelContactos.setCorreo(ModelContactos.getCorreoVal());
+                    System.out.println("O sea que si existe pues");
                 } else {
                     System.out.println("Erroraso en modelo");
 
-                    JOptionPane.showMessageDialog(null, "J022DA ", "Error al enviar correo", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "J022DA ", "Error al enviar correo ee", JOptionPane.INFORMATION_MESSAGE);
                 }
                 System.out.println(ModelContactos.getCorreoVal());
                 System.out.println(ModelContactos.getCorreo());
