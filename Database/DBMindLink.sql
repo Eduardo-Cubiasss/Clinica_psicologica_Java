@@ -100,6 +100,8 @@ Contraseña varbinary(64),
 FotoPerfil image,
 IDContacto int
 );
+ALTER TABLE TbUsuarios
+ADD Primeruso int;
 
 CREATE table TbContactos(
 IDContacto int identity(1,1) primary key,
@@ -373,7 +375,7 @@ Ya esta bien aaaa
 /*
 Desde aquí comienzan los procesos almacenados
 */
-CREATE PROCEDURE PDRegistrarAdmin
+ALTER PROCEDURE PDRegistrarAdmin
     @nombreTbA VARCHAR(90),
     @UsernameTbU VARCHAR(50),
     @ContraseñaTbU VARCHAR(90),
@@ -397,8 +399,8 @@ BEGIN
 		SET @HashContraseñaTbU = HASHBYTES('SHA2_256', @ContraseñaTbU);
 		SET @newHash = HASHBYTES('SHA2_256', @HashContraseñaTbU);
     -- Con las dos lineas de abajo mandamos a almacenar el Username y la contraseña con Hash
-		INSERT INTO TbUsuarios (Username, Contraseña)
-        VALUES (@UsernameTbU, @newHash)
+		INSERT INTO TbUsuarios (Username, Contraseña, Primeruso)
+        VALUES (@UsernameTbU, @newHash, 1)
     END
 	-- Obtener el IDUsuario basado en el Username
     DECLARE @IDUsuario INT
@@ -411,11 +413,13 @@ END
 
 EXEC PDRegistrarAdmin 'Eduardo René', 'Guayito', 'Contraseña', '52281'
 EXEC PDRegistrarAdmin 'Orlando', 'Pepito', 'Contraseña', '52281'
+EXEC PDRegistrarAdmin 'primeruso', 'pepeto', 'Contraseña', '07101'
 /* esto es para comprobar que el PDResgistrarAdmin funciona jejeje
 Drop Procedure PDRegistrarAdmin
 
 INSERT INTO TbContactos Values ('Guayito.palom0@gmail.com', '69839847')
 SELECT * FRom TbContactos
+SELECT * FROM TbUsuarios
 INSERT INTO TbUsuarios IDContacto(1)
 Delete TbAdministrador
 Delete TbUsuarios
@@ -525,7 +529,7 @@ END
 
 DECLARE @resultado INT;
 DECLARE @ventana INT;
-EXEC PDLogear 'Guayito', '12345', @ventana OUTPUT, @resultado OUTPUT;
+EXEC PDLogear 'Guayito', '123', @ventana OUTPUT, @resultado OUTPUT;
 SELECT @resultado AS acceso;
 SELECT @ventana AS abrirventana;
 
@@ -669,7 +673,9 @@ BEGIN
 END
 
 Exec PDActualizarContraGmail 'guayito.palom0@gmail.com', 'Melocoton';
-SELECT * from TbUsuarios
+
+SELECT * FROM TbContactos
+print('0x6022F22F6F3B6F0DD4E78D178312CD14DB0DC43A0C6F30F188E1D5DC5BC62709');
 
 /*
 El siguiente ploceso es para cambiar la contraseña con el numero de telefono
