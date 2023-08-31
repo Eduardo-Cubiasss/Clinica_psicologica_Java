@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import java.sql.CallableStatement;
 
 /**
  *
@@ -36,7 +37,7 @@ public class Procesos_almacenados {
             return true;
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error J001GU", "Error al crear el usuario", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error J001GU, el usuario ya existe", "Error al crear el usuario", JOptionPane.INFORMATION_MESSAGE);
             System.out.println(e.toString());
             return false;
         } finally {
@@ -57,47 +58,47 @@ public class Procesos_almacenados {
         }
     }
 
-    public int Logear(Usuarios modelousuarios) {
-
+    public void Logear(Usuarios modelousuarios) {
         int acceso = 0;
         int nivelusuario = 0;
-        PreparedStatement ps;
-        Connection conn;
+        Connection conn = null;
+        CallableStatement cs = null;
+
         try {
             conn = ConnectionSQL.getConexion();
-            ps = conn.prepareStatement("DECLARE @resultado INT; DECLARE @ventana INT; EXEC PDLogear ?, ?, @resultado OUTPUT, @ventana   ; SELECT @resultado AS acceso; SELECT @ventana AS abrirventana;");
-            ps.setString(1, modelousuarios.getUserName());
-            ps.setString(2, modelousuarios.getContraseña());
+            cs = conn.prepareCall("{CALL PDLogear(?, ?, ?, ?)}");
+            cs.setString(1, modelousuarios.getUserName()); // aqui se manda el username para db
+            cs.setString(2, modelousuarios.getContraseña()); // aqui se manda la contraseña para db
+            cs.registerOutParameter(3, java.sql.Types.INTEGER);  // Para @resultado
+            cs.registerOutParameter(4, java.sql.Types.INTEGER);  // Para @ventana
 
-            //ResultSet rs = ps.executeQuery("SELECT @resultado AS acceso");
-            //ResultSet rs1 = ps.executeQuery("SELECT @ventana AS abrirventana");
-            ResultSet rs = ps.executeQuery();
+            cs.execute();
 
-            while (rs.next()) {
-                // acceso = rs.getInt(1); // Obtener el valor de la variable de salida @resultado
-                // modelousuarios.setAcceso(acceso);
-                //System.out.println(acceso);
+            // Obtener los valores de los parámetros de salida
+            int resultado = cs.getInt(3);  // Obtener el valor de salida @resultado, resultado puede devolver 0 y 1, 1 si existe el usuario y 0 si no existe
+            int ventana = cs.getInt(4);    // Obtener el valor de salida @ventana, resultado puede devolver 1, 2, 3, 4, es para diferenciar el nivel de usuario
 
-                modelousuarios.setAcceso(1);
-                modelousuarios.setResultado(2);
-                System.out.println("ACESOOOOOOOOO" + rs.getInt("acceso"));
-                //  System.out.println("ACESOOOOOOOOO"+rs.getInt("abrirventana") );
-
-            }
-            /*
-            while(rs1.next()){
-                nivelusuario = rs1.getInt(1);
-                modelousuarios.setResultado(nivelusuario);
-                System.out.println(nivelusuario);
-            }*/
+            modelousuarios.setAcceso(resultado);
+            modelousuarios.setResultado(ventana);
 
         } catch (Exception e) {
             System.out.println("Error #J00DA");
             JOptionPane.showMessageDialog(null, "Error: J000DA", "Credenciales incorrectas", JOptionPane.INFORMATION_MESSAGE);
-            e.printStackTrace();
-        }
-        return 0;
 
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (cs != null) {
+                    cs.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 
     public boolean RecCorreo(Usuarios modelUsers, Contactos ModelContactos) {
@@ -249,6 +250,59 @@ public class Procesos_almacenados {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public int PrimerUso(Usuarios modelousuarios, int operacion) {
+        int resultado = 0;
+        Connection conn = null;
+        PreparedStatement ps = null;
+
+        try {
+            conn = ConnectionSQL.getConexion();
+
+            switch (operacion) {
+                case 1: // 1 para update
+                    // Realizar la actualización
+                    ps = conn.prepareStatement("UPDATE TbUsuarios SET Primeruso = ? WHERE Username = ?");
+                    ps.setInt(1, modelousuarios.getPrimerUso());
+                    ps.setString(2, modelousuarios.getUserName());
+                    resultado = ps.executeUpdate();
+                    break;
+
+                case 2: // 2 para select
+                    // Realizar la consulta
+                    ps = conn.prepareStatement("SELECT Primeruso FROM TbUsuarios WHERE Username = ?");
+                    ps.setString(1, modelousuarios.getUserName());
+                    ResultSet rs = ps.executeQuery();
+
+                    while (rs.next()) {
+                        modelousuarios.setPrimerUso(rs.getInt("Primeruso"));
+                    }
+                    break;
+
+                default:
+                    // Manejar un caso no válido
+                    JOptionPane.showMessageDialog(null, "Operación no válida: " + operacion, "Error", JOptionPane.ERROR_MESSAGE);
+                    break;
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: J009UI", "Error inesperado, cierre sesión y vuelva a abrir sesión", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return resultado;
     }
 
 }

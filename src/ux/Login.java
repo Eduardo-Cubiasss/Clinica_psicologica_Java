@@ -58,14 +58,26 @@ public class Login implements ActionListener {
             modelUsers.setUserName(panelRegistro.getTxtUsuario_JF001_S1_AF().getText());
             modelUsers.setContraseña(new String(panelRegistro.getPass_JF001_S1_AF().getPassword()));
             Procesos.Logear(modelUsers);
+            int caso = 2;
+            Procesos.PrimerUso(modelUsers, caso);
             int Acceso = modelUsers.getAcceso();
             int Nivel = modelUsers.getResultado();
+            int Primeruso = modelUsers.getPrimerUso();
             if (Acceso == 1) {
                 switch (Nivel) {
                     case 1:
+                        if(Primeruso== 1)
+                        {
+                        PanelesManager.copiaPanel("JP001_S1_AFP");
+                       JPContenido.remove(panelRegistro);
+                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPrimerUso");
+                        }
+                        else
+                        {
                        PanelesManager.copiaPanel("JP001_S1_AFP");
                        JPContenido.remove(panelRegistro);
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
+                        }
                         break;
                     case 2:
                        PanelesManager.copiaPanel("JP001_S1_AFP");

@@ -14,10 +14,20 @@ public class Usuarios {
     private String UserName;
     private String Contraseña;
     private String FotoPerfil;
+    private int PrimerUso;
     private int IDContacto;
     private int acceso;
     private int resultado;
 
+    public int getPrimerUso() {
+        return PrimerUso;
+    }
+
+    public void setPrimerUso(int PrimerUso) {
+        this.PrimerUso = PrimerUso;
+    }
+
+    
     public int getAcceso() {
         return acceso;
     }

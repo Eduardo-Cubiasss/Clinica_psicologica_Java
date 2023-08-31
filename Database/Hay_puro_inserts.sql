@@ -29,3 +29,9 @@ SELECT @NumeroExis AS NumeroExistente;
 EXEC PDInsertarAgendaPersonal 'Contenido de la agenda', 'Pepito';
 
 EXEC PDGuardarComentario 'Este es un comentario de ejemplo', 'Pepito';
+
+EXEC PDPrimerUso 'Guayito', 'Correo.FUCK@gmail.com', 'Guapeton', '1023-09-24', '0174 2525', '9657-4343', 2
+
+SELECT * FROM TbUsuarios;
+SELECT * FROM TbAdministrador;
+SELECT * FROM TbContactos;

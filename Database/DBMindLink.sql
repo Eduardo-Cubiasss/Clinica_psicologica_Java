@@ -1,4 +1,4 @@
-
+ 
 /*
 Drop database dbMindLink
 go 
@@ -103,6 +103,9 @@ IDContacto int
 ALTER TABLE TbUsuarios
 ADD Primeruso int;
 
+
+Select * from TbUsuarios;
+
 CREATE table TbContactos(
 IDContacto int identity(1,1) primary key,
 Correo varchar(300),
@@ -153,6 +156,9 @@ IDGenero int,
 IDClinica varchar(5),
 IDUsuario int
 );
+ALTER TABLE TbAdministrador
+add IDActividadLaboral int;
+
 
 Create Table TbPacientes(
 IDPaciente int identity(1,1) primary key,
@@ -335,6 +341,9 @@ Foreign key (IDClinica) References TbClinicas(IDClinica);
 
 Alter table TbAdministrador Add constraint fk_IDUsuario_TbAdmin
 Foreign key (IDUsuario) References TbUsuarios(IDUsuario);
+
+Alter table TbAdministrador Add constraint fk_IDActividadLaboral_TbAdmin
+Foreign key (IDActividadLaboral) References TbActividadesLaborales(IDActividadLaboral);
 
 Alter table TbPacientes Add constraint fk_IDTipoUsuario_TbPacie
 Foreign key (IDTipoUsuario) References TbTipoUsuarios(IDTipoUsuario);
@@ -552,14 +561,14 @@ DECLARE @resultado INT;
 ---
 --- Aqui empieza el proceso de registrar pacientes
 
-CREATE PROCEDURE PDRegistrarpaciente
+ALTER PROCEDURE PDRegistrarpaciente
     @nombreTbP VARCHAR(90),
 	@apellidoTbp VARCHAR(90),
 	@fechadenaci DATE,
 	@IdTbCli VARCHAR(5),
     @UsernameTbU VARCHAR(50),
     @ContraseñaTbU VARCHAR(90),
-	@Numtel nvarchar(14)
+	@Correo varchar(300)
 AS
 BEGIN
 	DECLARE @clinica Varchar(5);
@@ -575,13 +584,13 @@ BEGIN
 			DECLARE @newHash VARBINARY (64);
 			SET @HashContraseñaTbU = HASHBYTES('SHA2_256', @ContraseñaTbU);
 			SET @newHash = HASHBYTES('SHA2_256', @HashContraseñaTbU);
-			INSERT INTO TbContactos (NumTelefonico)
-			VALUES (@Numtel)
-			DECLARE @Numerotel NVARCHAR
-			SET @Numerotel = (SELECT IDContacto FROM TbContactos WHERE @NumTel = @Numerotel)
+			INSERT INTO TbContactos (Correo)
+			VALUES (@Correo)
+			DECLARE @CorreoEle VARCHAR
+			SET @CorreoEle = (SELECT IDContacto FROM TbContactos WHERE @Correo = @CorreoEle)
 			-- Con las dos lineas de abajo mandamos a almacenar el Username y la contraseña con Hash
 			INSERT INTO TbUsuarios (Username, Contraseña, IDContacto)
-			VALUES (@UsernameTbU, @newHash, @Numerotel)
+			VALUES (@UsernameTbU, @newHash, @CorreoEle)
 		END
 	-- Obtener el IDUsuario basado en el Username
 		DECLARE @IDUsuario INT
@@ -595,7 +604,7 @@ BEGIN
 END
 
 
-EXEC PDRegistrarpaciente 'Luis','CagaLindo','9-10-2001','52281','Pepito','contraseña', ' 7689 6281';
+EXEC PDRegistrarpaciente 'prueba','prueba1','9-10-2001','52281','pruba2','contraseña', 'JuanPabloFlamenco@gmail.com';
 --Select * from TbContactos;
 --Select * from TbUsuarios;
 --Select * from TbClinicas;
@@ -835,27 +844,220 @@ la tabla correspondiente.
 --Creamos el procedimiento que guarde los datos
 
 -- Crear el procedimiento almacenado para insertar datos del paciente
-CREATE PROCEDURE PDInsertarAcercademi (
+ALTER PROCEDURE PDInsertarAcercademi
+(
+    @username varchar(200),
     @Nombre varchar(90),
     @Apellido varchar(90),
-    @CorreoElectronico varchar(90),
-    @DUI varchar(20)
+    @FNacimiento date,
+    @DUI varchar(20),
+    @Correo varchar(300)
 )
 AS
 BEGIN
-    SET NOCOUNT ON;
+    DECLARE @IDContacto int
+    DECLARE @IDUsuario int
 
-    -- Verificar si el paciente ya existe en la tabla
-    IF NOT EXISTS (SELECT 1 FROM TbPacientes WHERE DUI = @DUI)
-    BEGIN
-        INSERT INTO TbPacientes (Nombre, Apellido, CorreoElectronico, FNacimiento, DUI)
-        VALUES (@Nombre, @Apellido, @CorreoElectronico, GETDATE(), @DUI);
-    END
-END;
+    -- Insertar en la tabla TbContactos y obtener el IDContacto
+    INSERT INTO TbContactos (Correo)
+    VALUES (@Correo)
+
+    SET @IDContacto = SCOPE_IDENTITY();  -- Obtener el ID generado
+
+    -- Verificar si el usuario existe
+    SET @IDUsuario = (SELECT IDUsuario FROM TbUsuarios WHERE Username = @username);
+
+    -- Insertar en la tabla TbPacientes utilizando el IDContacto obtenido
+    INSERT INTO TbPacientes (Nombre, Apellido, FNacimiento, DUI, IDContacto)
+    VALUES (@Nombre, @Apellido, @FNacimiento, @DUI, @IDContacto);
+
+    -- Actualizar TbPacientes donde IDUsuario coincide con @IDUsuario
+    UPDATE TbPacientes
+    SET IDContacto = @IDContacto
+    WHERE IDContacto IS NULL AND IDUsuario = @IDUsuario;
+
+    -- Actualizar TbUsuarios donde IDUsuario coincide con @IDUsuario
+    UPDATE TbUsuarios
+    SET IDContacto = @IDContacto
+    WHERE IDUsuario = @IDUsuario;
+END
 
 -- Ejecutar el procedimiento para insertar un paciente de ejemplo
-EXEC PDInsertarAcercademi 'Nombre del paciente', 'Apellido del paciente', 'correo@example.com', '123456789';
+EXEC PDInsertarAcercademi 'Pepito', 'Jose', 'Perez','2023-08-30', '1234-5677','correo@yajuuu.com';
 
+
+----Creamos procedimiento alamcenado para acercademi Java---
+ALTER PROCEDURE PDPrimerUso
+    @username VARCHAR(200),
+    @Correo VARCHAR(100),
+    @ActividadLabor VARCHAR(90),
+    @fechadeNaci DATE,
+    @Numerotel VARCHAR(9),
+    @DUI VARCHAR(9),
+    @Genero INT
+AS
+BEGIN
+    DECLARE @IDUsuario INT;
+    DECLARE @IDContactos INT;
+    DECLARE @IDActividad INT;
+    DECLARE @IDGenero INT;
+
+    -- Verificar si el usuario existe
+    SET @IDUsuario = (SELECT IDUsuario FROM TbUsuarios WHERE Username = @username);
+
+    -- Obtener el último valor de la clave primaria de TbContactos en base a IDUsuario si existe
+    SET @IDContactos = (SELECT IDContacto FROM TbUsuarios WHERE IDUsuario = @IDUsuario);
+
+    -- Si @IDContactos es NULL, entonces no existe un registro previo, insertar datos en la tabla TbContactos
+    IF @IDContactos IS NULL
+    BEGIN
+        INSERT INTO TbContactos (Correo, NumTelefonico)
+        VALUES (@Correo, @Numerotel);
+
+        -- Obtener el último valor de la clave primaria de TbContactos
+        SET @IDContactos = SCOPE_IDENTITY();
+    END
+    ELSE
+    BEGIN
+        -- Si @IDContactos no es NULL, entonces actualizar los datos en la tabla TbContactos en función de @IDContactos
+        UPDATE TbContactos
+        SET Correo = @Correo,
+            NumTelefonico = @Numerotel
+        WHERE IDContacto = @IDContactos;
+    END
+	--DIOS AAAAAAAAAAAAAA hasta aqui good
+    -- Insertar datos en la tabla TbActividadesLaborales
+    INSERT INTO TbActividadesLaborales (NombreDeActividad)
+    VALUES (@ActividadLabor);
+
+    -- Obtener el último valor de la clave primaria de TbActividadesLaborales
+    SET @IDActividad = SCOPE_IDENTITY();
+
+    -- Insertar datos en la tabla TbGenero
+    INSERT INTO TbGenero (Genero)
+    VALUES (@Genero);
+
+    -- Obtener el último valor de la clave primaria de TbGenero
+    SET @IDGenero = SCOPE_IDENTITY();
+
+    -- Verificar si el usuario existe en TbAdministrador
+    IF EXISTS (SELECT 1 FROM TbAdministrador WHERE IDUsuario = @IDUsuario)
+	BEGIN
+		-- Actualizar datos en la tabla TbAdministrador
+		UPDATE TbAdministrador
+		SET FNacimiento = COALESCE(@fechadeNaci, FNacimiento),
+			DUI = COALESCE(@DUI, DUI),
+			IDGenero = COALESCE(@IDGenero, IDGenero),
+			IDActividadLaboral = COALESCE(@IDActividad, IDActividadLaboral)
+		 WHERE IDUsuario = @IDUsuario;
+	END
+
+
+    -- Verificar si el usuario existe en TbSecretaria
+    ELSE IF EXISTS (SELECT 1 FROM TbSecretaria WHERE IDUsuario = @IDUsuario)
+    BEGIN
+        -- Actualizar datos en la tabla TbAdministrador
+		UPDATE TbAdministrador
+		SET FNacimiento = COALESCE(@fechadeNaci, FNacimiento),
+			DUI = COALESCE(@DUI, DUI),
+			IDGenero = COALESCE(@IDGenero, IDGenero),
+			IDActividadLaboral = COALESCE(@IDActividad, IDActividadLaboral)
+		 WHERE IDUsuario = @IDUsuario;
+	END
+
+    -- Verificar si el usuario existe en TbTerapeutas
+    ELSE IF EXISTS (SELECT 1 FROM TbTerapeutas WHERE IDUsuario = @IDUsuario)
+    BEGIN
+        -- Actualizar datos en la tabla TbAdministrador
+		UPDATE TbAdministrador
+		SET FNacimiento = COALESCE(@fechadeNaci, FNacimiento),
+			DUI = COALESCE(@DUI, DUI),
+			IDGenero = COALESCE(@IDGenero, IDGenero),
+			IDActividadLaboral = COALESCE(@IDActividad, IDActividadLaboral)
+		 WHERE IDUsuario = @IDUsuario;
+	END
+END
+
+
+ALTER PROCEDURE PDprimerusoinfo
+	@username VARCHAR(200),
+	@Correo VARCHAR(100) OUTPUT,
+    @ActividadLabor VARCHAR(90) OUTPUT,
+	@fechadeNaci DATE OUTPUT,
+    @Numerotel VARCHAR(9) OUTPUT,
+	@DUI VARCHAR(9) OUTPUT,
+	@Genero INT OUTPUT
+AS
+BEGIN
+	DECLARE @IDUsuario INT;
+	DECLARE @Gmail VARCHAR (100);
+	DECLARE @Numero VARCHAR(9);
+	DECLARE @IDGenero INT;
+	DECLARE @IDActividadlab INT;
+	DECLARE @FNaci DATE;
+	DECLARE @Duii VARCHAR(9);
+	DECLARE @Generoo INT;
+	DECLARE @Actividadlabolal VARCHAR (100);
+
+	SET @IDUsuario = (SELECT TOP 1 IDUsuario FROM TbUsuarios WHERE Username = @username);
+	SET @Gmail = (SELECT TOP 1 Correo FROM TbContactos WHERE IDContacto = (SELECT TOP 1 IDContacto FROM TbUsuarios WHERE UserName = @username));
+	SET @Numero = (SELECT TOP 1 NumTelefonico FROM TbContactos WHERE IDContacto = (SELECT TOP 1 IDContacto FROM TbUsuarios WHERE UserName = @username));
+
+	IF EXISTS (SELECT TOP 1 IDAdministrador FROM TbAdministrador WHERE IDUsuario = @IDUsuario)
+    BEGIN
+		SET @FNaci = (SELECT TOP 1 FNacimiento FROM TbAdministrador WHERE IDUsuario = @IDUsuario);
+		SET @Duii = (SELECT TOP 1 DUI FROM TbAdministrador WHERE IDUsuario = @IDUsuario);
+		SET @IDGenero =(SELECT TOP 1 IDGenero FROM TbAdministrador WHERE IDUsuario = @IDUsuario);
+		SET @IDActividadlab = (SELECT TOP 1 IDActividadLaboral FROM TbAdministrador WHERE IDUsuario = @IDUsuario);
+	END
+    -- Verificar si el usuario existe en TbSecretaria
+    ELSE IF EXISTS (SELECT TOP 1 IDSecretaria FROM TbSecretaria WHERE IDUsuario = @IDUsuario)
+    BEGIN
+		SET @FNaci = (SELECT TOP 1 FNacimiento FROM TbSecretaria WHERE IDUsuario = @IDUsuario);
+		SET @Duii = (SELECT TOP 1 DUI FROM TbSecretaria WHERE IDUsuario = @IDUsuario);
+		SET @IDGenero =(SELECT TOP 1 IDGenero FROM TbSecretaria WHERE IDUsuario = @IDUsuario);
+		SET @IDActividadlab = (SELECT TOP 1 IDActividadLaboral FROM TbSecretaria WHERE IDUsuario = @IDUsuario);
+    END
+    -- Verificar si el usuario existe en TbTerapeutas
+    ELSE IF EXISTS (SELECT TOP 1 IDTerapeuta FROM TbTerapeutas WHERE IDUsuario = @IDUsuario)
+    BEGIN
+		SET @FNaci = (SELECT TOP 1 FNacimiento FROM TbTerapeutas WHERE IDUsuario = @IDUsuario);
+		SET @Duii = (SELECT TOP 1 DUI FROM TbTerapeutas WHERE IDUsuario = @IDUsuario);
+		SET @IDGenero =(SELECT TOP 1 IDGenero FROM TbTerapeutas WHERE IDUsuario = @IDUsuario);
+		SET @IDActividadlab = (SELECT TOP 1 IDActividadLaboral FROM TbTerapeutas WHERE IDUsuario = @IDUsuario);
+	END
+
+	-- Establecer los valores de salida
+	SET @Correo = @Gmail;
+	SET @Numerotel = @Numero;
+	SET @fechadeNaci = @FNaci;
+	SET @DUI = @Duii;
+	SET @Genero = @IDGenero;
+	SET @ActividadLabor = (SELECT TOP 1 NombreDeActividad FROM TbActividadesLaborales WHERE IDActividadLaboral = @IDActividadlab);
+END
+
+DECLARE @Correo VARCHAR(100);
+DECLARE @ActividadLabor VARCHAR(90);
+DECLARE @fechadeNaci DATE;
+DECLARE @Numerotel VARCHAR(9);
+DECLARE @DUI VARCHAR(9);
+DECLARE @Genero INT;
+-- Ejecutar el procedimiento almacenado PDprimerusoinfo
+EXEC PDprimerusoinfo 
+  'Pepito123',@Correo OUTPUT, @ActividadLabor OUTPUT, @fechadeNaci OUTPUT,  @Numerotel OUTPUT, @DUI OUTPUT,
+  @Genero OUTPUT;
+  
+-- Mostrar los valores de salida
+SELECT 
+  @Correo AS 'Correo',
+  @ActividadLabor AS 'ActividadLabor',
+  @fechadeNaci AS 'FechaNacimiento',
+  @Numerotel AS 'NumeroTelefonico',
+  @DUI AS 'DUI',
+  @Genero AS 'Genero';
+
+SELECT * FROM TbUsuarios;
+SELECT * FROM TbAdministrador;
 
 /*
 Creamos la vista
@@ -928,6 +1130,9 @@ SELECT IDPaciente, Nombre, Apellido, CorreoElectronico, FNacimiento, DUI
 FROM TbPacientes;
 
 SELECT * FROM VistaPacientes;
+
+-- Consulta para obtener datos del usuario y su contacto
+
 
 
 --Esto es para seleccionar la vista:

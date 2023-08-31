@@ -8,6 +8,7 @@ package Ui;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
+import ux.PanelesInicializador;
 import ux.primer_uso;
 
 /**
@@ -17,7 +18,31 @@ import ux.primer_uso;
 public class JP0048_S3_RH extends javax.swing.JPanel {
     
      private primer_uso controlador; 
+    private PanelesInicializador str;
     
+    public void setTxtCorreoElectronico_jp0048_RH(String texto) {
+        txtCorreoElectronico_jp0048_RH.setText(texto);
+    }
+
+    // Setter para el campo de texto txtActiLabo_JP0048
+    public void setTxtActiLabo_JP0048(String texto) {
+        txtActiLabo_JP0048.setText(texto);
+    }
+
+    // Setter para el campo de texto txtNumTel_JP0048
+    public void setTxtNumTel_JP0048(String texto) {
+        txtNumTel_JP0048.setText(texto);
+    }
+
+    // Setter para el campo de texto txtFechaNa_JP0048
+    public void setTxtFechaNa_JP0048(String texto) {
+        txtFechaNa_JP0048.setText(texto);
+    }
+
+    // Setter para el campo de texto txtDui_JP0048
+    public void setTxtDui_JP0048(String texto) {
+        txtDui_JP0048.setText(texto);
+    }
      public JTextField getTxtCorreoElectronico_jp0048_RH() {
         return txtCorreoElectronico_jp0048_RH;
     }
@@ -56,7 +81,11 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
      
     public JP0048_S3_RH(primer_uso controlador) {
         this.controlador = controlador;
+        str = new PanelesInicializador();
         initComponents();
+        
+        // Establecer el valor de str aquí después de haberlo creado
+        str.setJP0048_S3_RH(this);
     }
 
     /**
@@ -118,7 +147,7 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         jLabel3.setText("información para mejorar nuestros servicios");
 
         jLabel4.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jLabel4.setText("Llena el formulario que nos servirá más adelante");
+        jLabel4.setText("Llena todos los campos del formulario, nos servirá más adelante");
 
         txtCorreoElectronico_jp0048_RH.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         txtCorreoElectronico_jp0048_RH.setText("Correo Electrónico");
@@ -182,7 +211,7 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
                             .addComponent(jComboBox1, 0, 301, Short.MAX_VALUE))))
                 .addContainerGap(215, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(323, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -192,7 +221,7 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
                         .addGap(260, 260, 260))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
-                        .addGap(297, 297, 297)))
+                        .addGap(243, 243, 243)))
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -219,7 +248,7 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDui_JP0048, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEmpecemos, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnOmitir, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -379,11 +408,11 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btn02_JF048_S3_RH;
     public javax.swing.JButton btn02_JF048_S3_RH1;
-    private javax.swing.JButton btnEmpecemos;
+    public javax.swing.JButton btnEmpecemos;
     private javax.swing.JButton btnEmpecemos1;
-    private javax.swing.JButton btnOmitir;
+    public javax.swing.JButton btnOmitir;
     private javax.swing.JButton btnOmitir1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    public javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

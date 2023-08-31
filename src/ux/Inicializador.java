@@ -11,6 +11,7 @@ import Ui.JP001_S1_AFP;
 import Ui.JP002_S1_RHP;
 import Ui.JP003_2_S1_RH;
 import Ui.JP003_S1_RH;
+import Ui.JP0048_S3_RH;
 import Ui.JP004_S2_AF;
 import Ui.JP005_2_S2_RH;
 import Ui.JP023_S3_RH;
@@ -38,6 +39,7 @@ public class Inicializador {
     private Anuncios1 controladorAnuncios1;
     private VisualizarNotas controladorvisualizarnotas;
     private DocumentosDeApoyo controladorDocumentosView;
+    private primer_uso controladorPrimerUso;
     private Hints_Herencia hintsHerencia;
     private JF_000_S7_GU vista;
     private Stack<JPanel> historialPaneles = new Stack<>();
@@ -53,6 +55,7 @@ public class Inicializador {
     private  JP039_S3_RH paenl39;
     private  JP035_1_S3_RH panel35p;
     private  JP027_S3_RH panel27;
+    private  JP0048_S3_RH panel48;
     
     // Paneles vacios
     private JPanel JP1;
@@ -65,6 +68,7 @@ public class Inicializador {
     private JPanel JP39;
     private JPanel JP35p;
     private JPanel JP27;
+    private JPanel JP48;
     
     public Inicializador(JF_000_S7_GU vista) {
         this.vista = vista;
@@ -89,6 +93,7 @@ public class Inicializador {
         panelesInicializador.setJP039_S3_RH(paenl39);
         panelesInicializador.setJP035_1_S3_RH(panel35p);
         panelesInicializador.setJP027_S3_RH(panel27);
+        panelesInicializador.setJP0048_S3_RH(panel48);
         
         // Asignar paneles desde PanelesInicializador
         this.JP1 = panelesInicializador.getJP001_S1_AFP();
@@ -101,6 +106,7 @@ public class Inicializador {
         this.JP39 = panelesInicializador.getJP039_S3_RH();
         this.JP35p = panelesInicializador.getJP035_1_S3_RH();
         this.JP27 = panelesInicializador.getJP027_S3_RH();
+        this.JP48 = panelesInicializador.getJP0048_S3_RH();
         
         
         
@@ -116,6 +122,7 @@ public class Inicializador {
         JP003_2_S1_RH panelCorreoenviado = new JP003_2_S1_RH(controladorCorreoenviado);
         JP035_1_S3_RH panelVisualizarNotas = new JP035_1_S3_RH(controladorvisualizarnotas);
         JP027_S3_RH panelDocumentosView = new JP027_S3_RH(controladorDocumentosView);
+        JP0048_S3_RH panelPrimerUso = new JP0048_S3_RH(controladorPrimerUso);
         vista.JPContenido.add(panelSplash, "panelSplash");
         
         
@@ -131,7 +138,7 @@ public class Inicializador {
         controladorAnuncios1 = new Anuncios1(vista.JPContenido);
         controladorvisualizarnotas = new VisualizarNotas(vista.JPContenido);
         controladorDocumentosView = new DocumentosDeApoyo(vista.JPContenido, habilitarPaneles, panelDocumentosView);
-
+        controladorPrimerUso = new primer_uso(modelAdmin,vista.JPContenido, modelUsers, panelPrimerUso, Procesos, habilitarPaneles);
         
 
         // Agregar paneles a la vista
@@ -156,6 +163,8 @@ public class Inicializador {
         vista.JPContenido.add(panelVisualizarNotas, "panelVisualizarNotas");
         habilitarPaneles.agregarPanel("panelDocumentosView", panelDocumentosView);
         vista.JPContenido.add(panelDocumentosView, "panelDocumentosView");
+        habilitarPaneles.agregarPanel("panelPrimerUso", panelPrimerUso);
+        vista.JPContenido.add(panelPrimerUso, "panelPrimerUso");
         
     }
 }

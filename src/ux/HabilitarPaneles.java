@@ -95,6 +95,9 @@ public class HabilitarPaneles {
             case "JP027_S3_RH":
                 sts.setJP027_S3_RH(obtenerPanel(nombrePanel));
                 break;
+            case "JP0048_S3_RH":
+                sts.setJP0048_S3_RH(obtenerPanel(nombrePanel));
+                break;
             default:
                 // Manejo para otros paneles si es necesario
                 break;

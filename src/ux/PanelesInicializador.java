@@ -93,6 +93,14 @@ public class PanelesInicializador {
     public void setJP027_S3_RH(JPanel JP027_S3_RH) {
         this.JP027_S3_RH = JP027_S3_RH;
     }
+
+    public JPanel getJP0048_S3_RH() {
+        return JP0048_S3_RH;
+    }
+
+    public void setJP0048_S3_RH(JPanel JP0048_S3_RH) {
+        this.JP0048_S3_RH = JP0048_S3_RH;
+    }
     
     
     
@@ -106,5 +114,5 @@ public class PanelesInicializador {
     private JPanel JP003_S1_RH;
     private JPanel JP035_1_S3_RH;
     private JPanel JP027_S3_RH;
-    
+    private JPanel JP0048_S3_RH;
 }
