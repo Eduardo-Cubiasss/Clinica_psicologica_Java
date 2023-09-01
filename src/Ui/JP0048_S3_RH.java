@@ -8,13 +8,10 @@ package Ui;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
-<<<<<<< HEAD
 import ux.FormularioInicio;
 import ux.PanelesInicializador;
 import ux.SolicitudesDeIncapacidadRedactar;
-=======
 import ux.PanelesInicializador;
->>>>>>> c5e0d18f3d6255267af5ee838afd53ed08430541
 import ux.primer_uso;
 
 /**
@@ -42,7 +39,7 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
     
     
 =======
-     private primer_uso controlador; 
+    private primer_uso controlador;
     private PanelesInicializador str;
 >>>>>>> c5e0d18f3d6255267af5ee838afd53ed08430541
     
@@ -106,7 +103,7 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
     }
      
 <<<<<<< HEAD
-   
+
 =======
     public JP0048_S3_RH(primer_uso controlador) {
         this.controlador = controlador;

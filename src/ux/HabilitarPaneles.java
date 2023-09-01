@@ -95,8 +95,6 @@ public class HabilitarPaneles {
             case "JP027_S3_RH":
                 sts.setJP027_S3_RH(obtenerPanel(nombrePanel));
                 break;
-<<<<<<< HEAD
-                
             case "JP006_S2_AF":
                 sts.setJP006_S2_AF(obtenerPanel(nombrePanel));
                 break;
@@ -250,13 +248,6 @@ public class HabilitarPaneles {
                 case "JP0048_S3_RH":
                 sts.setJP0048_S3_RH(obtenerPanel(nombrePanel));
                 break;
-   
-                
-=======
-            case "JP0048_S3_RH":
-                sts.setJP0048_S3_RH(obtenerPanel(nombrePanel));
-                break;
->>>>>>> c5e0d18f3d6255267af5ee838afd53ed08430541
             default:
                 // Manejo para otros paneles si es necesario
                 break;

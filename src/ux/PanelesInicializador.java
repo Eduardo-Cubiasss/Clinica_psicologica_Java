@@ -94,7 +94,6 @@ public class PanelesInicializador {
         this.JP027_S3_RH = JP027_S3_RH;
     }
 
-<<<<<<< HEAD
     public JPanel getJP006_S2_AF() {
         return JP006_S2_AF;
     }
@@ -394,8 +393,6 @@ public class PanelesInicializador {
         this.JP047_S3_AF = JP047_S3_AF;
     }
 
-=======
->>>>>>> c5e0d18f3d6255267af5ee838afd53ed08430541
     public JPanel getJP0048_S3_RH() {
         return JP0048_S3_RH;
     }
@@ -416,7 +413,6 @@ public class PanelesInicializador {
     private JPanel JP003_S1_RH;
     private JPanel JP035_1_S3_RH;
     private JPanel JP027_S3_RH;
-<<<<<<< HEAD
     private JPanel JP006_S2_AF;
     private JPanel JP007_S2_RH;
     private JPanel JP008_S2_AF;
@@ -456,14 +452,4 @@ public class PanelesInicializador {
     private JPanel JP047_S3_AF;
     private JPanel JP0048_S3_RH;
     
-
-    
-
-    
-
-
-    
-=======
-    private JPanel JP0048_S3_RH;
->>>>>>> c5e0d18f3d6255267af5ee838afd53ed08430541
 }

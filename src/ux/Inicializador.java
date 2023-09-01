@@ -133,7 +133,6 @@ public class Inicializador {
     private  JP039_S3_RH paenl39;
     private  JP035_1_S3_RH panel35p;
     private  JP027_S3_RH panel27;
-<<<<<<< HEAD
     private  JP006_S2_AF panel06;
     private  JP007_S2_RH panel07;
     private  JP008_S2_AF panel08;
@@ -177,10 +176,6 @@ public class Inicializador {
 
 
 
-
-=======
-    private  JP0048_S3_RH panel48;
->>>>>>> c5e0d18f3d6255267af5ee838afd53ed08430541
     
     // Paneles vacios
     private JPanel JP1;
@@ -193,7 +188,6 @@ public class Inicializador {
     private JPanel JP39;
     private JPanel JP35p;
     private JPanel JP27;
-<<<<<<< HEAD
     private JPanel JP06;
     private JPanel JP07;
     private JPanel JP08;
@@ -233,15 +227,8 @@ public class Inicializador {
     private JPanel JP047;
     private JPanel JP048;
 
-
-
-
-
-
-=======
     private JPanel JP48;
     
->>>>>>> c5e0d18f3d6255267af5ee838afd53ed08430541
     public Inicializador(JF_000_S7_GU vista) {
         this.vista = vista;
         panelHistory = new PanelHistory();
@@ -265,7 +252,6 @@ public class Inicializador {
         panelesInicializador.setJP039_S3_RH(paenl39);
         panelesInicializador.setJP035_1_S3_RH(panel35p);
         panelesInicializador.setJP027_S3_RH(panel27);
-<<<<<<< HEAD
         panelesInicializador.setJP006_S2_AF(panel06);
         panelesInicializador.setJP007_S2_RH(panel07);
         panelesInicializador.setJP008_S2_AF(panel08);
@@ -306,13 +292,6 @@ public class Inicializador {
         panelesInicializador.setJP0048_S3_RH(panel48);
 
         
-
-
-
-=======
-        panelesInicializador.setJP0048_S3_RH(panel48);
->>>>>>> c5e0d18f3d6255267af5ee838afd53ed08430541
-        
         // Asignar paneles desde PanelesInicializador
         this.JP1 = panelesInicializador.getJP001_S1_AFP();
         this.JP2 = panelesInicializador.getJP002_S1_RHP();
@@ -324,7 +303,6 @@ public class Inicializador {
         this.JP39 = panelesInicializador.getJP039_S3_RH();
         this.JP35p = panelesInicializador.getJP035_1_S3_RH();
         this.JP27 = panelesInicializador.getJP027_S3_RH();
-<<<<<<< HEAD
         this.JP06 = panelesInicializador.getJP006_S2_AF();
         this.JP07 = panelesInicializador.getJP007_S2_RH();
         this.JP08 = panelesInicializador.getJP008_S2_AF();
@@ -363,13 +341,6 @@ public class Inicializador {
         this.JP045 = panelesInicializador.getJP045_S3_RH();
         this.JP047 = panelesInicializador.getJP047_S3_AF();
         this.JP048 = panelesInicializador.getJP0048_S3_RH();
-
-
-=======
-        this.JP48 = panelesInicializador.getJP0048_S3_RH();
->>>>>>> c5e0d18f3d6255267af5ee838afd53ed08430541
-        
-        
         
         // Paneles
         SplashScreen panelSplash = new SplashScreen(vista.JPContenido);
@@ -383,7 +354,6 @@ public class Inicializador {
         JP003_2_S1_RH panelCorreoenviado = new JP003_2_S1_RH(controladorCorreoenviado);
         JP035_1_S3_RH panelVisualizarNotas = new JP035_1_S3_RH(controladorvisualizarnotas);
         JP027_S3_RH panelDocumentosView = new JP027_S3_RH(controladorDocumentosView);
-<<<<<<< HEAD
         JP006_S2_AF panelCreacionDeAnuncios = new JP006_S2_AF(controladorCreacionDeAnuncios);
         JP007_S2_RH panelSeccionDeComentarios = new JP007_S2_RH(controladorSeccionDeComentarios);
         JP008_S2_AF panelPersonalClinica = new JP008_S2_AF(controladorPersonalClinica);
@@ -421,15 +391,7 @@ public class Inicializador {
         JP044_S3_AF panelEstadisticaDeCitas = new JP044_S3_AF(controladorEstadisticaDeCitas);
         JP045_S3_RH panelPruebasDF = new JP045_S3_RH(controladorPruebasDF);
         JP047_S3_AF panelSolicitudesDeIncapacidadRedactar = new JP047_S3_AF(controladorSolicitudesDeIncapacidadRedactar);
-        JP0048_S3_RH panelFormularioInicio = new JP0048_S3_RH(controladorFormularioInicio);
-
-
-        
-        
-
-=======
         JP0048_S3_RH panelPrimerUso = new JP0048_S3_RH(controladorPrimerUso);
->>>>>>> c5e0d18f3d6255267af5ee838afd53ed08430541
         vista.JPContenido.add(panelSplash, "panelSplash");
         
         
@@ -445,7 +407,6 @@ public class Inicializador {
         controladorAnuncios1 = new Anuncios1(vista.JPContenido);
         controladorvisualizarnotas = new VisualizarNotas(vista.JPContenido);
         controladorDocumentosView = new DocumentosDeApoyo(vista.JPContenido, habilitarPaneles, panelDocumentosView);
-<<<<<<< HEAD
         controladorCreacionDeAnuncios = new CreacionDeAnuncios(vista.JPContenido);
         controladorSeccionDeComentarios = new SeccionDeComentarios(vista.JPContenido);
         controladorPersonalClinica = new PersonalClinica(vista.JPContenido);
@@ -484,12 +445,7 @@ public class Inicializador {
         controladorPruebasDF = new PruebasDF(vista.JPContenido);
         controladorSolicitudesDeIncapacidadRedactar = new SolicitudesDeIncapacidadRedactar(vista.JPContenido);
         controladorFormularioInicio = new FormularioInicio(vista.JPContenido);
-
-        
-
-=======
         controladorPrimerUso = new primer_uso(modelAdmin,vista.JPContenido, modelUsers, panelPrimerUso, Procesos, habilitarPaneles);
->>>>>>> c5e0d18f3d6255267af5ee838afd53ed08430541
         
 
         // Agregar paneles a la vista
@@ -514,7 +470,6 @@ public class Inicializador {
         vista.JPContenido.add(panelVisualizarNotas, "panelVisualizarNotas");
         habilitarPaneles.agregarPanel("panelDocumentosView", panelDocumentosView);
         vista.JPContenido.add(panelDocumentosView, "panelDocumentosView");
-<<<<<<< HEAD
         habilitarPaneles.agregarPanel("panelCreacionDeAnuncios", panelCreacionDeAnuncios);
         vista.JPContenido.add(panelCreacionDeAnuncios, "panelCreacionDeAnuncios");
         
@@ -626,12 +581,8 @@ public class Inicializador {
         habilitarPaneles.agregarPanel("panelSolicitudesDeIncapacidadRedactar", panelSolicitudesDeIncapacidadRedactar);
         vista.JPContenido.add(panelSolicitudesDeIncapacidadRedactar, "panelSolicitudesDeIncapacidadRedactar");
         
-        habilitarPaneles.agregarPanel("panelFormularioInicio", panelFormularioInicio);
-        vista.JPContenido.add(panelFormularioInicio, "panelFormularioInicio");
-=======
         habilitarPaneles.agregarPanel("panelPrimerUso", panelPrimerUso);
         vista.JPContenido.add(panelPrimerUso, "panelPrimerUso");
->>>>>>> c5e0d18f3d6255267af5ee838afd53ed08430541
         
     }
 }
