@@ -6,16 +6,33 @@
 package Ui;
 
 import ux.Anuncios1;
+import ux.EliminarAnunciosActuales;
+import ux.PanelesInicializador;
+import ux.VerSolicitudRechazada;
 
 /**
  *
  * @author LENOVO
  */
 public class JP021_S3_RH extends javax.swing.JPanel {
-    private Anuncios1 controlador;
-    /**
-     * Creates new form JP021_S3_RH
-     */
+    
+    
+    
+    private EliminarAnunciosActuales controlador;
+    private PanelesInicializador str;
+
+    public JP021_S3_RH(EliminarAnunciosActuales controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP021_S3_RH(this);
+    }
+    
+    
+    
     public JP021_S3_RH(Anuncios1 controlador) {
         initComponents();
     }

@@ -5,15 +5,27 @@
  */
 package Ui;
 
+import ux.PanelesInicializador;
+import ux.VerSolicitudAprobada;
+
 /**
  *
  * @author LENOVO
  */
 public class JP017_1_S2_RH extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP017_1_S2_RH
-     */
+   private VerSolicitudAprobada controlador;
+    private PanelesInicializador str;
+
+    public JP017_1_S2_RH(VerSolicitudAprobada controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP017_1_S2_RH(this);
+    }
     public JP017_1_S2_RH() {
         initComponents();
     }

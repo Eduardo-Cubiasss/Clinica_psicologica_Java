@@ -95,9 +95,168 @@ public class HabilitarPaneles {
             case "JP027_S3_RH":
                 sts.setJP027_S3_RH(obtenerPanel(nombrePanel));
                 break;
+<<<<<<< HEAD
+                
+            case "JP006_S2_AF":
+                sts.setJP006_S2_AF(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP007_S2_RH":
+                sts.setJP007_S2_RH(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP008_S2_AF":
+                sts.setJP008_S2_AF(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP009_S2_RH":
+                sts.setJP009_S2_RH(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP010_S2_AF":
+                sts.setJP010_S2_AF(obtenerPanel(nombrePanel));
+                break;
+            
+            case "JP011_S2_RH":
+                sts.setJP011_S2_RH(obtenerPanel(nombrePanel));
+                break;
+                
+             case "JP012_A_AF":
+                sts.setJP012_A_AF(obtenerPanel(nombrePanel));
+                break;
+                
+                
+             case "JP012_E_AF":
+                sts.setJP012_E_AF(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP012_S2_AF":
+                sts.setJP012_S2_AF(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP014_S2_AF":
+                sts.setJP014_S2_AF(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP015_1_S2_RH":
+                sts.setJP015_1_S2_RH(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP016_S2_AF":
+                sts.setJP016_S2_AF(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP017_1_S2_RH":
+                sts.setJP017_1_S2_RH(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP018_S2_AF":
+                sts.setJP018_S2_AF(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP019_1_S2_RH":
+                sts.setJP019_1_S2_RH(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP021_S3_RH":
+                sts.setJP021_S3_RH(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP022_S3_AF":
+                sts.setJP022_S3_AF(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP024_S3_AF":
+                sts.setJP024_S3_AF(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP025_S3_RH":
+                sts.setJP025_S3_RH(obtenerPanel(nombrePanel));
+                break;
+                
+             case "JP028_S3_AF":
+                sts.setJP028_S3_AF(obtenerPanel(nombrePanel));
+                break;
+ 
+            case "JP029_A_S3_RH":
+                sts.setJP029_A_S3_RH(obtenerPanel(nombrePanel));
+                break;
+                
+             case "JP029_S3_RH":
+                sts.setJP029_S3_RH(obtenerPanel(nombrePanel));
+                break;   
+                
+                
+            case "JP030_S3_AF":
+                sts.setJP030_S3_AF(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP031_S3_RHG":
+                sts.setJP031_S3_RHG(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP032_S3_AF":
+                sts.setJP032_S3_AF(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP033_S3_RH":
+                sts.setJP033_S3_RH(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP034_S3_AF":
+                sts.setJP034_S3_AF(obtenerPanel(nombrePanel));
+                break;
+                
+            case "JP036_S3_AF":
+                sts.setJP036_S3_AF(obtenerPanel(nombrePanel));
+                break;
+                
+                case "JP037_S3_RH":
+                sts.setJP037_S3_RH(obtenerPanel(nombrePanel));
+                break;
+                
+                case "JP038_S3_AF":
+                sts.setJP038_S3_AF(obtenerPanel(nombrePanel));
+                break;
+                
+                case "JP040_S3_AF":
+                sts.setJP040_S3_AF(obtenerPanel(nombrePanel));
+                break;
+                
+                case "JP041_1_S3_RH":
+                sts.setJP041_1_S3_RH(obtenerPanel(nombrePanel));
+                break;
+                
+                case "JP042_1_S3_AF":
+                sts.setJP042_1_S3_AF(obtenerPanel(nombrePanel));
+                break;
+                
+                case "JP043_1_S3_RH":
+                sts.setJP043_1_S3_RH(obtenerPanel(nombrePanel));
+                break;
+                
+                case "JP044_S3_AF":
+                sts.setJP044_S3_AF(obtenerPanel(nombrePanel));
+                break;
+                
+                case "JP045_S3_RH":
+                sts.setJP045_S3_RH(obtenerPanel(nombrePanel));
+                break;
+                
+                case "JP047_S3_AF":
+                sts.setJP047_S3_AF(obtenerPanel(nombrePanel));
+                break;
+                
+                case "JP0048_S3_RH":
+                sts.setJP0048_S3_RH(obtenerPanel(nombrePanel));
+                break;
+   
+                
+=======
             case "JP0048_S3_RH":
                 sts.setJP0048_S3_RH(obtenerPanel(nombrePanel));
                 break;
+>>>>>>> c5e0d18f3d6255267af5ee838afd53ed08430541
             default:
                 // Manejo para otros paneles si es necesario
                 break;

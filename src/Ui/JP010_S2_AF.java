@@ -5,15 +5,30 @@
  */
 package Ui;
 
+import ux.AgregarPerfilesDeUsuario;
+import ux.DetallesDePerfil;
+import ux.PanelesInicializador;
+
 /**
  *
  * @author LENOVO
  */
 public class JP010_S2_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP010_S2_AF
-     */
+    private DetallesDePerfil controlador;
+    private PanelesInicializador str;
+
+    public JP010_S2_AF(DetallesDePerfil controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP010_S2_AF(this);
+    }
+    
+    
     public JP010_S2_AF() {
         initComponents();
     }

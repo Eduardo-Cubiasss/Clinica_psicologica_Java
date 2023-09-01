@@ -5,15 +5,33 @@
  */
 package Ui;
 
+import ux.CreacionDePruebas;
+import ux.PanelesInicializador;
+import ux.RedactarMensaje;
+
 /**
  *
  * @author LENOVO
  */
 public class JP033_S3_RH extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP033_S3_RH
-     */
+   
+    
+    private CreacionDePruebas controlador;
+    private PanelesInicializador str;
+
+    public JP033_S3_RH(CreacionDePruebas controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP033_S3_RH(this);
+    }
+    
+    
+    
     public JP033_S3_RH() {
         initComponents();
     }

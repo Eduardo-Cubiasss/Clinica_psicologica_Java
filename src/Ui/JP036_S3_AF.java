@@ -5,15 +5,28 @@
  */
 package Ui;
 
+import ux.BuscadorPacientes;
+import ux.PanelesInicializador;
+import ux.RcetarMedicamentos;
+
 /**
  *
  * @author LENOVO
  */
 public class JP036_S3_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP036_S3_AF
-     */
+    private RcetarMedicamentos controlador;
+    private PanelesInicializador str;
+
+    public JP036_S3_AF(RcetarMedicamentos controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP036_S3_AF(this);
+    }
     public JP036_S3_AF() {
         initComponents();
     }

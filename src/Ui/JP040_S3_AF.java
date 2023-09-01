@@ -5,15 +5,32 @@
  */
 package Ui;
 
+import ux.MBEliminarPrueba;
+import ux.PanelesInicializador;
+import ux.VerMensajes;
+
 /**
  *
  * @author LENOVO
  */
 public class JP040_S3_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP040_S3_AF
-     */
+    
+    private VerMensajes controlador;
+    private PanelesInicializador str;
+
+    public JP040_S3_AF(VerMensajes controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP040_S3_AF(this);
+    }
+    
+    
+    
     public JP040_S3_AF() {
         initComponents();
     }

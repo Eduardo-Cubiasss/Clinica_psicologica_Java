@@ -5,15 +5,32 @@
  */
 package Ui;
 
+import ux.EliminarDocumentosDeApoyo;
+import ux.PanelesInicializador;
+
 /**
  *
  * @author LENOVO
  */
 public class JP029_S3_RH extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP029_S3_RH
-     */
+    
+    
+    private EliminarDocumentosDeApoyo controlador;
+    private PanelesInicializador str;
+
+    public JP029_S3_RH(EliminarDocumentosDeApoyo controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP029_S3_RH(this);
+    }
+    
+    
+    
     public JP029_S3_RH() {
         initComponents();
     }

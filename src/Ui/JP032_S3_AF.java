@@ -5,15 +5,32 @@
  */
 package Ui;
 
+import ux.ExpedienteDelPaciente;
+import ux.PanelesInicializador;
+import ux.RedactarMensaje;
+
 /**
  *
  * @author LENOVO
  */
 public class JP032_S3_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP032_S3_AF
-     */
+    
+    
+    private RedactarMensaje controlador;
+    private PanelesInicializador str;
+
+    public JP032_S3_AF(RedactarMensaje controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP032_S3_AF(this);
+    }
+    
+    
     public JP032_S3_AF() {
         initComponents();
     }

@@ -5,15 +5,30 @@
  */
 package Ui;
 
+import ux.Estadisticas;
+import ux.PanelesInicializador;
+
 /**
  *
  * @author LENOVO
  */
 public class JP022_S3_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP022_S3_AF
-     */
+    
+    private Estadisticas controlador;
+    private PanelesInicializador str;
+
+    public JP022_S3_AF(Estadisticas controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP022_S3_AF(this);
+    }
+    
+    
     public JP022_S3_AF() {
         initComponents();
     }

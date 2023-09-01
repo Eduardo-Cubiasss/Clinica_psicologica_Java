@@ -5,15 +5,33 @@
  */
 package Ui;
 
+import ux.CambiosPruebasActuales;
+import ux.PanelesInicializador;
+import ux.PruebasDF;
+import ux.RcetarMedicamentos;
+
 /**
  *
  * @author LENOVO
  */
 public class JP037_S3_RH extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP037_S3_RH
-     */
+    
+    private CambiosPruebasActuales controlador;
+    private PanelesInicializador str;
+
+    public JP037_S3_RH(CambiosPruebasActuales controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP037_S3_RH(this);
+    }
+   
+    
+    
     public JP037_S3_RH() {
         initComponents();
     }
@@ -132,7 +150,7 @@ public class JP037_S3_RH extends javax.swing.JPanel {
                 .addComponent(JP1_JF037_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(jSlider1_JF037_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 

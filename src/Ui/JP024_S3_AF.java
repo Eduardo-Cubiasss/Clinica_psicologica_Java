@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import ux.BuscadorPacientes;
+import ux.PanelesInicializador;
 
 /**
  *
@@ -18,6 +19,17 @@ import ux.BuscadorPacientes;
 public class JP024_S3_AF extends javax.swing.JPanel {
     
     private BuscadorPacientes controlador;
+    private PanelesInicializador str;
+
+    public JP024_S3_AF(BuscadorPacientes controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP024_S3_AF(this);
+    }
     
     public JButton getBtn3_JF024() {
         return btn3_JF024;
@@ -42,10 +54,7 @@ public class JP024_S3_AF extends javax.swing.JPanel {
     /**
      * Creates new form JP024_S3_AF
      */
-    public JP024_S3_AF(BuscadorPacientes controlador) {
-        this.controlador = controlador;
-        initComponents();
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

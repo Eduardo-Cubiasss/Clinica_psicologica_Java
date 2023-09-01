@@ -5,15 +5,33 @@
  */
 package Ui;
 
+import ux.AnunciosActuales;
+import ux.MBActualizarUsuario;
+import ux.PanelesInicializador;
+
 /**
  *
  * @author LENOVO
  */
 public class JP012_A_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP012_A_AF
-     */
+   
+     private MBActualizarUsuario controlador;
+    private PanelesInicializador str;
+
+    public JP012_A_AF(MBActualizarUsuario controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP012_A_AF(this);
+    }
+    
+    
+    
+    
     public JP012_A_AF() {
         initComponents();
     }
@@ -136,11 +154,11 @@ public class JP012_A_AF extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1_JF012_A;
-    private javax.swing.JButton btn2_JF012_A;
+    public javax.swing.JButton btn1_JF012_A;
+    public javax.swing.JButton btn2_JF012_A;
     public javax.swing.JButton btn3_JF012_A;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;

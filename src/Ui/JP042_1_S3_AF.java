@@ -5,15 +5,32 @@
  */
 package Ui;
 
+import ux.MBEliminarCita;
+import ux.PanelesInicializador;
+
+
 /**
  *
  * @author LENOVO
  */
 public class JP042_1_S3_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP042_1_S3_AF
-     */
+   
+    
+    private MBEliminarCita controlador;
+    private PanelesInicializador str;
+
+    public JP042_1_S3_AF(MBEliminarCita controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP042_1_S3_AF(this);
+    }
+    
+    
     public JP042_1_S3_AF() {
         initComponents();
     }

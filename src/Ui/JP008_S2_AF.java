@@ -8,6 +8,9 @@ package Ui;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import ux.ModificarEmpleados;
+import ux.PanelesInicializador;
+import ux.PersonalClinica;
+import ux.SeccionDeComentarios;
 
 /**
  *
@@ -15,7 +18,24 @@ import ux.ModificarEmpleados;
  */
 public class JP008_S2_AF extends javax.swing.JPanel {
     
-    private ModificarEmpleados controlador;
+    
+    
+    private PersonalClinica controlador;
+    private PanelesInicializador str;
+
+    public JP008_S2_AF(PersonalClinica controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP008_S2_AF(this);
+    }
+    
+    
+    
+   
     
     
     public JPanel getjPanel2() {
@@ -44,10 +64,7 @@ public class JP008_S2_AF extends javax.swing.JPanel {
     /**
      * Creates new form JP008_S2_AF
      */
-    public JP008_S2_AF(ModificarEmpleados controlador) {
-        this.controlador = controlador;
-        initComponents();
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

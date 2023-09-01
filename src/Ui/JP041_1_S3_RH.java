@@ -5,15 +5,31 @@
  */
 package Ui;
 
+import ux.PanelesInicializador;
+import ux.VerMensajeCH;
+
 /**
  *
  * @author LENOVO
  */
 public class JP041_1_S3_RH extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP041_1_S3_RH
-     */
+    
+    private VerMensajeCH controlador;
+    private PanelesInicializador str;
+
+    public JP041_1_S3_RH(VerMensajeCH controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP041_1_S3_RH(this);
+    }
+    
+    
+    
     public JP041_1_S3_RH() {
         initComponents();
     }

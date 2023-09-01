@@ -5,15 +5,31 @@
  */
 package Ui;
 
+import ux.PanelesInicializador;
+import ux.VerSolicitudAprobada;
+import ux.VerSolicitudRechazada;
+
 /**
  *
  * @author LENOVO
  */
 public class JP019_1_S2_RH extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP019_1_S2_RH
-     */
+    
+     private VerSolicitudRechazada controlador;
+    private PanelesInicializador str;
+
+    public JP019_1_S2_RH(VerSolicitudRechazada controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP019_1_S2_RH(this);
+    }
+    
+    
     public JP019_1_S2_RH() {
         initComponents();
     }

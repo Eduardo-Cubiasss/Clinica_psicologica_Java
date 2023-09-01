@@ -5,15 +5,30 @@
  */
 package Ui;
 
+import ux.ActualizarArticulo;
+import ux.PanelesInicializador;
+
 /**
  *
  * @author LENOVO
  */
 public class JP030_S3_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP030_S3_AF
-     */
+  
+    private ActualizarArticulo controlador;
+    private PanelesInicializador str;
+
+    public JP030_S3_AF(ActualizarArticulo controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP030_S3_AF(this);
+    }
+    
+    
     public JP030_S3_AF() {
         initComponents();
     }

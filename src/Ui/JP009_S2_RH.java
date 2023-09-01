@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import ux.AgregarEmpleados;
+import ux.AgregarPerfilesDeUsuario;
+import ux.PanelesInicializador;
 
 /**
  *
@@ -17,7 +19,22 @@ import ux.AgregarEmpleados;
  */
 public class JP009_S2_RH extends javax.swing.JPanel {
     
-    private AgregarEmpleados controlador;
+    private AgregarPerfilesDeUsuario controlador;
+    private PanelesInicializador str;
+
+    public JP009_S2_RH(AgregarPerfilesDeUsuario controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP009_S2_RH(this);
+    }
+    
+    
+    
+    
     
     public JButton getBtn1_JF009_S2_RH() {
         return Btn1_JF009_S2_RH;
@@ -56,10 +73,7 @@ public class JP009_S2_RH extends javax.swing.JPanel {
     }
 
     
-    public JP009_S2_RH(AgregarEmpleados controlador) {
-        this.controlador = controlador;
-        initComponents();
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

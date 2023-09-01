@@ -5,15 +5,28 @@
  */
 package Ui;
 
+import ux.CrearCita;
+import ux.MBEliminarCita;
+import ux.PanelesInicializador;
+
 /**
  *
  * @author LENOVO
  */
 public class JP043_1_S3_RH extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP043_1_S3_RH
-     */
+     private CrearCita controlador;
+    private PanelesInicializador str;
+
+    public JP043_1_S3_RH(CrearCita controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP043_1_S3_RH(this);
+    }
     public JP043_1_S3_RH() {
         initComponents();
     }

@@ -5,15 +5,31 @@
  */
 package Ui;
 
+import ux.EstadisticaDeCitas;
+import ux.PanelesInicializador;
+import ux.PruebasDF;
+
 /**
  *
  * @author LENOVO
  */
 public class JP045_S3_RH extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP045_S3_RH
-     */
+   
+    private PruebasDF controlador;
+    private PanelesInicializador str;
+
+    public JP045_S3_RH(PruebasDF controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP045_S3_RH(this);
+    }
+    
+    
     public JP045_S3_RH() {
         initComponents();
     }

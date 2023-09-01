@@ -5,15 +5,28 @@
  */
 package Ui;
 
+import ux.AgregarArticulo;
+import ux.DetallesDeMiPerfil;
+import ux.PanelesInicializador;
+
 /**
  *
  * @author LENOVO
  */
 public class JP028_S3_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP028_S3_AF
-     */
+    private AgregarArticulo controlador;
+    private PanelesInicializador str;
+
+    public JP028_S3_AF(AgregarArticulo controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP028_S3_AF(this);
+    }
     public JP028_S3_AF() {
         initComponents();
     }

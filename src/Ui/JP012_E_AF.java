@@ -5,15 +5,34 @@
  */
 package Ui;
 
+import ux.MBActualizarUsuario;
+import ux.MBEliminarUsuario;
+import ux.PanelesInicializador;
+
 /**
  *
  * @author LENOVO
  */
 public class JP012_E_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP012_E_AF
-     */
+    private MBEliminarUsuario controlador;
+    private PanelesInicializador str;
+
+    public JP012_E_AF(MBEliminarUsuario controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP012_E_AF(this);
+    }
+    
+    
+    
+    
+    
+    
     public JP012_E_AF() {
         initComponents();
     }

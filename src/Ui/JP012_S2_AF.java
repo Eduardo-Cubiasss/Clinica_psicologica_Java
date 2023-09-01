@@ -5,15 +5,32 @@
  */
 package Ui;
 
+import ux.BuscadorEmpleados;
+import ux.PanelesInicializador;
+
 /**
  *
  * @author LENOVO
  */
 public class JP012_S2_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP012_S2_AF
-     */
+  
+    private BuscadorEmpleados controlador;
+    private PanelesInicializador str;
+
+    public JP012_S2_AF(BuscadorEmpleados controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP012_S2_AF(this);
+    }
+    
+    
+    
+    
     public JP012_S2_AF() {
         initComponents();
     }

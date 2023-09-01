@@ -5,15 +5,29 @@
  */
 package Ui;
 
+import ux.CreacionDeAnuncios;
+import ux.PanelesInicializador;
+import ux.VisualizarNotas;
+
 /**
  *
  * @author LENOVO
  */
 public class JP006_S2_AF extends javax.swing.JPanel {
+    
+    private CreacionDeAnuncios controlador;
+    private PanelesInicializador str;
 
-    /**
-     * Creates new form JP006_S2_AF
-     */
+    public JP006_S2_AF(CreacionDeAnuncios controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP006_S2_AF(this);
+    }
+    
     public JP006_S2_AF() {
         initComponents();
     }

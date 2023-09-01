@@ -7,6 +7,9 @@ package Ui;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import ux.ExpedienteDelPaciente;
+import ux.MBEliminarArticulo;
+import ux.PanelesInicializador;
 import ux.Ver_Expediente;
 
 /**
@@ -14,7 +17,24 @@ import ux.Ver_Expediente;
  * @author 50369
  */
 public class JP031_S3_RHG extends javax.swing.JPanel {
-    private Ver_Expediente controlador;
+    
+    
+    
+    private ExpedienteDelPaciente controlador;
+    private PanelesInicializador str;
+
+    public JP031_S3_RHG(ExpedienteDelPaciente controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP031_S3_RHG(this);
+    }
+    
+    
+    
 
     public JButton getBtn1_JF031_S3_RH() {
         return Btn1_JF031_S3_RH;
@@ -36,10 +56,7 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
         return Btn4_JF031_S3_RH;
     }
     
-    public JP031_S3_RHG(Ver_Expediente controlador) {
-        this.controlador = controlador;
-        initComponents();
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

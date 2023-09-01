@@ -5,15 +5,33 @@
  */
 package Ui;
 
+import ux.PanelesInicializador;
+import ux.SolicitudesAprobadas;
+import ux.SolicitudesAprobadas2;
+
 /**
  *
  * @author LENOVO
  */
 public class JP018_S2_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP018_S2_AF
-     */
+    
+    private SolicitudesAprobadas2 controlador;
+    private PanelesInicializador str;
+
+    public JP018_S2_AF(SolicitudesAprobadas2 controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP018_S2_AF(this);
+    }
+    
+    
+    
+    
     public JP018_S2_AF() {
         initComponents();
     }

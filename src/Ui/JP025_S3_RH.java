@@ -5,15 +5,32 @@
  */
 package Ui;
 
+import ux.DetallesDeMiPerfil;
+import ux.PanelesInicializador;
+import ux.SolicitudesAprobadas2;
+
 /**
  *
  * @author LENOVO
  */
 public class JP025_S3_RH extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP025_S3_RH
-     */
+    
+    private DetallesDeMiPerfil controlador;
+    private PanelesInicializador str;
+
+    public JP025_S3_RH(DetallesDeMiPerfil controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP025_S3_RH(this);
+    }
+    
+    
+    
     public JP025_S3_RH() {
         initComponents();
     }

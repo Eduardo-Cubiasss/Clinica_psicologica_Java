@@ -5,15 +5,33 @@
  */
 package Ui;
 
+import ux.AnunciosActuales;
+import ux.PanelesInicializador;
+
 /**
  *
  * @author LENOVO
  */
 public class JP011_S2_RH extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP011_S2_RH
-     */
+   
+    
+    private AnunciosActuales controlador;
+    private PanelesInicializador str;
+
+    public JP011_S2_RH(AnunciosActuales controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP011_S2_RH(this);
+    }
+    
+    
+    
+    
     public JP011_S2_RH() {
         initComponents();
     }

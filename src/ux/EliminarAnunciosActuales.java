@@ -9,12 +9,12 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author 50369
+ * @author LENOVO
  */
-public class BuscadorPacientes {
+public class EliminarAnunciosActuales {
     private JPanel JPContenido;
     
-    public BuscadorPacientes(JPanel JPContenido)
+    public EliminarAnunciosActuales(JPanel JPContenido)
     {
         this.JPContenido = JPContenido;
     }

@@ -5,15 +5,28 @@
  */
 package Ui;
 
+import ux.CrearCita;
+import ux.EstadisticaDeCitas;
+import ux.PanelesInicializador;
+
 /**
  *
  * @author LENOVO
  */
 public class JP044_S3_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP044_S3_AF
-     */
+    private EstadisticaDeCitas controlador;
+    private PanelesInicializador str;
+
+    public JP044_S3_AF(EstadisticaDeCitas controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP044_S3_AF(this);
+    }
     public JP044_S3_AF() {
         initComponents();
     }

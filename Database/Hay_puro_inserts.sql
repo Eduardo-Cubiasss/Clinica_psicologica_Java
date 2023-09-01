@@ -32,6 +32,8 @@ EXEC PDGuardarComentario 'Este es un comentario de ejemplo', 'Pepito';
 
 EXEC PDPrimerUso 'Guayito', 'Correo.FUCK@gmail.com', 'Guapeton', '1023-09-24', '0174 2525', '9657-4343', 2
 
+EXEC PDPrimerUso 'Pepito123', 'cs,dmns@ricaldone.edu.sv', 'Inteligente', '2023-08-30', '0328 3462', '3226-4343', 1
+
 SELECT * FROM TbUsuarios;
 SELECT * FROM TbAdministrador;
 SELECT * FROM TbContactos;

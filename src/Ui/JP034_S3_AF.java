@@ -5,15 +5,30 @@
  */
 package Ui;
 
+import ux.EscribirEnTuAgendaPersonal;
+import ux.PanelesInicializador;
+
 /**
  *
  * @author LENOVO
  */
 public class JP034_S3_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP034_S3_AF
-     */
+    
+    private EscribirEnTuAgendaPersonal controlador;
+    private PanelesInicializador str;
+
+    public JP034_S3_AF(EscribirEnTuAgendaPersonal controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP034_S3_AF(this);
+    }
+    
+    
     public JP034_S3_AF() {
         initComponents();
     }

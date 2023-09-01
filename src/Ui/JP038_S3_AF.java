@@ -5,15 +5,31 @@
  */
 package Ui;
 
+import ux.MBEliminarPrueba;
+import ux.PanelesInicializador;
+import ux.PruebasDF;
+
 /**
  *
  * @author LENOVO
  */
 public class JP038_S3_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP038_S3_AF
-     */
+    
+    private MBEliminarPrueba controlador;
+    private PanelesInicializador str;
+
+    public JP038_S3_AF(MBEliminarPrueba controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP038_S3_AF(this);
+    }
+    
+    
     public JP038_S3_AF() {
         initComponents();
     }

@@ -5,15 +5,29 @@
  */
 package Ui;
 
+import ux.PanelesInicializador;
+import ux.PruebasDF;
+import ux.SolicitudDeIncapacidad;
+import ux.SolicitudesDeIncapacidadRedactar;
+
 /**
  *
  * @author LENOVO
  */
 public class JP047_S3_AF extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP047_S3_AF
-     */
+    private SolicitudesDeIncapacidadRedactar controlador;
+    private PanelesInicializador str;
+
+    public JP047_S3_AF(SolicitudesDeIncapacidadRedactar controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP047_S3_AF(this);
+    }
     public JP047_S3_AF() {
         initComponents();
     }

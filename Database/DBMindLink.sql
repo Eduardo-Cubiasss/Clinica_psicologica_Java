@@ -209,23 +209,23 @@ NombreMedicamento varchar(500)
 );
 
 -- Aquí empiezan los unique's para que existan valores nulos repeditos en caso que el usuario no llene una de las preguntas de algun formulario
-CREATE UNIQUE INDEX TbCont_Correo ON TbContactos (Correo)
-WHERE Correo IS NOT NULL
+CREATE UNIQUE INDEX TbCont_Correo1 ON TbContactos (Correo)
+WHERE Correo IS NOT NULL AND Correo != '';
 
-CREATE UNIQUE INDEX TbCont_NumTelefonico ON TbContactos (NumTelefonico)
-WHERE NumTelefonico IS NOT NULL
+CREATE UNIQUE INDEX TbCont_NumTelefonico1 ON TbContactos (NumTelefonico)
+WHERE NumTelefonico IS NOT NULL AND NumTelefonico != '';
 
-CREATE UNIQUE INDEX TbAdministrador_DUI ON TbAdministrador (DUI)
-WHERE DUI IS NOT NULL
+CREATE UNIQUE INDEX TbAdministrador_DUI1 ON TbAdministrador (DUI)
+WHERE DUI IS NOT NULL AND DUI != '';
 
-CREATE UNIQUE INDEX TbPacientes_DUI ON TbPacientes (DUI)
-WHERE DUI IS NOT NULL
+CREATE UNIQUE INDEX TbPacientes_DUI1 ON TbPacientes (DUI)
+WHERE DUI IS NOT NULL AND DUI != '';
 
-CREATE UNIQUE INDEX TbSecretaria_DUI ON TbSecretaria (DUI)
-WHERE DUI IS NOT NULL
+CREATE UNIQUE INDEX TbSecretaria_DUI1 ON TbSecretaria (DUI)
+WHERE DUI IS NOT NULL AND DUI != '';
 
-CREATE UNIQUE INDEX TbTerapeutas_DUI ON TbTerapeutas (DUI)
-WHERE DUI IS NOT NULL
+CREATE UNIQUE INDEX TbTerapeutas_DUI1 ON TbTerapeutas (DUI)
+WHERE DUI IS NOT NULL AND DUI != '';
 --Insert into TbAdministrador 
 --Select * from TbMedicamentos
 
@@ -893,7 +893,7 @@ ALTER PROCEDURE PDPrimerUso
     @ActividadLabor VARCHAR(90),
     @fechadeNaci DATE,
     @Numerotel VARCHAR(9),
-    @DUI VARCHAR(9),
+    @DUI VARCHAR(20),
     @Genero INT
 AS
 BEGIN
@@ -916,6 +916,8 @@ BEGIN
 
         -- Obtener el último valor de la clave primaria de TbContactos
         SET @IDContactos = SCOPE_IDENTITY();
+
+		UPDATE TbUsuarios SET IDContacto = @IDContactos WHERE IDUsuario = @IDUsuario;
     END
     ELSE
     BEGIN
@@ -925,7 +927,7 @@ BEGIN
             NumTelefonico = @Numerotel
         WHERE IDContacto = @IDContactos;
     END
-	--DIOS AAAAAAAAAAAAAA hasta aqui good
+
     -- Insertar datos en la tabla TbActividadesLaborales
     INSERT INTO TbActividadesLaborales (NombreDeActividad)
     VALUES (@ActividadLabor);
@@ -942,40 +944,49 @@ BEGIN
 
     -- Verificar si el usuario existe en TbAdministrador
     IF EXISTS (SELECT 1 FROM TbAdministrador WHERE IDUsuario = @IDUsuario)
-	BEGIN
-		-- Actualizar datos en la tabla TbAdministrador
-		UPDATE TbAdministrador
-		SET FNacimiento = COALESCE(@fechadeNaci, FNacimiento),
-			DUI = COALESCE(@DUI, DUI),
-			IDGenero = COALESCE(@IDGenero, IDGenero),
-			IDActividadLaboral = COALESCE(@IDActividad, IDActividadLaboral)
-		 WHERE IDUsuario = @IDUsuario;
-	END
+    BEGIN
+        DECLARE @IDAdministrador INT;
+        SET @IDAdministrador = (SELECT TOP 1 IDAdministrador FROM TbAdministrador WHERE IDUsuario = @IDUsuario);
+        PRINT 'Si entro vato ' + @DUI;
 
+        -- Actualizar datos en la tabla TbAdministrador
+        UPDATE TbAdministrador
+        SET FNacimiento = @fechadeNaci,
+            DUI = @DUI,
+            IDGenero = @IDGenero,
+            IDActividadLaboral = @IDActividad
+        WHERE IDAdministrador = @IDAdministrador;
+    END
 
     -- Verificar si el usuario existe en TbSecretaria
     ELSE IF EXISTS (SELECT 1 FROM TbSecretaria WHERE IDUsuario = @IDUsuario)
     BEGIN
-        -- Actualizar datos en la tabla TbAdministrador
-		UPDATE TbAdministrador
-		SET FNacimiento = COALESCE(@fechadeNaci, FNacimiento),
-			DUI = COALESCE(@DUI, DUI),
-			IDGenero = COALESCE(@IDGenero, IDGenero),
-			IDActividadLaboral = COALESCE(@IDActividad, IDActividadLaboral)
-		 WHERE IDUsuario = @IDUsuario;
-	END
+        DECLARE @IDSecretaria INT;
+        SET @IDSecretaria = (SELECT TOP 1 IDSecretaria FROM TbSecretaria WHERE IDUsuario = @IDUsuario);
+
+        -- Actualizar datos en la tabla TbSecretaria
+        UPDATE TbSecretaria
+        SET FNacimiento = @fechadeNaci,
+            DUI = @DUI,
+            IDGenero = @IDGenero,
+            IDActividadLaboral = @IDActividad
+        WHERE IDSecretaria = @IDSecretaria;
+    END
 
     -- Verificar si el usuario existe en TbTerapeutas
     ELSE IF EXISTS (SELECT 1 FROM TbTerapeutas WHERE IDUsuario = @IDUsuario)
     BEGIN
-        -- Actualizar datos en la tabla TbAdministrador
-		UPDATE TbAdministrador
-		SET FNacimiento = COALESCE(@fechadeNaci, FNacimiento),
-			DUI = COALESCE(@DUI, DUI),
-			IDGenero = COALESCE(@IDGenero, IDGenero),
-			IDActividadLaboral = COALESCE(@IDActividad, IDActividadLaboral)
-		 WHERE IDUsuario = @IDUsuario;
-	END
+        DECLARE @IDTerapeuta INT;
+        SET @IDTerapeuta = (SELECT TOP 1 IDTerapeuta FROM TbTerapeutas WHERE IDUsuario = @IDUsuario);
+
+        -- Actualizar datos en la tabla TbTerapeutas
+        UPDATE TbTerapeutas
+        SET FNacimiento = @fechadeNaci,
+            DUI = @DUI,
+            IDGenero = @IDGenero,
+            IDActividadLaboral = @IDActividad
+        WHERE IDTerapeuta = @IDTerapeuta;
+    END
 END
 
 
@@ -994,14 +1005,16 @@ BEGIN
 	DECLARE @Numero VARCHAR(9);
 	DECLARE @IDGenero INT;
 	DECLARE @IDActividadlab INT;
+	DECLARE @IDContacto INT;
 	DECLARE @FNaci DATE;
 	DECLARE @Duii VARCHAR(9);
 	DECLARE @Generoo INT;
 	DECLARE @Actividadlabolal VARCHAR (100);
 
 	SET @IDUsuario = (SELECT TOP 1 IDUsuario FROM TbUsuarios WHERE Username = @username);
-	SET @Gmail = (SELECT TOP 1 Correo FROM TbContactos WHERE IDContacto = (SELECT TOP 1 IDContacto FROM TbUsuarios WHERE UserName = @username));
-	SET @Numero = (SELECT TOP 1 NumTelefonico FROM TbContactos WHERE IDContacto = (SELECT TOP 1 IDContacto FROM TbUsuarios WHERE UserName = @username));
+	SET @IDContacto = (SELECT TOP 1 IDContacto FROM TbUsuarios WHERE IDUsuario = @IDUsuario);
+	SET @Gmail = (SELECT TOP 1 Correo FROM TbContactos WHERE IDContacto = @IDContacto);
+	SET @Numero = (SELECT TOP 1 NumTelefonico FROM TbContactos WHERE IDContacto = @IDContacto);
 
 	IF EXISTS (SELECT TOP 1 IDAdministrador FROM TbAdministrador WHERE IDUsuario = @IDUsuario)
     BEGIN
@@ -1032,7 +1045,7 @@ BEGIN
 	SET @Numerotel = @Numero;
 	SET @fechadeNaci = @FNaci;
 	SET @DUI = @Duii;
-	SET @Genero = @IDGenero;
+	SET @Genero = (SELECT TOP 1 Genero FROM TbGenero WHERE IDGenero = @IDGenero);
 	SET @ActividadLabor = (SELECT TOP 1 NombreDeActividad FROM TbActividadesLaborales WHERE IDActividadLaboral = @IDActividadlab);
 END
 
