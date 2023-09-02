@@ -14,6 +14,7 @@ import Database.Procesos_almacenados;
 import Database.Usuarios;
 import Ui.JP002_S1_RHP;
 import Ui.JP0048_S3_RH;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
@@ -21,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -80,9 +82,39 @@ public class primer_uso implements ActionListener {
             modelContactos.setCorreo(vistaJP048.getTxtCorreoElectronico_jp0048_RH().getText());
             modelContactos.setNumTelefonico(vistaJP048.getTxtNumTel_JP0048().getText());
             Procesos.CRUDprimeruso(modelUsers, modelContactos, modelActivity, modelGenero, 2, modelAdmin);
+            modelUsers.setPrimerUso(0);
             Procesos.PrimerUso(modelUsers, 1);
-        } else if (e.getSource() == vistaJP048.getbtnOmitir()) {
 
+            int Acceso = modelUsers.getAcceso();
+            int Nivel = modelUsers.getResultado();
+            if (Acceso == 1) {
+                switch (Nivel) {
+                    case 1:
+                        PanelesManager.copiaPanel("JP001_S1_AFP");
+                        JPContenido.remove(vistaJP048);
+                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
+                        break;
+                    case 2:
+                        PanelesManager.copiaPanel("JP001_S1_AFP");
+                        JPContenido.remove(vistaJP048);
+                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
+                        break;
+                    case 3:
+                        PanelesManager.copiaPanel("JP001_S1_AFP");
+                        JPContenido.remove(vistaJP048);
+                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
+                        break;
+                    default:
+                        JOptionPane.showMessageDialog(null, "Tu usuario es de tipo paciente, usa la aplicación de móvil para acceder a él por favor", "Usuario inválido", JOptionPane.INFORMATION_MESSAGE);
+                        break;
+                }
+                JPContenido.revalidate();
+                JPContenido.repaint();
+                PanelesManager.restaurarPanelEliminado();
+
+            } else if (e.getSource() == vistaJP048.getbtnOmitir()) {
+
+            }
         }
     }
 }

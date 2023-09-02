@@ -127,14 +127,26 @@ public class Login implements ActionListener {
                         }
                         break;
                     case 2:
-                        PanelesManager.copiaPanel("JP001_S1_AFP");
-                        JPContenido.remove(panelRegistro);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
+                        if (Primeruso == 1) {
+                            PanelesManager.copiaPanel("JP001_S1_AFP");
+                            JPContenido.remove(panelRegistro);
+                            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPrimerUso");
+                        } else {
+                            PanelesManager.copiaPanel("JP001_S1_AFP");
+                            JPContenido.remove(panelRegistro);
+                            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
+                        }
                         break;
                     case 3:
-                        PanelesManager.copiaPanel("JP001_S1_AFP");
-                        JPContenido.remove(panelRegistro);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
+                        if (Primeruso == 1) {
+                            PanelesManager.copiaPanel("JP001_S1_AFP");
+                            JPContenido.remove(panelRegistro);
+                            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPrimerUso");
+                        } else {
+                            PanelesManager.copiaPanel("JP001_S1_AFP");
+                            JPContenido.remove(panelRegistro);
+                            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
+                        }
                         break;
                     default:
                         JOptionPane.showMessageDialog(null, "Tu usuario es de tipo paciente, usa la aplicación de móvil para acceder a él por favor", "Usuario inválido", JOptionPane.INFORMATION_MESSAGE);
