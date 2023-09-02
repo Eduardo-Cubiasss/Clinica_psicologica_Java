@@ -10,6 +10,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import ux.Login;
 import ux.PanelesInicializador;
+import ux.primer_uso;
 
 /**
  *
@@ -19,6 +20,7 @@ import ux.PanelesInicializador;
 public class JP001_S1_AFP extends javax.swing.JPanel {
     
     private Login controlador;
+    private primer_uso controlador2; 
     private JP001_S1_AFP panel;
     private PanelesInicializador str;
     public JButton getBtn2_JF001_S1_AF() {
@@ -43,8 +45,9 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
     /**
      * Creates new form JP001_S1_AFP
      */
-    public JP001_S1_AFP(Login controlador) {
+    public JP001_S1_AFP(Login controlador, primer_uso controlador2) {
         this.controlador = controlador;
+        this.controlador2 = controlador2;
         // Crear una instancia de PanelesInicializador
         str = new PanelesInicializador();
         initComponents();

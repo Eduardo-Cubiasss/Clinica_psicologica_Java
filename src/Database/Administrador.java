@@ -5,6 +5,9 @@
  */
 package Database;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 /**
  *
  * @author 50369
@@ -13,7 +16,7 @@ public class Administrador {
     private int IDAdministrador;
     private String Nombre;
     private String Apellido; 
-    private String FNacimiento; 
+    private Date FNacimiento; 
     private String DUI;
     private int IDTipoUsuario;
     private int IDGenero; 
@@ -44,11 +47,11 @@ public class Administrador {
         this.Apellido = Apellido;
     }
 
-    public String getFNacimiento() {
+    public Date getFNacimiento() {
         return FNacimiento;
     }
 
-    public void setFNacimiento(String FNacimiento) {
+    public void setFNacimiento(Date FNacimiento) {
         this.FNacimiento = FNacimiento;
     }
 

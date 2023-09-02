@@ -1,8 +1,10 @@
 package ux;
 
+import Database.ActividadesLaborales;
 import Database.Administrador;
 import Database.Clinica;
 import Database.Contactos;
+import Database.Genero;
 import Database.Procesos_almacenados;
 import Database.Usuarios;
 import Ui.JF_000_S7_GU;
@@ -239,6 +241,8 @@ public class Inicializador {
         Administrador modelAdmin = new Administrador();
         Clinica modelClinica = new Clinica();
         Contactos ModelContactos = new Contactos();
+        Genero modelGenero = new Genero();
+        ActividadesLaborales modelActivity = new ActividadesLaborales();
         panelesInicializador = new PanelesInicializador();
         
         //Insetamos el valor de los paneles sin modificacion alguna
@@ -344,7 +348,7 @@ public class Inicializador {
         
         // Paneles
         SplashScreen panelSplash = new SplashScreen(vista.JPContenido);
-        JP001_S1_AFP panelInicioSesion = new JP001_S1_AFP(controladorLogin);
+        JP001_S1_AFP panelInicioSesion = new JP001_S1_AFP(controladorLogin, controladorPrimerUso);
         JP002_S1_RHP panelRegistro = new JP002_S1_RHP(controladorRegistrar);
         JP004_S2_AF panelMenuAdmin = new JP004_S2_AF(controladorMenuAd);
         JP005_2_S2_RH panelRec1Telefono = new JP005_2_S2_RH(controladorRec_tel1);
@@ -396,7 +400,7 @@ public class Inicializador {
         
         
         // Controladores
-        controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion, panelHistory, habilitarPaneles, vista);
+        controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion, panelHistory, habilitarPaneles, vista, panelPrimerUso, modelGenero, ModelContactos, modelActivity, modelAdmin);
         controladorRegistrar = new RegAdmin_JF002(modelAdmin, modelUsers, modelClinica, panelRegistro, vista.JPContenido, Procesos, panelHistory, habilitarPaneles, vista);
         controladorMenuAd = new Menu_Administrador(vista.JPContenido, panelMenuAdmin, habilitarPaneles);
         controladorMenuTp = new Menu_Terapeuta(vista.JPContenido, panelMenuTp, habilitarPaneles);
@@ -445,7 +449,7 @@ public class Inicializador {
         controladorPruebasDF = new PruebasDF(vista.JPContenido);
         controladorSolicitudesDeIncapacidadRedactar = new SolicitudesDeIncapacidadRedactar(vista.JPContenido);
         controladorFormularioInicio = new FormularioInicio(vista.JPContenido);
-        controladorPrimerUso = new primer_uso(modelAdmin,vista.JPContenido, modelUsers, panelPrimerUso, Procesos, habilitarPaneles);
+        controladorPrimerUso = new primer_uso(modelAdmin,vista.JPContenido, modelUsers, panelPrimerUso, Procesos, habilitarPaneles, modelGenero, ModelContactos, modelActivity);
         
 
         // Agregar paneles a la vista

@@ -11,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import java.sql.CallableStatement;
+import java.sql.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -303,6 +305,99 @@ public class Procesos_almacenados {
         }
 
         return resultado;
+    }
+
+    public void CRUDprimeruso(Usuarios modelousuarios, Contactos modelContactos, ActividadesLaborales modelActivity,
+            Genero modelGenero, int operacion, Administrador modelAdministrador) {
+
+        Connection conn = null;
+        CallableStatement cs = null;
+
+        switch (operacion) {
+            case 1:
+                //Case 1 sirve para ver los datos existentes
+        try {
+                conn = ConnectionSQL.getConexion();
+                cs = conn.prepareCall("{CALL PDprimerusoinfo(?, ?, ?, ?, ?, ?, ?)}");
+                cs.setString(1, modelousuarios.getUserName()); // aqui se manda el username para db
+                cs.registerOutParameter(2, java.sql.Types.VARCHAR);  // Para @Correo
+                cs.registerOutParameter(3, java.sql.Types.VARCHAR);  // Para @ActividadLab
+                cs.registerOutParameter(4, java.sql.Types.DATE);  // Para @fechadenaci
+                cs.registerOutParameter(5, java.sql.Types.VARCHAR);  // Para @Numerodetel
+                cs.registerOutParameter(6, java.sql.Types.VARCHAR);  // Para @DUI
+                cs.registerOutParameter(7, java.sql.Types.INTEGER);  // Para @Genero
+
+                cs.execute();
+
+                // Obtener los valores de los parámetros de salida
+                String Correo = cs.getString(2);  // Obtener correo de tipo Varchar
+                String AcividadLab = cs.getString(3);    // Obtener correo de tipo Varchar
+                java.sql.Date fechaNacimient = cs.getDate(4);    // Obtener correo de tipo DATE
+                String Numerodetel = cs.getString(5);    // Obtener correo de tipo Varchar
+                String DUI = cs.getString(6);    // Obtener correo de tipo Varchar
+                int genero = cs.getInt(7);    // Obtener genero que es de tipo INT
+                
+                modelContactos.setCorreo(Correo);
+                modelContactos.setNumTelefonico(Numerodetel);
+                modelGenero.setGenero(genero);
+                modelActivity.setActiviadadLaboral(AcividadLab);
+                modelAdministrador.setDUI(DUI);
+                modelAdministrador.setFNacimiento(fechaNacimient);
+
+            } catch (Exception e) {
+                System.out.println("Error #J00DA");
+                JOptionPane.showMessageDialog(null, "Error innesperado al cargar datos, reinicie su aplicación", "Error: J000DA", JOptionPane.INFORMATION_MESSAGE);
+
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+            } finally {
+                try {
+                    if (cs != null) {
+                        cs.close();
+                    }
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+            break;
+            case 2:
+            try {
+                conn = ConnectionSQL.getConexion();
+                cs = conn.prepareCall("{CALL PDPrimerUso(?, ?, ?, ?, ?, ?, ?)}");
+                cs.setString(1, modelousuarios.getUserName()); // aqui se manda el username para db
+                cs.setString(2, modelContactos.getCorreo()); // aqui se manda el correo para db
+                cs.setString(3, modelActivity.getActiviadadLaboral()); // aqui se manda el correo para db
+                cs.setDate(4, (Date) modelAdministrador.getFNacimiento()); // aqui se manda el correo para db
+                cs.setString(5, modelContactos.getNumTelefonico()); // aqui se manda el correo para db
+                cs.setString(6, modelAdministrador.getDUI()); // aqui se manda el username para db
+                cs.setInt(7, modelGenero.getGenero()); // aqui se manda el username para db
+                
+                cs.execute();
+
+            } catch (Exception e) {
+                System.out.println("Error #J00DA");
+                JOptionPane.showMessageDialog(null, "Tiene datos ya registrados en el sistema anteriormente", "Error: J015UI", JOptionPane.INFORMATION_MESSAGE);
+
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+            } finally {
+                try {
+                    if (cs != null) {
+                        cs.close();
+                    }
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+            break;
+        }
+
     }
 
 }

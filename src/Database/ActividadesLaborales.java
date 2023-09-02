@@ -10,5 +10,23 @@ package Database;
  * @author 50369
  */
 public class ActividadesLaborales {
+    private int IDActividad;
+    private String ActiviadadLaboral; 
+
+    public int getIDActividad() {
+        return IDActividad;
+    }
+
+    public void setIDActividad(int IDActividad) {
+        this.IDActividad = IDActividad;
+    }
+
+    public String getActiviadadLaboral() {
+        return ActiviadadLaboral;
+    }
+
+    public void setActiviadadLaboral(String ActiviadadLaboral) {
+        this.ActiviadadLaboral = ActiviadadLaboral;
+    }
     
 }
