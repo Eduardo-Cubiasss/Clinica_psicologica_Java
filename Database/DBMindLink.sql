@@ -947,7 +947,7 @@ BEGIN
     BEGIN
         DECLARE @IDAdministrador INT;
         SET @IDAdministrador = (SELECT TOP 1 IDAdministrador FROM TbAdministrador WHERE IDUsuario = @IDUsuario);
-        PRINT 'Si entro vato ' + @DUI;
+        
 
         -- Actualizar datos en la tabla TbAdministrador
         UPDATE TbAdministrador
