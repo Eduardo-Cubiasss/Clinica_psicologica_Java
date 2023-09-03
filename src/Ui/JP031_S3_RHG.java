@@ -6,7 +6,9 @@
 package Ui;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import ux.ExpedienteDelPaciente;
 import ux.MBEliminarArticulo;
 import ux.PanelesInicializador;
@@ -17,24 +19,19 @@ import ux.Ver_Expediente;
  * @author 50369
  */
 public class JP031_S3_RHG extends javax.swing.JPanel {
-    
-    
-    
+
     private ExpedienteDelPaciente controlador;
     private PanelesInicializador str;
 
     public JP031_S3_RHG(ExpedienteDelPaciente controlador) {
         initComponents();
         this.controlador = controlador;
-        
+
         str = new PanelesInicializador();
-        
-         // Establecer el valor de str aquí después de haberlo creado
+
+        // Establecer el valor de str aquí después de haberlo creado
         str.setJP031_S3_RHG(this);
     }
-    
-    
-    
 
     public JButton getBtn1_JF031_S3_RH() {
         return Btn1_JF031_S3_RH;
@@ -55,8 +52,54 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
     public JButton getBtn4_JF031_S3_RH() {
         return Btn4_JF031_S3_RH;
     }
-    
-    
+
+    public JLabel getJL_Edad_JF031_S3_RH() {
+        return JL_Edad_JF031_S3_RH;
+    }
+
+    public JButton getBtn01_JP031_S3_RH() {
+        return btn01_JP031_S3_RH;
+    }
+
+    public void setBtn01_JP031_S3_RH(JButton btn01_JP031_S3_RH) {
+        this.btn01_JP031_S3_RH = btn01_JP031_S3_RH;
+    }
+
+    public JTextField getTxtEscribirMensaje_JP031_S3_RH() {
+        return txtEscribirMensaje_JP031_S3_RH;
+    }
+
+    public void setTxtEscribirMensaje_JP031_S3_RH(JTextField txtEscribirMensaje_JP031_S3_RH) {
+        this.txtEscribirMensaje_JP031_S3_RH = txtEscribirMensaje_JP031_S3_RH;
+    }
+
+    public JLabel getJL_Correo_JF031_S3_RH() {
+        return JL_Correo_JF031_S3_RH;
+    }
+
+    public JLabel getJL_Nombre_JF031_S3_RH() {
+        return JL_Nombre_JF031_S3_RH;
+    }
+
+    public JLabel getJL_image_JF031_S3_RH() {
+        return JL_image_JF031_S3_RH;
+    }
+
+    public void setJL_Edad_JF031_S3_RH(String texto) {
+        JL_Edad_JF031_S3_RH.setText(texto);
+    }
+
+    public void setJL_Correo_JF031_S3_RH(String texto) {
+        JL_Correo_JF031_S3_RH.setText(texto);
+    }
+
+    public void setJL_Nombre_JF031_S3_RH(String texto) {
+        JL_Nombre_JF031_S3_RH.setText(texto);
+    }
+
+    public void setJL_image_JF031_S3_RH(String texto) {
+        JL_image_JF031_S3_RH.setText(texto);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -72,6 +115,13 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         JP01_JF031_S3_RH = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        JL_Nombre_JF031_S3_RH = new javax.swing.JLabel();
+        JL_image_JF031_S3_RH = new javax.swing.JLabel();
+        JL_Edad_JF031_S3_RH = new javax.swing.JLabel();
+        JL_Correo_JF031_S3_RH = new javax.swing.JLabel();
+        txtEscribirMensaje_JP031_S3_RH = new javax.swing.JTextField();
+        btn01_JP031_S3_RH = new javax.swing.JButton();
         Btn4_JF031_S3_RH = new javax.swing.JButton();
         Btn2_JF031_S3_RH1 = new javax.swing.JButton();
         Btn3_JF031_S3_RH2 = new javax.swing.JButton();
@@ -103,17 +153,89 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, -1, -1));
 
         JP01_JF031_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
+        JP01_JF031_S3_RH.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout JP01_JF031_S3_RHLayout = new javax.swing.GroupLayout(JP01_JF031_S3_RH);
-        JP01_JF031_S3_RH.setLayout(JP01_JF031_S3_RHLayout);
-        JP01_JF031_S3_RHLayout.setHorizontalGroup(
-            JP01_JF031_S3_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 920, Short.MAX_VALUE)
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        JL_Nombre_JF031_S3_RH.setBackground(new java.awt.Color(0, 0, 0));
+        JL_Nombre_JF031_S3_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        JL_Nombre_JF031_S3_RH.setForeground(new java.awt.Color(0, 0, 0));
+        JL_Nombre_JF031_S3_RH.setText("Nombre Persona");
+
+        JL_image_JF031_S3_RH.setBackground(new java.awt.Color(0, 0, 0));
+        JL_image_JF031_S3_RH.setForeground(new java.awt.Color(0, 0, 0));
+        JL_image_JF031_S3_RH.setText("image");
+
+        JL_Edad_JF031_S3_RH.setBackground(new java.awt.Color(0, 0, 0));
+        JL_Edad_JF031_S3_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        JL_Edad_JF031_S3_RH.setForeground(new java.awt.Color(0, 0, 0));
+        JL_Edad_JF031_S3_RH.setText("Edad:");
+
+        JL_Correo_JF031_S3_RH.setBackground(new java.awt.Color(0, 0, 0));
+        JL_Correo_JF031_S3_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        JL_Correo_JF031_S3_RH.setForeground(new java.awt.Color(0, 0, 0));
+        JL_Correo_JF031_S3_RH.setText("Correo electrónico:");
+
+        txtEscribirMensaje_JP031_S3_RH.setBackground(new java.awt.Color(148, 177, 181));
+        txtEscribirMensaje_JP031_S3_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        txtEscribirMensaje_JP031_S3_RH.setForeground(new java.awt.Color(255, 255, 255));
+        txtEscribirMensaje_JP031_S3_RH.setText("Escribir mensaje");
+
+        btn01_JP031_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
+        btn01_JP031_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/corazao.png"))); // NOI18N
+        btn01_JP031_S3_RH.setBorderPainted(false);
+        btn01_JP031_S3_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(JL_image_JF031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(JL_Nombre_JF031_S3_RH)))
+                .addGap(49, 49, 49)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(txtEscribirMensaje_JP031_S3_RH, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn01_JP031_S3_RH)
+                        .addGap(7, 7, 7))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JL_Edad_JF031_S3_RH, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JL_Correo_JF031_S3_RH, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
-        JP01_JF031_S3_RHLayout.setVerticalGroup(
-            JP01_JF031_S3_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(JL_Nombre_JF031_S3_RH)
+                    .addComponent(JL_Edad_JF031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(JL_image_JF031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(59, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(JL_Correo_JF031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtEscribirMensaje_JP031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(btn01_JP031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)))
+                        .addGap(34, 34, 34))))
         );
+
+        JP01_JF031_S3_RH.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel1.add(JP01_JF031_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 920, 310));
 
@@ -144,9 +266,16 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
     public javax.swing.JButton Btn2_JF031_S3_RH1;
     public javax.swing.JButton Btn3_JF031_S3_RH2;
     public javax.swing.JButton Btn4_JF031_S3_RH;
+    public javax.swing.JLabel JL_Correo_JF031_S3_RH;
+    public javax.swing.JLabel JL_Edad_JF031_S3_RH;
+    public javax.swing.JLabel JL_Nombre_JF031_S3_RH;
+    public javax.swing.JLabel JL_image_JF031_S3_RH;
     public javax.swing.JPanel JP01_JF031_S3_RH;
+    public javax.swing.JButton btn01_JP031_S3_RH;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    public javax.swing.JTextField txtEscribirMensaje_JP031_S3_RH;
     // End of variables declaration//GEN-END:variables
 }

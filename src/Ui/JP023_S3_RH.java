@@ -7,6 +7,7 @@ package Ui;
 
 import javax.swing.JButton;
 import ux.Menu_Terapeuta;
+import ux.PanelesInicializador;
 
 /**
  *
@@ -15,6 +16,7 @@ import ux.Menu_Terapeuta;
 public class JP023_S3_RH extends javax.swing.JPanel {
     
     private Menu_Terapeuta controlador;
+    private PanelesInicializador str;
     
     public JButton getBtn02_JF023_S3_RH() {
         return btn02_JF023_S3_RH;
@@ -52,6 +54,12 @@ public class JP023_S3_RH extends javax.swing.JPanel {
     public JP023_S3_RH(Menu_Terapeuta controlador) {
         this.controlador = controlador;
         initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP023_S3_RH(this);
     }
 
     /**

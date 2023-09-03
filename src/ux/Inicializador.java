@@ -5,6 +5,7 @@ import Database.Administrador;
 import Database.Clinica;
 import Database.Contactos;
 import Database.Genero;
+import Database.Pacientes;
 import Database.Procesos_almacenados;
 import Database.Usuarios;
 import Ui.JF_000_S7_GU;
@@ -118,7 +119,9 @@ public class Inicializador {
     private EstadisticaDeCitas controladorEstadisticaDeCitas;
     private PruebasDF controladorPruebasDF;
     private SolicitudesDeIncapacidadRedactar controladorSolicitudesDeIncapacidadRedactar;
+    private Hints hint;
     private FormularioInicio controladorFormularioInicio;
+    private Resultado resultado;
     
     
     
@@ -242,8 +245,11 @@ public class Inicializador {
         Clinica modelClinica = new Clinica();
         Contactos ModelContactos = new Contactos();
         Genero modelGenero = new Genero();
+        Pacientes modelPaciente = new Pacientes();
+        
         ActividadesLaborales modelActivity = new ActividadesLaborales();
         panelesInicializador = new PanelesInicializador();
+        Hints hint= new Hints();
         
         //Insetamos el valor de los paneles sin modificacion alguna
         panelesInicializador.setJP001_S1_AFP(panel1);
@@ -400,7 +406,7 @@ public class Inicializador {
         
         
         // Controladores
-        controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion, panelHistory, habilitarPaneles, vista, panelPrimerUso, modelGenero, ModelContactos, modelActivity, modelAdmin);
+        controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion, panelHistory, habilitarPaneles, vista, panelPrimerUso, modelGenero, ModelContactos, modelActivity, modelAdmin, hint);
         controladorRegistrar = new RegAdmin_JF002(modelAdmin, modelUsers, modelClinica, panelRegistro, vista.JPContenido, Procesos, panelHistory, habilitarPaneles, vista);
         controladorMenuAd = new Menu_Administrador(vista.JPContenido, panelMenuAdmin, habilitarPaneles);
         controladorMenuTp = new Menu_Terapeuta(vista.JPContenido, panelMenuTp, habilitarPaneles);
@@ -428,13 +434,13 @@ public class Inicializador {
         controladorVerSolicitudRechazada = new VerSolicitudRechazada(vista.JPContenido);
         controladorEliminarAnunciosActuales = new EliminarAnunciosActuales(vista.JPContenido);
         controladorEstadisticas = new Estadisticas(vista.JPContenido);
-        controladorBuscadorPacientes = new BuscadorPacientes(vista.JPContenido);
+        controladorBuscadorPacientes = new BuscadorPacientes(vista.JPContenido, modelPaciente, panelBuscadorPacientes, habilitarPaneles, Procesos, resultado, modelUsers, ModelContactos, panelExpedienteDelPaciente);
         controladorDetallesDeMiPerfil = new DetallesDeMiPerfil(vista.JPContenido);
         controladorAgregarArticulo = new AgregarArticulo(vista.JPContenido);
         controladorMBEliminarArticulo = new MBEliminarArticulo(vista.JPContenido);
         controladorEliminarDocumentosDeApoyo = new EliminarDocumentosDeApoyo(vista.JPContenido);
         controladorActualizarArticulo = new ActualizarArticulo(vista.JPContenido);
-        controladorExpedienteDelPaciente = new ExpedienteDelPaciente(vista.JPContenido);
+        controladorExpedienteDelPaciente = new ExpedienteDelPaciente(vista.JPContenido, modelPaciente, modelUsers, panelExpedienteDelPaciente, Procesos, habilitarPaneles, ModelContactos);
         controladorRedactarMensaje = new RedactarMensaje(vista.JPContenido);
         controladorCreacionDePruebas = new CreacionDePruebas(vista.JPContenido);
         controladorEscribirEnTuAgendaPersonal = new EscribirEnTuAgendaPersonal(vista.JPContenido);

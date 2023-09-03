@@ -43,7 +43,7 @@ public class Validaciones implements KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {
         switch (CasoValidacion) {
-            case "SoloNumeros":
+            case "¬":
                 //Ese if verifica que en la cadena de texto solo existan números, de lo contrario no se leeran 
                 if (!Character.isDigit(e.getKeyChar())) {
 
@@ -52,7 +52,7 @@ public class Validaciones implements KeyListener {
 
                 } else if (Character.isLetter(e.getKeyChar())) {
                     //Esto no da error pero no funciona:(
-                    JOptionPane.showMessageDialog(null, "Se sugiere revisar la codificacion de errores", "Advertencia, J022GU", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Solo escribe numeros por favor", "Advertencia, J022GU", JOptionPane.INFORMATION_MESSAGE);
 
                 }
 

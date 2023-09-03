@@ -52,7 +52,6 @@ public class Menu_Administrador implements ActionListener {
             // Código para la acción del botón cerrar sesion
             
 
-            ;
             // Recupera el panel anterior del historial y muéstralo
             String previousPanel = panelHistory.popPanel();
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, previousPanel);

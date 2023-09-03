@@ -13,7 +13,7 @@ public class Usuarios {
     private int IDUsuario;
     private String UserName;
     private String Contraseña;
-    private String FotoPerfil;
+    private byte[] FPerfil;
     private int PrimerUso;
     private int IDContacto;
     private int acceso;
@@ -69,13 +69,6 @@ public class Usuarios {
         this.Contraseña = Contraseña;
     }
 
-    public String getFotoPerfil() {
-        return FotoPerfil;
-    }
-
-    public void setFotoPerfil(String FotoPerfil) {
-        this.FotoPerfil = FotoPerfil;
-    }
 
     public int getIDContacto() {
         return IDContacto;
@@ -83,6 +76,14 @@ public class Usuarios {
 
     public void setIDContacto(int IDContacto) {
         this.IDContacto = IDContacto;
+    }
+
+    public byte[] getFPerfil() {
+        return FPerfil;
+    }
+
+    public void setFPerfil(byte[] FPerfil) {
+        this.FPerfil = FPerfil;
     }
     
     

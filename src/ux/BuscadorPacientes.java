@@ -5,18 +5,116 @@
  */
 package ux;
 
+import Database.Contactos;
+import Database.Pacientes;
+import Database.Procesos_almacenados;
+import Database.Usuarios;
+import Ui.JP024_S3_AF;
+import Ui.JP031_S3_RHG;
+import java.awt.CardLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import ux.Resultado;
 
 /**
  *
  * @author 50369
  */
-public class BuscadorPacientes {
+public class BuscadorPacientes implements ActionListener {
+
     private JPanel JPContenido;
-    
-    public BuscadorPacientes(JPanel JPContenido)
-    {
+    private Pacientes modelPacientes;
+    private HabilitarPaneles PanelesManager;
+    private JP024_S3_AF vistaJP024;
+    private Procesos_almacenados procesos;
+    private DefaultTableModel tableModel;
+    private Resultado resultado;
+    private Usuarios modelUsuers;
+    private Contactos modelContacto;
+    private JP031_S3_RHG vistaJP031;
+
+    public BuscadorPacientes(JPanel JPContenido, Pacientes modelPacientes, JP024_S3_AF vistaJP024, HabilitarPaneles PanelesManager, Procesos_almacenados procesos, 
+            Resultado resultado, Usuarios modelUsuers, Contactos modelContacto, JP031_S3_RHG vistaJP031) {
         this.JPContenido = JPContenido;
+        this.modelPacientes = modelPacientes;
+        this.PanelesManager = PanelesManager;
+        this.vistaJP024 = vistaJP024;
+        this.resultado = resultado;
+        this.procesos = procesos;
+        this.modelUsuers = modelUsuers;
+        this.modelContacto = modelContacto;
+        this.vistaJP031 = vistaJP031;
+        
+        this.vistaJP024.getBtn1_JF024().addActionListener(this);
+        this.vistaJP024.getBtn3_JF024().addActionListener(this);
+        this.vistaJP024.getBtnVer().addActionListener(this);
+
+        String[] columnTitles = {"Id", "Nombres", "Apellidos"};
+
+        tableModel = new DefaultTableModel(columnTitles, 0);
+        vistaJP024.getJTable1().setModel(tableModel);
+
+        vistaJP024.getJTable1().addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                int filaSeleccionada = vistaJP024.getJTable1().getSelectedRow();
+
+                if (filaSeleccionada != -1) {
+                    Object valorIDUsuario = vistaJP024.getJTable1().getValueAt(filaSeleccionada, 0);
+
+                    if (valorIDUsuario != null) {
+                        int IDUsuario = Integer.parseInt(valorIDUsuario.toString());
+                        modelPacientes.setIDpaciente(IDUsuario);
+                        System.out.println(IDUsuario);
+                    }
+                }
+            }
+        });
     }
-    
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == vistaJP024.getBtn1_JF024()) {
+            String textoBusqueda = vistaJP024.getTxtBuscar_JP024() != null ? vistaJP024.getTxtBuscar_JP024().getText() : null;
+
+            if (textoBusqueda != null && !textoBusqueda.isEmpty()) {
+                System.out.println(textoBusqueda);
+                actualizarTablaConResultadosDeBusqueda(textoBusqueda);
+            } else {
+                JOptionPane.showMessageDialog(null, "El JTextField de búsqueda esta vacío.", "Advertencia", JOptionPane.INFORMATION_MESSAGE );
+                // Puedes realizar otras acciones apropiadas aquí si es necesario
+            }
+        } else if (e.getSource() == vistaJP024.getBtnVer()) {
+            procesos.viewpaciente(modelPacientes, modelUsuers, modelContacto, 1);
+            vistaJP031.setJL_Correo_JF031_S3_RH(modelContacto.getCorreo());
+            vistaJP031.setJL_Edad_JF031_S3_RH(modelPacientes.getFnacimiento().toString());
+            vistaJP031.setJL_Nombre_JF031_S3_RH(modelPacientes.getNombre());
+            PanelesManager.copiaPanel("JP024_S3_AF");
+            JPContenido.remove(vistaJP024);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelExpedienteDelPaciente");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
+        }
+    }
+
+    private void actualizarTablaConResultadosDeBusqueda(String textoBusqueda) {
+        // Borra todas las filas existentes en el modelo
+       tableModel.setRowCount(0);
+
+        // Aquí debes realizar la consulta a la base de datos
+        // y obtener los resultados que coincidan con el texto de búsqueda
+        List<Resultado> resultados = procesos.Pacientes(modelPacientes, 1, textoBusqueda);
+
+        for (Resultado resultado : resultados) {
+            tableModel.addRow(new Object[]{resultado.getIdPaciente(), resultado.getNombre(), resultado.getApellido()});
+        }
+    }
 }

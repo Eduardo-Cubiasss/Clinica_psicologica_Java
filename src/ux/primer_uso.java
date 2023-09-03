@@ -97,6 +97,38 @@ public class primer_uso implements ActionListener {
                     case 2:
                         PanelesManager.copiaPanel("JP001_S1_AFP");
                         JPContenido.remove(vistaJP048);
+                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
+                        break;
+                    case 3:
+                        PanelesManager.copiaPanel("JP001_S1_AFP");
+                        JPContenido.remove(vistaJP048);
+                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
+                        break;
+                    default:
+                        JOptionPane.showMessageDialog(null, "Tu usuario es de tipo paciente, usa la aplicación de móvil para acceder a él por favor", "Usuario inválido", JOptionPane.INFORMATION_MESSAGE);
+                        break;
+                }
+                JPContenido.revalidate();
+                JPContenido.repaint();
+                PanelesManager.restaurarPanelEliminado();
+
+            }
+        } else if (e.getSource() == vistaJP048.getbtnOmitir()) {
+            modelUsers.setPrimerUso(0);
+            Procesos.PrimerUso(modelUsers, 1);
+
+            int Acceso = modelUsers.getAcceso();
+            int Nivel = modelUsers.getResultado();
+            if (Acceso == 1) {
+                switch (Nivel) {
+                    case 1:
+                        PanelesManager.copiaPanel("JP001_S1_AFP");
+                        JPContenido.remove(vistaJP048);
+                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
+                        break;
+                    case 2:
+                        PanelesManager.copiaPanel("JP001_S1_AFP");
+                        JPContenido.remove(vistaJP048);
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
                         break;
                     case 3:
@@ -111,9 +143,6 @@ public class primer_uso implements ActionListener {
                 JPContenido.revalidate();
                 JPContenido.repaint();
                 PanelesManager.restaurarPanelEliminado();
-
-            } else if (e.getSource() == vistaJP048.getbtnOmitir()) {
-
             }
         }
     }

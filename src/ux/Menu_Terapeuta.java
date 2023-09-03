@@ -42,6 +42,12 @@ public class Menu_Terapeuta implements ActionListener{
             // Código para la acción del botón de ver calendario
         } else if (e.getSource() == panel.btn03_JF023_S3_RH) {
             // Código para la acción del botón de ver pacientes
+            PanelesManager.copiaPanel("JP023_S3_RH");
+            JPContenido.remove(panel);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelBuscadorPacientes");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
         } else if (e.getSource() == panel.btn04_JF023_S3_RH) {
             // Código para la acción del botón de ver documentos de apoyo
             PanelesManager.copiaPanel("JP023_S3_RH");

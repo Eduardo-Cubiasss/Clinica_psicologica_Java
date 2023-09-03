@@ -21,15 +21,7 @@ public class JP024_S3_AF extends javax.swing.JPanel {
     private BuscadorPacientes controlador;
     private PanelesInicializador str;
 
-    public JP024_S3_AF(BuscadorPacientes controlador) {
-        initComponents();
-        this.controlador = controlador;
-        
-        str = new PanelesInicializador();
-        
-         // Establecer el valor de str aquí después de haberlo creado
-        str.setJP024_S3_AF(this);
-    }
+    
     
     public JButton getBtn3_JF024() {
         return btn3_JF024;
@@ -43,13 +35,35 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         return btn1_JF024;
     }
 
-    public JButton getBtn2_JF024() {
-        return btn2_JF024;
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
     }
+
+    public void setTxtBuscar_JP024(JTextField txtBuscar_JP024) {
+        this.txtBuscar_JP024 = txtBuscar_JP024;
+    }
+
+    public JButton getBtnVer() {
+        return BtnVer;
+    }
+
+    public void setBtnVer(JButton BtnVer) {
+        this.BtnVer = BtnVer;
+    }
+
 
 
     public JTable getJTable1() {
         return jTable1;
+    }
+    public JP024_S3_AF(BuscadorPacientes controlador) {
+        initComponents();
+        this.controlador = controlador;
+        
+        str = new PanelesInicializador();
+        
+         // Establecer el valor de str aquí después de haberlo creado
+        str.setJP024_S3_AF(this);
     }
     /**
      * Creates new form JP024_S3_AF
@@ -72,10 +86,10 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btn1_JF024 = new javax.swing.JButton();
-        btn2_JF024 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txtBuscar_JP024 = new javax.swing.JTextField();
+        BtnVer = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(1120, 540));
         setMinimumSize(new java.awt.Dimension(1120, 540));
@@ -98,35 +112,27 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 10, 170, 90));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel1.setText("Escribe el nombre o ID del paciente");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, -1, -1));
+        jLabel1.setText("Escribe el nombre del paciente y seleccionalo");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, -1));
 
         jTable1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Sánchez Cerén"}
+                {"Sánchez Cerén", null, null}
             },
             new String [] {
-                "Sara Herrera"
+                "ID", "Nombres", "Apellidos"
             }
         ));
+        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 450, 40));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 450, 190));
 
         btn1_JF024.setBackground(new java.awt.Color(255, 255, 255));
         btn1_JF024.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ph_note-pencil-bold.png"))); // NOI18N
         btn1_JF024.setBorderPainted(false);
-        jPanel1.add(btn1_JF024, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 240, -1, -1));
-
-        btn2_JF024.setBackground(new java.awt.Color(255, 255, 255));
-        btn2_JF024.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pe.PNG"))); // NOI18N
-        btn2_JF024.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2_JF024ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btn2_JF024, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 280, 47, 61));
+        jPanel1.add(btn1_JF024, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 200, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(200, 232, 232));
 
@@ -147,20 +153,27 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 40, 50));
 
         txtBuscar_JP024.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        txtBuscar_JP024.setText("          S");
+        txtBuscar_JP024.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscar_JP024ActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtBuscar_JP024, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 420, 50));
+
+        BtnVer.setText("jButton1");
+        jPanel1.add(BtnVer, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 300, -1, -1));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn2_JF024ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2_JF024ActionPerformed
+    private void txtBuscar_JP024ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscar_JP024ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn2_JF024ActionPerformed
+    }//GEN-LAST:event_txtBuscar_JP024ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton BtnVer;
     public javax.swing.JButton btn1_JF024;
-    public javax.swing.JButton btn2_JF024;
     public javax.swing.JButton btn3_JF024;
     public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

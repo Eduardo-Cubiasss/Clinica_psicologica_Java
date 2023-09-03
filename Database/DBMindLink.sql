@@ -103,6 +103,11 @@ IDContacto int
 ALTER TABLE TbUsuarios
 ADD Primeruso int;
 
+ALTER TABLE TbUsuarios
+DROP COLUMN FotoPerfil;
+
+ALTER TABLE TbUsuarios 
+ADD FotoPerfil varbinary(max);
 
 Select * from TbUsuarios;
 
@@ -539,7 +544,7 @@ END
 
 DECLARE @resultado INT;
 DECLARE @ventana INT;
-EXEC PDLogear 'Guayito', '123', @ventana OUTPUT, @resultado OUTPUT;
+EXEC PDLogear 'Guayito', 'contraseña', @ventana OUTPUT, @resultado OUTPUT;
 SELECT @resultado AS acceso;
 SELECT @ventana AS abrirventana;
 
@@ -588,7 +593,7 @@ BEGIN
 			INSERT INTO TbContactos (Correo)
 			VALUES (@Correo)
 			DECLARE @CorreoEle VARCHAR
-			SET @CorreoEle = (SELECT IDContacto FROM TbContactos WHERE @Correo = @CorreoEle)
+			SET @CorreoEle = (SELECT IDContacto FROM TbContactos WHERE Correo = @Correo)
 			-- Con las dos lineas de abajo mandamos a almacenar el Username y la contraseña con Hash
 			INSERT INTO TbUsuarios (Username, Contraseña, IDContacto)
 			VALUES (@UsernameTbU, @newHash, @CorreoEle)
@@ -1060,7 +1065,69 @@ DECLARE @Genero INT;
 EXEC PDprimerusoinfo 
   'Pepito123',@Correo OUTPUT, @ActividadLabor OUTPUT, @fechadeNaci OUTPUT,  @Numerotel OUTPUT, @DUI OUTPUT,
   @Genero OUTPUT;
-  
+
+ALTER PROCEDURE PDRegistrarEmpleado
+    @UsernameTbT VARCHAR(90),
+    @ContraseñaTbTs VARCHAR(90),
+    @Correo VARCHAR(300),
+    @UsernameTbU VARCHAR(50),
+    @Nivel INT
+AS
+BEGIN
+    BEGIN TRY
+        DECLARE @clinica VARCHAR(5);
+        DECLARE @IDAdministrador INT;
+        DECLARE @IDUsuarioT INT;
+        DECLARE @CorreoEle VARCHAR(300);
+        DECLARE @IDUsuarioEmple INT;
+
+        -- Obtener el IDUsuario basado en el Username
+        SET @IDUsuarioT = (SELECT TOP 1 IDUsuario FROM TbUsuarios WHERE UserName = @UsernameTbU);
+        SET @IDAdministrador = (SELECT TOP 1 IDAdministrador FROM TbAdministrador WHERE IDUsuario = @IDUsuarioT);
+        SET @clinica = (SELECT TOP 1 IDClinica FROM TbAdministrador WHERE IDAdministrador = @IDAdministrador);
+
+        -- Insertar datos en la tabla TbClinicas si existe
+        IF @clinica IS NOT NULL
+        BEGIN
+            -- Insertar datos en la tabla TbUsuarios si no existe
+            IF NOT EXISTS (SELECT 1 FROM TbUsuarios WHERE UserName = @UsernameTbT)
+            BEGIN
+                -- Con esto declaramos la variable que contendrá el Hash
+                DECLARE @HashContraseñaTbU VARBINARY(64);
+                DECLARE @newHash VARBINARY(64);
+
+                SET @HashContraseñaTbU = HASHBYTES('SHA2_256', @ContraseñaTbTs);
+                SET @newHash = HASHBYTES('SHA2_256', @HashContraseñaTbU);
+
+                INSERT INTO TbContactos (Correo)
+                VALUES (@Correo);
+
+                SET @CorreoEle = (SELECT TOP 1 IDContacto FROM TbContactos WHERE Correo = @Correo);
+
+                INSERT INTO TbUsuarios (Username, Contraseña, IDContacto, Primeruso)
+                VALUES (@UsernameTbT, @newHash, @CorreoEle, 1);
+
+                SET @IDUsuarioEmple = (SELECT TOP 1 IDUsuario FROM TbUsuarios WHERE UserName = @UsernameTbT);
+            END
+
+            -- Insertar datos en la tabla correspondiente (Secretaria o Terapeutas) según el nivel
+            IF @Nivel = 1
+            BEGIN
+                INSERT INTO TbSecretaria(IDClinica, IDUsuario) VALUES (@clinica, @IDUsuarioEmple);
+            END
+            ELSE IF @Nivel = 2
+            BEGIN 
+                INSERT INTO TbTerapeutas(IDClinica, IDUsuario) VALUES (@clinica, @IDUsuarioEmple);
+            END
+        END
+    END TRY
+    BEGIN CATCH
+        -- Manejo de errores: Puedes realizar acciones específicas de manejo de errores aquí
+        -- Ejemplo: INSERT INTO TbLogs (MensajeError) VALUES (ERROR_MESSAGE());
+        -- ROLLBACK TRANSACTION; -- Deshacer la transacción en caso de error
+        PRINT('Error: ' + ERROR_MESSAGE());
+    END CATCH
+END
 -- Mostrar los valores de salida
 SELECT 
   @Correo AS 'Correo',
@@ -1076,6 +1143,50 @@ SELECT * FROM TbAdministrador;
 /*
 Creamos la vista
 */
+ALTER PROCEDURE PDinforPacienteview
+	@IDPaciente INT,
+	@nombre VARCHAR(100) OUTPUT,
+    @Fnacimiento DATE OUTPUT,
+	@Correo Varchar(100) OUTPUT,
+	@imagen varbinary(max) OUTPUT,
+	@MsjApoyo VARCHAR(300)
+AS
+BEGIN
+	DECLARE @IDUsuario INT;
+	DECLARE @Gmail VARCHAR (100);
+	DECLARE @IDContacto INT;
+
+	SET @IDUsuario = (SELECT TOP 1 IDUsuario FROM TbPacientes WHERE IDPaciente = @IDPaciente);
+	SET @IDContacto = (SELECT TOP 1 IDContacto FROM TbUsuarios WHERE IDUsuario = @IDUsuario);
+	
+	---Declaramos el correo ya real del usuario
+	SET @Gmail = (SELECT TOP 1 Correo FROM TbContactos WHERE IDContacto = @IDContacto);
+	
+	---Le damos valores a los parametros de salida que son: la fecha de naci, Nombre, Correo y de último isertamos el mensaje de cariño y la imagen
+	SET @Fnacimiento = (SELECT TOP 1 FNacimiento FROM TbPacientes WHERE IDPaciente = @IDPaciente);
+	SET @nombre = (SELECT TOP 1 Nombre FROM TbPacientes WHERE IDPaciente = @IDPaciente);
+	SET @Correo = @Gmail;
+	SET @imagen = (SELECT TOP 1 FotoPerfil FROM TbUsuarios WHERE IDUsuario = @IDUsuario);
+	---Actualizamos el mensaje de cariño hacia el usuario
+	IF @MsjApoyo IS NOT NULL AND @MsjApoyo != '' AND @MsjApoyo != ' '
+	BEGIN
+		UPDATE TbPacientes SET MensajesDeCariño = @MsjApoyo WHERE IDPaciente = @IDPaciente;
+	END
+
+END
+
+ALTER PROCEDURE PDenviarmensajedeCariño
+		@IDPaciente INT,
+	@MsjApoyo VARCHAR(300)
+AS
+BEGIN
+	DECLARE @IDUsuario INT;
+	SET @IDUsuario = (SELECT TOP 1 IDUsuario FROM TbPacientes WHERE IDPaciente = @IDPaciente);
+	IF @MsjApoyo IS NOT NULL AND @MsjApoyo != '' AND @MsjApoyo != ' '
+	BEGIN
+		UPDATE TbPacientes SET MensajesDeCariño = @MsjApoyo WHERE IDPaciente = @IDPaciente;
+	END
+END
 
 CREATE VIEW VistaNota
 AS

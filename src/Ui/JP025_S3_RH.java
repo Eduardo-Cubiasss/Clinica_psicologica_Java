@@ -5,9 +5,14 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JTextField;
 import ux.DetallesDeMiPerfil;
 import ux.PanelesInicializador;
 import ux.SolicitudesAprobadas2;
+import ux.LimiteCaracteres;
+import ux.Hints;
+import ux.Validaciones;
 
 /**
  *
@@ -18,8 +23,71 @@ public class JP025_S3_RH extends javax.swing.JPanel {
     
     private DetallesDeMiPerfil controlador;
     private PanelesInicializador str;
+    private Hints hint;
+    private LimiteCaracteres Limite;
 
+    public JTextField getTxtContraNueva_JF025_S3_RH() {
+        return TxtContraNueva_JF025_S3_RH;
+    }
+
+    public void setTxtContraNueva_JF025_S3_RH(JTextField TxtContraNueva_JF025_S3_RH) {
+        this.TxtContraNueva_JF025_S3_RH = TxtContraNueva_JF025_S3_RH;
+    }
+
+    public JTextField getTxtContraseñaActual_JF025_S3_RH() {
+        return TxtContraseñaActual_JF025_S3_RH;
+    }
+
+    public void setTxtContraseñaActual_JF025_S3_RH(JTextField TxtContraseñaActual_JF025_S3_RH) {
+        this.TxtContraseñaActual_JF025_S3_RH = TxtContraseñaActual_JF025_S3_RH;
+    }
+
+    public JTextField getTxtDescrip_JF025_S3_RH() {
+        return TxtDescrip_JF025_S3_RH;
+    }
+
+    public void setTxtDescrip_JF025_S3_RH(JTextField TxtDescrip_JF025_S3_RH) {
+        this.TxtDescrip_JF025_S3_RH = TxtDescrip_JF025_S3_RH;
+    }
+
+    public JButton getBtn02_JF025_S3_RH() {
+        return btn02_JF025_S3_RH;
+    }
+
+    public void setBtn02_JF025_S3_RH(JButton btn02_JF025_S3_RH) {
+        this.btn02_JF025_S3_RH = btn02_JF025_S3_RH;
+    }
+
+    public JButton getBtn03_JF025_S3_RH() {
+        return btn03_JF025_S3_RH;
+    }
+
+    public void setBtn03_JF025_S3_RH(JButton btn03_JF025_S3_RH) {
+        this.btn03_JF025_S3_RH = btn03_JF025_S3_RH;
+    }
+
+    public JButton getBtn04_JF025_S3_RH() {
+        return btn04_JF025_S3_RH;
+    }
+
+    public void setBtn04_JF025_S3_RH(JButton btn04_JF025_S3_RH) {
+        this.btn04_JF025_S3_RH = btn04_JF025_S3_RH;
+    }
+
+    public JButton getBtn05_JF025_S3_RH() {
+        return btn05_JF025_S3_RH;
+    }
+
+    public void setBtn05_JF025_S3_RH(JButton btn05_JF025_S3_RH) {
+        this.btn05_JF025_S3_RH = btn05_JF025_S3_RH;
+    }
+    
+    
+    
+    
     public JP025_S3_RH(DetallesDeMiPerfil controlador) {
+        this.hint = hint;
+        
         initComponents();
         this.controlador = controlador;
         
@@ -27,6 +95,9 @@ public class JP025_S3_RH extends javax.swing.JPanel {
         
          // Establecer el valor de str aquí después de haberlo creado
         str.setJP025_S3_RH(this);
+    LimiteCaracteres limiteDescripcion = new LimiteCaracteres(TxtDescrip_JF025_S3_RH, 0, 300);
+        new Validaciones(getTxtDescrip_JF025_S3_RH(), "SoloLetras");
+        hint.addHint(getTxtDescrip_JF025_S3_RH(), "Describase brevemente");
     }
     
     

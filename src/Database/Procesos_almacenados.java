@@ -13,6 +13,9 @@ import javax.swing.JOptionPane;
 import java.sql.CallableStatement;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import ux.Resultado;
 
 /**
  *
@@ -20,6 +23,7 @@ import java.time.LocalDate;
  */
 public class Procesos_almacenados {
 
+    private Resultado resultado;
     int CorreoVal = 0;
 
     public boolean In_admin_clinica_users(Administrador modeloadmin, Usuarios modelousuarios, Clinica modeloclinica) {
@@ -77,12 +81,13 @@ public class Procesos_almacenados {
             cs.execute();
 
             // Obtener los valores de los parámetros de salida
-            int resultado = cs.getInt(3);  // Obtener el valor de salida @resultado, resultado puede devolver 0 y 1, 1 si existe el usuario y 0 si no existe
+            int resultado = cs.getInt(3);  // Obtener el valor de salida @resultado, resultado puede devolver 0 y 1. 1 si existe el usuario y 0 si no existe
             int ventana = cs.getInt(4);    // Obtener el valor de salida @ventana, resultado puede devolver 1, 2, 3, 4, es para diferenciar el nivel de usuario
 
-            modelousuarios.setAcceso(resultado);
-            modelousuarios.setResultado(ventana);
-
+            modelousuarios.setAcceso(ventana);
+            modelousuarios.setResultado(resultado);
+            System.out.println(resultado);
+            System.out.println(ventana);
         } catch (Exception e) {
             System.out.println("Error #J00DA");
             JOptionPane.showMessageDialog(null, "Error: J000DA", "Credenciales incorrectas", JOptionPane.INFORMATION_MESSAGE);
@@ -336,7 +341,7 @@ public class Procesos_almacenados {
                 String Numerodetel = cs.getString(5);    // Obtener correo de tipo Varchar
                 String DUI = cs.getString(6);    // Obtener correo de tipo Varchar
                 int genero = cs.getInt(7);    // Obtener genero que es de tipo INT
-                
+
                 modelContactos.setCorreo(Correo);
                 modelContactos.setNumTelefonico(Numerodetel);
                 modelGenero.setGenero(genero);
@@ -349,7 +354,6 @@ public class Procesos_almacenados {
                 JOptionPane.showMessageDialog(null, "Error innesperado al cargar datos, reinicie su aplicación", "Error: J000DA", JOptionPane.INFORMATION_MESSAGE);
 
                 e.printStackTrace();
-                JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
             } finally {
                 try {
                     if (cs != null) {
@@ -374,7 +378,7 @@ public class Procesos_almacenados {
                 cs.setString(5, modelContactos.getNumTelefonico()); // aqui se manda el correo para db
                 cs.setString(6, modelAdministrador.getDUI()); // aqui se manda el username para db
                 cs.setInt(7, modelGenero.getGenero()); // aqui se manda el username para db
-                
+
                 cs.execute();
 
             } catch (Exception e) {
@@ -382,7 +386,6 @@ public class Procesos_almacenados {
                 JOptionPane.showMessageDialog(null, "Tiene datos ya registrados en el sistema anteriormente", "Error: J015UI", JOptionPane.INFORMATION_MESSAGE);
 
                 e.printStackTrace();
-                JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
             } finally {
                 try {
                     if (cs != null) {
@@ -400,4 +403,137 @@ public class Procesos_almacenados {
 
     }
 
+    public List<Resultado> Pacientes(Pacientes modelPaciente, int operacion, String textoBusqueda) {
+        {
+            Connection conn = null;
+            PreparedStatement ps = null;
+            List<Resultado> resultados = new ArrayList<>();
+
+            try {
+                conn = ConnectionSQL.getConexion();
+
+                switch (operacion) {
+                    case 1:
+                        ps = conn.prepareStatement("SELECT IdPaciente, nombre, apellido FROM TbPacientes WHERE nombre LIKE ?;");
+                        ps.setString(1, "%" + textoBusqueda + "%");
+                        ResultSet rs = ps.executeQuery();
+                        System.out.println("%" + textoBusqueda + "%");
+                        while (rs.next()) {
+                            int id = rs.getInt("IdPaciente");
+                            String nombre = rs.getString("nombre");
+                            String apellido = rs.getString("apellido");
+
+                            // Crea un objeto Resultado y agrégalo a la lista de resultados
+                            Resultado resultado = new Resultado(id, nombre, apellido);
+                            resultados.add(resultado);
+                        }
+
+                        break;
+
+                    case 2: // 2 para select
+
+                        break;
+
+                    default:
+                        // Manejar un caso no válido
+                        JOptionPane.showMessageDialog(null, "Operación no válida: " + operacion, "Error", JOptionPane.ERROR_MESSAGE);
+                        break;
+                }
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error: J009UI", "Error inesperado, cierre sesión y vuelva a abrir sesión", JOptionPane.ERROR_MESSAGE);
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (ps != null) {
+                        ps.close();
+                    }
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            return resultados;
+        }
+
+    }
+
+    public int viewpaciente(Pacientes modelpaciente, Usuarios modelousuarios, Contactos modelContactos, int operacion) {
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+
+        try {
+            conn = ConnectionSQL.getConexion();
+
+            switch (operacion) {
+                case 1: // 1 para recibir
+                    try (
+                    CallableStatement cs = conn.prepareCall("{CALL PDinforPacienteview(?, ?, ?, ?, ?, ?)}")) {
+
+                    cs.setInt(1, modelpaciente.getIDpaciente());
+                    cs.registerOutParameter(2, java.sql.Types.VARCHAR);
+                    cs.registerOutParameter(3, java.sql.Types.DATE);
+                    cs.registerOutParameter(4, java.sql.Types.VARCHAR);
+                    cs.registerOutParameter(5, java.sql.Types.VARBINARY);
+                    cs.setString(6, modelpaciente.getMensajito()); // Valor para el último parámetro
+
+                    cs.execute();
+
+                    String nombre = cs.getString(2);
+                    Date fechaNacimiento = cs.getDate(3);
+                    String correo = cs.getString(4);
+                    byte[] imagen = cs.getBytes(5);
+
+                    // Haz lo que necesites con los valores obtenidos, como mostrarlos o asignarlos a objetos.
+                    modelpaciente.setNombre(nombre);
+                    modelpaciente.setFnacimiento(fechaNacimiento);
+                    modelContactos.setCorreo(correo);
+                    modelousuarios.setFPerfil(imagen);
+
+                    // La variable 'imagen' contiene la imagen en formato byte[] que puedes usar según tus necesidades.
+                
+                    } catch (Exception e) {
+                    System.out.println("Error #J00DA");
+                    JOptionPane.showMessageDialog(null, "Error inesperado al cargar datos, reinicie su aplicación", "Error: J000DA", JOptionPane.WARNING_MESSAGE );
+
+                }
+                break;
+
+                case 2: // 2 para enviar mensajes
+                    // Realizar la consulta
+                    System.out.println("No sé que pasa, estamos en el modelo Procesos " + modelpaciente.getIDpaciente() + modelpaciente.getMensajito());
+                    ps = conn.prepareStatement("EXEC PDenviarmensajedeCariño ?, ?");
+                    ps.setInt(1, modelpaciente.getIDpaciente());
+                    ps.setString(2, modelpaciente.getMensajito());
+                    ps.executeUpdate();
+                    break;
+
+                default:
+                    // Manejar un caso no válido
+                    JOptionPane.showMessageDialog(null, "Operación no válida", "Error", JOptionPane.ERROR_MESSAGE);
+                    break;
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: J009UI", "Error inesperado, cierre sesión y vuelva a abrir sesión", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return 0;
+    }
 }
+

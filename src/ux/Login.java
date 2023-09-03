@@ -44,6 +44,7 @@ public class Login implements ActionListener {
     private JP0048_S3_RH panelprimeruso;
     private PanelHistory panelHistory;
     private HabilitarPaneles PanelesManager;
+    private Hints hint;
     private JF_000_S7_GU vista;
 
     public void enableLoginPanel() {
@@ -53,7 +54,7 @@ public class Login implements ActionListener {
     public Login(Usuarios modelUsers, JPanel JPContenido, Procesos_almacenados Procesos,
             JP001_S1_AFP panelRegistro, PanelHistory panelHistory, HabilitarPaneles PanelesManager, JF_000_S7_GU vista,
             JP0048_S3_RH panelprimeruso, Genero modelGenero, Contactos modelContactos, ActividadesLaborales modelActivty,
-            Administrador modelAdmin) {
+            Administrador modelAdmin, Hints hint) {
         this.modelUsers = modelUsers;
         this.JPContenido = JPContenido;
         this.Procesos = Procesos;
@@ -66,10 +67,13 @@ public class Login implements ActionListener {
         this.modelActivty = modelActivty;
         this.modelAdmin = modelAdmin;
         this.vista = vista;
+        this.hint = hint;
 
         this.panelRegistro.getBtn2_JF001_S1_AF().addActionListener(this);
         this.panelRegistro.getbtn3_JF001_S1_AF().addActionListener(this);
         this.panelRegistro.getbtn4_JF001_S1_AF().addActionListener(this);
+        hint.addHint(panelRegistro.getTxtUsuario_JF001_S1_AF(), "Ingrese su usuario");
+        
     }
 
     @Override
@@ -113,6 +117,9 @@ public class Login implements ActionListener {
             int Acceso = modelUsers.getAcceso();
             int Nivel = modelUsers.getResultado();
             int Primeruso = modelUsers.getPrimerUso();
+            System.out.println("login: " + Acceso);
+            System.out.println("login: " + Nivel);
+            System.out.println("login: " + Primeruso);
             if (Acceso == 1) {
                 switch (Nivel) {
                     case 1:
@@ -134,29 +141,33 @@ public class Login implements ActionListener {
                         } else {
                             PanelesManager.copiaPanel("JP001_S1_AFP");
                             JPContenido.remove(panelRegistro);
-                            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
+                            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
                         }
                         break;
                     case 3:
                         if (Primeruso == 1) {
+                            System.out.println("Entra al primer uso de terapeuta");
                             PanelesManager.copiaPanel("JP001_S1_AFP");
                             JPContenido.remove(panelRegistro);
                             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPrimerUso");
                         } else {
+                            System.out.println("Entra al que abre el menu terapeuta");
                             PanelesManager.copiaPanel("JP001_S1_AFP");
                             JPContenido.remove(panelRegistro);
-                            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
+                            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
                         }
                         break;
                     default:
                         JOptionPane.showMessageDialog(null, "Tu usuario es de tipo paciente, usa la aplicación de móvil para acceder a él por favor", "Usuario inválido", JOptionPane.INFORMATION_MESSAGE);
                         break;
                 }
+                
                 JPContenido.revalidate();
                 JPContenido.repaint();
                 PanelesManager.restaurarPanelEliminado();
             } else {
-                JOptionPane.showMessageDialog(null, "Se sugiere visitar la página donde se explica a detalle cada error que puede experimentar usted como usuario", "ERROR JF001DA", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Usuario no encontrado, compruebe el usuario y la contraseña de nuevo", "ERROR JF001DA", JOptionPane.INFORMATION_MESSAGE);
+                
             }
         } else if (e.getSource() == panelRegistro.getbtn3_JF001_S1_AF()) {
 
