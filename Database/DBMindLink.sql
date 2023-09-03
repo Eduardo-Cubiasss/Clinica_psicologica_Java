@@ -158,7 +158,8 @@ IDUsuario int
 );
 ALTER TABLE TbAdministrador
 add IDActividadLaboral int;
-
+ALTER TABLE TbPacientes
+add MensajesDeCariño VARCHAR(300);
 
 Create Table TbPacientes(
 IDPaciente int identity(1,1) primary key,
