@@ -86,15 +86,15 @@ public class JP023_S3_RH extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         btn09_JF023_S3_RH = new javax.swing.JButton();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 153, 153));
         kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 255));

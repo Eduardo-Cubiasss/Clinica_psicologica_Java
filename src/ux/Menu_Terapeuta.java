@@ -58,6 +58,12 @@ public class Menu_Terapeuta implements ActionListener{
             PanelesManager.restaurarPanelEliminado();
         } else if (e.getSource() == panel.btn05_JF023_S3_RH) {
             // Código para la acción del botón de mi perfil
+            PanelesManager.copiaPanel("JP023_S3_RH");
+            JPContenido.remove(panel);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelDetallesDeMiPerfil");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
         } else if (e.getSource() == panel.btn06_JF023_S3_RH) {
             // Código para la acción del botón Solicitud de incapacidades
         } else if (e.getSource() == panel.btn07_JF023_S3_RH) {

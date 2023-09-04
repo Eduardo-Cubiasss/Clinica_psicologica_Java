@@ -5,18 +5,31 @@
  */
 package ux;
 
+import Ui.JP035_1_S3_RH;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 /**
  *
  * @author LENOVO
  */
-public class VisualizarNotas {
+public class VisualizarNotas implements ActionListener{
     private JPanel JPContenido;
+    private JP035_1_S3_RH vista35;
     
     public VisualizarNotas(JPanel JPContenido)
     {
         this.JPContenido = JPContenido;
+        this.vista35 = vista35;
+        
+        this.vista35.Btn1_JF035_S3_RH.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
     }
     
 }
+

@@ -12,7 +12,7 @@ package Database;
 public class Genero {
     private int IDGenero;
     private int Genero;
-
+    
     public int getIDGenero() {
         return IDGenero;
     }

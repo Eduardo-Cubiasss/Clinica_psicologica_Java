@@ -8,8 +8,12 @@ package Ui;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import ux.Hints;
+import ux.LimiteCaracteres;
 import ux.PanelesInicializador;
 import ux.RegAdmin_JF002;
+import ux.Validaciones;
+
 
 /**
  *
@@ -20,6 +24,8 @@ public class JP002_S1_RHP extends javax.swing.JPanel {
     private RegAdmin_JF002 controlador;
     private JP002_S1_RHP panel;
     private PanelesInicializador str;
+    private Hints hint;
+    private LimiteCaracteres Limite;
     
     public JTextField getTxtNombre_JF002_S1_RH() {
         return TxtNombre_JF002_S1_RH;
@@ -55,12 +61,34 @@ public class JP002_S1_RHP extends javax.swing.JPanel {
      * Creates new form JP002_S1_RHP
      */
     public JP002_S1_RHP (RegAdmin_JF002 controlador) {
+        
         this.controlador = controlador;
-         str = new PanelesInicializador();
         initComponents();
+        LimiteCaracteres limiteNombre = new LimiteCaracteres(TxtNombre_JF002_S1_RH, 0, 25);
+        new Validaciones(TxtNombre_JF002_S1_RH, "SoloLetras");
+        hint.addHint(TxtNombre_JF002_S1_RH, "Ingrese su nombre");
+
+       // LimiteCaracteres limiteUsuario = new LimiteCaracteres(TxtUsuario_JF002_S1_RH2, 0, 25);
+        //new Validaciones(getTxtUsuario_JF002_S1_RH2(), "SoloLetras");
+        //hint.addHint(getTxtUsuario_JF002_S1_RH2(), "Ingrese su nombre de usuario");
+
+
+
+        LimiteCaracteres limiteContraseña1 = new LimiteCaracteres(PassField_Contraseña_JF002_S1_RH, 0, 16);
+        hint.addHint(getPassField_Contraseña_JF002_S1_RH(), "Ingrese su contraseña");
+
+        LimiteCaracteres limiteContraseña2 = new LimiteCaracteres(PassField_ConfirmarContra_JF002_S1_RH, 0, 16);
+        hint.addHint(getPassField_ConfirmarContra_JF002_S1_RH(), "Confirme su nueva contraseña");
+
+        LimiteCaracteres limiteID = new LimiteCaracteres(TxtID_JF002_S1_RH3, 0, 5);
+         new Validaciones(getTxtUsuario_JF002_S1_RH2(), "SoloNumeros");
+        hint.addHint(getTxtID_JF002_S1_RH3(), "XXXXX");
+         str = new PanelesInicializador();
+         
+        
         
         // Establecer el valor de str aquí después de haberlo creado
-        str.setJP001_S1_AFP(this);
+        str.setJP002_S1_RHP(this);
     }
 
     /**
@@ -90,16 +118,16 @@ public class JP002_S1_RHP extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         JP001_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_RH.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        JP001_S1_RH.setMaximumSize(new java.awt.Dimension(1120, 540));
-        JP001_S1_RH.setMinimumSize(new java.awt.Dimension(1120, 540));
-        JP001_S1_RH.setPreferredSize(new java.awt.Dimension(1120, 540));
+        JP001_S1_RH.setMaximumSize(new java.awt.Dimension(1120, 640));
+        JP001_S1_RH.setMinimumSize(new java.awt.Dimension(1120, 640));
+        JP001_S1_RH.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         TxtNombre_JF002_S1_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         TxtNombre_JF002_S1_RH.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));

@@ -38,10 +38,6 @@ public class JP008_S2_AF extends javax.swing.JPanel {
    
     
     
-    public JPanel getjPanel2() {
-        return jPanel2;
-    }
-    
     public JButton getBtn001_JF008_S3_AF() {
         return Btn001_JF008_S3_AF;
     }
@@ -84,7 +80,6 @@ public class JP008_S2_AF extends javax.swing.JPanel {
         Btn005_JF008_S3_AF = new javax.swing.JButton();
         Btn006_JF008_S3_AF = new javax.swing.JButton();
         Btn007_JF008_S3_AF = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
 
         setMaximumSize(new java.awt.Dimension(1120, 540));
         setMinimumSize(new java.awt.Dimension(1120, 540));
@@ -129,26 +124,29 @@ public class JP008_S2_AF extends javax.swing.JPanel {
         Btn001_JF008_S3_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(Btn001_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        Btn004_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/admin.PNG"))); // NOI18N
-        jPanel1.add(Btn004_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 520, 220, 70));
+        Btn004_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ptm.png"))); // NOI18N
+        jPanel1.add(Btn004_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 270, 150, 170));
 
         Btn005_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actuuu.PNG"))); // NOI18N
         jPanel1.add(Btn005_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 210, 60));
 
-        Btn006_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ei.PNG"))); // NOI18N
-        jPanel1.add(Btn006_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 540, 190, 50));
+        Btn006_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plisya.png"))); // NOI18N
+        Btn006_JF008_S3_AF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn006_JF008_S3_AFActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Btn006_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 150, 170));
 
         Btn007_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aggg.PNG"))); // NOI18N
-        jPanel1.add(Btn007_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 540, 200, 50));
-
-        jPanel2.setMaximumSize(new java.awt.Dimension(1100, 540));
-        jPanel2.setMinimumSize(new java.awt.Dimension(1100, 540));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1100, 540));
-        jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.LINE_AXIS));
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 930, 310));
+        jPanel1.add(Btn007_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 540, 200, 50));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Btn006_JF008_S3_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn006_JF008_S3_AFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn006_JF008_S3_AFActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -160,7 +158,6 @@ public class JP008_S2_AF extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }

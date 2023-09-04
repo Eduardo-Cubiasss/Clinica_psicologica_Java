@@ -10,6 +10,8 @@ import javax.swing.JTextField;
 import ux.RecGmail;
 import ux.PanelesInicializador;
 import Ui.JP003_2_S1_RH;
+import ux.Hints;
+import ux.LimiteCaracteres;
 
 /**
  *
@@ -20,6 +22,8 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
     private JP003_2_S1_RH panel;
     private RecGmail controlador;
     private PanelesInicializador str;
+    private Hints hint;
+    private LimiteCaracteres Limite;
     public JTextField getTxtCodigoCorreo_JF003_2_S1_RH2()
     {
         return TxtCodigoCorreo_JF003_2_S1_RH2;
@@ -44,9 +48,14 @@ public class JP003_2_S1_RH extends javax.swing.JPanel {
      * Creates new form JP003_2_S1_RH
      */
     public JP003_2_S1_RH(RecGmail controlador) {
+        str = new PanelesInicializador();
         this.controlador = controlador;
-         str = new PanelesInicializador();
         initComponents();
+        LimiteCaracteres limiteCodigoCorreo = new LimiteCaracteres(TxtCodigoCorreo_JF003_2_S1_RH2, 0, 50);
+        hint.addHint(getTxtCodigoCorreo_JF003_2_S1_RH2(), "Ingresa el código enviado al correo asociado");
+
+       
+        
         
         // Establecer el valor de str aquí después de haberlo creado
         str.setJP003_2_S1_RH(this);

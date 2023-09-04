@@ -80,15 +80,17 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         JP001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_AF.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         JP001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        JP001_S1_AF.setMaximumSize(new java.awt.Dimension(1120, 540));
-        JP001_S1_AF.setMinimumSize(new java.awt.Dimension(1120, 540));
-        JP001_S1_AF.setPreferredSize(new java.awt.Dimension(1120, 540));
+        JP001_S1_AF.setMaximumSize(new java.awt.Dimension(1120, 640));
+        JP001_S1_AF.setMinimumSize(new java.awt.Dimension(1120, 640));
+        JP001_S1_AF.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         TxtUsuario_JF001_S1_AF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         TxtUsuario_JF001_S1_AF.setForeground(new java.awt.Color(204, 204, 204));
@@ -253,7 +255,7 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
             .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 

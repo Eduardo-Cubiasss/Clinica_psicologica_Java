@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import ux.ExpedienteDelPaciente;
+import ux.Hints;
+import ux.LimiteCaracteres;
 import ux.MBEliminarArticulo;
 import ux.PanelesInicializador;
 import ux.Ver_Expediente;
@@ -22,9 +24,13 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
 
     private ExpedienteDelPaciente controlador;
     private PanelesInicializador str;
-
+    private Hints hint;
+    private LimiteCaracteres Limite;
+    
     public JP031_S3_RHG(ExpedienteDelPaciente controlador) {
         initComponents();
+          LimiteCaracteres limiteDescripcion = new LimiteCaracteres(txtEscribirMensaje_JP031_S3_RH, 0, 300);
+        hint.addHint(txtEscribirMensaje_JP031_S3_RH, "Escribir mensaje");
         this.controlador = controlador;
 
         str = new PanelesInicializador();
@@ -122,6 +128,8 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
         JL_Correo_JF031_S3_RH = new javax.swing.JLabel();
         txtEscribirMensaje_JP031_S3_RH = new javax.swing.JTextField();
         btn01_JP031_S3_RH = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         Btn4_JF031_S3_RH = new javax.swing.JButton();
         Btn2_JF031_S3_RH1 = new javax.swing.JButton();
         Btn3_JF031_S3_RH2 = new javax.swing.JButton();
@@ -159,32 +167,33 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
 
         JL_Nombre_JF031_S3_RH.setBackground(new java.awt.Color(0, 0, 0));
         JL_Nombre_JF031_S3_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        JL_Nombre_JF031_S3_RH.setForeground(new java.awt.Color(0, 0, 0));
         JL_Nombre_JF031_S3_RH.setText("Nombre Persona");
 
         JL_image_JF031_S3_RH.setBackground(new java.awt.Color(0, 0, 0));
-        JL_image_JF031_S3_RH.setForeground(new java.awt.Color(0, 0, 0));
         JL_image_JF031_S3_RH.setText("image");
 
-        JL_Edad_JF031_S3_RH.setBackground(new java.awt.Color(0, 0, 0));
-        JL_Edad_JF031_S3_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        JL_Edad_JF031_S3_RH.setForeground(new java.awt.Color(0, 0, 0));
-        JL_Edad_JF031_S3_RH.setText("Edad:");
+        JL_Edad_JF031_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
+        JL_Edad_JF031_S3_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        JL_Edad_JF031_S3_RH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        JL_Correo_JF031_S3_RH.setBackground(new java.awt.Color(0, 0, 0));
-        JL_Correo_JF031_S3_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        JL_Correo_JF031_S3_RH.setForeground(new java.awt.Color(0, 0, 0));
-        JL_Correo_JF031_S3_RH.setText("Correo electrónico:");
+        JL_Correo_JF031_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
+        JL_Correo_JF031_S3_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        JL_Correo_JF031_S3_RH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         txtEscribirMensaje_JP031_S3_RH.setBackground(new java.awt.Color(148, 177, 181));
         txtEscribirMensaje_JP031_S3_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         txtEscribirMensaje_JP031_S3_RH.setForeground(new java.awt.Color(255, 255, 255));
-        txtEscribirMensaje_JP031_S3_RH.setText("Escribir mensaje");
 
         btn01_JP031_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn01_JP031_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/corazao.png"))); // NOI18N
         btn01_JP031_S3_RH.setBorderPainted(false);
         btn01_JP031_S3_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel2.setText("Edad");
+
+        jLabel3.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel3.setText("Correo Electrónico");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -199,34 +208,43 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
                         .addGap(68, 68, 68)
                         .addComponent(JL_Nombre_JF031_S3_RH)))
                 .addGap(49, 49, 49)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(txtEscribirMensaje_JP031_S3_RH, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn01_JP031_S3_RH)
                         .addGap(7, 7, 7))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(JL_Edad_JF031_S3_RH, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JL_Correo_JF031_S3_RH, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(JL_Correo_JF031_S3_RH, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
+                            .addComponent(jLabel3)
+                            .addComponent(JL_Edad_JF031_S3_RH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(JL_Nombre_JF031_S3_RH)
-                    .addComponent(JL_Edad_JF031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel2)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(JL_Nombre_JF031_S3_RH))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(JL_Edad_JF031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(JL_image_JF031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(59, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(JL_Correo_JF031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEscribirMensaje_JP031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -249,6 +267,11 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
         Btn2_JF031_S3_RH1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnAgenda.png"))); // NOI18N
         Btn2_JF031_S3_RH1.setBorderPainted(false);
         Btn2_JF031_S3_RH1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btn2_JF031_S3_RH1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn2_JF031_S3_RH1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(Btn2_JF031_S3_RH1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 150, 100));
 
         Btn3_JF031_S3_RH2.setBackground(new java.awt.Color(255, 255, 255));
@@ -259,6 +282,10 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Btn2_JF031_S3_RH1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn2_JF031_S3_RH1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn2_JF031_S3_RH1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -273,6 +300,8 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
     public javax.swing.JPanel JP01_JF031_S3_RH;
     public javax.swing.JButton btn01_JP031_S3_RH;
     public javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     public javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

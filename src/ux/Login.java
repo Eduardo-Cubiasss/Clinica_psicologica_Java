@@ -15,6 +15,7 @@ import Ui.JF_000_S7_GU;
 import Ui.JP001_S1_AFP;
 import Ui.JP002_S1_RHP;
 import Ui.JP0048_S3_RH;
+import Ui.JP025_S3_RH;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -46,6 +47,7 @@ public class Login implements ActionListener {
     private HabilitarPaneles PanelesManager;
     private Hints hint;
     private JF_000_S7_GU vista;
+    private JP025_S3_RH panelacercademi;
 
     public void enableLoginPanel() {
         panelRegistro.setEnabled(true);
@@ -54,7 +56,7 @@ public class Login implements ActionListener {
     public Login(Usuarios modelUsers, JPanel JPContenido, Procesos_almacenados Procesos,
             JP001_S1_AFP panelRegistro, PanelHistory panelHistory, HabilitarPaneles PanelesManager, JF_000_S7_GU vista,
             JP0048_S3_RH panelprimeruso, Genero modelGenero, Contactos modelContactos, ActividadesLaborales modelActivty,
-            Administrador modelAdmin, Hints hint) {
+            Administrador modelAdmin, Hints hint, JP025_S3_RH panelacercademi) {
         this.modelUsers = modelUsers;
         this.JPContenido = JPContenido;
         this.Procesos = Procesos;
@@ -68,6 +70,7 @@ public class Login implements ActionListener {
         this.modelAdmin = modelAdmin;
         this.vista = vista;
         this.hint = hint;
+        this.panelacercademi = panelacercademi;
 
         this.panelRegistro.getBtn2_JF001_S1_AF().addActionListener(this);
         this.panelRegistro.getbtn3_JF001_S1_AF().addActionListener(this);
@@ -87,7 +90,9 @@ public class Login implements ActionListener {
             Procesos.CRUDprimeruso(modelUsers, modelContactos, modelActivty, modelGenero, 1, modelAdmin);
             ///Aqui Acaban
             Procesos.PrimerUso(modelUsers, caso);
+          // Procesos.Acercademi(modelUsers, 1);
             //Aqui van los setters
+           // this.panelacercademi.setTxtDescrip_JF025_S3_RH(modelUsers.getDescripcion());
             this.panelprimeruso.setTxtCorreoElectronico_jp0048_RH(modelContactos.getCorreo());
             this.panelprimeruso.setTxtActiLabo_JP0048(modelActivty.getActiviadadLaboral());
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");

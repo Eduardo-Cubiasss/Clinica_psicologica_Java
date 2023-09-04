@@ -5,6 +5,9 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JSlider;
 import ux.PanelesInicializador;
 import ux.VisualizarNotas;
 
@@ -19,6 +22,31 @@ public class JP035_1_S3_RH extends javax.swing.JPanel {
      */
     private VisualizarNotas controlador;
     private PanelesInicializador str;
+
+    public JButton getBtn1_JF035_S3_RH() {
+        return Btn1_JF035_S3_RH;
+    }
+
+    public void setBtn1_JF035_S3_RH(JButton Btn1_JF035_S3_RH) {
+        this.Btn1_JF035_S3_RH = Btn1_JF035_S3_RH;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JSlider getjSlider1() {
+        return jSlider1;
+    }
+
+    public void setjSlider1(JSlider jSlider1) {
+        this.jSlider1 = jSlider1;
+    }
+    
     
     public JP035_1_S3_RH(VisualizarNotas controlador) {
         initComponents();

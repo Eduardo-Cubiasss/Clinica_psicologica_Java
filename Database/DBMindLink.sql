@@ -428,7 +428,7 @@ END
 
 EXEC PDRegistrarAdmin 'Eduardo René', 'Guayito', 'Contraseña', '52281'
 EXEC PDRegistrarAdmin 'Orlando', 'Pepito', 'Contraseña', '52281'
-EXEC PDRegistrarAdmin 'primeruso', 'pepeto', 'Contraseña', '07101'
+EXEC PDRegistrarAdmin 'Brian', 'Bryan', 'Contraseña', '001291'
 /* esto es para comprobar que el PDResgistrarAdmin funciona jejeje
 Drop Procedure PDRegistrarAdmin
 
@@ -1188,6 +1188,98 @@ BEGIN
 	END
 END
 
+
+ALTER PROCEDURE PDDetallesperfil
+    @Descripcion VARCHAR(350),
+    @Username VARCHAR(100)
+AS
+BEGIN
+    DECLARE @IDUser INT;
+
+    -- Obtener el IDUsuario correspondiente al UserName
+    SET @IDUser = (SELECT TOP 1 IDUsuario FROM TbUsuarios WHERE UserName = @Username);
+
+    -- Verificar si @Descripcion no es nulo ni una cadena vacía antes de realizar la actualización
+    IF @Descripcion IS NOT NULL AND LTRIM(RTRIM(@Descripcion)) != ''
+    BEGIN
+        -- Actualizar la descripción del usuario
+        UPDATE TbUsuarios SET Descripcion = @Descripcion WHERE IDUsuario = @IDUser;
+    END
+END
+
+
+-- Crear el procedimiento almacenado
+CREATE PROCEDURE PDCambiarContraseña
+    @Username VARCHAR(50),
+    @contraseña VARCHAR(90),
+    @nueva_contraseña VARCHAR(90)
+AS
+BEGIN
+    DECLARE @IDUsuario INT;
+    DECLARE @ContraseñaActual VARBINARY(64);
+
+    -- Obtener el IDUsuario basado en el Username
+    SET @IDUsuario = (SELECT TOP 1 IDUsuario FROM TbUsuarios WHERE UserName = @Username);
+
+    -- Obtener la contraseña actual almacenada en la base de datos para el usuario
+    SET @ContraseñaActual = (SELECT TOP 1 Contraseña FROM TbUsuarios WHERE IDUsuario = @IDUsuario);
+
+    -- Validar si la contraseña actual coincide con la contraseña ingresada
+    IF HASHBYTES('SHA2_256', HASHBYTES('SHA2_256', @contraseña)) = @ContraseñaActual
+    BEGIN
+        -- Encriptar la nueva contraseña dos veces
+        DECLARE @HashNuevaContraseña VARBINARY(64);
+        SET @HashNuevaContraseña = HASHBYTES('SHA2_256', HASHBYTES('SHA2_256', @nueva_contraseña));
+
+        -- Actualizar la contraseña del usuario en la base de datos
+        UPDATE TbUsuarios
+        SET Contraseña = @HashNuevaContraseña
+        WHERE IDUsuario = @IDUsuario;
+
+        PRINT 'Contraseña actualizada con éxito.';
+    END
+    ELSE
+    BEGIN
+        PRINT 'Contraseña actual incorrecta. No se pudo actualizar la contraseña.';
+    END
+END
+
+EXEC PDCambiarContraseña 'dikei', '12345', 'Contraseña'
+
+SELECT Contraseña, UserName FROM TbUsuarios;
+ALTER TABLE TbUsuarios
+ADD Descripcion VARCHAR(350);
+
+ALTER PROCEDURE PDClinicainfo
+	@Username VArchar(300),
+	@Descripcion VARCHAR(300),
+	@nombre VARCHAR (100),
+	@ubicacion VARCHAR(max)
+AS
+BEGIN
+	DECLARE @IDUsuario INT;
+	DECLARE @IDClinica VARCHAR(5);
+	DECLARE @IDAdmin INT;
+	 SET @IDUsuario = (SELECT TOP 1 IDUsuario FROM TbUsuarios WHERE UserName = @Username);
+	 SET @IDAdmin = (SELECT TOP 1 IDAdministrador FROM TbAdministrador WHERE IDUsuario = @IDUsuario);
+	 SET @IDClinica =(SELECT TOP 1  IDClinica FROM TbAdministrador WHERE IDAdministrador = @IDAdmin);
+
+	 IF @Descripcion IS NOT NULL AND @Descripcion!= '' AND @Descripcion!= ' '
+    BEGIN
+       UPDATE TbClinicas SET Descripcion = @Descripcion WHERE IDClinica = @IDClinica;
+    END
+	IF @nombre IS NOT NULL AND @nombre!= '' AND @nombre!= ' '
+    BEGIN
+       UPDATE TbClinicas SET NombreClinica = @nombre WHERE IDClinica = @IDClinica;
+    END
+	IF @ubicacion IS NOT NULL AND @ubicacion!= '' AND @ubicacion!= ' '
+    BEGIN
+       UPDATE TbClinicas SET Ubicacion= @ubicacion WHERE IDClinica = @IDClinica;
+    END
+END
+
+EXEC PDClinicainfo 'Guayito', 'Clinica bien genial y suoper sabrosa', 'Michelines', 'Calle mistral';
+
 CREATE VIEW VistaNota
 AS
 SELECT Contenido, Fecha, IDPaciente
@@ -1263,4 +1355,6 @@ SELECT * FROM VistaPacientes;
 --Esto es para seleccionar la vista:
 --SELECT * FROM VistaUsuarios
 -- DROP VIEW VistaUsuarios
-
+SELECT * FROM TbUsuarios;
+Select * from TbAdministrador;
+SELECT * FROM TbTerapeutas;

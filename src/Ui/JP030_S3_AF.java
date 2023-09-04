@@ -6,25 +6,36 @@
 package Ui;
 
 import ux.ActualizarArticulo;
+import ux.Hints;
+import ux.LimiteCaracteres;
 import ux.PanelesInicializador;
+
 
 /**
  *
  * @author LENOVO
  */
+import ux.Validaciones;
 public class JP030_S3_AF extends javax.swing.JPanel {
 
-  
+  private Hints hint;
+    private LimiteCaracteres Limite;
     private ActualizarArticulo controlador;
     private PanelesInicializador str;
 
     public JP030_S3_AF(ActualizarArticulo controlador) {
-        initComponents();
-        this.controlador = controlador;
         
+        this.controlador = controlador;
+        initComponents();
         str = new PanelesInicializador();
         
-         // Establecer el valor de str aquí después de haberlo creado
+        LimiteCaracteres limiteDescripcion = new LimiteCaracteres(txtDescripcion_JP030_S3_AF, 0, 300);
+        new Validaciones(txtDescripcion_JP030_S3_AF, "SoloLetras");
+        hint.addHint(txtDescripcion_JP030_S3_AF, "Agregue una breve descripción del artículo");
+
+        LimiteCaracteres limiteTitulo = new LimiteCaracteres(TxtTitulo, 0, 35);
+        new Validaciones(TxtTitulo, "SoloLetras");
+        hint.addHint(TxtTitulo, "Agregue un título");
         str.setJP030_S3_AF(this);
     }
     
@@ -45,14 +56,14 @@ public class JP030_S3_AF extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         Btn3_JF028_S3_AF = new javax.swing.JButton();
         Btn2_JF028_S3_AF = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        txtDescripcion_JP030_S3_AF = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         Btn4_JF028_S3_AF = new javax.swing.JButton();
         Btn5_JF028_S3_AF = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         Btn1_JF028_S3_AF = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jTextField3 = new javax.swing.JTextField();
+        TxtTitulo = new javax.swing.JTextField();
 
         setMaximumSize(new java.awt.Dimension(1120, 540));
         setMinimumSize(new java.awt.Dimension(1120, 540));
@@ -74,8 +85,8 @@ public class JP030_S3_AF extends javax.swing.JPanel {
         Btn2_JF028_S3_AF.setBorderPainted(false);
         Btn2_JF028_S3_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jTextField1.setBackground(new java.awt.Color(246, 246, 246));
-        jTextField1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        txtDescripcion_JP030_S3_AF.setBackground(new java.awt.Color(246, 246, 246));
+        txtDescripcion_JP030_S3_AF.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -117,8 +128,13 @@ public class JP030_S3_AF extends javax.swing.JPanel {
             .addGap(0, 32, Short.MAX_VALUE)
         );
 
-        jTextField3.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jTextField3.setText("¿Cómo evitar ataques de ansiedad?");
+        TxtTitulo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        TxtTitulo.setText("¿Cómo evitar ataques de ansiedad?");
+        TxtTitulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtTituloActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -132,11 +148,10 @@ public class JP030_S3_AF extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(22, 22, 22)
-                                .addComponent(Btn1_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(Btn1_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(TxtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Btn3_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(146, 146, 146)
@@ -147,7 +162,7 @@ public class JP030_S3_AF extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtDescripcion_JP030_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(103, 103, 103))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(Btn2_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -167,7 +182,7 @@ public class JP030_S3_AF extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(Btn1_JF028_S3_AF)
                         .addGap(9, 9, 9)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TxtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Btn5_JF028_S3_AF))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -177,7 +192,7 @@ public class JP030_S3_AF extends javax.swing.JPanel {
                         .addGap(50, 50, 50)
                         .addComponent(Btn2_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtDescripcion_JP030_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(Btn4_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
@@ -187,6 +202,10 @@ public class JP030_S3_AF extends javax.swing.JPanel {
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
+    private void TxtTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTituloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtTituloActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton Btn1_JF028_S3_AF;
@@ -194,11 +213,11 @@ public class JP030_S3_AF extends javax.swing.JPanel {
     public javax.swing.JButton Btn3_JF028_S3_AF;
     public javax.swing.JButton Btn4_JF028_S3_AF;
     public javax.swing.JButton Btn5_JF028_S3_AF;
+    public javax.swing.JTextField TxtTitulo;
     public javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
     public javax.swing.JPanel jPanel3;
-    public javax.swing.JTextField jTextField1;
-    public javax.swing.JTextField jTextField3;
+    public javax.swing.JTextField txtDescripcion_JP030_S3_AF;
     // End of variables declaration//GEN-END:variables
 }

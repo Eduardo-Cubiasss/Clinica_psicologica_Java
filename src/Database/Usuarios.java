@@ -17,8 +17,28 @@ public class Usuarios {
     private int PrimerUso;
     private int IDContacto;
     private int acceso;
+    private String contrafake;
     private int resultado;
+    private String Descripcion;
 
+    public String getDescripcion() {
+        return Descripcion;
+    }
+
+    public void setDescripcion(String Descripcion) {
+        this.Descripcion = Descripcion;
+    }
+    
+
+    public String getContrafake() {
+        return contrafake;
+    }
+
+    public void setContrafake(String contrafake) {
+        this.contrafake = contrafake;
+    }
+
+    
     public int getPrimerUso() {
         return PrimerUso;
     }

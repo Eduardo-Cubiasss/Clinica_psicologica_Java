@@ -6,8 +6,11 @@
 package Ui;
 
 import ux.ExpedienteDelPaciente;
+import ux.Hints;
+import ux.LimiteCaracteres;
 import ux.PanelesInicializador;
 import ux.RedactarMensaje;
+
 
 /**
  *
@@ -19,10 +22,18 @@ public class JP032_S3_AF extends javax.swing.JPanel {
     
     private RedactarMensaje controlador;
     private PanelesInicializador str;
+    private Hints hint;
+    private LimiteCaracteres Limite;
 
     public JP032_S3_AF(RedactarMensaje controlador) {
-        initComponents();
         this.controlador = controlador;
+        initComponents();
+         LimiteCaracteres limiteDescripcion = new LimiteCaracteres(TxtDescrip, 0, 350);
+        hint.addHint(TxtDescrip, "Agregue su mensaje");
+
+         LimiteCaracteres limiteAsunto = new LimiteCaracteres(TxtAsunto, 0, 60);
+        hint.addHint(TxtAsunto, "Agregue el asunto de su mensaje");
+        
         
         str = new PanelesInicializador();
         
@@ -50,8 +61,8 @@ public class JP032_S3_AF extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        TxtDescrip = new javax.swing.JTextField();
+        TxtAsunto = new javax.swing.JTextField();
 
         setMaximumSize(new java.awt.Dimension(1120, 540));
         setMinimumSize(new java.awt.Dimension(1120, 540));
@@ -88,12 +99,17 @@ public class JP032_S3_AF extends javax.swing.JPanel {
         jLabel1.setText("Redactar Mensaje");
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/env.PNG"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jTextField1.setBackground(new java.awt.Color(246, 246, 246));
+        TxtDescrip.setBackground(new java.awt.Color(246, 246, 246));
 
-        jTextField2.setBackground(new java.awt.Color(246, 246, 246));
-        jTextField2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jTextField2.setText("Asunto");
+        TxtAsunto.setBackground(new java.awt.Color(246, 246, 246));
+        TxtAsunto.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        TxtAsunto.setText("Asunto");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -113,8 +129,8 @@ public class JP032_S3_AF extends javax.swing.JPanel {
                         .addGap(125, 125, 125)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TxtDescrip, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtAsunto, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 115, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -128,9 +144,9 @@ public class JP032_S3_AF extends javax.swing.JPanel {
                         .addComponent(jLabel1)
                         .addComponent(Btn1_JF028_S3_AF)))
                 .addGap(57, 57, 57)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TxtAsunto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                .addComponent(TxtDescrip, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
@@ -140,15 +156,19 @@ public class JP032_S3_AF extends javax.swing.JPanel {
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton Btn1_JF028_S3_AF;
+    public javax.swing.JTextField TxtAsunto;
+    public javax.swing.JTextField TxtDescrip;
     public javax.swing.JButton jButton1;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
-    public javax.swing.JTextField jTextField1;
-    public javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

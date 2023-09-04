@@ -41,7 +41,7 @@ public class BuscadorPacientes implements ActionListener {
     private Contactos modelContacto;
     private JP031_S3_RHG vistaJP031;
 
-    public BuscadorPacientes(JPanel JPContenido, Pacientes modelPacientes, JP024_S3_AF vistaJP024, HabilitarPaneles PanelesManager, Procesos_almacenados procesos, 
+    public BuscadorPacientes(JPanel JPContenido, Pacientes modelPacientes, JP024_S3_AF vistaJP024, HabilitarPaneles PanelesManager, Procesos_almacenados procesos,
             Resultado resultado, Usuarios modelUsuers, Contactos modelContacto, JP031_S3_RHG vistaJP031) {
         this.JPContenido = JPContenido;
         this.modelPacientes = modelPacientes;
@@ -52,7 +52,7 @@ public class BuscadorPacientes implements ActionListener {
         this.modelUsuers = modelUsuers;
         this.modelContacto = modelContacto;
         this.vistaJP031 = vistaJP031;
-        
+
         this.vistaJP024.getBtn1_JF024().addActionListener(this);
         this.vistaJP024.getBtn3_JF024().addActionListener(this);
         this.vistaJP024.getBtnVer().addActionListener(this);
@@ -88,26 +88,31 @@ public class BuscadorPacientes implements ActionListener {
                 System.out.println(textoBusqueda);
                 actualizarTablaConResultadosDeBusqueda(textoBusqueda);
             } else {
-                JOptionPane.showMessageDialog(null, "El JTextField de búsqueda esta vacío.", "Advertencia", JOptionPane.INFORMATION_MESSAGE );
+                JOptionPane.showMessageDialog(null, "El JTextField de búsqueda esta vacío.", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
                 // Puedes realizar otras acciones apropiadas aquí si es necesario
             }
         } else if (e.getSource() == vistaJP024.getBtnVer()) {
-            procesos.viewpaciente(modelPacientes, modelUsuers, modelContacto, 1);
-            vistaJP031.setJL_Correo_JF031_S3_RH(modelContacto.getCorreo());
-            vistaJP031.setJL_Edad_JF031_S3_RH(modelPacientes.getFnacimiento().toString());
-            vistaJP031.setJL_Nombre_JF031_S3_RH(modelPacientes.getNombre());
-            PanelesManager.copiaPanel("JP024_S3_AF");
-            JPContenido.remove(vistaJP024);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelExpedienteDelPaciente");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            try {
+                procesos.viewpaciente(modelPacientes, modelUsuers, modelContacto, 1);
+                vistaJP031.setJL_Correo_JF031_S3_RH(modelContacto.getCorreo());
+                vistaJP031.setJL_Edad_JF031_S3_RH(modelPacientes.getFnacimiento().toString());
+                vistaJP031.setJL_Nombre_JF031_S3_RH(modelPacientes.getNombre());
+                PanelesManager.copiaPanel("JP024_S3_AF");
+                JPContenido.remove(vistaJP024);
+                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelExpedienteDelPaciente");
+                JPContenido.revalidate();
+                JPContenido.repaint();
+                PanelesManager.restaurarPanelEliminado();
+            } catch (Exception ex) {
+                // Captura la excepción y muestra un mensaje de error
+                JOptionPane.showMessageDialog(null, "Error al ver el expediente del paciente, seleccione un paciente por favor", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
+            }
         }
     }
 
     private void actualizarTablaConResultadosDeBusqueda(String textoBusqueda) {
         // Borra todas las filas existentes en el modelo
-       tableModel.setRowCount(0);
+        tableModel.setRowCount(0);
 
         // Aquí debes realizar la consulta a la base de datos
         // y obtener los resultados que coincidan con el texto de búsqueda

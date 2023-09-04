@@ -6,6 +6,7 @@
 package Ui;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -52,8 +53,8 @@ public class JP009_S2_RH extends javax.swing.JPanel {
         return TxtContraseña_JF009_S2_RH;
     }
 
-    public JTextField getTxtTipoUsuario_JF009_S2_RH1() {
-        return TxtTipoUsuario_JF009_S2_RH1;
+    public JComboBox getjComboBox1() {
+        return jComboBox1;
     }
 
     public JLabel getLabelNumGenerado_JF009_S2_RH() {
@@ -107,8 +108,8 @@ public class JP009_S2_RH extends javax.swing.JPanel {
         Btn3_JF009_S2_RH1 = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
-        TxtTipoUsuario_JF009_S2_RH1 = new javax.swing.JTextField();
         LabelNumGenerado_JF009_S2_RH = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setMaximumSize(new java.awt.Dimension(1120, 540));
         setMinimumSize(new java.awt.Dimension(1120, 540));
@@ -192,12 +193,10 @@ public class JP009_S2_RH extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel6.setText("Número de ID generado");
 
-        TxtTipoUsuario_JF009_S2_RH1.setForeground(new java.awt.Color(102, 102, 102));
-        TxtTipoUsuario_JF009_S2_RH1.setText("Insertar tipo de usuario");
-        TxtTipoUsuario_JF009_S2_RH1.setBorder(null);
-
         LabelNumGenerado_JF009_S2_RH.setBackground(new java.awt.Color(153, 153, 153));
         LabelNumGenerado_JF009_S2_RH.setText("Num");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elige", "Secretaria", "Terapeuta", "" }));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -240,8 +239,8 @@ public class JP009_S2_RH extends javax.swing.JPanel {
                     .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(TxtTipoUsuario_JF009_S2_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -288,11 +287,11 @@ public class JP009_S2_RH extends javax.swing.JPanel {
                             .addComponent(TxtContraseña_JF009_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(10, 10, 10)
                         .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel9))
-                            .addComponent(TxtTipoUsuario_JF009_S2_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(7, 7, 7)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -335,7 +334,7 @@ public class JP009_S2_RH extends javax.swing.JPanel {
     public javax.swing.JTextField TxtContraseña_JF009_S2_RH;
     public javax.swing.JTextField TxtCorreoE_JF009_S2_RH;
     public javax.swing.JTextField TxtNombre_JF009_S2_RH;
-    public javax.swing.JTextField TxtTipoUsuario_JF009_S2_RH1;
+    public javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     public javax.swing.JLabel jLabel5;

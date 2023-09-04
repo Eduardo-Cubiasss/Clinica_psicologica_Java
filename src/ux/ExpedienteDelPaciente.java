@@ -12,6 +12,7 @@ import Database.Procesos_almacenados;
 import Database.Usuarios;
 import Ui.JP0048_S3_RH;
 import Ui.JP031_S3_RHG;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
@@ -58,6 +59,12 @@ public class ExpedienteDelPaciente implements ActionListener{
        }
        else if(e.getSource() == vistaJP031.getBtn4_JF031_S3_RH())
        {
+           PanelesManager.copiaPanel("JP024_S3_AF");
+                JPContenido.remove(vistaJP031);
+                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRecetarMedicamentos");
+                JPContenido.revalidate();
+                JPContenido.repaint();
+                PanelesManager.restaurarPanelEliminado();
        }
     }
     

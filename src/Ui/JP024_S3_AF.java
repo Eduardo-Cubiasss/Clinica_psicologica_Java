@@ -87,19 +87,18 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         btn1_JF024 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         txtBuscar_JP024 = new javax.swing.JTextField();
         BtnVer = new javax.swing.JButton();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 640));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn3_JF024.setBackground(new java.awt.Color(255, 255, 255));
@@ -130,9 +129,9 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 450, 190));
 
         btn1_JF024.setBackground(new java.awt.Color(255, 255, 255));
-        btn1_JF024.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ph_note-pencil-bold.png"))); // NOI18N
+        btn1_JF024.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
         btn1_JF024.setBorderPainted(false);
-        jPanel1.add(btn1_JF024, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 200, -1, -1));
+        jPanel1.add(btn1_JF024, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(200, 232, 232));
 
@@ -147,10 +146,7 @@ public class JP024_S3_AF extends javax.swing.JPanel {
             .addGap(0, 44, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 1120, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 40, 50));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 600, 1120, -1));
 
         txtBuscar_JP024.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         txtBuscar_JP024.addActionListener(new java.awt.event.ActionListener() {
@@ -160,8 +156,8 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         });
         jPanel1.add(txtBuscar_JP024, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 420, 50));
 
-        BtnVer.setText("jButton1");
-        jPanel1.add(BtnVer, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 300, -1, -1));
+        BtnVer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dae.PNG"))); // NOI18N
+        jPanel1.add(BtnVer, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, 90, 90));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
@@ -173,10 +169,9 @@ public class JP024_S3_AF extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BtnVer;
-    public javax.swing.JButton btn1_JF024;
+    private javax.swing.JButton btn1_JF024;
     public javax.swing.JButton btn3_JF024;
     public javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

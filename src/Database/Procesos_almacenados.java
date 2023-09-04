@@ -535,5 +535,152 @@ public class Procesos_almacenados {
         }
         return 0;
     }
-}
+    public void agregarecetas(RecetasMedicas recetas) {
+
+        Connection conn = null;
+        CallableStatement cs = null;
+
+        try {
+                conn = ConnectionSQL.getConexion();
+                cs = conn.prepareCall("INSERT INTO TbRecetasMedicas(Padecimiento, Descripcion, NombreMedicamento) VALUES (?,?,?)");
+                cs.setString(1, recetas.getNombrePadecimiento());
+                cs.setString(2, recetas.getDescripcion());
+                cs.setString(3, recetas.getMwedicamentos() );
+
+                cs.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Receta guardada", "Exito", JOptionPane.INFORMATION_MESSAGE);
+
+            } catch (Exception e) {
+                System.out.println("Error #J00DA");
+                JOptionPane.showMessageDialog(null, "Error innesperado al cargar datos, reinicie su aplicación", "Error: J000DA", JOptionPane.INFORMATION_MESSAGE);
+
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (cs != null) {
+                        cs.close();
+                    }
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+           
+        }
+    
+        public int Acercademi(Usuarios modelousuarios, int operacion) {
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+
+        try {
+            conn = ConnectionSQL.getConexion();
+
+            switch (operacion) {
+                case 1: // 1 para recibir
+                    try (
+                    CallableStatement cs = conn.prepareCall("SELECT TOP 1 Descripcion FROM TbUsuarios Where UserName = ?")) {
+
+                    cs.setString(1, modelousuarios.getUserName()); 
+                    cs.registerOutParameter(2, java.sql.Types.VARBINARY);
+                    
+
+                    cs.execute();
+
+                    String Descripcion = cs.getString(2);
+
+                    modelousuarios.setDescripcion(Descripcion);
+
+                    // La variable 'imagen' contiene la imagen en formato byte[] que puedes usar según tus necesidades.
+                
+                    } catch (Exception e) {
+                    System.out.println("Error #J00DA");
+                    JOptionPane.showMessageDialog(null, "Error inesperado al cargar datos, reinicie su aplicación", "Error: J000DA", JOptionPane.WARNING_MESSAGE );
+
+                }
+                break;
+
+                case 2: // 2 para enviar mensajes
+                    // Realizar la consulta
+                    
+                    ps = conn.prepareStatement("EXEC PDCambiarContraseña ?, ?, ?");
+                    ps.setString(1, modelousuarios.getUserName());
+                    ps.setString(2, modelousuarios.getContraseña());
+                    ps.setString(2, modelousuarios.getContrafake());
+                    ps.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Cierra sesión para comprobar tu cambio de contraseña", "Sgurencia", JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                    
+                case 3: // 2 para enviar mensajes
+                    // Realizar la consulta
+                    
+                    ps = conn.prepareStatement("EXEC PDDetallesperfil ?, ?");
+                    ps.setString(1, modelousuarios.getUserName());
+                    ps.setString(2, modelousuarios.getDescripcion());
+                    ps.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Cierra sesión para comprobar tu cambio de contraseña", "Sgurencia", JOptionPane.INFORMATION_MESSAGE);
+                    break;
+
+                default:
+                    // Manejar un caso no válido
+                    JOptionPane.showMessageDialog(null, "Operación no válida", "Error", JOptionPane.ERROR_MESSAGE);
+                    break;
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: J009UI", "Error inesperado, cierre sesión y vuelva a abrir sesión", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return 0;
+    }
+        
+        public boolean AgregarEmpleado(Empleado modelEmpleado, Usuarios modelUsuario) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        try {
+            conn = (Connection) ConnectionSQL.getConexion();
+            ps = conn.prepareStatement("EXEC PDRegistrarEmpleado ?, ?, ?, ?, ?");
+            ps.setString(1, modelUsuario.getUserName());
+            ps.setString(2, modelEmpleado.getUsername());
+            ps.setString(3, modelEmpleado.getContraseña());
+            ps.setInt(4, modelEmpleado.getNivel());
+            ;
+            return true;
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error J001GU, Ya existe un usuario con ese UserName", "Error al crear el usuario", JOptionPane.INFORMATION_MESSAGE);
+            System.out.println(e.toString());
+            return false;
+        } finally {
+            if (ps != null) {
+                try {
+                    ps.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    }
+
 

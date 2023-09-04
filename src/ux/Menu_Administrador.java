@@ -40,17 +40,29 @@ public class Menu_Administrador implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == panel.getBtn01_JF005_S2_AF()) {
             // Código para la acción del botón de gestionar persionas 
+
+            PanelesManager.copiaPanel("JP004_S2_AF");
+            JPContenido.remove(panel);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPersonalClinica");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
         } else if (e.getSource() == panel.getBtn02_JF005_S2_AF()) {
             // Código para la acción del botón estadisticas 
         } else if (e.getSource() == panel.getBtn03_JF005_S2_AF()) {
             // Código para la acción del botón Anuncios 
         } else if (e.getSource() == panel.getBtn04_JF005_S2_AF()) {
             // Código para la acción del botón Acerca de la clinica 
+            PanelesManager.copiaPanel("JP004_S2_AF");
+            JPContenido.remove(panel);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPersonalClinica");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
         } else if (e.getSource() == panel.getBtn05_JF005_S2_AF()) {
             // Código para la acción del botón comentarios 
         } else if (e.getSource() == panel.getbtn08_JF023_S3_RH()) {
             // Código para la acción del botón cerrar sesion
-            
 
             // Recupera el panel anterior del historial y muéstralo
             String previousPanel = panelHistory.popPanel();

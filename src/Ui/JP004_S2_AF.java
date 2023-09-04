@@ -65,9 +65,9 @@ public class JP004_S2_AF extends javax.swing.JPanel {
         kGradientPanel2 = new keeptoo.KGradientPanel();
         btn08_JF023_S3_RH = new javax.swing.JButton();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         JP001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
