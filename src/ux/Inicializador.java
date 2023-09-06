@@ -126,6 +126,7 @@ public class Inicializador {
     private FormularioInicio controladorFormularioInicio;
     private Resultado resultado;
     private Empleado modelEmpleado;
+    //Aqui
     
     
     

@@ -21,9 +21,9 @@ public class VisualizarNotas implements ActionListener{
     public VisualizarNotas(JPanel JPContenido)
     {
         this.JPContenido = JPContenido;
-        this.vista35 = vista35;
+        //this.vista35 = vista35;
         
-        this.vista35.Btn1_JF035_S3_RH.addActionListener(this);
+        //this.vista35.Btn1_JF035_S3_RH.addActionListener(this);
     }
 
     @Override
