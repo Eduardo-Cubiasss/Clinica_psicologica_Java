@@ -1126,7 +1126,7 @@ EXEC PDprimerusoinfo
   'Pepito123',@Correo OUTPUT, @ActividadLabor OUTPUT, @fechadeNaci OUTPUT,  @Numerotel OUTPUT, @DUI OUTPUT,
   @Genero OUTPUT;
 
-ALTER PROCEDURE PDRegistrarEmpleado
+CREATE PROCEDURE PDRegistrarEmpleado
     @UsernameTbT VARCHAR(90),
     @ContraseñaTbTs VARCHAR(90),
     @Correo VARCHAR(300),
@@ -1188,6 +1188,8 @@ BEGIN
         PRINT('Error: ' + ERROR_MESSAGE());
     END CATCH
 END
+
+EXEC PDRegistrarEmpleado 'pipi', 'Contraseña', 'djfhskdjhf@gmail.com', 'Bryan', 1;
 -- Mostrar los valores de salida
 SELECT 
   @Correo AS 'Correo',
