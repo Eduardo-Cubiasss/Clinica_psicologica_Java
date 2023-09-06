@@ -2,13 +2,29 @@ package ux;
 
 import Database.ActividadesLaborales;
 import Database.Administrador;
+import Database.AgendasPersonales;
+import Database.Anuncios;
+import Database.Articulos;
+import Database.Citas;
 import Database.Clinica;
+import Database.Comentarios;
 import Database.Contactos;
 import Database.Empleado;
+import Database.Expedientes;
 import Database.Genero;
+import Database.Incapacidades;
+import Database.Llaves;
+import Database.Opciones;
 import Database.Pacientes;
+import Database.Preguntas;
 import Database.Procesos_almacenados;
+import Database.Pruebas;
 import Database.RecetasMedicas;
+import Database.Respuestas;
+import Database.Resultados;
+import Database.Secretarias;
+import Database.Terapeutas;
+import Database.TipoUsuarios;
 import Database.Usuarios;
 import Reportes.ParaReporte;
 import Ui.JF_000_S7_GU;
@@ -126,7 +142,37 @@ public class Inicializador {
     private FormularioInicio controladorFormularioInicio;
     private Resultado resultado;
     private Empleado modelEmpleado;
-    //Aqui
+    private ActividadesLaborales ActividadLaboral;
+    private Administrador Admin;
+    private AgendasPersonales AgendaPersonal;
+    private Anuncios Anuncios;
+    private Articulos Artuculo;
+    private Citas Citas;
+    private Clinica Clinica;
+    private Comentarios Comentarios;
+    private Contactos Contacto;
+    private Expedientes Expedientes;
+    private Genero Genero;
+    private Incapacidades Incapacidades;
+    private Llaves Llaves;
+    private Opciones Opnciones;
+    private Pacientes Paciente;
+    private Preguntas Pregunta;
+    private Procesos_almacenados ProcesosAlmacenados;
+    private Pruebas Pruebas;
+    private RecetasMedicas Recetas;
+    private Respuestas Respuestas;
+    private Resultados Resultados;
+    private Secretarias Secretarias;
+    private Terapeutas Terapeutas;
+    private TipoUsuarios TipoUser;
+    private Usuarios Users;
+    
+    
+    
+    
+    
+    
     
     
     

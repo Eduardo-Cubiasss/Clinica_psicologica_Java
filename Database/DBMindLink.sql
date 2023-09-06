@@ -47,6 +47,7 @@ IDPrueba int identity(1,1) primary key,
 Titulo nvarchar(100)not null,
 Descripcion varchar(800),
 Precio money not null,
+NumPruebas int,
 IDTerapeuta int,
 IDSecretaria int,
 IDAdministrador int
@@ -203,16 +204,75 @@ IDPaciente int
 );
 Create Table TbRecetasMedicas(
 IDReceta int identity(1,1) primary key,
-Fecha date,
+Padecimiento varchar(200),
 Descripcion varchar(900),
+NombreMedicamento varchar(500),
 IDPaciente int,
 IDClinica Varchar(5),
 IDMedicamento int
 );
-Create table TbMedicamentos(
-IDMedicamento int identity(1,1) primary key,
-NombreMedicamento varchar(500)
-);
+
+
+--Datos --
+Insert into TbRecetasMedicas (Padecimiento, Descripcion, NombreMedicamento)
+Values
+	('Trastornos de ansiedad', 'Cada 8 hora', 'Sertralina y Escitalopram'),
+	('Depresión', 'Cada 8 horas','Escitalopram'),
+	('Trastornos bipolares', 'Cada 8 hora','Litio'),
+	('Trastornos alimentarios', 'Cada 8 hora','Fluoxetina'),
+	('Trastorno del espectro autista ', 'Cada 12 horas','Risperidona'),
+	('Trastornos de personalidad', 'Cada 8 hora','Sertralina y Escitalopram'),
+	('Trastornos del sueño', 'Antes de dormir','Zolpidem'),
+	('Trastorno por déficit de atención e hiperactividad', 'Cada 12 horas','Metilfenidato  y Haloperidol '),
+	('Trastorno de estrés postraumático', 'Cada 12 horas','Paroxetina '),
+	('Trastorno de ansiedad social', 'Cada 12 horas','Paroxetina '),
+	('Problemas de sueño', 'Antes de dormir','Eszopiclona y Trazodona ');
+	
+
+--Datos --
+INSERT INTO TbTerapeutas (Nombre, Apellido, FNacimiento, DUI)
+VALUES
+    ('Juan', 'Pérez', '1990-01-15', '12345678-9'),
+    ('María', 'Gómez', '1985-05-20', '98765432-1'),
+    ('Carlos', 'López', '1988-09-10', '87654321-0'),
+    ('Ana', 'Martínez', '1992-03-25', '76543210-2'),
+    ('Luis', 'Hernández', '1980-07-12', '65432109-3'),
+    ('Laura', 'Ramírez', '1995-11-30', '54321098-4'),
+    ('Pedro', 'Sánchez', '1987-04-05', '43210987-5'),
+    ('Rosa', 'Torres', '1993-08-08', '32109876-6'),
+    ('Manuel', 'García', '1986-02-18', '21098765-7'),
+    ('Sofía', 'Díaz', '1998-12-03', '10987654-8');
+
+--Datos--
+INSERT INTO TbSecretaria (Nombre, Apellido, FNacimiento, DUI)
+VALUES
+    ('Isabel', 'Gutiérrez', '1991-06-14', '13579246-0'),
+    ('Andrés', 'Fernández', '1984-02-27', '98765432-1'),
+    ('Lucía', 'Rodríguez', '1989-09-05', '56789012-3'),
+    ('Diego', 'Pérez', '1994-03-10', '43210987-6'),
+    ('Valentina', 'López', '1987-07-22', '87654321-5'),
+    ('Mariano', 'Martínez', '1990-12-18', '76543210-4'),
+    ('Catalina', 'Hernández', '1983-11-28', '21098765-9'),
+    ('Eduardo', 'Ramírez', '1996-08-07', '65432109-2'),
+    ('Fernanda', 'Sánchez', '1993-04-09', '34567890-7'),
+    ('Joaquín', 'García', '1988-01-03', '98712345-1');
+
+
+
+--DATOS--
+INSERT INTO TbPruebas (Titulo, Descripcion, Precio, NumPruebas)
+VALUES
+	('Prueba de Estrés','Ver niveles de estrés',55.00,7),
+	('Prueba de Autoestima','Evaluación de la autoestima del paciente',40.00,16),
+	('Evaluación de Trauma','Análisis de experiencias traumáticas',65.00, 5),
+	('Habilidades Sociales','Evaluación de habilidades de comunicación',50.00,20),
+	('Evaluación de Parejas','Análisis de relaciones de pareja',80.00, 12),
+	('Prueba de TDAH','Evaluación de TDH',70.00,15),
+	('Estrategias de Afrontamiento','Afrontamiento al estrés',70.00,8),
+	('Prueba de Ansiedad Social','Evaluación de ansiedad social',55.00,4),
+	('Habilidades Cognitivas','Análisis de habilidades cognitivas',60.00,10),
+	('Prueba de Sueño','Evaluación de patrones de sueño',75.00,13);
+
 
 -- Aquí empiezan los unique's para que existan valores nulos repeditos en caso que el usuario no llene una de las preguntas de algun formulario
 CREATE UNIQUE INDEX TbCont_Correo1 ON TbContactos (Correo)
