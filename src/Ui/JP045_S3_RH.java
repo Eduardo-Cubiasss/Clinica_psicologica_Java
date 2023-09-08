@@ -5,6 +5,10 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 import ux.EstadisticaDeCitas;
 import ux.PanelesInicializador;
 import ux.PruebasDF;
@@ -18,6 +22,49 @@ public class JP045_S3_RH extends javax.swing.JPanel {
    
     private PruebasDF controlador;
     private PanelesInicializador str;
+
+    public JButton getBtn01_JF045_S3_RH() {
+        return btn01_JF045_S3_RH;
+    }
+
+    public void setBtn01_JF045_S3_RH(JButton btn01_JF045_S3_RH) {
+        this.btn01_JF045_S3_RH = btn01_JF045_S3_RH;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public KGradientPanel getkGradientPanel1() {
+        return kGradientPanel1;
+    }
+
+    public void setkGradientPanel1(KGradientPanel kGradientPanel1) {
+        this.kGradientPanel1 = kGradientPanel1;
+    }
+    
+    
+    
 
     public JP045_S3_RH(PruebasDF controlador) {
         initComponents();
@@ -49,15 +96,15 @@ public class JP045_S3_RH extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         btn01_JF045_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn01_JF045_S3_RH.setForeground(new java.awt.Color(255, 255, 255));
@@ -106,7 +153,7 @@ public class JP045_S3_RH extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(49, 49, 49)
                         .addComponent(jLabel3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 468, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 498, Short.MAX_VALUE)
                 .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 

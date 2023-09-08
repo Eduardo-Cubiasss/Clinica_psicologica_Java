@@ -5,6 +5,8 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import ux.MBActualizarUsuario;
 import ux.MBEliminarUsuario;
 import ux.PanelesInicializador;
@@ -17,6 +19,68 @@ public class JP012_E_AF extends javax.swing.JPanel {
 
     private MBEliminarUsuario controlador;
     private PanelesInicializador str;
+
+    public JButton getBtn1_JF012_E() {
+        return btn1_JF012_E;
+    }
+
+    public void setBtn1_JF012_E(JButton btn1_JF012_E) {
+        this.btn1_JF012_E = btn1_JF012_E;
+    }
+
+    public JButton getBtn2_JF012_E() {
+        return btn2_JF012_E;
+    }
+
+    public void setBtn2_JF012_E(JButton btn2_JF012_E) {
+        this.btn2_JF012_E = btn2_JF012_E;
+    }
+
+    public JButton getBtn3_JF012E() {
+        return btn3_JF012E;
+    }
+
+    public void setBtn3_JF012E(JButton btn3_JF012E) {
+        this.btn3_JF012E = btn3_JF012E;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+    
+    
+    
+    
+    
+    
 
     public JP012_E_AF(MBEliminarUsuario controlador) {
         initComponents();
@@ -56,15 +120,15 @@ public class JP012_E_AF extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 640));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(200, 232, 232));
@@ -80,7 +144,7 @@ public class JP012_E_AF extends javax.swing.JPanel {
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 1120, 50));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 1120, 50));
 
         btn3_JF012E.setBackground(new java.awt.Color(255, 255, 255));
         btn3_JF012E.setForeground(new java.awt.Color(255, 255, 255));
@@ -93,16 +157,16 @@ public class JP012_E_AF extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("¿Esta seguro que desea eliminar al usuario?");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, -1, 60));
 
         btn1_JF012_E.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Y.PNG"))); // NOI18N
-        jPanel1.add(btn1_JF012_E, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 130, 120));
+        jPanel1.add(btn1_JF012_E, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, 130, 120));
 
         btn2_JF012_E.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/x.PNG"))); // NOI18N
-        jPanel1.add(btn2_JF012_E, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, 120, 120));
+        jPanel1.add(btn2_JF012_E, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, 120, 120));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ddd.PNG"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 570, 310));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 570, 340));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/li.PNG"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 580, 40));

@@ -6,6 +6,8 @@
 package Ui;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import ux.BuscadorPacientes;
 import ux.PanelesInicializador;
@@ -116,6 +118,193 @@ public class JP036_S3_AF extends javax.swing.JPanel {
         this.txtNombreMedicamento_JP036_S3_AF1 = txtNombreMedicamento_JP036_S3_AF1;
     }
 
+    public JButton getBtn3_JF012_A() {
+        return btn3_JF012_A;
+    }
+
+    public void setBtn3_JF012_A(JButton btn3_JF012_A) {
+        this.btn3_JF012_A = btn3_JF012_A;
+    }
+
+    public JButton getBtn3_JF012_A1() {
+        return btn3_JF012_A1;
+    }
+
+    public void setBtn3_JF012_A1(JButton btn3_JF012_A1) {
+        this.btn3_JF012_A1 = btn3_JF012_A1;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
+
+    public void setjButton2(JButton jButton2) {
+        this.jButton2 = jButton2;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public void setjPanel3(JPanel jPanel3) {
+        this.jPanel3 = jPanel3;
+    }
+
+    public JPanel getjPanel4() {
+        return jPanel4;
+    }
+
+    public void setjPanel4(JPanel jPanel4) {
+        this.jPanel4 = jPanel4;
+    }
+
+    public JPanel getjPanel5() {
+        return jPanel5;
+    }
+
+    public void setjPanel5(JPanel jPanel5) {
+        this.jPanel5 = jPanel5;
+    }
+
+    public JPanel getjPanel6() {
+        return jPanel6;
+    }
+
+    public void setjPanel6(JPanel jPanel6) {
+        this.jPanel6 = jPanel6;
+    }
+
+    public JPanel getjPanel7() {
+        return jPanel7;
+    }
+
+    public void setjPanel7(JPanel jPanel7) {
+        this.jPanel7 = jPanel7;
+    }
+
+    
+    
+    
     
     public JP036_S3_AF(RcetarMedicamentos controlador) {
         initComponents();
@@ -174,15 +363,15 @@ public class JP036_S3_AF extends javax.swing.JPanel {
         txtBuscar_JP37 = new javax.swing.JTextField();
         btn1_JF37 = new javax.swing.JButton();
 
-        setMaximumSize(new java.awt.Dimension(1120, 640));
-        setMinimumSize(new java.awt.Dimension(1120, 640));
-        setPreferredSize(new java.awt.Dimension(1120, 640));
+        setMaximumSize(new java.awt.Dimension(1120, 715));
+        setMinimumSize(new java.awt.Dimension(1120, 715));
+        setPreferredSize(new java.awt.Dimension(1120, 715));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 715));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 715));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 715));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn3_JF012_A.setBackground(new java.awt.Color(255, 255, 255));
@@ -210,11 +399,11 @@ public class JP036_S3_AF extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel1.setText("Busca un padecimiento, para ver una receta predeterminada");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 520, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, -1, -1));
         jPanel1.add(txtNombreMedicamento_JP036_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 270, 30));
 
         btnagregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pd.PNG"))); // NOI18N
-        jPanel1.add(btnagregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, 130, 110));
+        jPanel1.add(btnagregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, 130, 110));
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel5.setText("Recetar Medicamentos");
@@ -222,11 +411,11 @@ public class JP036_S3_AF extends javax.swing.JPanel {
 
         jLabel7.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel7.setText("Descripción");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel8.setText("Medicamento");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, -1, -1));
         jPanel1.add(txtHorario_JP036_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, 270, 30));
 
         txtIndicaciones_JP036_S3_AF.addActionListener(new java.awt.event.ActionListener() {
@@ -242,7 +431,7 @@ public class JP036_S3_AF extends javax.swing.JPanel {
                 txtBuscar_JP036ActionPerformed(evt);
             }
         });
-        jPanel1.add(txtBuscar_JP036, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 560, 420, 40));
+        jPanel1.add(txtBuscar_JP036, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 590, 420, 40));
 
         btn1_JF036.setBackground(new java.awt.Color(255, 255, 255));
         btn1_JF036.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
@@ -252,11 +441,11 @@ public class JP036_S3_AF extends javax.swing.JPanel {
                 btn1_JF036ActionPerformed(evt);
             }
         });
-        jPanel1.add(btn1_JF036, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 560, -1, -1));
+        jPanel1.add(btn1_JF036, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 590, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel3.setText("Nombre del padecimiento");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
 
         add(jPanel1, "card2");
 

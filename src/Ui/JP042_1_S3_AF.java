@@ -5,6 +5,10 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 import ux.MBEliminarCita;
 import ux.PanelesInicializador;
 
@@ -19,6 +23,81 @@ public class JP042_1_S3_AF extends javax.swing.JPanel {
     
     private MBEliminarCita controlador;
     private PanelesInicializador str;
+
+    public JButton getBtn001_JF042_1_S3_AF() {
+        return Btn001_JF042_1_S3_AF;
+    }
+
+    public void setBtn001_JF042_1_S3_AF(JButton Btn001_JF042_1_S3_AF) {
+        this.Btn001_JF042_1_S3_AF = Btn001_JF042_1_S3_AF;
+    }
+
+    public JButton getBtn002_JF042_1_S3_AF() {
+        return Btn002_JF042_1_S3_AF;
+    }
+
+    public void setBtn002_JF042_1_S3_AF(JButton Btn002_JF042_1_S3_AF) {
+        this.Btn002_JF042_1_S3_AF = Btn002_JF042_1_S3_AF;
+    }
+
+    public JButton getBtn003_JF042_1_S3_AF() {
+        return Btn003_JF042_1_S3_AF;
+    }
+
+    public void setBtn003_JF042_1_S3_AF(JButton Btn003_JF042_1_S3_AF) {
+        this.Btn003_JF042_1_S3_AF = Btn003_JF042_1_S3_AF;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public KGradientPanel getkGradientPanel1() {
+        return kGradientPanel1;
+    }
+
+    public void setkGradientPanel1(KGradientPanel kGradientPanel1) {
+        this.kGradientPanel1 = kGradientPanel1;
+    }
+    
+    
+    
 
     public JP042_1_S3_AF(MBEliminarCita controlador) {
         initComponents();
@@ -54,9 +133,9 @@ public class JP042_1_S3_AF extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -90,7 +169,7 @@ public class JP042_1_S3_AF extends javax.swing.JPanel {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/li.PNG"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 580, 40));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 204, 204));
+        kGradientPanel1.setkEndColor(new java.awt.Color(0, 153, 153));
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 153, 153));
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
@@ -104,7 +183,7 @@ public class JP042_1_S3_AF extends javax.swing.JPanel {
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel1.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 1120, 40));
+        jPanel1.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 600, 1120, 40));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents

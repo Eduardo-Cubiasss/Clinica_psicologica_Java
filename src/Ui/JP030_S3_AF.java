@@ -5,6 +5,10 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import ux.ActualizarArticulo;
 import ux.Hints;
 import ux.LimiteCaracteres;
@@ -22,6 +26,99 @@ public class JP030_S3_AF extends javax.swing.JPanel {
     private LimiteCaracteres Limite;
     private ActualizarArticulo controlador;
     private PanelesInicializador str;
+
+    public JButton getBtn1_JF028_S3_AF() {
+        return Btn1_JF028_S3_AF;
+    }
+
+    public void setBtn1_JF028_S3_AF(JButton Btn1_JF028_S3_AF) {
+        this.Btn1_JF028_S3_AF = Btn1_JF028_S3_AF;
+    }
+
+    public JButton getBtn2_JF028_S3_AF() {
+        return Btn2_JF028_S3_AF;
+    }
+
+    public void setBtn2_JF028_S3_AF(JButton Btn2_JF028_S3_AF) {
+        this.Btn2_JF028_S3_AF = Btn2_JF028_S3_AF;
+    }
+
+    public JButton getBtn3_JF028_S3_AF() {
+        return Btn3_JF028_S3_AF;
+    }
+
+    public void setBtn3_JF028_S3_AF(JButton Btn3_JF028_S3_AF) {
+        this.Btn3_JF028_S3_AF = Btn3_JF028_S3_AF;
+    }
+
+    public JButton getBtn4_JF028_S3_AF() {
+        return Btn4_JF028_S3_AF;
+    }
+
+    public void setBtn4_JF028_S3_AF(JButton Btn4_JF028_S3_AF) {
+        this.Btn4_JF028_S3_AF = Btn4_JF028_S3_AF;
+    }
+
+    public JButton getBtn5_JF028_S3_AF() {
+        return Btn5_JF028_S3_AF;
+    }
+
+    public void setBtn5_JF028_S3_AF(JButton Btn5_JF028_S3_AF) {
+        this.Btn5_JF028_S3_AF = Btn5_JF028_S3_AF;
+    }
+
+    public JTextField getTxtTitulo() {
+        return TxtTitulo;
+    }
+
+    public void setTxtTitulo(JTextField TxtTitulo) {
+        this.TxtTitulo = TxtTitulo;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public void setjPanel3(JPanel jPanel3) {
+        this.jPanel3 = jPanel3;
+    }
+
+    public JTextField getTxtDescripcion_JP030_S3_AF() {
+        return txtDescripcion_JP030_S3_AF;
+    }
+
+    public void setTxtDescripcion_JP030_S3_AF(JTextField txtDescripcion_JP030_S3_AF) {
+        this.txtDescripcion_JP030_S3_AF = txtDescripcion_JP030_S3_AF;
+    }
+    
+    
+    
+    
+    
 
     public JP030_S3_AF(ActualizarArticulo controlador) {
         
@@ -65,15 +162,15 @@ public class JP030_S3_AF extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         TxtTitulo = new javax.swing.JTextField();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 650));
+        setMinimumSize(new java.awt.Dimension(1120, 650));
+        setPreferredSize(new java.awt.Dimension(1120, 650));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 650));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 650));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 650));
 
         Btn3_JF028_S3_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn3_JF028_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/EditPencil.png"))); // NOI18N

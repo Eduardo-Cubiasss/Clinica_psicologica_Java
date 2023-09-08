@@ -5,6 +5,9 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import ux.NuevaSolicitudDeEmpleado;
 import ux.PanelesInicializador;
 
@@ -18,6 +21,59 @@ public class JP015_1_S2_RH extends javax.swing.JPanel {
     
     private NuevaSolicitudDeEmpleado controlador;
     private PanelesInicializador str;
+
+    public JButton getBtn1_JF015_S2_RH() {
+        return Btn1_JF015_S2_RH;
+    }
+
+    public void setBtn1_JF015_S2_RH(JButton Btn1_JF015_S2_RH) {
+        this.Btn1_JF015_S2_RH = Btn1_JF015_S2_RH;
+    }
+
+    public JButton getBtn2_JF015_S2_RH() {
+        return Btn2_JF015_S2_RH;
+    }
+
+    public void setBtn2_JF015_S2_RH(JButton Btn2_JF015_S2_RH) {
+        this.Btn2_JF015_S2_RH = Btn2_JF015_S2_RH;
+    }
+
+    public JPanel getJPSolicitud_JP015_S2_RH() {
+        return JPSolicitud_JP015_S2_RH;
+    }
+
+    public void setJPSolicitud_JP015_S2_RH(JPanel JPSolicitud_JP015_S2_RH) {
+        this.JPSolicitud_JP015_S2_RH = JPSolicitud_JP015_S2_RH;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+    
+    
+    
+    
+    
 
     public JP015_1_S2_RH(NuevaSolicitudDeEmpleado controlador) {
         initComponents();
@@ -52,15 +108,15 @@ public class JP015_1_S2_RH extends javax.swing.JPanel {
         Btn3_JF015_S2_RH = new javax.swing.JButton();
         Btn2_JF015_S2_RH = new javax.swing.JButton();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         Btn1_JF015_S2_RH.setBackground(new java.awt.Color(255, 255, 255));
         Btn1_JF015_S2_RH.setForeground(new java.awt.Color(255, 255, 255));

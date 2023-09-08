@@ -5,6 +5,10 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import ux.ExpedienteDelPaciente;
 import ux.Hints;
 import ux.LimiteCaracteres;
@@ -24,6 +28,67 @@ public class JP032_S3_AF extends javax.swing.JPanel {
     private PanelesInicializador str;
     private Hints hint;
     private LimiteCaracteres Limite;
+
+    public JButton getBtn1_JF028_S3_AF() {
+        return Btn1_JF028_S3_AF;
+    }
+
+    public void setBtn1_JF028_S3_AF(JButton Btn1_JF028_S3_AF) {
+        this.Btn1_JF028_S3_AF = Btn1_JF028_S3_AF;
+    }
+
+    public JTextField getTxtAsunto() {
+        return TxtAsunto;
+    }
+
+    public void setTxtAsunto(JTextField TxtAsunto) {
+        this.TxtAsunto = TxtAsunto;
+    }
+
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+    public void setjButton1(JButton jButton1) {
+        this.jButton1 = jButton1;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+    
+    
+    
+    
+    
 
     public JP032_S3_AF(RedactarMensaje controlador) {
         this.controlador = controlador;
@@ -64,15 +129,15 @@ public class JP032_S3_AF extends javax.swing.JPanel {
         TxtDescrip = new javax.swing.JTextField();
         TxtAsunto = new javax.swing.JTextField();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
 
@@ -82,7 +147,7 @@ public class JP032_S3_AF extends javax.swing.JPanel {
         Btn1_JF028_S3_AF.setBorderPainted(false);
         Btn1_JF028_S3_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jPanel2.setBackground(new java.awt.Color(200, 232, 232));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -146,7 +211,7 @@ public class JP032_S3_AF extends javax.swing.JPanel {
                 .addGap(57, 57, 57)
                 .addComponent(TxtAsunto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TxtDescrip, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                .addComponent(TxtDescrip, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)

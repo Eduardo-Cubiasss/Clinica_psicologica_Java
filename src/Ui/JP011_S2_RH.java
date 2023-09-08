@@ -5,6 +5,9 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import ux.AnunciosActuales;
 import ux.PanelesInicializador;
 
@@ -18,6 +21,90 @@ public class JP011_S2_RH extends javax.swing.JPanel {
     
     private AnunciosActuales controlador;
     private PanelesInicializador str;
+
+    public JButton getBtn1_JF011_S2_RH() {
+        return Btn1_JF011_S2_RH;
+    }
+
+    public void setBtn1_JF011_S2_RH(JButton Btn1_JF011_S2_RH) {
+        this.Btn1_JF011_S2_RH = Btn1_JF011_S2_RH;
+    }
+
+    public JButton getBtn2_JF011_S2_RH() {
+        return Btn2_JF011_S2_RH;
+    }
+
+    public void setBtn2_JF011_S2_RH(JButton Btn2_JF011_S2_RH) {
+        this.Btn2_JF011_S2_RH = Btn2_JF011_S2_RH;
+    }
+
+    public JButton getBtn3_JF011_S2_RH() {
+        return Btn3_JF011_S2_RH;
+    }
+
+    public void setBtn3_JF011_S2_RH(JButton Btn3_JF011_S2_RH) {
+        this.Btn3_JF011_S2_RH = Btn3_JF011_S2_RH;
+    }
+
+    public JButton getBtn4_JF011_S2_RH() {
+        return Btn4_JF011_S2_RH;
+    }
+
+    public void setBtn4_JF011_S2_RH(JButton Btn4_JF011_S2_RH) {
+        this.Btn4_JF011_S2_RH = Btn4_JF011_S2_RH;
+    }
+
+    public JPanel getJP011_0_S2_RH() {
+        return JP011_0_S2_RH;
+    }
+
+    public void setJP011_0_S2_RH(JPanel JP011_0_S2_RH) {
+        this.JP011_0_S2_RH = JP011_0_S2_RH;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     public JP011_S2_RH(AnunciosActuales controlador) {
         initComponents();
@@ -57,14 +144,14 @@ public class JP011_S2_RH extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
 
         Btn1_JF011_S2_RH.setBackground(new java.awt.Color(255, 255, 255));
         Btn1_JF011_S2_RH.setForeground(new java.awt.Color(255, 255, 255));
@@ -178,7 +265,7 @@ public class JP011_S2_RH extends javax.swing.JPanel {
                                             .addComponent(Btn2_JF011_S2_RH, javax.swing.GroupLayout.Alignment.TRAILING)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 77, Short.MAX_VALUE)))
+                                        .addGap(0, 100, Short.MAX_VALUE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Btn4_JF011_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(28, 28, 28)

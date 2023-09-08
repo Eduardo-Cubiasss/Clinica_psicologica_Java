@@ -7,6 +7,8 @@ package Ui;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import ux.BuscadorPacientes;
@@ -21,28 +23,6 @@ public class JP024_S3_AF extends javax.swing.JPanel {
     private BuscadorPacientes controlador;
     private PanelesInicializador str;
 
-    
-    
-    public JButton getBtn3_JF024() {
-        return btn3_JF024;
-    }
-
-    public JTextField getTxtBuscar_JP024() {
-        return txtBuscar_JP024;
-    }
-
-    public JButton getBtn1_JF024() {
-        return btn1_JF024;
-    }
-
-    public void setjTable1(JTable jTable1) {
-        this.jTable1 = jTable1;
-    }
-
-    public void setTxtBuscar_JP024(JTextField txtBuscar_JP024) {
-        this.txtBuscar_JP024 = txtBuscar_JP024;
-    }
-
     public JButton getBtnVer() {
         return BtnVer;
     }
@@ -50,6 +30,82 @@ public class JP024_S3_AF extends javax.swing.JPanel {
     public void setBtnVer(JButton BtnVer) {
         this.BtnVer = BtnVer;
     }
+
+    public JButton getBtn1_JF024() {
+        return btn1_JF024;
+    }
+
+    public void setBtn1_JF024(JButton btn1_JF024) {
+        this.btn1_JF024 = btn1_JF024;
+    }
+
+    public JButton getBtn3_JF024() {
+        return btn3_JF024;
+    }
+
+    public void setBtn3_JF024(JButton btn3_JF024) {
+        this.btn3_JF024 = btn3_JF024;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+
+    public JTextField getTxtBuscar_JP024() {
+        return txtBuscar_JP024;
+    }
+
+    public void setTxtBuscar_JP024(JTextField txtBuscar_JP024) {
+        this.txtBuscar_JP024 = txtBuscar_JP024;
+    }
+
+    
+    
+   
 
 
 

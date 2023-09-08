@@ -5,15 +5,113 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import keeptoo.KGradientPanel;
+
 /**
  *
  * @author LENOVO
  */
 public class JP005_NumTel_S2_RH extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP005_NumTel_S2_RH
-     */
+    public JButton getBtn1_JF005_S2_RH() {
+        return Btn1_JF005_S2_RH;
+    }
+
+    public void setBtn1_JF005_S2_RH(JButton Btn1_JF005_S2_RH) {
+        this.Btn1_JF005_S2_RH = Btn1_JF005_S2_RH;
+    }
+
+    public JButton getBtn2_JF005_S2_RH() {
+        return Btn2_JF005_S2_RH;
+    }
+
+    public void setBtn2_JF005_S2_RH(JButton Btn2_JF005_S2_RH) {
+        this.Btn2_JF005_S2_RH = Btn2_JF005_S2_RH;
+    }
+
+    public JPanel getJP001_S1_RH() {
+        return JP001_S1_RH;
+    }
+
+    public void setJP001_S1_RH(JPanel JP001_S1_RH) {
+        this.JP001_S1_RH = JP001_S1_RH;
+    }
+
+    public JTextField getTxtTelefonoRegister_JF005_S2_RH() {
+        return TxtTelefonoRegister_JF005_S2_RH;
+    }
+
+    public void setTxtTelefonoRegister_JF005_S2_RH(JTextField TxtTelefonoRegister_JF005_S2_RH) {
+        this.TxtTelefonoRegister_JF005_S2_RH = TxtTelefonoRegister_JF005_S2_RH;
+    }
+
+    public JButton getBtn3_JF005_S2_RH() {
+        return btn3_JF005_S2_RH;
+    }
+
+    public void setBtn3_JF005_S2_RH(JButton btn3_JF005_S2_RH) {
+        this.btn3_JF005_S2_RH = btn3_JF005_S2_RH;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public KGradientPanel getkGradientPanel1() {
+        return kGradientPanel1;
+    }
+
+    public void setkGradientPanel1(KGradientPanel kGradientPanel1) {
+        this.kGradientPanel1 = kGradientPanel1;
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public JP005_NumTel_S2_RH() {
         initComponents();
     }
@@ -38,18 +136,18 @@ public class JP005_NumTel_S2_RH extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         TxtTelefonoRegister_JF005_S2_RH = new javax.swing.JTextField();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         JP001_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_RH.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         JP001_S1_RH.setForeground(new java.awt.Color(0, 102, 102));
         JP001_S1_RH.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        JP001_S1_RH.setMaximumSize(new java.awt.Dimension(1120, 540));
-        JP001_S1_RH.setMinimumSize(new java.awt.Dimension(1120, 540));
-        JP001_S1_RH.setPreferredSize(new java.awt.Dimension(1120, 540));
+        JP001_S1_RH.setMaximumSize(new java.awt.Dimension(1120, 640));
+        JP001_S1_RH.setMinimumSize(new java.awt.Dimension(1120, 640));
+        JP001_S1_RH.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         Btn2_JF005_S2_RH.setBackground(new java.awt.Color(255, 255, 255));
         Btn2_JF005_S2_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
@@ -123,53 +221,49 @@ public class JP005_NumTel_S2_RH extends javax.swing.JPanel {
             .addGroup(JP001_S1_RHLayout.createSequentialGroup()
                 .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(135, 135, 135))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(93, 93, 93))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
-                                .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(Btn2_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(Btn1_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(151, 151, 151))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
-                                .addComponent(btn3_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(100, 100, 100))))
                     .addGroup(JP001_S1_RHLayout.createSequentialGroup()
                         .addGap(90, 90, 90)
                         .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
                             .addComponent(TxtTelefonoRegister_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 72, Short.MAX_VALUE))))
+                        .addGap(0, 72, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(92, 92, 92))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(131, 131, 131))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
+                                .addComponent(btn3_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(100, 100, 100))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
+                                .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Btn2_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Btn1_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(160, 160, 160))))))
         );
         JP001_S1_RHLayout.setVerticalGroup(
             JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(65, 65, 65)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(90, 90, 90)
+                .addGap(82, 82, 82)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TxtTelefonoRegister_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
+                .addGap(71, 71, 71)
                 .addComponent(Btn1_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Btn2_JF005_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(26, 26, 26)
                 .addComponent(btn3_JF005_S2_RH)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(163, Short.MAX_VALUE))
+            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         add(JP001_S1_RH, "card2");

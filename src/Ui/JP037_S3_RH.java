@@ -5,6 +5,10 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
 import ux.CambiosPruebasActuales;
 import ux.PanelesInicializador;
 import ux.PruebasDF;
@@ -19,6 +23,67 @@ public class JP037_S3_RH extends javax.swing.JPanel {
     
     private CambiosPruebasActuales controlador;
     private PanelesInicializador str;
+
+    public JButton getBtn1_JF037_S3_RH() {
+        return Btn1_JF037_S3_RH;
+    }
+
+    public void setBtn1_JF037_S3_RH(JButton Btn1_JF037_S3_RH) {
+        this.Btn1_JF037_S3_RH = Btn1_JF037_S3_RH;
+    }
+
+    public JPanel getJP1_JF037_S3_RH() {
+        return JP1_JF037_S3_RH;
+    }
+
+    public void setJP1_JF037_S3_RH(JPanel JP1_JF037_S3_RH) {
+        this.JP1_JF037_S3_RH = JP1_JF037_S3_RH;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JSlider getjSlider1_JF037_S3_RH() {
+        return jSlider1_JF037_S3_RH;
+    }
+
+    public void setjSlider1_JF037_S3_RH(JSlider jSlider1_JF037_S3_RH) {
+        this.jSlider1_JF037_S3_RH = jSlider1_JF037_S3_RH;
+    }
+    
+    
+    
+    
+    
 
     public JP037_S3_RH(CambiosPruebasActuales controlador) {
         initComponents();
@@ -54,14 +119,14 @@ public class JP037_S3_RH extends javax.swing.JPanel {
         jSlider1_JF037_S3_RH = new javax.swing.JSlider();
         kGradientPanel1 = new keeptoo.KGradientPanel();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel5.setText("Prueba actuales");
@@ -92,7 +157,7 @@ public class JP037_S3_RH extends javax.swing.JPanel {
 
         jSlider1_JF037_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(255, 255, 255));
+        kGradientPanel1.setkEndColor(new java.awt.Color(0, 102, 102));
         kGradientPanel1.setkGradientFocus(850);
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 153, 153));
 
@@ -150,7 +215,7 @@ public class JP037_S3_RH extends javax.swing.JPanel {
                 .addComponent(JP1_JF037_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(jSlider1_JF037_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -162,9 +227,7 @@ public class JP037_S3_RH extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

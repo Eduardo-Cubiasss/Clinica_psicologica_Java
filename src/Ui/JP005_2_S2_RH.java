@@ -6,7 +6,10 @@
 package Ui;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
+import keeptoo.KGradientPanel;
 import ux.ValidarNum;
 
 /**
@@ -15,22 +18,104 @@ import ux.ValidarNum;
  */
 public class JP005_2_S2_RH extends javax.swing.JPanel {
     private ValidarNum controlador;
-    
-    public JTextField getTxtCodigoTel_JF005_2_S2_RH() {
-        return TxtCodigoTel_JF005_2_S2_RH;
+
+    public ValidarNum getControlador() {
+        return controlador;
+    }
+
+    public void setControlador(ValidarNum controlador) {
+        this.controlador = controlador;
     }
 
     public JButton getBtn1_JF005_2_S2_RH() {
         return Btn1_JF005_2_S2_RH;
     }
 
+    public void setBtn1_JF005_2_S2_RH(JButton Btn1_JF005_2_S2_RH) {
+        this.Btn1_JF005_2_S2_RH = Btn1_JF005_2_S2_RH;
+    }
+
     public JButton getBtn2_JF005_2_S2_RH() {
         return Btn2_JF005_2_S2_RH;
+    }
+
+    public void setBtn2_JF005_2_S2_RH(JButton Btn2_JF005_2_S2_RH) {
+        this.Btn2_JF005_2_S2_RH = Btn2_JF005_2_S2_RH;
+    }
+
+    public JPanel getJP001_S1_RH() {
+        return JP001_S1_RH;
+    }
+
+    public void setJP001_S1_RH(JPanel JP001_S1_RH) {
+        this.JP001_S1_RH = JP001_S1_RH;
+    }
+
+    public JTextField getTxtCodigoTel_JF005_2_S2_RH() {
+        return TxtCodigoTel_JF005_2_S2_RH;
+    }
+
+    public void setTxtCodigoTel_JF005_2_S2_RH(JTextField TxtCodigoTel_JF005_2_S2_RH) {
+        this.TxtCodigoTel_JF005_2_S2_RH = TxtCodigoTel_JF005_2_S2_RH;
     }
 
     public JButton getBtn3_JF005_2_S2_RH() {
         return btn3_JF005_2_S2_RH;
     }
+
+    public void setBtn3_JF005_2_S2_RH(JButton btn3_JF005_2_S2_RH) {
+        this.btn3_JF005_2_S2_RH = btn3_JF005_2_S2_RH;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public KGradientPanel getkGradientPanel1() {
+        return kGradientPanel1;
+    }
+
+    public void setkGradientPanel1(KGradientPanel kGradientPanel1) {
+        this.kGradientPanel1 = kGradientPanel1;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public JP005_2_S2_RH(ValidarNum controlador) {
         this.controlador = controlador;
         initComponents();
@@ -56,18 +141,18 @@ public class JP005_2_S2_RH extends javax.swing.JPanel {
         kGradientPanel1 = new keeptoo.KGradientPanel();
         jLabel5 = new javax.swing.JLabel();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         JP001_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_RH.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         JP001_S1_RH.setForeground(new java.awt.Color(153, 153, 255));
         JP001_S1_RH.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        JP001_S1_RH.setMaximumSize(new java.awt.Dimension(1120, 540));
-        JP001_S1_RH.setMinimumSize(new java.awt.Dimension(1120, 540));
-        JP001_S1_RH.setPreferredSize(new java.awt.Dimension(1120, 540));
+        JP001_S1_RH.setMaximumSize(new java.awt.Dimension(1120, 640));
+        JP001_S1_RH.setMinimumSize(new java.awt.Dimension(1120, 640));
+        JP001_S1_RH.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 153));
@@ -133,10 +218,9 @@ public class JP005_2_S2_RH extends javax.swing.JPanel {
         JP001_S1_RHLayout.setHorizontalGroup(
             JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JP001_S1_RHLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
+                    .addGroup(JP001_S1_RHLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
@@ -158,7 +242,7 @@ public class JP005_2_S2_RH extends javax.swing.JPanel {
                         .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn3_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 116, Short.MAX_VALUE))))
+                        .addGap(0, 97, Short.MAX_VALUE))))
         );
         JP001_S1_RHLayout.setVerticalGroup(
             JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,7 +261,7 @@ public class JP005_2_S2_RH extends javax.swing.JPanel {
                 .addComponent(Btn2_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn3_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addContainerGap(186, Short.MAX_VALUE))
             .addComponent(kGradientPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 

@@ -61,7 +61,7 @@ public class Menu_Administrador implements ActionListener {
             PanelesManager.restaurarPanelEliminado();
         } else if (e.getSource() == panel.getBtn05_JF005_S2_AF()) {
             // Código para la acción del botón comentarios 
-        } else if (e.getSource() == panel.getbtn08_JF023_S3_RH()) {
+        } else if (e.getSource() == panel.getBtn08_JF023_S3_RH()) {
             // Código para la acción del botón cerrar sesion
 
             // Recupera el panel anterior del historial y muéstralo

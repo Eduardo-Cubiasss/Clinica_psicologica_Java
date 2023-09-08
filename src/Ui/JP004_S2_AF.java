@@ -6,6 +6,11 @@
 package Ui;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.event.EventListenerList;
+import javax.swing.plaf.ComponentUI;
+import keeptoo.KGradientPanel;
 import ux.Menu_Administrador;
 
 /**
@@ -15,30 +20,116 @@ import ux.Menu_Administrador;
 public class JP004_S2_AF extends javax.swing.JPanel {
     
     public Menu_Administrador controlador;
-    
+
+    public Menu_Administrador getControlador() {
+        return controlador;
+    }
+
+    public void setControlador(Menu_Administrador controlador) {
+        this.controlador = controlador;
+    }
+
+    public JPanel getJP001_S1_AF() {
+        return JP001_S1_AF;
+    }
+
+    public void setJP001_S1_AF(JPanel JP001_S1_AF) {
+        this.JP001_S1_AF = JP001_S1_AF;
+    }
+
     public JButton getBtn01_JF005_S2_AF() {
         return btn01_JF005_S2_AF;
+    }
+
+    public void setBtn01_JF005_S2_AF(JButton btn01_JF005_S2_AF) {
+        this.btn01_JF005_S2_AF = btn01_JF005_S2_AF;
     }
 
     public JButton getBtn02_JF005_S2_AF() {
         return btn02_JF005_S2_AF;
     }
 
+    public void setBtn02_JF005_S2_AF(JButton btn02_JF005_S2_AF) {
+        this.btn02_JF005_S2_AF = btn02_JF005_S2_AF;
+    }
+
     public JButton getBtn03_JF005_S2_AF() {
         return btn03_JF005_S2_AF;
+    }
+
+    public void setBtn03_JF005_S2_AF(JButton btn03_JF005_S2_AF) {
+        this.btn03_JF005_S2_AF = btn03_JF005_S2_AF;
     }
 
     public JButton getBtn04_JF005_S2_AF() {
         return btn04_JF005_S2_AF;
     }
 
+    public void setBtn04_JF005_S2_AF(JButton btn04_JF005_S2_AF) {
+        this.btn04_JF005_S2_AF = btn04_JF005_S2_AF;
+    }
+
     public JButton getBtn05_JF005_S2_AF() {
         return btn05_JF005_S2_AF;
     }
 
-    public JButton getbtn08_JF023_S3_RH() {
+    public void setBtn05_JF005_S2_AF(JButton btn05_JF005_S2_AF) {
+        this.btn05_JF005_S2_AF = btn05_JF005_S2_AF;
+    }
+
+    public JButton getBtn08_JF023_S3_RH() {
         return btn08_JF023_S3_RH;
     }
+
+    public void setBtn08_JF023_S3_RH(JButton btn08_JF023_S3_RH) {
+        this.btn08_JF023_S3_RH = btn08_JF023_S3_RH;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public KGradientPanel getkGradientPanel2() {
+        return kGradientPanel2;
+    }
+
+    public void setkGradientPanel2(KGradientPanel kGradientPanel2) {
+        this.kGradientPanel2 = kGradientPanel2;
+    }
+
+    public ComponentUI getUi() {
+        return ui;
+    }
+
+    public void setUi(ComponentUI ui) {
+        this.ui = ui;
+    }
+
+    public EventListenerList getListenerList() {
+        return listenerList;
+    }
+
+    public void setListenerList(EventListenerList listenerList) {
+        this.listenerList = listenerList;
+    }
+    
+   
+    
+    
+    
+    
     
     public JP004_S2_AF(Menu_Administrador controlador) {
         this.controlador = controlador;
@@ -72,9 +163,9 @@ public class JP004_S2_AF extends javax.swing.JPanel {
 
         JP001_S1_AF.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_AF.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        JP001_S1_AF.setMaximumSize(new java.awt.Dimension(1120, 540));
-        JP001_S1_AF.setMinimumSize(new java.awt.Dimension(1120, 540));
-        JP001_S1_AF.setPreferredSize(new java.awt.Dimension(1120, 540));
+        JP001_S1_AF.setMaximumSize(new java.awt.Dimension(1120, 640));
+        JP001_S1_AF.setMinimumSize(new java.awt.Dimension(1120, 640));
+        JP001_S1_AF.setPreferredSize(new java.awt.Dimension(1120, 640));
         JP001_S1_AF.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
@@ -119,7 +210,7 @@ public class JP004_S2_AF extends javax.swing.JPanel {
                 btn04_JF005_S2_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(btn04_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 170, 180));
+        JP001_S1_AF.add(btn04_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 210, 170, 180));
 
         btn05_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn05_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnComents.png"))); // NOI18N
@@ -129,11 +220,11 @@ public class JP004_S2_AF extends javax.swing.JPanel {
                 btn05_JF005_S2_AFActionPerformed(evt);
             }
         });
-        JP001_S1_AF.add(btn05_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 210, 160, 180));
+        JP001_S1_AF.add(btn05_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 210, 160, 180));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
         jLabel3.setText("jLabel3");
-        JP001_S1_AF.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 50, 170, 90));
+        JP001_S1_AF.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, 170, 90));
 
         kGradientPanel2.setkEndColor(new java.awt.Color(0, 153, 153));
         kGradientPanel2.setkStartColor(new java.awt.Color(0, 153, 153));

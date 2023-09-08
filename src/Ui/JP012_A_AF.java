@@ -5,6 +5,8 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import ux.AnunciosActuales;
 import ux.MBActualizarUsuario;
 import ux.PanelesInicializador;
@@ -18,6 +20,69 @@ public class JP012_A_AF extends javax.swing.JPanel {
    
      private MBActualizarUsuario controlador;
     private PanelesInicializador str;
+
+    public JButton getBtn1_JF012_A() {
+        return btn1_JF012_A;
+    }
+
+    public void setBtn1_JF012_A(JButton btn1_JF012_A) {
+        this.btn1_JF012_A = btn1_JF012_A;
+    }
+
+    public JButton getBtn2_JF012_A() {
+        return btn2_JF012_A;
+    }
+
+    public void setBtn2_JF012_A(JButton btn2_JF012_A) {
+        this.btn2_JF012_A = btn2_JF012_A;
+    }
+
+    public JButton getBtn3_JF012_A() {
+        return btn3_JF012_A;
+    }
+
+    public void setBtn3_JF012_A(JButton btn3_JF012_A) {
+        this.btn3_JF012_A = btn3_JF012_A;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+    
+    
+    
+    
+    
+    
+    
 
     public JP012_A_AF(MBActualizarUsuario controlador) {
         initComponents();
@@ -55,15 +120,15 @@ public class JP012_A_AF extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         jPanel3.setBackground(new java.awt.Color(200, 232, 232));
 
@@ -133,7 +198,7 @@ public class JP012_A_AF extends javax.swing.JPanel {
                         .addGap(20, 20, 20)
                         .addComponent(btn3_JF012_A))
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                .addGap(66, 66, 66)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(120, 120, 120)
@@ -145,7 +210,7 @@ public class JP012_A_AF extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(120, 120, 120)
                         .addComponent(btn1_JF012_A, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(115, 115, 115)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 

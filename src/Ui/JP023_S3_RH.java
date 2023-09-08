@@ -6,6 +6,9 @@
 package Ui;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 import ux.Menu_Terapeuta;
 import ux.PanelesInicializador;
 
@@ -17,39 +20,124 @@ public class JP023_S3_RH extends javax.swing.JPanel {
     
     private Menu_Terapeuta controlador;
     private PanelesInicializador str;
-    
+
     public JButton getBtn02_JF023_S3_RH() {
         return btn02_JF023_S3_RH;
+    }
+
+    public void setBtn02_JF023_S3_RH(JButton btn02_JF023_S3_RH) {
+        this.btn02_JF023_S3_RH = btn02_JF023_S3_RH;
     }
 
     public JButton getBtn03_JF023_S3_RH() {
         return btn03_JF023_S3_RH;
     }
 
+    public void setBtn03_JF023_S3_RH(JButton btn03_JF023_S3_RH) {
+        this.btn03_JF023_S3_RH = btn03_JF023_S3_RH;
+    }
+
     public JButton getBtn04_JF023_S3_RH() {
         return btn04_JF023_S3_RH;
+    }
+
+    public void setBtn04_JF023_S3_RH(JButton btn04_JF023_S3_RH) {
+        this.btn04_JF023_S3_RH = btn04_JF023_S3_RH;
     }
 
     public JButton getBtn05_JF023_S3_RH() {
         return btn05_JF023_S3_RH;
     }
 
+    public void setBtn05_JF023_S3_RH(JButton btn05_JF023_S3_RH) {
+        this.btn05_JF023_S3_RH = btn05_JF023_S3_RH;
+    }
+
     public JButton getBtn06_JF023_S3_RH() {
         return btn06_JF023_S3_RH;
+    }
+
+    public void setBtn06_JF023_S3_RH(JButton btn06_JF023_S3_RH) {
+        this.btn06_JF023_S3_RH = btn06_JF023_S3_RH;
     }
 
     public JButton getBtn07_JF023_S3_RH() {
         return btn07_JF023_S3_RH;
     }
 
+    public void setBtn07_JF023_S3_RH(JButton btn07_JF023_S3_RH) {
+        this.btn07_JF023_S3_RH = btn07_JF023_S3_RH;
+    }
+
     public JButton getBtn08_JF023_S3_RH() {
         return btn08_JF023_S3_RH;
+    }
+
+    public void setBtn08_JF023_S3_RH(JButton btn08_JF023_S3_RH) {
+        this.btn08_JF023_S3_RH = btn08_JF023_S3_RH;
     }
 
     public JButton getBtn09_JF023_S3_RH() {
         return btn09_JF023_S3_RH;
     }
 
+    public void setBtn09_JF023_S3_RH(JButton btn09_JF023_S3_RH) {
+        this.btn09_JF023_S3_RH = btn09_JF023_S3_RH;
+    }
+    
+    
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public KGradientPanel getkGradientPanel1() {
+        return kGradientPanel1;
+    }
+
+    public void setkGradientPanel1(KGradientPanel kGradientPanel1) {
+        this.kGradientPanel1 = kGradientPanel1;
+    }
+
+    public KGradientPanel getkGradientPanel2() {
+        return kGradientPanel2;
+    }
+
+    public void setkGradientPanel2(KGradientPanel kGradientPanel2) {
+        this.kGradientPanel2 = kGradientPanel2;
+    }
+
+    
+    
+    
     
     public JP023_S3_RH(Menu_Terapeuta controlador) {
         this.controlador = controlador;

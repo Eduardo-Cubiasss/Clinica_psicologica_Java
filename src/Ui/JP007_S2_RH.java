@@ -5,6 +5,11 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollBar;
+import keeptoo.KGradientPanel;
 import ux.CreacionDeAnuncios;
 import ux.PanelesInicializador;
 import ux.SeccionDeComentarios;
@@ -17,6 +22,93 @@ public class JP007_S2_RH extends javax.swing.JPanel {
 
     private SeccionDeComentarios controlador;
     private PanelesInicializador str;
+
+    public SeccionDeComentarios getControlador() {
+        return controlador;
+    }
+
+    public void setControlador(SeccionDeComentarios controlador) {
+        this.controlador = controlador;
+    }
+
+    public PanelesInicializador getStr() {
+        return str;
+    }
+
+    public void setStr(PanelesInicializador str) {
+        this.str = str;
+    }
+
+    public JButton getBtn001_JF007_S2_RH() {
+        return Btn001_JF007_S2_RH;
+    }
+
+    public void setBtn001_JF007_S2_RH(JButton Btn001_JF007_S2_RH) {
+        this.Btn001_JF007_S2_RH = Btn001_JF007_S2_RH;
+    }
+
+    public JPanel getJP007_0_S2_RH() {
+        return JP007_0_S2_RH;
+    }
+
+    public void setJP007_0_S2_RH(JPanel JP007_0_S2_RH) {
+        this.JP007_0_S2_RH = JP007_0_S2_RH;
+    }
+
+    public JScrollBar getJScrollBar001_JF007_S2_RH() {
+        return JScrollBar001_JF007_S2_RH;
+    }
+
+    public void setJScrollBar001_JF007_S2_RH(JScrollBar JScrollBar001_JF007_S2_RH) {
+        this.JScrollBar001_JF007_S2_RH = JScrollBar001_JF007_S2_RH;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public KGradientPanel getkGradientPanel1() {
+        return kGradientPanel1;
+    }
+
+    public void setkGradientPanel1(KGradientPanel kGradientPanel1) {
+        this.kGradientPanel1 = kGradientPanel1;
+    }
+    
+    
+    
+    
+    
+    
+    
 
     public JP007_S2_RH(SeccionDeComentarios controlador) {
         initComponents();
@@ -55,15 +147,16 @@ public class JP007_S2_RH extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 153, 153));
         kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 255));
@@ -143,7 +236,7 @@ public class JP007_S2_RH extends javax.swing.JPanel {
                 .addGap(12, 12, 12)
                 .addComponent(JP007_0_S2_RH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JScrollBar001_JF007_S2_RH, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
+                .addComponent(JScrollBar001_JF007_S2_RH, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );

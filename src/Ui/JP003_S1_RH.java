@@ -6,7 +6,9 @@
 package Ui;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
+import keeptoo.KGradientPanel;
 import ux.PanelesInicializador;
 import ux.ValidarCorreo;
 
@@ -18,22 +20,88 @@ public class JP003_S1_RH extends javax.swing.JPanel {
     
     private ValidarCorreo controlador;
     private PanelesInicializador str;
-    
-    public JTextField getTxtCorreoRegister_JF003_S1_RH() {
-        return TxtCorreoRegister_JF003_S1_RH;
-    }
 
     public JButton getBtn1_JF003_S1_RH() {
         return Btn1_JF003_S1_RH;
+    }
+
+    public void setBtn1_JF003_S1_RH(JButton Btn1_JF003_S1_RH) {
+        this.Btn1_JF003_S1_RH = Btn1_JF003_S1_RH;
     }
 
     public JButton getBtn2_JF003_S1_RH() {
         return Btn2_JF003_S1_RH;
     }
 
+    public void setBtn2_JF003_S1_RH(JButton Btn2_JF003_S1_RH) {
+        this.Btn2_JF003_S1_RH = Btn2_JF003_S1_RH;
+    }
+
+    public JTextField getTxtCorreoRegister_JF003_S1_RH() {
+        return TxtCorreoRegister_JF003_S1_RH;
+    }
+
+    public void setTxtCorreoRegister_JF003_S1_RH(JTextField TxtCorreoRegister_JF003_S1_RH) {
+        this.TxtCorreoRegister_JF003_S1_RH = TxtCorreoRegister_JF003_S1_RH;
+    }
+
     public JButton getBtn3_JF003_S1_RH() {
         return btn3_JF003_S1_RH;
     }
+
+    public void setBtn3_JF003_S1_RH(JButton btn3_JF003_S1_RH) {
+        this.btn3_JF003_S1_RH = btn3_JF003_S1_RH;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public KGradientPanel getkGradientPanel1() {
+        return kGradientPanel1;
+    }
+
+    public void setkGradientPanel1(KGradientPanel kGradientPanel1) {
+        this.kGradientPanel1 = kGradientPanel1;
+    }
+    
+    
     /**
      * Creates new form JP003_S1_RH
      */
@@ -67,18 +135,18 @@ public class JP003_S1_RH extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         JP001_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_RH.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         JP001_S1_RH.setForeground(new java.awt.Color(0, 102, 102));
         JP001_S1_RH.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        JP001_S1_RH.setMaximumSize(new java.awt.Dimension(1120, 540));
-        JP001_S1_RH.setMinimumSize(new java.awt.Dimension(1120, 540));
-        JP001_S1_RH.setPreferredSize(new java.awt.Dimension(1120, 540));
+        JP001_S1_RH.setMaximumSize(new java.awt.Dimension(1120, 640));
+        JP001_S1_RH.setMinimumSize(new java.awt.Dimension(1120, 640));
+        JP001_S1_RH.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         TxtCorreoRegister_JF003_S1_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         TxtCorreoRegister_JF003_S1_RH.setForeground(new java.awt.Color(153, 153, 153));
@@ -213,7 +281,7 @@ public class JP003_S1_RH extends javax.swing.JPanel {
                 .addComponent(btn3_JF003_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
-                .addGap(0, 4, Short.MAX_VALUE)
+                .addGap(0, 12, Short.MAX_VALUE)
                 .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 

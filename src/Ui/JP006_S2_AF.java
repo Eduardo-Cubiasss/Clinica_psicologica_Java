@@ -5,6 +5,10 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 import ux.CreacionDeAnuncios;
 import ux.PanelesInicializador;
 import ux.VisualizarNotas;
@@ -15,8 +19,99 @@ import ux.VisualizarNotas;
  */
 public class JP006_S2_AF extends javax.swing.JPanel {
     
+    
     private CreacionDeAnuncios controlador;
     private PanelesInicializador str;
+
+    public CreacionDeAnuncios getControlador() {
+        return controlador;
+    }
+
+    public void setControlador(CreacionDeAnuncios controlador) {
+        this.controlador = controlador;
+    }
+
+    public PanelesInicializador getStr() {
+        return str;
+    }
+
+    public void setStr(PanelesInicializador str) {
+        this.str = str;
+    }
+
+    public JButton getBtn2_JF006_S2_AF() {
+        return Btn2_JF006_S2_AF;
+    }
+
+    public void setBtn2_JF006_S2_AF(JButton Btn2_JF006_S2_AF) {
+        this.Btn2_JF006_S2_AF = Btn2_JF006_S2_AF;
+    }
+
+    public JButton getBtn3_JF006_S2_AF() {
+        return Btn3_JF006_S2_AF;
+    }
+
+    public void setBtn3_JF006_S2_AF(JButton Btn3_JF006_S2_AF) {
+        this.Btn3_JF006_S2_AF = Btn3_JF006_S2_AF;
+    }
+
+    public JButton getBtn001_JF006_S2_AF() {
+        return btn001_JF006_S2_AF;
+    }
+
+    public void setBtn001_JF006_S2_AF(JButton btn001_JF006_S2_AF) {
+        this.btn001_JF006_S2_AF = btn001_JF006_S2_AF;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public KGradientPanel getkGradientPanel2() {
+        return kGradientPanel2;
+    }
+
+    public void setkGradientPanel2(KGradientPanel kGradientPanel2) {
+        this.kGradientPanel2 = kGradientPanel2;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     public JP006_S2_AF(CreacionDeAnuncios controlador) {
         initComponents();
@@ -50,9 +145,9 @@ public class JP006_S2_AF extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -133,7 +228,7 @@ public class JP006_S2_AF extends javax.swing.JPanel {
                         .addGap(94, 94, 94))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(294, 294, 294)))
+                        .addGap(291, 291, 291)))
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -154,13 +249,13 @@ public class JP006_S2_AF extends javax.swing.JPanel {
                             .addComponent(btn001_JF006_S2_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabel1)
-                        .addGap(84, 84, 84)
-                        .addComponent(Btn2_JF006_S2_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(41, 41, 41)
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel1)))
+                .addGap(104, 104, 104)
+                .addComponent(Btn2_JF006_S2_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
                 .addComponent(Btn3_JF006_S2_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
                 .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 

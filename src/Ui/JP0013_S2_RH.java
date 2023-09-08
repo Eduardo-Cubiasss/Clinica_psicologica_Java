@@ -7,6 +7,7 @@ package Ui;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import ux.AcercaDeLaClinica;
 
@@ -17,34 +18,104 @@ import ux.AcercaDeLaClinica;
 public class JP0013_S2_RH extends javax.swing.JPanel {
 
     private AcercaDeLaClinica controlador;
-    
+
     public JButton getBtn001_JF013_S2_RH() {
         return Btn001_JF013_S2_RH;
     }
 
-    public JTextField getTxtDescripcion_JF013_S2_RH1() {
-        return TxtDescripcion_JF013_S2_RH1;
+    public void setBtn001_JF013_S2_RH(JButton Btn001_JF013_S2_RH) {
+        this.Btn001_JF013_S2_RH = Btn001_JF013_S2_RH;
     }
 
-    public JTextField getTxUbicacion_JF013_S2_RH() {
-        return TxUbicacion_JF013_S2_RH;
+    public JButton getBtn4_JF013_S2_RH2() {
+        return Btn4_JF013_S2_RH2;
     }
 
-    public JTextField getTxtTitulo_JF013_S2_RH() {
-        return TxtTitulo_JF013_S2_RH;
-    }
-
-    public JTextField getTxtDescripcion2_JF013_S2_RH() {
-        return TxtDescripcion2_JF013_S2_RH;
+    public void setBtn4_JF013_S2_RH2(JButton Btn4_JF013_S2_RH2) {
+        this.Btn4_JF013_S2_RH2 = Btn4_JF013_S2_RH2;
     }
 
     public JLabel getJLFoto_JF013_S2_RH() {
         return JLFoto_JF013_S2_RH;
     }
 
-    public JButton getBtn4_JF013_S2_RH2() {
-        return Btn4_JF013_S2_RH2;
+    public void setJLFoto_JF013_S2_RH(JLabel JLFoto_JF013_S2_RH) {
+        this.JLFoto_JF013_S2_RH = JLFoto_JF013_S2_RH;
     }
+
+    public JTextField getTxUbicacion_JF013_S2_RH() {
+        return TxUbicacion_JF013_S2_RH;
+    }
+
+    public void setTxUbicacion_JF013_S2_RH(JTextField TxUbicacion_JF013_S2_RH) {
+        this.TxUbicacion_JF013_S2_RH = TxUbicacion_JF013_S2_RH;
+    }
+
+    public JTextField getTxtDescripcion2_JF013_S2_RH() {
+        return TxtDescripcion2_JF013_S2_RH;
+    }
+
+    public void setTxtDescripcion2_JF013_S2_RH(JTextField TxtDescripcion2_JF013_S2_RH) {
+        this.TxtDescripcion2_JF013_S2_RH = TxtDescripcion2_JF013_S2_RH;
+    }
+
+    public JTextField getTxtDescripcion_JF013_S2_RH1() {
+        return TxtDescripcion_JF013_S2_RH1;
+    }
+
+    public void setTxtDescripcion_JF013_S2_RH1(JTextField TxtDescripcion_JF013_S2_RH1) {
+        this.TxtDescripcion_JF013_S2_RH1 = TxtDescripcion_JF013_S2_RH1;
+    }
+
+    public JTextField getTxtTitulo_JF013_S2_RH() {
+        return TxtTitulo_JF013_S2_RH;
+    }
+
+    public void setTxtTitulo_JF013_S2_RH(JTextField TxtTitulo_JF013_S2_RH) {
+        this.TxtTitulo_JF013_S2_RH = TxtTitulo_JF013_S2_RH;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+    
+   
     
     public JP0013_S2_RH(AcercaDeLaClinica controlador) {
         this.controlador = controlador;
@@ -84,7 +155,7 @@ public class JP0013_S2_RH extends javax.swing.JPanel {
         Btn001_JF013_S2_RH.setBorder(null);
         Btn001_JF013_S2_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel1.setText("Ubicación");
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
@@ -99,6 +170,7 @@ public class JP0013_S2_RH extends javax.swing.JPanel {
         jLabel2.setText("Acerca de la clínica");
 
         TxtDescripcion2_JF013_S2_RH.setBackground(new java.awt.Color(0, 153, 153));
+        TxtDescripcion2_JF013_S2_RH.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         TxtDescripcion2_JF013_S2_RH.setText("Inserte una descripción adicional acerca de la clinica");
         TxtDescripcion2_JF013_S2_RH.setBorder(null);
         TxtDescripcion2_JF013_S2_RH.addActionListener(new java.awt.event.ActionListener() {
@@ -108,6 +180,7 @@ public class JP0013_S2_RH extends javax.swing.JPanel {
         });
 
         TxtTitulo_JF013_S2_RH.setBackground(new java.awt.Color(0, 153, 153));
+        TxtTitulo_JF013_S2_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         TxtTitulo_JF013_S2_RH.setText("Nombre de la clinica");
         TxtTitulo_JF013_S2_RH.setBorder(null);
 
@@ -157,11 +230,12 @@ public class JP0013_S2_RH extends javax.swing.JPanel {
                     .addContainerGap(474, Short.MAX_VALUE)))
         );
 
-        jLabel3.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel3.setText("Descripción");
 
         TxUbicacion_JF013_S2_RH.setBorder(null);
 
+        TxtDescripcion_JF013_S2_RH1.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
         TxtDescripcion_JF013_S2_RH1.setBorder(null);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

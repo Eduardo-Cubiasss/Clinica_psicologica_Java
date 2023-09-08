@@ -7,6 +7,7 @@ package Ui;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 import ux.Login;
 import ux.PanelesInicializador;
@@ -79,6 +80,112 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
     public JButton getBtn02_JF048_S3_RH() {
         return btn02_JF048_S3_RH;
     }
+
+    public JComboBox<String> getCmbxGenero() {
+        return CmbxGenero;
+    }
+
+    public void setCmbxGenero(JComboBox<String> CmbxGenero) {
+        this.CmbxGenero = CmbxGenero;
+    }
+
+    public JButton getBtnEmpecemos() {
+        return btnEmpecemos;
+    }
+
+    public void setBtnEmpecemos(JButton btnEmpecemos) {
+        this.btnEmpecemos = btnEmpecemos;
+    }
+
+    public JButton getBtnOmitir() {
+        return btnOmitir;
+    }
+
+    public void setBtnOmitir(JButton btnOmitir) {
+        this.btnOmitir = btnOmitir;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public void setjLabel14(JLabel jLabel14) {
+        this.jLabel14 = jLabel14;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public void setjLabel15(JLabel jLabel15) {
+        this.jLabel15 = jLabel15;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+    
+    
      
     public JP0048_S3_RH(primer_uso controlador) {
         this.controlador = controlador;

@@ -6,8 +6,11 @@
 package Ui;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import keeptoo.KGradientPanel;
 import ux.Hints;
 import ux.LimiteCaracteres;
 import ux.PanelesInicializador;
@@ -26,34 +29,176 @@ public class JP002_S1_RHP extends javax.swing.JPanel {
     private PanelesInicializador str;
     private Hints hint;
     private LimiteCaracteres Limite;
-    
-    public JTextField getTxtNombre_JF002_S1_RH() {
-        return TxtNombre_JF002_S1_RH;
+
+    public RegAdmin_JF002 getControlador() {
+        return controlador;
     }
 
-    public JTextField getTxtUsuario_JF002_S1_RH2() {
-        return TxtUsuario_JF002_S1_RH2;
+    public void setControlador(RegAdmin_JF002 controlador) {
+        this.controlador = controlador;
     }
 
-    public JTextField getTxtID_JF002_S1_RH3() {
-        return TxtID_JF002_S1_RH3;
+    public JP002_S1_RHP getPanel() {
+        return panel;
     }
 
-    public JPasswordField getPassField_Contraseña_JF002_S1_RH() {
-        return PassField_Contraseña_JF002_S1_RH;
+    public void setPanel(JP002_S1_RHP panel) {
+        this.panel = panel;
     }
 
-    public JPasswordField getPassField_ConfirmarContra_JF002_S1_RH() {
-        return PassField_ConfirmarContra_JF002_S1_RH;
+    public PanelesInicializador getStr() {
+        return str;
+    }
+
+    public void setStr(PanelesInicializador str) {
+        this.str = str;
+    }
+
+    public Hints getHint() {
+        return hint;
+    }
+
+    public void setHint(Hints hint) {
+        this.hint = hint;
+    }
+
+    public LimiteCaracteres getLimite() {
+        return Limite;
+    }
+
+    public void setLimite(LimiteCaracteres Limite) {
+        this.Limite = Limite;
     }
 
     public JButton getBtn1_JF002_S1_RH() {
         return Btn1_JF002_S1_RH;
     }
 
+    public void setBtn1_JF002_S1_RH(JButton Btn1_JF002_S1_RH) {
+        this.Btn1_JF002_S1_RH = Btn1_JF002_S1_RH;
+    }
+
     public JButton getBtn2_JF002_S1_RH() {
         return Btn2_JF002_S1_RH;
     }
+
+    public void setBtn2_JF002_S1_RH(JButton Btn2_JF002_S1_RH) {
+        this.Btn2_JF002_S1_RH = Btn2_JF002_S1_RH;
+    }
+
+    public JPanel getJP001_S1_RH() {
+        return JP001_S1_RH;
+    }
+
+    public void setJP001_S1_RH(JPanel JP001_S1_RH) {
+        this.JP001_S1_RH = JP001_S1_RH;
+    }
+
+    public JPasswordField getPassField_ConfirmarContra_JF002_S1_RH() {
+        return PassField_ConfirmarContra_JF002_S1_RH;
+    }
+
+    public void setPassField_ConfirmarContra_JF002_S1_RH(JPasswordField PassField_ConfirmarContra_JF002_S1_RH) {
+        this.PassField_ConfirmarContra_JF002_S1_RH = PassField_ConfirmarContra_JF002_S1_RH;
+    }
+
+    public JPasswordField getPassField_Contraseña_JF002_S1_RH() {
+        return PassField_Contraseña_JF002_S1_RH;
+    }
+
+    public void setPassField_Contraseña_JF002_S1_RH(JPasswordField PassField_Contraseña_JF002_S1_RH) {
+        this.PassField_Contraseña_JF002_S1_RH = PassField_Contraseña_JF002_S1_RH;
+    }
+
+    public JTextField getTxtID_JF002_S1_RH3() {
+        return TxtID_JF002_S1_RH3;
+    }
+
+    public void setTxtID_JF002_S1_RH3(JTextField TxtID_JF002_S1_RH3) {
+        this.TxtID_JF002_S1_RH3 = TxtID_JF002_S1_RH3;
+    }
+
+    public JTextField getTxtNombre_JF002_S1_RH() {
+        return TxtNombre_JF002_S1_RH;
+    }
+
+    public void setTxtNombre_JF002_S1_RH(JTextField TxtNombre_JF002_S1_RH) {
+        this.TxtNombre_JF002_S1_RH = TxtNombre_JF002_S1_RH;
+    }
+
+    public JTextField getTxtUsuario_JF002_S1_RH2() {
+        return TxtUsuario_JF002_S1_RH2;
+    }
+
+    public void setTxtUsuario_JF002_S1_RH2(JTextField TxtUsuario_JF002_S1_RH2) {
+        this.TxtUsuario_JF002_S1_RH2 = TxtUsuario_JF002_S1_RH2;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public KGradientPanel getkGradientPanel1() {
+        return kGradientPanel1;
+    }
+
+    public void setkGradientPanel1(KGradientPanel kGradientPanel1) {
+        this.kGradientPanel1 = kGradientPanel1;
+    }
+    
+    
 
     
 

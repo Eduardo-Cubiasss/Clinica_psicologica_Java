@@ -5,6 +5,10 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
 import ux.CreacionDePruebas;
 import ux.PanelesInicializador;
 import ux.RedactarMensaje;
@@ -19,6 +23,76 @@ public class JP033_S3_RH extends javax.swing.JPanel {
     
     private CreacionDePruebas controlador;
     private PanelesInicializador str;
+
+    public JButton getBtn001_JF033_S3_RH() {
+        return Btn001_JF033_S3_RH;
+    }
+
+    public void setBtn001_JF033_S3_RH(JButton Btn001_JF033_S3_RH) {
+        this.Btn001_JF033_S3_RH = Btn001_JF033_S3_RH;
+    }
+
+    public JButton getBtn002_JF033_S3_RH() {
+        return Btn002_JF033_S3_RH;
+    }
+
+    public void setBtn002_JF033_S3_RH(JButton Btn002_JF033_S3_RH) {
+        this.Btn002_JF033_S3_RH = Btn002_JF033_S3_RH;
+    }
+
+    public JButton getBtn003_JF033_S3_RH() {
+        return Btn003_JF033_S3_RH;
+    }
+
+    public void setBtn003_JF033_S3_RH(JButton Btn003_JF033_S3_RH) {
+        this.Btn003_JF033_S3_RH = Btn003_JF033_S3_RH;
+    }
+
+    public JPanel getJP01_JP033_S3_RH() {
+        return JP01_JP033_S3_RH;
+    }
+
+    public void setJP01_JP033_S3_RH(JPanel JP01_JP033_S3_RH) {
+        this.JP01_JP033_S3_RH = JP01_JP033_S3_RH;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public void setjPanel3(JPanel jPanel3) {
+        this.jPanel3 = jPanel3;
+    }
+
+    public JSlider getjSlider1() {
+        return jSlider1;
+    }
+
+    public void setjSlider1(JSlider jSlider1) {
+        this.jSlider1 = jSlider1;
+    }
+    
+    
+    
+    
+    
+    
 
     public JP033_S3_RH(CreacionDePruebas controlador) {
         initComponents();
@@ -55,15 +129,15 @@ public class JP033_S3_RH extends javax.swing.JPanel {
         Btn002_JF033_S3_RH = new javax.swing.JButton();
         jSlider1 = new javax.swing.JSlider();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         Btn001_JF033_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         Btn001_JF033_S3_RH.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N

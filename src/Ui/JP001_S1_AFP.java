@@ -6,8 +6,11 @@
 package Ui;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import keeptoo.KGradientPanel;
 import ux.Login;
 import ux.PanelesInicializador;
 import ux.primer_uso;
@@ -23,24 +26,115 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
     private primer_uso controlador2; 
     private JP001_S1_AFP panel;
     private PanelesInicializador str;
+
     public JButton getBtn2_JF001_S1_AF() {
         return Btn2_JF001_S1_AF;
     }
-    
-    public JButton getbtn3_JF001_S1_AF() {
-        return btn3_JF001_S1_AF;
+
+    public void setBtn2_JF001_S1_AF(JButton Btn2_JF001_S1_AF) {
+        this.Btn2_JF001_S1_AF = Btn2_JF001_S1_AF;
+    }
+
+    public JPasswordField getPass_JF001_S1_AF() {
+        return Pass_JF001_S1_AF;
+    }
+
+    public void setPass_JF001_S1_AF(JPasswordField Pass_JF001_S1_AF) {
+        this.Pass_JF001_S1_AF = Pass_JF001_S1_AF;
     }
 
     public JTextField getTxtUsuario_JF001_S1_AF() {
         return TxtUsuario_JF001_S1_AF;
     }
 
-    public JPasswordField getPass_JF001_S1_AF() {
-        return Pass_JF001_S1_AF;
+    public void setTxtUsuario_JF001_S1_AF(JTextField TxtUsuario_JF001_S1_AF) {
+        this.TxtUsuario_JF001_S1_AF = TxtUsuario_JF001_S1_AF;
     }
-    public JButton getbtn4_JF001_S1_AF() {
+
+    public JButton getBtn4_JF001_S1_AF() {
         return btn4_JF001_S1_AF;
     }
+
+    public void setBtn4_JF001_S1_AF(JButton btn4_JF001_S1_AF) {
+        this.btn4_JF001_S1_AF = btn4_JF001_S1_AF;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public KGradientPanel getkGradientPanel1() {
+        return kGradientPanel1;
+    }
+
+    public void setkGradientPanel1(KGradientPanel kGradientPanel1) {
+        this.kGradientPanel1 = kGradientPanel1;
+    }
+
+    public JPanel getJP001_S1_AF() {
+        return JP001_S1_AF;
+    }
+
+    public void setJP001_S1_AF(JPanel JP001_S1_AF) {
+        this.JP001_S1_AF = JP001_S1_AF;
+    }
+
+    public JButton getBtn3_JF001_S1_AF() {
+        return btn3_JF001_S1_AF;
+    }
+
+    public void setBtn3_JF001_S1_AF(JButton btn3_JF001_S1_AF) {
+        this.btn3_JF001_S1_AF = btn3_JF001_S1_AF;
+    }
+    
+    
+    
+    
+    
     
     /**
      * Creates new form JP001_S1_AFP

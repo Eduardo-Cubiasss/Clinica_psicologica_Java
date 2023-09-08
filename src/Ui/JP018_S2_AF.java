@@ -5,6 +5,11 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import ux.PanelesInicializador;
 import ux.SolicitudesAprobadas;
 import ux.SolicitudesAprobadas2;
@@ -18,6 +23,92 @@ public class JP018_S2_AF extends javax.swing.JPanel {
     
     private SolicitudesAprobadas2 controlador;
     private PanelesInicializador str;
+
+    public JButton getBtn1_JF018_S2() {
+        return btn1_JF018_S2;
+    }
+
+    public void setBtn1_JF018_S2(JButton btn1_JF018_S2) {
+        this.btn1_JF018_S2 = btn1_JF018_S2;
+    }
+
+    public JButton getBtn2_JF018_S2() {
+        return btn2_JF018_S2;
+    }
+
+    public void setBtn2_JF018_S2(JButton btn2_JF018_S2) {
+        this.btn2_JF018_S2 = btn2_JF018_S2;
+    }
+
+    public JButton getBtn3_JF018_S2() {
+        return btn3_JF018_S2;
+    }
+
+    public void setBtn3_JF018_S2(JButton btn3_JF018_S2) {
+        this.btn3_JF018_S2 = btn3_JF018_S2;
+    }
+
+    public JButton getBtn4_JF018_S2() {
+        return btn4_JF018_S2;
+    }
+
+    public void setBtn4_JF018_S2(JButton btn4_JF018_S2) {
+        this.btn4_JF018_S2 = btn4_JF018_S2;
+    }
+
+    public JButton getBtn5_JF018_S2() {
+        return btn5_JF018_S2;
+    }
+
+    public void setBtn5_JF018_S2(JButton btn5_JF018_S2) {
+        this.btn5_JF018_S2 = btn5_JF018_S2;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+    
+    
+    
+    
+    
+    
 
     public JP018_S2_AF(SolicitudesAprobadas2 controlador) {
         initComponents();
@@ -56,15 +147,15 @@ public class JP018_S2_AF extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel2.setMinimumSize(new java.awt.Dimension(1120, 540));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1120, 540));
+        jPanel2.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel2.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         btn5_JF018_S2.setBackground(new java.awt.Color(255, 255, 255));
         btn5_JF018_S2.setForeground(new java.awt.Color(255, 255, 255));
@@ -137,7 +228,7 @@ public class JP018_S2_AF extends javax.swing.JPanel {
                         .addGap(0, 222, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(492, 492, 492)
+                .addGap(489, 489, 489)
                 .addComponent(btn4_JF018_S2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -165,9 +256,9 @@ public class JP018_S2_AF extends javax.swing.JPanel {
                         .addGap(136, 136, 136))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(103, 103, 103)
+                        .addGap(146, 146, 146)
                         .addComponent(btn4_JF018_S2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47))))
+                        .addGap(4, 4, 4))))
         );
 
         add(jPanel2, "card2");

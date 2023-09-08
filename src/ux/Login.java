@@ -73,8 +73,8 @@ public class Login implements ActionListener {
         this.panelacercademi = panelacercademi;
 
         this.panelRegistro.getBtn2_JF001_S1_AF().addActionListener(this);
-        this.panelRegistro.getbtn3_JF001_S1_AF().addActionListener(this);
-        this.panelRegistro.getbtn4_JF001_S1_AF().addActionListener(this);
+        this.panelRegistro.getBtn3_JF001_S1_AF().addActionListener(this);
+        this.panelRegistro.getBtn4_JF001_S1_AF().addActionListener(this);
         hint.addHint(panelRegistro.getTxtUsuario_JF001_S1_AF(), "Ingrese su usuario");
         
     }
@@ -174,7 +174,7 @@ public class Login implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Usuario no encontrado, compruebe el usuario y la contraseña de nuevo", "ERROR JF001DA", JOptionPane.INFORMATION_MESSAGE);
                 
             }
-        } else if (e.getSource() == panelRegistro.getbtn3_JF001_S1_AF()) {
+        } else if (e.getSource() == panelRegistro.getBtn3_JF001_S1_AF()) {
 
             PanelesManager.copiaPanel("JP001_S1_AFP");
             System.out.println("Si copia el inicio sesiom");
@@ -187,7 +187,7 @@ public class Login implements ActionListener {
             PanelesManager.restaurarPanelEliminado();
             System.out.println();
             System.out.println("Se restaura panel");
-        } else if (e.getSource() == panelRegistro.getbtn4_JF001_S1_AF()) {
+        } else if (e.getSource() == panelRegistro.getBtn4_JF001_S1_AF()) {
             //PanelesManager.eliminarPanel("panelInicioSesion");
             PanelesManager.copiaPanel("JP001_S1_AFP");
             JPContenido.remove(panelRegistro);

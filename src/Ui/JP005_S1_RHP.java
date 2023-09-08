@@ -5,15 +5,104 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import keeptoo.KGradientPanel;
+
 /**
  *
  * @author LENOVO
  */
 public class JP005_S1_RHP extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP005_S1_RHP
-     */
+    public JButton getBtn1_JF005_2_S2_RH() {
+        return Btn1_JF005_2_S2_RH;
+    }
+
+    public void setBtn1_JF005_2_S2_RH(JButton Btn1_JF005_2_S2_RH) {
+        this.Btn1_JF005_2_S2_RH = Btn1_JF005_2_S2_RH;
+    }
+
+    public JButton getBtn2_JF005_2_S2_RH() {
+        return Btn2_JF005_2_S2_RH;
+    }
+
+    public void setBtn2_JF005_2_S2_RH(JButton Btn2_JF005_2_S2_RH) {
+        this.Btn2_JF005_2_S2_RH = Btn2_JF005_2_S2_RH;
+    }
+
+    public JPanel getJP001_S1_RH() {
+        return JP001_S1_RH;
+    }
+
+    public void setJP001_S1_RH(JPanel JP001_S1_RH) {
+        this.JP001_S1_RH = JP001_S1_RH;
+    }
+
+    public JTextField getTxtCodigoTel_JF005_2_S2_RH() {
+        return TxtCodigoTel_JF005_2_S2_RH;
+    }
+
+    public void setTxtCodigoTel_JF005_2_S2_RH(JTextField TxtCodigoTel_JF005_2_S2_RH) {
+        this.TxtCodigoTel_JF005_2_S2_RH = TxtCodigoTel_JF005_2_S2_RH;
+    }
+
+    public JButton getBtn3_JF005_2_S2_RH() {
+        return btn3_JF005_2_S2_RH;
+    }
+
+    public void setBtn3_JF005_2_S2_RH(JButton btn3_JF005_2_S2_RH) {
+        this.btn3_JF005_2_S2_RH = btn3_JF005_2_S2_RH;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public KGradientPanel getkGradientPanel1() {
+        return kGradientPanel1;
+    }
+
+    public void setkGradientPanel1(KGradientPanel kGradientPanel1) {
+        this.kGradientPanel1 = kGradientPanel1;
+    }
+
+    
+    
+    
+    
+    
+    
     public JP005_S1_RHP() {
         initComponents();
     }
@@ -39,16 +128,18 @@ public class JP005_S1_RHP extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         JP001_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
         JP001_S1_RH.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         JP001_S1_RH.setForeground(new java.awt.Color(0, 102, 102));
         JP001_S1_RH.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        JP001_S1_RH.setMaximumSize(new java.awt.Dimension(1120, 540));
-        JP001_S1_RH.setMinimumSize(new java.awt.Dimension(1120, 540));
-        JP001_S1_RH.setPreferredSize(new java.awt.Dimension(1120, 540));
+        JP001_S1_RH.setMaximumSize(new java.awt.Dimension(1120, 640));
+        JP001_S1_RH.setMinimumSize(new java.awt.Dimension(1120, 640));
+        JP001_S1_RH.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 153));
@@ -169,7 +260,7 @@ public class JP005_S1_RHP extends javax.swing.JPanel {
                 .addComponent(Btn2_JF005_2_S2_RH)
                 .addGap(23, 23, 23)
                 .addComponent(btn3_JF005_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(169, Short.MAX_VALUE))
             .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 

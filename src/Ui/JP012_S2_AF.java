@@ -5,6 +5,12 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 import ux.BuscadorEmpleados;
 import ux.PanelesInicializador;
 
@@ -17,6 +23,99 @@ public class JP012_S2_AF extends javax.swing.JPanel {
   
     private BuscadorEmpleados controlador;
     private PanelesInicializador str;
+
+    public JButton getBtn1_JF012() {
+        return btn1_JF012;
+    }
+
+    public void setBtn1_JF012(JButton btn1_JF012) {
+        this.btn1_JF012 = btn1_JF012;
+    }
+
+    public JButton getBtn2_JF012() {
+        return btn2_JF012;
+    }
+
+    public void setBtn2_JF012(JButton btn2_JF012) {
+        this.btn2_JF012 = btn2_JF012;
+    }
+
+    public JButton getBtn3_JF012() {
+        return btn3_JF012;
+    }
+
+    public void setBtn3_JF012(JButton btn3_JF012) {
+        this.btn3_JF012 = btn3_JF012;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public void setjTextField1(JTextField jTextField1) {
+        this.jTextField1 = jTextField1;
+    }
+    
+    
+    
+    
+    
 
     public JP012_S2_AF(BuscadorEmpleados controlador) {
         initComponents();
@@ -56,15 +155,15 @@ public class JP012_S2_AF extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 640));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn3_JF012.setBackground(new java.awt.Color(255, 255, 255));
@@ -91,12 +190,12 @@ public class JP012_S2_AF extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, 450, 40));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 450, 40));
 
         btn1_JF012.setBackground(new java.awt.Color(255, 255, 255));
         btn1_JF012.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ph_note-pencil-bold.png"))); // NOI18N
         btn1_JF012.setBorderPainted(false);
-        jPanel1.add(btn1_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 250, -1, -1));
+        jPanel1.add(btn1_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 210, -1, -1));
 
         btn2_JF012.setBackground(new java.awt.Color(255, 255, 255));
         btn2_JF012.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pe.PNG"))); // NOI18N
@@ -105,7 +204,7 @@ public class JP012_S2_AF extends javax.swing.JPanel {
                 btn2_JF012ActionPerformed(evt);
             }
         });
-        jPanel1.add(btn2_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 290, 47, 61));
+        jPanel1.add(btn2_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 300, 47, 61));
 
         jPanel2.setBackground(new java.awt.Color(200, 232, 232));
 
@@ -120,14 +219,14 @@ public class JP012_S2_AF extends javax.swing.JPanel {
             .addGap(0, 44, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 1120, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 600, 1120, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 40, 40));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 40, 40));
 
         jTextField1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jTextField1.setText("          S");
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 420, 50));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 420, 50));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents

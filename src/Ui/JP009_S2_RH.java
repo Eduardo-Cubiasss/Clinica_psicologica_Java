@@ -8,8 +8,11 @@ package Ui;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JSeparator;
 import javax.swing.JTextField;
+import keeptoo.KGradientPanel;
 import ux.AgregarEmpleados;
 import ux.AgregarPerfilesDeUsuario;
 import ux.PanelesInicializador;
@@ -32,46 +35,228 @@ public class JP009_S2_RH extends javax.swing.JPanel {
          // Establecer el valor de str aquí después de haberlo creado
         str.setJP009_S2_RH(this);
     }
-    
-    
-    
-    
-    
+
+    public AgregarPerfilesDeUsuario getControlador() {
+        return controlador;
+    }
+
+    public void setControlador(AgregarPerfilesDeUsuario controlador) {
+        this.controlador = controlador;
+    }
+
+    public PanelesInicializador getStr() {
+        return str;
+    }
+
+    public void setStr(PanelesInicializador str) {
+        this.str = str;
+    }
+
     public JButton getBtn1_JF009_S2_RH() {
         return Btn1_JF009_S2_RH;
+    }
+
+    public void setBtn1_JF009_S2_RH(JButton Btn1_JF009_S2_RH) {
+        this.Btn1_JF009_S2_RH = Btn1_JF009_S2_RH;
     }
 
     public JButton getBtn2_JF009_S2_RH() {
         return Btn2_JF009_S2_RH;
     }
 
-    public JTextField getTxtNombre_JF009_S2_RH() {
-        return TxtNombre_JF009_S2_RH;
-    }
-
-    public JTextField getTxtContraseña_JF009_S2_RH() {
-        return TxtContraseña_JF009_S2_RH;
-    }
-
-    public JComboBox getjComboBox1() {
-        return jComboBox1;
-    }
-
-    public JLabel getLabelNumGenerado_JF009_S2_RH() {
-        return LabelNumGenerado_JF009_S2_RH;
-    }
-
-    public JTextField getTxtCorreoE_JF009_S2_RH() {
-        return TxtCorreoE_JF009_S2_RH;
+    public void setBtn2_JF009_S2_RH(JButton Btn2_JF009_S2_RH) {
+        this.Btn2_JF009_S2_RH = Btn2_JF009_S2_RH;
     }
 
     public JButton getBtn3_JF009_S2_RH1() {
         return Btn3_JF009_S2_RH1;
     }
 
+    public void setBtn3_JF009_S2_RH1(JButton Btn3_JF009_S2_RH1) {
+        this.Btn3_JF009_S2_RH1 = Btn3_JF009_S2_RH1;
+    }
+
     public JButton getBtn4_JF009_S2_RH() {
         return Btn4_JF009_S2_RH;
     }
+
+    public void setBtn4_JF009_S2_RH(JButton Btn4_JF009_S2_RH) {
+        this.Btn4_JF009_S2_RH = Btn4_JF009_S2_RH;
+    }
+
+    public JLabel getLabelImagenPerfil_JF009_S2_RH() {
+        return LabelImagenPerfil_JF009_S2_RH;
+    }
+
+    public void setLabelImagenPerfil_JF009_S2_RH(JLabel LabelImagenPerfil_JF009_S2_RH) {
+        this.LabelImagenPerfil_JF009_S2_RH = LabelImagenPerfil_JF009_S2_RH;
+    }
+
+    public JLabel getLabelNumGenerado_JF009_S2_RH() {
+        return LabelNumGenerado_JF009_S2_RH;
+    }
+
+    public void setLabelNumGenerado_JF009_S2_RH(JLabel LabelNumGenerado_JF009_S2_RH) {
+        this.LabelNumGenerado_JF009_S2_RH = LabelNumGenerado_JF009_S2_RH;
+    }
+
+    public JTextField getTxtContraseña_JF009_S2_RH() {
+        return TxtContraseña_JF009_S2_RH;
+    }
+
+    public void setTxtContraseña_JF009_S2_RH(JTextField TxtContraseña_JF009_S2_RH) {
+        this.TxtContraseña_JF009_S2_RH = TxtContraseña_JF009_S2_RH;
+    }
+
+    public JTextField getTxtCorreoE_JF009_S2_RH() {
+        return TxtCorreoE_JF009_S2_RH;
+    }
+
+    public void setTxtCorreoE_JF009_S2_RH(JTextField TxtCorreoE_JF009_S2_RH) {
+        this.TxtCorreoE_JF009_S2_RH = TxtCorreoE_JF009_S2_RH;
+    }
+
+    public JTextField getTxtNombre_JF009_S2_RH() {
+        return TxtNombre_JF009_S2_RH;
+    }
+
+    public void setTxtNombre_JF009_S2_RH(JTextField TxtNombre_JF009_S2_RH) {
+        this.TxtNombre_JF009_S2_RH = TxtNombre_JF009_S2_RH;
+    }
+
+    public JComboBox<String> getjComboBox1() {
+        return jComboBox1;
+    }
+
+    public void setjComboBox1(JComboBox<String> jComboBox1) {
+        this.jComboBox1 = jComboBox1;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public void setjPanel3(JPanel jPanel3) {
+        this.jPanel3 = jPanel3;
+    }
+
+    public JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    public void setjSeparator1(JSeparator jSeparator1) {
+        this.jSeparator1 = jSeparator1;
+    }
+
+    public JSeparator getjSeparator2() {
+        return jSeparator2;
+    }
+
+    public void setjSeparator2(JSeparator jSeparator2) {
+        this.jSeparator2 = jSeparator2;
+    }
+
+    public JSeparator getjSeparator3() {
+        return jSeparator3;
+    }
+
+    public void setjSeparator3(JSeparator jSeparator3) {
+        this.jSeparator3 = jSeparator3;
+    }
+
+    public JSeparator getjSeparator4() {
+        return jSeparator4;
+    }
+
+    public void setjSeparator4(JSeparator jSeparator4) {
+        this.jSeparator4 = jSeparator4;
+    }
+
+    public JSeparator getjSeparator5() {
+        return jSeparator5;
+    }
+
+    public void setjSeparator5(JSeparator jSeparator5) {
+        this.jSeparator5 = jSeparator5;
+    }
+
+    public JSeparator getjSeparator6() {
+        return jSeparator6;
+    }
+
+    public void setjSeparator6(JSeparator jSeparator6) {
+        this.jSeparator6 = jSeparator6;
+    }
+
+    public KGradientPanel getkGradientPanel3() {
+        return kGradientPanel3;
+    }
+
+    public void setkGradientPanel3(KGradientPanel kGradientPanel3) {
+        this.kGradientPanel3 = kGradientPanel3;
+    }
+    
+    
+    
+    
+    
+   
 
     
     
@@ -111,12 +296,15 @@ public class JP009_S2_RH extends javax.swing.JPanel {
         LabelNumGenerado_JF009_S2_RH = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel3.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel3.setPreferredSize(new java.awt.Dimension(1120, 640));
 
         kGradientPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         kGradientPanel3.setkEndColor(new java.awt.Color(0, 153, 153));
@@ -211,9 +399,9 @@ public class JP009_S2_RH extends javax.swing.JPanel {
                         .addGap(262, 262, 262)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(260, 260, 260)
+                        .addGap(253, 253, 253)
                         .addComponent(Btn3_JF009_S2_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57)
+                        .addGap(67, 67, 67)
                         .addComponent(Btn4_JF009_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -308,11 +496,11 @@ public class JP009_S2_RH extends javax.swing.JPanel {
                         .addGap(10, 10, 10)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(LabelImagenPerfil_JF009_S2_RH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(53, 53, 53)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Btn3_JF009_S2_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Btn4_JF009_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
+                    .addComponent(Btn3_JF009_S2_RH1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Btn4_JF009_S2_RH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
                 .addComponent(kGradientPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 

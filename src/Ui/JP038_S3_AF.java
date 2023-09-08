@@ -5,6 +5,9 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import ux.MBEliminarPrueba;
 import ux.PanelesInicializador;
 import ux.PruebasDF;
@@ -18,6 +21,82 @@ public class JP038_S3_AF extends javax.swing.JPanel {
     
     private MBEliminarPrueba controlador;
     private PanelesInicializador str;
+
+    public JButton getBtn1_JF038_S3_AF() {
+        return btn1_JF038_S3_AF;
+    }
+
+    public void setBtn1_JF038_S3_AF(JButton btn1_JF038_S3_AF) {
+        this.btn1_JF038_S3_AF = btn1_JF038_S3_AF;
+    }
+
+    public JButton getBtn2_JF038_S3_AF() {
+        return btn2_JF038_S3_AF;
+    }
+
+    public void setBtn2_JF038_S3_AF(JButton btn2_JF038_S3_AF) {
+        this.btn2_JF038_S3_AF = btn2_JF038_S3_AF;
+    }
+
+    public JButton getBtn3_JF038_S3_AF() {
+        return btn3_JF038_S3_AF;
+    }
+
+    public void setBtn3_JF038_S3_AF(JButton btn3_JF038_S3_AF) {
+        this.btn3_JF038_S3_AF = btn3_JF038_S3_AF;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public void setjPanel3(JPanel jPanel3) {
+        this.jPanel3 = jPanel3;
+    }
+    
+    
+    
+    
 
     public JP038_S3_AF(MBEliminarPrueba controlador) {
         initComponents();
@@ -53,15 +132,15 @@ public class JP038_S3_AF extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 640));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(200, 232, 232));
@@ -77,7 +156,7 @@ public class JP038_S3_AF extends javax.swing.JPanel {
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 1120, 50));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 1120, 50));
 
         btn1_JF038_S3_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn1_JF038_S3_AF.setForeground(new java.awt.Color(255, 255, 255));

@@ -5,15 +5,118 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import keeptoo.KGradientPanel;
+
 /**
  *
  * @author LENOVO
  */
 public class JP005_3_S2_RH extends javax.swing.JPanel {
 
-    /**
-     * Creates new form JP005_3_S2_RH
-     */
+    public JButton getBtn1_JF005_3_S2_RH() {
+        return Btn1_JF005_3_S2_RH;
+    }
+
+    public void setBtn1_JF005_3_S2_RH(JButton Btn1_JF005_3_S2_RH) {
+        this.Btn1_JF005_3_S2_RH = Btn1_JF005_3_S2_RH;
+    }
+
+    public JButton getBtn2_JF005_3_S2_RH() {
+        return Btn2_JF005_3_S2_RH;
+    }
+
+    public void setBtn2_JF005_3_S2_RH(JButton Btn2_JF005_3_S2_RH) {
+        this.Btn2_JF005_3_S2_RH = Btn2_JF005_3_S2_RH;
+    }
+
+    public JPanel getJP001_S1_RH() {
+        return JP001_S1_RH;
+    }
+
+    public void setJP001_S1_RH(JPanel JP001_S1_RH) {
+        this.JP001_S1_RH = JP001_S1_RH;
+    }
+
+    public JPasswordField getPassField2_ConfirmarContra_JF002_3_S2_RH1() {
+        return PassField2_ConfirmarContra_JF002_3_S2_RH1;
+    }
+
+    public void setPassField2_ConfirmarContra_JF002_3_S2_RH1(JPasswordField PassField2_ConfirmarContra_JF002_3_S2_RH1) {
+        this.PassField2_ConfirmarContra_JF002_3_S2_RH1 = PassField2_ConfirmarContra_JF002_3_S2_RH1;
+    }
+
+    public JPasswordField getPassField_ConfirmarContra_JF003_3_S2_RH1() {
+        return PassField_ConfirmarContra_JF003_3_S2_RH1;
+    }
+
+    public void setPassField_ConfirmarContra_JF003_3_S2_RH1(JPasswordField PassField_ConfirmarContra_JF003_3_S2_RH1) {
+        this.PassField_ConfirmarContra_JF003_3_S2_RH1 = PassField_ConfirmarContra_JF003_3_S2_RH1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public KGradientPanel getkGradientPanel1() {
+        return kGradientPanel1;
+    }
+
+    public void setkGradientPanel1(KGradientPanel kGradientPanel1) {
+        this.kGradientPanel1 = kGradientPanel1;
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public JP005_3_S2_RH() {
         initComponents();
     }

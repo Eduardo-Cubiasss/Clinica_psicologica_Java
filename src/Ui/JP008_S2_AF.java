@@ -6,7 +6,9 @@
 package Ui;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import keeptoo.KGradientPanel;
 import ux.ModificarEmpleados;
 import ux.PanelesInicializador;
 import ux.PersonalClinica;
@@ -23,6 +25,100 @@ public class JP008_S2_AF extends javax.swing.JPanel {
     private PersonalClinica controlador;
     private PanelesInicializador str;
 
+    public PersonalClinica getControlador() {
+        return controlador;
+    }
+
+    public void setControlador(PersonalClinica controlador) {
+        this.controlador = controlador;
+    }
+
+    public PanelesInicializador getStr() {
+        return str;
+    }
+
+    public void setStr(PanelesInicializador str) {
+        this.str = str;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public KGradientPanel getkGradientPanel1() {
+        return kGradientPanel1;
+    }
+
+    public void setkGradientPanel1(KGradientPanel kGradientPanel1) {
+        this.kGradientPanel1 = kGradientPanel1;
+    }
+
+    public JButton getBtn001_JF008_S3_AF() {
+        return Btn001_JF008_S3_AF;
+    }
+
+    public void setBtn001_JF008_S3_AF(JButton Btn001_JF008_S3_AF) {
+        this.Btn001_JF008_S3_AF = Btn001_JF008_S3_AF;
+    }
+
+    public JButton getBtn004_JF008_S3_AF() {
+        return Btn004_JF008_S3_AF;
+    }
+
+    public void setBtn004_JF008_S3_AF(JButton Btn004_JF008_S3_AF) {
+        this.Btn004_JF008_S3_AF = Btn004_JF008_S3_AF;
+    }
+
+    public JButton getBtn005_JF008_S3_AF() {
+        return Btn005_JF008_S3_AF;
+    }
+
+    public void setBtn005_JF008_S3_AF(JButton Btn005_JF008_S3_AF) {
+        this.Btn005_JF008_S3_AF = Btn005_JF008_S3_AF;
+    }
+
+    public JButton getBtn006_JF008_S3_AF() {
+        return Btn006_JF008_S3_AF;
+    }
+
+    public void setBtn006_JF008_S3_AF(JButton Btn006_JF008_S3_AF) {
+        this.Btn006_JF008_S3_AF = Btn006_JF008_S3_AF;
+    }
+
+    public JButton getBtn007_JF008_S3_AF() {
+        return Btn007_JF008_S3_AF;
+    }
+
+    public void setBtn007_JF008_S3_AF(JButton Btn007_JF008_S3_AF) {
+        this.Btn007_JF008_S3_AF = Btn007_JF008_S3_AF;
+    }
+    
+    
+    
+    
+    
+    
+
     public JP008_S2_AF(PersonalClinica controlador) {
         initComponents();
         this.controlador = controlador;
@@ -38,25 +134,7 @@ public class JP008_S2_AF extends javax.swing.JPanel {
    
     
     
-    public JButton getBtn001_JF008_S3_AF() {
-        return Btn001_JF008_S3_AF;
-    }
-
-    public JButton getBtn007_JF008_S3_AF() {
-        return Btn007_JF008_S3_AF;
-    }
-
-    public JButton getBtn006_JF008_S3_AF() {
-        return Btn006_JF008_S3_AF;
-    }
-
-    public JButton getBtn005_JF008_S3_AF() {
-        return Btn005_JF008_S3_AF;
-    }
-
-    public JButton getBtn004_JF008_S3_AF() {
-        return Btn004_JF008_S3_AF;
-    }
+   
     /**
      * Creates new form JP008_S2_AF
      */
@@ -81,15 +159,15 @@ public class JP008_S2_AF extends javax.swing.JPanel {
         Btn006_JF008_S3_AF = new javax.swing.JButton();
         Btn007_JF008_S3_AF = new javax.swing.JButton();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 640));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         kGradientPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
@@ -114,7 +192,7 @@ public class JP008_S2_AF extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("Personal Clínica");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, -1, -1));
 
         Btn001_JF008_S3_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn001_JF008_S3_AF.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -125,10 +203,10 @@ public class JP008_S2_AF extends javax.swing.JPanel {
         jPanel1.add(Btn001_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         Btn004_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ptm.png"))); // NOI18N
-        jPanel1.add(Btn004_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 270, 150, 170));
+        jPanel1.add(Btn004_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 240, 150, 170));
 
         Btn005_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actuuu.PNG"))); // NOI18N
-        jPanel1.add(Btn005_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 210, 60));
+        jPanel1.add(Btn005_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 520, 210, 60));
 
         Btn006_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plisya.png"))); // NOI18N
         Btn006_JF008_S3_AF.addActionListener(new java.awt.event.ActionListener() {
@@ -136,10 +214,10 @@ public class JP008_S2_AF extends javax.swing.JPanel {
                 Btn006_JF008_S3_AFActionPerformed(evt);
             }
         });
-        jPanel1.add(Btn006_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 150, 170));
+        jPanel1.add(Btn006_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 150, 170));
 
         Btn007_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aggg.PNG"))); // NOI18N
-        jPanel1.add(Btn007_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 540, 200, 50));
+        jPanel1.add(Btn007_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, 200, 50));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents

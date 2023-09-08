@@ -5,6 +5,9 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 import ux.AgregarArticulo;
 import ux.DetallesDeMiPerfil;
 import ux.PanelesInicializador;
@@ -17,6 +20,75 @@ public class JP028_S3_AF extends javax.swing.JPanel {
 
     private AgregarArticulo controlador;
     private PanelesInicializador str;
+
+    public JButton getBtn1_JF028_S3_AF() {
+        return Btn1_JF028_S3_AF;
+    }
+
+    public void setBtn1_JF028_S3_AF(JButton Btn1_JF028_S3_AF) {
+        this.Btn1_JF028_S3_AF = Btn1_JF028_S3_AF;
+    }
+
+    public JButton getBtn2_JF028_S3_AF() {
+        return Btn2_JF028_S3_AF;
+    }
+
+    public void setBtn2_JF028_S3_AF(JButton Btn2_JF028_S3_AF) {
+        this.Btn2_JF028_S3_AF = Btn2_JF028_S3_AF;
+    }
+
+    public JButton getBtn3_JF028_S3_AF() {
+        return Btn3_JF028_S3_AF;
+    }
+
+    public void setBtn3_JF028_S3_AF(JButton Btn3_JF028_S3_AF) {
+        this.Btn3_JF028_S3_AF = Btn3_JF028_S3_AF;
+    }
+
+    public JButton getBtn4_JF028_S3_AF() {
+        return Btn4_JF028_S3_AF;
+    }
+
+    public void setBtn4_JF028_S3_AF(JButton Btn4_JF028_S3_AF) {
+        this.Btn4_JF028_S3_AF = Btn4_JF028_S3_AF;
+    }
+
+    public JButton getBtn5_JF028_S3_AF() {
+        return Btn5_JF028_S3_AF;
+    }
+
+    public void setBtn5_JF028_S3_AF(JButton Btn5_JF028_S3_AF) {
+        this.Btn5_JF028_S3_AF = Btn5_JF028_S3_AF;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public void setjTextField1(JTextField jTextField1) {
+        this.jTextField1 = jTextField1;
+    }
+    
+    
+    
+    
+    
 
     public JP028_S3_AF(AgregarArticulo controlador) {
         initComponents();
@@ -52,15 +124,15 @@ public class JP028_S3_AF extends javax.swing.JPanel {
         Btn5_JF028_S3_AF = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
-        setMaximumSize(new java.awt.Dimension(1120, 540));
-        setMinimumSize(new java.awt.Dimension(1120, 540));
-        setPreferredSize(new java.awt.Dimension(1120, 540));
+        setMaximumSize(new java.awt.Dimension(1120, 640));
+        setMinimumSize(new java.awt.Dimension(1120, 640));
+        setPreferredSize(new java.awt.Dimension(1120, 640));
         setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 540));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 540));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1120, 640));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1120, 640));
         jPanel1.setRequestFocusEnabled(false);
 
         Btn3_JF028_S3_AF.setBackground(new java.awt.Color(255, 255, 255));
@@ -119,7 +191,7 @@ public class JP028_S3_AF extends javax.swing.JPanel {
         Btn5_JF028_S3_AF.setMinimumSize(new java.awt.Dimension(7, 36));
         Btn5_JF028_S3_AF.setPreferredSize(new java.awt.Dimension(143, 36));
 
-        jPanel2.setBackground(new java.awt.Color(200, 232, 232));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -179,7 +251,7 @@ public class JP028_S3_AF extends javax.swing.JPanel {
                         .addComponent(Btn2_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
