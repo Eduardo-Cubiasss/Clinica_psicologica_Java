@@ -5,18 +5,38 @@
  */
 package ux;
 
+import Ui.JP047_S3_AF;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 /**
  *
  * @author LENOVO
  */
-public class SolicitudesDeIncapacidadRedactar {
+public class SolicitudesDeIncapacidadRedactar implements ActionListener{
     private JPanel JPContenido;
+    private JP047_S3_AF vista47;
     
-    public SolicitudesDeIncapacidadRedactar(JPanel JPContenido)
+    public SolicitudesDeIncapacidadRedactar(JPanel JPContenido, JP047_S3_AF vista47)
     {
         this.JPContenido = JPContenido;
+        this.vista47 = vista47;
+        
+        this.vista47.getBtn01_JF045_S3_RH().addActionListener(this);
+        this.vista47.getjButton1().addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==vista47.getBtn01_JF045_S3_RH())
+        {
+            //Botón para volver a un panel anterior
+        }
+        else if (e.getSource()== vista47.getjButton1())
+        {
+            //Botón par redactar un mensaje
+        }
     }
     
 }

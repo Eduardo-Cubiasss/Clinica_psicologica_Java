@@ -5,18 +5,43 @@
  */
 package ux;
 
+import Ui.JP006_S2_AF;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 /**
  *
  * @author LENOVO
  */
-public class CreacionDeAnuncios {
+public class CreacionDeAnuncios implements ActionListener{
     private JPanel JPContenido;
+    private JP006_S2_AF vista06;
     
-    public CreacionDeAnuncios(JPanel JPContenido)
+    public CreacionDeAnuncios(JPanel JPContenido, JP006_S2_AF vista06)
     {
         this.JPContenido = JPContenido;
+        this.vista06 = vista06;
+        
+        this.vista06.getBtn001_JF006_S2_AF().addActionListener(this);
+        this.vista06.getBtn2_JF006_S2_AF().addActionListener(this);
+        this.vista06.getBtn3_JF006_S2_AF().addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == vista06.getBtn001_JF006_S2_AF())
+        {
+            //Boton de la casita, es para devolverte al menú de administrador
+        }
+        else if (e.getSource() == vista06.getBtn2_JF006_S2_AF())
+        {
+            // Botón de agregar anuncios
+        }
+        else if (e.getSource() == vista06.getBtn3_JF006_S2_AF())
+        {
+            //Botón de eliminar anuncios
+        }
     }
     
 }

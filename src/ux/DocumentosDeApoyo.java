@@ -32,6 +32,18 @@ public class DocumentosDeApoyo implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource()== panel.getBtn001_JF027_S3_RH())
+        {
+            //Botón para volver un panel anterior (menú)
+        }
+        else if(e.getSource()== panel.getBtn02_JF027_S3_RH())
+        {
+            //Botón Agregar documento de apoyo
+        }
+        else if(e.getSource()== panel.getBtn03_JF027_S3_RH())
+        {
+            //Botón eliminar documento de 
+        }
         
     }
     

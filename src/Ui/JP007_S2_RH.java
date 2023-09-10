@@ -20,7 +20,7 @@ import ux.SeccionDeComentarios;
  */
 public class JP007_S2_RH extends javax.swing.JPanel {
 
-    private SeccionDeComentarios controlador;
+    private  SeccionDeComentarios controlador;
     private PanelesInicializador str;
 
     public SeccionDeComentarios getControlador() {

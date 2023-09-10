@@ -10,11 +10,21 @@ package Database;
  * @author 50369
  */
 public class Empleado {
+    private int IdEmpleado;
     private String Username;
     private String Contraseña;
     private String Correo;
     private int nivel;
 
+    public int getIdEmpleado() {
+        return IdEmpleado;
+    }
+
+    public void setIdEmpleado(int IdEmpleado) {
+        this.IdEmpleado = IdEmpleado;
+    }
+
+    
     public String getUsername() {
         return Username;
     }

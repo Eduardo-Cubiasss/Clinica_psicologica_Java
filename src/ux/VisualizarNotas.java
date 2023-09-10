@@ -18,17 +18,20 @@ public class VisualizarNotas implements ActionListener{
     private JPanel JPContenido;
     private JP035_1_S3_RH vista35;
     
-    public VisualizarNotas(JPanel JPContenido)
+    public VisualizarNotas(JPanel JPContenido, JP035_1_S3_RH vista35)
     {
         this.JPContenido = JPContenido;
-        //this.vista35 = vista35;
+        this.vista35 = vista35;
         
-        //this.vista35.Btn1_JF035_S3_RH.addActionListener(this);
+        this.vista35.getBtn1_JF035_S3_RH().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+        if(e.getSource()== vista35.getBtn1_JF035_S3_RH())
+        {
+            //Botón para volver un panel anterior
+        }
     }
     
 }

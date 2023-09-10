@@ -5,6 +5,8 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import ux.AgregarPerfilesDeUsuario;
 import ux.DetallesDePerfil;
 import ux.PanelesInicializador;
@@ -15,9 +17,67 @@ import ux.PanelesInicializador;
  */
 public class JP010_S2_AF extends javax.swing.JPanel {
 
-    private DetallesDePerfil controlador;
+    private  DetallesDePerfil controlador;
     private PanelesInicializador str;
 
+    public JButton getBtn1_JF010_AF() {
+        return btn1_JF010_AF;
+    }
+
+    public void setBtn1_JF010_AF(JButton btn1_JF010_AF) {
+        this.btn1_JF010_AF = btn1_JF010_AF;
+    }
+
+    public JLabel getLb_Ape() {
+        return lb_Ape;
+    }
+
+    public void setLb_Ape(JLabel lb_Ape) {
+        this.lb_Ape = lb_Ape;
+    }
+
+    public JLabel getLb_Nom() {
+        return lb_Nom;
+    }
+
+    public void setLb_Nom(JLabel lb_Nom) {
+        this.lb_Nom = lb_Nom;
+    }
+
+    public JLabel getLb_chino() {
+        return lb_chino;
+    }
+
+    public void setLb_chino(JLabel lb_chino) {
+        this.lb_chino = lb_chino;
+    }
+
+    public JLabel getLb_dias() {
+        return lb_dias;
+    }
+
+    public void setLb_dias(JLabel lb_dias) {
+        this.lb_dias = lb_dias;
+    }
+
+    public JLabel getLb_eda() {
+        return lb_eda;
+    }
+
+    public void setLb_eda(JLabel lb_eda) {
+        this.lb_eda = lb_eda;
+    }
+
+    public JLabel getLb_ofi() {
+        return lb_ofi;
+    }
+
+    public void setLb_ofi(JLabel lb_ofi) {
+        this.lb_ofi = lb_ofi;
+    }
+    
+    
+    
     public JP010_S2_AF(DetallesDePerfil controlador) {
         initComponents();
         this.controlador = controlador;
@@ -181,7 +241,7 @@ public class JP010_S2_AF extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     public javax.swing.JLabel lb_Ape;
     public javax.swing.JLabel lb_Nom;
-    private javax.swing.JLabel lb_chino;
+    public javax.swing.JLabel lb_chino;
     public javax.swing.JLabel lb_dias;
     public javax.swing.JLabel lb_eda;
     public javax.swing.JLabel lb_ofi;

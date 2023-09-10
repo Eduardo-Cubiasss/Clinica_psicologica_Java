@@ -5,18 +5,33 @@
  */
 package ux;
 
+import Ui.JP044_S3_AF;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 /**
  *
  * @author LENOVO
  */
-public class EstadisticaDeCitas {
+public class EstadisticaDeCitas implements ActionListener{
     private JPanel JPContenido;
+    private JP044_S3_AF vista44;
     
-    public EstadisticaDeCitas(JPanel JPContenido)
+    public EstadisticaDeCitas(JPanel JPContenido, JP044_S3_AF vista44)
     {
         this.JPContenido = JPContenido;
+        this.vista44 = vista44;
+        
+        this.vista44.getBtn001_JF042_1_S3_AF().addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==vista44.getBtn001_JF042_1_S3_AF())
+        {
+            //Botón para volver a un panel anterior
+        }
     }
     
 }

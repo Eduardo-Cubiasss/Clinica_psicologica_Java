@@ -69,6 +69,15 @@ public class JP015_1_S2_RH extends javax.swing.JPanel {
     public void setjPanel1(JPanel jPanel1) {
         this.jPanel1 = jPanel1;
     }
+
+    public JButton getBtn3_JF015_S2_RH() {
+        return Btn3_JF015_S2_RH;
+    }
+
+    public void setBtn3_JF015_S2_RH(JButton Btn3_JF015_S2_RH) {
+        this.Btn3_JF015_S2_RH = Btn3_JF015_S2_RH;
+    }
+    
     
     
     

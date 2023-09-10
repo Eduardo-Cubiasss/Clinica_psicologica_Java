@@ -5,18 +5,44 @@
  */
 package ux;
 
+import Ui.JP015_1_S2_RH;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 /**
  *
  * @author LENOVO
  */
-public class NuevaSolicitudDeEmpleado {
+public class NuevaSolicitudDeEmpleado implements ActionListener{
     private JPanel JPContenido;
+    private JP015_1_S2_RH vista15;
     
-    public NuevaSolicitudDeEmpleado(JPanel JPContenido)
+    public NuevaSolicitudDeEmpleado(JPanel JPContenido, JP015_1_S2_RH vista15)
     {
         this.JPContenido = JPContenido;
+        this.vista15 = vista15;
+        
+        this.vista15.getBtn1_JF015_S2_RH().addActionListener(this);
+        this.vista15.getBtn2_JF015_S2_RH().addActionListener(this);
+        this.vista15.getBtn3_JF015_S2_RH().addActionListener(this);
+        
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == vista15.getBtn1_JF015_S2_RH())
+        {
+            //Botón para volver al panel anterior
+        }
+        else if(e.getSource() == vista15.getBtn2_JF015_S2_RH())
+        {
+            //Aceptar solicitud de permiso de empleado
+        }
+        else if(e.getSource() == vista15.getBtn2_JF015_S2_RH())
+        {
+            //Rechazar solicitud de permiso de empledao
+        }
     }
     
 }

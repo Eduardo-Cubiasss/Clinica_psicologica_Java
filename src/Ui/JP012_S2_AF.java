@@ -32,6 +32,8 @@ public class JP012_S2_AF extends javax.swing.JPanel {
         this.btn1_JF012 = btn1_JF012;
     }
 
+    
+
     public JButton getBtn2_JF012() {
         return btn2_JF012;
     }
@@ -182,15 +184,15 @@ public class JP012_S2_AF extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Sánchez Cerén"}
+                {"ID Usuario", null, null}
             },
             new String [] {
-                "Sara Herrera"
+                "ID Usuario", "Nombre", "Profesion"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 450, 40));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 450, 130));
 
         btn1_JF012.setBackground(new java.awt.Color(255, 255, 255));
         btn1_JF012.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ph_note-pencil-bold.png"))); // NOI18N
@@ -246,7 +248,7 @@ public class JP012_S2_AF extends javax.swing.JPanel {
     public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     public javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable jTable1;
     public javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -19,7 +19,8 @@ import ux.Menu_Secretaria;
 public class JP039_S3_RH extends javax.swing.JPanel {
 
       private Menu_Secretaria controlador;
-
+ 
+    
     public JButton getBtn02_JF039_S3_RH() {
         return btn02_JF039_S3_RH;
     }

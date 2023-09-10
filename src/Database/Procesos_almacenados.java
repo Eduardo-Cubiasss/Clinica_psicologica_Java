@@ -472,36 +472,35 @@ public class Procesos_almacenados {
             switch (operacion) {
                 case 1: // 1 para recibir
                     try (
-                    CallableStatement cs = conn.prepareCall("{CALL PDinforPacienteview(?, ?, ?, ?, ?, ?)}")) {
+                            CallableStatement cs = conn.prepareCall("{CALL PDinforPacienteview(?, ?, ?, ?, ?, ?)}")) {
 
-                    cs.setInt(1, modelpaciente.getIDpaciente());
-                    cs.registerOutParameter(2, java.sql.Types.VARCHAR);
-                    cs.registerOutParameter(3, java.sql.Types.DATE);
-                    cs.registerOutParameter(4, java.sql.Types.VARCHAR);
-                    cs.registerOutParameter(5, java.sql.Types.VARBINARY);
-                    cs.setString(6, modelpaciente.getMensajito()); // Valor para el último parámetro
+                        cs.setInt(1, modelpaciente.getIDpaciente());
+                        cs.registerOutParameter(2, java.sql.Types.VARCHAR);
+                        cs.registerOutParameter(3, java.sql.Types.DATE);
+                        cs.registerOutParameter(4, java.sql.Types.VARCHAR);
+                        cs.registerOutParameter(5, java.sql.Types.VARBINARY);
+                        cs.setString(6, modelpaciente.getMensajito()); // Valor para el último parámetro
 
-                    cs.execute();
+                        cs.execute();
 
-                    String nombre = cs.getString(2);
-                    Date fechaNacimiento = cs.getDate(3);
-                    String correo = cs.getString(4);
-                    byte[] imagen = cs.getBytes(5);
+                        String nombre = cs.getString(2);
+                        Date fechaNacimiento = cs.getDate(3);
+                        String correo = cs.getString(4);
+                        byte[] imagen = cs.getBytes(5);
 
-                    // Haz lo que necesites con los valores obtenidos, como mostrarlos o asignarlos a objetos.
-                    modelpaciente.setNombre(nombre);
-                    modelpaciente.setFnacimiento(fechaNacimiento);
-                    modelContactos.setCorreo(correo);
-                    modelousuarios.setFPerfil(imagen);
+                        // Haz lo que necesites con los valores obtenidos, como mostrarlos o asignarlos a objetos.
+                        modelpaciente.setNombre(nombre);
+                        modelpaciente.setFnacimiento(fechaNacimiento);
+                        modelContactos.setCorreo(correo);
+                        modelousuarios.setFPerfil(imagen);
 
-                    // La variable 'imagen' contiene la imagen en formato byte[] que puedes usar según tus necesidades.
-                
+                        // La variable 'imagen' contiene la imagen en formato byte[] que puedes usar según tus necesidades.
                     } catch (Exception e) {
-                    System.out.println("Error #J00DA");
-                    JOptionPane.showMessageDialog(null, "Error inesperado al cargar datos, reinicie su aplicación", "Error: J000DA", JOptionPane.WARNING_MESSAGE );
+                        System.out.println("Error #J00DA");
+                        JOptionPane.showMessageDialog(null, "Error inesperado al cargar datos, reinicie su aplicación", "Error: J000DA", JOptionPane.WARNING_MESSAGE);
 
-                }
-                break;
+                    }
+                    break;
 
                 case 2: // 2 para enviar mensajes
                     // Realizar la consulta
@@ -535,42 +534,43 @@ public class Procesos_almacenados {
         }
         return 0;
     }
+
     public void agregarecetas(RecetasMedicas recetas) {
 
         Connection conn = null;
         CallableStatement cs = null;
 
         try {
-                conn = ConnectionSQL.getConexion();
-                cs = conn.prepareCall("INSERT INTO TbRecetasMedicas(Padecimiento, Descripcion, NombreMedicamento) VALUES (?,?,?)");
-                cs.setString(1, recetas.getNombrePadecimiento());
-                cs.setString(2, recetas.getDescripcion());
-                cs.setString(3, recetas.getMwedicamentos() );
+            conn = ConnectionSQL.getConexion();
+            cs = conn.prepareCall("INSERT INTO TbRecetasMedicas(Padecimiento, Descripcion, NombreMedicamento) VALUES (?,?,?)");
+            cs.setString(1, recetas.getNombrePadecimiento());
+            cs.setString(2, recetas.getDescripcion());
+            cs.setString(3, recetas.getMwedicamentos());
 
-                cs.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Receta guardada", "Exito", JOptionPane.INFORMATION_MESSAGE);
+            cs.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Receta guardada", "Exito", JOptionPane.INFORMATION_MESSAGE);
 
-            } catch (Exception e) {
-                System.out.println("Error #J00DA");
-                JOptionPane.showMessageDialog(null, "Error innesperado al cargar datos, reinicie su aplicación", "Error: J000DA", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error innesperado al cargar datos, reinicie su aplicación", "Error: J000DA", JOptionPane.INFORMATION_MESSAGE);
 
-                e.printStackTrace();
-            } finally {
-                try {
-                    if (cs != null) {
-                        cs.close();
-                    }
-                    if (conn != null) {
-                        conn.close();
-                    }
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
+            e.printStackTrace();
+        } finally {
+            try {
+                if (cs != null) {
+                    cs.close();
                 }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
             }
-           
         }
-    
-        public int Acercademi(Usuarios modelousuarios, int operacion) {
+
+    }
+
+    public int Acercademi(Usuarios modelousuarios, int operacion) {
 
         Connection conn = null;
         PreparedStatement ps = null;
@@ -581,30 +581,28 @@ public class Procesos_almacenados {
             switch (operacion) {
                 case 1: // 1 para recibir
                     try (
-                    CallableStatement cs = conn.prepareCall("SELECT TOP 1 Descripcion FROM TbUsuarios Where UserName = ?")) {
+                            CallableStatement cs = conn.prepareCall("SELECT TOP 1 Descripcion FROM TbUsuarios Where UserName = ?")) {
 
-                    cs.setString(1, modelousuarios.getUserName()); 
-                    cs.registerOutParameter(2, java.sql.Types.VARBINARY);
-                    
+                        cs.setString(1, modelousuarios.getUserName());
+                        cs.registerOutParameter(2, java.sql.Types.VARBINARY);
 
-                    cs.execute();
+                        cs.execute();
 
-                    String Descripcion = cs.getString(2);
+                        String Descripcion = cs.getString(2);
 
-                    modelousuarios.setDescripcion(Descripcion);
+                        modelousuarios.setDescripcion(Descripcion);
 
-                    // La variable 'imagen' contiene la imagen en formato byte[] que puedes usar según tus necesidades.
-                
+                        // La variable 'imagen' contiene la imagen en formato byte[] que puedes usar según tus necesidades.
                     } catch (Exception e) {
-                    System.out.println("Error #J00DA");
-                    JOptionPane.showMessageDialog(null, "Error inesperado al cargar datos, reinicie su aplicación", "Error: J000DA", JOptionPane.WARNING_MESSAGE );
+                        System.out.println("Error #J00DA");
+                        JOptionPane.showMessageDialog(null, "Error inesperado al cargar datos, reinicie su aplicación", "Error: J000DA", JOptionPane.WARNING_MESSAGE);
 
-                }
-                break;
+                    }
+                    break;
 
                 case 2: // 2 para enviar mensajes
                     // Realizar la consulta
-                    
+
                     ps = conn.prepareStatement("EXEC PDCambiarContraseña ?, ?, ?");
                     ps.setString(1, modelousuarios.getUserName());
                     ps.setString(2, modelousuarios.getContraseña());
@@ -612,10 +610,10 @@ public class Procesos_almacenados {
                     ps.executeUpdate();
                     JOptionPane.showMessageDialog(null, "Cierra sesión para comprobar tu cambio de contraseña", "Sgurencia", JOptionPane.INFORMATION_MESSAGE);
                     break;
-                    
+
                 case 3: // 2 para enviar mensajes
                     // Realizar la consulta
-                    
+
                     ps = conn.prepareStatement("EXEC PDDetallesperfil ?, ?");
                     ps.setString(1, modelousuarios.getUserName());
                     ps.setString(2, modelousuarios.getDescripcion());
@@ -646,8 +644,8 @@ public class Procesos_almacenados {
         }
         return 0;
     }
-        
-        public boolean AgregarEmpleado(Empleado modelEmpleado, Usuarios modelUsuario) {
+
+    public boolean AgregarEmpleado(Empleado modelEmpleado, Usuarios modelUsuario) {
         Connection conn = null;
         PreparedStatement ps = null;
         try {
@@ -681,6 +679,86 @@ public class Procesos_almacenados {
             }
         }
     }
+     public List<Resultado> Empleados(Empleado modelEmpleado, int operacion, String textoBusqueda) {
+        {
+            Connection conn = null;
+            PreparedStatement ps = null;
+            List<Resultado> resultados = new ArrayList<>();
+
+            try {
+                conn = ConnectionSQL.getConexion();
+
+                switch (operacion) {
+                    case 1:
+                        ps = conn.prepareStatement("SELECT\n"
+                                + "    t.IDUsuario,\n"
+                                + "    t.Nombre AS Nombre,\n"
+                                + "    a_tl.NombreDeActividad AS ActividadLaboral\n"
+                                + "FROM\n"
+                                + "    TbTerapeutas t\n"
+                                + "LEFT JOIN\n"
+                                + "    TbActividadesLaborales a_tl\n"
+                                + "ON\n"
+                                + "    t.IDActividadLaboral = a_tl.IDActividadLaboral\n"
+                                + "WHERE\n"
+                                + "    t.Nombre LIKE '?'\n"
+                                + "UNION\n"
+                                + "SELECT\n"
+                                + "    s.IDUsuario,\n"
+                                + "    s.Nombre AS Nombre,\n"
+                                + "    a_sl.NombreDeActividad AS ActividadLaboral\n"
+                                + "FROM\n"
+                                + "    TbSecretaria s\n"
+                                + "LEFT JOIN\n"
+                                + "    TbActividadesLaborales a_sl\n"
+                                + "ON\n"
+                                + "    s.IDActividadLaboral = a_sl.IDActividadLaboral\n"
+                                + "WHERE\n"
+                                + "    s.Nombre LIKE '?';");
+                        ps.setString(1, "%" + textoBusqueda + "%");
+                        ps.setString(2, "%" + textoBusqueda + "%");
+                        ResultSet rs = ps.executeQuery();
+                        System.out.println("%" + textoBusqueda + "%");
+                        while (rs.next()) {
+                            int idUsuario = rs.getInt("IDUsuario");
+                            String Nombre = rs.getString("Nombre");
+                            String ActividadLaboral = rs.getString("ActividadLaboral");
+
+                            // Crea un objeto Resultado y agrégalo a la lista de resultados
+                            Resultado resultado = new Resultado(idUsuario, Nombre, ActividadLaboral);
+                            resultados.add(resultado);
+                        }
+
+                        break;
+
+                    case 2: // 2 para select
+
+                        break;
+
+                    default:
+                        // Manejar un caso no válido
+                        JOptionPane.showMessageDialog(null, "Operación no válida: " + operacion, "Error", JOptionPane.ERROR_MESSAGE);
+                        break;
+                }
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error: J009UI", "Error inesperado, cierre sesión y vuelva a abrir sesión", JOptionPane.ERROR_MESSAGE);
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (ps != null) {
+                        ps.close();
+                    }
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            return resultados;
+        }
+
     }
-
-
+}

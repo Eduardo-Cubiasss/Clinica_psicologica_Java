@@ -5,18 +5,32 @@
  */
 package ux;
 
+import Ui.JP007_S2_RH;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 /**
  *
  * @author LENOVO
  */
-public class SeccionDeComentarios {
+public class SeccionDeComentarios implements ActionListener{
     private JPanel JPContenido;
-    
-    public SeccionDeComentarios(JPanel JPContenido)
+    private JP007_S2_RH vista07;
+    public SeccionDeComentarios(JPanel JPContenido, JP007_S2_RH vista07)
     {
         this.JPContenido = JPContenido;
+        this.vista07 = vista07;
+        
+        this.vista07.getBtn001_JF007_S2_RH().addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == vista07.getBtn001_JF007_S2_RH())
+        {
+            //Boton de volver al menú administradooor
+        }
     }
     
 }
