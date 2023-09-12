@@ -92,6 +92,23 @@ public class Validaciones implements KeyListener {
             case "SoloLetras":
                 // Código para solo letras
                 break;
+                 case "CaracteresEspeciales":
+    char c = e.getKeyChar();
+    // Aquí puedes definir los caracteres especiales permitidos en tu validación
+    String caracteresEspecialesPermitidos = "@#$%&!"; // Ejemplo de caracteres especiales permitidos
+    if (!Character.isLetterOrDigit(c) && !caracteresEspecialesPermitidos.contains(String.valueOf(c))
+            && c != KeyEvent.VK_BACK_SPACE && c != KeyEvent.VK_DELETE) {
+        e.consume(); // Ignora el evento si no es una letra, número ni un caracter especial permitido
+    }
+    break;
+    
+    case "SoloNumeros2":
+    char x = e.getKeyChar();
+    if (!Character.isDigit(x) && x != '-' && x != KeyEvent.VK_BACK_SPACE && x != KeyEvent.VK_DELETE) {
+        e.consume(); // Ignora el evento si no es un número ni un guion
+    }
+    break;
+
         }
 
     }
