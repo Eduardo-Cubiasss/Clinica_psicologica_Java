@@ -173,7 +173,17 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Sánchez Cerén", null, null}
+                {"Sánchez Cerén", null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
                 "ID", "Nombres", "Apellidos"
@@ -182,7 +192,7 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 450, 190));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 450, 180));
 
         btn1_JF024.setBackground(new java.awt.Color(255, 255, 255));
         btn1_JF024.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
@@ -225,7 +235,7 @@ public class JP024_S3_AF extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BtnVer;
-    private javax.swing.JButton btn1_JF024;
+    public javax.swing.JButton btn1_JF024;
     public javax.swing.JButton btn3_JF024;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel4;
