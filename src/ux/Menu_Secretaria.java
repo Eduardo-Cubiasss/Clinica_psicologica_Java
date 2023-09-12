@@ -6,6 +6,7 @@
 package ux;
 
 import Ui.JP039_S3_RH;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
@@ -17,11 +18,16 @@ import javax.swing.JPanel;
 public class Menu_Secretaria implements ActionListener{
     private JPanel JPContenido;
     private JP039_S3_RH vista39;
+    private HabilitarPaneles PanelesManager;
+    //Declarar Paneles manager
     
-    public Menu_Secretaria(JPanel JPContenido, JP039_S3_RH vista39)
+    public Menu_Secretaria(JPanel JPContenido, JP039_S3_RH vista39, HabilitarPaneles PanelesManager)
+            //Ponerlo en la clase para indicar que se espera usar
     {
         this.JPContenido = JPContenido;
         this.vista39 = vista39;
+        this.PanelesManager = PanelesManager;
+        //Hacer this a PanelesManager
         
         this.vista39.getBtn02_JF039_S3_RH().addActionListener(this);
         this.vista39.getBtn03_JF023_S3_RH().addActionListener(this);
@@ -36,11 +42,19 @@ public class Menu_Secretaria implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==vista39.getBtn02_JF039_S3_RH())
         {
-            //Botón para ver ventana de mensajes
+            //Botón para ver ventana de mensajes panelVerMensaje
+            PanelesManager.copiaPanel("JP039_S3_RH");
+            //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
+            JPContenido.remove(vista39);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelVerMensaje");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
         }
         else if (e.getSource()==vista39.getBtn03_JF023_S3_RH())
         {
             //Botón de pruebas
+            
         }
         else if(e.getSource()==vista39.getBtn04_JF039_S3_RH())
         {
@@ -49,6 +63,13 @@ public class Menu_Secretaria implements ActionListener{
         else if(e.getSource()==vista39.getBtn05_JF039_S3_RH())
         {
             //Botón de mi perfil
+            PanelesManager.copiaPanel("JP039_S3_RH");
+            //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
+            JPContenido.remove(vista39);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelDetallesDeMiPerfil");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
         }
         else if(e.getSource()==vista39.getBtn06_JF039_S3_RH())
         {
