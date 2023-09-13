@@ -5,10 +5,69 @@
  */
 package Database;
 
+import java.awt.Image;
+import java.util.Date;
+
 /**
  *
  * @author 50369
  */
 public class Articulos {
+    private int IDArticulo;
+    private String Titulo;
+    private String Descripcion;
+    private Image Imagen;
+    private Date Fecha;
+    private int IDTerapeuta;
+
+    public int getIDArticulo() {
+        return IDArticulo;
+    }
+
+    public void setIDArticulo(int IDArticulo) {
+        this.IDArticulo = IDArticulo;
+    }
+
+    public String getTitulo() {
+        return Titulo;
+    }
+
+    public void setTitulo(String Titulo) {
+        this.Titulo = Titulo;
+    }
+
+    public String getDescripcion() {
+        return Descripcion;
+    }
+
+    public void setDescripcion(String Descripcion) {
+        this.Descripcion = Descripcion;
+    }
+
+    public Image getImagen() {
+        return Imagen;
+    }
+
+    public void setImagen(Image Imagen) {
+        this.Imagen = Imagen;
+    }
+
+    public Date getFecha() {
+        return Fecha;
+    }
+
+    public void setFecha(Date Fecha) {
+        this.Fecha = Fecha;
+    }
+
+    public int getIDTerapeuta() {
+        return IDTerapeuta;
+    }
+
+    public void setIDTerapeuta(int IDTerapeuta) {
+        this.IDTerapeuta = IDTerapeuta;
+    }
+    
+  
     
 }

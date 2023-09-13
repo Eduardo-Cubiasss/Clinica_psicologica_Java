@@ -10,5 +10,34 @@ package Database;
  * @author 50369
  */
 public class Estadisticas {
+    private int IDEstadistica;
+    private int IDCita;
+    private int IDClinica; 
+
+    public int getIDEstadistica() {
+        return IDEstadistica;
+    }
+
+    public void setIDEstadistica(int IDEstadistica) {
+        this.IDEstadistica = IDEstadistica;
+    }
+
+    public int getIDCita() {
+        return IDCita;
+    }
+
+    public void setIDCita(int IDCita) {
+        this.IDCita = IDCita;
+    }
+
+    public int getIDClinica() {
+        return IDClinica;
+    }
+
+    public void setIDClinica(int IDClinica) {
+        this.IDClinica = IDClinica;
+    }
+
+
     
 }

@@ -10,5 +10,24 @@ package Database;
  * @author 50369
  */
 public class TipoUsuarios {
+    private int IDTipoUsuario;
+    private String Cargo;
+
+    public int getIDTipoUsuario() {
+        return IDTipoUsuario;
+    }
+
+    public void setIDTipoUsuario(int IDTipoUsuario) {
+        this.IDTipoUsuario = IDTipoUsuario;
+    }
+
+    public String getCargo() {
+        return Cargo;
+    }
+
+    public void setCargo(String Cargo) {
+        this.Cargo = Cargo;
+    }
+    
     
 }

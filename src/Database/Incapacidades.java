@@ -5,10 +5,68 @@
  */
 package Database;
 
+import java.util.Date;
+
 /**
  *
  * @author 50369
  */
 public class Incapacidades {
+    private int IDIncapacidad;
+    private Date Fecha;
+    private String Mensaje;
+    private int IDTerapeuta;
+    private int IDSecretaria;
+    private int IDAdministrador;
+
+    public int getIDIncapacidad() {
+        return IDIncapacidad;
+    }
+
+    public void setIDIncapacidad(int IDIncapacidad) {
+        this.IDIncapacidad = IDIncapacidad;
+    }
+
+    public Date getFecha() {
+        return Fecha;
+    }
+
+    public void setFecha(Date Fecha) {
+        this.Fecha = Fecha;
+    }
+
+    public String getMensaje() {
+        return Mensaje;
+    }
+
+    public void setMensaje(String Mensaje) {
+        this.Mensaje = Mensaje;
+    }
+
+    public int getIDTerapeuta() {
+        return IDTerapeuta;
+    }
+
+    public void setIDTerapeuta(int IDTerapeuta) {
+        this.IDTerapeuta = IDTerapeuta;
+    }
+
+    public int getIDSecretaria() {
+        return IDSecretaria;
+    }
+
+    public void setIDSecretaria(int IDSecretaria) {
+        this.IDSecretaria = IDSecretaria;
+    }
+
+    public int getIDAdministrador() {
+        return IDAdministrador;
+    }
+
+    public void setIDAdministrador(int IDAdministrador) {
+        this.IDAdministrador = IDAdministrador;
+    }
+    
+    
     
 }

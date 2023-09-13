@@ -145,30 +145,30 @@ public class Inicializador {
     private Resultado resultado;
     private Empleado modelEmpleado;
     private ActividadesLaborales ActividadLaboral;
-    private Administrador Admin;
+    private Administrador modelAdmin;
     private AgendasPersonales AgendaPersonal;
     private Anuncios Anuncios;
-    private Articulos Artuculo;
+    private Articulos Articulo;
     private Citas Citas;
-    private Clinica Clinica;
+    private Clinica modelClinica;
     private Comentarios Comentarios;
-    private Contactos Contacto;
+    private Contactos ModelContactos;
     private Expedientes Expedientes;
-    private Genero Genero;
+    private Genero modelGenero;
     private Incapacidades Incapacidades;
     private Llaves Llaves;
-    private Opciones Opnciones;
-    private Pacientes Paciente;
+    private Opciones Opciones;
+    private Pacientes modelPaciente;
     private Preguntas Pregunta;
-    private Procesos_almacenados ProcesosAlmacenados;
+    private Procesos_almacenados Procesos;
     private Pruebas Pruebas;
-    private RecetasMedicas Recetas;
+    private RecetasMedicas recetas;
     private Respuestas Respuestas;
-    private Resultados Resultados;
+    private Resultados resultados;
     private Secretarias Secretarias;
     private Terapeutas Terapeutas;
     private TipoUsuarios TipoUser;
-    private Usuarios Users;
+    private Usuarios modelUsers;
     
     
     
@@ -305,6 +305,23 @@ public class Inicializador {
         RecetasMedicas recetas = new RecetasMedicas();
         ActividadesLaborales modelActivity = new ActividadesLaborales();
         Empleado modelEmpleado = new Empleado();
+        Resultados resultados = new Resultados();
+        AgendasPersonales AgendaPersonal = new AgendasPersonales();
+        Anuncios Anuncios = new Anuncios ();
+        Articulos Articulo = new Articulos ();
+        Citas Citas = new Citas ();
+        Comentarios Comentarios = new Comentarios ();
+        Expedientes Expedientes = new Expedientes ();
+        Incapacidades Incapacidades = new Incapacidades ();
+        Llaves Llaves = new Llaves ();
+        Opciones Opciones  = new Opciones ();
+        Preguntas Pregunta = new Preguntas ();
+        Pruebas Pruebas  = new Pruebas ();
+        Respuestas Respuestas  = new Respuestas ();
+        Secretarias Secretarias = new Secretarias ();
+        Terapeutas Terapeutas  = new Terapeutas ();
+        TipoUsuarios TipoUser = new TipoUsuarios();
+       //Estadisticas controladorEstadistica = new Estadisticas();
         panelesInicializador = new PanelesInicializador();
         Hints hint= new Hints();
         

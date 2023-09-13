@@ -10,5 +10,33 @@ package Database;
  * @author 50369
  */
 public class Resultados {
+    private int IDResultados;
+    private String Resultados;
+    private int IDPrueba;
+
+    public int getIDResultados() {
+        return IDResultados;
+    }
+
+    public void setIDResultados(int IDResultados) {
+        this.IDResultados = IDResultados;
+    }
+
+    public String getResultados() {
+        return Resultados;
+    }
+
+    public void setResultados(String Resultados) {
+        this.Resultados = Resultados;
+    }
+
+    public int getIDPrueba() {
+        return IDPrueba;
+    }
+
+    public void setIDPrueba(int IDPrueba) {
+        this.IDPrueba = IDPrueba;
+    }
+    
     
 }

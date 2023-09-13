@@ -5,10 +5,58 @@
  */
 package Database;
 
+import java.util.Date;
+
 /**
  *
  * @author 50369
  */
 public class Citas {
-    
+    private int IDCitas;
+    private Date Fecha;
+    private int IDTerapeuta;     
+    private int IDSecretaria;
+    private int IDPaciente;       
+
+    public int getIDCitas() {
+        return IDCitas;
+    }
+
+    public void setIDCitas(int IDCitas) {
+        this.IDCitas = IDCitas;
+    }
+
+    public Date getFecha() {
+        return Fecha;
+    }
+
+    public void setFecha(Date Fecha) {
+        this.Fecha = Fecha;
+    }
+
+    public int getIDTerapeuta() {
+        return IDTerapeuta;
+    }
+
+    public void setIDTerapeuta(int IDTerapeuta) {
+        this.IDTerapeuta = IDTerapeuta;
+    }
+
+    public int getIDSecretaria() {
+        return IDSecretaria;
+    }
+
+    public void setIDSecretaria(int IDSecretaria) {
+        this.IDSecretaria = IDSecretaria;
+    }
+
+    public int getIDPaciente() {
+        return IDPaciente;
+    }
+
+    public void setIDPaciente(int IDPaciente) {
+        this.IDPaciente = IDPaciente;
+    }
+            
+            
 }
