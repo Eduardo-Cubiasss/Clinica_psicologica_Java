@@ -69,6 +69,22 @@ public class JP043_1_S3_RH extends javax.swing.JPanel {
     public void setkGradientPanel1(KGradientPanel kGradientPanel1) {
         this.kGradientPanel1 = kGradientPanel1;
     }
+
+    public CrearCita getControlador() {
+        return controlador;
+    }
+
+    public void setControlador(CrearCita controlador) {
+        this.controlador = controlador;
+    }
+
+    public PanelesInicializador getStr() {
+        return str;
+    }
+
+    public void setStr(PanelesInicializador str) {
+        this.str = str;
+    }
     
     
     

@@ -6,6 +6,7 @@
 package ux;
 
 import Ui.JP043_1_S3_RH;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
@@ -17,6 +18,8 @@ import javax.swing.JPanel;
 public class CrearCita implements ActionListener{
     private JPanel JPContenido;
     private JP043_1_S3_RH vista43;
+    private HabilitarPaneles PanelesManager;
+
     
     public CrearCita(JPanel JPContenido, JP043_1_S3_RH vista43)
     {
@@ -30,6 +33,13 @@ public class CrearCita implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==vista43.getBtn1_JF043_S3_RH())
         {
+            PanelesManager.copiaPanel("JP043_1_S3_RH");
+            //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
+            JPContenido.remove(vista43);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelSolicitudesDeEmpleados");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
             //Botón de volver a un panel anterior
         }
     }
