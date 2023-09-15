@@ -6,6 +6,7 @@
 package ux;
 
 import Ui.JP028_S3_AF;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
@@ -17,12 +18,12 @@ import javax.swing.JPanel;
 public class AgregarArticulo implements ActionListener{
     private JPanel JPContenido;
     private JP028_S3_AF vista28;
-    
-    public AgregarArticulo(JPanel JPContenido, JP028_S3_AF vista28)
+          private HabilitarPaneles PanelesManager;   
+    public AgregarArticulo(JPanel JPContenido, JP028_S3_AF vista28, HabilitarPaneles PanelesManager)
     {
         this.JPContenido = JPContenido;
         this.vista28 = vista28;
-        
+        this.PanelesManager = PanelesManager;            
         this.vista28.getBtn1_JF028_S3_AF().addActionListener(this);
         this.vista28.getBtn2_JF028_S3_AF().addActionListener(this);
         this.vista28.getBtn3_JF028_S3_AF().addActionListener(this);
@@ -34,6 +35,12 @@ public class AgregarArticulo implements ActionListener{
     public void actionPerformed(ActionEvent e) {
      if(e.getSource()== vista28.getBtn1_JF028_S3_AF())
      {
+         PanelesManager.copiaPanel("JP028_S3_AF");
+            JPContenido.remove(vista28);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelDocumentosView");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
          //Botón para volver a un panel anterior
      }
      else if(e.getSource()== vista28.getBtn2_JF028_S3_AF())

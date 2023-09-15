@@ -60,6 +60,15 @@ public class DetallesDeMiPerfil implements ActionListener{
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado();
         }
+        else if (e.getSource() == vista25.getBtn1_JF025_S3_RH())
+        {
+            PanelesManager.copiaPanel("JP025_S3_RH");
+            JPContenido.remove(vista25);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
+        }
     }
     
 }

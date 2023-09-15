@@ -6,6 +6,7 @@
 package ux;
 
 import Ui.JP029_S3_RH;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
@@ -17,12 +18,13 @@ import javax.swing.JPanel;
 public class EliminarDocumentosDeApoyo implements ActionListener{
     private JPanel JPContenido;
     private JP029_S3_RH vista29;
-    
-    public EliminarDocumentosDeApoyo(JPanel JPContenido, JP029_S3_RH vista29)
+             private HabilitarPaneles PanelesManager;
+
+    public EliminarDocumentosDeApoyo(JPanel JPContenido, JP029_S3_RH vista29, HabilitarPaneles PanelesManager)
     {
         this.JPContenido = JPContenido;
         this.vista29 = vista29;
-        
+           this.PanelesManager = PanelesManager;             
         this.vista29.getBtn1_JF029_S3_RH().addActionListener(this);
     }
 
@@ -30,6 +32,12 @@ public class EliminarDocumentosDeApoyo implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== vista29.getBtn1_JF029_S3_RH())
         {
+            PanelesManager.copiaPanel("JP029_S3_RH");
+            JPContenido.remove(vista29);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelDocumentosView");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
             //Botón para volver a un panel anterior
         }
     }

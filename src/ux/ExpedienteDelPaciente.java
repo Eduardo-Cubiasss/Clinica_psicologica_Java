@@ -59,9 +59,29 @@ public class ExpedienteDelPaciente implements ActionListener{
        }
        else if(e.getSource() == vistaJP031.getBtn4_JF031_S3_RH())
        {
-           PanelesManager.copiaPanel("JP024_S3_AF");
+           PanelesManager.copiaPanel("JP031_S3_RHG");
                 JPContenido.remove(vistaJP031);
                 ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRecetarMedicamentos");
+                JPContenido.revalidate();
+                JPContenido.repaint();
+                PanelesManager.restaurarPanelEliminado();
+       }
+       
+       else if(e.getSource() == vistaJP031.getBtn3_JF031_S3_RH2())
+       {
+           PanelesManager.copiaPanel("JP031_S3_RHG");
+                JPContenido.remove(vistaJP031);
+                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "PanelvisualizarNota");
+                JPContenido.revalidate();
+                JPContenido.repaint();
+                PanelesManager.restaurarPanelEliminado();
+       }
+       
+       else if(e.getSource() == vistaJP031.getBtn4_JF031_S3_RH())
+       {
+           PanelesManager.copiaPanel("JP031_S3_RHG");
+                JPContenido.remove(vistaJP031);
+                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelEscribirEnTuAgendaPersonal");
                 JPContenido.revalidate();
                 JPContenido.repaint();
                 PanelesManager.restaurarPanelEliminado();

@@ -9,6 +9,7 @@ import Database.Empleado;
 import Database.Procesos_almacenados;
 import Database.Usuarios;
 import Ui.JP009_S2_RH;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
@@ -53,6 +54,17 @@ public class AgregarPerfilesDeUsuario implements ActionListener {
             vista09.getTxtCorreoE_JF009_S2_RH().setText(""); // Establece el JTextField en blanco
             vista09.getjComboBox1().setSelectedIndex(0); // Establece el JComboBox en su primer elemento (o el que desees)
         }
+        
+        else if (e.getSource() == vista09.getBtn1_JF009_S2_RH()) {
+             //Para regresar al anterior
+            PanelesManager.copiaPanel("JP009_S2_RH");
+            JPContenido.remove(vista09);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPersonalClinica");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
+        }
+        
     }
 
 }

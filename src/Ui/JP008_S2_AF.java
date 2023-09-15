@@ -112,6 +112,14 @@ public class JP008_S2_AF extends javax.swing.JPanel {
     public void setBtn007_JF008_S3_AF(JButton Btn007_JF008_S3_AF) {
         this.Btn007_JF008_S3_AF = Btn007_JF008_S3_AF;
     }
+
+    public JButton getBtnBuscar() {
+        return btnBuscar;
+    }
+
+    public void setBtnBuscar(JButton btnBuscar) {
+        this.btnBuscar = btnBuscar;
+    }
     
     
     
@@ -158,6 +166,7 @@ public class JP008_S2_AF extends javax.swing.JPanel {
         Btn005_JF008_S3_AF = new javax.swing.JButton();
         Btn006_JF008_S3_AF = new javax.swing.JButton();
         Btn007_JF008_S3_AF = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(1120, 640));
         setMinimumSize(new java.awt.Dimension(1120, 640));
@@ -219,12 +228,24 @@ public class JP008_S2_AF extends javax.swing.JPanel {
         Btn007_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aggg.PNG"))); // NOI18N
         jPanel1.add(Btn007_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, 200, 50));
 
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/++.PNG"))); // NOI18N
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 560, 50, 60));
+
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn006_JF008_S3_AFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn006_JF008_S3_AFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn006_JF008_S3_AFActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -233,6 +254,7 @@ public class JP008_S2_AF extends javax.swing.JPanel {
     public javax.swing.JButton Btn005_JF008_S3_AF;
     public javax.swing.JButton Btn006_JF008_S3_AF;
     public javax.swing.JButton Btn007_JF008_S3_AF;
+    public javax.swing.JButton btnBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;

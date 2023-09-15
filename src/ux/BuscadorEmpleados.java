@@ -9,6 +9,7 @@ import Database.ActividadesLaborales;
 import Database.Empleado;
 import Database.Procesos_almacenados;
 import Ui.JP012_S2_AF;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -28,15 +29,17 @@ public class BuscadorEmpleados implements ActionListener{
     private ActividadesLaborales modelactivity;
     private Procesos_almacenados procesos;
     private DefaultTableModel tableModel;
+    private HabilitarPaneles PanelesManager;
+
     
-    public BuscadorEmpleados(JPanel JPContenido, JP012_S2_AF vista12, Empleado modelEmpleado, ActividadesLaborales modelactivity, Procesos_almacenados procesos)
+    public BuscadorEmpleados(JPanel JPContenido, JP012_S2_AF vista12, Empleado modelEmpleado, ActividadesLaborales modelactivity, Procesos_almacenados procesos, HabilitarPaneles PanelesManager)
     {
         this.JPContenido = JPContenido;
         this.modelEmpleado = modelEmpleado;
         this.modelactivity = modelactivity;
         this.procesos = procesos;
         this.vista12 = vista12;
-        
+         this.PanelesManager = PanelesManager;   
         this.vista12.getBtn1_JF012().addActionListener(this);
         this.vista12.getBtn2_JF012().addActionListener(this);
         this.vista12.getBtn3_JF012().addActionListener(this);
@@ -67,14 +70,33 @@ public class BuscadorEmpleados implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vista12.getBtn2_JF012())
         {
+            //tendria que ir el panelMBEliminarUsuario creoooo
+            PanelesManager.copiaPanel("JP012_S2_AF");
+            JPContenido.remove(vista12);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "  ");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
             //Es para eliminar una cuenta
         }
         else if (e.getSource() == vista12.getBtn3_JF012())
         {
+            PanelesManager.copiaPanel("JP012_S2_AF");
+            JPContenido.remove(vista12);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPersonalClinica");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
             //Es para volver al panel anterior
         }
         else if (e.getSource() == vista12.getBtn1_JF012())
         {
+            PanelesManager.copiaPanel("JP012_S2_AF");
+            JPContenido.remove(vista12);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelDetallesDePerfil");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
             //Es la lupita para buscar el empleado en base a su nombre
         }
         

@@ -6,6 +6,7 @@
 package ux;
 
 import Ui.JP035_1_S3_RH;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
@@ -17,12 +18,13 @@ import javax.swing.JPanel;
 public class VisualizarNotas implements ActionListener{
     private JPanel JPContenido;
     private JP035_1_S3_RH vista35;
-    
-    public VisualizarNotas(JPanel JPContenido, JP035_1_S3_RH vista35)
+        private HabilitarPaneles PanelesManager;
+
+    public VisualizarNotas(JPanel JPContenido, JP035_1_S3_RH vista35,HabilitarPaneles PanelesManager)
     {
         this.JPContenido = JPContenido;
         this.vista35 = vista35;
-        
+        this.PanelesManager = PanelesManager;
         this.vista35.getBtn1_JF035_S3_RH().addActionListener(this);
     }
 
@@ -30,6 +32,13 @@ public class VisualizarNotas implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== vista35.getBtn1_JF035_S3_RH())
         {
+            
+            PanelesManager.copiaPanel("JP035_1_S3_RH");
+                JPContenido.remove(vista35);
+                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelExpedienteDelPaciente");
+                JPContenido.revalidate();
+                JPContenido.repaint();
+                PanelesManager.restaurarPanelEliminado();
             //Botón para volver un panel anterior
         }
     }

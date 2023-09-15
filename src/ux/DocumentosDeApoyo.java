@@ -6,6 +6,7 @@
 package ux;
 
 import Ui.JP027_S3_RH;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
@@ -34,14 +35,33 @@ public class DocumentosDeApoyo implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== panel.getBtn001_JF027_S3_RH())
         {
+            PanelesManager.copiaPanel("JP027_S3_RH");
+            JPContenido.remove(panel);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
             //Botón para volver un panel anterior (menú)
         }
         else if(e.getSource()== panel.getBtn02_JF027_S3_RH())
         {
+            PanelesManager.copiaPanel("JP027_S3_RH");
+            JPContenido.remove(panel);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelAgregarArticulo");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
+            
             //Botón Agregar documento de apoyo
         }
         else if(e.getSource()== panel.getBtn03_JF027_S3_RH())
         {
+            PanelesManager.copiaPanel("JP027_S3_RH");
+            JPContenido.remove(panel);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelEliminarDocumentosDeApoyo");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
             //Botón eliminar documento de 
         }
         

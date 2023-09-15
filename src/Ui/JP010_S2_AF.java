@@ -7,6 +7,8 @@ package Ui;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import ux.AgregarPerfilesDeUsuario;
 import ux.DetallesDePerfil;
 import ux.PanelesInicializador;
@@ -28,21 +30,7 @@ public class JP010_S2_AF extends javax.swing.JPanel {
         this.btn1_JF010_AF = btn1_JF010_AF;
     }
 
-    public JLabel getLb_Ape() {
-        return lb_Ape;
-    }
-
-    public void setLb_Ape(JLabel lb_Ape) {
-        this.lb_Ape = lb_Ape;
-    }
-
-    public JLabel getLb_Nom() {
-        return lb_Nom;
-    }
-
-    public void setLb_Nom(JLabel lb_Nom) {
-        this.lb_Nom = lb_Nom;
-    }
+    
 
     public JLabel getLb_chino() {
         return lb_chino;
@@ -52,29 +40,121 @@ public class JP010_S2_AF extends javax.swing.JPanel {
         this.lb_chino = lb_chino;
     }
 
-    public JLabel getLb_dias() {
-        return lb_dias;
+    public JTextField getTxtApellido() {
+        return txtApellido;
     }
 
-    public void setLb_dias(JLabel lb_dias) {
-        this.lb_dias = lb_dias;
+    public void setTxtApellido(JTextField txtApellido) {
+        this.txtApellido = txtApellido;
     }
 
-    public JLabel getLb_eda() {
-        return lb_eda;
+    public JTextField getTxtDias() {
+        return txtDias;
     }
 
-    public void setLb_eda(JLabel lb_eda) {
-        this.lb_eda = lb_eda;
+    public void setTxtDias(JTextField txtDias) {
+        this.txtDias = txtDias;
     }
 
-    public JLabel getLb_ofi() {
-        return lb_ofi;
+    public JTextField getTxtEdad() {
+        return txtEdad;
     }
 
-    public void setLb_ofi(JLabel lb_ofi) {
-        this.lb_ofi = lb_ofi;
+    public void setTxtEdad(JTextField txtEdad) {
+        this.txtEdad = txtEdad;
     }
+
+    public JTextField getTxtNombre() {
+        return txtNombre;
+    }
+
+    public void setTxtNombre(JTextField txtNombre) {
+        this.txtNombre = txtNombre;
+    }
+
+    public JTextField getTxtOficio() {
+        return txtOficio;
+    }
+
+    public void setTxtOficio(JTextField txtOficio) {
+        this.txtOficio = txtOficio;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+  
+    
+    
     
     
     
@@ -107,18 +187,18 @@ public class JP010_S2_AF extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        lb_Nom = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        lb_Ape = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        lb_eda = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        lb_ofi = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        lb_dias = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         lb_chino = new javax.swing.JLabel();
         btn1_JF010_AF = new javax.swing.JButton();
+        txtDias = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        txtApellido = new javax.swing.JTextField();
+        txtEdad = new javax.swing.JTextField();
+        txtOficio = new javax.swing.JTextField();
 
         setMaximumSize(new java.awt.Dimension(1120, 640));
         setMinimumSize(new java.awt.Dimension(1120, 640));
@@ -145,44 +225,23 @@ public class JP010_S2_AF extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel1.setText("Nombre");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, -1, -1));
-
-        lb_Nom.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        lb_Nom.setText("Bob");
-        jPanel2.add(lb_Nom, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 200, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, 120, 30));
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel5.setText("Apellidos");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 250, -1, -1));
-
-        lb_Ape.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        lb_Ape.setText("Mataplagas");
-        jPanel2.add(lb_Ape, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 260, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 110, 20));
 
         jLabel7.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel7.setText("Edad");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
-
-        lb_eda.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        lb_eda.setText("25");
-        lb_eda.setToolTipText("");
-        jPanel2.add(lb_eda, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 310, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 330, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel9.setText("Oficio");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, -1, -1));
-
-        lb_ofi.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        lb_ofi.setText("Secretario");
-        jPanel2.add(lb_ofi, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 360, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 400, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel11.setText("Dias de trabajo");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 400, -1, -1));
-
-        lb_dias.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        lb_dias.setText("15");
-        jPanel2.add(lb_dias, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 400, -1, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(200, 232, 232));
 
@@ -207,6 +266,11 @@ public class JP010_S2_AF extends javax.swing.JPanel {
         btn1_JF010_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector.png"))); // NOI18N
         btn1_JF010_AF.setBorderPainted(false);
         jPanel2.add(btn1_JF010_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        jPanel2.add(txtDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 460, 220, 30));
+        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 220, 30));
+        jPanel2.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 240, 220, 30));
+        jPanel2.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 320, 220, 30));
+        jPanel2.add(txtOficio, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 390, 220, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -239,11 +303,11 @@ public class JP010_S2_AF extends javax.swing.JPanel {
     public javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    public javax.swing.JLabel lb_Ape;
-    public javax.swing.JLabel lb_Nom;
     public javax.swing.JLabel lb_chino;
-    public javax.swing.JLabel lb_dias;
-    public javax.swing.JLabel lb_eda;
-    public javax.swing.JLabel lb_ofi;
+    public javax.swing.JTextField txtApellido;
+    public javax.swing.JTextField txtDias;
+    public javax.swing.JTextField txtEdad;
+    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtOficio;
     // End of variables declaration//GEN-END:variables
 }

@@ -39,8 +39,11 @@ public class Menu_Terapeuta implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == panel.btn02_JF023_S3_RH) {
+            
             // Código para la acción del botón de ver calendario
+            
         } else if (e.getSource() == panel.btn03_JF023_S3_RH) {
+            
             // Código para la acción del botón de ver pacientes
             PanelesManager.copiaPanel("JP023_S3_RH");
             JPContenido.remove(panel);
@@ -48,6 +51,7 @@ public class Menu_Terapeuta implements ActionListener{
             JPContenido.revalidate();
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado();
+            
         } else if (e.getSource() == panel.btn04_JF023_S3_RH) {
             // Código para la acción del botón de ver documentos de apoyo
             PanelesManager.copiaPanel("JP023_S3_RH");
@@ -56,6 +60,7 @@ public class Menu_Terapeuta implements ActionListener{
             JPContenido.revalidate();
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado();
+            
         } else if (e.getSource() == panel.btn05_JF023_S3_RH) {
             // Código para la acción del botón de mi perfil
             PanelesManager.copiaPanel("JP023_S3_RH");
@@ -64,13 +69,42 @@ public class Menu_Terapeuta implements ActionListener{
             JPContenido.revalidate();
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado();
+            
         } else if (e.getSource() == panel.btn06_JF023_S3_RH) {
+            
+            PanelesManager.copiaPanel("JP023_S3_RH");
+            JPContenido.remove(panel);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRedactarMensaje");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
             // Código para la acción del botón Solicitud de incapacidades
+            
         } else if (e.getSource() == panel.btn07_JF023_S3_RH) {
+            
+            PanelesManager.copiaPanel("JP023_S3_RH");
+            JPContenido.remove(panel);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelCreacionDePruebas");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
+            
             // Código para la acción del botón Crear Pruebas
+            
         } else if (e.getSource() == panel.btn08_JF023_S3_RH) {
+            
+            PanelesManager.copiaPanel("JP023_S3_RH");
+            JPContenido.remove(panel);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
+            
+            
             // Código para la acción del botón cerrar sesion
         } else if (e.getSource() == panel.btn09_JF023_S3_RH) {
+            
+            
             // Código para la acción del botón generar PDF
         }
     }

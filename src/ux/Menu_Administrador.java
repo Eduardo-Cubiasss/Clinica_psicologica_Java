@@ -47,22 +47,62 @@ public class Menu_Administrador implements ActionListener {
             JPContenido.revalidate();
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado();
+            
         } else if (e.getSource() == panel.getBtn02_JF005_S2_AF()) {
-            // Código para la acción del botón estadisticas 
-        } else if (e.getSource() == panel.getBtn03_JF005_S2_AF()) {
-            // Código para la acción del botón Anuncios 
-        } else if (e.getSource() == panel.getBtn04_JF005_S2_AF()) {
-            // Código para la acción del botón Acerca de la clinica 
+            
             PanelesManager.copiaPanel("JP004_S2_AF");
             JPContenido.remove(panel);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPersonalClinica");
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelEstadisticas");
             JPContenido.revalidate();
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado();
+            
+            // Código para la acción del botón estadisticas 
+            
+        } else if (e.getSource() == panel.getBtn03_JF005_S2_AF()) {
+            
+            PanelesManager.copiaPanel("JP004_S2_AF");
+            JPContenido.remove(panel);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelCreacionDeAnuncios");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
+            
+            // Código para la acción del botón Anuncios 
+            
+        } else if (e.getSource() == panel.getBtn04_JF005_S2_AF()) {
+            
+            // Código para la acción del botón Acerca de la clinica 
+           
+            PanelesManager.copiaPanel("JP004_S2_AF");
+            JPContenido.remove(panel);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "  ");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
+            
+            
         } else if (e.getSource() == panel.getBtn05_JF005_S2_AF()) {
+            
             // Código para la acción del botón comentarios 
+            PanelesManager.copiaPanel("JP004_S2_AF");
+            JPContenido.remove(panel);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, " panelSeccionDeComentarios");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
+            
         } else if (e.getSource() == panel.getBtn08_JF023_S3_RH()) {
+            
             // Código para la acción del botón cerrar sesion
+            
+            PanelesManager.copiaPanel("JP004_S2_AF");
+            JPContenido.remove(panel);
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido, " panelInicioSesion");
+            JPContenido.revalidate();
+            JPContenido.repaint();
+            PanelesManager.restaurarPanelEliminado();
+            
 
             // Recupera el panel anterior del historial y muéstralo
             String previousPanel = panelHistory.popPanel();

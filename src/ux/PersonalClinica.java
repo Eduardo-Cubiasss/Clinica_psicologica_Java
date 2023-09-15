@@ -7,6 +7,7 @@ package ux;
 
 import Reportes.ParaReporte;
 import Ui.JP008_S2_AF;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
@@ -41,6 +42,51 @@ public class PersonalClinica implements ActionListener{
         {
             reporte.mostrarReporteTerapeuta();
         }
+        
+        else if(e.getSource() == vista08.getBtn005_JF008_S3_AF())
+        {
+                 //Para el buscador de empleados
+                PanelesManager.copiaPanel("JP008_S2_AF");
+                JPContenido.remove(vista08);
+                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelBuscadorDeEmpleados");
+                JPContenido.revalidate();
+                JPContenido.repaint();
+                PanelesManager.restaurarPanelEliminado();
+        }
+        
+        else if(e.getSource() == vista08.getBtn001_JF008_S3_AF())
+        {
+                 //Para regresar al anterior
+                PanelesManager.copiaPanel("JP008_S2_AF");
+                JPContenido.remove(vista08);
+                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
+                JPContenido.revalidate();
+                JPContenido.repaint();
+                PanelesManager.restaurarPanelEliminado();
+        }
+        
+        else if(e.getSource() == vista08.getBtn007_JF008_S3_AF())
+        {
+                 //Para regresar al anterior
+                PanelesManager.copiaPanel("JP008_S2_AF");
+                JPContenido.remove(vista08);
+                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelAgregarPerfilesDeUsuario");
+                JPContenido.revalidate();
+                JPContenido.repaint();
+                PanelesManager.restaurarPanelEliminado();
+        }
+        
+        else if(e.getSource() == vista08.getBtn007_JF008_S3_AF())
+        {
+                 //Para regresar al anterior
+                PanelesManager.copiaPanel("JP008_S2_AF");
+                JPContenido.remove(vista08);
+                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelBuscadorDeEmpleados");
+                JPContenido.revalidate();
+                JPContenido.repaint();
+                PanelesManager.restaurarPanelEliminado();
+        }
+        
     }
     
 }

@@ -13,9 +13,15 @@ import javax.swing.JPanel;
  */
 public class AcercaDeLaClinica {
     private JPanel JPContenido;
-    
-    public AcercaDeLaClinica(JPanel JPContenido)
+    private HabilitarPaneles PanelesManager;   
+
+    public AcercaDeLaClinica(JPanel JPContenido, HabilitarPaneles PanelesManager)
     {
         this.JPContenido = JPContenido;
+        this.PanelesManager = PanelesManager;     
+        
+
     }
+    
+    
 }
