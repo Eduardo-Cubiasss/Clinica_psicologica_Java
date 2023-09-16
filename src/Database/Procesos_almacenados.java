@@ -679,7 +679,8 @@ public class Procesos_almacenados {
             }
         }
     }
-     public List<Resultado> Empleados(Empleado modelEmpleado, int operacion, String textoBusqueda) {
+
+    public List<Resultado> Empleados(Empleado modelEmpleado, int operacion, String textoBusqueda) {
         {
             Connection conn = null;
             PreparedStatement ps = null;
@@ -690,40 +691,17 @@ public class Procesos_almacenados {
 
                 switch (operacion) {
                     case 1:
-                        ps = conn.prepareStatement("SELECT\n"
-                                + "    t.IDUsuario,\n"
-                                + "    t.Nombre AS Nombre,\n"
-                                + "    a_tl.NombreDeActividad AS ActividadLaboral\n"
-                                + "FROM\n"
-                                + "    TbTerapeutas t\n"
-                                + "LEFT JOIN\n"
-                                + "    TbActividadesLaborales a_tl\n"
-                                + "ON\n"
-                                + "    t.IDActividadLaboral = a_tl.IDActividadLaboral\n"
-                                + "WHERE\n"
-                                + "    t.Nombre LIKE '?'\n"
-                                + "UNION\n"
-                                + "SELECT\n"
-                                + "    s.IDUsuario,\n"
-                                + "    s.Nombre AS Nombre,\n"
-                                + "    a_sl.NombreDeActividad AS ActividadLaboral\n"
-                                + "FROM\n"
-                                + "    TbSecretaria s\n"
-                                + "LEFT JOIN\n"
-                                + "    TbActividadesLaborales a_sl\n"
-                                + "ON\n"
-                                + "    s.IDActividadLaboral = a_sl.IDActividadLaboral\n"
-                                + "WHERE\n"
-                                + "    s.Nombre LIKE '?';");
+                        ps = conn.prepareStatement("SELECT ID, Nombre, NombreDeActividad \n"
+                                + "FROM VistaEmpleadosConActividad\n"
+                                + "WHERE Nombre LIKE ?;");
                         ps.setString(1, "%" + textoBusqueda + "%");
-                        ps.setString(2, "%" + textoBusqueda + "%");
                         ResultSet rs = ps.executeQuery();
                         System.out.println("%" + textoBusqueda + "%");
                         while (rs.next()) {
-                            int idUsuario = rs.getInt("IDUsuario");
+                            int idUsuario = rs.getInt("ID");
                             String Nombre = rs.getString("Nombre");
-                            String ActividadLaboral = rs.getString("ActividadLaboral");
-
+                            String ActividadLaboral = rs.getString("NombreDeActividad");
+                            
                             // Crea un objeto Resultado y agrégalo a la lista de resultados
                             Resultado resultado = new Resultado(idUsuario, Nombre, ActividadLaboral);
                             resultados.add(resultado);

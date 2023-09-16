@@ -29,6 +29,9 @@ public class PersonalClinica implements ActionListener{
         this.PanelesManager = PanelesManager;
         this.vista08.Btn006_JF008_S3_AF.addActionListener(this);
         this.vista08.Btn004_JF008_S3_AF.addActionListener(this);
+        this.vista08.Btn005_JF008_S3_AF.addActionListener(this);
+        this.vista08.Btn001_JF008_S3_AF.addActionListener(this);
+        this.vista08.Btn007_JF008_S3_AF.addActionListener(this);
         this.reporte = reporte;
     }
 

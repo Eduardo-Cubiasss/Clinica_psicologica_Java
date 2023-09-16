@@ -192,7 +192,7 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 450, 180));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 450, 200));
 
         btn1_JF024.setBackground(new java.awt.Color(255, 255, 255));
         btn1_JF024.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
@@ -223,6 +223,7 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         jPanel1.add(txtBuscar_JP024, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 420, 50));
 
         BtnVer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dae.PNG"))); // NOI18N
+        BtnVer.setBorderPainted(false);
         jPanel1.add(BtnVer, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, 90, 90));
 
         add(jPanel1, "card2");

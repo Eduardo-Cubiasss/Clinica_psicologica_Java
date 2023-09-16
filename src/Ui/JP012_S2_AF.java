@@ -58,14 +58,6 @@ public class JP012_S2_AF extends javax.swing.JPanel {
         this.jLabel1 = jLabel1;
     }
 
-    public JLabel getjLabel2() {
-        return jLabel2;
-    }
-
-    public void setjLabel2(JLabel jLabel2) {
-        this.jLabel2 = jLabel2;
-    }
-
     public JLabel getjLabel4() {
         return jLabel4;
     }
@@ -113,6 +105,14 @@ public class JP012_S2_AF extends javax.swing.JPanel {
     public void setjTextField1(JTextField jTextField1) {
         this.jTextField1 = jTextField1;
     }
+
+    public JButton getBtnBuscar() {
+        return BtnBuscar;
+    }
+
+    public void setBtnBuscar(JButton BtnBuscar) {
+        this.BtnBuscar = BtnBuscar;
+    }
     
     
     
@@ -154,8 +154,8 @@ public class JP012_S2_AF extends javax.swing.JPanel {
         btn1_JF012 = new javax.swing.JButton();
         btn2_JF012 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        BtnBuscar = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(1120, 640));
         setMinimumSize(new java.awt.Dimension(1120, 640));
@@ -184,29 +184,36 @@ public class JP012_S2_AF extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"ID Usuario", null, null}
+                {"ID Usuario", null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "ID Usuario", "Nombre", "Profesion"
+                "ID ", "Nombre", "Profesion"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 450, 130));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 450, 140));
 
         btn1_JF012.setBackground(new java.awt.Color(255, 255, 255));
         btn1_JF012.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ph_note-pencil-bold.png"))); // NOI18N
         btn1_JF012.setBorderPainted(false);
-        jPanel1.add(btn1_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 210, -1, -1));
+        jPanel1.add(btn1_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 310, -1, -1));
 
         btn2_JF012.setBackground(new java.awt.Color(255, 255, 255));
         btn2_JF012.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pe.PNG"))); // NOI18N
+        btn2_JF012.setBorderPainted(false);
         btn2_JF012.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn2_JF012ActionPerformed(evt);
             }
         });
-        jPanel1.add(btn2_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 300, 47, 61));
+        jPanel1.add(btn2_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 380, 47, 61));
 
         jPanel2.setBackground(new java.awt.Color(200, 232, 232));
 
@@ -223,12 +230,13 @@ public class JP012_S2_AF extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 600, 1120, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 40, 40));
-
         jTextField1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jTextField1.setText("          S");
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 420, 50));
+
+        BtnBuscar.setBackground(new java.awt.Color(255, 255, 255));
+        BtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
+        BtnBuscar.setBorderPainted(false);
+        jPanel1.add(BtnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 220, 40, 30));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
@@ -239,11 +247,11 @@ public class JP012_S2_AF extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton BtnBuscar;
     public javax.swing.JButton btn1_JF012;
     public javax.swing.JButton btn2_JF012;
     public javax.swing.JButton btn3_JF012;
     public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

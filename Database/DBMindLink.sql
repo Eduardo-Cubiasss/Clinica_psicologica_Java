@@ -86,6 +86,9 @@ IDTerapeuta int,
 IDSecretaria int,
 IDPaciente int
 );
+Alter Table TbCitas
+ADD Hora VARCHAR(8);
+
 Create table TbClinicas(
 IDClinica Varchar(5) primary key,
 NombreClinica varchar(300),
@@ -111,7 +114,7 @@ ALTER TABLE TbUsuarios
 ADD FotoPerfil varbinary(max);
 
 Select * from TbUsuarios;
-
+Select * from TbSecretaria;
 CREATE table TbContactos(
 IDContacto int identity(1,1) primary key,
 Correo varchar(300),
@@ -212,7 +215,20 @@ IDClinica Varchar(5),
 IDMedicamento int
 );
 
+Create Table TbPermisos(
+IDPermiso int identity(1,1) primary key,
+Asunto VARCHAR(100), 
+Contenido VARCHAR(900),
+aceptado int, 
+IDClinica int, 
+IDSecretaria int, 
+IDTerpeuta int
+);
 
+ALTER TABLE TbPermisos
+ALTER COLUMN IDClinica VARCHAR(5);
+SELECT * FROM TbUsuarios;
+SELECT * FROM TbAdministrador;
 --Datos --
 Insert into TbRecetasMedicas (Padecimiento, Descripcion, NombreMedicamento)
 Values
@@ -443,10 +459,20 @@ Foreign key (IDClinica) References TbClinicas(IDClinica);
 
 Alter table TbRecetasMedicas Add constraint fk_IDMedicamentos_Medica
 Foreign key (IDMedicamento) References TbMedicamentos(IDMedicamento);
+
 /*
 Ya esta bien aaaa
+Lo de abajo lo agregué jejeje para los foreignkey
 */
 
+ALTER TABLE TbPermisos Add constraint fk_IDclinica_Permisos
+Foreign key (IDClinica) references TbClinicas(IDClinica);
+
+ALTER TABLE TbPermisos Add constraint fk_IDSecretaria_Permiso
+Foreign key (IDSecretaria) references TbSecretaria(IDSecretaria);
+
+ALTER TABLE TbPermisos Add constraint fk_IDTerpeuta_Permiso
+Foreign key (IDTerpeuta) references TbTerapeutas(IDTerapeuta);
 /*
 Desde aquí comienzan los procesos almacenados
 */
@@ -604,13 +630,15 @@ END
 
 DECLARE @resultado INT;
 DECLARE @ventana INT;
-EXEC PDLogear 'Guayito', 'contraseña', @ventana OUTPUT, @resultado OUTPUT;
+EXEC PDLogear 'Guayito', 'Contraseña', @ventana OUTPUT, @resultado OUTPUT;
 SELECT @resultado AS acceso;
 SELECT @ventana AS abrirventana;
 
 
-select * from TbAdministrador
+
 select* from TbUsuarios
+SELECT * FROM TbClinicas
+select * from TbAdministrador
 
 PRINT @resultado;
 
@@ -680,24 +708,28 @@ EXEC PDRegistrarpaciente 'prueba','prueba1','9-10-2001','52281','pruba2','contra
 /*
 Aqui empieza el proceso para Crear o actualizar un usuario de tipo empleado:
 */
-CREATE PROCEDURE PDCrearActualizarUsuario
+ALTER PROCEDURE PDCrearActualizarUsuario
     @nombreUsuario VARCHAR(50),
     @contraseña VARCHAR(50)
 AS
 BEGIN
+			DECLARE @HashContraseñaTbU VARBINARY (64);
+			DECLARE @newHash VARBINARY (64);
+			SET @HashContraseñaTbU = HASHBYTES('SHA2_256', @contraseña);
+			SET @newHash = HASHBYTES('SHA2_256', @HashContraseñaTbU);
     -- Verificar si el usuario ya existe en la tabla
     IF EXISTS (SELECT 1 FROM dbo.TbUsuarios WHERE UserName = @nombreUsuario)
     BEGIN
         -- Actualizar la contraseña existente
         UPDATE dbo.TbUsuarios
-        SET Contraseña = CONVERT(VARBINARY(MAX), @contraseña)
+        SET Contraseña = @newHash
         WHERE UserName = @nombreUsuario
     END
     ELSE
     BEGIN
         -- Insertar un nuevo registro
         INSERT INTO dbo.TbUsuarios (UserName, Contraseña)
-        VALUES (@nombreUsuario, CONVERT(VARBINARY(MAX), @contraseña))
+        VALUES (@nombreUsuario, @newHash)
     END
 END
 /*
@@ -710,7 +742,7 @@ SELECT * FROM TbUsuarios where UserName = 'Pepito'
 SELECT * FROM TbPacientes 
 SELECT * FROM TbUsuarios where UserName = 'Guayito'
 use DbMindLink
-EXEC CrearActualizarUsuario @nombreUsuario = 'ejemplo_usuario', @contraseña = 'ejemplo_contraseña';
+EXEC PDCrearActualizarUsuario 'Guayito', 'Contraseña';
 --- DROP Procedure PDCrearActualizarUsuario
 */
 
@@ -1342,81 +1374,331 @@ END
 
 EXEC PDClinicainfo 'Guayito', 'Clinica bien genial y suoper sabrosa', 'Michelines', 'Calle mistral';
 
-CREATE VIEW VistaNota
-AS
-SELECT Contenido, Fecha, IDPaciente
-FROM TbAgendasPersonales
-WHERE Fecha = (SELECT MAX(Fecha) FROM TbAgendasPersonales)
-
-SELECT * FROM VistaNota
 
 
---Esta vista es para ver el usuario, la contraseña y el cargo de un empleado
-CREATE VIEW VistaUsuarios
-AS
-SELECT u.UserName, u.Contraseña, t.Cargo
-FROM TbUsuarios u
-INNER JOIN TbTipoUsuarios t ON t.IDTipoUsuario = t.IDTipoUsuario
-
+---
+---MostrarAnuncios---
+----Descripción del proceso: Este nada más es un, se manda a llamar tanto en EliminarAnuncio como
+---- Agregar anuncio: SELECT IDAnuncio, Titulo, Imagen, Fecha FROM TbAnuncios where IDAdministrador = ?;
 /*
-Vista de anuncio:
-Una vista que muestres los anuncios que el Admin 
-guardada en la base de datos para que este se muestre en la app de android
+El trigger de abajo es para obtener la fecha actual y que se inserte cuando se haga un insert a la tabla TbAnuncios
 */
 
---Queda pendiente revisar que solo se muestre un anuncio a la vez
-CREATE VIEW VistaAnuncios
+CREATE TRIGGER TriggerInsertarFecha
+ON TbAnuncio
+AFTER INSERT
 AS
-SELECT IDAnuncio, Titulo, Descripcion, Imagen, Fecha
-FROM TbAnuncio
+BEGIN
+    -- Actualizar la columna 'Fecha' con la fecha actual
+    UPDATE TbAnuncio
+    SET Fecha = GETDATE()
+    FROM TbAnuncio
+    INNER JOIN INSERTED ON TbAnuncio.IDAnuncio = INSERTED.IDAnuncio;
+END;
 
-SELECT * FROM VistaAnuncios
 
-/*Duda: Aqui preguntarle a guayito sobre la magen del anuncio!*/
+---AgregarRegistro---
+----Descripción del proceso: Este nada más es un INSERT INTO TbAnuncio (Titulo, Imagen, IDAdministrador) VALUES (?,?,?);
+
+---EliminarAnunciosActuales---
+----Descripción del proceso: DELETE FROM TbAnuncio WHERE IDAnuncio = ?;
+
+
+---VisualizarNotas---
+---Descripción: Es un select Contenido y ya
+---Información adicional: He creado un trigger que obtiene la fecha actual al hacer un insert en la tabla y la agrega al inicio del contenido.
+---Posterior ha eso también cree un trigger igual pero updates.
+
+-- Trigger del insert a agenda personal
+CREATE TRIGGER TriggerInsertarFechaEnContenido
+ON TbAgendasPersonales
+AFTER INSERT
+AS
+BEGIN
+    UPDATE A
+    SET A.Contenido = CONVERT(varchar(max), GETDATE(), 120) + ' - ' + ISNULL(I.Contenido, '')
+    FROM TbAgendasPersonales A
+    INNER JOIN INSERTED I ON A.IDAgendaPersonal = I.IDAgendaPersonal;
+END;
+
+-- Trigger del update a agenda personal
+CREATE TRIGGER TriggerActualizarFechaAlFinal
+ON TbAgendasPersonales
+AFTER UPDATE
+AS
+BEGIN
+    UPDATE A
+    SET A.Contenido = ISNULL(A.Contenido + ' Escrito el día: ', '') + CONVERT(varchar(max), GETDATE(), 120)
+    FROM TbAgendasPersonales A
+    INNER JOIN INSERTED I ON A.IDAgendaPersonal = I.IDAgendaPersonal;
+END;
+
+---EscribirEnTuExpediente---
+---Descripción: Es proceso almacenado que inserte o actualice un EXEC InsertarActualizarExpediente ?, ?, ?;
+---Información adicional: He creado un trigger que obtiene la fecha actual al hacer un insert en la tabla y la agrega al inicio del contenido.
+---Posterior ha eso también cree un trigger igual pero updates.
+
+-- Trigger del insert a expediente
+CREATE TRIGGER TriggerInsertarFechaEnContenidoExpediente
+ON TbExpedientes
+AFTER INSERT
+AS
+BEGIN
+    UPDATE A
+    SET A.Contenido = CONVERT(varchar(max), GETDATE(), 120) + ' - ' + ISNULL(I.Contenido, '')
+    FROM TbExpedientes A
+    INNER JOIN INSERTED I ON A.IDExpediente = I.IDExpediente;
+END;
+
+-- Trigger del update a expediente
+CREATE TRIGGER TriggerActualizarFechaAlFinalExpediente
+ON TbExpedientes
+AFTER UPDATE
+AS
+BEGIN
+    UPDATE A
+    SET A.Contenido = ISNULL(A.Contenido + ' Escrito el día: ', '') + CONVERT(varchar(max), GETDATE(), 120)
+    FROM TbExpedientes A
+    INNER JOIN INSERTED I ON A.IDExpediente = I.IDExpediente;
+END;
+
+
+-- Crear un procedimiento almacenado para insertar o actualizar un expediente
+CREATE PROCEDURE InsertarActualizarExpediente
+    @IDPaciente int,
+    @Contenido varchar(max),
+    @IDTerapeuta int
+AS
+BEGIN
+    -- Verificar si existe un expediente para el IDPaciente dado
+    IF EXISTS (SELECT 1 FROM TbExpedientes WHERE IDPaciente = @IDPaciente)
+    BEGIN
+        -- Si existe, realizar una actualización (UPDATE) para el primer registro encontrado (TOP 1)
+        UPDATE TOP (1) TbExpedientes
+        SET Contenido = @Contenido,
+            IDTerapeuta = @IDTerapeuta
+        WHERE IDPaciente = @IDPaciente;
+    END
+    ELSE
+    BEGIN
+        -- Si no existe, realizar una inserción (INSERT)
+        INSERT INTO TbExpedientes (Contenido, IDPaciente, IDTerapeuta)
+        VALUES (@Contenido, @IDPaciente, @IDTerapeuta);
+    END
+END;
+
+---AgregarAritculo---
+---Descripción: Es un INSERT INTO TbArticulos(Titulo, Descripcion, Imagen, IDTerapeuta) values (?,?,?,?);
+---Información adicional: He creado un trigger que obtiene la fecha actual al hacer un insert en la tabla y la agrega al final del contenido
+
+CREATE TRIGGER TriggerActualizarFechaAlFinalArticulo
+ON TbArticulos
+AFTER INSERT
+AS
+BEGIN
+    UPDATE A
+    SET A.Descripcion = ISNULL(A.Descripcion + ' Escrito el día: ', '') + CONVERT(varchar(400), GETDATE(), 120)
+    FROM TbArticulos A
+    INNER JOIN INSERTED I ON A.IDArticulo = I.IDArticulo;
+END;
+
+---ActualizarAritculo---
+---Descripción: Es un Procedemiento almacenado que primero verirfica que el articulo pertenece al IDterapeuta que quiere hacer los cambios: EXEC InsertarActualizarArticulo ?, ?, ?, ?, ?
+
+CREATE PROCEDURE InsertarActualizarArticulo
+    @IDArticulo int,
+    @Titulo varchar(70),
+    @Descripcion varchar(400),
+    @Imagen image,
+    @IDTerapeuta int
+AS
+BEGIN
+    -- Verificar si existe un artículo con el mismo IDArticulo e IDTerapeuta
+    IF EXISTS (SELECT 1 FROM TbArticulos WHERE IDArticulo = @IDArticulo AND IDTerapeuta = @IDTerapeuta)
+    BEGIN
+        -- Si existe, realizar una actualización (UPDATE)
+        UPDATE TbArticulos
+        SET Titulo = @Titulo,
+            Descripcion = @Descripcion,
+            Imagen = @Imagen
+        WHERE IDArticulo = @IDArticulo AND IDTerapeuta = @IDTerapeuta;
+    END
+END;
+
+---EliminarArticulo---
+---Descripción: Es nada más un DELETE FROM TbArticulos WHERE IDArticulos = ?;
+
+
+---DocumentosDeapoyo---
+----Descripción: SELECT	IDArticulo, Titulo, Descripcion, Imagen FROM TbArticulos;
+
+
+---CrearCitas---
+---Descripción: INSERT INTO TbCitas(Hora, Fecha, IDPaciente, IDTerapeuta) Values (?, ?, ?, ?);
+---Información adicional: Primero debe cargarse el nombre de los terapeutas en un combobox, por medio de un select TOP 1 IDTerapeuta FROM TbTerapeutas Where Nombre = ? and IDClinica = ? 
+
+---PruebasDP---
+---Descripción: Lo haré el domingo lol
+---Información adicional:
+
+
+---SolicitudesDeEmpleado---
+---Descripción: Primero se debe llenar una tabla por medio de un SELECT primeros50, Asunto FROM VistaTbPermisos WHERE IDClinica = ?;
+---Información adicional: Se seleccionarán todas los registros sin importar si estan en 0 en aceptados
+
+CREATE VIEW VistaTbPermisos
+AS
+SELECT
+    CASE 
+        WHEN LEN(Contenido) > 40 THEN LEFT(Contenido, 37) + '...'
+        ELSE Contenido
+    END AS primeros50,
+    Asunto,
+    IDClinica,
+    aceptado
+FROM TbPermisos;
+
+
+---SolicitudesDeEmpleado---
+---Descripción: Primero se debe llenar una tabla por medio de un SELECT primeros50, Asunto FROM VistaTbPermisos WHERE IDClinica = ? AND aceptado = 1;
+
+---Información adicional: 
+
+
+---RedactarMensaje(Permiso)---
+---Descripción: Se hace un EXEC PDPermiso ?,?,?
+---Información adicional: 
 
 /*
-Vista de calendario de cita:
-Una vista ya que el calendario
-debe de marcar una cita que el usuario 
-debe ir a la clinica entonces supongo que la 
-vista debe de buscar en la base de datos la fecha
-de la cita que el cliente debe ir.
+.
 */
-
-CREATE VIEW VistaFechaCitaCliente
+CREATE PROCEDURE PDPermiso
+	@Asunto VARCHAR(100),
+	@Contenido VARCHAR(900),
+	@IDUsuario INT
 AS
-SELECT Fecha, IDPaciente
-FROM TbCitas
---Investigar cómo poner la vista en base de un idpaciente especifico
+BEGIN
+	DECLARE @SecretExist INT;
+	DECLARE @TerapeExist INT;
+	DECLARE @IDSecretaria INT;
+	DECLARE @IDTerapeuta INT;
+	DECLARE @IDPermisoT INT;
+	DECLARE @IDPermisoS INT;
+	DECLARE @IDClinica VARCHAR(5);
 
-SELECT * FROM VistaFechaCitaCliente
+	SET @SecretExist = (SELECT TOP 1 IDUsuario FROM TbSecretaria WHERE IDUsuario = @IDUsuario);
+	SET @TerapeExist = (SELECT TOP 1 IDUsuario FROM TbTerapeutas WHERE IDUsuario = @IDUsuario);
+	SET @IDTerapeuta = (SELECT TOP 1 IDTerapeuta FROM TbTerapeutas WHERE IDUsuario = @IDUsuario);
+	SET @IDSecretaria = (SELECT TOP 1 IDSecretaria FROM TbSecretaria WHERE IDUsuario = @IDUsuario); 
+	SET @IDPermisoT = (SELECT TOP 1 IDPermiso FROM TbPermisos WHERE IDTerpeuta = @IDTerapeuta);
+	SET @IDPermisoS = (SELECT TOP 1 IDPermiso FROM TbPermisos WHERE IDSecretaria = @IDSecretaria);
 
+	IF (@SecretExist IS NOT NULL)
+	BEGIN
+		SET @IDClinica = (SELECT IDClinica FROM TbSecretaria WHERE IDUsuario = @SecretExist);
+		
+		IF (@IDPermisoS IS NULL)
+		BEGIN
+			-- Insertar un nuevo permiso si no existe uno
+			INSERT INTO TbPermisos(Asunto, Contenido, aceptado, IDClinica, IDSecretaria) 
+			VALUES (@Asunto, @Contenido, 0, @IDClinica, @IDSecretaria);
+		END
+		ELSE
+		BEGIN
+			-- Actualizar el permiso existente
+			UPDATE TbPermisos
+			SET Asunto = @Asunto,
+				Contenido = @Contenido
+			WHERE IDPermiso = @IDPermisoS;
+		END
+	END
+	ELSE IF (@TerapeExist IS NOT NULL)
+	BEGIN
+		SET @IDClinica = (SELECT IDClinica FROM TbTerapeutas WHERE IDUsuario = @TerapeExist);
+		
+		IF (@IDPermisoT IS NULL)
+		BEGIN
+			-- Insertar un nuevo permiso si no existe uno
+			INSERT INTO TbPermisos(Asunto, Contenido, aceptado, IDClinica, IDTerpeuta) 
+			VALUES (@Asunto, @Contenido, 0, @IDClinica, @IDTerapeuta);
+		END
+		ELSE
+		BEGIN
+			-- Actualizar el permiso existente
+			UPDATE TbPermisos
+			SET Asunto = @Asunto,
+				Contenido = @Contenido
+			WHERE IDPermiso = @IDPermisoT;
+		END
+	END
+END;
 
+---SolicitudesAprobadas2--- ---VerSolicitudAprobada
+---Descripción: El botón de rechazar solicitud Solo actualizará el campo aceptado a "2" en base a un IDUsuario y el de aceptar se actualizará a 1
+---Información adicional: Este proceso es usado en 2 ventanas diferentes, cuando ve el mensaje desde recibidos y cuando ve el mensaje desde aceptados
 
-
-CREATE VIEW VistaComentarios
+CREATE PROCEDURE ActualizarAceptado
+	@IDUsuario INT,
+	@case INT
 AS
-SELECT IDComentario, Mensaje, Fecha, Username
-FROM TbComentarios
-INNER JOIN TbUsuario
+BEGIN
+	DECLARE @IDSecretaria INT;
+	DECLARE @IDTerapeuta INT;
+	DECLARE @IDPermisoT INT;
+	DECLARE @IDPermisoS INT;
 
---Fumar mucho weed y pensar cómo funcionará
+	SET @IDTerapeuta = (SELECT TOP 1 IDTerapeuta FROM TbTerapeutas WHERE IDUsuario = @IDUsuario);
+	SET @IDSecretaria = (SELECT TOP 1 IDSecretaria FROM TbSecretaria WHERE IDUsuario = @IDUsuario); 
+	SET @IDPermisoT = (SELECT TOP 1 IDPermiso FROM TbPermisos WHERE IDTerpeuta = @IDTerapeuta);
+	SET @IDPermisoS = (SELECT TOP 1 IDPermiso FROM TbPermisos WHERE IDSecretaria = @IDSecretaria);
+	IF (@IDPermisoS IS not null)
+	BEGIN
+		-- Actualizar permisos de secretaria
+		UPDATE TbPermisos
+		SET aceptado = CASE 
+			WHEN @case = 1 THEN 1
+			WHEN @case = 2 THEN 2
+			ELSE aceptado -- Mantener el valor actual si @case no es 1 ni 2
+		END
+		WHERE IDPermiso = @IDPermisoS;
+	END
+	-- Verificar si el usuario es un terapeuta
+	ELSE IF (@IDPermisoT IS NOT NULL)
+	BEGIN
+		-- Actualizar permisos de terapeuta
+		UPDATE TbPermisos
+		SET aceptado = CASE 
+			WHEN @case = 1 THEN 1
+			WHEN @case = 2 THEN 2
+			ELSE aceptado -- Mantener el valor actual si @case no es 1 ni 2
+		END
+		WHERE IDPermiso = @IDPermisoT;
+	END
+END;
 
-SELECT * FROM VistaComentarios;
+---BuscadorEmpleado---
+---Descripción: esta vista busca en tres tablas para mostrar el ID y el nombre, debido a que ActividadLaboral es de otra tabla hace la union tambien
+---Información adicional: esta es la consulta para hacaer uso de la vista:  SELECT ID, Nombre, NombreDeActividad  FROM VistaEmpleadosConActividad WHERE Nombre LIKE '%Peña%';
 
-CREATE VIEW VistaPacientes AS
-SELECT IDPaciente, Nombre, Apellido, CorreoElectronico, FNacimiento, DUI
-FROM TbPacientes;
-
-SELECT * FROM VistaPacientes;
-
--- Consulta para obtener datos del usuario y su contacto
-
-
-
---Esto es para seleccionar la vista:
---SELECT * FROM VistaUsuarios
--- DROP VIEW VistaUsuarios
-SELECT * FROM TbUsuarios;
-Select * from TbAdministrador;
-SELECT * FROM TbTerapeutas;
+CREATE VIEW VistaEmpleadosConActividad AS
+SELECT
+    T.IDTerapeuta AS ID,
+    T.Nombre AS Nombre,
+    A.NombreDeActividad AS NombreDeActividad
+FROM
+    TbTerapeutas T
+INNER JOIN
+    TbActividadesLaborales A
+ON
+    T.IDActividadLaboral = A.IDActividadLaboral
+UNION ALL
+SELECT
+    S.IDSecretaria AS ID,
+    S.Nombre AS Nombre,
+    A.NombreDeActividad AS NombreDeActividad
+FROM
+    TbSecretaria S
+INNER JOIN
+    TbActividadesLaborales A
+ON
+    S.IDActividadLaboral = A.IDActividadLaboral;

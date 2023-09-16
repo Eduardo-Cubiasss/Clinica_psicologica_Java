@@ -15,6 +15,23 @@ public class Empleado {
     private String Contraseña;
     private String Correo;
     private int nivel;
+    private String nombre;
+    private String ActividadLab;
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getActividadLab() {
+        return ActividadLab;
+    }
+
+    public void setActividadLab(String ActividadLab) {
+        this.ActividadLab = ActividadLab;
+    }
 
     public int getIdEmpleado() {
         return IdEmpleado;
