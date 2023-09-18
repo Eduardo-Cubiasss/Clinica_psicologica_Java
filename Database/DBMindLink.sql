@@ -192,6 +192,7 @@ Contenido varchar(max),
 Fecha date,
 IDPaciente int
 );
+
 Create Table TbExpedientes(
 IDExpediente int identity(1,1) primary key,
 Contenido varchar(max),
@@ -460,6 +461,7 @@ Foreign key (IDClinica) References TbClinicas(IDClinica);
 Alter table TbRecetasMedicas Add constraint fk_IDMedicamentos_Medica
 Foreign key (IDMedicamento) References TbMedicamentos(IDMedicamento);
 
+SELECT * FROM TbClinicas;
 /*
 Ya esta bien aaaa
 Lo de abajo lo agregué jejeje para los foreignkey
@@ -473,6 +475,58 @@ Foreign key (IDSecretaria) references TbSecretaria(IDSecretaria);
 
 ALTER TABLE TbPermisos Add constraint fk_IDTerpeuta_Permiso
 Foreign key (IDTerpeuta) references TbTerapeutas(IDTerapeuta);
+
+/*
+Aqui empieza lo de cascade on delete
+*/
+
+ALTER TABLE TbIncapacidades
+ADD CONSTRAINT fk_IDTerapeuta_TbIncap1
+FOREIGN KEY (IDTerapeuta)
+REFERENCES TbTerapeutas(IDTerapeuta)
+ON DELETE CASCADE;
+
+-- Para la restricción fk_IDSecretaria_TbIncap
+ALTER TABLE TbIncapacidades
+ADD CONSTRAINT fk_IDSecretaria_TbIncap1
+FOREIGN KEY (IDSecretaria)
+REFERENCES TbSecretaria(IDSecretaria)
+ON DELETE CASCADE;
+
+-- Para la restricción fk_IDAdministrador_TbIncap
+ALTER TABLE TbIncapacidades
+ADD CONSTRAINT fk_IDAdministrador_TbIncap1
+FOREIGN KEY (IDAdministrador)
+REFERENCES TbAdministrador(IDAdministrador)
+ON DELETE CASCADE;
+
+
+-- Para la restricción fk_IDSecretaria_TbAnun
+ALTER TABLE TbAnuncio
+ADD CONSTRAINT fk_IDSecretaria_TbAnun1
+FOREIGN KEY (IDSecretaria)
+REFERENCES TbSecretaria(IDSecretaria)
+ON DELETE CASCADE;
+
+-- Para la restricción fk_IDAdministrador_TbAnun
+ALTER TABLE TbAnuncio
+ADD CONSTRAINT fk_IDAdministrador_TbAnun1
+FOREIGN KEY (IDAdministrador)
+REFERENCES TbAdministrador(IDAdministrador)
+ON DELETE CASCADE;
+
+ALTER TABLE TbPermisos
+ADD CONSTRAINT fk_IDClinica_Permisos1
+FOREIGN KEY (IDClinica)
+REFERENCES TbClinicas(IDClinica)
+ON DELETE CASCADE;
+
+ALTER TABLE TbPreguntas
+ADD CONSTRAINT fk_IDPrueba_TbPreg1
+FOREIGN KEY (IDPrueba)
+REFERENCES TbPruebas(IDPrueba)
+ON DELETE CASCADE;
+
 /*
 Desde aquí comienzan los procesos almacenados
 */
@@ -515,12 +569,14 @@ END
 EXEC PDRegistrarAdmin 'Eduardo René', 'Guayito', 'Contraseña', '52281'
 EXEC PDRegistrarAdmin 'Orlando', 'Pepito', 'Contraseña', '52281'
 EXEC PDRegistrarAdmin 'Brian', 'Bryan', 'Contraseña', '001291'
+EXEC PDRegistrarAdmin 'Juanpepe', 'dios', 'Contraseña', '98389'
 /* esto es para comprobar que el PDResgistrarAdmin funciona jejeje
 Drop Procedure PDRegistrarAdmin
 
 INSERT INTO TbContactos Values ('Guayito.palom0@gmail.com', '69839847')
 SELECT * FRom TbContactos
 SELECT * FROM TbUsuarios
+SELECT * FROM TbAdministrador;
 INSERT INTO TbUsuarios IDContacto(1)
 Delete TbAdministrador
 Delete TbUsuarios
@@ -579,8 +635,8 @@ BEGIN
     BEGIN
 	--SET @acceso = 1;
         -- Con esto declaramos la variable que contendrá el Hash
-        DECLARE @HashContraseñaTbU VARBINARY(64);
         DECLARE @Contraseñareal VARBINARY(64);
+		DECLARE @HashContraseñaTbU VARBINARY(64);
 		DECLARE @newHash VARBINARY(64);
 
         SET @HashContraseñaTbU = HASHBYTES('SHA2_256', @ContraseñaIngresado);
@@ -630,7 +686,7 @@ END
 
 DECLARE @resultado INT;
 DECLARE @ventana INT;
-EXEC PDLogear 'Guayito', 'Contraseña', @ventana OUTPUT, @resultado OUTPUT;
+EXEC PDLogear 'Katelin', 'Contraseña', @ventana OUTPUT, @resultado OUTPUT;
 SELECT @resultado AS acceso;
 SELECT @ventana AS abrirventana;
 
@@ -1302,7 +1358,6 @@ BEGIN
 END
 
 
--- Crear el procedimiento almacenado
 CREATE PROCEDURE PDCambiarContraseña
     @Username VARCHAR(50),
     @contraseña VARCHAR(90),
@@ -1405,11 +1460,12 @@ END;
 
 
 ---VisualizarNotas---
----Descripción: Es un select Contenido y ya
+---Descripción: Es un select Contenido y ya SELECT TOP 1 Contenido FROM TbAgendasPersonales where IDPaciente = 1;
 ---Información adicional: He creado un trigger que obtiene la fecha actual al hacer un insert en la tabla y la agrega al inicio del contenido.
 ---Posterior ha eso también cree un trigger igual pero updates.
 
 -- Trigger del insert a agenda personal
+
 CREATE TRIGGER TriggerInsertarFechaEnContenido
 ON TbAgendasPersonales
 AFTER INSERT
@@ -1678,13 +1734,16 @@ END;
 
 ---BuscadorEmpleado---
 ---Descripción: esta vista busca en tres tablas para mostrar el ID y el nombre, debido a que ActividadLaboral es de otra tabla hace la union tambien
----Información adicional: esta es la consulta para hacaer uso de la vista:  SELECT ID, Nombre, NombreDeActividad  FROM VistaEmpleadosConActividad WHERE Nombre LIKE '%Peña%';
+---Información adicional: esta es la consulta para hacaer uso de la vista:  SELECT ID, Nombre, DUI, NombreDeActividad, IDUsuarioEm, Edad  FROM VistaEmpleadosConActividad WHERE Nombre LIKE '%Peña%';
 
-CREATE VIEW VistaEmpleadosConActividad AS
+ALTER VIEW VistaEmpleadosConActividad AS
 SELECT
     T.IDTerapeuta AS ID,
     T.Nombre AS Nombre,
-    A.NombreDeActividad AS NombreDeActividad
+    T.DUI AS DUI,
+    A.NombreDeActividad AS NombreDeActividad,
+    T.IDUsuario AS IDUsuarioEm,
+    DATEDIFF(YEAR, T.FNacimiento, GETDATE()) AS Edad
 FROM
     TbTerapeutas T
 INNER JOIN
@@ -1695,10 +1754,208 @@ UNION ALL
 SELECT
     S.IDSecretaria AS ID,
     S.Nombre AS Nombre,
-    A.NombreDeActividad AS NombreDeActividad
+    S.DUI AS DUI,
+    A.NombreDeActividad AS NombreDeActividad,
+    S.IDUsuario AS IDUsuarioEm,
+    DATEDIFF(YEAR, S.FNacimiento, GETDATE()) AS Edad
 FROM
     TbSecretaria S
 INNER JOIN
     TbActividadesLaborales A
 ON
     S.IDActividadLaboral = A.IDActividadLaboral;
+
+
+
+CREATE VIEW VistaTerapeutasEdad AS
+SELECT
+    IDTerapeuta,
+    DATEDIFF(YEAR, FNacimiento, GETDATE()) AS Edad
+FROM
+    TbTerapeutas;
+
+CREATE VIEW VistaSecreatariaEdad AS
+SELECT
+    IDSecretaria,
+    DATEDIFF(YEAR, FNacimiento, GETDATE()) AS Edad
+FROM
+    TbSecretaria;
+
+CREATE VIEW VistaPacienteEdad AS
+SELECT
+    IDPaciente,
+    DATEDIFF(YEAR, FNacimiento, GETDATE()) AS Edad
+FROM
+    TbPacientes;
+
+	-- Eliminar el trigger TriggerInsertarFechaEnContenidoAgenda
+DROP TRIGGER TriggerInsertarFechaEnContenidoAgenda
+ON TbAgendasPersonales;
+
+-- Eliminar el trigger TriggerActualizarFechaAlFinalAgenda
+DROP TRIGGER TriggerActualizarFechaAlFinalAgenda
+ON TbAgendasPersonales;
+
+CREATE PROCEDURE InsertarActualizarExpediente
+    @IDPaciente int,
+    @Contenido varchar(max),
+    @IDTerapeuta int
+AS
+BEGIN
+    -- Verificar si existe un expediente para el IDPaciente dado
+    IF EXISTS (SELECT 1 FROM TbExpedientes WHERE IDPaciente = @IDPaciente)
+    BEGIN
+        -- Si existe, realizar una actualización (UPDATE) para el primer registro encontrado (TOP 1)
+        UPDATE TOP (1) TbExpedientes
+        SET Contenido = @Contenido,
+            IDTerapeuta = @IDTerapeuta
+        WHERE IDPaciente = @IDPaciente;
+    END
+    ELSE
+    BEGIN
+        -- Si no existe, realizar una inserción (INSERT)
+        INSERT INTO TbExpedientes (Contenido, IDPaciente, IDTerapeuta)
+        VALUES (@Contenido, @IDPaciente, @IDTerapeuta);
+    END
+END;
+
+CREATE PROCEDURE PDInsertarOActualizarNotas
+	@IDPaciente int,
+	@Contenido VARCHAR(MAX)
+AS
+BEGIN
+    -- Verificar si existe una agenda para el IDPaciente dado
+    IF EXISTS (SELECT 1 FROM TbAgendasPersonales WHERE IDPaciente = @IDPaciente)
+    BEGIN
+        -- Si existe, realizar una actualización (UPDATE) para el primer registro encontrado (TOP 1)
+        UPDATE TOP (1) TbAgendasPersonales
+        SET Contenido = @Contenido
+        WHERE IDPaciente = @IDPaciente;
+    END
+    ELSE
+    BEGIN
+        -- Si no existe, realizar una inserción (INSERT)
+        INSERT INTO TbAgendasPersonales(Contenido, IDPaciente)
+        VALUES (@Contenido, @IDPaciente);
+    END
+END;
+
+
+
+CREATE PROCEDURE PDEliminarSinCascade
+	@IDUsuario INT
+AS
+BEGIN
+	DECLARE @IDTerapeuta int;
+	DECLARE @IDSecretaria int;
+	SET @IDTerapeuta = (SELECT TOP 1 IDTerapeuta FROM TbTerapeutas WHERE IDUsuario = @IDUsuario);
+	SET @IDSecretaria = (SELECT TOP 1 IDSecretaria FROM TbSecretaria WHERE IDUsuario = @IDUsuario);
+
+	IF(@IDTerapeuta IS NOT NULL)
+	BEGIN
+		UPDATE TbArticulos SET IDTerapeuta = null where IDTerapeuta = @IDTerapeuta;
+		UPDATE TbPruebas SET IDTerapeuta = NULL where IDTerapeuta = @IDTerapeuta;
+		UPDATE TbExpedientes SET IDTerapeuta = null WHERE IDTerapeuta = @IDTerapeuta;
+		DELETE FROM TbTerapeutas WHERE IDTerapeuta = @IDTerapeuta; 
+
+	END
+		
+	ELSE
+	BEGIN
+		UPDATE TbPruebas SET IDSecretaria = null where IDSecretaria = @IDSecretaria;
+		UPDATE TbCitas SET IDSecretaria = null WHERE IDSecretaria = @IDSecretaria
+		DELETE FROM TbSecretaria WHERE IDSecretaria = @IDSecretaria;
+	END
+END;
+
+
+
+ ---AgrgarPerfilDeEmpleado---
+ ---Descripción: Este procedimiento almacenado crea un usuario e interactúa con 3 tablas TbContactos, TbUsuario y TbTerpaeuta/TbSecretaria, se ejecuta con este exec:
+ ---EXEC PDCrearEmpleado 27, 'whats@gmail.com', 'whats', 'Contraseña', 2, 'Doris';
+ ALTER PROCEDURE PDCrearEmpleado
+	@IDAdministrador INT,
+	@Correo varchar(400),
+	@Username VARCHAR(100),
+	@Contraseña VARCHAR(100),
+	@TipoDeEm INT,
+	@Nombre VARCHAR(200)
+ AS
+ BEGIN
+		DECLARE @HashContraseñaTbU VARBINARY(64);
+		DECLARE @newHash VARBINARY(64);
+		DECLARE @IDClinica VARCHAR(5);
+		DECLARE @IDUsuario INT;
+		SET @IDClinica = (SELECT IDClinica FROM TbAdministrador WHERE IDAdministrador = @IDAdministrador);
+        SET @HashContraseñaTbU = HASHBYTES('SHA2_256', @Contraseña);
+		SET @newHash = HASHBYTES('SHA2_256', @HashContraseñaTbU);
+
+		IF(@Correo is not null)
+		BEGIN
+		INSERT INTO TbContactos(Correo) VALUES (@Correo);
+		DECLARE @IDContacto INT; 
+		set @IDContacto = (SELECT IDContacto FROM TbContactos WHERE Correo = @Correo);
+			IF (@Username IS NOT NULL AND @Contraseña IS NOT NULL)
+			BEGIN
+				INSERT INTO TbUsuarios(UserName, Contraseña, IDContacto, Primeruso)
+				VALUES (@Username, @newHash, @IDContacto, 0);
+				SET @IDUsuario = (select IDUsuario FROM TbUsuarios WHERE UserName = @Username);
+					IF(@TipoDeEm = 1 AND @TipoDeEm IS NOT NULL)
+					BEGIN
+						INSERT INTO TbTerapeutas(Nombre, IDUsuario, IDClinica) VALUES (@Nombre, @IDUsuario, @IDClinica);
+					END
+					ELSE IF(@TipoDeEm = 2)
+					BEGIN 
+						INSERT INTO TbSecretaria(Nombre, IDUsuario, IDClinica) VALUES (@Nombre, @IDUsuario, @IDClinica);
+					END
+			END
+		END
+
+		ELSE
+		BEGIN
+			IF (@Username IS NOT NULL AND @Contraseña IS NOT NULL)
+			BEGIN
+				INSERT INTO TbUsuarios(UserName, Contraseña, Primeruso)
+				VALUES (@Username, @newHash, 0);
+				SET @IDUsuario = (select IDUsuario FROM TbUsuarios WHERE UserName = @Username);
+				IF(@TipoDeEm = 1 AND @TipoDeEm IS NOT NULL)
+					BEGIN
+						INSERT INTO TbTerapeutas(Nombre, IDUsuario, IDClinica) VALUES (@Nombre, @IDUsuario, @IDClinica);
+					END
+					ELSE IF(@TipoDeEm = 2)
+					BEGIN 
+						INSERT INTO TbSecretaria(Nombre, IDUsuario, IDClinica) VALUES (@Nombre, @IDUsuario, @IDClinica);
+					END
+			END
+		END
+
+ END;
+
+CREATE PROCEDURE ObtenerIDTerapeuta
+    @UserName varchar(50),
+    @IDTerapeuta int OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT @IDTerapeuta = TT.IDTerapeuta
+    FROM TbUsuarios TU
+    INNER JOIN TbTerapeutas TT ON TU.IDUsuario = TT.IDUsuario
+    WHERE TU.UserName = @UserName;
+END;
+
+DECLARE @IDTerapeutaResultado int;
+
+
+CREATE PROCEDURE ObtenerIDAdministrador
+    @UserName varchar(50),
+    @IDAdmin int OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT @IDAdmin = TT.IDAdministrador
+    FROM TbUsuarios TU
+    INNER JOIN TbAdministrador TT ON TU.IDUsuario = TT.IDUsuario
+    WHERE TU.UserName = @UserName;
+END;

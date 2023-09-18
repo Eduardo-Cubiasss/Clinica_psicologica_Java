@@ -19,7 +19,7 @@ import ux.PanelesInicializador;
  */
 public class JP010_S2_AF extends javax.swing.JPanel {
 
-    private  DetallesDePerfil controlador;
+    private DetallesDePerfil controlador;
     private PanelesInicializador str;
 
     public JButton getBtn1_JF010_AF() {
@@ -30,8 +30,6 @@ public class JP010_S2_AF extends javax.swing.JPanel {
         this.btn1_JF010_AF = btn1_JF010_AF;
     }
 
-    
-
     public JLabel getLb_chino() {
         return lb_chino;
     }
@@ -40,44 +38,36 @@ public class JP010_S2_AF extends javax.swing.JPanel {
         this.lb_chino = lb_chino;
     }
 
-    public JTextField getTxtApellido() {
-        return txtApellido;
-    }
-
-    public void setTxtApellido(JTextField txtApellido) {
-        this.txtApellido = txtApellido;
-    }
-
     public JTextField getTxtDias() {
         return txtDias;
     }
 
-    public void setTxtDias(JTextField txtDias) {
-        this.txtDias = txtDias;
+    public void setTxtDias(String texto) {
+        txtDias.setText(texto);
     }
 
     public JTextField getTxtEdad() {
         return txtEdad;
     }
 
-    public void setTxtEdad(JTextField txtEdad) {
-        this.txtEdad = txtEdad;
+    public void setTxtEdad(String texto) {
+        txtEdad.setText(texto);
     }
 
     public JTextField getTxtNombre() {
         return txtNombre;
     }
 
-    public void setTxtNombre(JTextField txtNombre) {
-        this.txtNombre = txtNombre;
+    public void setTxtNombre(String texto) {
+        txtNombre.setText(texto);
     }
 
     public JTextField getTxtOficio() {
         return txtOficio;
     }
 
-    public void setTxtOficio(JTextField txtOficio) {
-        this.txtOficio = txtOficio;
+    public void setTxtOficio(String texto) {
+        txtOficio.setText(texto);
     }
 
     public JLabel getjLabel1() {
@@ -112,14 +102,6 @@ public class JP010_S2_AF extends javax.swing.JPanel {
         this.jLabel4 = jLabel4;
     }
 
-    public JLabel getjLabel5() {
-        return jLabel5;
-    }
-
-    public void setjLabel5(JLabel jLabel5) {
-        this.jLabel5 = jLabel5;
-    }
-
     public JLabel getjLabel7() {
         return jLabel7;
     }
@@ -152,23 +134,16 @@ public class JP010_S2_AF extends javax.swing.JPanel {
         this.jPanel2 = jPanel2;
     }
 
-  
-    
-    
-    
-    
-    
     public JP010_S2_AF(DetallesDePerfil controlador) {
         initComponents();
         this.controlador = controlador;
-        
+
         str = new PanelesInicializador();
-        
-         // Establecer el valor de str aquí después de haberlo creado
+
+        // Establecer el valor de str aquí después de haberlo creado
         str.setJP010_S2_AF(this);
     }
-    
-    
+
     public JP010_S2_AF() {
         initComponents();
     }
@@ -187,7 +162,6 @@ public class JP010_S2_AF extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -196,7 +170,6 @@ public class JP010_S2_AF extends javax.swing.JPanel {
         btn1_JF010_AF = new javax.swing.JButton();
         txtDias = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
-        txtApellido = new javax.swing.JTextField();
         txtEdad = new javax.swing.JTextField();
         txtOficio = new javax.swing.JTextField();
 
@@ -227,21 +200,17 @@ public class JP010_S2_AF extends javax.swing.JPanel {
         jLabel1.setText("Nombre");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, 120, 30));
 
-        jLabel5.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel5.setText("Apellidos");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 110, 20));
-
         jLabel7.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel7.setText("Edad");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 330, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel9.setText("Oficio");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 400, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel11.setText("Dias de trabajo");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, -1, -1));
+        jLabel11.setText("DUI");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(200, 232, 232));
 
@@ -266,11 +235,10 @@ public class JP010_S2_AF extends javax.swing.JPanel {
         btn1_JF010_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector.png"))); // NOI18N
         btn1_JF010_AF.setBorderPainted(false);
         jPanel2.add(btn1_JF010_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-        jPanel2.add(txtDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 460, 220, 30));
+        jPanel2.add(txtDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 370, 220, 30));
         jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 160, 220, 30));
-        jPanel2.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 240, 220, 30));
-        jPanel2.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 320, 220, 30));
-        jPanel2.add(txtOficio, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 390, 220, 30));
+        jPanel2.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 230, 220, 30));
+        jPanel2.add(txtOficio, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 300, 220, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -294,18 +262,16 @@ public class JP010_S2_AF extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btn1_JF010_AF;
     public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    public javax.swing.JLabel jLabel5;
     public javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabel9;
     public javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     public javax.swing.JLabel lb_chino;
-    public javax.swing.JTextField txtApellido;
-    public javax.swing.JTextField txtDias;
+    private javax.swing.JTextField txtDias;
     public javax.swing.JTextField txtEdad;
     public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtOficio;

@@ -17,6 +17,35 @@ public class Empleado {
     private int nivel;
     private String nombre;
     private String ActividadLab;
+    private int Edad;
+    private String DUI;
+    private int IDUsuario;
+
+    public int getEdad() {
+        return Edad;
+    }
+
+    public void setEdad(int Edad) {
+        this.Edad = Edad;
+    }
+
+    public String getDUI() {
+        return DUI;
+    }
+
+    public void setDUI(String DUI) {
+        this.DUI = DUI;
+    }
+
+    public int getIDUsuario() {
+        return IDUsuario;
+    }
+
+    public void setIDUsuario(int IDUsuario) {
+        this.IDUsuario = IDUsuario;
+    }
+    
+    
     public String getNombre() {
         return nombre;
     }

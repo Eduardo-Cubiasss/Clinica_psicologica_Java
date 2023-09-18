@@ -129,10 +129,12 @@ public class Login implements ActionListener {
                 switch (Nivel) {
                     case 1:
                         if (Primeruso == 1) {
+                            Procesos.SaberID(modelUsers, modelAdmin);
                             PanelesManager.copiaPanel("JP001_S1_AFP");
                             JPContenido.remove(panelRegistro);
                             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPrimerUso");
                         } else {
+                            Procesos.SaberID(modelUsers, modelAdmin);
                             PanelesManager.copiaPanel("JP001_S1_AFP");
                             JPContenido.remove(panelRegistro);
                             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");

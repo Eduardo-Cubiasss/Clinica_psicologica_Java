@@ -5,6 +5,7 @@
  */
 package ux;
 
+import Database.Empleado;
 import Ui.JP010_S2_AF;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
@@ -19,14 +20,21 @@ public class DetallesDePerfil implements ActionListener{
     private JPanel JPContenido;
     private JP010_S2_AF vista10;
     private HabilitarPaneles PanelesManager;
+    private Empleado modelEmpleado;
 
     
-    public DetallesDePerfil(JPanel JPContenido, JP010_S2_AF vista10, HabilitarPaneles PanelesManager)
+    public DetallesDePerfil(JPanel JPContenido, JP010_S2_AF vista10, HabilitarPaneles PanelesManager, Empleado modelEmpleado)
     {
         this.JPContenido = JPContenido;
         this.vista10 = vista10;
-        this.PanelesManager = PanelesManager;   
+        this.PanelesManager = PanelesManager;
+        this.modelEmpleado = modelEmpleado;
         this.vista10.getBtn1_JF010_AF().addActionListener(this);
+        this.vista10.setTxtNombre(modelEmpleado.getNombre());
+        this.vista10.setTxtEdad(String.valueOf(modelEmpleado.getEdad()));
+        this.vista10.setTxtOficio(modelEmpleado.getActividadLab());
+        this.vista10.setTxtDias(modelEmpleado.getDUI());
+        
     }
 
     @Override

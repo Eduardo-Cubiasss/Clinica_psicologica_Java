@@ -8,6 +8,7 @@ package ux;
 import Database.ActividadesLaborales;
 import Database.Empleado;
 import Database.Procesos_almacenados;
+import Ui.JP010_S2_AF;
 import Ui.JP012_S2_AF;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
@@ -23,7 +24,8 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author LENOVO
  */
-public class BuscadorEmpleados implements ActionListener{
+public class BuscadorEmpleados implements ActionListener {
+
     private JPanel JPContenido;
     private JP012_S2_AF vista12;
     private Empleado modelEmpleado;
@@ -32,23 +34,23 @@ public class BuscadorEmpleados implements ActionListener{
     private Procesos_almacenados procesos;
     private DefaultTableModel tableModel;
     private HabilitarPaneles PanelesManager;
+    private JP010_S2_AF vista10;
 
-    
-    public BuscadorEmpleados(JPanel JPContenido, JP012_S2_AF vista12, Empleado modelEmpleado, ActividadesLaborales modelactivity, Procesos_almacenados procesos, HabilitarPaneles PanelesManager, Resultado resultado)
-    {
+    public BuscadorEmpleados(JPanel JPContenido, JP012_S2_AF vista12, Empleado modelEmpleado, ActividadesLaborales modelactivity, Procesos_almacenados procesos, HabilitarPaneles PanelesManager, Resultado resultado, JP010_S2_AF vista10) {
         this.JPContenido = JPContenido;
         this.modelEmpleado = modelEmpleado;
         this.modelactivity = modelactivity;
         this.procesos = procesos;
         this.vista12 = vista12;
-        this.PanelesManager = PanelesManager;   
-        this.resultado = resultado; 
-        
+        this.vista10 = vista10;
+        this.PanelesManager = PanelesManager;
+        this.resultado = resultado;
+
         this.vista12.getBtn1_JF012().addActionListener(this);
         this.vista12.getBtn2_JF012().addActionListener(this);
         this.vista12.getBtn3_JF012().addActionListener(this);
         this.vista12.getBtnBuscar().addActionListener(this);
-        
+
         String[] columnTitles = {"Id", "Nombres", "Actividad laboral"};
 
         tableModel = new DefaultTableModel(columnTitles, 0);
@@ -73,14 +75,11 @@ public class BuscadorEmpleados implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == vista12.getBtn2_JF012())
-        {
+        if (e.getSource() == vista12.getBtn2_JF012()) {
             //tendria que ir el panelMBEliminarUsuario creoooo
-           
+
             //Es para eliminar una cuenta
-        }
-        else if (e.getSource() == vista12.getBtn3_JF012())
-        {
+        } else if (e.getSource() == vista12.getBtn3_JF012()) {
             PanelesManager.copiaPanel("JP012_S2_AF");
             JPContenido.remove(vista12);
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPersonalClinica");
@@ -88,9 +87,11 @@ public class BuscadorEmpleados implements ActionListener{
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado();
             //Es para volver al panel anterior
-        }
-        else if (e.getSource() == vista12.getBtn1_JF012())
-        {
+        } else if (e.getSource() == vista12.getBtn1_JF012()) {
+            vista10.setTxtNombre(modelEmpleado.getNombre());
+            vista10.setTxtEdad(String.valueOf(modelEmpleado.getEdad()));
+            vista10.setTxtOficio(modelEmpleado.getActividadLab());
+            vista10.setTxtDias(modelEmpleado.getDUI());
             PanelesManager.copiaPanel("JP012_S2_AF");
             JPContenido.remove(vista12);
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelDetallesDePerfil");
@@ -98,10 +99,8 @@ public class BuscadorEmpleados implements ActionListener{
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado();
             //Es para abrir el perfil del usuario en base a su ID
-        }
-        else if (e.getSource() == vista12.getBtnBuscar())
-        {
-             String textoBusqueda = vista12.getjTextField1().getText();
+        } else if (e.getSource() == vista12.getBtnBuscar()) {
+            String textoBusqueda = vista12.getjTextField1().getText();
             if (textoBusqueda != null && !textoBusqueda.isEmpty()) {
                 System.out.println(textoBusqueda);
                 actualizarTablaConResultadosDeBusqueda(textoBusqueda);
@@ -111,8 +110,9 @@ public class BuscadorEmpleados implements ActionListener{
             }
             //Es para el buscador y que muestre los resultados en la tabla
         }
-        
+
     }
+
     private void actualizarTablaConResultadosDeBusqueda(String textoBusqueda) {
         // Borra todas las filas existentes en el modelo
         tableModel.setRowCount(0);
@@ -125,5 +125,5 @@ public class BuscadorEmpleados implements ActionListener{
             tableModel.addRow(new Object[]{resultado.getIdPaciente(), resultado.getNombre(), resultado.getApellido()});
         }
     }
-    
+
 }

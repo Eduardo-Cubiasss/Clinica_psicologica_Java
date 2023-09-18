@@ -15,6 +15,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import microsoft.sql.Types;
 import ux.Resultado;
 
 /**
@@ -61,6 +62,43 @@ public class Procesos_almacenados {
                     e.printStackTrace();
                 }
             }
+        }
+    }
+
+    public void SaberID(Usuarios modelusuarios, Administrador modelAdmin) {
+        Connection conn = null;
+        CallableStatement cs = null;
+        try {
+            conn = ConnectionSQL.getConexion();
+            cs = conn.prepareCall("{CALL ObtenerIDAdministrador(?, ?)}");
+
+            cs.setString(1, modelusuarios.getUserName());
+            cs.registerOutParameter(2, java.sql.Types.INTEGER);
+
+            cs.execute();
+
+            // Obtener el resultado del parámetro de salida
+            int IDAdministrador = cs.getInt(2);
+            modelAdmin.setIDUsuario(IDAdministrador);
+            System.out.println("Este es el ID " + (IDAdministrador));
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Credenciales incorrectas", JOptionPane.INFORMATION_MESSAGE);
+
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (cs != null) {
+                    cs.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+
         }
     }
 
@@ -645,37 +683,40 @@ public class Procesos_almacenados {
         return 0;
     }
 
-    public boolean AgregarEmpleado(Empleado modelEmpleado, Usuarios modelUsuario) {
+    public boolean AgregarEmpleado(Administrador modelAdmin, Empleado modelEmpleado, Usuarios modelUsuario, Contactos modelContactos) {
         Connection conn = null;
-        PreparedStatement ps = null;
+        CallableStatement cs = null;
         try {
-            conn = (Connection) ConnectionSQL.getConexion();
-            ps = conn.prepareStatement("EXEC PDRegistrarEmpleado ?, ?, ?, ?, ?");
-            ps.setString(1, modelUsuario.getUserName());
-            ps.setString(2, modelEmpleado.getUsername());
-            ps.setString(3, modelEmpleado.getContraseña());
-            ps.setInt(4, modelEmpleado.getNivel());
-            ;
-            return true;
+            conn = ConnectionSQL.getConexion();
+            cs = conn.prepareCall("{CALL PDCrearEmpleado(?, ?, ?, ?, ?, ?)}");
 
+            // Configura los parámetros del procedimiento almacenado
+            cs.setInt(1, modelAdmin.getIDUsuario());
+            cs.setString(2, modelContactos.getCorreo());
+            cs.setString(3, modelEmpleado.getUsername());
+            cs.setString(4, modelEmpleado.getContraseña());
+            cs.setInt(5, modelEmpleado.getNivel());
+            cs.setString(6, modelEmpleado.getNombre());
+
+            // Ejecuta el procedimiento almacenado
+            cs.execute();
+
+            // Si llega hasta aquí sin excepciones, la inserción se realizó con éxito
+            return true;
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error J001GU, Ya existe un usuario con ese UserName", "Error al crear el usuario", JOptionPane.INFORMATION_MESSAGE);
-            System.out.println(e.toString());
+            // Manejo de excepciones en caso de error
+            e.printStackTrace();
             return false;
         } finally {
-            if (ps != null) {
-                try {
-                    ps.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
+            try {
+                if (cs != null) {
+                    cs.close();
                 }
-            }
-            if (conn != null) {
-                try {
+                if (conn != null) {
                     conn.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
                 }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
             }
         }
     }
@@ -691,7 +732,7 @@ public class Procesos_almacenados {
 
                 switch (operacion) {
                     case 1:
-                        ps = conn.prepareStatement("SELECT ID, Nombre, NombreDeActividad \n"
+                        ps = conn.prepareStatement("SELECT ID, Nombre, DUI, NombreDeActividad, IDUsuarioEm, Edad \n"
                                 + "FROM VistaEmpleadosConActividad\n"
                                 + "WHERE Nombre LIKE ?;");
                         ps.setString(1, "%" + textoBusqueda + "%");
@@ -700,8 +741,18 @@ public class Procesos_almacenados {
                         while (rs.next()) {
                             int idUsuario = rs.getInt("ID");
                             String Nombre = rs.getString("Nombre");
+                            String DUI = rs.getString("DUI");
                             String ActividadLaboral = rs.getString("NombreDeActividad");
-                            
+                            int IDUsuarioEm = rs.getInt("IDUsuarioEm");
+                            int Edad = rs.getInt("Edad");
+
+                            modelEmpleado.setNombre(Nombre);
+                            modelEmpleado.setDUI(DUI);
+                            modelEmpleado.setIdEmpleado(idUsuario);
+                            modelEmpleado.setActividadLab(ActividadLaboral);
+                            modelEmpleado.setIDUsuario(IDUsuarioEm);
+                            modelEmpleado.setEdad(Edad);
+                            System.out.println(modelEmpleado.getNombre() + " " + modelEmpleado.getEdad() + " " + " " + " " + " " + " ");
                             // Crea un objeto Resultado y agrégalo a la lista de resultados
                             Resultado resultado = new Resultado(idUsuario, Nombre, ActividadLaboral);
                             resultados.add(resultado);
@@ -709,7 +760,7 @@ public class Procesos_almacenados {
 
                         break;
 
-                    case 2: // 2 para select
+                    case 2: // 2 para select a la demas información
 
                         break;
 
@@ -738,5 +789,45 @@ public class Procesos_almacenados {
             return resultados;
         }
 
+    }
+
+    public void VerNotasPac(Pacientes modelPaciente, AgendasPersonales modelAgendas) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null; 
+
+        try {
+            conn = ConnectionSQL.getConexion();
+
+            ps = conn.prepareStatement("SELECT TOP 1 Contenido FROM TbAgendasPersonales WHERE IDPaciente = ?;");
+            ps.setInt(1, modelPaciente.getIDpaciente());
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                String Contenido = rs.getString("Contenido");
+                modelAgendas.setContenido(Contenido);
+                System.out.println("Llegue hasta aqui "+ Contenido);
+            }
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "El paciente aún no ha escrito en su agenda", JOptionPane.INFORMATION_MESSAGE);
+
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 }

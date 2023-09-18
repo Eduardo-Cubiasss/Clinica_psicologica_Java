@@ -5,6 +5,8 @@
  */
 package ux;
 
+import Database.Administrador;
+import Database.Contactos;
 import Database.Empleado;
 import Database.Procesos_almacenados;
 import Database.Usuarios;
@@ -26,11 +28,16 @@ public class AgregarPerfilesDeUsuario implements ActionListener {
     private Empleado modelEmpleado;
     private JP009_S2_RH vista09;
     private Usuarios modelUsers;
+    private Administrador modelAdmin;
+    private Contactos modelContactos;
 
-    public AgregarPerfilesDeUsuario(JPanel JPContenido, Procesos_almacenados procesos, HabilitarPaneles PanelesManager, Empleado modelEmpleado, JP009_S2_RH vista09, Usuarios modelUsers) {
+    public AgregarPerfilesDeUsuario(JPanel JPContenido, Procesos_almacenados procesos, HabilitarPaneles PanelesManager, Empleado modelEmpleado, JP009_S2_RH vista09, 
+            Usuarios modelUsers, Administrador modelAdmin, Contactos modelContactos) {
         this.JPContenido = JPContenido;
         this.PanelesManager = PanelesManager;
         this.modelEmpleado = modelEmpleado;
+        this.modelAdmin = modelAdmin;
+        this.modelContactos = modelContactos;
         this.procesos = procesos;
         this.vista09 = vista09;
         this.modelUsers = modelUsers;
@@ -43,11 +50,13 @@ public class AgregarPerfilesDeUsuario implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista09.getBtn3_JF009_S2_RH1()) {
             modelEmpleado.setUsername(vista09.getTxtNombre_JF009_S2_RH().getText());
-            modelEmpleado.setContraseña(vista09.getTxtContraseña_JF009_S2_RH().getText());
-            modelEmpleado.setCorreo(vista09.getTxtCorreoE_JF009_S2_RH().getText());
+            modelEmpleado.setContraseña(vista09.getTxtContraseña_JF009_S2_RH1().getText());
+            modelContactos.setCorreo(vista09.getTxtCorreoE_JF009_S2_RH().getText());
             modelEmpleado.setNivel(vista09.getjComboBox1().getSelectedIndex());
-
-            procesos.AgregarEmpleado(modelEmpleado, modelUsers);
+            modelEmpleado.setNombre(vista09.getTxNombre_JF009_S2_RH().getText());
+            System.out.println(modelEmpleado.getContraseña());
+            System.out.println(modelEmpleado.getUsername());
+            procesos.AgregarEmpleado(modelAdmin, modelEmpleado, modelUsers, modelContactos);
         } else if (e.getSource() == vista09.getBtn4_JF009_S2_RH()) {
             vista09.getTxtNombre_JF009_S2_RH().setText(""); // Establece el JTextField en blanco
             vista09.getTxtContraseña_JF009_S2_RH().setText(""); // Establece el JTextField en blanco
