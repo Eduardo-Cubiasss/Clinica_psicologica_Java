@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 public class SolicitudesDeEmpleados implements ActionListener{
     private JPanel JPContenido;
     private JP014_S2_AF vista14;
-        private HabilitarPaneles PanelesManager;
+    private HabilitarPaneles PanelesManager;
 
     
     
@@ -33,6 +33,9 @@ public class SolicitudesDeEmpleados implements ActionListener{
         this.vista14.getBtn3_JF014_S2().addActionListener(this);
         this.vista14.getBtn4_JF014_S2().addActionListener(this);
         this.vista14.getBtn5_JF014_S2().addActionListener(this);
+        this.vista14.getBtnRedactarMensaje().addActionListener(this);
+        
+        
     }
 
     @Override

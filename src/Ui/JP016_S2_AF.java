@@ -23,29 +23,6 @@ public class JP016_S2_AF extends javax.swing.JPanel {
     private SolicitudesAprobadas controlador;
     private PanelesInicializador str;
 
-    public JButton getBtn1_JF016_S2() {
-        return btn1_JF016_S2;
-    }
-
-    public void setBtn1_JF016_S2(JButton btn1_JF016_S2) {
-        this.btn1_JF016_S2 = btn1_JF016_S2;
-    }
-
-    public JButton getBtn2_JF016_S2() {
-        return btn2_JF016_S2;
-    }
-
-    public void setBtn2_JF016_S2(JButton btn2_JF016_S2) {
-        this.btn2_JF016_S2 = btn2_JF016_S2;
-    }
-
-    public JButton getBtn3_JF016_S2() {
-        return btn3_JF016_S2;
-    }
-
-    public void setBtn3_JF016_S2(JButton btn3_JF016_S2) {
-        this.btn3_JF016_S2 = btn3_JF016_S2;
-    }
 
     public JButton getBtn4_JF016_S2() {
         return btn4_JF016_S2;
@@ -55,13 +32,6 @@ public class JP016_S2_AF extends javax.swing.JPanel {
         this.btn4_JF016_S2 = btn4_JF016_S2;
     }
 
-    public JButton getBtn5_JF016_S2() {
-        return btn5_JF016_S2;
-    }
-
-    public void setBtn5_JF016_S2(JButton btn5_JF016_S2) {
-        this.btn5_JF016_S2 = btn5_JF016_S2;
-    }
 
     public JLabel getjLabel1() {
         return jLabel1;
@@ -71,13 +41,6 @@ public class JP016_S2_AF extends javax.swing.JPanel {
         this.jLabel1 = jLabel1;
     }
 
-    public JLabel getjLabel4() {
-        return jLabel4;
-    }
-
-    public void setjLabel4(JLabel jLabel4) {
-        this.jLabel4 = jLabel4;
-    }
 
     public JPanel getjPanel2() {
         return jPanel2;
@@ -136,47 +99,28 @@ public class JP016_S2_AF extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        btn5_JF016_S2 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btn1_JF016_S2 = new javax.swing.JButton();
-        btn2_JF016_S2 = new javax.swing.JButton();
-        btn3_JF016_S2 = new javax.swing.JButton();
         btn4_JF016_S2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setMaximumSize(new java.awt.Dimension(1120, 640));
-        setMinimumSize(new java.awt.Dimension(1120, 640));
-        setPreferredSize(new java.awt.Dimension(1120, 640));
+        setMaximumSize(new java.awt.Dimension(870, 531));
+        setMinimumSize(new java.awt.Dimension(870, 531));
+        setPreferredSize(new java.awt.Dimension(870, 531));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setMaximumSize(new java.awt.Dimension(1120, 640));
         jPanel2.setMinimumSize(new java.awt.Dimension(1120, 640));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1120, 640));
-
-        btn5_JF016_S2.setBackground(new java.awt.Color(255, 255, 255));
-        btn5_JF016_S2.setForeground(new java.awt.Color(255, 255, 255));
-        btn5_JF016_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector.png"))); // NOI18N
-        btn5_JF016_S2.setBorderPainted(false);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
+        jPanel2.setPreferredSize(new java.awt.Dimension(870, 530));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("Solicitudes Aprobadas");
-
-        btn1_JF016_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rec.PNG"))); // NOI18N
-
-        btn2_JF016_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pro.PNG"))); // NOI18N
-        btn2_JF016_S2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2_JF016_S2ActionPerformed(evt);
-            }
-        });
-
-        btn3_JF016_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/re.PNG"))); // NOI18N
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, -1, -1));
 
         btn4_JF016_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/si.PNG"))); // NOI18N
+        btn4_JF016_S2.setBorderPainted(false);
+        jPanel2.add(btn4_JF016_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, 110, 60));
 
         jScrollPane1.setBorder(null);
 
@@ -203,88 +147,28 @@ public class JP016_S2_AF extends javax.swing.JPanel {
         jTable1.setShowHorizontalLines(false);
         jScrollPane1.setViewportView(jTable1);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn2_JF016_S2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn1_JF016_S2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn3_JF016_S2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(112, 112, 112)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(258, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(btn5_JF016_S2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(287, 287, 287)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn4_JF016_S2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(469, 469, 469))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(btn5_JF016_S2))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jLabel1)))
-                .addGap(95, 95, 95)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(75, 75, 75)
-                                .addComponent(btn2_JF016_S2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btn1_JF016_S2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(btn3_JF016_S2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn4_JF016_S2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64))
-        );
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 580, 120));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 886, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn2_JF016_S2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2_JF016_S2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn2_JF016_S2ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btn1_JF016_S2;
-    public javax.swing.JButton btn2_JF016_S2;
-    public javax.swing.JButton btn3_JF016_S2;
-    public javax.swing.JButton btn4_JF016_S2;
-    public javax.swing.JButton btn5_JF016_S2;
-    public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel4;
-    public javax.swing.JPanel jPanel2;
+    private javax.swing.JButton btn4_JF016_S2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

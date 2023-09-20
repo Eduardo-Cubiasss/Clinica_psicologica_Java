@@ -101,6 +101,78 @@ public class Procesos_almacenados {
 
         }
     }
+    public void SaberIDTer(Usuarios modelusuarios, Terapeutas modelTerapeuta) {
+        Connection conn = null;
+        CallableStatement cs = null;
+        try {
+            conn = ConnectionSQL.getConexion();
+            cs = conn.prepareCall("{CALL ObtenerIDTerapeuta(?, ?)}");
+
+            cs.setString(1, modelusuarios.getUserName());
+            cs.registerOutParameter(2, java.sql.Types.INTEGER);
+
+            cs.execute();
+
+            // Obtener el resultado del parámetro de salida
+            int IDAdministrador = cs.getInt(2);
+            modelTerapeuta.setIDUsuario(IDAdministrador);
+            System.out.println("Este es el ID de la terpeuta" + (IDAdministrador));
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Credenciales incorrectas", JOptionPane.INFORMATION_MESSAGE);
+
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (cs != null) {
+                    cs.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+
+        }
+    }
+    public void SaberIDSecre(Usuarios modelusuarios, Secretarias ModelSecret) {
+        Connection conn = null;
+        CallableStatement cs = null;
+        try {
+            conn = ConnectionSQL.getConexion();
+            cs = conn.prepareCall("{CALL ObtenerIDSecretaria(?, ?)}");
+
+            cs.setString(1, modelusuarios.getUserName());
+            cs.registerOutParameter(2, java.sql.Types.INTEGER);
+
+            cs.execute();
+
+            // Obtener el resultado del parámetro de salida
+            int IDAdministrador = cs.getInt(2);
+            ModelSecret.setIDUsuario(IDAdministrador);
+            System.out.println("Este es el ID de la secretaria" + (IDAdministrador));
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Credenciales incorrectas", JOptionPane.INFORMATION_MESSAGE);
+
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (cs != null) {
+                    cs.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+
+        }
+    }
 
     public void Logear(Usuarios modelousuarios) {
         int acceso = 0;
@@ -811,6 +883,265 @@ public class Procesos_almacenados {
         } catch (Exception e) {
             System.out.println("Error #J00DA");
             JOptionPane.showMessageDialog(null, "Error: J000DA", "El paciente aún no ha escrito en su agenda", JOptionPane.INFORMATION_MESSAGE);
+
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+        public void AgregarAnuncio(Anuncios modelAnuncios) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null; 
+
+        try {
+            conn = ConnectionSQL.getConexion();
+
+            ps = conn.prepareStatement("INSERT INTO TbAnuncio(Titulo, Imagen) VALUES (?,?)");
+            ps.setString(1, modelAnuncios.getTitulo());
+            //ps.setBytes(2, modelAnuncios.getImagen());
+           ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "El paciente aún no ha escrito en su agenda", JOptionPane.INFORMATION_MESSAGE);
+
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+        public void AgregarArticulo(Articulos modelArt, Terapeutas modelTer, int caso) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null; 
+
+        try {
+            conn = ConnectionSQL.getConexion();
+
+            ps = conn.prepareStatement("EXEC PDArticulosInsertOupdate ?, ?, ?, ?, ?, ?");
+            ps.setInt(1, (modelTer.getIDTerapeuta()));
+            ps.setString(2, modelArt.getTitulo());
+            ps.setString(3, modelArt.getDescripcion());
+            //ps.setBytes(4, modelArt.getImagen());
+            ps.setInt(5, modelArt.getIDArticulo());
+            ps.setInt(6, caso);
+            
+           ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Error innesperado, verifique que la imagen sea JPEJ", JOptionPane.INFORMATION_MESSAGE);
+
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+        public void RedactarPermiso(Incapacidades modelIncap, Usuarios modelUsers) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null; 
+
+        try {
+            conn = ConnectionSQL.getConexion();
+
+            ps = conn.prepareStatement("EXEC PDPermiso ?, ?, ?");
+            ps.setString(2, modelIncap.getMensaje());
+            ps.setString(1, modelIncap.getAsunto());
+            ps.setInt(3, modelUsers.getIDUsuario());
+            
+           ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Error innesperado, reinicie la aplicación", JOptionPane.INFORMATION_MESSAGE);
+
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+        public void SaberIDUsuario(Usuarios modelUsers) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null; 
+
+        try {
+            conn = ConnectionSQL.getConexion();
+
+            ps = conn.prepareStatement("SELECT TOP 1 IDUsuario FROM TbUsuarios WHERE UserName = ?");
+            ps.setString(1, modelUsers.getUserName());
+            rs = ps.executeQuery();
+            System.out.println("Este es el username ingresado "+ modelUsers.getUserName());
+            while (rs.next()) {
+                int Contenido = rs.getInt("IDUsuario");
+                modelUsers.setIDUsuario(Contenido);
+                            }
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Error innesperado, verifique que el username no este vacio", JOptionPane.INFORMATION_MESSAGE);
+
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+         public void SaberIDClinica(Clinica modelClinica, Usuarios modelUsers) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null; 
+
+        try {
+            conn = ConnectionSQL.getConexion();
+
+            ps = conn.prepareStatement("SELECT TOP 1 IDClinica FROM VistaClinicaUsuario WHERE IDUsuario = ?;");
+            ps.setInt(1, modelUsers.getIDUsuario());
+            rs = ps.executeQuery();
+            System.out.println("El IDUsuario es: " + modelUsers.getIDUsuario());
+            while (rs.next()) {
+                String IDclinica = rs.getString("IDClinica");
+                modelClinica.setIDClinica(IDclinica);
+                            }
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Error innesperado, este usuario no tiene una clinica, crea otra cuenta", JOptionPane.INFORMATION_MESSAGE);
+
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+            public void VerExpe(Expedientes modelExp, Pacientes modelPaci) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null; 
+
+        try {
+            conn = ConnectionSQL.getConexion();
+
+            ps = conn.prepareStatement("SELECT TOP 1 Contenido FROM TbExpedientes where IDPaciente = ?");
+            ps.setInt(1, modelPaci.getIDpaciente());
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                String Contenido = rs.getString("Contenido");
+                modelExp.setContenido(Contenido);
+                            }
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Error al cargar los datos del expediente", JOptionPane.INFORMATION_MESSAGE);
+
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+   public void EscribirExpe(Pacientes modelPacie, Terapeutas modelTerap, Expedientes modelExp) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null; 
+
+        try {
+            conn = ConnectionSQL.getConexion();
+
+            ps = conn.prepareStatement("EXEC InsertarActualizarExpediente ?, ?, ?");
+            ps.setInt(1, modelPacie.getIDpaciente());
+            ps.setString(2, modelExp.getContenido());
+            ps.setInt(3, modelTerap.getIDUsuario());
+            
+           ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Error innesperado, Vuelva al menú e intenté más tadre", JOptionPane.INFORMATION_MESSAGE);
 
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);

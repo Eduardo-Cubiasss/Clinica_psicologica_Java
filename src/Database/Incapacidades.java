@@ -15,10 +15,20 @@ public class Incapacidades {
     private int IDIncapacidad;
     private Date Fecha;
     private String Mensaje;
+    private String Asunto;
     private int IDTerapeuta;
     private int IDSecretaria;
     private int IDAdministrador;
 
+    public String getAsunto() {
+        return Asunto;
+    }
+
+    public void setAsunto(String Asunto) {
+        this.Asunto = Asunto;
+    }
+
+    
     public int getIDIncapacidad() {
         return IDIncapacidad;
     }

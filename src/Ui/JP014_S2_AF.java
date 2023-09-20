@@ -128,6 +128,14 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         this.jLabel5 = jLabel5;
     }
 
+    public JPanel getContenedorPapi() {
+        return ContenedorPapi;
+    }
+
+    public void setContenedorPapi(JPanel ContenedorPapi) {
+        this.ContenedorPapi = ContenedorPapi;
+    }
+
     
     
     
@@ -164,16 +172,17 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         btn5_JF014_S2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         btn1_JF014_S2 = new javax.swing.JButton();
         btn2_JF014_S2 = new javax.swing.JButton();
         btn3_JF014_S2 = new javax.swing.JButton();
-        btn4_JF014_S2 = new javax.swing.JButton();
+        ContenedorPapi = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btn4_JF014_S2 = new javax.swing.JButton();
         btnRedactarMensaje = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1120, 640));
         setMinimumSize(new java.awt.Dimension(1120, 640));
@@ -194,14 +203,12 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, 170, 90));
 
-        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel1.setText("Solicitudes de los empleados");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, -1, -1));
-
         btn1_JF014_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rec.PNG"))); // NOI18N
+        btn1_JF014_S2.setBorderPainted(false);
         jPanel2.add(btn1_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 170, 80));
 
         btn2_JF014_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pro.PNG"))); // NOI18N
+        btn2_JF014_S2.setBorderPainted(false);
         btn2_JF014_S2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn2_JF014_S2ActionPerformed(evt);
@@ -210,11 +217,12 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         jPanel2.add(btn2_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 170, 80));
 
         btn3_JF014_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/re.PNG"))); // NOI18N
-        jPanel2.add(btn3_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 170, 90));
+        btn3_JF014_S2.setBorderPainted(false);
+        jPanel2.add(btn3_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 170, 90));
 
-        btn4_JF014_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/m.PNG"))); // NOI18N
-        btn4_JF014_S2.setBorder(null);
-        jPanel2.add(btn4_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 450, 110, 60));
+        ContenedorPapi.setBackground(java.awt.Color.white);
+        ContenedorPapi.setMaximumSize(new java.awt.Dimension(1120, 640));
+        ContenedorPapi.setMinimumSize(new java.awt.Dimension(1120, 640));
 
         jScrollPane1.setBorder(null);
 
@@ -241,24 +249,75 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         jTable1.setShowHorizontalLines(false);
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 560, 120));
+        btn4_JF014_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/m.PNG"))); // NOI18N
+        btn4_JF014_S2.setBorder(null);
 
         btnRedactarMensaje.setForeground(new java.awt.Color(0, 102, 102));
         btnRedactarMensaje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/++.PNG"))); // NOI18N
+        btnRedactarMensaje.setBorderPainted(false);
         btnRedactarMensaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRedactarMensajeActionPerformed(evt);
             }
         });
-        jPanel2.add(btnRedactarMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 510, 50, 60));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel3.setText("Redactar");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 520, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel5.setText("Mensaje");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 540, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel1.setText("Solicitudes de los empleados");
+
+        javax.swing.GroupLayout ContenedorPapiLayout = new javax.swing.GroupLayout(ContenedorPapi);
+        ContenedorPapi.setLayout(ContenedorPapiLayout);
+        ContenedorPapiLayout.setHorizontalGroup(
+            ContenedorPapiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ContenedorPapiLayout.createSequentialGroup()
+                .addContainerGap(321, Short.MAX_VALUE)
+                .addComponent(btn4_JF014_S2)
+                .addGap(312, 312, 312)
+                .addComponent(btnRedactarMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ContenedorPapiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel5))
+                .addContainerGap())
+            .addGroup(ContenedorPapiLayout.createSequentialGroup()
+                .addGap(111, 111, 111)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(ContenedorPapiLayout.createSequentialGroup()
+                .addGap(261, 261, 261)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        ContenedorPapiLayout.setVerticalGroup(
+            ContenedorPapiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ContenedorPapiLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addGroup(ContenedorPapiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorPapiLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
+                        .addGroup(ContenedorPapiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorPapiLayout.createSequentialGroup()
+                                .addComponent(btn4_JF014_S2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38))
+                            .addGroup(ContenedorPapiLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel5)
+                                .addContainerGap())))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorPapiLayout.createSequentialGroup()
+                        .addComponent(btnRedactarMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46))))
+        );
+
+        jPanel2.add(ContenedorPapi, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 870, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -282,6 +341,7 @@ public class JP014_S2_AF extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JPanel ContenedorPapi;
     public javax.swing.JButton btn1_JF014_S2;
     public javax.swing.JButton btn2_JF014_S2;
     public javax.swing.JButton btn3_JF014_S2;

@@ -84,6 +84,14 @@ public class JP032_S3_AF extends javax.swing.JPanel {
     public void setjPanel2(JPanel jPanel2) {
         this.jPanel2 = jPanel2;
     }
+
+    public JTextField getTxtDescrip() {
+        return TxtDescrip;
+    }
+
+    public void setTxtDescrip(JTextField TxtDescrip) {
+        this.TxtDescrip = TxtDescrip;
+    }
     
     
     

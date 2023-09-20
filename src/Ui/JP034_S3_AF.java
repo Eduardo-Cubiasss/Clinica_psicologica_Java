@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
+import javax.swing.JTextArea;
 import ux.EscribirEnTuAgendaPersonal;
 import ux.PanelesInicializador;
 
@@ -70,13 +71,14 @@ public class JP034_S3_AF extends javax.swing.JPanel {
         this.jPanel5 = jPanel5;
     }
 
-    public JSlider getjSlider1() {
-        return jSlider1;
+    public JTextArea getTxtAExpeciente() {
+        return TxtAExpeciente;
     }
 
-    public void setjSlider1(JSlider jSlider1) {
-        this.jSlider1 = jSlider1;
+    public void setTxtAExpeciente(JTextArea TxtAExpeciente) {
+        this.TxtAExpeciente = TxtAExpeciente;
     }
+    
     
     
     
@@ -110,8 +112,9 @@ public class JP034_S3_AF extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jSlider1 = new javax.swing.JSlider();
         jPanel5 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TxtAExpeciente = new javax.swing.JTextArea();
         btn1_JF034_AF = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
@@ -144,6 +147,12 @@ public class JP034_S3_AF extends javax.swing.JPanel {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        TxtAExpeciente.setColumns(20);
+        TxtAExpeciente.setRows(5);
+        jScrollPane1.setViewportView(TxtAExpeciente);
+
+        jPanel5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 960, 410));
+
         btn1_JF034_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn1_JF034_AF.setForeground(new java.awt.Color(255, 255, 255));
         btn1_JF034_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector.png"))); // NOI18N
@@ -168,12 +177,8 @@ public class JP034_S3_AF extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 970, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 79, Short.MAX_VALUE)))
+                        .addGap(0, 77, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(195, 195, 195)
-                .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,9 +192,7 @@ public class JP034_S3_AF extends javax.swing.JPanel {
                             .addComponent(btn1_JF034_AF))))
                 .addGap(21, 21, 21)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -198,12 +201,13 @@ public class JP034_S3_AF extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JTextArea TxtAExpeciente;
     public javax.swing.JButton btn1_JF034_AF;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel3;
     public javax.swing.JPanel jPanel5;
-    public javax.swing.JSlider jSlider1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

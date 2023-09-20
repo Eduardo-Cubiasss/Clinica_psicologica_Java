@@ -14,7 +14,9 @@ import Ui.JP001_S1_AFP;
 import Ui.JP002_S1_RHP;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.net.URL;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import ux.Inicializador;
@@ -31,6 +33,15 @@ public class JF_000_S7_GU extends javax.swing.JFrame {
         JPbarra5.setBorder(BorderFactory.createEmptyBorder());
         JPContenido.setBorder(BorderFactory.createEmptyBorder());
         Inicializador = new Inicializador(this);
+        
+         URL iconURL = getClass().getResource("/imagenes/IconoMind.png");
+
+        if (iconURL != null) {
+            ImageIcon icono = new ImageIcon(iconURL);
+            setIconImage(icono.getImage());
+        } else {
+            System.err.println("No se pudo encontrar el icono.");
+        }
 
     }
 
@@ -58,7 +69,8 @@ public class JF_000_S7_GU extends javax.swing.JFrame {
         jButton11.setBackground(new java.awt.Color(255, 255, 255));
         jButton11.setForeground(new java.awt.Color(44, 102, 110));
         jButton11.setText("-");
-        jButton11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
+        jButton11.setBorder(null);
+        jButton11.setFocusPainted(false);
         jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jButton11MouseEntered(evt);

@@ -5,6 +5,8 @@
  */
 package ux;
 
+import Database.Anuncios;
+import Database.Procesos_almacenados;
 import Ui.JP011_S2_RH;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
@@ -18,15 +20,18 @@ import javax.swing.JPanel;
 public class AnunciosActuales implements ActionListener{
     private JPanel JPContenido;
     private JP011_S2_RH vista11;
-    private HabilitarPaneles PanelesManager;  
+    private HabilitarPaneles PanelesManager;
+    private Anuncios modelAnuncios;
+    private Procesos_almacenados procesos;
     
-    public AnunciosActuales(JPanel JPContenido, JP011_S2_RH vista11, HabilitarPaneles PanelesManager)
+    public AnunciosActuales(JPanel JPContenido, JP011_S2_RH vista11, HabilitarPaneles PanelesManager, Anuncios modelAnuncios, Procesos_almacenados procesos)
     {
         this.JPContenido = JPContenido;
         this.vista11 = vista11;
-        this.PanelesManager = PanelesManager;   
+        this.modelAnuncios = modelAnuncios;
+        this.PanelesManager = PanelesManager; 
+        this.procesos = procesos;
         this.vista11.getBtn1_JF011_S2_RH().addActionListener(this);
-        this.vista11.getBtn2_JF011_S2_RH().addActionListener(this);
         this.vista11.getBtn3_JF011_S2_RH().addActionListener(this);
         this.vista11.getBtn4_JF011_S2_RH().addActionListener(this);
     }
@@ -43,13 +48,11 @@ public class AnunciosActuales implements ActionListener{
                 PanelesManager.restaurarPanelEliminado();
             //Pa volver al menú de admin gr
         }
-        else if (e.getSource() == vista11.getBtn2_JF011_S2_RH())
-        {
-            //Pa cambiar el titulo del anuncio actual
-        }
         else if (e.getSource() == vista11.getBtn3_JF011_S2_RH())
         {
             //Pa guardar todos los cambios hechos
+            modelAnuncios.setTitulo(vista11.getName());
+            //modelAnuncios.setImagen(Imagen);
         }
         else if (e.getSource() == vista11.getBtn4_JF011_S2_RH())
         {

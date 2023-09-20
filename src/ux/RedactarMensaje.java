@@ -5,6 +5,9 @@
  */
 package ux;
 
+import Database.Incapacidades;
+import Database.Procesos_almacenados;
+import Database.Usuarios;
 import Ui.JP032_S3_AF;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
@@ -19,13 +22,20 @@ public class RedactarMensaje implements ActionListener{
     private JPanel JPContenido;
     private JP032_S3_AF vista32;
      private HabilitarPaneles PanelesManager;
+     private Usuarios modelUsers;
+     private Incapacidades modelIncap;
+     private Procesos_almacenados procesos;
     
     
-    public RedactarMensaje(JPanel JPContenido, JP032_S3_AF vista32,  HabilitarPaneles PanelesManager)
+    public RedactarMensaje(JPanel JPContenido, JP032_S3_AF vista32,  HabilitarPaneles PanelesManager, Usuarios modelUsers, Incapacidades modelIncap,
+            Procesos_almacenados procesos)
     {
         this.JPContenido = JPContenido;
         this.vista32 = vista32;
-      this.PanelesManager = PanelesManager;  
+        this.PanelesManager = PanelesManager;  
+        this.modelIncap = modelIncap;
+        this.modelUsers = modelUsers;
+        this.procesos = procesos;
         this.vista32.getBtn1_JF028_S3_AF().addActionListener(this);
         this.vista32.getjButton1().addActionListener(this);
     }
@@ -46,6 +56,10 @@ public class RedactarMensaje implements ActionListener{
         }
         else if(e.getSource()== vista32.getjButton1())
         {
+            modelIncap.setAsunto(vista32.getTxtAsunto().getText());
+            modelIncap.setMensaje(vista32.getTxtDescrip().getText());
+            procesos.RedactarPermiso(modelIncap, modelUsers);
+            
             //Enviar mensaje
         }
     }
