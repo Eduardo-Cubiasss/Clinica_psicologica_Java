@@ -94,7 +94,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Calibri" size="24" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Solicitudes Aprobadas"/>
+            <Property name="text" type="java.lang.String" value="Solicitudes Rechazadas"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

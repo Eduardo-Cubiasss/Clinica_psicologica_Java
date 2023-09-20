@@ -1561,24 +1561,47 @@ END;
 ---ActualizarAritculo---
 ---Descripción: Es un Procedemiento almacenado que primero verirfica que el articulo pertenece al IDterapeuta que quiere hacer los cambios: EXEC InsertarActualizarArticulo ?, ?, ?, ?, ?
 
-CREATE PROCEDURE InsertarActualizarArticulo
-    @IDArticulo int,
-    @Titulo varchar(70),
-    @Descripcion varchar(400),
-    @Imagen image,
-    @IDTerapeuta int
+CREATE PROCEDURE PDArticulosInsertOupdate
+	@IDTerapeuta INT,
+    @Titulo VARCHAR(70),
+    @Contenido VARCHAR(MAX),
+    @Imagen VARBINARY,
+    @IDArticulo INT,
+    @Caso INT
 AS
 BEGIN
-    -- Verificar si existe un artículo con el mismo IDArticulo e IDTerapeuta
-    IF EXISTS (SELECT 1 FROM TbArticulos WHERE IDArticulo = @IDArticulo AND IDTerapeuta = @IDTerapeuta)
+    DECLARE @Nombre VARCHAR(30);
+    DECLARE @newcontenido VARCHAR(MAX);
+    
+    -- Verificar si el artículo pertenece al mismo terapeuta
+    IF @Caso = 2 AND NOT EXISTS (SELECT 1 FROM TbArticulos WHERE IDArticulo = @IDArticulo AND IDTerapeuta = @IDTerapeuta)
     BEGIN
-        -- Si existe, realizar una actualización (UPDATE)
+        PRINT 'El artículo no pertenece al terapeuta especificado. No se realizó ninguna actualización.';
+        RETURN; -- Salir del procedimiento si el artículo no pertenece al terapeuta
+    END
+    
+    SET @Nombre = (SELECT Nombre FROM TbTerapeutas WHERE IDTerapeuta = @IDTerapeuta);
+    SET @newcontenido = (@Contenido + ' Escrito por: ' + @Nombre);
+
+    -- Utilizar una estructura IF...ELSE para determinar si realizar un INSERT o UPDATE
+    IF @Caso = 1
+    BEGIN
+        -- Caso 1: INSERT
+        INSERT INTO TbArticulos (Titulo, Descripcion, Imagen, IDTerapeuta)
+        VALUES (@Titulo, @newcontenido, @Imagen, @IDTerapeuta);
+    END
+    ELSE IF @Caso = 2
+    BEGIN
+        -- Caso 2: UPDATE
         UPDATE TbArticulos
-        SET Titulo = @Titulo,
-            Descripcion = @Descripcion,
-            Imagen = @Imagen
+        SET Titulo = @Titulo, Descripcion = @newcontenido, Imagen = @Imagen
         WHERE IDArticulo = @IDArticulo AND IDTerapeuta = @IDTerapeuta;
     END
+    ELSE
+    BEGIN
+        -- Manejar otro caso si es necesario
+        PRINT 'Valor de @Caso no válido. No se realizó ninguna operación.';
+    END;
 END;
 
 ---EliminarArticulo---
@@ -1796,6 +1819,15 @@ ON TbAgendasPersonales;
 DROP TRIGGER TriggerActualizarFechaAlFinalAgenda
 ON TbAgendasPersonales;
 
+CREATE VIEW VistaClinicaUsuario AS
+	SELECT IDUsuario, IDClinica FROM TbTerapeutas
+	UNION ALL
+	SELECT IDUsuario, IDClinica FROM TbSecretaria
+	UNION ALL
+	SELECT IDUsuario, IDClinica FROM TbAdministrador;
+--Para realizar la query es así: SELECT IDClinica FROM VistaClinicaUsuario WHERE IDUsuario = 18;
+
+
 CREATE PROCEDURE InsertarActualizarExpediente
     @IDPaciente int,
     @Contenido varchar(max),
@@ -1957,5 +1989,18 @@ BEGIN
     SELECT @IDAdmin = TT.IDAdministrador
     FROM TbUsuarios TU
     INNER JOIN TbAdministrador TT ON TU.IDUsuario = TT.IDUsuario
+    WHERE TU.UserName = @UserName;
+END;
+
+CREATE PROCEDURE ObtenerIDSecretaria
+    @UserName varchar(50),
+    @IDTerapeuta int OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT @IDTerapeuta = TT.IDSecretaria
+    FROM TbUsuarios TU
+    INNER JOIN TbSecretaria TT ON TU.IDUsuario = TT.IDUsuario
     WHERE TU.UserName = @UserName;
 END;

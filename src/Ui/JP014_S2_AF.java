@@ -136,6 +136,14 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         this.ContenedorPapi = ContenedorPapi;
     }
 
+    public JPanel getContenedorHijo() {
+        return ContenedorHijo;
+    }
+
+    public void setContenedorHijo(JPanel ContenedorHijo) {
+        this.ContenedorHijo = ContenedorHijo;
+    }
+
     
     
     
@@ -176,13 +184,14 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         btn2_JF014_S2 = new javax.swing.JButton();
         btn3_JF014_S2 = new javax.swing.JButton();
         ContenedorPapi = new javax.swing.JPanel();
+        ContenedorHijo = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btn4_JF014_S2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        btn4_JF014_S2 = new javax.swing.JButton();
         btnRedactarMensaje = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1120, 640));
         setMinimumSize(new java.awt.Dimension(1120, 640));
@@ -201,7 +210,7 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         jPanel2.add(btn5_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, 170, 90));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 0, 200, 90));
 
         btn1_JF014_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rec.PNG"))); // NOI18N
         btn1_JF014_S2.setBorderPainted(false);
@@ -223,6 +232,18 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         ContenedorPapi.setBackground(java.awt.Color.white);
         ContenedorPapi.setMaximumSize(new java.awt.Dimension(1120, 640));
         ContenedorPapi.setMinimumSize(new java.awt.Dimension(1120, 640));
+        ContenedorPapi.setLayout(new java.awt.CardLayout());
+
+        ContenedorHijo.setBackground(new java.awt.Color(255, 255, 255));
+        ContenedorHijo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel1.setText("Solicitudes de los empleados");
+        ContenedorHijo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
+
+        btn4_JF014_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/m.PNG"))); // NOI18N
+        btn4_JF014_S2.setBorder(null);
+        ContenedorHijo.add(btn4_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, 110, 60));
 
         jScrollPane1.setBorder(null);
 
@@ -248,9 +269,9 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         jTable1.setSelectionBackground(new java.awt.Color(255, 255, 255));
         jTable1.setShowHorizontalLines(false);
         jScrollPane1.setViewportView(jTable1);
+        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        btn4_JF014_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/m.PNG"))); // NOI18N
-        btn4_JF014_S2.setBorder(null);
+        ContenedorHijo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 560, 240));
 
         btnRedactarMensaje.setForeground(new java.awt.Color(0, 102, 102));
         btnRedactarMensaje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/++.PNG"))); // NOI18N
@@ -260,64 +281,19 @@ public class JP014_S2_AF extends javax.swing.JPanel {
                 btnRedactarMensajeActionPerformed(evt);
             }
         });
-
-        jLabel3.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel3.setText("Redactar");
+        ContenedorHijo.add(btnRedactarMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 420, 50, 60));
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel5.setText("Mensaje");
+        ContenedorHijo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 450, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel1.setText("Solicitudes de los empleados");
+        jLabel3.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        jLabel3.setText("Redactar");
+        ContenedorHijo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 430, -1, -1));
 
-        javax.swing.GroupLayout ContenedorPapiLayout = new javax.swing.GroupLayout(ContenedorPapi);
-        ContenedorPapi.setLayout(ContenedorPapiLayout);
-        ContenedorPapiLayout.setHorizontalGroup(
-            ContenedorPapiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ContenedorPapiLayout.createSequentialGroup()
-                .addContainerGap(321, Short.MAX_VALUE)
-                .addComponent(btn4_JF014_S2)
-                .addGap(312, 312, 312)
-                .addComponent(btnRedactarMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ContenedorPapiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel5))
-                .addContainerGap())
-            .addGroup(ContenedorPapiLayout.createSequentialGroup()
-                .addGap(111, 111, 111)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(ContenedorPapiLayout.createSequentialGroup()
-                .addGap(261, 261, 261)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        ContenedorPapiLayout.setVerticalGroup(
-            ContenedorPapiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ContenedorPapiLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addGroup(ContenedorPapiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorPapiLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22)
-                        .addGroup(ContenedorPapiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorPapiLayout.createSequentialGroup()
-                                .addComponent(btn4_JF014_S2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38))
-                            .addGroup(ContenedorPapiLayout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5)
-                                .addContainerGap())))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorPapiLayout.createSequentialGroup()
-                        .addComponent(btnRedactarMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46))))
-        );
+        ContenedorPapi.add(ContenedorHijo, "card2");
 
-        jPanel2.add(ContenedorPapi, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 870, 530));
+        jPanel2.add(ContenedorPapi, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 870, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -341,6 +317,7 @@ public class JP014_S2_AF extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JPanel ContenedorHijo;
     public javax.swing.JPanel ContenedorPapi;
     public javax.swing.JButton btn1_JF014_S2;
     public javax.swing.JButton btn2_JF014_S2;

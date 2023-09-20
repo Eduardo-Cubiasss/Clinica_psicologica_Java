@@ -115,7 +115,7 @@ public class JP018_S2_AF extends javax.swing.JPanel {
         jPanel2.setPreferredSize(new java.awt.Dimension(869, 530));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel1.setText("Solicitudes Aprobadas");
+        jLabel1.setText("Solicitudes Rechazadas");
 
         btn4_JF018_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/si.PNG"))); // NOI18N
         btn4_JF018_S2.setBorder(null);
