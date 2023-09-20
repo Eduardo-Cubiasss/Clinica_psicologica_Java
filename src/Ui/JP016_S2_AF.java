@@ -122,38 +122,33 @@ public class JP016_S2_AF extends javax.swing.JPanel {
         btn4_JF016_S2.setBorderPainted(false);
         jPanel2.add(btn4_JF016_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, 110, 60));
 
-        jScrollPane1.setBorder(null);
-
-        jTable1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Zeus Figueroa", "             Solicitud de incapacidad"},
-                {"Sandra Tomate", "             Solicitud de incapacidad"},
-                {"Eduardo Cumbias", "             Solicitud de incapacidad"},
-                {"Allan Galdamez", "             Solicitud de incapacidad"},
-                {"Christopher Juárez", "             Solicitud de incapacidad"}
+                {"Sánchez Cerén", null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
                 "", ""
             }
         ));
-        jTable1.setAlignmentX(0.8F);
-        jTable1.setAlignmentY(0.8F);
-        jTable1.setColumnSelectionAllowed(true);
-        jTable1.setFillsViewportHeight(true);
-        jTable1.setFocusable(false);
-        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable1.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setShowHorizontalLines(false);
+        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 580, 120));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 450, 110));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 886, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,10 +160,10 @@ public class JP016_S2_AF extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn4_JF016_S2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JButton btn4_JF016_S2;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JPanel jPanel2;
+    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
