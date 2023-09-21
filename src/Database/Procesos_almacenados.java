@@ -101,6 +101,7 @@ public class Procesos_almacenados {
 
         }
     }
+
     public void SaberIDTer(Usuarios modelusuarios, Terapeutas modelTerapeuta) {
         Connection conn = null;
         CallableStatement cs = null;
@@ -115,7 +116,7 @@ public class Procesos_almacenados {
 
             // Obtener el resultado del parámetro de salida
             int IDAdministrador = cs.getInt(2);
-            modelTerapeuta.setIDUsuario(IDAdministrador);
+            modelTerapeuta.setIDTerapeuta(IDAdministrador);
             System.out.println("Este es el ID de la terpeuta" + (IDAdministrador));
         } catch (Exception e) {
             System.out.println("Error #J00DA");
@@ -137,6 +138,7 @@ public class Procesos_almacenados {
 
         }
     }
+
     public void SaberIDSecre(Usuarios modelusuarios, Secretarias ModelSecret) {
         Connection conn = null;
         CallableStatement cs = null;
@@ -151,7 +153,7 @@ public class Procesos_almacenados {
 
             // Obtener el resultado del parámetro de salida
             int IDAdministrador = cs.getInt(2);
-            ModelSecret.setIDUsuario(IDAdministrador);
+            ModelSecret.setIDSecretaria(IDAdministrador);
             System.out.println("Este es el ID de la secretaria" + (IDAdministrador));
         } catch (Exception e) {
             System.out.println("Error #J00DA");
@@ -760,7 +762,7 @@ public class Procesos_almacenados {
         CallableStatement cs = null;
         try {
             conn = ConnectionSQL.getConexion();
-            cs = conn.prepareCall("{CALL PDCrearEmpleado(?, ?, ?, ?, ?, ?)}");
+            cs = conn.prepareCall("{CALL PDCrearEmpleado(?, ?, ?, ?, ?, ?, ?)}");
 
             // Configura los parámetros del procedimiento almacenado
             cs.setInt(1, modelAdmin.getIDUsuario());
@@ -769,7 +771,7 @@ public class Procesos_almacenados {
             cs.setString(4, modelEmpleado.getContraseña());
             cs.setInt(5, modelEmpleado.getNivel());
             cs.setString(6, modelEmpleado.getNombre());
-
+            cs.setBytes(7, modelEmpleado.getFotoPerfil());
             // Ejecuta el procedimiento almacenado
             cs.execute();
 
@@ -866,7 +868,7 @@ public class Procesos_almacenados {
     public void VerNotasPac(Pacientes modelPaciente, AgendasPersonales modelAgendas) {
         Connection conn = null;
         PreparedStatement ps = null;
-        ResultSet rs = null; 
+        ResultSet rs = null;
 
         try {
             conn = ConnectionSQL.getConexion();
@@ -878,7 +880,7 @@ public class Procesos_almacenados {
             while (rs.next()) {
                 String Contenido = rs.getString("Contenido");
                 modelAgendas.setContenido(Contenido);
-                System.out.println("Llegue hasta aqui "+ Contenido);
+                System.out.println("Llegue hasta aqui " + Contenido);
             }
         } catch (Exception e) {
             System.out.println("Error #J00DA");
@@ -902,18 +904,25 @@ public class Procesos_almacenados {
             }
         }
     }
-        public void AgregarAnuncio(Anuncios modelAnuncios) {
+
+    public boolean AgregarAnuncio(Anuncios modelAnuncios) {
         Connection conn = null;
         PreparedStatement ps = null;
-        ResultSet rs = null; 
+        ResultSet rs = null;
+        boolean insercionExitosa = false; // Agregamos una variable para indicar el éxito de la inserción
 
         try {
             conn = ConnectionSQL.getConexion();
 
-            ps = conn.prepareStatement("INSERT INTO TbAnuncio(Titulo, Imagen) VALUES (?,?)");
+            ps = conn.prepareStatement("INSERT INTO TbAnuncio(Titulo, Imagen) VALUES (?, ?)");
             ps.setString(1, modelAnuncios.getTitulo());
-            //ps.setBytes(2, modelAnuncios.getImagen());
-           ps.executeUpdate();
+            ps.setBytes(2, modelAnuncios.getImagen());
+            int filasAfectadas = ps.executeUpdate();
+
+            // Si una fila o más fueron afectadas, consideramos que la inserción fue exitosa
+            if (filasAfectadas > 0) {
+                insercionExitosa = true;
+            }
         } catch (Exception e) {
             System.out.println("Error #J00DA");
             JOptionPane.showMessageDialog(null, "Error: J000DA", "El paciente aún no ha escrito en su agenda", JOptionPane.INFORMATION_MESSAGE);
@@ -935,11 +944,15 @@ public class Procesos_almacenados {
                 ex.printStackTrace();
             }
         }
+
+        return insercionExitosa; // Devolvemos true si la inserción fue exitosa, de lo contrario, false
     }
-        public void AgregarArticulo(Articulos modelArt, Terapeutas modelTer, int caso) {
+
+    public boolean AgregarArticulo(Articulos modelArt, Terapeutas modelTer, int caso) {
         Connection conn = null;
         PreparedStatement ps = null;
-        ResultSet rs = null; 
+        ResultSet rs = null;
+        boolean insercionExitosa = false; // Inicialmente asumimos que la inserción falló
 
         try {
             conn = ConnectionSQL.getConexion();
@@ -948,14 +961,19 @@ public class Procesos_almacenados {
             ps.setInt(1, (modelTer.getIDTerapeuta()));
             ps.setString(2, modelArt.getTitulo());
             ps.setString(3, modelArt.getDescripcion());
-            //ps.setBytes(4, modelArt.getImagen());
+            ps.setBytes(4, modelArt.getImagen());
             ps.setInt(5, modelArt.getIDArticulo());
             ps.setInt(6, caso);
-            
-           ps.executeUpdate();
+
+            int filasAfectadas = ps.executeUpdate();
+
+            // Verificamos si al menos una fila fue afectada (la inserción se realizó con éxito)
+            if (filasAfectadas > 0) {
+                insercionExitosa = true;
+            }
         } catch (Exception e) {
             System.out.println("Error #J00DA");
-            JOptionPane.showMessageDialog(null, "Error: J000DA", "Error innesperado, verifique que la imagen sea JPEJ", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Error inesperado, verifique que la imagen sea JPEG", JOptionPane.INFORMATION_MESSAGE);
 
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
@@ -974,11 +992,14 @@ public class Procesos_almacenados {
                 ex.printStackTrace();
             }
         }
+
+        return insercionExitosa; // Devolvemos el valor booleano
     }
-        public void RedactarPermiso(Incapacidades modelIncap, Usuarios modelUsers) {
+
+    public void RedactarPermiso(Incapacidades modelIncap, Usuarios modelUsers) {
         Connection conn = null;
         PreparedStatement ps = null;
-        ResultSet rs = null; 
+        ResultSet rs = null;
 
         try {
             conn = ConnectionSQL.getConexion();
@@ -987,8 +1008,8 @@ public class Procesos_almacenados {
             ps.setString(2, modelIncap.getMensaje());
             ps.setString(1, modelIncap.getAsunto());
             ps.setInt(3, modelUsers.getIDUsuario());
-            
-           ps.executeUpdate();
+
+            ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("Error #J00DA");
             JOptionPane.showMessageDialog(null, "Error: J000DA", "Error innesperado, reinicie la aplicación", JOptionPane.INFORMATION_MESSAGE);
@@ -1011,10 +1032,11 @@ public class Procesos_almacenados {
             }
         }
     }
-        public void SaberIDUsuario(Usuarios modelUsers) {
+
+    public void SaberIDUsuario(Usuarios modelUsers) {
         Connection conn = null;
         PreparedStatement ps = null;
-        ResultSet rs = null; 
+        ResultSet rs = null;
 
         try {
             conn = ConnectionSQL.getConexion();
@@ -1022,11 +1044,11 @@ public class Procesos_almacenados {
             ps = conn.prepareStatement("SELECT TOP 1 IDUsuario FROM TbUsuarios WHERE UserName = ?");
             ps.setString(1, modelUsers.getUserName());
             rs = ps.executeQuery();
-            System.out.println("Este es el username ingresado "+ modelUsers.getUserName());
+            System.out.println("Este es el username ingresado " + modelUsers.getUserName());
             while (rs.next()) {
                 int Contenido = rs.getInt("IDUsuario");
                 modelUsers.setIDUsuario(Contenido);
-                            }
+            }
         } catch (Exception e) {
             System.out.println("Error #J00DA");
             JOptionPane.showMessageDialog(null, "Error: J000DA", "Error innesperado, verifique que el username no este vacio", JOptionPane.INFORMATION_MESSAGE);
@@ -1049,10 +1071,11 @@ public class Procesos_almacenados {
             }
         }
     }
-         public void SaberIDClinica(Clinica modelClinica, Usuarios modelUsers) {
+
+    public void SaberIDClinica(Clinica modelClinica, Usuarios modelUsers) {
         Connection conn = null;
         PreparedStatement ps = null;
-        ResultSet rs = null; 
+        ResultSet rs = null;
 
         try {
             conn = ConnectionSQL.getConexion();
@@ -1064,7 +1087,7 @@ public class Procesos_almacenados {
             while (rs.next()) {
                 String IDclinica = rs.getString("IDClinica");
                 modelClinica.setIDClinica(IDclinica);
-                            }
+            }
         } catch (Exception e) {
             System.out.println("Error #J00DA");
             JOptionPane.showMessageDialog(null, "Error: J000DA", "Error innesperado, este usuario no tiene una clinica, crea otra cuenta", JOptionPane.INFORMATION_MESSAGE);
@@ -1087,10 +1110,11 @@ public class Procesos_almacenados {
             }
         }
     }
-            public void VerExpe(Expedientes modelExp, Pacientes modelPaci) {
+
+    public void VerExpe(Expedientes modelExp, Pacientes modelPaci) {
         Connection conn = null;
         PreparedStatement ps = null;
-        ResultSet rs = null; 
+        ResultSet rs = null;
 
         try {
             conn = ConnectionSQL.getConexion();
@@ -1102,7 +1126,7 @@ public class Procesos_almacenados {
             while (rs.next()) {
                 String Contenido = rs.getString("Contenido");
                 modelExp.setContenido(Contenido);
-                            }
+            }
         } catch (Exception e) {
             System.out.println("Error #J00DA");
             JOptionPane.showMessageDialog(null, "Error: J000DA", "Error al cargar los datos del expediente", JOptionPane.INFORMATION_MESSAGE);
@@ -1125,10 +1149,11 @@ public class Procesos_almacenados {
             }
         }
     }
-   public void EscribirExpe(Pacientes modelPacie, Terapeutas modelTerap, Expedientes modelExp) {
+
+    public void EscribirExpe(Pacientes modelPacie, Terapeutas modelTerap, Expedientes modelExp) {
         Connection conn = null;
         PreparedStatement ps = null;
-        ResultSet rs = null; 
+        ResultSet rs = null;
 
         try {
             conn = ConnectionSQL.getConexion();
@@ -1137,8 +1162,8 @@ public class Procesos_almacenados {
             ps.setInt(1, modelPacie.getIDpaciente());
             ps.setString(2, modelExp.getContenido());
             ps.setInt(3, modelTerap.getIDUsuario());
-            
-           ps.executeUpdate();
+
+            ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("Error #J00DA");
             JOptionPane.showMessageDialog(null, "Error: J000DA", "Error innesperado, Vuelva al menú e intenté más tadre", JOptionPane.INFORMATION_MESSAGE);

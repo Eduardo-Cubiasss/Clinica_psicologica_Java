@@ -18,12 +18,12 @@ public class Hints_Herencia {
     private JP031_S3_RH vista6;
     private JP024_S3_AF vista7;
 
-    public Hints_Herencia(JP001_S1_AFP vista1, JP002_S1_RHP vista2) {
+    public Hints_Herencia(JP001_S1_AFP vista1) {
         this.vista1 = vista1;
-        this.vista2 = vista2;
+        
 
         Hints.addHint(vista1.TxtUsuario_JF001_S1_AF, "Ingrese su usuario");
-        Hints.addHint(vista2.TxtID_JF002_S1_RH3, "Ingrese un id único");
+        
         
 
     }

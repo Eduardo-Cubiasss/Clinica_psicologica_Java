@@ -20,6 +20,20 @@ Imagen image,
 Fecha date,
 IDTerapeuta int
 );
+
+ALTER TABLE TbArticulos
+DROP COLUMN Imagen;
+
+ALTER TABLE TbArticulos 
+ADD Imagen varbinary(max);
+
+ALTER TABLE TbArticulos
+DROP COLUMN Descripcion;
+
+ALTER TABLE TbArticulos 
+ADD Descripcion VARCHAR(max);
+
+
 Create table TbAnuncio(
 IDAnuncio int identity(1,1) primary key,
 Titulo nvarchar(70),
@@ -29,6 +43,13 @@ Fecha date,
 IDSecretaria int,
 IDAdministrador int
 );
+ALTER TABLE TbAnuncio
+DROP COLUMN Imagen;
+
+SELECT * FROM TbAnuncio;
+
+ALTER TABLE TbAnuncio 
+ADD Imagen varbinary(max);
 Create table TbIncapacidades(
 IDIncapacidad int identity(1,1) primary key,
 Fecha date,
@@ -1561,11 +1582,12 @@ END;
 ---ActualizarAritculo---
 ---Descripción: Es un Procedemiento almacenado que primero verirfica que el articulo pertenece al IDterapeuta que quiere hacer los cambios: EXEC InsertarActualizarArticulo ?, ?, ?, ?, ?
 
-CREATE PROCEDURE PDArticulosInsertOupdate
+EXEC PDArticulosInsertOupdate 8, 'aosakskasjka', 'AsaAA', null, null, 1;
+ALTER PROCEDURE PDArticulosInsertOupdate
 	@IDTerapeuta INT,
     @Titulo VARCHAR(70),
     @Contenido VARCHAR(MAX),
-    @Imagen VARBINARY,
+    @Imagen VARBINARY(MAX),
     @IDArticulo INT,
     @Caso INT
 AS
@@ -1911,7 +1933,8 @@ END;
 	@Username VARCHAR(100),
 	@Contraseña VARCHAR(100),
 	@TipoDeEm INT,
-	@Nombre VARCHAR(200)
+	@Nombre VARCHAR(200),
+	@imagen VARBINARY(MAX)
  AS
  BEGIN
 		DECLARE @HashContraseñaTbU VARBINARY(64);
@@ -1929,8 +1952,8 @@ END;
 		set @IDContacto = (SELECT IDContacto FROM TbContactos WHERE Correo = @Correo);
 			IF (@Username IS NOT NULL AND @Contraseña IS NOT NULL)
 			BEGIN
-				INSERT INTO TbUsuarios(UserName, Contraseña, IDContacto, Primeruso)
-				VALUES (@Username, @newHash, @IDContacto, 0);
+				INSERT INTO TbUsuarios(UserName, Contraseña, IDContacto, Primeruso, FotoPerfil)
+				VALUES (@Username, @newHash, @IDContacto, 0, @imagen);
 				SET @IDUsuario = (select IDUsuario FROM TbUsuarios WHERE UserName = @Username);
 					IF(@TipoDeEm = 1 AND @TipoDeEm IS NOT NULL)
 					BEGIN
@@ -1947,8 +1970,8 @@ END;
 		BEGIN
 			IF (@Username IS NOT NULL AND @Contraseña IS NOT NULL)
 			BEGIN
-				INSERT INTO TbUsuarios(UserName, Contraseña, Primeruso)
-				VALUES (@Username, @newHash, 0);
+				INSERT INTO TbUsuarios(UserName, Contraseña, Primeruso, FotoPerfil)
+				VALUES (@Username, @newHash, 0, @imagen);
 				SET @IDUsuario = (select IDUsuario FROM TbUsuarios WHERE UserName = @Username);
 				IF(@TipoDeEm = 1 AND @TipoDeEm IS NOT NULL)
 					BEGIN

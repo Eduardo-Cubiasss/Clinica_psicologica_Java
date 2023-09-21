@@ -211,14 +211,14 @@ public class Login implements ActionListener {
                         PanelesManager.copiaPanel("JP001_S1_AFP");
                         JPContenido.remove(panelRegistro);
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPrimerUso");
-                        System.out.println("Este es el IDSecretaria" + modelUsers.getIDUsuario());
+                        System.out.println("Este es el IDTerapeuta " + modelTerap.getIDTerapeuta());
                     } else {
                         Procesos.SaberIDTer(modelUsers, modelTerap);
                         System.out.println("Entra al que abre el menu terapeuta");
                         PanelesManager.copiaPanel("JP001_S1_AFP");
                         JPContenido.remove(panelRegistro);
                         ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
-                        System.out.println("Este es el IDSecretaria" + modelUsers.getIDUsuario());
+                        System.out.println("Este es el IDTerapeuta " + modelTerap.getIDTerapeuta());
                     }
                     break;
                 default:

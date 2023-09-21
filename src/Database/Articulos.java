@@ -16,7 +16,7 @@ public class Articulos {
     private int IDArticulo;
     private String Titulo;
     private String Descripcion;
-    private Image Imagen;
+    private byte[] Imagen;
     private Date Fecha;
     private int IDTerapeuta;
 
@@ -44,11 +44,11 @@ public class Articulos {
         this.Descripcion = Descripcion;
     }
 
-    public Image getImagen() {
+    public byte[] getImagen() {
         return Imagen;
     }
 
-    public void setImagen(Image Imagen) {
+    public void setImagen(byte[] Imagen) {
         this.Imagen = Imagen;
     }
 

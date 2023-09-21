@@ -83,17 +83,6 @@ public class RegAdmin_JF002 implements ActionListener {
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado();
             System.out.println("Se restauran componentes y panel de registrar admin");
-        } else {
-            JOptionPane.showMessageDialog(null, "No se pudo crear tu usuario", "Error J000DA", JOptionPane.ERROR_MESSAGE);
-            PanelesManager.copiaPanel("panelRegistro");
-            JPContenido.remove(vistaJP002);
-            
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
-            System.out.println("Llega hasta donde se invoca panelInicioSesion");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
-
         }
     }
 

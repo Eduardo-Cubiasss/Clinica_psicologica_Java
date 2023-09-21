@@ -213,9 +213,9 @@ public class JP002_S1_RHP extends javax.swing.JPanel {
         new Validaciones(TxtNombre_JF002_S1_RH, "SoloLetras");
         hint.addHint(TxtNombre_JF002_S1_RH, "Ingrese su nombre");
 
-       // LimiteCaracteres limiteUsuario = new LimiteCaracteres(TxtUsuario_JF002_S1_RH2, 0, 25);
-        //new Validaciones(getTxtUsuario_JF002_S1_RH2(), "SoloLetras");
-        //hint.addHint(getTxtUsuario_JF002_S1_RH2(), "Ingrese su nombre de usuario");
+       LimiteCaracteres limiteUsuario = new LimiteCaracteres(TxtUsuario_JF002_S1_RH2, 0, 25);
+        new Validaciones(getTxtUsuario_JF002_S1_RH2(), "SoloLetras");
+        hint.addHint(getTxtUsuario_JF002_S1_RH2(), "Ingrese su nombre de usuario");
 
 
 
@@ -226,7 +226,6 @@ public class JP002_S1_RHP extends javax.swing.JPanel {
         hint.addHint(getPassField_ConfirmarContra_JF002_S1_RH(), "Confirme su nueva contraseña");
 
         LimiteCaracteres limiteID = new LimiteCaracteres(TxtID_JF002_S1_RH3, 0, 5);
-         new Validaciones(getTxtUsuario_JF002_S1_RH2(), "SoloNumeros");
         hint.addHint(getTxtID_JF002_S1_RH3(), "XXXXX");
          str = new PanelesInicializador();
          

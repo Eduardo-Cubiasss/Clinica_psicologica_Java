@@ -29,6 +29,8 @@ public class SolicitudesDeEmpleados implements ActionListener {
     private JPanel ContenedorHijo;
     private JPanel panelActual = null;
     private List<Component> contenidoOriginal;
+    private CardLayout cardLayout;
+    private String panelActual1 = "vista14";
 
     public SolicitudesDeEmpleados(JPanel JPContenido, JP014_S2_AF vista14, HabilitarPaneles PanelesManager) {
         this.JPContenido = JPContenido;
@@ -40,6 +42,7 @@ public class SolicitudesDeEmpleados implements ActionListener {
         this.vista14.getBtn4_JF014_S2().addActionListener(this);
         this.vista14.getBtn5_JF014_S2().addActionListener(this);
         this.vista14.getBtnRedactarMensaje().addActionListener(this);
+        cardLayout = (CardLayout) JPContenido.getLayout();
         this.ContenedorPapi = vista14.getContenedorPapi();
         this.ContenedorHijo = vista14.getContenedorHijo();
         contenidoOriginal = new ArrayList<>();
@@ -56,7 +59,7 @@ public class SolicitudesDeEmpleados implements ActionListener {
             for (Component component : contenidoOriginal) {
                 ContenedorPapi.add(component, "ContenedorHijo");
                 System.out.println("Si entra al bucle y agrega componentes");
-                
+
             }
             panelActual = ContenedorHijo;
             ContenedorPapi.add(panelActual, "ContenedorHijo");
@@ -74,32 +77,23 @@ public class SolicitudesDeEmpleados implements ActionListener {
             CardLayout cardLayout = (CardLayout) ContenedorPapi.getLayout();
             cardLayout.show(ContenedorPapi, "JP018_S2_AF");
         } else if (e.getSource() == vista14.getBtn4_JF014_S2()) {
-            //Botón para ver ventana de mensajes panelVerMensaje
+            // Botón para ver ventana de mensajes panelVerMensaje
             PanelesManager.copiaPanel("JP014_S2_AF");
-            //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
-            JPContenido.remove(vista14);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelNuevaSolicitudDeEmpleado");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            // Lo que está entre comillas es el JPXX de tu vista actual (la del controlador que estás editando)
+            CardLayout cardLayout = (CardLayout) JPContenido.getLayout();
+            cardLayout.show(JPContenido, "panelNuevaSolicitudDeEmpleado");
             //Para ver el mensaje seleccionado en la Jtable
         } else if (e.getSource() == vista14.getBtnRedactarMensaje()) {
-            //Botón para ver ventana de mensajes panelVerMensaje
+            // Botón para ver ventana de mensajes panelVerMensaje
             PanelesManager.copiaPanel("JP014_S2_AF");
-            //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
-            JPContenido.remove(vista14);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRedactarMensaje");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            // Lo que está entre comillas es el JPXX de tu vista actual (la del controlador que estás editando)
+            CardLayout cardLayout = (CardLayout) JPContenido.getLayout();
+            cardLayout.show(JPContenido, "panelRedactarMensaje");
             //Para redactar mensaje
-        } else if (e.getSource() == vista14.getBtn5_JF014_S2()) {
-            PanelesManager.copiaPanel("JP014_S2_AF");
-            JPContenido.remove(vista14);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+        } else if (e.getSource() == vista14.getBtn5_JF014_S2() && !panelActual1.equals("panelMenuSec")) {
+            panelActual1 = "panelMenuSec";
+            CardLayout cardLayout = (CardLayout) JPContenido.getLayout();
+            cardLayout.show(JPContenido, "panelMenuSec");
             //Volver al panel anterior
         }
     }

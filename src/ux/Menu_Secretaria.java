@@ -15,20 +15,23 @@ import javax.swing.JPanel;
  *
  * @author 50369
  */
-public class Menu_Secretaria implements ActionListener{
+public class Menu_Secretaria implements ActionListener {
+
     private JPanel JPContenido;
     private JP039_S3_RH vista39;
     private HabilitarPaneles PanelesManager;
+    private CardLayout cardLayout;
+    private String panelActual = "vista39";
     //Declarar Paneles manager
-    
-    public Menu_Secretaria(JPanel JPContenido, JP039_S3_RH vista39, HabilitarPaneles PanelesManager)
-            //Ponerlo en la clase para indicar que se espera usar
+
+    public Menu_Secretaria(JPanel JPContenido, JP039_S3_RH vista39, HabilitarPaneles PanelesManager) //Ponerlo en la clase para indicar que se espera usar
     {
         this.JPContenido = JPContenido;
         this.vista39 = vista39;
         this.PanelesManager = PanelesManager;
+        cardLayout = (CardLayout) JPContenido.getLayout();
         //Hacer this a PanelesManager
-        
+
         this.vista39.getBtn02_JF039_S3_RH().addActionListener(this);
         this.vista39.getBtn03_JF023_S3_RH().addActionListener(this);
         this.vista39.getBtn04_JF039_S3_RH().addActionListener(this);
@@ -40,27 +43,16 @@ public class Menu_Secretaria implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==vista39.getBtn02_JF039_S3_RH())
-        {
-            //Botón para ver ventana de mensajes panelVerMensaje
+        if (e.getSource() == vista39.getBtn02_JF039_S3_RH() && !panelActual.equals("panelVerMensaje")) {
+            // Solo cambia si el panel actual no es el mismo al que quieres ir
             PanelesManager.copiaPanel("JP039_S3_RH");
-            //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
-            JPContenido.remove(vista39);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelVerMensaje");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
-        }
-        else if (e.getSource()==vista39.getBtn03_JF023_S3_RH())
-        {
-            
-            
+            panelActual = "panelVerMensaje"; // Actualiza el panel actual
+            cardLayout.show(JPContenido, "panelVerMensaje");
+        } else if (e.getSource() == vista39.getBtn03_JF023_S3_RH()) {
+
             //Botón de pruebas
-            
-        }
-        else if(e.getSource()==vista39.getBtn04_JF039_S3_RH())
-        {
-            
+        } else if (e.getSource() == vista39.getBtn04_JF039_S3_RH()) {
+
             PanelesManager.copiaPanel("JP039_S3_RH");
             //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
             JPContenido.remove(vista39);
@@ -69,9 +61,7 @@ public class Menu_Secretaria implements ActionListener{
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado();
             //Botón de calendario
-        }
-        else if(e.getSource()==vista39.getBtn05_JF039_S3_RH())
-        {
+        } else if (e.getSource() == vista39.getBtn05_JF039_S3_RH()) {
             //Botón de mi perfil
             PanelesManager.copiaPanel("JP039_S3_RH");
             //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
@@ -80,9 +70,7 @@ public class Menu_Secretaria implements ActionListener{
             JPContenido.revalidate();
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado();
-        }
-        else if(e.getSource()==vista39.getBtn06_JF039_S3_RH())
-        {
+        } else if (e.getSource() == vista39.getBtn06_JF039_S3_RH()) {
             PanelesManager.copiaPanel("JP039_S3_RH");
             //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
             JPContenido.remove(vista39);
@@ -91,9 +79,7 @@ public class Menu_Secretaria implements ActionListener{
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado();
             //Botón de solicitud de incapacidades
-        }
-        else if(e.getSource()==vista39.getBtn08_JF039_S3_RH())
-        {
+        } else if (e.getSource() == vista39.getBtn08_JF039_S3_RH()) {
             PanelesManager.copiaPanel("JP039_S3_RH");
             //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
             JPContenido.remove(vista39);
@@ -102,9 +88,7 @@ public class Menu_Secretaria implements ActionListener{
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado();
             //Botón de Cerrar Sesión, lleva lleva al login dah
-        }
-        else if(e.getSource()==vista39.getBtn09_JF039_S3_RH())
-        {
+        } else if (e.getSource() == vista39.getBtn09_JF039_S3_RH()) {
             //Botón para generar pdf de ayuda
         }
     }

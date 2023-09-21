@@ -19,8 +19,18 @@ public class Empleado {
     private String ActividadLab;
     private int Edad;
     private String DUI;
+    private byte[] FotoPerfil;
     private int IDUsuario;
 
+    public byte[] getFotoPerfil() {
+        return FotoPerfil;
+    }
+
+    public void setFotoPerfil(byte[] FotoPerfil) {
+        this.FotoPerfil = FotoPerfil;
+    }
+
+    
     public int getEdad() {
         return Edad;
     }
