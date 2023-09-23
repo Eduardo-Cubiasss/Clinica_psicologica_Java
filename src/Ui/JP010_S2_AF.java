@@ -230,7 +230,7 @@ public class JP010_S2_AF extends javax.swing.JPanel {
 
         btn1_JF010_AF.setBackground(new java.awt.Color(255, 255, 255));
         btn1_JF010_AF.setForeground(new java.awt.Color(255, 255, 255));
-        btn1_JF010_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector.png"))); // NOI18N
+        btn1_JF010_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/back.png"))); // NOI18N
         btn1_JF010_AF.setBorderPainted(false);
         jPanel2.add(btn1_JF010_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
         jPanel2.add(txtDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 370, 220, 30));

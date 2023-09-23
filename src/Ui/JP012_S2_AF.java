@@ -170,16 +170,16 @@ public class JP012_S2_AF extends javax.swing.JPanel {
 
         btn3_JF012.setBackground(new java.awt.Color(255, 255, 255));
         btn3_JF012.setForeground(new java.awt.Color(255, 255, 255));
-        btn3_JF012.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector.png"))); // NOI18N
+        btn3_JF012.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/back.png"))); // NOI18N
         btn3_JF012.setBorderPainted(false);
-        jPanel1.add(btn3_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        jPanel1.add(btn3_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, 170, 90));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("Escribe el nombre o ID del empleado");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, -1, -1));
 
         jTable1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -198,24 +198,24 @@ public class JP012_S2_AF extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 450, 140));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, 450, 140));
 
         btn1_JF012.setBackground(new java.awt.Color(255, 255, 255));
-        btn1_JF012.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ph_note-pencil-bold.png"))); // NOI18N
+        btn1_JF012.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/updateBuscadorEmp.png"))); // NOI18N
         btn1_JF012.setBorderPainted(false);
-        jPanel1.add(btn1_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 310, -1, -1));
+        jPanel1.add(btn1_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, -1, -1));
 
         btn2_JF012.setBackground(new java.awt.Color(255, 255, 255));
-        btn2_JF012.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pe.PNG"))); // NOI18N
+        btn2_JF012.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/udeleteBuscadorEmp.png"))); // NOI18N
         btn2_JF012.setBorderPainted(false);
         btn2_JF012.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn2_JF012ActionPerformed(evt);
             }
         });
-        jPanel1.add(btn2_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 380, 47, 61));
+        jPanel1.add(btn2_JF012, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 450, 47, 61));
 
-        jPanel2.setBackground(new java.awt.Color(200, 232, 232));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -231,12 +231,12 @@ public class JP012_S2_AF extends javax.swing.JPanel {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 600, 1120, -1));
 
         jTextField1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 420, 50));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 520, 50));
 
         BtnBuscar.setBackground(new java.awt.Color(255, 255, 255));
         BtnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
         BtnBuscar.setBorderPainted(false);
-        jPanel1.add(BtnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 220, 40, 30));
+        jPanel1.add(BtnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, 40, 30));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents

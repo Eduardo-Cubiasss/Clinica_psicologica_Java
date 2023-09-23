@@ -8,6 +8,7 @@ package Ui;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import ux.ActualizarArticulo;
 import ux.Hints;
@@ -109,13 +110,23 @@ public class JP030_S3_AF extends javax.swing.JPanel {
         this.jPanel3 = jPanel3;
     }
 
-    public JTextField getTxtDescripcion_JP030_S3_AF() {
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JTextArea getTxtDescripcion_JP030_S3_AF() {
         return txtDescripcion_JP030_S3_AF;
     }
 
-    public void setTxtDescripcion_JP030_S3_AF(JTextField txtDescripcion_JP030_S3_AF) {
+    public void setTxtDescripcion_JP030_S3_AF(JTextArea txtDescripcion_JP030_S3_AF) {
         this.txtDescripcion_JP030_S3_AF = txtDescripcion_JP030_S3_AF;
     }
+
+    
     
     
     
@@ -128,9 +139,11 @@ public class JP030_S3_AF extends javax.swing.JPanel {
         initComponents();
         str = new PanelesInicializador();
         
+        /*
         LimiteCaracteres limiteDescripcion = new LimiteCaracteres(txtDescripcion_JP030_S3_AF, 0, 300);
         new Validaciones(txtDescripcion_JP030_S3_AF, "SoloLetras");
         hint.addHint(txtDescripcion_JP030_S3_AF, "Agregue una breve descripción del artículo");
+        */
 
         LimiteCaracteres limiteTitulo = new LimiteCaracteres(TxtTitulo, 0, 35);
         new Validaciones(TxtTitulo, "SoloLetras");
@@ -155,7 +168,6 @@ public class JP030_S3_AF extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         Btn3_JF028_S3_AF = new javax.swing.JButton();
         Btn2_JF028_S3_AF = new javax.swing.JButton();
-        txtDescripcion_JP030_S3_AF = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         Btn4_JF028_S3_AF = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -164,6 +176,8 @@ public class JP030_S3_AF extends javax.swing.JPanel {
         TxtTitulo = new javax.swing.JTextField();
         Txt_imagen = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtDescripcion_JP030_S3_AF = new javax.swing.JTextArea();
 
         setMaximumSize(new java.awt.Dimension(1120, 650));
         setMinimumSize(new java.awt.Dimension(1120, 650));
@@ -190,9 +204,6 @@ public class JP030_S3_AF extends javax.swing.JPanel {
             }
         });
 
-        txtDescripcion_JP030_S3_AF.setBackground(new java.awt.Color(246, 246, 246));
-        txtDescripcion_JP030_S3_AF.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -206,14 +217,15 @@ public class JP030_S3_AF extends javax.swing.JPanel {
             .addGap(0, 51, Short.MAX_VALUE)
         );
 
-        Btn4_JF028_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/At.PNG"))); // NOI18N
+        Btn4_JF028_S3_AF.setBackground(new java.awt.Color(255, 255, 255));
+        Btn4_JF028_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/update2.png"))); // NOI18N
         Btn4_JF028_S3_AF.setBorder(null);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
 
         Btn1_JF028_S3_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn1_JF028_S3_AF.setForeground(new java.awt.Color(255, 255, 255));
-        Btn1_JF028_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector (1).png"))); // NOI18N
+        Btn1_JF028_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/back.png"))); // NOI18N
         Btn1_JF028_S3_AF.setBorderPainted(false);
         Btn1_JF028_S3_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -230,7 +242,7 @@ public class JP030_S3_AF extends javax.swing.JPanel {
             .addGap(0, 32, Short.MAX_VALUE)
         );
 
-        TxtTitulo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        TxtTitulo.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         TxtTitulo.setText("¿Cómo evitar ataques de ansiedad?");
         TxtTitulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,7 +254,6 @@ public class JP030_S3_AF extends javax.swing.JPanel {
         Txt_imagen.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 3, 3, 3));
         Txt_imagen.setCaretColor(new java.awt.Color(255, 255, 255));
         Txt_imagen.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        Txt_imagen.setSelectedTextColor(new java.awt.Color(255, 255, 255));
         Txt_imagen.setSelectionColor(new java.awt.Color(255, 255, 255));
         Txt_imagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -250,8 +261,13 @@ public class JP030_S3_AF extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabel1.setText("Arrastra aqui tu imagen");
+
+        txtDescripcion_JP030_S3_AF.setColumns(20);
+        txtDescripcion_JP030_S3_AF.setRows(5);
+        txtDescripcion_JP030_S3_AF.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
+        jScrollPane1.setViewportView(txtDescripcion_JP030_S3_AF);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -261,70 +277,59 @@ public class JP030_S3_AF extends javax.swing.JPanel {
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(Btn1_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(TxtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(Btn1_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TxtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Btn3_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(146, 146, 146)
+                        .addGap(219, 219, 219)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Txt_imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(8, 8, 8)
-                        .addComponent(txtDescripcion_JP030_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(84, Short.MAX_VALUE)
+                        .addComponent(Txt_imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(Btn2_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59)))
+                        .addGap(37, 37, 37))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(401, 401, 401)
                 .addComponent(Btn4_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(398, 398, 398))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Btn1_JF028_S3_AF)
-                        .addGap(9, 9, 9)
-                        .addComponent(TxtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Btn3_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TxtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Btn1_JF028_S3_AF)
+                            .addComponent(Btn3_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(77, 77, 77)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+                            .addComponent(Txt_imagen))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtDescripcion_JP030_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                                .addComponent(Btn4_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Txt_imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
+                        .addGap(186, 186, 186)
                         .addComponent(Btn2_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(10, 10, 10)
+                .addComponent(Btn4_JF028_S3_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -356,6 +361,7 @@ public class JP030_S3_AF extends javax.swing.JPanel {
     public javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
     public javax.swing.JPanel jPanel3;
-    public javax.swing.JTextField txtDescripcion_JP030_S3_AF;
+    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTextArea txtDescripcion_JP030_S3_AF;
     // End of variables declaration//GEN-END:variables
 }

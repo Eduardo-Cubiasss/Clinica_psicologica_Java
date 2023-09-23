@@ -167,6 +167,8 @@ public class JP008_S2_AF extends javax.swing.JPanel {
         Btn006_JF008_S3_AF = new javax.swing.JButton();
         Btn007_JF008_S3_AF = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1120, 640));
         setMinimumSize(new java.awt.Dimension(1120, 640));
@@ -201,7 +203,7 @@ public class JP008_S2_AF extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("Personal Clínica");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, -1, -1));
 
         Btn001_JF008_S3_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn001_JF008_S3_AF.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -212,28 +214,28 @@ public class JP008_S2_AF extends javax.swing.JPanel {
         jPanel1.add(Btn001_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         Btn004_JF008_S3_AF.setBackground(new java.awt.Color(255, 255, 255));
-        Btn004_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ptm.png"))); // NOI18N
+        Btn004_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rrrrr.png"))); // NOI18N
         Btn004_JF008_S3_AF.setBorderPainted(false);
-        jPanel1.add(Btn004_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 240, 150, 170));
+        jPanel1.add(Btn004_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 170, 190));
 
         Btn005_JF008_S3_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn005_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actuuu.PNG"))); // NOI18N
         Btn005_JF008_S3_AF.setBorderPainted(false);
-        jPanel1.add(Btn005_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 520, 210, 60));
+        jPanel1.add(Btn005_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 510, 210, 60));
 
         Btn006_JF008_S3_AF.setBackground(new java.awt.Color(255, 255, 255));
-        Btn006_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plisya.png"))); // NOI18N
+        Btn006_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/rrrrterap.png"))); // NOI18N
         Btn006_JF008_S3_AF.setBorderPainted(false);
         Btn006_JF008_S3_AF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn006_JF008_S3_AFActionPerformed(evt);
             }
         });
-        jPanel1.add(Btn006_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 150, 170));
+        jPanel1.add(Btn006_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 200, 220));
 
         Btn007_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aggg.PNG"))); // NOI18N
         Btn007_JF008_S3_AF.setBorderPainted(false);
-        jPanel1.add(Btn007_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, 200, 50));
+        jPanel1.add(Btn007_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 520, 200, 50));
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/++.PNG"))); // NOI18N
         btnBuscar.setBorderPainted(false);
@@ -243,6 +245,14 @@ public class JP008_S2_AF extends javax.swing.JPanel {
             }
         });
         jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 560, 50, 60));
+
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel2.setText("Reportes Secretarias");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 170, 40));
+
+        jLabel3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel3.setText("Reportes Terapeutas");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, 170, 40));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
@@ -264,6 +274,8 @@ public class JP008_S2_AF extends javax.swing.JPanel {
     public javax.swing.JButton Btn007_JF008_S3_AF;
     public javax.swing.JButton btnBuscar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;
     private keeptoo.KGradientPanel kGradientPanel1;
