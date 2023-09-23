@@ -551,7 +551,7 @@ ON DELETE CASCADE;
 /*
 Desde aquí comienzan los procesos almacenados
 */
-ALTER PROCEDURE PDRegistrarAdmin
+CREATE PROCEDURE PDRegistrarAdmin
     @nombreTbA VARCHAR(90),
     @UsernameTbU VARCHAR(50),
     @ContraseñaTbU VARCHAR(90),
@@ -625,7 +625,7 @@ Insert into TbSecretaria values ('Juana','','','','','');
 
 --Aqui empieza el proceso para logear todo tipo de usuario, admin, empleado, usuario
 
-ALTER PROCEDURE PDLogear
+CREATE PROCEDURE PDLogear
     @UsernameIngresado VARCHAR(50),
     @ContraseñaIngresado VARCHAR(90),
     @abrirventana INT OUTPUT,
@@ -732,7 +732,7 @@ DECLARE @resultado INT;
 ---
 --- Aqui empieza el proceso de registrar pacientes
 
-ALTER PROCEDURE PDRegistrarpaciente
+CREATE PROCEDURE PDRegistrarpaciente
     @nombreTbP VARCHAR(90),
 	@apellidoTbp VARCHAR(90),
 	@fechadenaci DATE,
@@ -991,7 +991,7 @@ a la base de datos y tambien muestre el comentario que
 acaba de ingresar el usuario.
 */
 
-ALTER PROCEDURE PDGuardarComentario
+CREATE PROCEDURE PDGuardarComentario
     @mensaje varchar(1000),
 	@Username varchar (50)
 AS
@@ -1019,7 +1019,7 @@ la tabla correspondiente.
 --Creamos el procedimiento que guarde los datos
 
 -- Crear el procedimiento almacenado para insertar datos del paciente
-ALTER PROCEDURE PDInsertarAcercademi
+CREATE PROCEDURE PDInsertarAcercademi
 (
     @username varchar(200),
     @Nombre varchar(90),
@@ -1062,7 +1062,7 @@ EXEC PDInsertarAcercademi 'Pepito', 'Jose', 'Perez','2023-08-30', '1234-5677','c
 
 
 ----Creamos procedimiento alamcenado para acercademi Java---
-ALTER PROCEDURE PDPrimerUso
+CREATE PROCEDURE PDPrimerUso
     @username VARCHAR(200),
     @Correo VARCHAR(100),
     @ActividadLabor VARCHAR(90),
@@ -1165,7 +1165,7 @@ BEGIN
 END
 
 
-ALTER PROCEDURE PDprimerusoinfo
+CREATE PROCEDURE PDprimerusoinfo
 	@username VARCHAR(200),
 	@Correo VARCHAR(100) OUTPUT,
     @ActividadLabor VARCHAR(90) OUTPUT,
@@ -1314,7 +1314,7 @@ SELECT * FROM TbAdministrador;
 /*
 Creamos la vista
 */
-ALTER PROCEDURE PDinforPacienteview
+CREATE PROCEDURE PDinforPacienteview
 	@IDPaciente INT,
 	@nombre VARCHAR(100) OUTPUT,
     @Fnacimiento DATE OUTPUT,
@@ -1360,7 +1360,7 @@ BEGIN
 END
 
 
-ALTER PROCEDURE PDDetallesperfil
+CREATE PROCEDURE PDDetallesperfil
     @Descripcion VARCHAR(350),
     @Username VARCHAR(100)
 AS
@@ -1420,7 +1420,7 @@ SELECT Contraseña, UserName FROM TbUsuarios;
 ALTER TABLE TbUsuarios
 ADD Descripcion VARCHAR(350);
 
-ALTER PROCEDURE PDClinicainfo
+CREATE PROCEDURE PDClinicainfo
 	@Username VArchar(300),
 	@Descripcion VARCHAR(300),
 	@nombre VARCHAR (100),
@@ -1582,8 +1582,7 @@ END;
 ---ActualizarAritculo---
 ---Descripción: Es un Procedemiento almacenado que primero verirfica que el articulo pertenece al IDterapeuta que quiere hacer los cambios: EXEC InsertarActualizarArticulo ?, ?, ?, ?, ?
 
-EXEC PDArticulosInsertOupdate 8, 'aosakskasjka', 'AsaAA', null, null, 1;
-ALTER PROCEDURE PDArticulosInsertOupdate
+CREATE PROCEDURE PDArticulosInsertOupdate
 	@IDTerapeuta INT,
     @Titulo VARCHAR(70),
     @Contenido VARCHAR(MAX),
@@ -1779,36 +1778,50 @@ END;
 
 ---BuscadorEmpleado---
 ---Descripción: esta vista busca en tres tablas para mostrar el ID y el nombre, debido a que ActividadLaboral es de otra tabla hace la union tambien
----Información adicional: esta es la consulta para hacaer uso de la vista:  SELECT ID, Nombre, DUI, NombreDeActividad, IDUsuarioEm, Edad  FROM VistaEmpleadosConActividad WHERE Nombre LIKE '%Peña%';
-
+---Información adicional: esta es la consulta para hacaer uso de la vista:  SELECT ID, Nombre, DUI, NombreDeActividad, IDUsuarioEm, Edad, FotoPerfil  FROM VistaEmpleadosConActividad WHERE Nombre LIKE '%Peña%';
+SELECT * FROM TbTerapeutas;
+SELECT * FROM TbUsuarios;
 ALTER VIEW VistaEmpleadosConActividad AS
-SELECT
-    T.IDTerapeuta AS ID,
-    T.Nombre AS Nombre,
-    T.DUI AS DUI,
-    A.NombreDeActividad AS NombreDeActividad,
-    T.IDUsuario AS IDUsuarioEm,
-    DATEDIFF(YEAR, T.FNacimiento, GETDATE()) AS Edad
-FROM
-    TbTerapeutas T
-INNER JOIN
-    TbActividadesLaborales A
-ON
-    T.IDActividadLaboral = A.IDActividadLaboral
-UNION ALL
 SELECT
     S.IDSecretaria AS ID,
     S.Nombre AS Nombre,
     S.DUI AS DUI,
     A.NombreDeActividad AS NombreDeActividad,
     S.IDUsuario AS IDUsuarioEm,
-    DATEDIFF(YEAR, S.FNacimiento, GETDATE()) AS Edad
+    DATEDIFF(YEAR, S.FNacimiento, GETDATE()) AS Edad,
+    U.FotoPerfil AS FotoPerfil 
 FROM
     TbSecretaria S
 INNER JOIN
     TbActividadesLaborales A
 ON
-    S.IDActividadLaboral = A.IDActividadLaboral;
+    S.IDActividadLaboral = A.IDActividadLaboral
+INNER JOIN
+    TbUsuarios U  -- Unirse a la tabla TbUsuarios para obtener la FotoPerfil
+ON
+    S.IDUsuario = U.IDUsuario
+UNION ALL
+SELECT
+    T.IDTerapeuta AS ID,
+    T.Nombre AS Nombre,
+    T.DUI AS DUI,
+    A.NombreDeActividad AS NombreDeActividad,
+    T.IDUsuario AS IDUsuarioEm,
+    DATEDIFF(YEAR, T.FNacimiento, GETDATE()) AS Edad,
+    U.FotoPerfil AS FotoPerfil  
+FROM
+    TbTerapeutas T
+INNER JOIN
+    TbActividadesLaborales A
+ON
+    T.IDActividadLaboral = A.IDActividadLaboral
+INNER JOIN
+    TbUsuarios U  -- Unirse a la tabla TbUsuarios para obtener la FotoPerfil
+ON
+    T.IDUsuario = U.IDUsuario;
+
+
+
 
 
 
@@ -1927,7 +1940,7 @@ END;
  ---AgrgarPerfilDeEmpleado---
  ---Descripción: Este procedimiento almacenado crea un usuario e interactúa con 3 tablas TbContactos, TbUsuario y TbTerpaeuta/TbSecretaria, se ejecuta con este exec:
  ---EXEC PDCrearEmpleado 27, 'whats@gmail.com', 'whats', 'Contraseña', 2, 'Doris';
- ALTER PROCEDURE PDCrearEmpleado
+ CREATE PROCEDURE PDCrearEmpleado
 	@IDAdministrador INT,
 	@Correo varchar(400),
 	@Username VARCHAR(100),

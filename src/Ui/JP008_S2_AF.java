@@ -211,13 +211,19 @@ public class JP008_S2_AF extends javax.swing.JPanel {
         Btn001_JF008_S3_AF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(Btn001_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
+        Btn004_JF008_S3_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn004_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ptm.png"))); // NOI18N
+        Btn004_JF008_S3_AF.setBorderPainted(false);
         jPanel1.add(Btn004_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 240, 150, 170));
 
+        Btn005_JF008_S3_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn005_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/actuuu.PNG"))); // NOI18N
+        Btn005_JF008_S3_AF.setBorderPainted(false);
         jPanel1.add(Btn005_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 520, 210, 60));
 
+        Btn006_JF008_S3_AF.setBackground(new java.awt.Color(255, 255, 255));
         Btn006_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/plisya.png"))); // NOI18N
+        Btn006_JF008_S3_AF.setBorderPainted(false);
         Btn006_JF008_S3_AF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn006_JF008_S3_AFActionPerformed(evt);
@@ -226,9 +232,11 @@ public class JP008_S2_AF extends javax.swing.JPanel {
         jPanel1.add(Btn006_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 150, 170));
 
         Btn007_JF008_S3_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aggg.PNG"))); // NOI18N
+        Btn007_JF008_S3_AF.setBorderPainted(false);
         jPanel1.add(Btn007_JF008_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, 200, 50));
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/++.PNG"))); // NOI18N
+        btnBuscar.setBorderPainted(false);
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);

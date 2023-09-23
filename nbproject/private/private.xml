@@ -3,16 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/PTC%202023/Sistemas/System-Java/Clinica_psicologica_Java/src/Ui/JP028_S3_AF.java</file>
+            <file>file:/D:/PTC%202023/Sistemas/System-Java/Clinica_psicologica_Java/src/ux/BuscadorEmpleados.java</file>
             <file>file:/D:/PTC%202023/Sistemas/System-Java/Clinica_psicologica_Java/src/Database/Anuncios.java</file>
             <file>file:/D:/PTC%202023/Sistemas/System-Java/Clinica_psicologica_Java/src/Database/ConnectionSQL.java</file>
             <file>file:/D:/PTC%202023/Sistemas/System-Java/Clinica_psicologica_Java/src/Ui/JP011_S2_RH.java</file>
-            <file>file:/D:/PTC%202023/Sistemas/System-Java/Clinica_psicologica_Java/src/ux/AgregarArticulo.java</file>
             <file>file:/D:/PTC%202023/Sistemas/System-Java/Clinica_psicologica_Java/src/ux/DetallesDePerfil.java</file>
-            <file>file:/D:/PTC%202023/Sistemas/System-Java/Clinica_psicologica_Java/src/ux/ActualizarArticulo.java</file>
-            <file>file:/D:/PTC%202023/Sistemas/System-Java/Clinica_psicologica_Java/src/Ui/JP030_S3_AF.java</file>
             <file>file:/D:/PTC%202023/Sistemas/System-Java/Clinica_psicologica_Java/src/ux/Login.java</file>
             <file>file:/D:/PTC%202023/Sistemas/System-Java/Clinica_psicologica_Java/src/Ui/JP010_S2_AF.java</file>
+            <file>file:/D:/PTC%202023/Sistemas/System-Java/Clinica_psicologica_Java/src/ux/CreacionDeAnuncios.java</file>
             <file>file:/D:/PTC%202023/Sistemas/System-Java/Clinica_psicologica_Java/src/Database/Procesos_almacenados.java</file>
             <file>file:/D:/PTC%202023/Sistemas/System-Java/Clinica_psicologica_Java/src/ux/AnunciosActuales.java</file>
         </group>

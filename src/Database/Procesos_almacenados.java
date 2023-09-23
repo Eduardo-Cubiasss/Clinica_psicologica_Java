@@ -5,6 +5,9 @@
  */
 package Database;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,7 +18,9 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.imageio.ImageIO;
 import microsoft.sql.Types;
+import ux.AnunciosActuales;
 import ux.Resultado;
 
 /**
@@ -806,7 +811,7 @@ public class Procesos_almacenados {
 
                 switch (operacion) {
                     case 1:
-                        ps = conn.prepareStatement("SELECT ID, Nombre, DUI, NombreDeActividad, IDUsuarioEm, Edad \n"
+                        ps = conn.prepareStatement("SELECT ID, Nombre, DUI, NombreDeActividad, IDUsuarioEm, Edad, FotoPerfil \n"
                                 + "FROM VistaEmpleadosConActividad\n"
                                 + "WHERE Nombre LIKE ?;");
                         ps.setString(1, "%" + textoBusqueda + "%");
@@ -820,18 +825,36 @@ public class Procesos_almacenados {
                             int IDUsuarioEm = rs.getInt("IDUsuarioEm");
                             int Edad = rs.getInt("Edad");
 
+                            // Obtener la imagen de perfil como un arreglo de bytes
+                            byte[] imagenBytes = rs.getBytes("FotoPerfil");
+
+                            // Convierte los bytes en una imagen BufferedImage
+                                // Convierte los bytes en una imagen BufferedImage
+                            BufferedImage fotoPerfil = null;
+                             if (imagenBytes != null && imagenBytes.length > 0) {
+                                try {
+                                   fotoPerfil = ImageIO.read(new ByteArrayInputStream(imagenBytes));
+                            } catch (IOException e) {
+                             System.err.println("Error al leer la imagen de perfil: " + e.getMessage());
+                            }
+                            }
+
                             modelEmpleado.setNombre(Nombre);
                             modelEmpleado.setDUI(DUI);
                             modelEmpleado.setIdEmpleado(idUsuario);
                             modelEmpleado.setActividadLab(ActividadLaboral);
                             modelEmpleado.setIDUsuario(IDUsuarioEm);
                             modelEmpleado.setEdad(Edad);
+
+                            // Establecer la imagen de perfil en el modelo
+                            modelEmpleado.setFotoPerfil(imagenBytes);
+
                             System.out.println(modelEmpleado.getNombre() + " " + modelEmpleado.getEdad() + " " + " " + " " + " " + " ");
+
                             // Crea un objeto Resultado y agrégalo a la lista de resultados
                             Resultado resultado = new Resultado(idUsuario, Nombre, ActividadLaboral);
                             resultados.add(resultado);
                         }
-
                         break;
 
                     case 2: // 2 para select a la demas información
@@ -1186,4 +1209,47 @@ public class Procesos_almacenados {
             }
         }
     }
+    
+    //SELECT Titulo, Fecha, Imagen FROM TbAnuncio;
+    public void GenerarAnuncios(Anuncios modelAnuncios, AnunciosActuales anunciosController) {
+    Connection conn = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    
+    try {
+        conn = ConnectionSQL.getConexion();
+        ps = conn.prepareStatement("SELECT Titulo, Fecha, Imagen FROM TbAnuncio;");
+        rs = ps.executeQuery();
+
+        while (rs.next()) {
+            String titulo = rs.getString("Titulo");
+            Date fecha = rs.getDate("Fecha");
+            byte[] imagenData = rs.getBytes("Imagen");
+            
+            // Llama al método para apilar el componente
+            anunciosController.apilarComponentesEnGridBagLayout(fecha, titulo, imagenData);
+        }
+    } catch (Exception e) {
+        System.out.println("Error #J00DA");
+        JOptionPane.showMessageDialog(null, "Error: J000DA", "Error inesperado, este usuario no tiene una clínica, crea otra cuenta", JOptionPane.INFORMATION_MESSAGE);
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+    } finally {
+        try {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ps != null) {
+                ps.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+}
+
+    
 }

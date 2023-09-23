@@ -226,8 +226,6 @@ public class JP010_S2_AF extends javax.swing.JPanel {
         );
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 600, 1120, 40));
-
-        lb_chino.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CH.PNG"))); // NOI18N
         jPanel2.add(lb_chino, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 200, 250));
 
         btn1_JF010_AF.setBackground(new java.awt.Color(255, 255, 255));
@@ -262,7 +260,7 @@ public class JP010_S2_AF extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btn1_JF010_AF;
     public javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
+    public javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     public javax.swing.JLabel jLabel7;
@@ -271,7 +269,7 @@ public class JP010_S2_AF extends javax.swing.JPanel {
     public javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     public javax.swing.JLabel lb_chino;
-    private javax.swing.JTextField txtDias;
+    public javax.swing.JTextField txtDias;
     public javax.swing.JTextField txtEdad;
     public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtOficio;

@@ -9,12 +9,20 @@ import Database.Anuncios;
 import Database.Procesos_almacenados;
 import Ui.JP011_S2_RH;
 import java.awt.CardLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.Date;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.TransferHandler;
@@ -31,6 +39,42 @@ public class AnunciosActuales implements ActionListener {
     private Anuncios modelAnuncios;
     private Procesos_almacenados procesos;
 
+     public void apilarComponentesEnGridBagLayout(Date fecha, String titulo, byte[] imagenData) {
+        try {
+            // Obtén el PanelAnuncioView existente desde vista11
+            JPanel panelAnuncioView = vista11.getPanelAnuncioView();
+
+            // Configurar el GridBagConstraints para apilar los componentes verticalmente
+            GridBagConstraints gbc = new GridBagConstraints();
+            gbc.gridx = 0;
+            gbc.gridy = GridBagConstraints.RELATIVE;
+            gbc.fill = GridBagConstraints.HORIZONTAL;
+            gbc.insets = new Insets(5, 5, 5, 5);
+
+            // Agregar el título
+            JLabel lblTitulo = new JLabel(titulo);
+            panelAnuncioView.add(lblTitulo, gbc);
+
+            // Convertir el arreglo de bytes en una imagen
+            BufferedImage imagen = ImageIO.read(new ByteArrayInputStream(imagenData));
+            ImageIcon icono = new ImageIcon(imagen);
+
+            // Agregar la imagen
+            JLabel lblImagen = new JLabel(icono);
+            panelAnuncioView.add(lblImagen, gbc);
+
+            // Agregar la fecha
+            JLabel lblFecha = new JLabel("Fecha: " + fecha.toString());
+            panelAnuncioView.add(lblFecha, gbc);
+
+            // Actualizar el PanelAnuncioView
+            panelAnuncioView.revalidate();
+            panelAnuncioView.repaint();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
     public AnunciosActuales(JPanel JPContenido, JP011_S2_RH vista11, HabilitarPaneles PanelesManager, Anuncios modelAnuncios, Procesos_almacenados procesos) {
         this.JPContenido = JPContenido;
         this.vista11 = vista11;

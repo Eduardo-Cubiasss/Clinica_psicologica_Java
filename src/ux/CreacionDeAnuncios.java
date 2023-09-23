@@ -5,6 +5,8 @@
  */
 package ux;
 
+import Database.Anuncios;
+import Database.Procesos_almacenados;
 import Ui.JP006_S2_AF;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
@@ -19,6 +21,9 @@ public class CreacionDeAnuncios implements ActionListener{
     private JPanel JPContenido;
     private JP006_S2_AF vista06;
       private HabilitarPaneles PanelesManager;   
+      private Procesos_almacenados procesos;
+      private AnunciosActuales AnunciosController;
+      private Anuncios modelAnuncio;
    
     public CreacionDeAnuncios(JPanel JPContenido, JP006_S2_AF vista06, HabilitarPaneles PanelesManager)
     {
@@ -43,7 +48,8 @@ public class CreacionDeAnuncios implements ActionListener{
             //Boton de la casita, es para devolverte al menú de administrador
         }
         else if (e.getSource() == vista06.getBtn2_JF006_S2_AF())
-        {
+        {   
+            procesos.GenerarAnuncios(modelAnuncio, AnunciosController);
             PanelesManager.copiaPanel("JP006_S2_AF");
                 JPContenido.remove(vista06);
                 ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelAnunciosActuales");

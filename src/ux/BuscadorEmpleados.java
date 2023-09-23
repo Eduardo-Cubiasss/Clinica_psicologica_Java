@@ -11,11 +11,14 @@ import Database.Procesos_almacenados;
 import Ui.JP010_S2_AF;
 import Ui.JP012_S2_AF;
 import java.awt.CardLayout;
+import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -92,6 +95,51 @@ public class BuscadorEmpleados implements ActionListener {
             vista10.setTxtEdad(String.valueOf(modelEmpleado.getEdad()));
             vista10.setTxtOficio(modelEmpleado.getActividadLab());
             vista10.setTxtDias(modelEmpleado.getDUI());
+
+            // Actualiza la imagen en vista10 si hay una imagen en modelEmpleado
+            if (modelEmpleado.getFotoPerfil() != null && modelEmpleado.getFotoPerfil().length > 0) {
+                ImageIcon imagenIcon = new ImageIcon(modelEmpleado.getFotoPerfil());
+                System.out.println("Entra aqui porque no esta vacia la imagen");
+
+                // Obtener las dimensiones originales de la imagen
+                int anchoOriginal = imagenIcon.getIconWidth();
+                int altoOriginal = imagenIcon.getIconHeight();
+
+                // Calcular el nuevo tamaño manteniendo la proporción
+                int maxWidth = 200;
+                int maxHeight = 250;
+                int nuevoAncho = anchoOriginal;
+                int nuevoAlto = altoOriginal;
+
+                if (anchoOriginal > maxWidth || altoOriginal > maxHeight) {
+                    double escalaAncho = (double) maxWidth / anchoOriginal;
+                    double escalaAlto = (double) maxHeight / altoOriginal;
+                    System.out.println("Reajusta las dimensiones");
+
+                    // Escalar al tamaño más pequeño para mantener la proporción
+                    double escala = Math.min(escalaAncho, escalaAlto);
+                    nuevoAncho = (int) (anchoOriginal * escala);
+                    nuevoAlto = (int) (altoOriginal * escala);
+                }
+
+                // Crear una nueva imagen redimensionada
+                Image imagenRedimensionada = imagenIcon.getImage().getScaledInstance(nuevoAncho, nuevoAlto, Image.SCALE_SMOOTH);
+
+                // Establecer la imagen redimensionada en el JLabel de vista10
+                vista10.getLb_chino().setIcon(new ImageIcon(imagenRedimensionada));
+
+                // Establecer las dimensiones del JLabel según la imagen redimensionada
+                vista10.getLb_chino().setPreferredSize(new Dimension(nuevoAncho, nuevoAlto));
+
+                // Asegúrate de que el JLabel se repinte
+                vista10.getLb_chino().revalidate();
+                vista10.getLb_chino().repaint();
+            } else {
+                // Si no hay imagen, puedes establecer un icono de imagen predeterminado o realizar otra acción adecuada
+                vista10.getLb_chino().setIcon(null); // Esto quitará cualquier imagen existente en el JLabel
+                vista10.getLb_chino().setPreferredSize(new Dimension(0, 0)); // Restablece las dimensiones del JLabel
+                System.out.println("Esta vacio o contiene propiedades indebidas");
+            }
             PanelesManager.copiaPanel("JP012_S2_AF");
             JPContenido.remove(vista12);
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelDetallesDePerfil");
@@ -104,6 +152,7 @@ public class BuscadorEmpleados implements ActionListener {
             if (textoBusqueda != null && !textoBusqueda.isEmpty()) {
                 System.out.println(textoBusqueda);
                 actualizarTablaConResultadosDeBusqueda(textoBusqueda);
+
             } else {
                 JOptionPane.showMessageDialog(null, "El JTextField de búsqueda esta vacío.", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
                 // Puedes realizar otras acciones apropiadas aquí si es necesario
