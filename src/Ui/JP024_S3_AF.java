@@ -168,7 +168,7 @@ public class JP024_S3_AF extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("Escribe el nombre del paciente y seleccionalo");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, -1, -1));
 
         jTable1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -192,12 +192,12 @@ public class JP024_S3_AF extends javax.swing.JPanel {
         jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 450, 200));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 540, 200));
 
         btn1_JF024.setBackground(new java.awt.Color(255, 255, 255));
         btn1_JF024.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
         btn1_JF024.setBorderPainted(false);
-        jPanel1.add(btn1_JF024, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, -1, -1));
+        jPanel1.add(btn1_JF024, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 160, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(200, 232, 232));
 
@@ -220,11 +220,11 @@ public class JP024_S3_AF extends javax.swing.JPanel {
                 txtBuscar_JP024ActionPerformed(evt);
             }
         });
-        jPanel1.add(txtBuscar_JP024, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 420, 50));
+        jPanel1.add(txtBuscar_JP024, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 420, 50));
 
         BtnVer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dae.PNG"))); // NOI18N
         BtnVer.setBorderPainted(false);
-        jPanel1.add(BtnVer, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, 90, 90));
+        jPanel1.add(BtnVer, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 460, 90, 90));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
