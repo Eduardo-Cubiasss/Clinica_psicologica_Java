@@ -34,7 +34,6 @@ public class JP028_S3_AF extends javax.swing.JPanel {
         this.Btn1_JF028_S3_AF = Btn1_JF028_S3_AF;
     }
 
-
     public JButton getBtn4_JF028_S3_AF() {
         return Btn4_JF028_S3_AF;
     }
@@ -50,8 +49,6 @@ public class JP028_S3_AF extends javax.swing.JPanel {
     public void setTxt_imagen(JTextField Txt_imagen) {
         this.Txt_imagen = Txt_imagen;
     }
-
-
 
     public JLabel getjLabel4() {
         return jLabel4;
@@ -125,15 +122,13 @@ public class JP028_S3_AF extends javax.swing.JPanel {
         this.jScrollPane1 = jScrollPane1;
     }
 
-    public JTextArea getTxtDescripcion() {
-        return txtDescripcion;
+    public String getTxtDescripcion() {
+        return txtDescripcion.getText();
     }
 
-    public void setTxtDescripcion(JTextArea txtDescripcion) {
-        this.txtDescripcion = txtDescripcion;
+    public void setTxtDescripcion(String descripcion) {
+        txtDescripcion.setText(descripcion);
     }
-
-    
 
     public JTextField getjTextField2() {
         return jTextField2;
@@ -142,21 +137,17 @@ public class JP028_S3_AF extends javax.swing.JPanel {
     public void setjTextField2(JTextField jTextField2) {
         this.jTextField2 = jTextField2;
     }
-    
-    
-    
-    
-    
 
     public JP028_S3_AF(AgregarArticulo controlador) {
         initComponents();
         this.controlador = controlador;
-        
+
         str = new PanelesInicializador();
-        
-         // Establecer el valor de str aquí después de haberlo creado
+
+        // Establecer el valor de str aquí después de haberlo creado
         str.setJP028_S3_AF(this);
     }
+
     public JP028_S3_AF() {
         initComponents();
     }

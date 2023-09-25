@@ -81,7 +81,7 @@ public class AgregarArticulo implements ActionListener {
             //Botón para volver a un panel anterior
         } else if (e.getSource() == vista28.getBtn4_JF028_S3_AF()) {
         modelArticulo.setTitulo(vista28.getjTextField2().getText());
-        modelArticulo.setDescripcion(vista28.getjTextField1().getText());
+        modelArticulo.setDescripcion(vista28.getTxtDescripcion());
 
         String imagePath = vista28.getTxt_imagen().getText(); // Obtener la ruta de la imagen desde el campo de texto
 
