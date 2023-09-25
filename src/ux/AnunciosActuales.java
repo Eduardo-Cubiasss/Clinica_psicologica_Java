@@ -9,7 +9,9 @@ import Database.Anuncios;
 import Database.Procesos_almacenados;
 import Ui.JP011_S2_RH;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
@@ -21,10 +23,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.Date;
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.TransferHandler;
 
 /**
@@ -38,43 +43,48 @@ public class AnunciosActuales implements ActionListener {
     private HabilitarPaneles PanelesManager;
     private Anuncios modelAnuncios;
     private Procesos_almacenados procesos;
+    private JScrollPane scrollPane;
 
-     public void apilarComponentesEnGridBagLayout(Date fecha, String titulo, byte[] imagenData) {
-        try {
-            // Obtén el PanelAnuncioView existente desde vista11
-            JPanel panelAnuncioView = vista11.getPanelAnuncioView();
 
-            // Configurar el GridBagConstraints para apilar los componentes verticalmente
-            GridBagConstraints gbc = new GridBagConstraints();
-            gbc.gridx = 0;
-            gbc.gridy = GridBagConstraints.RELATIVE;
-            gbc.fill = GridBagConstraints.HORIZONTAL;
-            gbc.insets = new Insets(5, 5, 5, 5);
+public void apilarComponentesEnGridBagLayout(Date fecha, String titulo, byte[] imagenData) {
+    try {
+        // Obtén el PanelAnuncioView existente desde vista11
+        JPanel panelAnuncioView = vista11.getPanelAnuncioView();
 
-            // Agregar el título
-            JLabel lblTitulo = new JLabel(titulo);
-            panelAnuncioView.add(lblTitulo, gbc);
+        // Crear un JPanel para cada registro con bordes redondeados
+        JPanel registroPanel = new JPanel();
+        registroPanel.setLayout(new BoxLayout(registroPanel, BoxLayout.Y_AXIS));
 
-            // Convertir el arreglo de bytes en una imagen
-            BufferedImage imagen = ImageIO.read(new ByteArrayInputStream(imagenData));
-            ImageIcon icono = new ImageIcon(imagen);
+        // Agregar el título al registroPanel
+        JLabel lblTitulo = new JLabel(titulo);
+        registroPanel.add(lblTitulo);
 
-            // Agregar la imagen
-            JLabel lblImagen = new JLabel(icono);
-            panelAnuncioView.add(lblImagen, gbc);
+        // Convertir el arreglo de bytes en una imagen
+        BufferedImage imagen = ImageIO.read(new ByteArrayInputStream(imagenData));
+        ImageIcon icono = new ImageIcon(imagen);
 
-            // Agregar la fecha
-            JLabel lblFecha = new JLabel("Fecha: " + fecha.toString());
-            panelAnuncioView.add(lblFecha, gbc);
+        // Agregar la imagen al registroPanel
+        JLabel lblImagen = new JLabel(icono);
+        registroPanel.add(lblImagen);
 
-            // Actualizar el PanelAnuncioView
-            panelAnuncioView.revalidate();
-            panelAnuncioView.repaint();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+        // Agregar la fecha al registroPanel
+        JLabel lblFecha = new JLabel("Fecha: " + fecha.toString());
+        registroPanel.add(lblFecha);
+
+        // Agregar el registroPanel al PanelAnuncioView
+        panelAnuncioView.add(registroPanel);
+
+        // Actualizar el PanelAnuncioView
+        panelAnuncioView.revalidate();
+        panelAnuncioView.repaint();
+    } catch (Exception ex) {
+        ex.printStackTrace();
     }
-    
+}
+
+
+
+
     public AnunciosActuales(JPanel JPContenido, JP011_S2_RH vista11, HabilitarPaneles PanelesManager, Anuncios modelAnuncios, Procesos_almacenados procesos) {
         this.JPContenido = JPContenido;
         this.vista11 = vista11;
@@ -83,6 +93,9 @@ public class AnunciosActuales implements ActionListener {
         this.procesos = procesos;
         this.vista11.getBtn1_JF011_S2_RH().addActionListener(this);
         this.vista11.getBtn3_JF011_S2_RH().addActionListener(this);
+        scrollPane = new JScrollPane(vista11.getPanelAnuncioView());
+         vista11.getPanelAnuncioView().setLayout(new BoxLayout(vista11.getPanelAnuncioView(), BoxLayout.Y_AXIS));
+        JPContenido.add(scrollPane);
         vista11.getTxt_imagen().setEditable(false);
         vista11.getTxt_imagen().setTransferHandler(new TransferHandler() {
             @Override

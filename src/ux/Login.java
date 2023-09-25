@@ -58,14 +58,13 @@ public class Login implements ActionListener {
     private Empleado modelEmpleado;
     private Clinica modelClinica;
     private Secretarias ModelSecret;
-
-    
+    private Inicializador init;
 
     public Login(Usuarios modelUsers, JPanel JPContenido, Procesos_almacenados Procesos,
             JP001_S1_AFP panelRegistro, PanelHistory panelHistory, HabilitarPaneles PanelesManager, JF_000_S7_GU vista,
             JP0048_S3_RH panelprimeruso, Genero modelGenero, Contactos modelContactos, ActividadesLaborales modelActivty,
             Administrador modelAdmin, Hints hint, JP025_S3_RH panelacercademi, Terapeutas modelTerap, Empleado modelEmpleado, Clinica modelClinica,
-            Secretarias ModelSecret) {
+            Secretarias ModelSecret, Inicializador init) {
         this.modelUsers = modelUsers;
         this.JPContenido = JPContenido;
         this.Procesos = Procesos;
@@ -84,6 +83,7 @@ public class Login implements ActionListener {
         this.modelTerap = modelTerap;
         this.modelEmpleado = modelEmpleado;
         this.ModelSecret = ModelSecret;
+        this.init = init;
 
         this.panelRegistro.getBtn2_JF001_S1_AF().addActionListener(this);
         this.panelRegistro.getBtn3_JF001_S1_AF().addActionListener(this);
@@ -106,18 +106,8 @@ public class Login implements ActionListener {
         if (e.getSource() == panelRegistro.getBtn2_JF001_S1_AF()) {
             accion();
         } else if (e.getSource() == panelRegistro.getBtn3_JF001_S1_AF()) {
-
-            PanelesManager.copiaPanel("JP001_S1_AFP");
-            System.out.println("Si copia el inicio sesiom");
             JPContenido.remove(panelRegistro);
-            System.out.println("Si elimina el panel");
             ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
-            System.out.println("Abro panelRegisro");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
-            System.out.println();
-            System.out.println("Se restaura panel");
         } else if (e.getSource() == panelRegistro.getBtn4_JF001_S1_AF()) {
             //PanelesManager.eliminarPanel("panelInicioSesion");
             PanelesManager.copiaPanel("JP001_S1_AFP");
@@ -128,6 +118,7 @@ public class Login implements ActionListener {
             PanelesManager.restaurarPanelEliminado();
         }
     }
+
     private void accion() {
         modelUsers.setUserName(panelRegistro.getTxtUsuario_JF001_S1_AF().getText());
         modelUsers.setContraseña(new String(panelRegistro.getPass_JF001_S1_AF().getPassword()));
@@ -174,7 +165,7 @@ public class Login implements ActionListener {
         System.out.println("Primer uso en 1 es porque si: " + Primeruso);
         if (Acceso == 1) {
             Procesos.SaberIDUsuario(modelUsers);
-            
+
             switch (Nivel) {
                 case 1:
                     if (Primeruso == 1) {

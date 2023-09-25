@@ -32,9 +32,10 @@ public class RegAdmin_JF002 implements ActionListener {
     private PanelHistory panelHistory;
     private HabilitarPaneles PanelesManager; 
     private JF_000_S7_GU vista;
+    private Inicializador init;
 
     public RegAdmin_JF002(Administrador modelAdmin, Usuarios modelUsers, Clinica modelClinica, JP002_S1_RHP vistaJP002,
-            JPanel JPContenido, Procesos_almacenados Procesos, PanelHistory panelHistory, HabilitarPaneles PanelesManager, JF_000_S7_GU vista) {
+            JPanel JPContenido, Procesos_almacenados Procesos, PanelHistory panelHistory, HabilitarPaneles PanelesManager, JF_000_S7_GU vista, Inicializador init) {
         this.modelAdmin = modelAdmin;
         this.modelUsers = modelUsers;
         this.modelClinica = modelClinica;
@@ -44,6 +45,7 @@ public class RegAdmin_JF002 implements ActionListener {
         this.panelHistory = panelHistory;
         this.PanelesManager = PanelesManager;
         this.vista = vista;
+        this.init = init;
 
         // Asociar el controlador a los botones de la vista
         this.vistaJP002.getBtn1_JF002_S1_RH().addActionListener(this);
@@ -74,15 +76,11 @@ public class RegAdmin_JF002 implements ActionListener {
 
         } else if (e.getSource() == vistaJP002.getBtn2_JF002_S1_RH()) {
             PanelesManager.copiaPanel("JP002_S1_RHP");
-            System.out.println("Hace una copia del paneles de registrar administrador");
-            JPContenido.remove(vistaJP002);
-            System.out.println("Elimina registrar admin");
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
-            System.out.println("Abre inicio de sesion");
+            
+            ((CardLayout) JPContenido.getLayout()).show(JPContenido,"panelInicioSesion");
             JPContenido.revalidate();
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado();
-            System.out.println("Se restauran componentes y panel de registrar admin");
         }
     }
 
