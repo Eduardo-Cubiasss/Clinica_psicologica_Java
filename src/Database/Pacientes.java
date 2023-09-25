@@ -14,7 +14,7 @@ import java.util.Date;
 public class Pacientes {
     private int IDpaciente;
     private String nombre;
-    private Date Fnacimiento;
+    private int Fnacimiento;
     private String DUI;
     private String Mensajito;
     private String Apellido;
@@ -35,11 +35,11 @@ public class Pacientes {
         this.nombre = nombre;
     }
 
-    public Date getFnacimiento() {
+    public int getFnacimiento() {
         return Fnacimiento;
     }
 
-    public void setFnacimiento(Date Fnacimiento) {
+    public void setFnacimiento(int Fnacimiento) {
         this.Fnacimiento = Fnacimiento;
     }
 

@@ -10,6 +10,7 @@ import Database.Procesos_almacenados;
 import Ui.JP011_S2_RH;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Graphics2D;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -21,9 +22,11 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Date;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -45,45 +48,56 @@ public class AnunciosActuales implements ActionListener {
     private Procesos_almacenados procesos;
     private JScrollPane scrollPane;
 
-
-public void apilarComponentesEnGridBagLayout(Date fecha, String titulo, byte[] imagenData) {
-    try {
-        // Obtén el PanelAnuncioView existente desde vista11
-        JPanel panelAnuncioView = vista11.getPanelAnuncioView();
-
-        // Crear un JPanel para cada registro con bordes redondeados
-        JPanel registroPanel = new JPanel();
-        registroPanel.setLayout(new BoxLayout(registroPanel, BoxLayout.Y_AXIS));
-
-        // Agregar el título al registroPanel
-        JLabel lblTitulo = new JLabel(titulo);
-        registroPanel.add(lblTitulo);
-
-        // Convertir el arreglo de bytes en una imagen
-        BufferedImage imagen = ImageIO.read(new ByteArrayInputStream(imagenData));
-        ImageIcon icono = new ImageIcon(imagen);
-
-        // Agregar la imagen al registroPanel
-        JLabel lblImagen = new JLabel(icono);
-        registroPanel.add(lblImagen);
-
-        // Agregar la fecha al registroPanel
-        JLabel lblFecha = new JLabel("Fecha: " + fecha.toString());
-        registroPanel.add(lblFecha);
-
-        // Agregar el registroPanel al PanelAnuncioView
-        panelAnuncioView.add(registroPanel);
-
-        // Actualizar el PanelAnuncioView
-        panelAnuncioView.revalidate();
-        panelAnuncioView.repaint();
-    } catch (Exception ex) {
-        ex.printStackTrace();
+    private ImageIcon createResizedImageIcon(byte[] imageData, int width, int height) throws IOException {
+        BufferedImage originalImage = ImageIO.read(new ByteArrayInputStream(imageData));
+        BufferedImage resizedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = resizedImage.createGraphics();
+        g.drawImage(originalImage, 0, 0, width, height, null);
+        g.dispose();
+        return new ImageIcon(resizedImage);
     }
-}
 
+    public void apilarComponentesEnBoxLayout(Date fecha, String titulo, byte[] imagenData) {
+        try {
+            // Obtén el PanelAnuncioView existente desde vista11
+            JPanel panelAnuncioView = vista11.getPanelAnuncioView();
 
+            // Crear un JPanel para cada registro con bordes redondeados
+            JPanel registroPanel = new JPanel();
+            registroPanel.setLayout(new BoxLayout(registroPanel, BoxLayout.Y_AXIS));
 
+            registroPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+
+            // Agregar el título al registroPanel si no es nulo ni está vacío
+            if (titulo != null && !titulo.isEmpty()) {
+                JLabel lblTitulo = new JLabel(titulo);
+                registroPanel.add(lblTitulo);
+            }
+
+            // Verificar si imagenData no es nulo y tiene contenido
+            if (imagenData != null && imagenData.length > 0) {
+                // Redimensionar la imagen antes de agregarla al registroPanel
+                ImageIcon resizedIcon = createResizedImageIcon(imagenData, 200, 200); // Cambia las dimensiones según tus necesidades
+                JLabel lblImagen = new JLabel(resizedIcon);
+                registroPanel.add(lblImagen);
+            }
+
+            // Agregar la fecha al registroPanel si no es nula
+            if (fecha != null) {
+                JLabel lblFecha = new JLabel("Fecha: " + fecha.toString());
+                registroPanel.add(lblFecha);
+            }
+
+            // Agregar el registroPanel al PanelAnuncioView
+            panelAnuncioView.add(registroPanel);
+
+            // Actualizar el PanelAnuncioView
+            panelAnuncioView.revalidate();
+            panelAnuncioView.repaint();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 
     public AnunciosActuales(JPanel JPContenido, JP011_S2_RH vista11, HabilitarPaneles PanelesManager, Anuncios modelAnuncios, Procesos_almacenados procesos) {
         this.JPContenido = JPContenido;
@@ -94,7 +108,8 @@ public void apilarComponentesEnGridBagLayout(Date fecha, String titulo, byte[] i
         this.vista11.getBtn1_JF011_S2_RH().addActionListener(this);
         this.vista11.getBtn3_JF011_S2_RH().addActionListener(this);
         scrollPane = new JScrollPane(vista11.getPanelAnuncioView());
-         vista11.getPanelAnuncioView().setLayout(new BoxLayout(vista11.getPanelAnuncioView(), BoxLayout.Y_AXIS));
+        vista11.getPanelAnuncioView().setLayout(new BoxLayout(vista11.getPanelAnuncioView(), BoxLayout.Y_AXIS));
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         JPContenido.add(scrollPane);
         vista11.getTxt_imagen().setEditable(false);
         vista11.getTxt_imagen().setTransferHandler(new TransferHandler() {

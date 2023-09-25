@@ -21,6 +21,8 @@ import java.util.List;
 import javax.imageio.ImageIO;
 import microsoft.sql.Types;
 import ux.AnunciosActuales;
+import ux.DocumentosDeApoyo;
+import ux.EliminarAnunciosActuales;
 import ux.Resultado;
 
 /**
@@ -593,7 +595,7 @@ public class Procesos_almacenados {
 
                         cs.setInt(1, modelpaciente.getIDpaciente());
                         cs.registerOutParameter(2, java.sql.Types.VARCHAR);
-                        cs.registerOutParameter(3, java.sql.Types.DATE);
+                        cs.registerOutParameter(3, java.sql.Types.INTEGER);
                         cs.registerOutParameter(4, java.sql.Types.VARCHAR);
                         cs.registerOutParameter(5, java.sql.Types.VARBINARY);
                         cs.setString(6, modelpaciente.getMensajito()); // Valor para el último parámetro
@@ -601,7 +603,7 @@ public class Procesos_almacenados {
                         cs.execute();
 
                         String nombre = cs.getString(2);
-                        Date fechaNacimiento = cs.getDate(3);
+                        int fechaNacimiento = cs.getInt(3);
                         String correo = cs.getString(4);
                         byte[] imagen = cs.getBytes(5);
 
@@ -723,7 +725,7 @@ public class Procesos_almacenados {
                     ps = conn.prepareStatement("EXEC PDCambiarContraseña ?, ?, ?");
                     ps.setString(1, modelousuarios.getUserName());
                     ps.setString(2, modelousuarios.getContraseña());
-                    ps.setString(2, modelousuarios.getContrafake());
+                    ps.setString(3, modelousuarios.getContrafake());
                     ps.executeUpdate();
                     JOptionPane.showMessageDialog(null, "Cierra sesión para comprobar tu cambio de contraseña", "Sgurencia", JOptionPane.INFORMATION_MESSAGE);
                     break;
@@ -829,14 +831,14 @@ public class Procesos_almacenados {
                             byte[] imagenBytes = rs.getBytes("FotoPerfil");
 
                             // Convierte los bytes en una imagen BufferedImage
-                                // Convierte los bytes en una imagen BufferedImage
+                            // Convierte los bytes en una imagen BufferedImage
                             BufferedImage fotoPerfil = null;
-                             if (imagenBytes != null && imagenBytes.length > 0) {
+                            if (imagenBytes != null && imagenBytes.length > 0) {
                                 try {
-                                   fotoPerfil = ImageIO.read(new ByteArrayInputStream(imagenBytes));
-                            } catch (IOException e) {
-                             System.err.println("Error al leer la imagen de perfil: " + e.getMessage());
-                            }
+                                    fotoPerfil = ImageIO.read(new ByteArrayInputStream(imagenBytes));
+                                } catch (IOException e) {
+                                    System.err.println("Error al leer la imagen de perfil: " + e.getMessage());
+                                }
                             }
 
                             modelEmpleado.setNombre(Nombre);
@@ -973,50 +975,41 @@ public class Procesos_almacenados {
 
     public boolean AgregarArticulo(Articulos modelArt, Terapeutas modelTer, int caso) {
         Connection conn = null;
-        PreparedStatement ps = null;
+        CallableStatement cs = null;
         ResultSet rs = null;
-        boolean insercionExitosa = false; // Inicialmente asumimos que la inserción falló
+        boolean insercionExitosa = false;
 
         try {
             conn = ConnectionSQL.getConexion();
+            cs = conn.prepareCall("{CALL PDArticulosInsertOupdate(?, ?, ?, ?, ?)}");
 
-            ps = conn.prepareStatement("EXEC PDArticulosInsertOupdate ?, ?, ?, ?, ?, ?");
-            ps.setInt(1, (modelTer.getIDTerapeuta()));
-            ps.setString(2, modelArt.getTitulo());
-            ps.setString(3, modelArt.getDescripcion());
-            ps.setBytes(4, modelArt.getImagen());
-            ps.setInt(5, modelArt.getIDArticulo());
-            ps.setInt(6, caso);
+            // Configurar los parámetros de entrada
+            System.out.println(modelTer.getIDTerapeuta());
+            System.out.println(modelArt.getTitulo());
+            System.out.println(modelArt.getDescripcion());
+            cs.setInt(1, modelTer.getIDTerapeuta());
+            cs.setString(2, modelArt.getTitulo());
+            cs.setString(3, modelArt.getDescripcion());
+            cs.setBytes(4, modelArt.getImagen());
 
-            int filasAfectadas = ps.executeUpdate();
+            cs.registerOutParameter(5, java.sql.Types.INTEGER);
 
-            // Verificamos si al menos una fila fue afectada (la inserción se realizó con éxito)
-            if (filasAfectadas > 0) {
+            cs.execute();
+
+            // Obtener el valor del parámetro de salida
+            int idArticuloGenerado = cs.getInt(5);
+
+            // Si idArticuloGenerado es mayor que 0, la inserción o actualización fue exitosa
+            if (idArticuloGenerado > 0) {
                 insercionExitosa = true;
             }
         } catch (Exception e) {
-            System.out.println("Error #J00DA");
-            JOptionPane.showMessageDialog(null, "Error: J000DA", "Error inesperado, verifique que la imagen sea JPEG", JOptionPane.INFORMATION_MESSAGE);
-
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+            // Manejo de excepciones
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
+            // Cerrar recursos
         }
 
-        return insercionExitosa; // Devolvemos el valor booleano
+        return insercionExitosa;
     }
 
     public void RedactarPermiso(Incapacidades modelIncap, Usuarios modelUsers) {
@@ -1209,47 +1202,218 @@ public class Procesos_almacenados {
             }
         }
     }
-    
+
     //SELECT Titulo, Fecha, Imagen FROM TbAnuncio;
     public void GenerarAnuncios(Anuncios modelAnuncios, AnunciosActuales anunciosController) {
-    Connection conn = null;
-    PreparedStatement ps = null;
-    ResultSet rs = null;
-    
-    try {
-        conn = ConnectionSQL.getConexion();
-        ps = conn.prepareStatement("SELECT Titulo, Fecha, Imagen FROM TbAnuncio;");
-        rs = ps.executeQuery();
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
 
-        while (rs.next()) {
-            String titulo = rs.getString("Titulo");
-            Date fecha = rs.getDate("Fecha");
-            byte[] imagenData = rs.getBytes("Imagen");
-            
-            // Llama al método para apilar el componente
-            anunciosController.apilarComponentesEnGridBagLayout(fecha, titulo, imagenData);
-        }
-    } catch (Exception e) {
-        System.out.println("Error #J00DA");
-        JOptionPane.showMessageDialog(null, "Error: J000DA", "Error inesperado, este usuario no tiene una clínica, crea otra cuenta", JOptionPane.INFORMATION_MESSAGE);
-        e.printStackTrace();
-        JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
-    } finally {
         try {
-            if (rs != null) {
-                rs.close();
+            conn = ConnectionSQL.getConexion();
+            ps = conn.prepareStatement("SELECT Titulo, Fecha, Imagen FROM TbAnuncio;");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                String titulo = rs.getString("Titulo");
+                Date fecha = rs.getDate("Fecha");
+                byte[] imagenData = rs.getBytes("Imagen");
+                int i = 0;
+                // Llama al método para apilar el componente
+                System.out.println("Se ponen datos por: " + i++);
+                anunciosController.apilarComponentesEnBoxLayout(fecha, titulo, imagenData);
             }
-            if (ps != null) {
-                ps.close();
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Error inesperado, este usuario no tiene una clínica, crea otra cuenta", JOptionPane.INFORMATION_MESSAGE);
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
             }
-            if (conn != null) {
-                conn.close();
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
         }
     }
-}
 
-    
+    public void GenerarAnunciosEli(Anuncios modelAnuncios, EliminarAnunciosActuales anunciosController) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            conn = ConnectionSQL.getConexion();
+            ps = conn.prepareStatement("SELECT IDAnuncio, Titulo, Fecha, Imagen FROM TbAnuncio;");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                int IDAnuncio = rs.getInt("IDAnuncio");
+                String titulo = rs.getString("Titulo");
+                Date fecha = rs.getDate("Fecha");
+                byte[] imagenData = rs.getBytes("Imagen");
+                int i = 0;
+                // Llama al método para apilar el componente
+                System.out.println("Se ponen datos por: " + i++);
+                anunciosController.apilarComponentesEnBoxLayout(IDAnuncio, fecha, titulo, imagenData);
+            }
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Error inesperado, este usuario no tiene una clínica, crea otra cuenta", JOptionPane.INFORMATION_MESSAGE);
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    public void BorrarAnuncio(Anuncios modelAnuncios) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            conn = ConnectionSQL.getConexion();
+
+            ps = conn.prepareStatement("DELETE TbAnuncio WHERE IDAnuncio = ?");
+            ps.setInt(1, modelAnuncios.getIDAnuncio());
+
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Error innesperado, Vuelva al menú e intenté más tadre", JOptionPane.INFORMATION_MESSAGE);
+
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    public void GenerarDocumentos(Articulos modelArticulo, DocumentosDeApoyo DocsController) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            conn = ConnectionSQL.getConexion();
+            ps = conn.prepareStatement("SELECT IDArticulo, Titulo, Imagen FROM TbArticulos;");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                int IDAnuncio = rs.getInt("IDArticulo");
+                String titulo = rs.getString("Titulo");
+                byte[] imagenData = rs.getBytes("Imagen");
+
+                System.out.println("Se ponen datos por: ");
+                DocsController.generarPanelesDeDocumentos(IDAnuncio, titulo, imagenData);
+                System.out.println("Esto contiene el IDArticulo: " + IDAnuncio);
+            }
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Error inesperado, este usuario no tiene una clínica, crea otra cuenta", JOptionPane.INFORMATION_MESSAGE);
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    public void BorrarArticulo(Articulos modelArituculos) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            conn = ConnectionSQL.getConexion();
+
+            // Eliminar de TbCantidadArticulo
+            ps = conn.prepareStatement("DELETE FROM TbCantidadArticulo WHERE IDArticulo = ?");
+            ps.setInt(1, modelArituculos.getIDArticulo());
+            int deletedRows = ps.executeUpdate();
+
+            if (deletedRows > 0) {
+                // La eliminación en TbCantidadArticulo tuvo éxito, ahora eliminar de TbArticulos
+                ps = conn.prepareStatement("DELETE FROM TbArticulos WHERE IDArticulo = ?");
+                ps.setInt(1, modelArituculos.getIDArticulo());
+                int deletedRowsArticulos = ps.executeUpdate();
+
+                if (deletedRowsArticulos > 0) {
+                    // Ambas eliminaciones tuvieron éxito
+                    System.out.println("Eliminación exitosa de ambas tablas.");
+                } else {
+                    // La eliminación en TbArticulos falló
+                    System.out.println("La eliminación en TbArticulos falló.");
+                }
+            } else {
+                // La eliminación en TbCantidadArticulo falló
+                System.out.println("La eliminación en TbCantidadArticulo falló.");
+            }
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error: J000DA", "Error innesperado, Vuelva al menú e intenté más tarde", JOptionPane.INFORMATION_MESSAGE);
+
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
 }

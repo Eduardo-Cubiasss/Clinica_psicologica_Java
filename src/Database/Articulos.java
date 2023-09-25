@@ -24,6 +24,11 @@ public class Articulos {
         return IDArticulo;
     }
 
+    public Articulos(int IDArticulo) {
+        this.IDArticulo = IDArticulo;
+    }
+    
+
     public void setIDArticulo(int IDArticulo) {
         this.IDArticulo = IDArticulo;
     }
@@ -67,7 +72,9 @@ public class Articulos {
     public void setIDTerapeuta(int IDTerapeuta) {
         this.IDTerapeuta = IDTerapeuta;
     }
-    
+     public Articulos() {
+        // Puedes inicializar valores predeterminados si es necesario
+    }
   
     
 }

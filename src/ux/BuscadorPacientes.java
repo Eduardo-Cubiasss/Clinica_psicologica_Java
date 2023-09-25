@@ -95,7 +95,15 @@ public class BuscadorPacientes implements ActionListener {
             try {
                 procesos.viewpaciente(modelPacientes, modelUsuers, modelContacto, 1);
                 vistaJP031.setJL_Correo_JF031_S3_RH(modelContacto.getCorreo());
-                vistaJP031.setJL_Edad_JF031_S3_RH(modelPacientes.getFnacimiento().toString());
+                // Obtén el valor int que deseas mostrar
+                int valorInt = modelPacientes.getFnacimiento();
+
+                // Convierte el valor int a una cadena (String)
+                String valorStr = String.valueOf(valorInt);
+
+                // Establece la cadena en el JLabel
+                vistaJP031.setJL_Edad_JF031_S3_RH(valorStr);
+
                 vistaJP031.setJL_Nombre_JF031_S3_RH(modelPacientes.getNombre());
                 PanelesManager.copiaPanel("JP024_S3_AF");
                 JPContenido.remove(vistaJP024);

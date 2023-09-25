@@ -17,7 +17,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.util.List;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -98,47 +102,27 @@ public class BuscadorEmpleados implements ActionListener {
 
             // Actualiza la imagen en vista10 si hay una imagen en modelEmpleado
             if (modelEmpleado.getFotoPerfil() != null && modelEmpleado.getFotoPerfil().length > 0) {
-                ImageIcon imagenIcon = new ImageIcon(modelEmpleado.getFotoPerfil());
-                System.out.println("Entra aqui porque no esta vacia la imagen");
+                try {
+                    // Convertir el arreglo de bytes en una imagen redimensionada
+                    ImageIcon imagenIcon = createResizedImageIcon(modelEmpleado.getFotoPerfil(), 200, 200); // Cambia las dimensiones según tus necesidades
 
-                // Obtener las dimensiones originales de la imagen
-                int anchoOriginal = imagenIcon.getIconWidth();
-                int altoOriginal = imagenIcon.getIconHeight();
+                    // Establecer la imagen redimensionada en el JLabel de vista10
+                    vista10.getLb_chino().setIcon(imagenIcon);
 
-                // Calcular el nuevo tamaño manteniendo la proporción
-                int maxWidth = 200;
-                int maxHeight = 250;
-                int nuevoAncho = anchoOriginal;
-                int nuevoAlto = altoOriginal;
+                    // Establecer las dimensiones del JLabel según la imagen redimensionada
+                    vista10.getLb_chino().setPreferredSize(new Dimension(200, 200)); // Cambia las dimensiones según tus necesidades
 
-                if (anchoOriginal > maxWidth || altoOriginal > maxHeight) {
-                    double escalaAncho = (double) maxWidth / anchoOriginal;
-                    double escalaAlto = (double) maxHeight / altoOriginal;
-                    System.out.println("Reajusta las dimensiones");
-
-                    // Escalar al tamaño más pequeño para mantener la proporción
-                    double escala = Math.min(escalaAncho, escalaAlto);
-                    nuevoAncho = (int) (anchoOriginal * escala);
-                    nuevoAlto = (int) (altoOriginal * escala);
+                    // Asegúrate de que el JLabel se repinte
+                    vista10.getLb_chino().revalidate();
+                    vista10.getLb_chino().repaint();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
                 }
-
-                // Crear una nueva imagen redimensionada
-                Image imagenRedimensionada = imagenIcon.getImage().getScaledInstance(nuevoAncho, nuevoAlto, Image.SCALE_SMOOTH);
-
-                // Establecer la imagen redimensionada en el JLabel de vista10
-                vista10.getLb_chino().setIcon(new ImageIcon(imagenRedimensionada));
-
-                // Establecer las dimensiones del JLabel según la imagen redimensionada
-                vista10.getLb_chino().setPreferredSize(new Dimension(nuevoAncho, nuevoAlto));
-
-                // Asegúrate de que el JLabel se repinte
-                vista10.getLb_chino().revalidate();
-                vista10.getLb_chino().repaint();
             } else {
                 // Si no hay imagen, puedes establecer un icono de imagen predeterminado o realizar otra acción adecuada
                 vista10.getLb_chino().setIcon(null); // Esto quitará cualquier imagen existente en el JLabel
                 vista10.getLb_chino().setPreferredSize(new Dimension(0, 0)); // Restablece las dimensiones del JLabel
-                System.out.println("Esta vacio o contiene propiedades indebidas");
+                System.out.println("Está vacío o contiene propiedades indebidas");
             }
             PanelesManager.copiaPanel("JP012_S2_AF");
             JPContenido.remove(vista12);
@@ -146,7 +130,7 @@ public class BuscadorEmpleados implements ActionListener {
             JPContenido.revalidate();
             JPContenido.repaint();
             PanelesManager.restaurarPanelEliminado();
-            //Es para abrir el perfil del usuario en base a su ID
+            // Es para abrir el perfil del usuario en base a su ID
         } else if (e.getSource() == vista12.getBtnBuscar()) {
             String textoBusqueda = vista12.getjTextField1().getText();
             if (textoBusqueda != null && !textoBusqueda.isEmpty()) {
@@ -174,5 +158,9 @@ public class BuscadorEmpleados implements ActionListener {
             tableModel.addRow(new Object[]{resultado.getIdPaciente(), resultado.getNombre(), resultado.getApellido()});
         }
     }
-
+    private ImageIcon createResizedImageIcon(byte[] imageData, int width, int height) throws IOException {
+        BufferedImage originalImage = ImageIO.read(new ByteArrayInputStream(imageData));
+        Image resizedImage = originalImage.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        return new ImageIcon(resizedImage);
+    }
 }

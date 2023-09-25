@@ -20,13 +20,68 @@ Fecha date,
 IDTerapeuta int
 );
 
-create table TbCantidadArticulo(
+Create Table TbTerapeutas(
+IDTerapeuta int identity(1,1) primary key,
+Nombre varchar(90),
+Apellido varchar(90),
+Salario varbinary(max),
+FNacimiento date,
+DUI varchar(20),
+IDTipoUsuario int,
+IDActividadLaboral int,
+IDGenero int,
+IDClinica varchar(5),
+IDUsuario int
+);
+create table	(
 IDCantArticulo int identity (1,1) primary key,
 cantArticulo int,
 IDTerapeuta INT,
 IDArticulo int
 );
 
+-- Crear el trigger para insertar en TbCantidadArticulo después de insertar en TbArticulos
+CREATE TRIGGER Tr_InsertarCantidadArticulo
+ON TbArticulos
+AFTER INSERT
+AS
+BEGIN
+    -- Insertar en TbCantidadArticulo
+    INSERT INTO TbCantidadArticulo (cantArticulo, IDTerapeuta, IDArticulo)
+    SELECT 1, a.IDTerapeuta, inserted.IDArticulo
+    FROM inserted i
+    LEFT JOIN TbTerapeutas t ON i.IDTerapeuta = t.IDTerapeuta
+    LEFT JOIN TbSecretarias s ON i.IDSecretaria = s.IDSecretaria
+    WHERE t.IDTerapeuta IS NOT NULL OR s.IDSecretaria IS NOT NULL;
+END;
+
+-- Crear el trigger para actualizar TbCantidadArticulo después de un UPDATE en TbArticulos
+CREATE TRIGGER Tr_ActualizarCantidadArticulo
+ON TbArticulos
+AFTER UPDATE
+AS
+BEGIN
+    -- Actualizar la columna cantArticulo en TbCantidadArticulo
+    UPDATE ca
+    SET ca.cantArticulo = ca.cantArticulo + 1
+    FROM TbCantidadArticulo ca
+    INNER JOIN inserted i ON ca.IDArticulo = i.IDArticulo;
+END;
+
+
+ALTER TABLE TbCantidadArticulo
+ADD CONSTRAINT FK_TbCantidadArticulo_TbArticulos
+FOREIGN KEY (IDArticulo)
+REFERENCES TbArticulos (IDArticulo);
+
+Alter table TbCantidadArticulo Add constraint fk_IDTerapeuta_TBCantArt
+Foreign key (IDTerapeuta) References [dbo].[TbTerapeutas](IDTerapeuta);
+
+Alter table TbCantidadArticulo Add constraint fk_IDScretaria_TBCantArt
+Foreign key (IDSecretaria) References [dbo].TbSecretaria(IDSecretaria);
+
+ALTER TABLE TbCantidadArticulo
+ADD IDSecretaria int;
 Insert into TbCantidadArticulo (cantArticulo, IDTerapeuta)
 values
 	(12,1),
@@ -35,20 +90,6 @@ values
 	(6,4),
 	(2,5);
 
-create table TbContPermisos(
-IDContPermiso int identity (1,1) primary key,
-nombre varchar(50),
-contAceptado int,
-IDPermiso int
-);	
-
-Insert into TbContPermisos (nombre, contAceptado)
-values
-	('Exequiel',4),
-	('Chris',3),
-	('Rebeca',10),
-	('Juan',12),
-	('Dios',14);
 
 ALTER TABLE TbArticulos
 DROP COLUMN Imagen;
@@ -276,6 +317,23 @@ IDClinica int,
 IDSecretaria int, 
 IDTerpeuta int
 );
+
+create table TbContPermisos(
+IDContPermiso int identity (1,1) primary key,
+nombre varchar(50),
+contAceptado int,
+IDPermiso int
+);	
+alter table TbContPermisos add constraint fk_idpermiso_contpermi
+foreign key (IDPermiso) references TbPermisos(IDPermiso);
+
+Insert into TbContPermisos (nombre, contAceptado)
+values
+	('Exequiel',4),
+	('Chris',3),
+	('Rebeca',10),
+	('Juan',12),
+	('Dios',14);
 
 ALTER TABLE TbPermisos
 ALTER COLUMN IDClinica VARCHAR(5);
@@ -1620,46 +1678,36 @@ END;
 ---ActualizarAritculo---
 ---Descripción: Es un Procedemiento almacenado que primero verirfica que el articulo pertenece al IDterapeuta que quiere hacer los cambios: EXEC InsertarActualizarArticulo ?, ?, ?, ?, ?
 
-CREATE PROCEDURE PDArticulosInsertOupdate
-	@IDTerapeuta INT,
+ALTER PROCEDURE PDArticulosInsertOupdate
+    @IDTerapeuta INT,
     @Titulo VARCHAR(70),
     @Contenido VARCHAR(MAX),
     @Imagen VARBINARY(MAX),
-    @IDArticulo INT,
-    @Caso INT
+    @IDArticulo INT OUTPUT
 AS
 BEGIN
     DECLARE @Nombre VARCHAR(30);
     DECLARE @newcontenido VARCHAR(MAX);
-    
-    -- Verificar si el artículo pertenece al mismo terapeuta
-    IF @Caso = 2 AND NOT EXISTS (SELECT 1 FROM TbArticulos WHERE IDArticulo = @IDArticulo AND IDTerapeuta = @IDTerapeuta)
-    BEGIN
-        PRINT 'El artículo no pertenece al terapeuta especificado. No se realizó ninguna actualización.';
-        RETURN; -- Salir del procedimiento si el artículo no pertenece al terapeuta
-    END
-    
-    SET @Nombre = (SELECT Nombre FROM TbTerapeutas WHERE IDTerapeuta = @IDTerapeuta);
-    SET @newcontenido = (@Contenido + ' Escrito por: ' + @Nombre);
 
-    -- Utilizar una estructura IF...ELSE para determinar si realizar un INSERT o UPDATE
-    IF @Caso = 1
+    -- Verificar si el terapeuta ya tiene un artículo
+    IF EXISTS (SELECT 1 FROM TbArticulos WHERE IDTerapeuta = @IDTerapeuta)
     BEGIN
-        -- Caso 1: INSERT
-        INSERT INTO TbArticulos (Titulo, Descripcion, Imagen, IDTerapeuta)
-        VALUES (@Titulo, @newcontenido, @Imagen, @IDTerapeuta);
-    END
-    ELSE IF @Caso = 2
-    BEGIN
-        -- Caso 2: UPDATE
+        PRINT 'El terapeuta ya tiene un artículo. Realizando una actualización.';
+        -- Actualizar el artículo existente
         UPDATE TbArticulos
-        SET Titulo = @Titulo, Descripcion = @newcontenido, Imagen = @Imagen
-        WHERE IDArticulo = @IDArticulo AND IDTerapeuta = @IDTerapeuta;
+        SET Titulo = @Titulo, Descripcion = @Contenido, Imagen = @Imagen
+        WHERE IDTerapeuta = @IDTerapeuta;
+        SET @IDArticulo = (SELECT IDArticulo FROM TbArticulos WHERE IDTerapeuta = @IDTerapeuta);
     END
     ELSE
     BEGIN
-        -- Manejar otro caso si es necesario
-        PRINT 'Valor de @Caso no válido. No se realizó ninguna operación.';
+        PRINT 'El terapeuta no tiene ningún artículo. Realizando una inserción.';
+        SET @Nombre = (SELECT Nombre FROM TbTerapeutas WHERE IDTerapeuta = @IDTerapeuta);
+        SET @newcontenido = (@Contenido + ' Escrito por: ' + @Nombre);
+        -- Insertar un nuevo artículo
+        INSERT INTO TbArticulos (Titulo, Descripcion, Imagen, IDTerapeuta)
+        VALUES (@Titulo, @newcontenido, @Imagen, @IDTerapeuta);
+        SET @IDArticulo = SCOPE_IDENTITY(); -- Obtener el ID del artículo insertado
     END;
 END;
 
@@ -2078,3 +2126,17 @@ BEGIN
     INNER JOIN TbSecretaria TT ON TU.IDUsuario = TT.IDUsuario
     WHERE TU.UserName = @UserName;
 END;
+
+create table TbCantidadArticulo(
+IDCantArticulo int identity (1,1) primary key,
+cantArticulo int,
+IDTerapeuta INT,
+IDArticulo int
+);
+
+create table TbContPermisos(
+IDContPermiso int identity (1,1) primary key,
+nombre varchar(50),
+contAceptado int,
+IDPermiso int
+);	

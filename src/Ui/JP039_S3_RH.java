@@ -21,29 +21,7 @@ public class JP039_S3_RH extends javax.swing.JPanel {
       private Menu_Secretaria controlador;
  
     
-    public JButton getBtn02_JF039_S3_RH() {
-        return btn02_JF039_S3_RH;
-    }
 
-    public void setBtn02_JF039_S3_RH(JButton btn02_JF039_S3_RH) {
-        this.btn02_JF039_S3_RH = btn02_JF039_S3_RH;
-    }
-
-    public JButton getBtn03_JF023_S3_RH() {
-        return btn03_JF023_S3_RH;
-    }
-
-    public void setBtn03_JF023_S3_RH(JButton btn03_JF023_S3_RH) {
-        this.btn03_JF023_S3_RH = btn03_JF023_S3_RH;
-    }
-
-    public JButton getBtn04_JF039_S3_RH() {
-        return btn04_JF039_S3_RH;
-    }
-
-    public void setBtn04_JF039_S3_RH(JButton btn04_JF039_S3_RH) {
-        this.btn04_JF039_S3_RH = btn04_JF039_S3_RH;
-    }
 
     public JButton getBtn05_JF039_S3_RH() {
         return btn05_JF039_S3_RH;
@@ -147,9 +125,6 @@ public class JP039_S3_RH extends javax.swing.JPanel {
         btn08_JF039_S3_RH = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btn02_JF039_S3_RH = new javax.swing.JButton();
-        btn03_JF023_S3_RH = new javax.swing.JButton();
-        btn04_JF039_S3_RH = new javax.swing.JButton();
         btn05_JF039_S3_RH = new javax.swing.JButton();
         btn06_JF039_S3_RH = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -212,21 +187,6 @@ public class JP039_S3_RH extends javax.swing.JPanel {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 40, 170, 90));
 
-        btn02_JF039_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
-        btn02_JF039_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnVerMnesajes.png"))); // NOI18N
-        btn02_JF039_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn02_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 150, 180));
-
-        btn03_JF023_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
-        btn03_JF023_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnPrueb.png"))); // NOI18N
-        btn03_JF023_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn03_JF023_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, 150, 180));
-
-        btn04_JF039_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
-        btn04_JF039_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnCalendar.png"))); // NOI18N
-        btn04_JF039_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn04_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 160, 180));
-
         btn05_JF039_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn05_JF039_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnPerfil.png"))); // NOI18N
         btn05_JF039_S3_RH.setBorderPainted(false);
@@ -235,7 +195,7 @@ public class JP039_S3_RH extends javax.swing.JPanel {
         btn06_JF039_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn06_JF039_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnSoli.png"))); // NOI18N
         btn06_JF039_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn06_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 270, 150, 180));
+        jPanel1.add(btn06_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 270, 150, 180));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel3.setText("¿Qué desea realizar hoy secretari@?");
@@ -243,18 +203,15 @@ public class JP039_S3_RH extends javax.swing.JPanel {
 
         btn09_JF039_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn09_JF039_S3_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        btn09_JF039_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pdf2.png"))); // NOI18N
+        btn09_JF039_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnPacientes.png"))); // NOI18N
         btn09_JF039_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn09_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 80, 80));
+        jPanel1.add(btn09_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 160, 180));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btn02_JF039_S3_RH;
-    public javax.swing.JButton btn03_JF023_S3_RH;
-    public javax.swing.JButton btn04_JF039_S3_RH;
     public javax.swing.JButton btn05_JF039_S3_RH;
     public javax.swing.JButton btn06_JF039_S3_RH;
     public javax.swing.JButton btn08_JF039_S3_RH;

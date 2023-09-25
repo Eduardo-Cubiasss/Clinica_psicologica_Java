@@ -156,7 +156,7 @@ public class JP011_S2_RH extends javax.swing.JPanel {
 
         PanelAnuncioView.setBackground(new java.awt.Color(255, 255, 255));
         PanelAnuncioView.setAutoscrolls(true);
-        PanelAnuncioView.setLayout(new java.awt.GridBagLayout());
+        PanelAnuncioView.setLayout(new javax.swing.BoxLayout(PanelAnuncioView, javax.swing.BoxLayout.LINE_AXIS));
 
         Btn3_JF011_S2_RH.setBackground(new java.awt.Color(255, 255, 255));
         Btn3_JF011_S2_RH.setForeground(new java.awt.Color(255, 255, 255));

@@ -67,6 +67,14 @@ public class JP027_S3_RH extends javax.swing.JPanel {
         this.jPanel1 = jPanel1;
     }
 
+    public JPanel getContenedordeDocs() {
+        return ContenedordeDocs;
+    }
+
+    public void setContenedordeDocs(JPanel ContenedordeDocs) {
+        this.ContenedordeDocs = ContenedordeDocs;
+    }
+    
     
     
     
@@ -101,7 +109,7 @@ public class JP027_S3_RH extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         Btn03_JF027_S3_RH = new javax.swing.JButton();
         Btn02_JF027_S3_RH = new javax.swing.JButton();
-        JP01_JP027_S3_RH = new javax.swing.JPanel();
+        ContenedordeDocs = new javax.swing.JPanel();
 
         setMaximumSize(new java.awt.Dimension(1120, 640));
         setMinimumSize(new java.awt.Dimension(1120, 640));
@@ -170,8 +178,11 @@ public class JP027_S3_RH extends javax.swing.JPanel {
             }
         });
 
-        JP01_JP027_S3_RH.setBackground(new java.awt.Color(246, 246, 246));
-        JP01_JP027_S3_RH.setName("JPviewDocs"); // NOI18N
+        ContenedordeDocs.setBackground(new java.awt.Color(246, 246, 246));
+        ContenedordeDocs.setMaximumSize(new java.awt.Dimension(964, 361));
+        ContenedordeDocs.setMinimumSize(new java.awt.Dimension(964, 361));
+        ContenedordeDocs.setName("JPviewDocs"); // NOI18N
+        ContenedordeDocs.setLayout(new java.awt.GridLayout(1, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -196,7 +207,7 @@ public class JP027_S3_RH extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(70, 70, 70)
-                .addComponent(JP01_JP027_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 964, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ContenedordeDocs, javax.swing.GroupLayout.PREFERRED_SIZE, 964, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -209,9 +220,9 @@ public class JP027_S3_RH extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel1)
                         .addComponent(Btn001_JF027_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30)
-                .addComponent(JP01_JP027_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(ContenedordeDocs, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Btn02_JF027_S3_RH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Btn03_JF027_S3_RH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -231,7 +242,7 @@ public class JP027_S3_RH extends javax.swing.JPanel {
     public javax.swing.JButton Btn001_JF027_S3_RH;
     public javax.swing.JButton Btn02_JF027_S3_RH;
     public javax.swing.JButton Btn03_JF027_S3_RH;
-    public javax.swing.JPanel JP01_JP027_S3_RH;
+    public javax.swing.JPanel ContenedordeDocs;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;

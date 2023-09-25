@@ -5,6 +5,7 @@
  */
 package ux;
 
+import Reportes.ParaReporte;
 import Ui.JP022_S3_AF;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
@@ -18,13 +19,17 @@ import javax.swing.JPanel;
 public class Estadisticas implements ActionListener{
     private JPanel JPContenido;
     private JP022_S3_AF vista22;
-     private HabilitarPaneles PanelesManager;   
-    public Estadisticas(JPanel JPContenido, JP022_S3_AF vista22, HabilitarPaneles PanelesManager)
+     private HabilitarPaneles PanelesManager;  
+      private ParaReporte reporte;
+    public Estadisticas(JPanel JPContenido, JP022_S3_AF vista22, HabilitarPaneles PanelesManager, ParaReporte reporte)
     {
         this.JPContenido = JPContenido;
         this.vista22 = vista22;
         this.PanelesManager = PanelesManager;    
         this.vista22.getBtn001_JF22_S3_AF().addActionListener(this);
+        this.vista22.getBtn1().addActionListener(this);
+        this.vista22.getBtn2().addActionListener(this);
+        this.reporte = reporte;
     }
 
     @Override
@@ -38,6 +43,14 @@ public class Estadisticas implements ActionListener{
                 JPContenido.repaint();
                 PanelesManager.restaurarPanelEliminado();
             //Botón para volver un panel anterior (Al)
+        }
+        else if(e.getSource() == vista22.getBtn1())
+        {
+        reporte.mostrarReporteCantArticulo();
+        }
+        else if(e.getSource() == vista22.getBtn2())
+        {
+        reporte.mostrarReporteContPermisos();
         }
     }
     

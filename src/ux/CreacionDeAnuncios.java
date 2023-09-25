@@ -24,8 +24,10 @@ public class CreacionDeAnuncios implements ActionListener{
       private Procesos_almacenados procesos;
       private AnunciosActuales AnunciosController;
       private Anuncios modelAnuncio;
+      private EliminarAnunciosActuales AnuncioControllerEli;
    
-    public CreacionDeAnuncios(JPanel JPContenido, JP006_S2_AF vista06, HabilitarPaneles PanelesManager, AnunciosActuales AnunciosController, Anuncios modelAnuncio, Procesos_almacenados procesos)
+    public CreacionDeAnuncios(JPanel JPContenido, JP006_S2_AF vista06, HabilitarPaneles PanelesManager, AnunciosActuales AnunciosController, Anuncios modelAnuncio, Procesos_almacenados procesos,
+            EliminarAnunciosActuales AnuncioControllerEli)
     {
         this.procesos = procesos;
         this.JPContenido = JPContenido;
@@ -33,6 +35,7 @@ public class CreacionDeAnuncios implements ActionListener{
         this.PanelesManager = PanelesManager;        
         this.AnunciosController = AnunciosController;
         this.modelAnuncio = modelAnuncio;
+        this.AnuncioControllerEli = AnuncioControllerEli;
         this.vista06.getBtn001_JF006_S2_AF().addActionListener(this);
         this.vista06.getBtn2_JF006_S2_AF().addActionListener(this);
         this.vista06.getBtn3_JF006_S2_AF().addActionListener(this);
@@ -63,6 +66,7 @@ public class CreacionDeAnuncios implements ActionListener{
         }
         else if (e.getSource() == vista06.getBtn3_JF006_S2_AF())
         {
+            procesos.GenerarAnunciosEli(modelAnuncio, AnuncioControllerEli);
             PanelesManager.copiaPanel("JP006_S2_AF");
                 JPContenido.remove(vista06);
                 ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelEliminarAnunciosActuales");
