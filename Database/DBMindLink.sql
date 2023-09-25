@@ -5,7 +5,6 @@ go
 
 */
 
-
 Create database dbMindLink
 go
 
@@ -20,6 +19,36 @@ Imagen image,
 Fecha date,
 IDTerapeuta int
 );
+
+create table TbCantidadArticulo(
+IDCantArticulo int identity (1,1) primary key,
+cantArticulo int,
+IDTerapeuta INT,
+IDArticulo int
+);
+
+Insert into TbCantidadArticulo (cantArticulo, IDTerapeuta)
+values
+	(12,1),
+	(9,2),
+	(4,3),
+	(6,4),
+	(2,5);
+
+create table TbContPermisos(
+IDContPermiso int identity (1,1) primary key,
+nombre varchar(50),
+contAceptado int,
+IDPermiso int
+);	
+
+Insert into TbContPermisos (nombre, contAceptado)
+values
+	('Exequiel',4),
+	('Chris',3),
+	('Rebeca',10),
+	('Juan',12),
+	('Dios',14);
 
 ALTER TABLE TbArticulos
 DROP COLUMN Imagen;
@@ -136,6 +165,7 @@ ADD FotoPerfil varbinary(max);
 
 Select * from TbUsuarios;
 Select * from TbSecretaria;
+
 CREATE table TbContactos(
 IDContacto int identity(1,1) primary key,
 Correo varchar(300),
@@ -339,6 +369,12 @@ Foreign key (IDTerapeuta) References TbTerapeutas(IDTerapeuta);
 Alter table TbAnuncio Add constraint fk_IDSecretaria_TbAnun
 Foreign key (IDSecretaria) References TbSecretaria(IDSecretaria);
 
+Alter table TbCantidadArticulo Add constraint fk_IDTerapeuta_TBCantArt
+Foreign key (IDTerapeuta) References TbTerapeutas(IDTerapeuta);
+
+Alter table TbCantidadArticulo Add constraint fk_IDArticulo_TBCantArt
+Foreign key (IDArticulo) References TbArticulos(IDArticulo);
+
 
 /*
 Hasta aquí va bien (ya lo probe)
@@ -497,6 +533,8 @@ Foreign key (IDSecretaria) references TbSecretaria(IDSecretaria);
 ALTER TABLE TbPermisos Add constraint fk_IDTerpeuta_Permiso
 Foreign key (IDTerpeuta) references TbTerapeutas(IDTerapeuta);
 
+alter table TbContPermisos add constraint fk_idpermiso_contpermi
+foreign key (IDPermiso) references TbPermisos(IDPermiso);
 /*
 Aqui empieza lo de cascade on delete
 */

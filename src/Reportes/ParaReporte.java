@@ -93,5 +93,35 @@ public class ParaReporte {
             ex.getMessage();
         }
     }
+       
+       public void mostrarReporteCantArticulo() {
+        try {
+            JasperReport report = (JasperReport) JRLoader.loadObject(getClass().getResource("/Vista/ReporteCantArticulo.jasper"));
+            JasperPrint jprint = JasperFillManager.fillReport(report, null, ConnectionSQL.getConexion());
+
+            JasperViewer view = new JasperViewer(jprint, false);
+            view.setTitle("Contador de pruebas");
+            view.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+            view.setVisible(true);
+
+        } catch (JRException ex) {
+            ex.getMessage();
+        }
+    }
+       
+        public void mostrarReporteContPermisos() {
+        try {
+            JasperReport report = (JasperReport) JRLoader.loadObject(getClass().getResource("/Vista/ReporteContPermisos.jasper"));
+            JasperPrint jprint = JasperFillManager.fillReport(report, null, ConnectionSQL.getConexion());
+
+            JasperViewer view = new JasperViewer(jprint, false);
+            view.setTitle("Contador de permisos");
+            view.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+            view.setVisible(true);
+
+        } catch (JRException ex) {
+            ex.getMessage();
+        }
+    }
     
 }
