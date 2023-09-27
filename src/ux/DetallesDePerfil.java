@@ -24,8 +24,9 @@ public class DetallesDePerfil implements ActionListener {
     private JP010_S2_AF vista10;
     private HabilitarPaneles PanelesManager;
     private Empleado modelEmpleado;
+    private Inicializador init;
 
-    public DetallesDePerfil(JPanel JPContenido, JP010_S2_AF vista10, HabilitarPaneles PanelesManager, Empleado modelEmpleado) {
+    public DetallesDePerfil(JPanel JPContenido, JP010_S2_AF vista10, HabilitarPaneles PanelesManager, Empleado modelEmpleado, Inicializador init) {
         this.JPContenido = JPContenido;
         this.vista10 = vista10;
         this.PanelesManager = PanelesManager;

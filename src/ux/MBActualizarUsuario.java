@@ -13,8 +13,9 @@ import javax.swing.JPanel;
  */
 public class MBActualizarUsuario {
     private JPanel JPContenido;
+    private Inicializador init;
     
-    public MBActualizarUsuario(JPanel JPContenido)
+    public MBActualizarUsuario(JPanel JPContenido, Inicializador init)
     {
         this.JPContenido = JPContenido;
     }

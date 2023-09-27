@@ -27,9 +27,10 @@ public class EscribirEnTuAgendaPersonal implements ActionListener{
     private Terapeutas modelTer;
     private Pacientes modelPacien;
     private Expedientes modelExp;
+    private Inicializador init;
    
     public EscribirEnTuAgendaPersonal(JPanel JPContenido, JP034_S3_AF vista34, HabilitarPaneles PanelesManager, Procesos_almacenados Procesos, 
-            Terapeutas modelTer, Pacientes modelPacien, Expedientes modelExp)
+            Terapeutas modelTer, Pacientes modelPacien, Expedientes modelExp, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista34 = vista34;

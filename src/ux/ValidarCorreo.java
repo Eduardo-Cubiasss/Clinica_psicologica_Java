@@ -32,8 +32,10 @@ public class ValidarCorreo implements ActionListener {
     private Procesos_almacenados Procesos;
     private JPanel JPContenido;
     private HabilitarPaneles PanelesManager;
+    private Inicializador init;
 
-    public ValidarCorreo(Contactos ModelContactos, JP003_S1_RH vistaJF003, Procesos_almacenados Procesos, JPanel JPContenido, HabilitarPaneles PanelesManager) {
+    public ValidarCorreo(Contactos ModelContactos, JP003_S1_RH vistaJF003, Procesos_almacenados Procesos, JPanel JPContenido, HabilitarPaneles PanelesManager,
+            Inicializador init) {
         this.ModelContactos = ModelContactos;
         this.Procesos = Procesos;
         this.vistaJF003 = vistaJF003;

@@ -38,10 +38,11 @@ public class ExpedienteDelPaciente implements ActionListener {
     private Pacientes modelPaciente;
     private AgendasPersonales modelAgendas;
     private Expedientes modelExp;
+    private Inicializador init;
 
     public ExpedienteDelPaciente(JPanel JPContenido, Pacientes modelPaciente, Usuarios modelUsers, JP031_S3_RHG vistaJP031,
             Procesos_almacenados Procesos, HabilitarPaneles PanelesManager, Contactos modelContactos, JP035_1_S3_RH vista35,
-            AgendasPersonales modelAgendas, Expedientes modelExp, JP034_S3_AF vista34) {
+            AgendasPersonales modelAgendas, Expedientes modelExp, JP034_S3_AF vista34, Inicializador init) {
         this.JPContenido = JPContenido;
         this.PanelesManager = PanelesManager;
         this.modelPaciente = modelPaciente;

@@ -19,9 +19,10 @@ public class SeccionDeComentarios implements ActionListener{
     private JPanel JPContenido;
     private JP007_S2_RH vista07;
     private HabilitarPaneles PanelesManager;   
+    private Inicializador init;
 
         
-    public SeccionDeComentarios(JPanel JPContenido, JP007_S2_RH vista07, HabilitarPaneles PanelesManager)
+    public SeccionDeComentarios(JPanel JPContenido, JP007_S2_RH vista07, HabilitarPaneles PanelesManager, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista07 = vista07;

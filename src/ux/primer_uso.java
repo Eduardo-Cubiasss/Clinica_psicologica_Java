@@ -40,10 +40,11 @@ public class primer_uso implements ActionListener {
     private Genero modelGenero;
     private Contactos modelContactos;
     private ActividadesLaborales modelActivity;
+    private Inicializador init;
 
     public primer_uso(Administrador modelAdmin, JPanel JPContenido, Usuarios modelUsers, JP0048_S3_RH vistaJP048,
             Procesos_almacenados Procesos, HabilitarPaneles PanelesManager, Genero modelGenero, Contactos modelContactos,
-            ActividadesLaborales modelActivity) {
+            ActividadesLaborales modelActivity, Inicializador init) {
         this.modelAdmin = modelAdmin;
         this.JPContenido = JPContenido;
         this.modelUsers = modelUsers;

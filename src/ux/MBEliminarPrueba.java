@@ -13,8 +13,9 @@ import javax.swing.JPanel;
  */
 public class MBEliminarPrueba {
     private JPanel JPContenido;
+    private Inicializador init;
     
-    public MBEliminarPrueba(JPanel JPContenido)
+    public MBEliminarPrueba(JPanel JPContenido, Inicializador init)
     {
         this.JPContenido = JPContenido;
     }

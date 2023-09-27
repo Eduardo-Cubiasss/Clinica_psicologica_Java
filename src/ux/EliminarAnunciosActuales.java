@@ -43,6 +43,7 @@ public class EliminarAnunciosActuales implements ActionListener {
     private HabilitarPaneles PanelesManager;
     private Procesos_almacenados procesos;
     private Anuncios adds;
+    private Inicializador init;
 
     private Icon createCircleIcon(int size, Color color) {
         return new Icon() {
@@ -138,7 +139,7 @@ public class EliminarAnunciosActuales implements ActionListener {
         }
     }
 
-    public EliminarAnunciosActuales(JPanel JPContenido, JP021_S3_RH vista21, HabilitarPaneles PanelesManager, Procesos_almacenados procesos, Anuncios adds) {
+    public EliminarAnunciosActuales(JPanel JPContenido, JP021_S3_RH vista21, HabilitarPaneles PanelesManager, Procesos_almacenados procesos, Anuncios adds, Inicializador init) {
         this.JPContenido = JPContenido;
         this.vista21 = vista21;
         this.PanelesManager = PanelesManager;

@@ -19,8 +19,9 @@ public class NuevaSolicitudDeEmpleado implements ActionListener{
     private JPanel JPContenido;
     private JP015_1_S2_RH vista15;
      private HabilitarPaneles PanelesManager;
+     private Inicializador init;
     
-    public NuevaSolicitudDeEmpleado(JPanel JPContenido, JP015_1_S2_RH vista15, HabilitarPaneles PanelesManager)
+    public NuevaSolicitudDeEmpleado(JPanel JPContenido, JP015_1_S2_RH vista15, HabilitarPaneles PanelesManager, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista15 = vista15;

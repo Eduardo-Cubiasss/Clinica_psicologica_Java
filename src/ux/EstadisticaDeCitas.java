@@ -17,8 +17,9 @@ import javax.swing.JPanel;
 public class EstadisticaDeCitas implements ActionListener{
     private JPanel JPContenido;
     private JP044_S3_AF vista44;
+    private Inicializador init;
     
-    public EstadisticaDeCitas(JPanel JPContenido, JP044_S3_AF vista44)
+    public EstadisticaDeCitas(JPanel JPContenido, JP044_S3_AF vista44, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista44 = vista44;

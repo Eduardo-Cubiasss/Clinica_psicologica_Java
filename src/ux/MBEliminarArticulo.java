@@ -13,8 +13,9 @@ import javax.swing.JPanel;
  */
 public class MBEliminarArticulo {
     private JPanel JPContenido;
+    private Inicializador init;
     
-    public MBEliminarArticulo(JPanel JPContenido)
+    public MBEliminarArticulo(JPanel JPContenido, Inicializador init)
     {
         this.JPContenido = JPContenido;
     }

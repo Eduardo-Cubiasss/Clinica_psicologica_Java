@@ -13,8 +13,9 @@ import javax.swing.JPanel;
  */
 public class FormularioInicio {
     private JPanel JPContenido;
+    private Inicializador init;
     
-    public FormularioInicio(JPanel JPContenido)
+    public FormularioInicio(JPanel JPContenido, Inicializador init)
     {
         this.JPContenido = JPContenido;
     }

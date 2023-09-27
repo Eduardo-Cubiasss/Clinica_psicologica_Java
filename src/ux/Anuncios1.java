@@ -13,8 +13,9 @@ import javax.swing.JPanel;
  */
 public class Anuncios1 {
     private JPanel JPContenido;
+    private Inicializador init;
     
-    public Anuncios1(JPanel JPContenido)
+    public Anuncios1(JPanel JPContenido, Inicializador init)
     {
         this.JPContenido = JPContenido;
     }

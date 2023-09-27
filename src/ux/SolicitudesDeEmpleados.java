@@ -31,8 +31,9 @@ public class SolicitudesDeEmpleados implements ActionListener {
     private List<Component> contenidoOriginal;
     private CardLayout cardLayout;
     private String panelActual1 = "vista14";
+    private Inicializador init;
 
-    public SolicitudesDeEmpleados(JPanel JPContenido, JP014_S2_AF vista14, HabilitarPaneles PanelesManager) {
+    public SolicitudesDeEmpleados(JPanel JPContenido, JP014_S2_AF vista14, HabilitarPaneles PanelesManager, Inicializador init) {
         this.JPContenido = JPContenido;
         this.vista14 = vista14;
         this.PanelesManager = PanelesManager;

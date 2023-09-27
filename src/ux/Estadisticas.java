@@ -21,7 +21,8 @@ public class Estadisticas implements ActionListener{
     private JP022_S3_AF vista22;
      private HabilitarPaneles PanelesManager;  
       private ParaReporte reporte;
-    public Estadisticas(JPanel JPContenido, JP022_S3_AF vista22, HabilitarPaneles PanelesManager, ParaReporte reporte)
+      private Inicializador init;
+    public Estadisticas(JPanel JPContenido, JP022_S3_AF vista22, HabilitarPaneles PanelesManager, ParaReporte reporte, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista22 = vista22;

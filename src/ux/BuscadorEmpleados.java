@@ -42,8 +42,10 @@ public class BuscadorEmpleados implements ActionListener {
     private DefaultTableModel tableModel;
     private HabilitarPaneles PanelesManager;
     private JP010_S2_AF vista10;
+    private Inicializador init;
 
-    public BuscadorEmpleados(JPanel JPContenido, JP012_S2_AF vista12, Empleado modelEmpleado, ActividadesLaborales modelactivity, Procesos_almacenados procesos, HabilitarPaneles PanelesManager, Resultado resultado, JP010_S2_AF vista10) {
+    public BuscadorEmpleados(JPanel JPContenido, JP012_S2_AF vista12, Empleado modelEmpleado, ActividadesLaborales modelactivity, Procesos_almacenados procesos, HabilitarPaneles PanelesManager, Resultado resultado, JP010_S2_AF vista10,
+            Inicializador init) {
         this.JPContenido = JPContenido;
         this.modelEmpleado = modelEmpleado;
         this.modelactivity = modelactivity;

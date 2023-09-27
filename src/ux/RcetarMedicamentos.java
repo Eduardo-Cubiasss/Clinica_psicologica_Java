@@ -23,8 +23,10 @@ public class RcetarMedicamentos implements ActionListener{
     private ParaReporte reporte;
     private RecetasMedicas modelRecetas;
     private Procesos_almacenados proceso;
+    private Inicializador init;
     
-    public RcetarMedicamentos(JPanel JPContenido, JP036_S3_AF vista36, ParaReporte reporte, RecetasMedicas modelRecetas, Procesos_almacenados proceso)
+    public RcetarMedicamentos(JPanel JPContenido, JP036_S3_AF vista36, ParaReporte reporte, RecetasMedicas modelRecetas, Procesos_almacenados proceso, 
+            Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.modelRecetas = modelRecetas;

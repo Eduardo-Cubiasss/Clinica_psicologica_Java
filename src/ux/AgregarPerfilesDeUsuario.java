@@ -37,9 +37,10 @@ public class AgregarPerfilesDeUsuario implements ActionListener {
     private Usuarios modelUsers;
     private Administrador modelAdmin;
     private Contactos modelContactos;
+    private Inicializador init;
 
     public AgregarPerfilesDeUsuario(JPanel JPContenido, Procesos_almacenados procesos, HabilitarPaneles PanelesManager, Empleado modelEmpleado, JP009_S2_RH vista09,
-            Usuarios modelUsers, Administrador modelAdmin, Contactos modelContactos) {
+            Usuarios modelUsers, Administrador modelAdmin, Contactos modelContactos, Inicializador init) {
         this.JPContenido = JPContenido;
         this.PanelesManager = PanelesManager;
         this.modelEmpleado = modelEmpleado;

@@ -25,10 +25,11 @@ public class RedactarMensaje implements ActionListener{
      private Usuarios modelUsers;
      private Incapacidades modelIncap;
      private Procesos_almacenados procesos;
+     private Inicializador init;
     
     
     public RedactarMensaje(JPanel JPContenido, JP032_S3_AF vista32,  HabilitarPaneles PanelesManager, Usuarios modelUsers, Incapacidades modelIncap,
-            Procesos_almacenados procesos)
+            Procesos_almacenados procesos, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista32 = vista32;

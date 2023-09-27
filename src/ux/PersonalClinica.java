@@ -21,8 +21,9 @@ public class PersonalClinica implements ActionListener{
     private JP008_S2_AF vista08;
     private HabilitarPaneles PanelesManager;
     private ParaReporte reporte;
+    private Inicializador init;
     
-    public PersonalClinica(JPanel JPContenido, JP008_S2_AF vista08, HabilitarPaneles PanelesManager, ParaReporte reporte)
+    public PersonalClinica(JPanel JPContenido, JP008_S2_AF vista08, HabilitarPaneles PanelesManager, ParaReporte reporte, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista08 = vista08;

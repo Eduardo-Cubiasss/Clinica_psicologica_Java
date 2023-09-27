@@ -19,10 +19,11 @@ public class CreacionDePruebas implements ActionListener{
     private JPanel JPContenido;
     private JP033_S3_RH vista33;
     private HabilitarPaneles PanelesManager;
+    private Inicializador init;
 
     
     
-    public CreacionDePruebas(JPanel JPContenido, JP033_S3_RH vista33,  HabilitarPaneles PanelesManager)
+    public CreacionDePruebas(JPanel JPContenido, JP033_S3_RH vista33,  HabilitarPaneles PanelesManager, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista33 = vista33;

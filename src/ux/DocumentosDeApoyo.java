@@ -41,6 +41,7 @@ public class DocumentosDeApoyo implements ActionListener {
     private JP027_S3_RH panel;
     private Procesos_almacenados procesos;
     private Articulos Docs;
+    private Inicializador init;
 
     private Icon createCircleIcon(int size, Color color) {
         return new Icon() {
@@ -105,7 +106,7 @@ public class DocumentosDeApoyo implements ActionListener {
     }
 
     public DocumentosDeApoyo(JPanel JPContenido, HabilitarPaneles PanelesManager, JP027_S3_RH panel, Procesos_almacenados procesos,
-            Articulos Docs) {
+            Articulos Docs, Inicializador init) {
         this.JPContenido = JPContenido;
         this.PanelesManager = PanelesManager;
         this.panel = panel;

@@ -17,8 +17,9 @@ import javax.swing.JPanel;
 public class CambiosPruebasActuales implements ActionListener{
     private JPanel JPContenido;
     private JP037_S3_RH vista37;
+    private Inicializador init;
     
-    public CambiosPruebasActuales(JPanel JPContenido, JP037_S3_RH vista37)
+    public CambiosPruebasActuales(JPanel JPContenido, JP037_S3_RH vista37, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista37 = vista37;

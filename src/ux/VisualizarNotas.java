@@ -18,9 +18,10 @@ import javax.swing.JPanel;
 public class VisualizarNotas implements ActionListener{
     private JPanel JPContenido;
     private JP035_1_S3_RH vista35;
-        private HabilitarPaneles PanelesManager;
+    private HabilitarPaneles PanelesManager;
+    private Inicializador init;
 
-    public VisualizarNotas(JPanel JPContenido, JP035_1_S3_RH vista35,HabilitarPaneles PanelesManager)
+    public VisualizarNotas(JPanel JPContenido, JP035_1_S3_RH vista35,HabilitarPaneles PanelesManager, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista35 = vista35;

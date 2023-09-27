@@ -22,12 +22,14 @@ public class Menu_Secretaria implements ActionListener {
     private HabilitarPaneles PanelesManager;
     private CardLayout cardLayout;
     private String panelActual = "vista39";
+    private Inicializador init;
     //Declarar Paneles manager
 
-    public Menu_Secretaria(JPanel JPContenido, JP039_S3_RH vista39, HabilitarPaneles PanelesManager) //Ponerlo en la clase para indicar que se espera usar
+    public Menu_Secretaria(JPanel JPContenido, JP039_S3_RH vista39, HabilitarPaneles PanelesManager, Inicializador init) //Ponerlo en la clase para indicar que se espera usar
     {
         this.JPContenido = JPContenido;
         this.vista39 = vista39;
+        this.init = init;
         this.PanelesManager = PanelesManager;
         cardLayout = (CardLayout) JPContenido.getLayout();
         //Hacer this a PanelesManager

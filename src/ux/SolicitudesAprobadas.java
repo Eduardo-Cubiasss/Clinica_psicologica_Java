@@ -19,10 +19,11 @@ public class SolicitudesAprobadas implements ActionListener{
     private JPanel JPContenido;
     private JP016_S2_AF vista16;
     private HabilitarPaneles PanelesManager;
+    private Inicializador init;
     
     
     
-    public SolicitudesAprobadas(JPanel JPContenido, JP016_S2_AF vista16, HabilitarPaneles PanelesManager)
+    public SolicitudesAprobadas(JPanel JPContenido, JP016_S2_AF vista16, HabilitarPaneles PanelesManager, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista16 = vista16;

@@ -23,7 +23,9 @@ public class DetallesDeMiPerfil implements ActionListener{
     private Usuarios modelUsers;
     private Procesos_almacenados proceso;
     private HabilitarPaneles PanelesManager;
-    public DetallesDeMiPerfil(JPanel JPContenido, JP025_S3_RH vista25, Usuarios modelUsers, Procesos_almacenados proceso, HabilitarPaneles PanelesManager)
+    private Inicializador init;
+    public DetallesDeMiPerfil(JPanel JPContenido, JP025_S3_RH vista25, Usuarios modelUsers, Procesos_almacenados proceso, HabilitarPaneles PanelesManager,
+            Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista25 = vista25;

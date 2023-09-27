@@ -17,8 +17,9 @@ import javax.swing.JPanel;
 public class SolicitudesDeIncapacidadRedactar implements ActionListener{
     private JPanel JPContenido;
     private JP047_S3_AF vista47;
+    private Inicializador init;
     
-    public SolicitudesDeIncapacidadRedactar(JPanel JPContenido, JP047_S3_AF vista47)
+    public SolicitudesDeIncapacidadRedactar(JPanel JPContenido, JP047_S3_AF vista47, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista47 = vista47;

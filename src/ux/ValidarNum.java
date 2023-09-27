@@ -13,8 +13,9 @@ import javax.swing.JPanel;
  */
 public class ValidarNum {
     private JPanel JPContenido;
+    private Inicializador init;
     
-    public ValidarNum(JPanel JPContenido)
+    public ValidarNum(JPanel JPContenido, Inicializador init)
     {
         this.JPContenido = JPContenido;
     }

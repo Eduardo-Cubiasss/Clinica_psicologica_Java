@@ -25,9 +25,10 @@ public class CreacionDeAnuncios implements ActionListener{
       private AnunciosActuales AnunciosController;
       private Anuncios modelAnuncio;
       private EliminarAnunciosActuales AnuncioControllerEli;
+      private Inicializador init;
    
     public CreacionDeAnuncios(JPanel JPContenido, JP006_S2_AF vista06, HabilitarPaneles PanelesManager, AnunciosActuales AnunciosController, Anuncios modelAnuncio, Procesos_almacenados procesos,
-            EliminarAnunciosActuales AnuncioControllerEli)
+            EliminarAnunciosActuales AnuncioControllerEli, Inicializador init)
     {
         this.procesos = procesos;
         this.JPContenido = JPContenido;

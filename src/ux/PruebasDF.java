@@ -19,8 +19,9 @@ public class PruebasDF implements ActionListener{
     private JPanel JPContenido;
     private JP045_S3_RH vista45;
     private HabilitarPaneles PanelesManager;
+    private Inicializador init;
     
-    public PruebasDF(JPanel JPContenido, JP045_S3_RH vista45, HabilitarPaneles PanelesManager)
+    public PruebasDF(JPanel JPContenido, JP045_S3_RH vista45, HabilitarPaneles PanelesManager, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista45 = vista45;

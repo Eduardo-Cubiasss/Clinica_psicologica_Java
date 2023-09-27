@@ -32,8 +32,10 @@ public class AgregarArticulo implements ActionListener {
     private Articulos modelArticulo;
     private Procesos_almacenados procesos;
     private Terapeutas modelTer;
+    private Inicializador init;
 
-    public AgregarArticulo(JPanel JPContenido, JP028_S3_AF vista28, HabilitarPaneles PanelesManager, Articulos modelArticulo, Procesos_almacenados procesos, Terapeutas modelTer) {
+    public AgregarArticulo(JPanel JPContenido, JP028_S3_AF vista28, HabilitarPaneles PanelesManager, Articulos modelArticulo, Procesos_almacenados procesos, Terapeutas modelTer,
+            Inicializador init) {
         this.JPContenido = JPContenido;
         this.vista28 = vista28;
         this.modelArticulo = modelArticulo;

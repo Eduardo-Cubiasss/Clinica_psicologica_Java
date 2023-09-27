@@ -30,8 +30,9 @@ public class ActualizarArticulo implements ActionListener {
     private Articulos modelArticulo;
     private Procesos_almacenados procesos;
     private Terapeutas modelTer;
+    private Inicializador init;
 
-    public ActualizarArticulo(JPanel JPContenido, JP030_S3_AF vista30, Articulos modelArticulo, Procesos_almacenados procesos, Terapeutas modelTer) {
+    public ActualizarArticulo(JPanel JPContenido, JP030_S3_AF vista30, Articulos modelArticulo, Procesos_almacenados procesos, Terapeutas modelTer, Inicializador init) {
         this.JPContenido = JPContenido;
         this.procesos = procesos;
         this.modelTer = modelTer;

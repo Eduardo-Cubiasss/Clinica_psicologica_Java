@@ -19,8 +19,9 @@ public class VerMensajes implements ActionListener{
     private JPanel JPContenido;
     private JP040_S3_AF vista40;
     private HabilitarPaneles PanelesManager;
+    private Inicializador init;
     
-    public VerMensajes(JPanel JPContenido, JP040_S3_AF vista40, HabilitarPaneles PanelesManager)
+    public VerMensajes(JPanel JPContenido, JP040_S3_AF vista40, HabilitarPaneles PanelesManager, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista40 = vista40;

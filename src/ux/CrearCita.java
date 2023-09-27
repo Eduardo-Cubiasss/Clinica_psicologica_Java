@@ -19,9 +19,10 @@ public class CrearCita implements ActionListener{
     private JPanel JPContenido;
     private JP043_1_S3_RH vista43;
     private HabilitarPaneles PanelesManager;
+    private Inicializador init;
 
     
-    public CrearCita(JPanel JPContenido, JP043_1_S3_RH vista43, HabilitarPaneles PanelesManager)
+    public CrearCita(JPanel JPContenido, JP043_1_S3_RH vista43, HabilitarPaneles PanelesManager, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista43 = vista43;

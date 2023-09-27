@@ -40,9 +40,10 @@ public class BuscadorPacientes implements ActionListener {
     private Usuarios modelUsuers;
     private Contactos modelContacto;
     private JP031_S3_RHG vistaJP031;
+    private Inicializador init;
 
     public BuscadorPacientes(JPanel JPContenido, Pacientes modelPacientes, JP024_S3_AF vistaJP024, HabilitarPaneles PanelesManager, Procesos_almacenados procesos,
-            Resultado resultado, Usuarios modelUsuers, Contactos modelContacto, JP031_S3_RHG vistaJP031) {
+            Resultado resultado, Usuarios modelUsuers, Contactos modelContacto, JP031_S3_RHG vistaJP031, Inicializador init) {
         this.JPContenido = JPContenido;
         this.modelPacientes = modelPacientes;
         this.PanelesManager = PanelesManager;

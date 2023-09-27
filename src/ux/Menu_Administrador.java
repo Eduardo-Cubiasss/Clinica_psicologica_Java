@@ -22,10 +22,12 @@ public class Menu_Administrador implements ActionListener {
     private JP004_S2_AF panel;
     private PanelHistory panelHistory;
     private HabilitarPaneles PanelesManager;
+    private Inicializador Init;
 
-    public Menu_Administrador(JPanel JPContenido, JP004_S2_AF panel, HabilitarPaneles PanelesManager) {
+    public Menu_Administrador(JPanel JPContenido, JP004_S2_AF panel, HabilitarPaneles PanelesManager, Inicializador Init) {
         this.JPContenido = JPContenido;
         this.panel = panel;
+        this.Init = Init;
         this.PanelesManager = PanelesManager;
 
         this.panel.btn01_JF005_S2_AF.addActionListener(this);

@@ -17,8 +17,9 @@ import javax.swing.JPanel;
 public class VerSolicitudRechazada implements ActionListener{
     private JPanel JPContenido;
     private JP019_1_S2_RH vista19;
+    private Inicializador init;
     
-    public VerSolicitudRechazada(JPanel JPContenido, JP019_1_S2_RH vista19)
+    public VerSolicitudRechazada(JPanel JPContenido, JP019_1_S2_RH vista19, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista19 = vista19;

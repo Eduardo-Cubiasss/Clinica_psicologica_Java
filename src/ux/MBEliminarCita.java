@@ -13,8 +13,9 @@ import javax.swing.JPanel;
  */
 public class MBEliminarCita {
     private JPanel JPContenido;
+    private Inicializador init;
     
-    public MBEliminarCita(JPanel JPContenido)
+    public MBEliminarCita(JPanel JPContenido, Inicializador init)
     {
         this.JPContenido = JPContenido;
     }

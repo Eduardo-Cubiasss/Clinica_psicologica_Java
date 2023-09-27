@@ -33,8 +33,10 @@ public class RecGmail implements ActionListener {
     private Procesos_almacenados Procesos;
     private HabilitarPaneles PanelesManager;
     private JPanel JPContenido;
+    private Inicializador init;
 
-    public RecGmail(Usuarios modelUsers, Contactos ModelContactos, JP003_2_S1_RH vistaJF003, Procesos_almacenados Procesos, JPanel JPContenido, HabilitarPaneles PanelesManager) {
+    public RecGmail(Usuarios modelUsers, Contactos ModelContactos, JP003_2_S1_RH vistaJF003, Procesos_almacenados Procesos, JPanel JPContenido, HabilitarPaneles PanelesManager,
+            Inicializador init) {
         this.modelUsers = modelUsers;
         this.ModelContactos = ModelContactos;
         this.vistaJF003 = vistaJF003;

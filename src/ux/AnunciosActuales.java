@@ -47,6 +47,7 @@ public class AnunciosActuales implements ActionListener {
     private Anuncios modelAnuncios;
     private Procesos_almacenados procesos;
     private JScrollPane scrollPane;
+    private Inicializador init;
 
     private ImageIcon createResizedImageIcon(byte[] imageData, int width, int height) throws IOException {
         BufferedImage originalImage = ImageIO.read(new ByteArrayInputStream(imageData));
@@ -99,7 +100,7 @@ public class AnunciosActuales implements ActionListener {
         }
     }
 
-    public AnunciosActuales(JPanel JPContenido, JP011_S2_RH vista11, HabilitarPaneles PanelesManager, Anuncios modelAnuncios, Procesos_almacenados procesos) {
+    public AnunciosActuales(JPanel JPContenido, JP011_S2_RH vista11, HabilitarPaneles PanelesManager, Anuncios modelAnuncios, Procesos_almacenados procesos, Inicializador init) {
         this.JPContenido = JPContenido;
         this.vista11 = vista11;
         this.modelAnuncios = modelAnuncios;

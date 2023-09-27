@@ -17,8 +17,9 @@ import javax.swing.JPanel;
 public class VerSolicitudAprobada implements ActionListener{
     private JPanel JPContenido;
     private JP017_1_S2_RH vista17;
+    private Inicializador init;
     
-    public VerSolicitudAprobada(JPanel JPContenido, JP017_1_S2_RH vista17)
+    public VerSolicitudAprobada(JPanel JPContenido, JP017_1_S2_RH vista17, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista17 = vista17;

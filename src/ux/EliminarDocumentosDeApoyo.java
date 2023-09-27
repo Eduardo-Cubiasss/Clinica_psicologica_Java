@@ -19,8 +19,9 @@ public class EliminarDocumentosDeApoyo implements ActionListener{
     private JPanel JPContenido;
     private JP029_S3_RH vista29;
              private HabilitarPaneles PanelesManager;
+             private Inicializador init;
 
-    public EliminarDocumentosDeApoyo(JPanel JPContenido, JP029_S3_RH vista29, HabilitarPaneles PanelesManager)
+    public EliminarDocumentosDeApoyo(JPanel JPContenido, JP029_S3_RH vista29, HabilitarPaneles PanelesManager, Inicializador init)
     {
         this.JPContenido = JPContenido;
         this.vista29 = vista29;

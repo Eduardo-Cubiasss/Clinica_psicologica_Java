@@ -13,8 +13,9 @@ import javax.swing.JPanel;
  */
 public class MBEliminarUsuario {
     private JPanel JPContenido;
+    private Inicializador init;
     
-    public MBEliminarUsuario(JPanel JPContenido)
+    public MBEliminarUsuario(JPanel JPContenido, Inicializador init)
     {
         this.JPContenido = JPContenido;
     }
