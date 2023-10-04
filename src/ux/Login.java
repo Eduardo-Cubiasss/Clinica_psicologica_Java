@@ -106,16 +106,11 @@ public class Login implements ActionListener {
         if (e.getSource() == panelRegistro.getBtn2_JF001_S1_AF()) {
             accion();
         } else if (e.getSource() == panelRegistro.getBtn3_JF001_S1_AF()) {
-            JPContenido.remove(panelRegistro);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
+            init.abrirPanel("panelRegistro");
         } else if (e.getSource() == panelRegistro.getBtn4_JF001_S1_AF()) {
             //PanelesManager.eliminarPanel("panelInicioSesion");
-            PanelesManager.copiaPanel("JP001_S1_AFP");
-            JPContenido.remove(panelRegistro);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelvalCorreo");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            init.abrirPanel("panelvalCorreo");
+         
         }
     }
 
@@ -170,46 +165,28 @@ public class Login implements ActionListener {
                 case 1:
                     if (Primeruso == 1) {
                         Procesos.SaberID(modelUsers, modelAdmin);
-                        PanelesManager.copiaPanel("JP001_S1_AFP");
-                        JPContenido.remove(panelRegistro);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPrimerUso");
+                        init.abrirPanel("panelPrimerUso");
                     } else {
                         Procesos.SaberID(modelUsers, modelAdmin);
-                        PanelesManager.copiaPanel("JP001_S1_AFP");
-                        JPContenido.remove(panelRegistro);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
+                        init.abrirPanel("panelMenuAdmin");
                     }
                     break;
                 case 2:
                     if (Primeruso == 1) {
                         Procesos.SaberIDSecre(modelUsers, ModelSecret);
-                        PanelesManager.copiaPanel("JP001_S1_AFP");
-                        JPContenido.remove(panelRegistro);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPrimerUso");
-                        System.out.println("Este es el IDSecretaria" + modelUsers.getIDUsuario());
+                       init.abrirPanel("panelPrimerUso");
                     } else {
                         Procesos.SaberIDSecre(modelUsers, ModelSecret);
-                        PanelesManager.copiaPanel("JP001_S1_AFP");
-                        JPContenido.remove(panelRegistro);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
-                        System.out.println("Este es el IDSecretaria" + modelUsers.getIDUsuario());
+                        init.abrirPanel("panelMenuSec");
                     }
                     break;
                 case 3:
                     if (Primeruso == 1) {
                         Procesos.SaberIDTer(modelUsers, modelTerap);
-                        System.out.println("Entra al primer uso de terapeuta");
-                        PanelesManager.copiaPanel("JP001_S1_AFP");
-                        JPContenido.remove(panelRegistro);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPrimerUso");
-                        System.out.println("Este es el IDTerapeuta " + modelTerap.getIDTerapeuta());
+                        init.abrirPanel("panelPrimerUso");
                     } else {
                         Procesos.SaberIDTer(modelUsers, modelTerap);
-                        System.out.println("Entra al que abre el menu terapeuta");
-                        PanelesManager.copiaPanel("JP001_S1_AFP");
-                        JPContenido.remove(panelRegistro);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
-                        System.out.println("Este es el IDTerapeuta " + modelTerap.getIDTerapeuta());
+                        init.abrirPanel("panelMenuTp");
                     }
                     break;
                 default:

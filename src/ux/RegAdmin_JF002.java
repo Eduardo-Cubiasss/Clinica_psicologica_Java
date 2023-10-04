@@ -67,20 +67,10 @@ public class RegAdmin_JF002 implements ActionListener {
             // Agrega el panel actual al historial antes de cambiar de panel
             
             PanelesManager.copiaPanel("JP002_S1_RHP");
-            JPContenido.remove(vistaJP002);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
-            System.out.println("Llega hasata aqui, abre panelMenuAdmin");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            init.abrirPanel("panelMenuAdmin");
 
         } else if (e.getSource() == vistaJP002.getBtn2_JF002_S1_RH()) {
-            PanelesManager.copiaPanel("JP002_S1_RHP");
-            
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido,"panelInicioSesion");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            init.abrirPanel("panelInicioSesion");
         }
     }
 

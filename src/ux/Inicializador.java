@@ -79,10 +79,12 @@ import Ui.JP044_S3_AF;
 import Ui.JP045_S3_RH;
 import Ui.JP047_S3_AF;
 import java.awt.CardLayout;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.JPanel;
 import java.util.Stack;
+import javax.swing.JFrame;
 
 public class Inicializador {
 
@@ -172,10 +174,10 @@ public class Inicializador {
     private TipoUsuarios TipoUser;
     private Usuarios modelUsers;
     private JPanel panelActual = null;
-
+    private Map<String, JPanel> paneles = new HashMap<>();
     private Stack<JPanel> historialPaneles = new Stack<>();
 
-    public Inicializador(JF_000_S7_GU vista, String panelNombre) {
+    public Inicializador(JF_000_S7_GU vista) {
         this.vista = vista;
         panelHistory = new PanelHistory();
         habilitarPaneles = new HabilitarPaneles();
@@ -212,7 +214,7 @@ public class Inicializador {
         Hints hint = new Hints();
 
         // Paneles
-        SplashScreen panelSplash = new SplashScreen(vista.JPContenido);
+        SplashScreen panelSplash = new SplashScreen(vista.JPContenido, this);
         JP001_S1_AFP panelInicioSesion = new JP001_S1_AFP(controladorLogin, controladorPrimerUso);
         JP002_S1_RHP panelRegistro = new JP002_S1_RHP(controladorRegistrar);
         JP004_S2_AF panelMenuAdmin = new JP004_S2_AF(controladorMenuAd);
@@ -263,7 +265,7 @@ public class Inicializador {
         JP045_S3_RH panelPruebasDF = new JP045_S3_RH(controladorPruebasDF);
         JP047_S3_AF panelSolicitudesDeIncapacidadRedactar = new JP047_S3_AF(controladorSolicitudesDeIncapacidadRedactar);
         JP0048_S3_RH panelPrimerUso = new JP0048_S3_RH(controladorPrimerUso);
-        vista.JPContenido.add(panelSplash, "panelSplash");
+        // vista.JPContenido.add(panelSplash, "panelSplash");
 
         // Controladores
         controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion, panelHistory, habilitarPaneles, vista, panelPrimerUso, modelGenero, ModelContactos, modelActivity, modelAdmin, hint, panelDetallesDeMiPerfil, Terapeutas, modelEmpleado, modelClinica, Secretarias,
@@ -275,7 +277,7 @@ public class Inicializador {
         controladorCorreoenviado = new RecGmail(modelUsers, ModelContactos, panelCorreoenviado, Procesos, vista.JPContenido, habilitarPaneles, this);
         controladorRec_tel1 = new ValidarNum(vista.JPContenido, this);
         controladorAnuncios1 = new Anuncios1(vista.JPContenido, this);
-        controladorvisualizarnotas = new VisualizarNotas(vista.JPContenido, PanelvisualizarNota, habilitarPaneles, this);  
+        controladorvisualizarnotas = new VisualizarNotas(vista.JPContenido, PanelvisualizarNota, habilitarPaneles, this);
         controladorDocumentosView = new DocumentosDeApoyo(vista.JPContenido, habilitarPaneles, panelDocumentosView, Procesos, Articulo, this);
         controladorMenuTp = new Menu_Terapeuta(vista.JPContenido, panelMenuTp, habilitarPaneles, controladorDocumentosView, Articulo, Procesos, this);
         controladorSeccionDeComentarios = new SeccionDeComentarios(vista.JPContenido, panelSeccionDeComentarios, habilitarPaneles, this);
@@ -317,221 +319,70 @@ public class Inicializador {
         controladorSolicitudesDeIncapacidadRedactar = new SolicitudesDeIncapacidadRedactar(vista.JPContenido, panelSolicitudesDeIncapacidadRedactar, this);
         controladorFormularioInicio = new FormularioInicio(vista.JPContenido, this);
         controladorPrimerUso = new primer_uso(modelAdmin, vista.JPContenido, modelUsers, panelPrimerUso, Procesos, habilitarPaneles, modelGenero, ModelContactos, modelActivity, this);
-
         // Agregar paneles a la vista
-
-switch (panelNombre) {
-    case "panelSplash":
-        vista.JPContenido.add(panelSplash, "panelSplash");
-        break;
-    case "panelInicioSesion":
-        habilitarPaneles.agregarPanel("panelInicioSesion", panelInicioSesion);
-        vista.JPContenido.add(panelInicioSesion, "panelInicioSesion");
-        break;
-    case "panelRegistro":
-        habilitarPaneles.agregarPanel("panelRegistro", panelRegistro);
-        vista.JPContenido.add(panelRegistro, "panelRegistro");
-        break;
-    case "panelMenuAdmin":
-        habilitarPaneles.agregarPanel("panelMenuAdmin", panelMenuAdmin);
-        vista.JPContenido.add(panelMenuAdmin, "panelMenuAdmin");
-        break;
-    case "panelvalCorreo":
-        habilitarPaneles.agregarPanel("panelvalCorreo", panelvalCorreo);
-        vista.JPContenido.add(panelvalCorreo, "panelvalCorreo");
-        break;
-    case "panelCorreoenviado":
-        habilitarPaneles.agregarPanel("panelCorreoenviado", panelCorreoenviado);
-        vista.JPContenido.add(panelCorreoenviado, "panelCorreoenviado");
-        break;
-    case "panelRec1Telefono":
-        habilitarPaneles.agregarPanel("panelRec1Telefono", panelRec1Telefono);
-        vista.JPContenido.add(panelRec1Telefono, "panelRec1Telefono");
-        break;
-    case "panelMenuTp":
-        habilitarPaneles.agregarPanel("panelMenuTp", panelMenuTp);
-        vista.JPContenido.add(panelMenuTp, "panelMenuTp");
-        break;
-    case "panelMenuSec":
-        habilitarPaneles.agregarPanel("panelMenuSec", panelMenuSec);
-        vista.JPContenido.add(panelMenuSec, "panelMenuSec");
-        break;
-    case "panelVisualizarNotas":
-        habilitarPaneles.agregarPanel("panelVisualizarNotas", panelVisualizarNotas);
-        vista.JPContenido.add(panelVisualizarNotas, "panelVisualizarNotas");
-        break;
-    case "panelDocumentosView":
-        habilitarPaneles.agregarPanel("panelDocumentosView", panelDocumentosView);
-        vista.JPContenido.add(panelDocumentosView, "panelDocumentosView");
-        break;
-    case "panelCreacionDeAnuncios":
-        habilitarPaneles.agregarPanel("panelCreacionDeAnuncios", panelCreacionDeAnuncios);
-        vista.JPContenido.add(panelCreacionDeAnuncios, "panelCreacionDeAnuncios");
-        break;
-    case "panelSeccionDeComentarios":
-        habilitarPaneles.agregarPanel("panelSeccionDeComentarios", panelSeccionDeComentarios);
-        vista.JPContenido.add(panelSeccionDeComentarios, "panelSeccionDeComentarios");
-        break;
-    case "panelPersonalClinica":
-        habilitarPaneles.agregarPanel("panelPersonalClinica", panelPersonalClinica);
-        vista.JPContenido.add(panelPersonalClinica, "panelPersonalClinica");
-        break;
-    case "panelAgregarPerfilesDeUsuario":
-        habilitarPaneles.agregarPanel("panelAgregarPerfilesDeUsuario", panelAgregarPerfilesDeUsuario);
-        vista.JPContenido.add(panelAgregarPerfilesDeUsuario, "panelAgregarPerfilesDeUsuario");
-        break;
-    case "panelDetallesDePerfil":
-        habilitarPaneles.agregarPanel("panelDetallesDePerfil", panelDetallesDePerfil);
-        vista.JPContenido.add(panelDetallesDePerfil, "panelDetallesDePerfil");
-        break;
-    case "panelAnunciosActuales":
-        habilitarPaneles.agregarPanel("panelAnunciosActuales", panelAnunciosActuales);
-        vista.JPContenido.add(panelAnunciosActuales, "panelAnunciosActuales");
-        break;
-    case "panelMBActualizarUsuario":
-        habilitarPaneles.agregarPanel("panelMBActualizarUsuario", panelMBActualizarUsuario);
-        vista.JPContenido.add(panelMBActualizarUsuario, "panelMBActualizarUsuario");
-        break;
-    case "panelMBEliminarUsuario":
-        habilitarPaneles.agregarPanel("panelMBEliminarUsuario", panelMBEliminarUsuario);
-        vista.JPContenido.add(panelMBEliminarUsuario, "panelMBEliminarUsuario");
-        break;
-    case "panelBuscadorDeEmpleados":
-        habilitarPaneles.agregarPanel("panelBuscadorDeEmpleados", panelBuscadorDeEmpleados);
-        vista.JPContenido.add(panelBuscadorDeEmpleados, "panelBuscadorDeEmpleados");
-        break;
-    case "panelSolicitudesDeEmpleados":
-        habilitarPaneles.agregarPanel("panelSolicitudesDeEmpleados", panelSolicitudesDeEmpleados);
-        vista.JPContenido.add(panelSolicitudesDeEmpleados, "panelSolicitudesDeEmpleados");
-        break;
-    case "panelNuevaSolicitudDeEmpleado":
-        habilitarPaneles.agregarPanel("panelNuevaSolicitudDeEmpleado", panelNuevaSolicitudDeEmpleado);
-        vista.JPContenido.add(panelNuevaSolicitudDeEmpleado, "panelNuevaSolicitudDeEmpleado");
-        break;
-    case "panelSolicitudAprobada":
-        habilitarPaneles.agregarPanel("panelSolicitudAprobada", panelSolicitudAprobada);
-        vista.JPContenido.add(panelSolicitudAprobada, "panelSolicitudAprobada");
-        break;
-    case "panelSolicitudAprobadaMensaje":
-        habilitarPaneles.agregarPanel("panelSolicitudAprobadaMensaje", panelSolicitudAprobadaMensaje);
-        vista.JPContenido.add(panelSolicitudAprobadaMensaje, "panelSolicitudAprobadaMensaje");
-        break;
-    case "panelSolicitudesAprobadas2":
-        habilitarPaneles.agregarPanel("panelSolicitudesAprobadas2", panelSolicitudesAprobadas2);
-        vista.JPContenido.add(panelSolicitudesAprobadas2, "panelSolicitudesAprobadas2");
-        break;
-    case "panelSolicitudesRechazadas":
-        habilitarPaneles.agregarPanel("panelSolicitudesRechazadas", panelSolicitudesRechazadas);
-        vista.JPContenido.add(panelSolicitudesRechazadas, "panelSolicitudesRechazadas");
-        break;
-    case "panelEliminarAnunciosActuales":
-        habilitarPaneles.agregarPanel("panelEliminarAnunciosActuales", panelEliminarAnunciosActuales);
-        vista.JPContenido.add(panelEliminarAnunciosActuales, "panelEliminarAnunciosActuales");
-        break;
-    case "panelEstadisticas":
-        habilitarPaneles.agregarPanel("panelEstadisticas", panelEstadisticas);
-        vista.JPContenido.add(panelEstadisticas, "panelEstadisticas");
-        break;
-    case "panelBuscadorPacientes":
-        habilitarPaneles.agregarPanel("panelBuscadorPacientes", panelBuscadorPacientes);
-        vista.JPContenido.add(panelBuscadorPacientes, "panelBuscadorPacientes");
-        break;
-    case "panelDetallesDeMiPerfil":
-        habilitarPaneles.agregarPanel("panelDetallesDeMiPerfil", panelDetallesDeMiPerfil);
-        vista.JPContenido.add(panelDetallesDeMiPerfil, "panelDetallesDeMiPerfil");
-        break;
-    case "panelAgregarArticulo":
-        habilitarPaneles.agregarPanel("panelAgregarArticulo", panelAgregarArticulo);
-        vista.JPContenido.add(panelAgregarArticulo, "panelAgregarArticulo");
-        break;
-    case "panelMBEliminarArticulo":
-        habilitarPaneles.agregarPanel("panelMBEliminarArticulo", panelMBEliminarArticulo);
-        vista.JPContenido.add(panelMBEliminarArticulo, "panelMBEliminarArticulo");
-        break;
-    case "panelEliminarDocumentosDeApoyo":
-        habilitarPaneles.agregarPanel("panelEliminarDocumentosDeApoyo", panelEliminarDocumentosDeApoyo);
-        vista.JPContenido.add(panelEliminarDocumentosDeApoyo, "panelEliminarDocumentosDeApoyo");
-        break;
-    case "panelActualizarArticulo":
-        habilitarPaneles.agregarPanel("panelActualizarArticulo", panelActualizarArticulo);
-        vista.JPContenido.add(panelActualizarArticulo, "panelActualizarArticulo");
-        break;
-    case "panelExpedienteDelPaciente":
-        habilitarPaneles.agregarPanel("panelExpedienteDelPaciente", panelExpedienteDelPaciente);
-        vista.JPContenido.add(panelExpedienteDelPaciente, "panelExpedienteDelPaciente");
-        break;
-    case "panelRedactarMensaje":
-        habilitarPaneles.agregarPanel("panelRedactarMensaje", panelRedactarMensaje);
-        vista.JPContenido.add(panelRedactarMensaje, "panelRedactarMensaje");
-        break;
-    case "panelCreacionDePruebas":
-        habilitarPaneles.agregarPanel("panelCreacionDePruebas", panelCreacionDePruebas);
-        vista.JPContenido.add(panelCreacionDePruebas, "panelCreacionDePruebas");
-        break;
-    case "panelEscribirEnTuAgendaPersonal":
-        habilitarPaneles.agregarPanel("panelEscribirEnTuAgendaPersonal", panelEscribirEnTuAgendaPersonal);
-        vista.JPContenido.add(panelEscribirEnTuAgendaPersonal, "panelEscribirEnTuAgendaPersonal");
-        break;
-    case "panelRecetarMedicamentos":
-        habilitarPaneles.agregarPanel("panelRecetarMedicamentos", panelRecetarMedicamentos);
-        vista.JPContenido.add(panelRecetarMedicamentos, "panelRecetarMedicamentos");
-        break;
-    case "PanelPruebasActualesCambios":
-        habilitarPaneles.agregarPanel("PanelPruebasActualesCambios", PanelPruebasActualesCambios);
-        vista.JPContenido.add(PanelPruebasActualesCambios, "PanelPruebasActualesCambios");
-        break;
-    case "panelMBEliminarPruebas":
-        habilitarPaneles.agregarPanel("panelMBEliminarPruebas", panelMBEliminarPruebas);
-        vista.JPContenido.add(panelMBEliminarPruebas, "panelMBEliminarPruebas");
-        break;
-    case "panelVerMensaje":
-        habilitarPaneles.agregarPanel("panelVerMensaje", panelVerMensaje);
-        vista.JPContenido.add(panelVerMensaje, "panelVerMensaje");
-        break;
-    case "panelVerMensajeCH":
-        habilitarPaneles.agregarPanel("panelVerMensajeCH", panelVerMensajeCH);
-        vista.JPContenido.add(panelVerMensajeCH, "panelVerMensajeCH");
-        break;
-    case "panelMBEliminarCita":
-        habilitarPaneles.agregarPanel("panelMBEliminarCita", panelMBEliminarCita);
-        vista.JPContenido.add(panelMBEliminarCita, "panelMBEliminarCita");
-        break;
-    case "panelCrearCita":
-        habilitarPaneles.agregarPanel("panelCrearCita", panelCrearCita);
-        vista.JPContenido.add(panelCrearCita, "panelCrearCita");
-        break;
-    case "panelEstadisticaDeCitas":
-        habilitarPaneles.agregarPanel("panelEstadisticaDeCitas", panelEstadisticaDeCitas);
-        vista.JPContenido.add(panelEstadisticaDeCitas, "panelEstadisticaDeCitas");
-        break;
-    case "panelPruebasDF":
-        habilitarPaneles.agregarPanel("panelPruebasDF", panelPruebasDF);
-        vista.JPContenido.add(panelPruebasDF, "panelPruebasDF");
-        break;
-    case "panelSolicitudesDeIncapacidadRedactar":
-        habilitarPaneles.agregarPanel("panelSolicitudesDeIncapacidadRedactar", panelSolicitudesDeIncapacidadRedactar);
-        vista.JPContenido.add(panelSolicitudesDeIncapacidadRedactar, "panelSolicitudesDeIncapacidadRedactar");
-        break;
-    case "panelPrimerUso":
-        habilitarPaneles.agregarPanel("panelPrimerUso", panelPrimerUso);
-        vista.JPContenido.add(panelPrimerUso, "panelPrimerUso");
-        break;
-    default:
-        // Si el panel no se encuentra en la lista, realiza alguna acción por defecto o muestra un mensaje de error
-        break;
-}
-        
-        vista.JPContenido.add(panelSplash, "panelSplash");
-
+        paneles.put("panelSplash", panelSplash);
+        paneles.put("panelInicioSesion", panelInicioSesion);
+        paneles.put("panelRegistro", panelRegistro);
+        paneles.put("panelMenuAdmin", panelMenuAdmin);
+        paneles.put("panelvalCorreo", panelvalCorreo);
+        paneles.put("panelCorreoenviado", panelCorreoenviado);
+        paneles.put("panelRec1Telefono", panelRec1Telefono);
+        paneles.put("panelMenuTp", panelMenuTp);
+        paneles.put("panelMenuSec", panelMenuSec);
+        paneles.put("panelVisualizarNotas", panelVisualizarNotas);
+        paneles.put("panelDocumentosView", panelDocumentosView);
+        paneles.put("panelCreacionDeAnuncios", panelCreacionDeAnuncios);
+        paneles.put("panelSeccionDeComentarios", panelSeccionDeComentarios);
+        paneles.put("panelPersonalClinica", panelPersonalClinica);
+        paneles.put("panelAgregarPerfilesDeUsuario", panelAgregarPerfilesDeUsuario);
+        paneles.put("panelDetallesDePerfil", panelDetallesDePerfil);
+        paneles.put("panelAnunciosActuales", panelAnunciosActuales);
+        paneles.put("panelMBActualizarUsuario", panelMBActualizarUsuario);
+        paneles.put("panelMBEliminarUsuario", panelMBEliminarUsuario);
+        paneles.put("panelBuscadorDeEmpleados", panelBuscadorDeEmpleados);
+        paneles.put("panelSolicitudesDeEmpleados", panelSolicitudesDeEmpleados);
+        paneles.put("panelNuevaSolicitudDeEmpleado", panelNuevaSolicitudDeEmpleado);
+        paneles.put("panelSolicitudAprobada", panelSolicitudAprobada);
+        paneles.put("panelSolicitudAprobadaMensaje", panelSolicitudAprobadaMensaje);
+        paneles.put("panelSolicitudesAprobadas2", panelSolicitudesAprobadas2);
+        paneles.put("panelSolicitudesRechazadas", panelSolicitudesRechazadas);
+        paneles.put("panelEliminarAnunciosActuales", panelEliminarAnunciosActuales);
+        paneles.put("panelEstadisticas", panelEstadisticas);
+        paneles.put("panelBuscadorPacientes", panelBuscadorPacientes);
+        paneles.put("panelDetallesDeMiPerfil", panelDetallesDeMiPerfil);
+        paneles.put("panelAgregarArticulo", panelAgregarArticulo);
+        paneles.put("panelMBEliminarArticulo", panelMBEliminarArticulo);
+        paneles.put("panelEliminarDocumentosDeApoyo", panelEliminarDocumentosDeApoyo);
+        paneles.put("panelActualizarArticulo", panelActualizarArticulo);
+        paneles.put("panelExpedienteDelPaciente", panelExpedienteDelPaciente);
+        paneles.put("panelRedactarMensaje", panelRedactarMensaje);
+        paneles.put("panelCreacionDePruebas", panelCreacionDePruebas);
+        paneles.put("panelEscribirEnTuAgendaPersonal", panelEscribirEnTuAgendaPersonal);
+        paneles.put("panelRecetarMedicamentos", panelRecetarMedicamentos);
+        paneles.put("PanelPruebasActualesCambios", PanelPruebasActualesCambios);
+        paneles.put("panelMBEliminarPruebas", panelMBEliminarPruebas);
+        paneles.put("panelVerMensaje", panelVerMensaje);
+        paneles.put("panelVerMensajeCH", panelVerMensajeCH);
+        paneles.put("panelMBEliminarCita", panelMBEliminarCita);
+        paneles.put("panelCrearCita", panelCrearCita);
+        paneles.put("panelEstadisticaDeCitas", panelEstadisticaDeCitas);
+        paneles.put("panelPruebasDF", panelPruebasDF);
+        paneles.put("panelSolicitudesDeIncapacidadRedactar", panelSolicitudesDeIncapacidadRedactar);
+        paneles.put("panelPrimerUso", panelPrimerUso);
     }
 
- public void abrirPanel(JPanel JPContenido, String nombrePanel, String nombrePanelActual) {
-    //JPanel panelActual = panelMap.get(nombrePanelActual);
-    
-    if (panelActual != null) {
-        JPContenido.remove(panelActual); // Oculta el panel actual
-    }
-    
+    public void abrirPanel(String panelNombre) {
+        JPanel panel = paneles.get(panelNombre); // Obtén el panel por su nombre
+        if (panel != null) {
+            vista.JPContenido.removeAll(); // Elimina todos los componentes del Container actual
+            vista.JPContenido.add(panel, panelNombre); // Agregar el nuevo panel al CardLayout
+            ((CardLayout) vista.JPContenido.getLayout()).show(vista.JPContenido, panelNombre);
+            vista.JPContenido.revalidate(); // Actualiza el layout
+            vista.JPContenido.repaint(); // Repinta el contenedor
+            System.out.println("Si encontré el panel pero me la pelo");
+        } else {
+            System.out.println("No encuentro el panel lol, llamado: " + panelNombre);
+        }
     }
 
 }
