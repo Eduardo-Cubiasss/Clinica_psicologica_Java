@@ -49,8 +49,6 @@ public class RecGmail implements ActionListener {
     }
 
     
-    /*Aqui te deji¿o el link de nuestro repositorio https://github.com/L3AC/VetSoft-Java.git Gerson :)*/
-    
     @Override
     public void actionPerformed(ActionEvent e) {
         
@@ -73,17 +71,10 @@ public class RecGmail implements ActionListener {
                 
                 
             } else {
-                JOptionPane.showMessageDialog(null, "Intentalo de nuevo", "J001GU", JOptionPane.INFORMATION_MESSAGE);
-              
+                JOptionPane.showMessageDialog(null, "Intentalo de nuevo", "J001GU", JOptionPane.INFORMATION_MESSAGE);             
                 
-                PanelesManager.copiaPanel("JP003_2_S1_RH");
-            JPContenido.remove(vistaJF003);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelvalCorreo");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
-                JPContenido.remove(vistaJF003);
-                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelvalCorreo");
+             init.mostrarOcultarPanel("panelvalCorreo");            
+             
             }
 
         } else if (e.getSource() == vistaJF003.Btn2_JF003_2_S1_RH) {
