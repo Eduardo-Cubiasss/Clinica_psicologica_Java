@@ -41,6 +41,7 @@ public class ValidarCorreo implements ActionListener {
         this.vistaJF003 = vistaJF003;
         this.JPContenido = JPContenido;
         this.PanelesManager = PanelesManager;
+        this.init = init;
         this.vistaJF003.Btn1_JF003_S1_RH.addActionListener(this);
         this.vistaJF003.Btn2_JF003_S1_RH.addActionListener(this);
     }
@@ -90,12 +91,7 @@ public class ValidarCorreo implements ActionListener {
                         t.close();
 
                         JOptionPane.showMessageDialog(null, "Correo enviado");
-                        PanelesManager.copiaPanel("JP003_S1_RH");
-                        JPContenido.remove(vistaJF003);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelCorreoenviado");
-                        JPContenido.revalidate();
-                        JPContenido.repaint();
-                        PanelesManager.restaurarPanelEliminado();
+                        init.mostrarOcultarPanel("panelCorreoenviado");
                     } else {
                         JOptionPane.showMessageDialog(null, "La sesión de correo es nula", "Error", JOptionPane.ERROR_MESSAGE);
                     }
@@ -105,12 +101,7 @@ public class ValidarCorreo implements ActionListener {
                 }
             }
         } else if (e.getSource() == vistaJF003.Btn2_JF003_S1_RH) {
-            PanelesManager.copiaPanel("JP003_S1_RH");
-            JPContenido.remove(vistaJF003);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRegistro");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            init.mostrarOcultarPanel("panelRegistro");
         }
     }
 }

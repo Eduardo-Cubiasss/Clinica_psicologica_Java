@@ -18,6 +18,7 @@ import ux.SolicitudesAprobadas2;
  *
  * @author LENOVO
  */
+
 public class JP018_S2_AF extends javax.swing.JPanel {
 
     

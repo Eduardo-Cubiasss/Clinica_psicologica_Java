@@ -27,6 +27,7 @@ public class SolicitudesAprobadas implements ActionListener{
     {
         this.JPContenido = JPContenido;
         this.vista16 = vista16;
+        this.init = init;
         this.PanelesManager = PanelesManager;
         this.vista16.getBtn4_JF016_S2().addActionListener(this);
     }

@@ -48,13 +48,6 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         this.btn3_JF014_S2 = btn3_JF014_S2;
     }
 
-    public JButton getBtn4_JF014_S2() {
-        return btn4_JF014_S2;
-    }
-
-    public void setBtn4_JF014_S2(JButton btn4_JF014_S2) {
-        this.btn4_JF014_S2 = btn4_JF014_S2;
-    }
 
     public JButton getBtn5_JF014_S2() {
         return btn5_JF014_S2;
@@ -62,14 +55,6 @@ public class JP014_S2_AF extends javax.swing.JPanel {
 
     public void setBtn5_JF014_S2(JButton btn5_JF014_S2) {
         this.btn5_JF014_S2 = btn5_JF014_S2;
-    }
-
-    public JLabel getjLabel1() {
-        return jLabel1;
-    }
-
-    public void setjLabel1(JLabel jLabel1) {
-        this.jLabel1 = jLabel1;
     }
 
     public JLabel getjLabel4() {
@@ -88,46 +73,6 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         this.jPanel2 = jPanel2;
     }
 
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
-    }
-
-    public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.jScrollPane1 = jScrollPane1;
-    }
-
-    public JTable getjTable1() {
-        return jTable1;
-    }
-
-    public void setjTable1(JTable jTable1) {
-        this.jTable1 = jTable1;
-    }
-
-    public JButton getBtnRedactarMensaje() {
-        return btnRedactarMensaje;
-    }
-
-    public void setBtnRedactarMensaje(JButton btnRedactarMensaje) {
-        this.btnRedactarMensaje = btnRedactarMensaje;
-    }
-
-    public JLabel getjLabel3() {
-        return jLabel3;
-    }
-
-    public void setjLabel3(JLabel jLabel3) {
-        this.jLabel3 = jLabel3;
-    }
-
-    public JLabel getjLabel5() {
-        return jLabel5;
-    }
-
-    public void setjLabel5(JLabel jLabel5) {
-        this.jLabel5 = jLabel5;
-    }
-
     public JPanel getContenedorPapi() {
         return ContenedorPapi;
     }
@@ -136,13 +81,6 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         this.ContenedorPapi = ContenedorPapi;
     }
 
-    public JPanel getContenedorHijo() {
-        return ContenedorHijo;
-    }
-
-    public void setContenedorHijo(JPanel ContenedorHijo) {
-        this.ContenedorHijo = ContenedorHijo;
-    }
 
     
     
@@ -184,14 +122,6 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         btn2_JF014_S2 = new javax.swing.JButton();
         btn3_JF014_S2 = new javax.swing.JButton();
         ContenedorPapi = new javax.swing.JPanel();
-        ContenedorHijo = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        btn4_JF014_S2 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        btnRedactarMensaje = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1120, 640));
         setMinimumSize(new java.awt.Dimension(1120, 640));
@@ -233,66 +163,6 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         ContenedorPapi.setMaximumSize(new java.awt.Dimension(1120, 640));
         ContenedorPapi.setMinimumSize(new java.awt.Dimension(1120, 640));
         ContenedorPapi.setLayout(new java.awt.CardLayout());
-
-        ContenedorHijo.setBackground(new java.awt.Color(255, 255, 255));
-        ContenedorHijo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel1.setText("Solicitudes de los empleados");
-        ContenedorHijo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
-
-        btn4_JF014_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/m.PNG"))); // NOI18N
-        btn4_JF014_S2.setBorder(null);
-        ContenedorHijo.add(btn4_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, 110, 60));
-
-        jScrollPane1.setBorder(null);
-
-        jTable1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Zeus Figueroa", "             Solicitud de incapacidad"},
-                {"Sandra Tomate", "             Solicitud de incapacidad"},
-                {"Eduardo Cumbias", "             Solicitud de incapacidad"},
-                {"Allan Galdamez", "             Solicitud de incapacidad"},
-                {"Christopher Juárez", "             Solicitud de incapacidad"}
-            },
-            new String [] {
-                "", ""
-            }
-        ));
-        jTable1.setAlignmentX(0.8F);
-        jTable1.setAlignmentY(0.8F);
-        jTable1.setColumnSelectionAllowed(true);
-        jTable1.setFillsViewportHeight(true);
-        jTable1.setFocusable(false);
-        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable1.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setShowHorizontalLines(false);
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-
-        ContenedorHijo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 560, 240));
-
-        btnRedactarMensaje.setForeground(new java.awt.Color(0, 102, 102));
-        btnRedactarMensaje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/++.PNG"))); // NOI18N
-        btnRedactarMensaje.setBorderPainted(false);
-        btnRedactarMensaje.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRedactarMensajeActionPerformed(evt);
-            }
-        });
-        ContenedorHijo.add(btnRedactarMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 420, 50, 60));
-
-        jLabel5.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel5.setText("Mensaje");
-        ContenedorHijo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 450, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jLabel3.setText("Redactar");
-        ContenedorHijo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 430, -1, -1));
-
-        ContenedorPapi.add(ContenedorHijo, "card2");
-
         jPanel2.add(ContenedorPapi, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 870, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -311,26 +181,14 @@ public class JP014_S2_AF extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn2_JF014_S2ActionPerformed
 
-    private void btnRedactarMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRedactarMensajeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRedactarMensajeActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JPanel ContenedorHijo;
     public javax.swing.JPanel ContenedorPapi;
     public javax.swing.JButton btn1_JF014_S2;
     public javax.swing.JButton btn2_JF014_S2;
     public javax.swing.JButton btn3_JF014_S2;
-    public javax.swing.JButton btn4_JF014_S2;
     public javax.swing.JButton btn5_JF014_S2;
-    public javax.swing.JButton btnRedactarMensaje;
-    public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    public javax.swing.JLabel jLabel5;
     public javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

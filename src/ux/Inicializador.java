@@ -27,6 +27,7 @@ import Database.Terapeutas;
 import Database.TipoUsuarios;
 import Database.Usuarios;
 import Reportes.ParaReporte;
+import Ui.Deriv_JP014_S2_AF;
 import Ui.JF_000_S7_GU;
 import Ui.SplashScreen;
 import Ui.JP001_S1_AFP;
@@ -144,6 +145,7 @@ public class Inicializador {
     private EstadisticaDeCitas controladorEstadisticaDeCitas;
     private PruebasDF controladorPruebasDF;
     private SolicitudesDeIncapacidadRedactar controladorSolicitudesDeIncapacidadRedactar;
+    private Recibidos_Deriv controladorRecibidos_Deriv;
     private Hints hint;
     private FormularioInicio controladorFormularioInicio;
     private VisualizarNotas controladorVisualizarNota;
@@ -266,6 +268,7 @@ public class Inicializador {
         JP045_S3_RH panelPruebasDF = new JP045_S3_RH(controladorPruebasDF);
         JP047_S3_AF panelSolicitudesDeIncapacidadRedactar = new JP047_S3_AF(controladorSolicitudesDeIncapacidadRedactar);
         JP0048_S3_RH panelPrimerUso = new JP0048_S3_RH(controladorPrimerUso);
+        Deriv_JP014_S2_AF panelderiv = new Deriv_JP014_S2_AF(controladorRecibidos_Deriv);
         // vista.JPContenido.add(panelSplash, "panelSplash");
 
         // Controladores
@@ -289,7 +292,7 @@ public class Inicializador {
         controladorMBActualizarUsuario = new MBActualizarUsuario(vista.JPContenido, this);
         controladorMBEliminarUsuario = new MBEliminarUsuario(vista.JPContenido, this);
         controladorBuscadorEmpleados = new BuscadorEmpleados(vista.JPContenido, panelBuscadorDeEmpleados, modelEmpleado, modelActivity, Procesos, habilitarPaneles, resultado, panelDetallesDePerfil, this);
-        controladorSolicitudesDeEmpleados = new SolicitudesDeEmpleados(vista.JPContenido, panelSolicitudesDeEmpleados, habilitarPaneles, this);
+        controladorSolicitudesDeEmpleados = new SolicitudesDeEmpleados(vista.JPContenido, panelSolicitudesDeEmpleados, habilitarPaneles, this, panelSolicitudesAprobadas2, panelSolicitudAprobada, panelderiv);
         controladorNuevaSolicitudDeEmpleado = new NuevaSolicitudDeEmpleado(vista.JPContenido, panelNuevaSolicitudDeEmpleado, habilitarPaneles, this);
         controladorSolicitudesAprobadas = new SolicitudesAprobadas(vista.JPContenido, panelSolicitudAprobada, habilitarPaneles, this);
         controladorVerSolicitudAprobada = new VerSolicitudAprobada(vista.JPContenido, panelSolicitudAprobadaMensaje, this);
@@ -370,28 +373,14 @@ public class Inicializador {
         paneles.put("panelPruebasDF", panelPruebasDF);
         paneles.put("panelSolicitudesDeIncapacidadRedactar", panelSolicitudesDeIncapacidadRedactar);
         paneles.put("panelPrimerUso", panelPrimerUso);
+        paneles.put("panelderiv", panelderiv);
     }
     
       public Map<String, JPanel> getPaneles() {
         return paneles;
     }
     public void mostrarOcultarPanel(String nombrePanel) {
-        JPanel panel = paneles.get(nombrePanel);
-
-        if (panel != null) {
-            ocultarContenido();
-            vista.JPContenido.add(panel, BorderLayout.CENTER);
-            panel.setVisible(true);
-            vista.validate(); // Esto asegura que los cambios se reflejen correctamente
-            System.out.println("Estoy mostrando el panel llamado: " + nombrePanel);
-        } else {
-            System.out.println("El panel '" + nombrePanel + "' no existe.");
-        }
-    }
-
-    public void ocultarContenido() {
-        vista.JPContenido.removeAll();
-        vista.JPContenido.repaint();
+        vista.mostrarOcultarPanel(nombrePanel);
     }
 
 }

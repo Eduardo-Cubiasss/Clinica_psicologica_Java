@@ -28,7 +28,7 @@ public class Menu_Terapeuta implements ActionListener {
     private Articulos modelArt;
     private DocumentosDeApoyo ControllerArt;
     private Procesos_almacenados procesos;
-private Inicializador init;
+    private Inicializador init;
     public Menu_Terapeuta(JPanel JPContenido, JP023_S3_RH panel, HabilitarPaneles PanelesManager, DocumentosDeApoyo ControllerArt,
             Articulos modelArt, Procesos_almacenados procesos, Inicializador init) {
         this.panel = panel;
