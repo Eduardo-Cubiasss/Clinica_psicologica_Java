@@ -19,7 +19,7 @@ public class mainfake {
                 
                 
                 // Crea una instancia del SplashScreen y muestra antes que otros paneles
-                init.abrirPanel("panelSplash");
+                vista.mostrarOcultarPanel("panelSplash");
                // SplashScreen splashScreen = new SplashScreen(vista.JPContenido, init);
 
                 // Mostrar el panel que desees, por ejemplo:

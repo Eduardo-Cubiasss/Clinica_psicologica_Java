@@ -106,10 +106,10 @@ public class Login implements ActionListener {
         if (e.getSource() == panelRegistro.getBtn2_JF001_S1_AF()) {
             accion();
         } else if (e.getSource() == panelRegistro.getBtn3_JF001_S1_AF()) {
-            init.abrirPanel("panelRegistro");
+            vista.mostrarOcultarPanel("panelRegistro");
         } else if (e.getSource() == panelRegistro.getBtn4_JF001_S1_AF()) {
             //PanelesManager.eliminarPanel("panelInicioSesion");
-            init.abrirPanel("panelvalCorreo");
+            vista.mostrarOcultarPanel("panelvalCorreo");
          
         }
     }
@@ -165,28 +165,28 @@ public class Login implements ActionListener {
                 case 1:
                     if (Primeruso == 1) {
                         Procesos.SaberID(modelUsers, modelAdmin);
-                        init.abrirPanel("panelPrimerUso");
+                        vista.mostrarOcultarPanel("panelPrimerUso");
                     } else {
                         Procesos.SaberID(modelUsers, modelAdmin);
-                        init.abrirPanel("panelMenuAdmin");
+                        vista.mostrarOcultarPanel("panelMenuAdmin");
                     }
                     break;
                 case 2:
                     if (Primeruso == 1) {
                         Procesos.SaberIDSecre(modelUsers, ModelSecret);
-                       init.abrirPanel("panelPrimerUso");
+                       vista.mostrarOcultarPanel("panelPrimerUso");
                     } else {
                         Procesos.SaberIDSecre(modelUsers, ModelSecret);
-                        init.abrirPanel("panelMenuSec");
+                        vista.mostrarOcultarPanel("panelMenuSec");
                     }
                     break;
                 case 3:
                     if (Primeruso == 1) {
                         Procesos.SaberIDTer(modelUsers, modelTerap);
-                        init.abrirPanel("panelPrimerUso");
+                        vista.mostrarOcultarPanel("panelPrimerUso");
                     } else {
                         Procesos.SaberIDTer(modelUsers, modelTerap);
-                        init.abrirPanel("panelMenuTp");
+                        vista.mostrarOcultarPanel("panelMenuTp");
                     }
                     break;
                 default:

@@ -35,7 +35,8 @@ public class RegAdmin_JF002 implements ActionListener {
     private Inicializador init;
 
     public RegAdmin_JF002(Administrador modelAdmin, Usuarios modelUsers, Clinica modelClinica, JP002_S1_RHP vistaJP002,
-            JPanel JPContenido, Procesos_almacenados Procesos, PanelHistory panelHistory, HabilitarPaneles PanelesManager, JF_000_S7_GU vista, Inicializador init) {
+            JPanel JPContenido, Procesos_almacenados Procesos, PanelHistory panelHistory, HabilitarPaneles PanelesManager, 
+            JF_000_S7_GU vista, Inicializador init) {
         this.modelAdmin = modelAdmin;
         this.modelUsers = modelUsers;
         this.modelClinica = modelClinica;
@@ -67,10 +68,10 @@ public class RegAdmin_JF002 implements ActionListener {
             // Agrega el panel actual al historial antes de cambiar de panel
             
             PanelesManager.copiaPanel("JP002_S1_RHP");
-            init.abrirPanel("panelMenuAdmin");
+            vista.mostrarOcultarPanel("panelMenuAdmin");
 
         } else if (e.getSource() == vistaJP002.getBtn2_JF002_S1_RH()) {
-            init.abrirPanel("panelInicioSesion");
+            vista.mostrarOcultarPanel("panelInicioSesion");
         }
     }
 

@@ -15,6 +15,7 @@ import Ui.JP002_S1_RHP;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.net.URL;
+import java.util.Map;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -26,6 +27,7 @@ import ux.RegAdmin_JF002;
 public class JF_000_S7_GU extends javax.swing.JFrame {
 
     private Inicializador Inicializador;
+    private JP001_S1_AFP Pprueba;
 
     public JF_000_S7_GU() {
         initComponents();
@@ -33,8 +35,8 @@ public class JF_000_S7_GU extends javax.swing.JFrame {
         JPbarra5.setBorder(BorderFactory.createEmptyBorder());
         JPContenido.setBorder(BorderFactory.createEmptyBorder());
         Inicializador = new Inicializador(this);
-        
-         URL iconURL = getClass().getResource("/imagenes/IconoMind.png");
+
+        URL iconURL = getClass().getResource("/imagenes/IconoMind.png");
 
         if (iconURL != null) {
             ImageIcon icono = new ImageIcon(iconURL);
@@ -105,8 +107,7 @@ public class JF_000_S7_GU extends javax.swing.JFrame {
 
         JPContenido.setMaximumSize(new java.awt.Dimension(1120, 540));
         JPContenido.setMinimumSize(new java.awt.Dimension(1120, 540));
-        JPContenido.setPreferredSize(new java.awt.Dimension(1120, 540));
-        JPContenido.setRequestFocusEnabled(false);
+        JPContenido.setName("JPContenido"); // NOI18N
         JPContenido.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout JPbarra5Layout = new javax.swing.GroupLayout(JPbarra5);
@@ -114,11 +115,11 @@ public class JF_000_S7_GU extends javax.swing.JFrame {
         JPbarra5Layout.setHorizontalGroup(
             JPbarra5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPbarra5Layout.createSequentialGroup()
-                .addContainerGap(1039, Short.MAX_VALUE)
+                .addContainerGap(1095, Short.MAX_VALUE)
                 .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(JPContenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPContenido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         JPbarra5Layout.setVerticalGroup(
             JPbarra5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,22 +127,11 @@ public class JF_000_S7_GU extends javax.swing.JFrame {
                 .addGroup(JPbarra5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(JPContenido, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JPContenido, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JPbarra5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(JPbarra5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        getContentPane().add(JPbarra5, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -163,13 +153,13 @@ public class JF_000_S7_GU extends javax.swing.JFrame {
         jButton11.setBackground(new Color(44, 102, 110));    }//GEN-LAST:event_jButton11MouseEntered
 
     private void jButton12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseExited
-         jButton12.setBackground(Color.white); 
+        jButton12.setBackground(Color.white);
     }//GEN-LAST:event_jButton12MouseExited
-    private void jButton11MouseExited(java.awt.event.MouseEvent evt) {                                      
-       
-    }  
+    private void jButton11MouseExited(java.awt.event.MouseEvent evt) {
+
+    }
     private void jButton12MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseEntered
-       jButton12.setBackground(new Color(44, 102, 110)); 
+        jButton12.setBackground(new Color(44, 102, 110));
     }//GEN-LAST:event_jButton12MouseEntered
 
     /**
@@ -205,6 +195,7 @@ public class JF_000_S7_GU extends javax.swing.JFrame {
                 JF_000_S7_GU vista = new JF_000_S7_GU();
                 vista.setLocationRelativeTo(null); // Centra la ventana en la pantalla
                 vista.setVisible(true);
+                vista.JPContenido.setVisible(true);
             }
         });
     }
@@ -217,6 +208,27 @@ public class JF_000_S7_GU extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void jButton2MouseExited() {
-        
+
     }
+
+    public void mostrarOcultarPanel(String nombrePanel) {
+        Map<String, JPanel> paneles = Inicializador.getPaneles();
+        JPanel panel = paneles.get(nombrePanel);
+
+        if (panel != null) {
+            ocultarContenido();
+            this.JPContenido.add(panel);
+            this.validate(); // Esto asegura que los cambios se reflejen correctamente
+            this.repaint(); // También puede ser necesario repintar la vista
+            System.out.println("Estoy mostrando el panel llamado: " + nombrePanel);
+        } else {
+            System.out.println("El panel '" + nombrePanel + "' no existe.");
+        }
+    }
+
+    public void ocultarContenido() {
+        this.JPContenido.removeAll();
+        this.JPContenido.repaint();
+    }
+
 }

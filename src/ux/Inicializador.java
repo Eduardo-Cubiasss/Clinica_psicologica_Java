@@ -78,6 +78,7 @@ import Ui.JP043_1_S3_RH;
 import Ui.JP044_S3_AF;
 import Ui.JP045_S3_RH;
 import Ui.JP047_S3_AF;
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.util.HashMap;
 import java.util.Map;
@@ -214,7 +215,7 @@ public class Inicializador {
         Hints hint = new Hints();
 
         // Paneles
-        SplashScreen panelSplash = new SplashScreen(vista.JPContenido, this);
+        SplashScreen panelSplash = new SplashScreen(vista, this);
         JP001_S1_AFP panelInicioSesion = new JP001_S1_AFP(controladorLogin, controladorPrimerUso);
         JP002_S1_RHP panelRegistro = new JP002_S1_RHP(controladorRegistrar);
         JP004_S2_AF panelMenuAdmin = new JP004_S2_AF(controladorMenuAd);
@@ -370,19 +371,27 @@ public class Inicializador {
         paneles.put("panelSolicitudesDeIncapacidadRedactar", panelSolicitudesDeIncapacidadRedactar);
         paneles.put("panelPrimerUso", panelPrimerUso);
     }
+    
+      public Map<String, JPanel> getPaneles() {
+        return paneles;
+    }
+    public void mostrarOcultarPanel(String nombrePanel) {
+        JPanel panel = paneles.get(nombrePanel);
 
-    public void abrirPanel(String panelNombre) {
-        JPanel panel = paneles.get(panelNombre); // Obtén el panel por su nombre
         if (panel != null) {
-            vista.JPContenido.removeAll(); // Elimina todos los componentes del Container actual
-            vista.JPContenido.add(panel, panelNombre); // Agregar el nuevo panel al CardLayout
-            ((CardLayout) vista.JPContenido.getLayout()).show(vista.JPContenido, panelNombre);
-            vista.JPContenido.revalidate(); // Actualiza el layout
-            vista.JPContenido.repaint(); // Repinta el contenedor
-            System.out.println("Si encontré el panel pero me la pelo");
+            ocultarContenido();
+            vista.JPContenido.add(panel, BorderLayout.CENTER);
+            panel.setVisible(true);
+            vista.validate(); // Esto asegura que los cambios se reflejen correctamente
+            System.out.println("Estoy mostrando el panel llamado: " + nombrePanel);
         } else {
-            System.out.println("No encuentro el panel lol, llamado: " + panelNombre);
+            System.out.println("El panel '" + nombrePanel + "' no existe.");
         }
+    }
+
+    public void ocultarContenido() {
+        vista.JPContenido.removeAll();
+        vista.JPContenido.repaint();
     }
 
 }

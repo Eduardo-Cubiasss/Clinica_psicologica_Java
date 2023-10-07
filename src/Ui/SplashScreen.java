@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Ui;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,10 +14,12 @@ import ux.Inicializador;
 public class SplashScreen extends javax.swing.JPanel {
 
     private int segundosRestantes = 6;
-    
-    private JPanel JPContenido; 
-    private Inicializador init; 
-    public SplashScreen(JPanel JPContenido, Inicializador init) {
+
+    private JF_000_S7_GU JPContenido;
+    private Inicializador init;
+    private boolean mostrado = false;
+
+    public SplashScreen(JF_000_S7_GU JPContenido, Inicializador init) {
         this.JPContenido = JPContenido;
         this.init = init;
         initComponents();
@@ -28,15 +31,17 @@ public class SplashScreen extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 segundosRestantes--;
-                if (segundosRestantes <= 0) {
+                if (segundosRestantes <= 0 && !mostrado) {
                     // Cierra el SplashScreen después de que han pasado los 6 segundos
-                      init.abrirPanel("panelInicioSesion");
+                    JPContenido.mostrarOcultarPanel("panelInicioSesion");
+                    mostrado = true; // Establece la bandera a true para evitar el bucle
                 }
             }
         });
         timer.setRepeats(true);
         timer.start();
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
