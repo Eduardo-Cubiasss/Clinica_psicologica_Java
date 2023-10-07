@@ -66,6 +66,8 @@ public class SolicitudesDeEmpleados implements ActionListener {
         else if (e.getSource() == vista14.getBtn5_JF014_S2()) {
             CardLayout cardLayout = (CardLayout) JPContenido.getLayout();
             cardLayout.show(JPContenido, "panelMenuSec");
+            
+           
             //Volver al panel anterior
         }//else if (e.getSource() == vista14.getBtn4_JF014_S2()) {
             // Botón para ver ventana de mensajes panelVerMensaje

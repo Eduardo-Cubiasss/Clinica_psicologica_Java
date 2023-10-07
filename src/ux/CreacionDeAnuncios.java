@@ -36,6 +36,7 @@ public class CreacionDeAnuncios implements ActionListener{
         this.PanelesManager = PanelesManager;        
         this.AnunciosController = AnunciosController;
         this.modelAnuncio = modelAnuncio;
+        this.init = init;
         this.AnuncioControllerEli = AnuncioControllerEli;
         this.vista06.getBtn001_JF006_S2_AF().addActionListener(this);
         this.vista06.getBtn2_JF006_S2_AF().addActionListener(this);
@@ -46,34 +47,23 @@ public class CreacionDeAnuncios implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vista06.getBtn001_JF006_S2_AF())
         {
-             PanelesManager.copiaPanel("JP006_S2_AF");
-                JPContenido.remove(vista06);
-                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
-                JPContenido.revalidate();
-                JPContenido.repaint();
-                PanelesManager.restaurarPanelEliminado();
+            
+                        init.mostrarOcultarPanel("panelMenuAdmin"); 
+
+             
             //Boton de la casita, es para devolverte al menú de administrador
         }
         else if (e.getSource() == vista06.getBtn2_JF006_S2_AF())
         {   
-            procesos.GenerarAnuncios(modelAnuncio, AnunciosController);
-            PanelesManager.copiaPanel("JP006_S2_AF");
-                JPContenido.remove(vista06);
-                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelAnunciosActuales");
-                JPContenido.revalidate();
-                JPContenido.repaint();
-                PanelesManager.restaurarPanelEliminado();
+            init.mostrarOcultarPanel("panelAnunciosActuales"); 
+            
             // Botón de agregar anuncios
         }
         else if (e.getSource() == vista06.getBtn3_JF006_S2_AF())
         {
-            procesos.GenerarAnunciosEli(modelAnuncio, AnuncioControllerEli);
-            PanelesManager.copiaPanel("JP006_S2_AF");
-                JPContenido.remove(vista06);
-                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelEliminarAnunciosActuales");
-                JPContenido.revalidate();
-                JPContenido.repaint();
-                PanelesManager.restaurarPanelEliminado();
+            
+            init.mostrarOcultarPanel("panelEliminarAnunciosActuales"); 
+           
             //Botón de eliminar anuncios
         }
     }

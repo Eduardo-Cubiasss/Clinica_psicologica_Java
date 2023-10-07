@@ -101,7 +101,7 @@ public class ValidarCorreo implements ActionListener {
                 }
             }
         } else if (e.getSource() == vistaJF003.Btn2_JF003_S1_RH) {
-            init.mostrarOcultarPanel("panelRegistro");
+            init.mostrarOcultarPanel("panelRegistro"); 
         }
     }
 }

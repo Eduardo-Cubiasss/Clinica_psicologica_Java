@@ -39,6 +39,7 @@ public class EscribirEnTuAgendaPersonal implements ActionListener{
         this.modelPacien = modelPacien;
         this.modelTer = modelTer;
         this.modelExp = modelExp;
+        this.init = init;
         this.vista34.getBtn1_JF034_AF().addActionListener(this);
     }
 
@@ -48,12 +49,9 @@ public class EscribirEnTuAgendaPersonal implements ActionListener{
         {
             modelExp.setContenido(vista34.getTxtAExpeciente().getText());
             Procesos.EscribirExpe(modelPacien, modelTer, modelExp);
-            PanelesManager.copiaPanel("JP034_S3_AF");
-                JPContenido.remove(vista34);
-                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelExpedienteDelPaciente");
-                JPContenido.revalidate();
-                JPContenido.repaint();
-                PanelesManager.restaurarPanelEliminado();
+            
+             init.mostrarOcultarPanel("panelExpedienteDelPaciente"); 
+           
             //Botón para volver a un panel anterior
         }
     }

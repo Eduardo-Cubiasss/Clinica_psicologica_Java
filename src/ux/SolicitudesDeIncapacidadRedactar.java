@@ -32,6 +32,7 @@ public class SolicitudesDeIncapacidadRedactar implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==vista47.getBtn01_JF045_S3_RH())
         {
+            
             //Botón para volver a un panel anterior
         }
         else if (e.getSource()== vista47.getjButton1())

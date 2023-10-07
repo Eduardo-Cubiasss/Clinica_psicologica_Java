@@ -54,7 +54,7 @@ public class ExpedienteDelPaciente implements ActionListener {
         this.modelAgendas = modelAgendas;
         this.modelContactos = modelContactos;
         this.modelExp = modelExp;
-
+        this.init = init; 
         this.vistaJP031.getBtn01_JP031_S3_RH().addActionListener(this);
         this.vistaJP031.getBtn1_JF031_S3_RH().addActionListener(this);
         this.vistaJP031.getBtn2_JF031_S3_RH1().addActionListener(this);
@@ -71,33 +71,29 @@ public class ExpedienteDelPaciente implements ActionListener {
             Procesos.viewpaciente(modelPaciente, modelUsers, modelContactos, 2);
             
         } else if (e.getSource() == vistaJP031.getBtn4_JF031_S3_RH()) {
+            
+            //recetitas pa lokitos
+                         init.mostrarOcultarPanel("panelRecetarMedicamentos"); 
 
-            PanelesManager.copiaPanel("JP031_S3_RHG");
-            JPContenido.remove(vistaJP031);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRecetarMedicamentos");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
 
         } else if (e.getSource() == vistaJP031.getBtn3_JF031_S3_RH2()) {
             Procesos.VerNotasPac(modelPaciente, modelAgendas);
             vista35.getLbNotas().setText(modelAgendas.getContenido());
             vista35.LbNotas.setEnabled(false);
-            PanelesManager.copiaPanel("JP031_S3_RHG");
-            JPContenido.remove(vistaJP031);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelVisualizarNotas"); 
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+                         init.mostrarOcultarPanel("panelVisualizarNotas"); 
+
+                         //pa visualizar notitas
+            
+            
         } else if (e.getSource() == vistaJP031.getBtn2_JF031_S3_RH1()) {
             Procesos.VerExpe(modelExp, modelPaciente);
             vista34.getTxtAExpeciente().setText(modelExp.getContenido());
-            PanelesManager.copiaPanel("JP031_S3_RHG");
-            JPContenido.remove(vistaJP031);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelEscribirEnTuAgendaPersonal");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+            //Escribir en agenda
+            init.mostrarOcultarPanel("panelEscribirEnTuAgendaPersonal"); 
+
+            
         }
     }
 

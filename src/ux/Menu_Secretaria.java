@@ -43,39 +43,29 @@ public class Menu_Secretaria implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista39.getBtn05_JF039_S3_RH()) {
+            
+            
+                         init.mostrarOcultarPanel("panelDetallesDeMiPerfil"); 
+
             //Botón de mi perfil
-            PanelesManager.copiaPanel("JP039_S3_RH");
-            //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
-            JPContenido.remove(vista39);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelDetallesDeMiPerfil");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+            
         } else if (e.getSource() == vista39.getBtn06_JF039_S3_RH()) {
-            PanelesManager.copiaPanel("JP039_S3_RH");
-            //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
-            JPContenido.remove(vista39);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelSolicitudesDeEmpleados");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+            init.mostrarOcultarPanel("panelSolicitudesDeEmpleados");  
+            
+            
             //Botón de solicitud de incapacidades
         } else if (e.getSource() == vista39.getBtn08_JF039_S3_RH()) {
-            PanelesManager.copiaPanel("JP039_S3_RH");
-            //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
-            JPContenido.remove(vista39);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelInicioSesion");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+            init.mostrarOcultarPanel("panelInicioSesion");  
+            
+            
             //Botón de Cerrar Sesión, lleva lleva al login dah
         } else if (e.getSource() == vista39.getBtn09_JF039_S3_RH()) {
-            PanelesManager.copiaPanel("JP023_S3_RH");
-            JPContenido.remove(vista39);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelBuscadorPacientes");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+            init.mostrarOcultarPanel("panelBuscadorPacientes");  
+            
         }
     }
 }

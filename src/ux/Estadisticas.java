@@ -26,6 +26,7 @@ public class Estadisticas implements ActionListener{
     {
         this.JPContenido = JPContenido;
         this.vista22 = vista22;
+        this.init = init;
         this.PanelesManager = PanelesManager;    
         this.vista22.getBtn001_JF22_S3_AF().addActionListener(this);
         this.vista22.getBtn1().addActionListener(this);
@@ -37,12 +38,10 @@ public class Estadisticas implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== vista22.getBtn001_JF22_S3_AF())
         {
-            PanelesManager.copiaPanel("JP022_S3_AF");
-                JPContenido.remove(vista22);
-                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
-                JPContenido.revalidate();
-                JPContenido.repaint();
-                PanelesManager.restaurarPanelEliminado();
+            
+                         init.mostrarOcultarPanel("panelMenuAdmin"); 
+
+           
             //Botón para volver un panel anterior (Al)
         }
         else if(e.getSource() == vista22.getBtn1())

@@ -25,6 +25,7 @@ public class VisualizarNotas implements ActionListener{
     {
         this.JPContenido = JPContenido;
         this.vista35 = vista35;
+        this.init = init;
         this.PanelesManager = PanelesManager;
         this.vista35.getBtn1_JF035_S3_RH().addActionListener(this);
     }
@@ -33,13 +34,8 @@ public class VisualizarNotas implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== vista35.getBtn1_JF035_S3_RH())
         {
+            init.mostrarOcultarPanel("panelExpedienteDelPaciente");
             
-            PanelesManager.copiaPanel("JP035_1_S3_RH");
-                JPContenido.remove(vista35);
-                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelExpedienteDelPaciente");
-                JPContenido.revalidate();
-                JPContenido.repaint();
-                PanelesManager.restaurarPanelEliminado();
             //Botón para volver un panel anterior
         }
     }

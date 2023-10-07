@@ -25,6 +25,7 @@ public class SolicitudesAprobadas2 implements ActionListener{
     {
         this.JPContenido = JPContenido;
         this.vista18 = vista18;
+        this.init = init;
     this.PanelesManager = PanelesManager;
         this.vista18.getBtn4_JF018_S2().addActionListener(this);
     }
@@ -34,13 +35,8 @@ public class SolicitudesAprobadas2 implements ActionListener{
 
         if(e.getSource()== vista18.getBtn4_JF018_S2())
         {
-            PanelesManager.copiaPanel("JP018_S2_AF");
-            //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
-            JPContenido.remove(vista18);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelSolicitudAprobadaMensaje");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            init.mostrarOcultarPanel("panelSolicitudAprobadaMensaje");
+            
             //Botón para abrir solicitud
         }
        

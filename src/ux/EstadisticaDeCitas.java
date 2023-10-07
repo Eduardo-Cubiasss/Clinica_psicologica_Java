@@ -23,7 +23,7 @@ public class EstadisticaDeCitas implements ActionListener{
     {
         this.JPContenido = JPContenido;
         this.vista44 = vista44;
-        
+        this.init = init;
         this.vista44.getBtn001_JF042_1_S3_AF().addActionListener(this);
     }
 
@@ -31,6 +31,7 @@ public class EstadisticaDeCitas implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==vista44.getBtn001_JF042_1_S3_AF())
         {
+             init.mostrarOcultarPanel("panelMenuAdmin"); 
             //Botón para volver a un panel anterior
         }
     }

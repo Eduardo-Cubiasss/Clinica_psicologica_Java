@@ -54,7 +54,7 @@ public class BuscadorEmpleados implements ActionListener {
         this.vista10 = vista10;
         this.PanelesManager = PanelesManager;
         this.resultado = resultado;
-
+         this.init = init;
         this.vista12.getBtn1_JF012().addActionListener(this);
         this.vista12.getBtn2_JF012().addActionListener(this);
         this.vista12.getBtn3_JF012().addActionListener(this);
@@ -86,15 +86,15 @@ public class BuscadorEmpleados implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista12.getBtn2_JF012()) {
             //tendria que ir el panelMBEliminarUsuario creoooo
+            init.mostrarOcultarPanel("panelMBEliminarUsuario"); 
 
             //Es para eliminar una cuenta
         } else if (e.getSource() == vista12.getBtn3_JF012()) {
-            PanelesManager.copiaPanel("JP012_S2_AF");
-            JPContenido.remove(vista12);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPersonalClinica");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+            
+                        init.mostrarOcultarPanel("panelPersonalClinica"); 
+
+            
             //Es para volver al panel anterior
         } else if (e.getSource() == vista12.getBtn1_JF012()) {
             vista10.setTxtNombre(modelEmpleado.getNombre());
@@ -126,12 +126,10 @@ public class BuscadorEmpleados implements ActionListener {
                 vista10.getLb_chino().setPreferredSize(new Dimension(0, 0)); // Restablece las dimensiones del JLabel
                 System.out.println("Está vacío o contiene propiedades indebidas");
             }
-            PanelesManager.copiaPanel("JP012_S2_AF");
-            JPContenido.remove(vista12);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelDetallesDePerfil");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+                        init.mostrarOcultarPanel("panelDetallesDePerfil"); 
+
+            
             // Es para abrir el perfil del usuario en base a su ID
         } else if (e.getSource() == vista12.getBtnBuscar()) {
             String textoBusqueda = vista12.getjTextField1().getText();

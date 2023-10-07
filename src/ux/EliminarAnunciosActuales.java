@@ -145,6 +145,7 @@ public class EliminarAnunciosActuales implements ActionListener {
         this.PanelesManager = PanelesManager;
         this.procesos = procesos;
         this.adds = adds;
+        this.init = init;
         this.vista21.getBtn1_JF021_S3_RH().addActionListener(this);
         this.vista21.getBtn2_JF021_S3_RH().addActionListener(this);
         this.vista21.getBtn3_JF021_S3_RH().addActionListener(this);
@@ -166,13 +167,13 @@ public class EliminarAnunciosActuales implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+       
+
+        
         if (e.getSource() == vista21.getBtn1_JF021_S3_RH()) {
-            PanelesManager.copiaPanel("JP021_S3_RH");
-            JPContenido.remove(vista21);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelCreacionDeAnuncios");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+             init.mostrarOcultarPanel("panelCreacionDeAnuncios"); 
+            
             //Volver un panel anterior
         } else if (e.getSource() == vista21.getBtn2_JF021_S3_RH()) {
             procesos.BorrarAnuncio(adds);

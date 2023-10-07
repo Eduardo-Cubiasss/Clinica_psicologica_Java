@@ -37,6 +37,7 @@ public class RedactarMensaje implements ActionListener{
         this.modelIncap = modelIncap;
         this.modelUsers = modelUsers;
         this.procesos = procesos;
+        this.init = init;
         this.vista32.getBtn1_JF028_S3_AF().addActionListener(this);
         this.vista32.getjButton1().addActionListener(this);
     }
@@ -45,14 +46,8 @@ public class RedactarMensaje implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== vista32.getBtn1_JF028_S3_AF())
         {
-            
-            PanelesManager.copiaPanel("JP032_S3_AF");
-            //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
-            JPContenido.remove(vista32);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelSolicitudesDeEmpleados");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            init.mostrarOcultarPanel("panelSolicitudesDeEmpleados");
+           
             //Volver un panel anterior
         }
         else if(e.getSource()== vista32.getjButton1())

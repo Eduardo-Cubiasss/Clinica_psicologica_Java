@@ -26,6 +26,7 @@ public class PruebasDF implements ActionListener{
         this.JPContenido = JPContenido;
         this.vista45 = vista45;
         this.PanelesManager = PanelesManager;
+                                                                          this.init = init;
         this.vista45.getBtn01_JF045_S3_RH().addActionListener(this);
     }
 
@@ -33,12 +34,8 @@ public class PruebasDF implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== vista45.getBtn01_JF045_S3_RH())
         {
-            PanelesManager.copiaPanel("JP045_S3_RH");
-            JPContenido.remove(vista45);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            init.mostrarOcultarPanel("panelMenuSec");
+            
             //Botón de volver a un panel anterior
         }
     }

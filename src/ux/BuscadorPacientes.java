@@ -53,7 +53,7 @@ public class BuscadorPacientes implements ActionListener {
         this.modelUsuers = modelUsuers;
         this.modelContacto = modelContacto;
         this.vistaJP031 = vistaJP031;
-
+         this.init = init;
         this.vistaJP024.getBtn1_JF024().addActionListener(this);
         this.vistaJP024.getBtn3_JF024().addActionListener(this);
         this.vistaJP024.getBtnVer().addActionListener(this);
@@ -106,12 +106,8 @@ public class BuscadorPacientes implements ActionListener {
                 vistaJP031.setJL_Edad_JF031_S3_RH(valorStr);
 
                 vistaJP031.setJL_Nombre_JF031_S3_RH(modelPacientes.getNombre());
-                PanelesManager.copiaPanel("JP024_S3_AF");
-                JPContenido.remove(vistaJP024);
-                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelExpedienteDelPaciente");
-                JPContenido.revalidate();
-                JPContenido.repaint();
-                PanelesManager.restaurarPanelEliminado();
+                           init.mostrarOcultarPanel("panelExpedienteDelPaciente"); 
+
             } catch (Exception ex) {
                 // Captura la excepción y muestra un mensaje de error
                 JOptionPane.showMessageDialog(null, "Error al ver el expediente del paciente, seleccione un paciente por favor", "Advertencia", JOptionPane.INFORMATION_MESSAGE);

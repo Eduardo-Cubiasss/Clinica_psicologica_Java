@@ -22,12 +22,13 @@ public class Menu_Administrador implements ActionListener {
     private JP004_S2_AF panel;
     private PanelHistory panelHistory;
     private HabilitarPaneles PanelesManager;
-    private Inicializador Init;
+    private Inicializador init;
+    
 
-    public Menu_Administrador(JPanel JPContenido, JP004_S2_AF panel, HabilitarPaneles PanelesManager, Inicializador Init) {
+    public Menu_Administrador(JPanel JPContenido, JP004_S2_AF panel, HabilitarPaneles PanelesManager, Inicializador init) {
         this.JPContenido = JPContenido;
         this.panel = panel;
-        this.Init = Init;
+        this.init = init;
         this.PanelesManager = PanelesManager;
 
         this.panel.btn01_JF005_S2_AF.addActionListener(this);
@@ -42,33 +43,21 @@ public class Menu_Administrador implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == panel.getBtn01_JF005_S2_AF()) {
             // Código para la acción del botón de gestionar persionas 
-
-            PanelesManager.copiaPanel("JP004_S2_AF");
-            JPContenido.remove(panel);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPersonalClinica");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
             
+             init.mostrarOcultarPanel("panelPersonalClinica"); 
+
         } else if (e.getSource() == panel.getBtn02_JF005_S2_AF()) {
             
-            PanelesManager.copiaPanel("JP004_S2_AF");
-            JPContenido.remove(panel);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelEstadisticas");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+           
+         init.mostrarOcultarPanel("panelEstadisticas"); 
+
             
             // Código para la acción del botón estadisticas 
             
         } else if (e.getSource() == panel.getBtn03_JF005_S2_AF()) {
             
-            PanelesManager.copiaPanel("JP004_S2_AF");
-            JPContenido.remove(panel);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelCreacionDeAnuncios");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+                     init.mostrarOcultarPanel("panelCreacionDeAnuncios"); 
+
             
             // Código para la acción del botón Anuncios 
             
@@ -76,34 +65,21 @@ public class Menu_Administrador implements ActionListener {
             
             // Código para la acción del botón Acerca de la clinica 
            
-            PanelesManager.copiaPanel("JP004_S2_AF");
-            JPContenido.remove(panel);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "  ");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+           init.mostrarOcultarPanel(" "); 
             
             
         } else if (e.getSource() == panel.getBtn05_JF005_S2_AF()) {
             
             // Código para la acción del botón comentarios 
-            PanelesManager.copiaPanel("JP004_S2_AF");
-            JPContenido.remove(panel);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, " panelSeccionDeComentarios");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+          init.mostrarOcultarPanel("panelSeccionDeComentarios"); 
+
             
         } else if (e.getSource() == panel.getBtn08_JF023_S3_RH()) {
             
             // Código para la acción del botón cerrar sesion
             
-            PanelesManager.copiaPanel("JP004_S2_AF");
-            JPContenido.remove(panel);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, " panelInicioSesion");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+             init.mostrarOcultarPanel("panelInicioSesion");
             
 
             // Recupera el panel anterior del historial y muéstralo
@@ -113,4 +89,4 @@ public class Menu_Administrador implements ActionListener {
             JPContenido.repaint();
         }
     }
-}
+}  

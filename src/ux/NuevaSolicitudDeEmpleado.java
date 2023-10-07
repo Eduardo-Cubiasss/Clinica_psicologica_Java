@@ -26,6 +26,7 @@ public class NuevaSolicitudDeEmpleado implements ActionListener{
         this.JPContenido = JPContenido;
         this.vista15 = vista15;
      this.PanelesManager = PanelesManager;   
+     this.init = init;
         this.vista15.getBtn1_JF015_S2_RH().addActionListener(this);
         this.vista15.getBtn2_JF015_S2_RH().addActionListener(this);
         this.vista15.getBtn3_JF015_S2_RH().addActionListener(this);
@@ -36,14 +37,11 @@ public class NuevaSolicitudDeEmpleado implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vista15.getBtn1_JF015_S2_RH())
         {
+            
             //Botón para ver ventana de mensajes panelVerMensaje
-            PanelesManager.copiaPanel("JP015_1_S2_RH");
-            //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
-            JPContenido.remove(vista15);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelSolicitudesDeEmpleados");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+            init.mostrarOcultarPanel("panelSolicitudesDeEmpleados");
+            
             //Botón para volver al panel anterior
         }
         else if(e.getSource() == vista15.getBtn2_JF015_S2_RH())

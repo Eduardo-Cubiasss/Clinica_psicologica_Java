@@ -33,12 +33,9 @@ public class EliminarDocumentosDeApoyo implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== vista29.getBtn1_JF029_S3_RH())
         {
-            PanelesManager.copiaPanel("JP029_S3_RH");
-            JPContenido.remove(vista29);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelDocumentosView");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+             init.mostrarOcultarPanel("panelDocumentosView"); 
+            
             //Botón para volver a un panel anterior
         }
     }

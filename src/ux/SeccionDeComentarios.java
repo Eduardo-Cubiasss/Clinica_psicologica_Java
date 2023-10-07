@@ -26,7 +26,8 @@ public class SeccionDeComentarios implements ActionListener{
     {
         this.JPContenido = JPContenido;
         this.vista07 = vista07;
-        this.PanelesManager = PanelesManager;              
+        this.PanelesManager = PanelesManager;    
+        this.init = init;
         this.vista07.getBtn001_JF007_S2_RH().addActionListener(this);
     }
 
@@ -34,12 +35,8 @@ public class SeccionDeComentarios implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vista07.getBtn001_JF007_S2_RH())
         {
-            PanelesManager.copiaPanel("JP007_S2_RH");
-                JPContenido.remove(vista07);
-                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
-                JPContenido.revalidate();
-                JPContenido.repaint();
-                PanelesManager.restaurarPanelEliminado();
+            init.mostrarOcultarPanel("panelMenuAdmin");
+            
             //Boton de volver al menú administradooor
         }
     }

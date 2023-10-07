@@ -36,13 +36,9 @@ public class SolicitudesAprobadas implements ActionListener{
     public void actionPerformed(ActionEvent e) {   
         if(e.getSource() == vista16.getBtn4_JF016_S2())
         {
-            PanelesManager.copiaPanel("JP018_S2_AF");
-            //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
-            JPContenido.remove(vista16);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelRedactarMensaje");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+            init.mostrarOcultarPanel("panelRedactarMensaje");
+            
             //Botón para abrir un mensaje seleccionado
         }
        

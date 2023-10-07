@@ -32,7 +32,7 @@ public class DetallesDeMiPerfil implements ActionListener{
         this.modelUsers = modelUsers;
         this.proceso = proceso;
         this.PanelesManager = PanelesManager;
-        
+        this.init = init;
         this.vista25.btn04_JF025_S3_RH.addActionListener(this);
         this.vista25.btn05_JF025_S3_RH.addActionListener(this);
         this.vista25.getBtnotrasconfig().addActionListener(this);
@@ -55,21 +55,15 @@ public class DetallesDeMiPerfil implements ActionListener{
         }
          else if (e.getSource() == vista25.getBtnotrasconfig())
         {
-            PanelesManager.copiaPanel("JP025_S3_RH");
-            JPContenido.remove(vista25);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelPrimerUso");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            init.mostrarOcultarPanel("panelPrimerUso"); 
+            
         }
         else if (e.getSource() == vista25.getBtn1_JF025_S3_RH())
         {
-            PanelesManager.copiaPanel("JP025_S3_RH");
-            JPContenido.remove(vista25);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+                        init.mostrarOcultarPanel("panelMenuSec"); 
+
+           
         }
     }
     

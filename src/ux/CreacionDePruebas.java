@@ -27,7 +27,8 @@ public class CreacionDePruebas implements ActionListener{
     {
         this.JPContenido = JPContenido;
         this.vista33 = vista33;
-        this.PanelesManager = PanelesManager;        
+        this.PanelesManager = PanelesManager;  
+        this.init = init;
         this.vista33.getBtn001_JF033_S3_RH().addActionListener(this);
         this.vista33.getBtn002_JF033_S3_RH().addActionListener(this);
         this.vista33.getBtn003_JF033_S3_RH().addActionListener(this);
@@ -37,34 +38,21 @@ public class CreacionDePruebas implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== vista33.Btn001_JF033_S3_RH)
         {
-            PanelesManager.copiaPanel("JP033_S3_RH");
-            JPContenido.remove(vista33);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            init.mostrarOcultarPanel("panelMenuTp"); 
+            
             //Volver a un panel anterior (menú)
         }
         else if(e.getSource()== vista33.Btn002_JF033_S3_RH)
         {
+            init.mostrarOcultarPanel(" "); 
             
-            PanelesManager.copiaPanel("JP033_S3_RH");
-            JPContenido.remove(vista33);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, " ");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+           
             //Agregar prueba
         }
         else if(e.getSource()== vista33.Btn003_JF033_S3_RH)
         {
             
-            PanelesManager.copiaPanel("JP033_S3_RH");
-            JPContenido.remove(vista33);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, " ");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            init.mostrarOcultarPanel(" "); 
             //Eliminar prueba
         }
     }

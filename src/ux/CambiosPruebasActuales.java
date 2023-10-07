@@ -23,7 +23,7 @@ public class CambiosPruebasActuales implements ActionListener{
     {
         this.JPContenido = JPContenido;
         this.vista37 = vista37;
-        
+        this.init = init;
         this.vista37.getBtn1_JF037_S3_RH().addActionListener(this);
     }
 
@@ -31,6 +31,7 @@ public class CambiosPruebasActuales implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== vista37.getBtn1_JF037_S3_RH())
         {
+            
             //Botón de volver al panel anterior
         }
     }

@@ -33,7 +33,7 @@ public class RcetarMedicamentos implements ActionListener{
         this.reporte = reporte;
         this.vista36 = vista36;
         this.proceso = proceso;
-        
+        this.init = init;
         this.vista36.btn1_JF036.addActionListener(this);
         this.vista36.btnagregar.addActionListener(this);
                 

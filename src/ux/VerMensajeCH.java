@@ -27,6 +27,7 @@ public class VerMensajeCH implements ActionListener{
         this.JPContenido = JPContenido;
         this.vista41 = vista41;
         this.PanelesManager = PanelesManager;
+        this.init = init;
         this.vista41.getBtn1_JF041_S3_RH().addActionListener(this);
     }
 
@@ -34,12 +35,9 @@ public class VerMensajeCH implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==vista41.getBtn1_JF041_S3_RH())
         {
-            PanelesManager.copiaPanel("JP045_S3_RH");
-            JPContenido.remove(vista41);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelVerMensaje");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+            init.mostrarOcultarPanel("panelVerMensaje");
+            
             //Volver un panel anterior
         }
     }

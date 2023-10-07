@@ -25,6 +25,7 @@ public class VerMensajes implements ActionListener{
     {
         this.JPContenido = JPContenido;
         this.vista40 = vista40;
+        this.init = init;
         this.PanelesManager = PanelesManager;
         this.vista40.getBtn001_JF042_1_S3_AF().addActionListener(this);
         this.vista40.getjButton1().addActionListener(this);
@@ -34,25 +35,15 @@ public class VerMensajes implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==vista40.getBtn001_JF042_1_S3_AF())
         {
+            init.mostrarOcultarPanel("panelMenuSec");
             
-            PanelesManager.copiaPanel("JP040_S3_AF");
-            JPContenido.remove(vista40);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
             
             //Botón para  volver a un panel anterior
         }
         else if(e.getSource()== vista40.getjButton1())
         {
+            init.mostrarOcultarPanel("panelVerMensajeCH");
             
-            PanelesManager.copiaPanel("JP040_S3_AF");
-            JPContenido.remove(vista40);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelVerMensajeCH");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
             //Botón para abrir mensaje
         }
     }

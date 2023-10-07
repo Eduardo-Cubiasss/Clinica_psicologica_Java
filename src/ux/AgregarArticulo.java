@@ -38,6 +38,8 @@ public class AgregarArticulo implements ActionListener {
             Inicializador init) {
         this.JPContenido = JPContenido;
         this.vista28 = vista28;
+                        this.init = init;
+
         this.modelArticulo = modelArticulo;
         this.procesos = procesos;
         this.PanelesManager = PanelesManager;
@@ -74,12 +76,10 @@ public class AgregarArticulo implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista28.getBtn1_JF028_S3_AF()) {
-            PanelesManager.copiaPanel("JP028_S3_AF");
-            JPContenido.remove(vista28);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelDocumentosView");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+              init.mostrarOcultarPanel("panelDocumentosView"); 
+            
+          
             //Botón para volver a un panel anterior
         } else if (e.getSource() == vista28.getBtn4_JF028_S3_AF()) {
         modelArticulo.setTitulo(vista28.getjTextField2().getText());

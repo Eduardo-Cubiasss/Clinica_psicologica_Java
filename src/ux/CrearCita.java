@@ -25,6 +25,7 @@ public class CrearCita implements ActionListener{
     public CrearCita(JPanel JPContenido, JP043_1_S3_RH vista43, HabilitarPaneles PanelesManager, Inicializador init)
     {
         this.JPContenido = JPContenido;
+        this.init = init;
         this.vista43 = vista43;
         this.PanelesManager = PanelesManager;
         this.vista43.getBtn1_JF043_S3_RH().addActionListener(this);
@@ -34,13 +35,7 @@ public class CrearCita implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==vista43.getBtn1_JF043_S3_RH())
         {
-            PanelesManager.copiaPanel("JP043_1_S3_RH");
-            //Lo que esta entre comillas es el JPXX de tu vista actual (la del controlador que estas editando)
-            JPContenido.remove(vista43);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            init.mostrarOcultarPanel("panelMenuSec"); 
             //Botón de volver a un panel anterior
         }
     }

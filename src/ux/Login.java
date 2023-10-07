@@ -83,7 +83,7 @@ public class Login implements ActionListener {
         this.modelTerap = modelTerap;
         this.modelEmpleado = modelEmpleado;
         this.ModelSecret = ModelSecret;
-        this.init = init;
+        this.init = init; 
 
         this.panelRegistro.getBtn2_JF001_S1_AF().addActionListener(this);
         this.panelRegistro.getBtn3_JF001_S1_AF().addActionListener(this);
@@ -109,7 +109,7 @@ public class Login implements ActionListener {
             vista.mostrarOcultarPanel("panelRegistro");
         } else if (e.getSource() == panelRegistro.getBtn4_JF001_S1_AF()) {
             //PanelesManager.eliminarPanel("panelInicioSesion");
-            vista.mostrarOcultarPanel("panelvalCorreo");
+            vista.mostrarOcultarPanel("panelvalCorreo"); 
          
         }
     }

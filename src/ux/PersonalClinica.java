@@ -33,6 +33,7 @@ public class PersonalClinica implements ActionListener{
         this.vista08.Btn005_JF008_S3_AF.addActionListener(this);
         this.vista08.Btn001_JF008_S3_AF.addActionListener(this);
         this.vista08.Btn007_JF008_S3_AF.addActionListener(this);
+        this.init = init;
         this.reporte = reporte;
     }
 
@@ -50,45 +51,32 @@ public class PersonalClinica implements ActionListener{
         else if(e.getSource() == vista08.getBtn005_JF008_S3_AF())
         {
                  //Para el buscador de empleados
-                PanelesManager.copiaPanel("JP008_S2_AF");
-                JPContenido.remove(vista08);
-                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelBuscadorDeEmpleados");
-                JPContenido.revalidate();
-                JPContenido.repaint();
-                PanelesManager.restaurarPanelEliminado();
+            init.mostrarOcultarPanel("panelBuscadorDeEmpleados");
+                
         }
         
         else if(e.getSource() == vista08.getBtn001_JF008_S3_AF())
         {
                  //Para regresar al anterior
-                PanelesManager.copiaPanel("JP008_S2_AF");
-                JPContenido.remove(vista08);
-                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
-                JPContenido.revalidate();
-                JPContenido.repaint();
-                PanelesManager.restaurarPanelEliminado();
+            
+            init.mostrarOcultarPanel("panelMenuAdmin");
+                
         }
         
         else if(e.getSource() == vista08.getBtn007_JF008_S3_AF())
         {
                  //Para regresar al anterior
-                PanelesManager.copiaPanel("JP008_S2_AF");
-                JPContenido.remove(vista08);
-                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelAgregarPerfilesDeUsuario");
-                JPContenido.revalidate();
-                JPContenido.repaint();
-                PanelesManager.restaurarPanelEliminado();
+            
+            init.mostrarOcultarPanel("panelAgregarPerfilesDeUsuario");
+                
         }
         
         else if(e.getSource() == vista08.getBtn007_JF008_S3_AF())
         {
                  //Para regresar al anterior
-                PanelesManager.copiaPanel("JP008_S2_AF");
-                JPContenido.remove(vista08);
-                ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelBuscadorDeEmpleados");
-                JPContenido.revalidate();
-                JPContenido.repaint();
-                PanelesManager.restaurarPanelEliminado();
+            
+            init.mostrarOcultarPanel("panelBuscadorDeEmpleados");
+                
         }
         
     }

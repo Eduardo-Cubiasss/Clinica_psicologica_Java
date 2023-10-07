@@ -106,6 +106,7 @@ public class AnunciosActuales implements ActionListener {
         this.modelAnuncios = modelAnuncios;
         this.PanelesManager = PanelesManager;
         this.procesos = procesos;
+       this.init = init;
         this.vista11.getBtn1_JF011_S2_RH().addActionListener(this);
         this.vista11.getBtn3_JF011_S2_RH().addActionListener(this);
         scrollPane = new JScrollPane(vista11.getPanelAnuncioView());
@@ -142,12 +143,9 @@ public class AnunciosActuales implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista11.getBtn1_JF011_S2_RH()) {
-            PanelesManager.copiaPanel("JP011_S2_RH");
-            JPContenido.remove(vista11);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelCreacionDeAnuncios");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+            init.mostrarOcultarPanel("panelCreacionDeAnuncios"); 
+            
             //Pa volver al menú de admin gr
         } else if (e.getSource() == vista11.getBtn3_JF011_S2_RH()) {
             //Pa guardar todos los cambios hechos

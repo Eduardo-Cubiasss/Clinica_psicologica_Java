@@ -29,19 +29,20 @@ public class DetallesDePerfil implements ActionListener {
     public DetallesDePerfil(JPanel JPContenido, JP010_S2_AF vista10, HabilitarPaneles PanelesManager, Empleado modelEmpleado, Inicializador init) {
         this.JPContenido = JPContenido;
         this.vista10 = vista10;
+        this.init = init;
         this.PanelesManager = PanelesManager;
         this.modelEmpleado = modelEmpleado;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        
         if (e.getSource() == vista10.getBtn1_JF010_AF()) {
-            PanelesManager.copiaPanel("JP010_S2_AF");
-            JPContenido.remove(vista10);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelBuscadorDeEmpleados");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+                        init.mostrarOcultarPanel("panelBuscadorDeEmpleados"); 
+
+           
             // Esto es para volver al menú de administrador
         }
     }

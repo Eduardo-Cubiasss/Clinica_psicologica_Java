@@ -112,7 +112,7 @@ public class DocumentosDeApoyo implements ActionListener {
         this.panel = panel;
         this.Docs = Docs;
         this.procesos = procesos;
-
+        this.init = init;
         this.panel.Btn001_JF027_S3_RH.addActionListener(this);
         this.panel.Btn02_JF027_S3_RH.addActionListener(this);
         this.panel.Btn03_JF027_S3_RH.addActionListener(this);
@@ -169,21 +169,17 @@ public class DocumentosDeApoyo implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == panel.getBtn001_JF027_S3_RH()) {
-            PanelesManager.copiaPanel("JP027_S3_RH");
-            JPContenido.remove(panel);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+            
+                        init.mostrarOcultarPanel("panelMenuTp"); 
+
+            
             //Botón para volver un panel anterior (menú)
         } else if (e.getSource() == panel.getBtn02_JF027_S3_RH()) {
-            PanelesManager.copiaPanel("JP027_S3_RH");
-            JPContenido.remove(panel);
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelAgregarArticulo");
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
+            
+                                    init.mostrarOcultarPanel("panelAgregarArticulo"); 
 
+            
             //Botón Agregar documento de apoyo
         } else if (e.getSource() == panel.getBtn03_JF027_S3_RH()) {
             panel.ContenedordeDocs.removeAll(); // Esto eliminará todos los componentes dentro del panel

@@ -38,7 +38,7 @@ public class ActualizarArticulo implements ActionListener {
         this.modelTer = modelTer;
         this.modelArticulo = modelArticulo;
         this.vista30 = vista30;
-
+                this.init = init;
         this.vista30.getBtn1_JF028_S3_AF().addActionListener(this);
         this.vista30.getBtn2_JF028_S3_AF().addActionListener(this);
         this.vista30.getBtn3_JF028_S3_AF().addActionListener(this);
@@ -73,16 +73,29 @@ public class ActualizarArticulo implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista30.getBtn1_JF028_S3_AF()) {
+            
+                        init.mostrarOcultarPanel("panelCreacionDeAnuncios"); 
+
             //Botón para volver a un panel anterior
+            
+            
+            
         } else if (e.getSource() == vista30.getBtn2_JF028_S3_AF()) {
+            
+            
             //Botón para actualizar el contenido del articulo}
             modelArticulo.setTitulo(vista30.getTxtTitulo().getText());
             modelArticulo.setDescripcion(vista30.getTxtDescripcion_JP030_S3_AF().getText());
             //modelArticulo.setImagen(vista30.get);
             procesos.AgregarArticulo(modelArticulo, modelTer, 2);
         } else if (e.getSource() == vista30.getBtn3_JF028_S3_AF()) {
+            
+            
             //Botón para editar el titulo del ariticulo
         } else if (e.getSource() == vista30.getBtn4_JF028_S3_AF()) {
+            
+            
+            
             //Botón para guardar los cambios
             String imagePath = vista30.getTxt_imagen().getText(); // Obtener la ruta de la imagen desde el campo de texto
 
