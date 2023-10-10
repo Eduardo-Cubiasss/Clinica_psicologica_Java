@@ -42,6 +42,7 @@ import Ui.JP007_S2_RH;
 import Ui.JP008_S2_AF;
 import Ui.JP009_S2_RH;
 import Ui.JP010_S2_AF;
+import Ui.JP011_2_S2_RH;
 import Ui.JP011_S2_RH;
 import Ui.JP012_A_AF;
 import Ui.JP012_E_AF;
@@ -177,6 +178,7 @@ public class Inicializador {
     private TipoUsuarios TipoUser;
     private Usuarios modelUsers;
     private JPanel panelActual = null;
+    private DatoRandom random;
     private Map<String, JPanel> paneles = new HashMap<>();
     private Stack<JPanel> historialPaneles = new Stack<>();
 
@@ -269,6 +271,7 @@ public class Inicializador {
         JP047_S3_AF panelSolicitudesDeIncapacidadRedactar = new JP047_S3_AF(controladorSolicitudesDeIncapacidadRedactar);
         JP0048_S3_RH panelPrimerUso = new JP0048_S3_RH(controladorPrimerUso);
         Deriv_JP014_S2_AF panelderiv = new Deriv_JP014_S2_AF(controladorRecibidos_Deriv);
+        JP011_2_S2_RH panelcard = new JP011_2_S2_RH(controladorDocumentosView);
         // vista.JPContenido.add(panelSplash, "panelSplash");
 
         // Controladores
@@ -276,13 +279,14 @@ public class Inicializador {
                 this);
         controladorRegistrar = new RegAdmin_JF002(modelAdmin, modelUsers, modelClinica, panelRegistro, vista.JPContenido, Procesos, panelHistory, habilitarPaneles, vista, this);
         controladorMenuAd = new Menu_Administrador(vista.JPContenido, panelMenuAdmin, habilitarPaneles, this);
-        controladorMenuSec = new Menu_Secretaria(vista.JPContenido, panelMenuSec, habilitarPaneles, this);
+        controladorSolicitudesDeEmpleados = new SolicitudesDeEmpleados(vista.JPContenido, panelSolicitudesDeEmpleados, habilitarPaneles, this, panelSolicitudesAprobadas2, panelSolicitudAprobada, panelderiv, modelEmpleado, Incapacidades, Procesos, resultado);
+        controladorMenuSec = new Menu_Secretaria(vista.JPContenido, panelMenuSec, habilitarPaneles, this, panelSolicitudesDeEmpleados, panelderiv, controladorSolicitudesDeEmpleados);
         controladorValCorreo = new ValidarCorreo(ModelContactos, panelvalCorreo, Procesos, vista.JPContenido, habilitarPaneles, this);
         controladorCorreoenviado = new RecGmail(modelUsers, ModelContactos, panelCorreoenviado, Procesos, vista.JPContenido, habilitarPaneles, this);
         controladorRec_tel1 = new ValidarNum(vista.JPContenido, this);
         controladorAnuncios1 = new Anuncios1(vista.JPContenido, this);
         controladorvisualizarnotas = new VisualizarNotas(vista.JPContenido, PanelvisualizarNota, habilitarPaneles, this);
-        controladorDocumentosView = new DocumentosDeApoyo(vista.JPContenido, habilitarPaneles, panelDocumentosView, Procesos, Articulo, this);
+        controladorDocumentosView = new DocumentosDeApoyo(vista.JPContenido, habilitarPaneles, panelDocumentosView, Procesos, Articulo, this, ModelContactos, random, panelcard);
         controladorMenuTp = new Menu_Terapeuta(vista.JPContenido, panelMenuTp, habilitarPaneles, controladorDocumentosView, Articulo, Procesos, this);
         controladorSeccionDeComentarios = new SeccionDeComentarios(vista.JPContenido, panelSeccionDeComentarios, habilitarPaneles, this);
         controladorPersonalClinica = new PersonalClinica(vista.JPContenido, panelPersonalClinica, habilitarPaneles, reporte, this);
@@ -292,12 +296,12 @@ public class Inicializador {
         controladorMBActualizarUsuario = new MBActualizarUsuario(vista.JPContenido, this);
         controladorMBEliminarUsuario = new MBEliminarUsuario(vista.JPContenido, this);
         controladorBuscadorEmpleados = new BuscadorEmpleados(vista.JPContenido, panelBuscadorDeEmpleados, modelEmpleado, modelActivity, Procesos, habilitarPaneles, resultado, panelDetallesDePerfil, this);
-        controladorSolicitudesDeEmpleados = new SolicitudesDeEmpleados(vista.JPContenido, panelSolicitudesDeEmpleados, habilitarPaneles, this, panelSolicitudesAprobadas2, panelSolicitudAprobada, panelderiv);
-        controladorNuevaSolicitudDeEmpleado = new NuevaSolicitudDeEmpleado(vista.JPContenido, panelNuevaSolicitudDeEmpleado, habilitarPaneles, this);
-        controladorSolicitudesAprobadas = new SolicitudesAprobadas(vista.JPContenido, panelSolicitudAprobada, habilitarPaneles, this);
-        controladorVerSolicitudAprobada = new VerSolicitudAprobada(vista.JPContenido, panelSolicitudAprobadaMensaje, this);
-        controladorSolicitudesAprobadas2 = new SolicitudesAprobadas2(vista.JPContenido, panelSolicitudesAprobadas2, habilitarPaneles, this);
-        controladorVerSolicitudRechazada = new VerSolicitudRechazada(vista.JPContenido, panelSolicitudesRechazadas, this);
+        controladorNuevaSolicitudDeEmpleado = new NuevaSolicitudDeEmpleado(vista.JPContenido, panelNuevaSolicitudDeEmpleado, habilitarPaneles, this, Procesos, modelEmpleado);
+        controladorSolicitudesAprobadas = new SolicitudesAprobadas(vista.JPContenido, panelSolicitudAprobada, habilitarPaneles, this, modelEmpleado, Procesos, Incapacidades, panelSolicitudAprobadaMensaje);
+        controladorVerSolicitudAprobada = new VerSolicitudAprobada(vista.JPContenido, panelSolicitudAprobadaMensaje, this, Procesos, modelEmpleado);
+        controladorSolicitudesAprobadas2 = new SolicitudesAprobadas2(vista.JPContenido, panelSolicitudesAprobadas2, habilitarPaneles, this, modelEmpleado, Procesos, Incapacidades, panelSolicitudesRechazadas);
+        controladorRecibidos_Deriv = new Recibidos_Deriv(vista.JPContenido, panelderiv, habilitarPaneles, this, modelEmpleado, Procesos, Incapacidades, panelNuevaSolicitudDeEmpleado);
+        controladorVerSolicitudRechazada = new VerSolicitudRechazada(vista.JPContenido, panelSolicitudesRechazadas, this, Procesos, modelEmpleado);
         controladorEliminarAnunciosActuales = new EliminarAnunciosActuales(vista.JPContenido, panelEliminarAnunciosActuales, habilitarPaneles, Procesos, Anuncios, this);
         controladorEstadisticas = new Estadisticas(vista.JPContenido, panelEstadisticas, habilitarPaneles, reporte, this);
         controladorBuscadorPacientes = new BuscadorPacientes(vista.JPContenido, modelPaciente, panelBuscadorPacientes, habilitarPaneles, Procesos, resultado, modelUsers, ModelContactos, panelExpedienteDelPaciente, this);

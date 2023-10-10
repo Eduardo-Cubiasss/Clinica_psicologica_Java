@@ -5,6 +5,11 @@
  */
 package Ui;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import ux.PanelesInicializador;
 import ux.Recibidos_Deriv;
 
@@ -16,18 +21,100 @@ public class Deriv_JP014_S2_AF extends javax.swing.JPanel {
 
     private Recibidos_Deriv controlador;
     private PanelesInicializador str;
+
+    public Recibidos_Deriv getControlador() {
+        return controlador;
+    }
+
+    public void setControlador(Recibidos_Deriv controlador) {
+        this.controlador = controlador;
+    }
+
+    public PanelesInicializador getStr() {
+        return str;
+    }
+
+    public void setStr(PanelesInicializador str) {
+        this.str = str;
+    }
+
+    public JPanel getContenedorHijo() {
+        return ContenedorHijo;
+    }
+
+    public void setContenedorHijo(JPanel ContenedorHijo) {
+        this.ContenedorHijo = ContenedorHijo;
+    }
+
+    public JButton getBtn4_JF014_S2() {
+        return btn4_JF014_S2;
+    }
+
+    public void setBtn4_JF014_S2(JButton btn4_JF014_S2) {
+        this.btn4_JF014_S2 = btn4_JF014_S2;
+    }
+
+    public JButton getBtnRedactarMensaje() {
+        return btnRedactarMensaje;
+    }
+
+    public void setBtnRedactarMensaje(JButton btnRedactarMensaje) {
+        this.btnRedactarMensaje = btnRedactarMensaje;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
     /**
      * Creates new form Deriv_JP014_S2_AF
      */
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+
     public Deriv_JP014_S2_AF(Recibidos_Deriv controlador) {
         initComponents();
         this.controlador = controlador;
-        
+
         str = new PanelesInicializador();
-        
-         // Establecer el valor de str aquí después de haberlo creado
+
+        // Establecer el valor de str aquí después de haberlo creado
         str.setJP018_S2_AF(this);
     }
+
     public Deriv_JP014_S2_AF() {
         initComponents();
     }
@@ -44,11 +131,11 @@ public class Deriv_JP014_S2_AF extends javax.swing.JPanel {
         ContenedorHijo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btn4_JF014_S2 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         btnRedactarMensaje = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setPreferredSize(new java.awt.Dimension(870, 530));
         setLayout(new java.awt.CardLayout());
@@ -64,33 +151,6 @@ public class Deriv_JP014_S2_AF extends javax.swing.JPanel {
         btn4_JF014_S2.setBorder(null);
         ContenedorHijo.add(btn4_JF014_S2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 450, 110, 60));
 
-        jScrollPane1.setBorder(null);
-
-        jTable1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Zeus Figueroa", "             Solicitud de incapacidad"},
-                {"Sandra Tomate", "             Solicitud de incapacidad"},
-                {"Eduardo Cumbias", "             Solicitud de incapacidad"},
-                {"Allan Galdamez", "             Solicitud de incapacidad"},
-                {"Christopher Juárez", "             Solicitud de incapacidad"}
-            },
-            new String [] {
-                "", ""
-            }
-        ));
-        jTable1.setAlignmentX(0.8F);
-        jTable1.setAlignmentY(0.8F);
-        jTable1.setColumnSelectionAllowed(true);
-        jTable1.setFillsViewportHeight(true);
-        jTable1.setFocusable(false);
-        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable1.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setShowHorizontalLines(false);
-        jScrollPane1.setViewportView(jTable1);
-
-        ContenedorHijo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 560, 240));
-
         btnRedactarMensaje.setForeground(new java.awt.Color(0, 102, 102));
         btnRedactarMensaje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/++.PNG"))); // NOI18N
         btnRedactarMensaje.setBorderPainted(false);
@@ -99,15 +159,39 @@ public class Deriv_JP014_S2_AF extends javax.swing.JPanel {
                 btnRedactarMensajeActionPerformed(evt);
             }
         });
-        ContenedorHijo.add(btnRedactarMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 420, 50, 60));
+        ContenedorHijo.add(btnRedactarMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 460, 50, 60));
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel5.setText("Mensaje");
-        ContenedorHijo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 450, -1, -1));
+        ContenedorHijo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 490, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel3.setText("Redactar");
-        ContenedorHijo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 430, -1, -1));
+        ContenedorHijo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 470, -1, -1));
+
+        jTable1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Sánchez Cerén", null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "ID", "Nombres", "Asunto"
+            }
+        ));
+        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane1.setViewportView(jTable1);
+
+        ContenedorHijo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 540, 200));
 
         add(ContenedorHijo, "card2");
     }// </editor-fold>//GEN-END:initComponents
@@ -124,7 +208,7 @@ public class Deriv_JP014_S2_AF extends javax.swing.JPanel {
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel3;
     public javax.swing.JLabel jLabel5;
-    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

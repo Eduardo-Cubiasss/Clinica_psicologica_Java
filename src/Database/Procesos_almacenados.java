@@ -1337,7 +1337,7 @@ public class Procesos_almacenados {
                 String titulo = rs.getString("Titulo");
                 byte[] imagenData = rs.getBytes("Imagen");
 
-                System.out.println("Se ponen datos por: ");
+                System.out.println("Se ponen datos por: " + titulo + IDAnuncio);
                 DocsController.generarPanelesDeDocumentos(IDAnuncio, titulo, imagenData);
                 System.out.println("Esto contiene el IDArticulo: " + IDAnuncio);
             }
@@ -1416,4 +1416,133 @@ public class Procesos_almacenados {
         }
     }
 
+    public int viewpermiso(Empleado modelempleado, Incapacidades modelincapacidad) {
+
+        Connection conn = null;
+        CallableStatement cs = null;
+        try {
+            conn = ConnectionSQL.getConexion();
+            cs = conn.prepareCall("{CALL PDVerPermiso(?, ?, ?)}");
+
+            cs.setInt(1, modelempleado.getIDUsuario());
+            cs.registerOutParameter(2, java.sql.Types.VARCHAR);
+            cs.registerOutParameter(3, java.sql.Types.VARCHAR);
+
+            cs.execute();
+
+            // Obtener el resultado del parámetro de salida
+            String Asunto = cs.getString(2);
+            String Contenido = cs.getString(3);
+            modelincapacidad.setAsunto(Asunto);
+            modelincapacidad.setMensaje(Contenido);
+            System.out.println("Este es el Asuntito " + (Asunto));
+            System.out.println("Este es el Mnesaje " + (Contenido));
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Advertencia: J009UI", "Este empleado envio un permiso vacio", JOptionPane.INFORMATION_MESSAGE);
+
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (cs != null) {
+                    cs.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+
+        }
+
+        return 0;
+    }
+
+    public boolean ActualizarPermiso(Empleado modelempleado, int caso) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        try {
+            conn = (Connection) ConnectionSQL.getConexion();
+            ps = conn.prepareStatement("Exec ActualizarAceptado ?, ?;");
+            ps.setInt(1, modelempleado.getIDUsuario());
+            ps.setInt(2, caso);
+            System.out.println("Exitooo");
+            ps.executeUpdate();
+            System.out.println("Caso con numero: "+ caso);
+            return true;
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "J001DA ", "Error al interactuar con este permiso, vuelve ha intentarlo en unos minutos", JOptionPane.INFORMATION_MESSAGE);
+            System.out.println(e.toString());
+            return false;
+        } finally {
+            if (ps != null) {
+                try {
+                    ps.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public List<Resultado> VerSolicitudes(Empleado modelEmpleado, Incapacidades modelPermiso, int Estado) {
+        {
+            Connection conn = null;
+            PreparedStatement ps = null;
+            List<Resultado> resultados = new ArrayList<>();
+
+            try {
+                conn = ConnectionSQL.getConexion();
+
+                ps = conn.prepareStatement("SELECT *\n"
+                        + "FROM VistaPermisos\n"
+                        + "WHERE aceptado = ?;");
+                ps.setInt(1, Estado);
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    int idUsuario = rs.getInt("IDUsuario");
+                    String Nombre = rs.getString("Nombre");
+                    String Asunto = rs.getString("Asunto");
+
+                    modelEmpleado.setNombre(Nombre);
+                    modelPermiso.setAsunto(Asunto);
+                    modelEmpleado.setIDUsuario(idUsuario);
+
+                    // Establecer la imagen de perfil en el modelo
+                    System.out.println(modelEmpleado.getIDUsuario() + " " + modelEmpleado.getNombre() + " " + modelPermiso.getAsunto());
+
+                    // Crea un objeto Resultado y agrégalo a la lista de resultados
+                    Resultado resultado = new Resultado(idUsuario, Nombre, Asunto);
+                    resultados.add(resultado);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error: J009UI", "Error inesperado, cierre sesión y vuelva a abrir sesión", JOptionPane.ERROR_MESSAGE);
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (ps != null) {
+                        ps.close();
+                    }
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            return resultados;
+        }
+
+    }
 }

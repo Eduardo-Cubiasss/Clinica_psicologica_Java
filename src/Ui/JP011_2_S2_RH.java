@@ -5,12 +5,63 @@
  */
 package Ui;
 
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import ux.DocumentosDeApoyo;
+import ux.PanelesInicializador;
+import ux.Recibidos_Deriv;
+
 /**
  *
  * @author LENOVO
  */
 public class JP011_2_S2_RH extends javax.swing.JPanel {
+    
+    private DocumentosDeApoyo controlador;
+    private PanelesInicializador str;
+    
+    public JLabel getJL_Imagen_JP011_2_S2_RH() {
+        return JL_Imagen_JP011_2_S2_RH;
+    }
 
+    public void setJL_Imagen_JP011_2_S2_RH(JLabel JL_Imagen_JP011_2_S2_RH) {
+        this.JL_Imagen_JP011_2_S2_RH = JL_Imagen_JP011_2_S2_RH;
+    }
+
+    public JLabel getJL_Titulo_JP011_2_S2_RH() {
+        return JL_Titulo_JP011_2_S2_RH;
+    }
+
+    public void setJL_Titulo_JP011_2_S2_RH(JLabel JL_Titulo_JP011_2_S2_RH) {
+        this.JL_Titulo_JP011_2_S2_RH = JL_Titulo_JP011_2_S2_RH;
+    }
+
+    public JLabel getJlb_ID() {
+        return Jlb_ID;
+    }
+
+    public void setJlb_ID(JLabel Jlb_ID) {
+        this.Jlb_ID = Jlb_ID;
+    }
+
+    public JCheckBox getCheck() {
+        return Check;
+    }
+
+    public void setCheck(JCheckBox Check) {
+        this.Check = Check;
+    }
+    
+    
+
+    public JP011_2_S2_RH(DocumentosDeApoyo controlador) {
+        initComponents();
+        this.controlador = controlador;
+
+        str = new PanelesInicializador();
+
+        // Establecer el valor de str aquí después de haberlo creado
+    }
     /**
      * Creates new form JP011_2_S2_RH
      */
@@ -29,38 +80,33 @@ public class JP011_2_S2_RH extends javax.swing.JPanel {
 
         JL_Titulo_JP011_2_S2_RH = new javax.swing.JLabel();
         JL_Imagen_JP011_2_S2_RH = new javax.swing.JLabel();
+        Jlb_ID = new javax.swing.JLabel();
+        Check = new javax.swing.JCheckBox();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(964, 361));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        JL_Titulo_JP011_2_S2_RH.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        JL_Titulo_JP011_2_S2_RH.setForeground(new java.awt.Color(204, 204, 204));
         JL_Titulo_JP011_2_S2_RH.setText("Título");
+        add(JL_Titulo_JP011_2_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 5, -1, -1));
+        add(JL_Imagen_JP011_2_S2_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 270, 270));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JL_Imagen_JP011_2_S2_RH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(94, Short.MAX_VALUE)
-                .addComponent(JL_Titulo_JP011_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JL_Titulo_JP011_2_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JL_Imagen_JP011_2_S2_RH, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        Jlb_ID.setForeground(new java.awt.Color(255, 255, 255));
+        Jlb_ID.setText("jLabel1");
+        add(Jlb_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 9, -1, -1));
+
+        Check.setBackground(new java.awt.Color(0, 0, 0));
+        Check.setBorder(null);
+        add(Check, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JCheckBox Check;
     public javax.swing.JLabel JL_Imagen_JP011_2_S2_RH;
     public javax.swing.JLabel JL_Titulo_JP011_2_S2_RH;
+    public javax.swing.JLabel Jlb_ID;
     // End of variables declaration//GEN-END:variables
 }

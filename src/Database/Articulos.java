@@ -19,7 +19,17 @@ public class Articulos {
     private byte[] Imagen;
     private Date Fecha;
     private int IDTerapeuta;
+    private String NRandom;
 
+    public String getNRandom() {
+        return NRandom;
+    }
+
+    public void setNRandom(String NRandom) {
+        this.NRandom = NRandom;
+    }
+    
+    
     public int getIDArticulo() {
         return IDArticulo;
     }

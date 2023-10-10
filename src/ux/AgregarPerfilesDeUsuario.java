@@ -46,8 +46,7 @@ public class AgregarPerfilesDeUsuario implements ActionListener {
         this.modelEmpleado = modelEmpleado;
         this.modelAdmin = modelAdmin;
         this.modelContactos = modelContactos;
-                        this.init = init;
-
+        this.init = init;
         this.procesos = procesos;
         this.vista09 = vista09;
         this.modelUsers = modelUsers;

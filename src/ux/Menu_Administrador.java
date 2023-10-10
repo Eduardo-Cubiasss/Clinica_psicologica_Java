@@ -65,7 +65,7 @@ public class Menu_Administrador implements ActionListener {
             
             // Código para la acción del botón Acerca de la clinica 
            
-           init.mostrarOcultarPanel(" "); 
+           init.mostrarOcultarPanel("  "); 
             
             
         } else if (e.getSource() == panel.getBtn05_JF005_S2_AF()) {
@@ -83,10 +83,6 @@ public class Menu_Administrador implements ActionListener {
             
 
             // Recupera el panel anterior del historial y muéstralo
-            String previousPanel = panelHistory.popPanel();
-            ((CardLayout) JPContenido.getLayout()).show(JPContenido, previousPanel);
-            JPContenido.revalidate();
-            JPContenido.repaint();
         }
     }
 }  

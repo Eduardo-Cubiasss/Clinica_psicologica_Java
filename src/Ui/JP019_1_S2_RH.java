@@ -8,6 +8,7 @@ package Ui;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import ux.PanelesInicializador;
 import ux.VerSolicitudAprobada;
 import ux.VerSolicitudRechazada;
@@ -70,6 +71,21 @@ public class JP019_1_S2_RH extends javax.swing.JPanel {
         this.jPanel1 = jPanel1;
     }
     
+        public JTextArea getLbNotas() {
+        return LbNotas;
+    }
+
+    public void setLbNotasText(String texto) {
+        this.LbNotas.setText(texto);
+    }
+
+    public JLabel getLblAsunto() {
+        return LblAsunto;
+    }
+
+    public void setLblAsunto(String LblAsunto) {
+        this.LblAsunto.setText(LblAsunto);
+    }
     
     
 
@@ -103,6 +119,9 @@ public class JP019_1_S2_RH extends javax.swing.JPanel {
         JlLogo = new javax.swing.JLabel();
         JPSolicitud_JP019_S2_RH = new javax.swing.JPanel();
         Btn2_JF019_S2_RH = new javax.swing.JButton();
+        LblAsunto = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        LbNotas = new javax.swing.JTextArea();
 
         setMaximumSize(new java.awt.Dimension(1120, 640));
         setMinimumSize(new java.awt.Dimension(1120, 640));
@@ -132,19 +151,46 @@ public class JP019_1_S2_RH extends javax.swing.JPanel {
         Btn2_JF019_S2_RH.setBorderPainted(false);
         Btn2_JF019_S2_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        LblAsunto.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        LblAsunto.setText("Asunto");
+
+        LbNotas.setBackground(new java.awt.Color(255, 255, 255));
+        LbNotas.setColumns(20);
+        LbNotas.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        LbNotas.setForeground(new java.awt.Color(51, 51, 51));
+        LbNotas.setRows(5);
+        LbNotas.setText("Contenido");
+        LbNotas.setBorder(null);
+        LbNotas.setCaretColor(new java.awt.Color(255, 255, 255));
+        LbNotas.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(LbNotas);
+
         javax.swing.GroupLayout JPSolicitud_JP019_S2_RHLayout = new javax.swing.GroupLayout(JPSolicitud_JP019_S2_RH);
         JPSolicitud_JP019_S2_RH.setLayout(JPSolicitud_JP019_S2_RHLayout);
         JPSolicitud_JP019_S2_RHLayout.setHorizontalGroup(
             JPSolicitud_JP019_S2_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPSolicitud_JP019_S2_RHLayout.createSequentialGroup()
-                .addGap(283, 283, 283)
-                .addComponent(Btn2_JF019_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(293, Short.MAX_VALUE))
+                .addGroup(JPSolicitud_JP019_S2_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JPSolicitud_JP019_S2_RHLayout.createSequentialGroup()
+                        .addGap(283, 283, 283)
+                        .addComponent(Btn2_JF019_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JPSolicitud_JP019_S2_RHLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(JPSolicitud_JP019_S2_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JPSolicitud_JP019_S2_RHLayout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LblAsunto, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         JPSolicitud_JP019_S2_RHLayout.setVerticalGroup(
             JPSolicitud_JP019_S2_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPSolicitud_JP019_S2_RHLayout.createSequentialGroup()
-                .addContainerGap(363, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
+                .addComponent(LblAsunto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(Btn2_JF019_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
@@ -177,7 +223,7 @@ public class JP019_1_S2_RH extends javax.swing.JPanel {
                     .addComponent(JlLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addComponent(JPSolicitud_JP019_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         add(jPanel1, "card2");
@@ -189,7 +235,10 @@ public class JP019_1_S2_RH extends javax.swing.JPanel {
     public javax.swing.JButton Btn2_JF019_S2_RH;
     public javax.swing.JPanel JPSolicitud_JP019_S2_RH;
     public javax.swing.JLabel JlLogo;
+    public javax.swing.JTextArea LbNotas;
+    public javax.swing.JLabel LblAsunto;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

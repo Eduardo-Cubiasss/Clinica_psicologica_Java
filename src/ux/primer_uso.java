@@ -109,9 +109,6 @@ public class primer_uso implements ActionListener {
                         JOptionPane.showMessageDialog(null, "Tu usuario es de tipo paciente, usa la aplicación de móvil para acceder a él por favor", "Usuario inválido", JOptionPane.INFORMATION_MESSAGE);
                         break;
                 }
-                JPContenido.revalidate();
-                JPContenido.repaint();
-                PanelesManager.restaurarPanelEliminado();
 
             }
         } else if (e.getSource() == vistaJP048.getbtnOmitir()) {
@@ -141,9 +138,6 @@ public class primer_uso implements ActionListener {
                         JOptionPane.showMessageDialog(null, "Tu usuario es de tipo paciente, usa la aplicación de móvil para acceder a él por favor", "Usuario inválido", JOptionPane.INFORMATION_MESSAGE);
                         break;
                 }
-                JPContenido.revalidate();
-                JPContenido.repaint();
-                PanelesManager.restaurarPanelEliminado();
             }
         }
     }

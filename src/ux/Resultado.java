@@ -13,14 +13,35 @@ public class Resultado {
     private int idPaciente;
     private String nombre;
     private String apellido;
+    private int IDUsuario;
+    private String Asunto;
 
     public Resultado(int idPaciente, String nombre, String apellido) {
         this.idPaciente = idPaciente;
         this.nombre = nombre;
         this.apellido = apellido;
     }
+    
 
     // Define los getters y setters para los atributos
+
+    public int getIDUsuario() {
+        return IDUsuario;
+    }
+
+    public void setIDUsuario(int IDUsuario) {
+        this.IDUsuario = IDUsuario;
+    }
+
+    public String getAsunto() {
+        return Asunto;
+    }
+
+    public void setAsunto(String Asunto) {
+        this.Asunto = Asunto;
+    }
+    
+    
     public int getIdPaciente() {
         return idPaciente;
     }

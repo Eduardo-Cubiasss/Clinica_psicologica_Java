@@ -6,7 +6,9 @@
 package ux;
 
 import Database.Articulos;
+import Database.Contactos;
 import Database.Procesos_almacenados;
+import Ui.JP011_2_S2_RH;
 import Ui.JP027_S3_RH;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -39,9 +41,12 @@ public class DocumentosDeApoyo implements ActionListener {
     private JPanel JPContenido;
     private HabilitarPaneles PanelesManager;
     private JP027_S3_RH panel;
+    private JP011_2_S2_RH Panelmask;
     private Procesos_almacenados procesos;
     private Articulos Docs;
     private Inicializador init;
+    private Contactos ModelContactos;
+    private DatoRandom random;
 
     private Icon createCircleIcon(int size, Color color) {
         return new Icon() {
@@ -106,9 +111,12 @@ public class DocumentosDeApoyo implements ActionListener {
     }
 
     public DocumentosDeApoyo(JPanel JPContenido, HabilitarPaneles PanelesManager, JP027_S3_RH panel, Procesos_almacenados procesos,
-            Articulos Docs, Inicializador init) {
+            Articulos Docs, Inicializador init, Contactos ModelContactos, DatoRandom random, JP011_2_S2_RH Panelmask) {
         this.JPContenido = JPContenido;
         this.PanelesManager = PanelesManager;
+        this.ModelContactos = ModelContactos;
+        this.random = random;
+        this.Panelmask = Panelmask;
         this.panel = panel;
         this.Docs = Docs;
         this.procesos = procesos;
@@ -116,70 +124,53 @@ public class DocumentosDeApoyo implements ActionListener {
         this.panel.Btn001_JF027_S3_RH.addActionListener(this);
         this.panel.Btn02_JF027_S3_RH.addActionListener(this);
         this.panel.Btn03_JF027_S3_RH.addActionListener(this);
-        this.panel.ContenedordeDocs.setLayout(new GridLayout(1, 0, 10, 0));
-
+        this.panel.ContenedordeDocs.setLayout(new GridLayout(1, 0));
     }
 
     public void generarPanelesDeDocumentos(int IDArticulo, String titulo, byte[] imagen) {
-        JPanel panelDocumento = new JPanel(); // Crea un nuevo panel para cada documento
-        panelDocumento.setLayout(new FlowLayout(FlowLayout.LEFT)); // FlowLayout izquierda sin espacio
+        // 1. Crea una instancia del panel de máscara como una plantilla
+        JP011_2_S2_RH panelDocumento = new JP011_2_S2_RH();
 
-        // Crea un JCheckBox personalizado con un ícono de círculo
-        JCheckBox checkBox = new JCheckBox();
-        checkBox.setIcon(createCircleIcon(20, Color.BLACK)); // Cambia el tamaño y el color del círculo según tus necesidades
-        checkBox.setSelectedIcon(createCircleIcon(20, Color.RED)); // Ícono cuando está seleccionado
-        checkBox.setBorderPaintedFlat(true); // Quita el borde de la casilla de verificación
-        panelDocumento.add(checkBox);
+        // 2. Modifica el contenido dinámico del panel
+        panelDocumento.getJL_Titulo_JP011_2_S2_RH().setText(titulo);
 
-        JLabel lblTitulo = new JLabel(titulo);
-        panelDocumento.add(lblTitulo);
-
-        // Crea y muestra la imagen si está disponible
+        // 3. Establece la imagen en el JLabel
         if (imagen != null && imagen.length > 0) {
             try {
-                // Redimensionar la imagen antes de agregarla al panelDocumento
-                ImageIcon resizedIcon = createResizedImageIcon(imagen, 361); // Cambiar 361 por la altura deseada
-                JLabel lblImagen = new JLabel(resizedIcon);
-                panelDocumento.add(lblImagen);
+                ImageIcon resizedIcon = createResizedImageIcon(imagen, 361);
+                panelDocumento.getJL_Imagen_JP011_2_S2_RH().setIcon(resizedIcon);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
 
-        // Asignar un escuchador de eventos al CheckBox para imprimir el IDArticulo
-        checkBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (checkBox.isSelected()) {
-                    // La casilla de verificación está seleccionada
-                    // Puedes realizar acciones con el IDArticulo aquí
-                    System.out.println("Este es el IDArticulo que disque esta vacio " + IDArticulo);
-                    Docs.setIDArticulo(IDArticulo);
+        // 4. Establece el IDArticulo en el JLabel Jlb_ID
+        panelDocumento.getJlb_ID().setText(String.valueOf(IDArticulo));
 
-                } else {
-                    // La casilla de verificación está deseleccionada
-                }
-            }
-        });
+        // 5. Configura el JCheckBox según sea necesario
+        panelDocumento.getCheck().setSelected(false); // Por defecto, el CheckBox está deseleccionado
 
-        this.panel.ContenedordeDocs.add(panelDocumento); // Agrega el panel al contenedor
+        // 6. Cambia el nombre del nuevo panel a uno generado aleatoriamente
+        random.DatoRandom(ModelContactos, 10); // Genera un nombre aleatorio de 10 caracteres
+        String nombrePanel = ModelContactos.getNumeroRandom();
+        panelDocumento.setName(nombrePanel);
+
+        // 7. Agrega el nuevo panel modificado al contenedor de documentos
+        this.panel.ContenedordeDocs.add(panelDocumento);
         this.panel.ContenedordeDocs.revalidate(); // Actualiza la disposición
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == panel.getBtn001_JF027_S3_RH()) {
-            
-            
-                        init.mostrarOcultarPanel("panelMenuTp"); 
 
-            
+            init.mostrarOcultarPanel("panelMenuTp");
+
             //Botón para volver un panel anterior (menú)
         } else if (e.getSource() == panel.getBtn02_JF027_S3_RH()) {
-            
-                                    init.mostrarOcultarPanel("panelAgregarArticulo"); 
 
-            
+            init.mostrarOcultarPanel("panelAgregarArticulo");
+
             //Botón Agregar documento de apoyo
         } else if (e.getSource() == panel.getBtn03_JF027_S3_RH()) {
             panel.ContenedordeDocs.removeAll(); // Esto eliminará todos los componentes dentro del panel

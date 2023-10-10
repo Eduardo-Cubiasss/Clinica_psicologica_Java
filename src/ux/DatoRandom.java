@@ -14,7 +14,7 @@ import java.util.Random;
  */
 public class DatoRandom {
 
-    private static final String ALLOWED_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    private static final String ALLOWED_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     private Contactos ModelContactos;
 
     public DatoRandom(Contactos ModelContactos) {

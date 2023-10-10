@@ -65,7 +65,7 @@ public class Menu_Terapeuta implements ActionListener {
         } else if (e.getSource() == panel.btn04_JF023_S3_RH) {
             
             init.mostrarOcultarPanel("panelDocumentosView");
-            
+            procesos.GenerarDocumentos(modelArt, ControllerArt);            
             // Código para la acción del botón de ver documentos de apoyo
             
 

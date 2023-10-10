@@ -191,4 +191,18 @@ public class JP014_S2_AF extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+        
+    public void mostrarOcultarPanel(JPanel nombrePanel) {
+
+            ocultarContenido();
+            this.ContenedorPapi.add(nombrePanel);
+            this.validate(); // Esto asegura que los cambios se reflejen correctamente
+            this.repaint(); // También puede ser necesario repintar la vista
+            System.out.println("Estoy mostrando el panel llamado: " + nombrePanel);
+        }
+
+    public void ocultarContenido() {
+        this.ContenedorPapi.removeAll();
+        this.ContenedorPapi.repaint();
+    }
 }
