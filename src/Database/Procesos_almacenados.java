@@ -124,7 +124,7 @@ public class Procesos_almacenados {
             // Obtener el resultado del parámetro de salida
             int IDAdministrador = cs.getInt(2);
             modelTerapeuta.setIDTerapeuta(IDAdministrador);
-            System.out.println("Este es el ID de la terpeuta" + (IDAdministrador));
+            System.out.println("Este es el ID de la terpeuta " + (IDAdministrador));
         } catch (Exception e) {
             System.out.println("Error #J00DA");
             JOptionPane.showMessageDialog(null, "Error: J000DA", "Credenciales incorrectas", JOptionPane.INFORMATION_MESSAGE);
@@ -1176,16 +1176,16 @@ public class Procesos_almacenados {
 
             ps = conn.prepareStatement("EXEC InsertarActualizarExpediente ?, ?, ?");
             ps.setInt(1, modelPacie.getIDpaciente());
+            System.out.println("Este es el IDPaciente del expediente: " + modelPacie.getIDpaciente());
             ps.setString(2, modelExp.getContenido());
-            ps.setInt(3, modelTerap.getIDUsuario());
+            ps.setInt(3, modelTerap.getIDTerapeuta());
+            System.out.println("Este es el IDTerapeuta: " + modelTerap.getIDTerapeuta());
 
             ps.executeUpdate();
         } catch (Exception e) {
             System.out.println("Error #J00DA");
             JOptionPane.showMessageDialog(null, "Error: J000DA", "Error innesperado, Vuelva al menú e intenté más tadre", JOptionPane.INFORMATION_MESSAGE);
 
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
         } finally {
             try {
                 if (rs != null) {

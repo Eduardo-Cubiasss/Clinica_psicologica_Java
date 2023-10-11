@@ -102,6 +102,14 @@ public class JP039_S3_RH extends javax.swing.JPanel {
     public void setkGradientPanel2(KGradientPanel kGradientPanel2) {
         this.kGradientPanel2 = kGradientPanel2;
     }
+
+    public JButton getBtn06_JF023_S3_RH() {
+        return btn06_JF023_S3_RH;
+    }
+
+    public void setBtn06_JF023_S3_RH(JButton btn06_JF023_S3_RH) {
+        this.btn06_JF023_S3_RH = btn06_JF023_S3_RH;
+    }
     
    
     
@@ -129,6 +137,7 @@ public class JP039_S3_RH extends javax.swing.JPanel {
         btn06_JF039_S3_RH = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         btn09_JF039_S3_RH = new javax.swing.JButton();
+        btn06_JF023_S3_RH = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(1120, 640));
         setMinimumSize(new java.awt.Dimension(1120, 640));
@@ -190,12 +199,12 @@ public class JP039_S3_RH extends javax.swing.JPanel {
         btn05_JF039_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn05_JF039_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnPerfil.png"))); // NOI18N
         btn05_JF039_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn05_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 150, 180));
+        jPanel1.add(btn05_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 150, 180));
 
         btn06_JF039_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn06_JF039_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnSoli.png"))); // NOI18N
         btn06_JF039_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn06_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 270, 150, 180));
+        jPanel1.add(btn06_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 150, 180));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel3.setText("¿Qué desea realizar hoy secretari@?");
@@ -205,7 +214,13 @@ public class JP039_S3_RH extends javax.swing.JPanel {
         btn09_JF039_S3_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         btn09_JF039_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnPacientes.png"))); // NOI18N
         btn09_JF039_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn09_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 160, 180));
+        jPanel1.add(btn09_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 160, 180));
+
+        btn06_JF023_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
+        btn06_JF023_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnSolicitudesInc.png"))); // NOI18N
+        btn06_JF023_S3_RH.setBorder(null);
+        btn06_JF023_S3_RH.setBorderPainted(false);
+        jPanel1.add(btn06_JF023_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 270, -1, -1));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents
@@ -213,6 +228,7 @@ public class JP039_S3_RH extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btn05_JF039_S3_RH;
+    public javax.swing.JButton btn06_JF023_S3_RH;
     public javax.swing.JButton btn06_JF039_S3_RH;
     public javax.swing.JButton btn08_JF039_S3_RH;
     public javax.swing.JButton btn09_JF039_S3_RH;

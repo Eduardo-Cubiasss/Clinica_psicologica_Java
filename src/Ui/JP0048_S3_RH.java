@@ -114,29 +114,6 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         this.btnOmitir = btnOmitir;
     }
 
-    public JLabel getjLabel11() {
-        return jLabel11;
-    }
-
-    public void setjLabel11(JLabel jLabel11) {
-        this.jLabel11 = jLabel11;
-    }
-
-    public JLabel getjLabel16() {
-        return jLabel16;
-    }
-
-    public void setjLabel16(JLabel jLabel16) {
-        this.jLabel16 = jLabel16;
-    }
-
-    public JLabel getjLabel17() {
-        return jLabel17;
-    }
-
-    public void setjLabel17(JLabel jLabel17) {
-        this.jLabel17 = jLabel17;
-    }
 
     public JLabel getjLabel18() {
         return jLabel18;
@@ -146,37 +123,6 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         this.jLabel18 = jLabel18;
     }
 
-    public JLabel getjLabel5() {
-        return jLabel5;
-    }
-
-    public void setjLabel5(JLabel jLabel5) {
-        this.jLabel5 = jLabel5;
-    }
-
-    public JLabel getjLabel6() {
-        return jLabel6;
-    }
-
-    public void setjLabel6(JLabel jLabel6) {
-        this.jLabel6 = jLabel6;
-    }
-
-    public JLabel getjLabel7() {
-        return jLabel7;
-    }
-
-    public void setjLabel7(JLabel jLabel7) {
-        this.jLabel7 = jLabel7;
-    }
-
-    public JLabel getjLabel8() {
-        return jLabel8;
-    }
-
-    public void setjLabel8(JLabel jLabel8) {
-        this.jLabel8 = jLabel8;
-    }
 
     public JPanel getjPanel1() {
         return jPanel1;
@@ -186,61 +132,6 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         this.jPanel1 = jPanel1;
     }
 
-    public KGradientPanel getkGradientPanel1() {
-        return kGradientPanel1;
-    }
-
-    public void setkGradientPanel1(KGradientPanel kGradientPanel1) {
-        this.kGradientPanel1 = kGradientPanel1;
-    }
-
-    public KGradientPanel getkGradientPanel3() {
-        return kGradientPanel3;
-    }
-
-    public void setkGradientPanel3(KGradientPanel kGradientPanel3) {
-        this.kGradientPanel3 = kGradientPanel3;
-    }
-
-    public KGradientPanel getkGradientPanel4() {
-        return kGradientPanel4;
-    }
-
-    public void setkGradientPanel4(KGradientPanel kGradientPanel4) {
-        this.kGradientPanel4 = kGradientPanel4;
-    }
-
-    public KGradientPanel getkGradientPanel5() {
-        return kGradientPanel5;
-    }
-
-    public void setkGradientPanel5(KGradientPanel kGradientPanel5) {
-        this.kGradientPanel5 = kGradientPanel5;
-    }
-
-    public KGradientPanel getkGradientPanel6() {
-        return kGradientPanel6;
-    }
-
-    public void setkGradientPanel6(KGradientPanel kGradientPanel6) {
-        this.kGradientPanel6 = kGradientPanel6;
-    }
-
-    public KGradientPanel getkGradientPanel7() {
-        return kGradientPanel7;
-    }
-
-    public void setkGradientPanel7(KGradientPanel kGradientPanel7) {
-        this.kGradientPanel7 = kGradientPanel7;
-    }
-
-    public KGradientPanel getkGradientPanel8() {
-        return kGradientPanel8;
-    }
-
-    public void setkGradientPanel8(KGradientPanel kGradientPanel8) {
-        this.kGradientPanel8 = kGradientPanel8;
-    }
 
     
 
@@ -380,7 +271,6 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
 
         CmbxGenero.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         CmbxGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Género", "Masculino", "Femenino", "Prefiero no decirlo", " ", " " }));
-        CmbxGenero.setBorder(null);
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel2.setText("Antes de empezar necesitamos cierta ");
@@ -525,7 +415,7 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel12)
                                         .addGap(71, 71, 71)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addComponent(jLabel15)
@@ -559,9 +449,9 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
                     .addComponent(txtCorreoElectronico_jp0048_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtFechaNa_JP0048, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel15))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtDui_JP0048, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -609,31 +499,17 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
     public javax.swing.JButton btnEmpecemos;
     public javax.swing.JButton btnOmitir;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     public javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private keeptoo.KGradientPanel kGradientPanel1;
-    private keeptoo.KGradientPanel kGradientPanel3;
-    private keeptoo.KGradientPanel kGradientPanel4;
-    private keeptoo.KGradientPanel kGradientPanel5;
-    private keeptoo.KGradientPanel kGradientPanel6;
-    private keeptoo.KGradientPanel kGradientPanel7;
-    private keeptoo.KGradientPanel kGradientPanel8;
-    private keeptoo.KGradientPanel kGradientPanel9;
+    public keeptoo.KGradientPanel kGradientPanel9;
     public javax.swing.JTextField txtActiLabo_JP0048;
     public javax.swing.JTextField txtCorreoElectronico_jp0048_RH;
     public javax.swing.JTextField txtDui_JP0048;

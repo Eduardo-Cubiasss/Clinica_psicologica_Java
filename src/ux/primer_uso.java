@@ -54,6 +54,7 @@ public class primer_uso implements ActionListener {
         this.modelContactos = modelContactos;
         this.modelGenero = modelGenero;
         this.vistaJP048 = vistaJP048;
+        this.init = init;
 
         this.vistaJP048.getbtnOmitir().addActionListener(this);
         this.vistaJP048.getbtnEmpecemos().addActionListener(this);
@@ -91,19 +92,13 @@ public class primer_uso implements ActionListener {
             if (Acceso == 1) {
                 switch (Nivel) {
                     case 1:
-                        PanelesManager.copiaPanel("JP001_S1_AFP");
-                        JPContenido.remove(vistaJP048);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
+                        init.mostrarOcultarPanel("panelMenuAdmin");
                         break;
                     case 2:
-                        PanelesManager.copiaPanel("JP001_S1_AFP");
-                        JPContenido.remove(vistaJP048);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
+                        init.mostrarOcultarPanel("panelMenuSec");
                         break;
                     case 3:
-                        PanelesManager.copiaPanel("JP001_S1_AFP");
-                        JPContenido.remove(vistaJP048);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
+                        init.mostrarOcultarPanel("panelMenuTp");
                         break;
                     default:
                         JOptionPane.showMessageDialog(null, "Tu usuario es de tipo paciente, usa la aplicación de móvil para acceder a él por favor", "Usuario inválido", JOptionPane.INFORMATION_MESSAGE);
@@ -120,25 +115,23 @@ public class primer_uso implements ActionListener {
             if (Acceso == 1) {
                 switch (Nivel) {
                     case 1:
-                        PanelesManager.copiaPanel("JP001_S1_AFP");
-                        JPContenido.remove(vistaJP048);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuAdmin");
+                        init.mostrarOcultarPanel("panelMenuAdmin");
                         break;
                     case 2:
-                        PanelesManager.copiaPanel("JP001_S1_AFP");
-                        JPContenido.remove(vistaJP048);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuTp");
+                        init.mostrarOcultarPanel("panelMenuSec");
                         break;
                     case 3:
-                        PanelesManager.copiaPanel("JP001_S1_AFP");
-                        JPContenido.remove(vistaJP048);
-                        ((CardLayout) JPContenido.getLayout()).show(JPContenido, "panelMenuSec");
+                        init.mostrarOcultarPanel("panelMenuTp");
                         break;
                     default:
                         JOptionPane.showMessageDialog(null, "Tu usuario es de tipo paciente, usa la aplicación de móvil para acceder a él por favor", "Usuario inválido", JOptionPane.INFORMATION_MESSAGE);
                         break;
                 }
             }
+        }
+        else if (e.getSource() == vistaJP048.getBtn02_JF048_S3_RH())
+        {
+            init.mostrarOcultarPanel("panelInicioSesion");
         }
     }
 }

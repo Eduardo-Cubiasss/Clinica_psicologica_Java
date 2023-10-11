@@ -1657,6 +1657,7 @@ BEGIN
     END
 END;
 
+
 ---AgregarAritculo---
 ---Descripción: Es un INSERT INTO TbArticulos(Titulo, Descripcion, Imagen, IDTerapeuta) values (?,?,?,?);
 ---Información adicional: He creado un trigger que obtiene la fecha actual al hacer un insert en la tabla y la agrega al final del contenido

@@ -278,8 +278,8 @@ public class Inicializador {
         controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion, panelHistory, habilitarPaneles, vista, panelPrimerUso, modelGenero, ModelContactos, modelActivity, modelAdmin, hint, panelDetallesDeMiPerfil, Terapeutas, modelEmpleado, modelClinica, Secretarias,
                 this);
         controladorRegistrar = new RegAdmin_JF002(modelAdmin, modelUsers, modelClinica, panelRegistro, vista.JPContenido, Procesos, panelHistory, habilitarPaneles, vista, this);
-        controladorMenuAd = new Menu_Administrador(vista.JPContenido, panelMenuAdmin, habilitarPaneles, this);
-        controladorSolicitudesDeEmpleados = new SolicitudesDeEmpleados(vista.JPContenido, panelSolicitudesDeEmpleados, habilitarPaneles, this, panelSolicitudesAprobadas2, panelSolicitudAprobada, panelderiv, modelEmpleado, Incapacidades, Procesos, resultado);
+        controladorSolicitudesDeEmpleados = new SolicitudesDeEmpleados(vista.JPContenido, panelSolicitudesDeEmpleados, habilitarPaneles, this, panelSolicitudesAprobadas2, panelSolicitudAprobada, panelderiv, modelEmpleado, Incapacidades, Procesos, resultado, Secretarias);
+        controladorMenuAd = new Menu_Administrador(vista.JPContenido, panelMenuAdmin, habilitarPaneles, this, panelSolicitudesDeEmpleados, panelderiv, controladorSolicitudesDeEmpleados);
         controladorMenuSec = new Menu_Secretaria(vista.JPContenido, panelMenuSec, habilitarPaneles, this, panelSolicitudesDeEmpleados, panelderiv, controladorSolicitudesDeEmpleados);
         controladorValCorreo = new ValidarCorreo(ModelContactos, panelvalCorreo, Procesos, vista.JPContenido, habilitarPaneles, this);
         controladorCorreoenviado = new RecGmail(modelUsers, ModelContactos, panelCorreoenviado, Procesos, vista.JPContenido, habilitarPaneles, this);
@@ -305,14 +305,14 @@ public class Inicializador {
         controladorEliminarAnunciosActuales = new EliminarAnunciosActuales(vista.JPContenido, panelEliminarAnunciosActuales, habilitarPaneles, Procesos, Anuncios, this);
         controladorEstadisticas = new Estadisticas(vista.JPContenido, panelEstadisticas, habilitarPaneles, reporte, this);
         controladorBuscadorPacientes = new BuscadorPacientes(vista.JPContenido, modelPaciente, panelBuscadorPacientes, habilitarPaneles, Procesos, resultado, modelUsers, ModelContactos, panelExpedienteDelPaciente, this);
-        controladorDetallesDeMiPerfil = new DetallesDeMiPerfil(vista.JPContenido, panelDetallesDeMiPerfil, modelUsers, Procesos, habilitarPaneles, this);
+        controladorDetallesDeMiPerfil = new DetallesDeMiPerfil(vista.JPContenido, panelDetallesDeMiPerfil, modelUsers, Procesos, habilitarPaneles, this, Terapeutas);
         controladorAgregarArticulo = new AgregarArticulo(vista.JPContenido, panelAgregarArticulo, habilitarPaneles, Articulo, Procesos, Terapeutas, this);
         controladorMBEliminarArticulo = new MBEliminarArticulo(vista.JPContenido, this);
         controladorCreacionDeAnuncios = new CreacionDeAnuncios(vista.JPContenido, panelCreacionDeAnuncios, habilitarPaneles, controladorAnunciosActuales, Anuncios, Procesos, controladorEliminarAnunciosActuales, this);
         controladorEliminarDocumentosDeApoyo = new EliminarDocumentosDeApoyo(vista.JPContenido, panelEliminarDocumentosDeApoyo, habilitarPaneles, this);
         controladorActualizarArticulo = new ActualizarArticulo(vista.JPContenido, panelActualizarArticulo, Articulo, Procesos, Terapeutas, this);
         controladorExpedienteDelPaciente = new ExpedienteDelPaciente(vista.JPContenido, modelPaciente, modelUsers, panelExpedienteDelPaciente, Procesos, habilitarPaneles, ModelContactos, panelVisualizarNotas, AgendaPersonal, Expedientes, panelEscribirEnTuAgendaPersonal, this);
-        controladorRedactarMensaje = new RedactarMensaje(vista.JPContenido, panelRedactarMensaje, habilitarPaneles, modelUsers, Incapacidades, Procesos, this);
+        controladorRedactarMensaje = new RedactarMensaje(vista.JPContenido, panelRedactarMensaje, habilitarPaneles, modelUsers, Incapacidades, Procesos, this, Terapeutas);
         controladorCreacionDePruebas = new CreacionDePruebas(vista.JPContenido, panelCreacionDePruebas, habilitarPaneles, this);
         controladorEscribirEnTuAgendaPersonal = new EscribirEnTuAgendaPersonal(vista.JPContenido, panelEscribirEnTuAgendaPersonal, habilitarPaneles, Procesos, Terapeutas, modelPaciente, Expedientes, this);
         controladorRcetarMedicamentos = new RcetarMedicamentos(vista.JPContenido, panelRecetarMedicamentos, reporte, recetas, Procesos, this);

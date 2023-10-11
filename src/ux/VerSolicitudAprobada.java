@@ -29,16 +29,17 @@ public class VerSolicitudAprobada implements ActionListener {
         this.modelEmpleado = modelEmpleado;
         this.JPContenido = JPContenido;
         this.vista17 = vista17;
+        this.init = init;
 
-        this.vista17.getBtn1_JF017_S2_RH().addActionListener(this);
+        this.vista17.getBtn1_JF017_S2_RH1().addActionListener(this); 
         this.vista17.getBtn2_JF017_S2_RH1().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == vista17.getBtn1_JF017_S2_RH()) {
+        if (e.getSource() == vista17.getBtn1_JF017_S2_RH1()) {
             //Botón para volver a un panel anterior
-            init.mostrarOcultarPanel("panelSolicitudAprobadaMensaje");
+            init.mostrarOcultarPanel("panelSolicitudesDeEmpleados");
         } else if (e.getSource() == vista17.getBtn2_JF017_S2_RH1()) {
             procesos.ActualizarPermiso(modelEmpleado, 2);
             //Botón para negar solicitud

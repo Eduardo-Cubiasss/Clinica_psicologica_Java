@@ -254,6 +254,7 @@ public class JP023_S3_RH extends javax.swing.JPanel {
         btn09_JF023_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn09_JF023_S3_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         btn09_JF023_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pdf2.png"))); // NOI18N
+        btn09_JF023_S3_RH.setBorder(null);
         btn09_JF023_S3_RH.setBorderPainted(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

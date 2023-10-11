@@ -8,6 +8,7 @@ package ux;
 import Database.Empleado;
 import Database.Incapacidades;
 import Database.Procesos_almacenados;
+import Database.Secretarias;
 import Ui.Deriv_JP014_S2_AF;
 import Ui.JP014_S2_AF;
 import Ui.JP016_S2_AF;
@@ -41,10 +42,11 @@ public class SolicitudesDeEmpleados implements ActionListener {
     private Empleado modelEmpleado;
     private Incapacidades modelPermiso;
     private Resultado resultado;
+    private Secretarias modelSec; 
 
     public SolicitudesDeEmpleados(JPanel JPContenido, JP014_S2_AF vista14, HabilitarPaneles PanelesManager, Inicializador init,
             JP018_S2_AF vista18, JP016_S2_AF vista16, Deriv_JP014_S2_AF vista141, Empleado modelEmpleado, Incapacidades modelPermiso, Procesos_almacenados procesos,
-            Resultado resultado) {
+            Resultado resultado, Secretarias modelSec) {
         this.modelEmpleado = modelEmpleado;
         this.modelPermiso = modelPermiso;
         this.JPContenido = JPContenido;
@@ -54,6 +56,7 @@ public class SolicitudesDeEmpleados implements ActionListener {
         this.vista18 = vista18;
         this.vista16 = vista16;
         this.vista141 = vista141;
+        this.modelSec = modelSec;
         this.init = init;
         this.PanelesManager = PanelesManager;
         this.vista14.getBtn1_JF014_S2().addActionListener(this);
@@ -86,7 +89,15 @@ public class SolicitudesDeEmpleados implements ActionListener {
                 // Haz algo con los resultados (por ejemplo, mostrarlos en una tabla)
                 vista14.mostrarOcultarPanel(vista18);
             } else if (e.getSource() == vista14.getBtn5_JF014_S2()) {
-                init.mostrarOcultarPanel("panelMenuSec");
+                if(modelSec.getIDSecretaria() == 0)
+                {
+                    init.mostrarOcultarPanel("panelMenuAdmin");
+                }
+                else
+                {
+                    init.mostrarOcultarPanel("panelMenuSec");
+                }
+                
             }
         }
     }

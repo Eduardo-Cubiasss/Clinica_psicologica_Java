@@ -203,7 +203,7 @@ public class JP004_S2_AF extends javax.swing.JPanel {
         JP001_S1_AF.add(btn03_JF005_S2_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 150, 180));
 
         btn04_JF005_S2_AF.setBackground(new java.awt.Color(255, 255, 255));
-        btn04_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnAcercaDClinic.png"))); // NOI18N
+        btn04_JF005_S2_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnSoli.png"))); // NOI18N
         btn04_JF005_S2_AF.setBorderPainted(false);
         btn04_JF005_S2_AF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

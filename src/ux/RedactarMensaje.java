@@ -7,6 +7,7 @@ package ux;
 
 import Database.Incapacidades;
 import Database.Procesos_almacenados;
+import Database.Terapeutas;
 import Database.Usuarios;
 import Ui.JP032_S3_AF;
 import java.awt.CardLayout;
@@ -26,10 +27,11 @@ public class RedactarMensaje implements ActionListener{
      private Incapacidades modelIncap;
      private Procesos_almacenados procesos;
      private Inicializador init;
+     private Terapeutas modelTerap;
     
     
     public RedactarMensaje(JPanel JPContenido, JP032_S3_AF vista32,  HabilitarPaneles PanelesManager, Usuarios modelUsers, Incapacidades modelIncap,
-            Procesos_almacenados procesos, Inicializador init)
+            Procesos_almacenados procesos, Inicializador init, Terapeutas modelTerap)
     {
         this.JPContenido = JPContenido;
         this.vista32 = vista32;
@@ -38,6 +40,7 @@ public class RedactarMensaje implements ActionListener{
         this.modelUsers = modelUsers;
         this.procesos = procesos;
         this.init = init;
+        this.modelTerap = modelTerap;
         this.vista32.getBtn1_JF028_S3_AF().addActionListener(this);
         this.vista32.getjButton1().addActionListener(this);
     }
@@ -46,7 +49,15 @@ public class RedactarMensaje implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()== vista32.getBtn1_JF028_S3_AF())
         {
-            init.mostrarOcultarPanel("panelSolicitudesDeEmpleados");
+            if(modelTerap.getIDTerapeuta() == 0)
+            {
+                 init.mostrarOcultarPanel("panelMenuSec");
+            }
+            else
+            {
+                 init.mostrarOcultarPanel("panelMenuTp");
+            }
+           
            
             //Volver un panel anterior
         }

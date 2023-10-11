@@ -19,7 +19,8 @@ import javax.swing.JPanel;
  *
  * @author LENOVO
  */
-public class EscribirEnTuAgendaPersonal implements ActionListener{
+public class EscribirEnTuAgendaPersonal implements ActionListener {
+
     private JPanel JPContenido;
     private JP034_S3_AF vista34;
     private HabilitarPaneles PanelesManager;
@@ -28,13 +29,12 @@ public class EscribirEnTuAgendaPersonal implements ActionListener{
     private Pacientes modelPacien;
     private Expedientes modelExp;
     private Inicializador init;
-   
-    public EscribirEnTuAgendaPersonal(JPanel JPContenido, JP034_S3_AF vista34, HabilitarPaneles PanelesManager, Procesos_almacenados Procesos, 
-            Terapeutas modelTer, Pacientes modelPacien, Expedientes modelExp, Inicializador init)
-    {
+
+    public EscribirEnTuAgendaPersonal(JPanel JPContenido, JP034_S3_AF vista34, HabilitarPaneles PanelesManager, Procesos_almacenados Procesos,
+            Terapeutas modelTer, Pacientes modelPacien, Expedientes modelExp, Inicializador init) {
         this.JPContenido = JPContenido;
         this.vista34 = vista34;
-        this.PanelesManager = PanelesManager;  
+        this.PanelesManager = PanelesManager;
         this.Procesos = Procesos;
         this.modelPacien = modelPacien;
         this.modelTer = modelTer;
@@ -45,15 +45,20 @@ public class EscribirEnTuAgendaPersonal implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()== vista34.getBtn1_JF034_AF())
-        {
-            modelExp.setContenido(vista34.getTxtAExpeciente().getText());
-            Procesos.EscribirExpe(modelPacien, modelTer, modelExp);
-            
-             init.mostrarOcultarPanel("panelExpedienteDelPaciente"); 
-           
+        if (e.getSource() == vista34.getBtn1_JF034_AF()) {
+            if ((vista34.getTxtAExpeciente().getText().isEmpty()) || vista34.getTxtAExpeciente().equals(modelExp.getContenido())) {
+                init.mostrarOcultarPanel("panelExpedienteDelPaciente");
+                // Aquí deberías manejar el caso de que el TextField esté vacío
+            } else
+            {
+                // Aquí puedes continuar con el procesamiento
+                modelExp.setContenido(vista34.getTxtAExpeciente().getText());
+                Procesos.EscribirExpe(modelPacien, modelTer, modelExp);
+                init.mostrarOcultarPanel("panelExpedienteDelPaciente");
+            }
+
             //Botón para volver a un panel anterior
         }
     }
-    
+
 }

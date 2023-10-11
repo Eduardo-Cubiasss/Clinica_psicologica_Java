@@ -54,7 +54,7 @@ public class ExpedienteDelPaciente implements ActionListener {
         this.modelAgendas = modelAgendas;
         this.modelContactos = modelContactos;
         this.modelExp = modelExp;
-        this.init = init; 
+        this.init = init;
         this.vistaJP031.getBtn01_JP031_S3_RH().addActionListener(this);
         this.vistaJP031.getBtn1_JF031_S3_RH().addActionListener(this);
         this.vistaJP031.getBtn2_JF031_S3_RH1().addActionListener(this);
@@ -64,36 +64,36 @@ public class ExpedienteDelPaciente implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+
         if (e.getSource() == vistaJP031.getBtn01_JP031_S3_RH()) {
             modelPaciente.setMensajito(vistaJP031.getTxtEscribirMensaje_JP031_S3_RH().getText());
             System.out.println("Vamos a vel " + modelPaciente.getMensajito());
             Procesos.viewpaciente(modelPaciente, modelUsers, modelContactos, 2);
-            
-        } else if (e.getSource() == vistaJP031.getBtn4_JF031_S3_RH()) {
-            
-            //recetitas pa lokitos
-                         init.mostrarOcultarPanel("panelRecetarMedicamentos"); 
 
+        } else if (e.getSource() == vistaJP031.getBtn4_JF031_S3_RH()) {
+
+            //recetitas pa lokitos
+            init.mostrarOcultarPanel("panelRecetarMedicamentos");
 
         } else if (e.getSource() == vistaJP031.getBtn3_JF031_S3_RH2()) {
             Procesos.VerNotasPac(modelPaciente, modelAgendas);
             vista35.getLbNotas().setText(modelAgendas.getContenido());
             vista35.LbNotas.setEnabled(false);
-            
-                         init.mostrarOcultarPanel("panelVisualizarNotas"); 
 
-                         //pa visualizar notitas
-            
-            
+            init.mostrarOcultarPanel("panelVisualizarNotas");
+
+            //pa visualizar notitas
         } else if (e.getSource() == vistaJP031.getBtn2_JF031_S3_RH1()) {
             Procesos.VerExpe(modelExp, modelPaciente);
             vista34.getTxtAExpeciente().setText(modelExp.getContenido());
-            
-            //Escribir en agenda
-            init.mostrarOcultarPanel("panelEscribirEnTuAgendaPersonal"); 
 
-            
+            //Escribir en agenda
+            init.mostrarOcultarPanel("panelEscribirEnTuAgendaPersonal");
+
+        }
+        else if (e.getSource() == vistaJP031.getBtn1_JF031_S3_RH())
+        {
+            init.mostrarOcultarPanel("panelBuscadorPacientes");
         }
     }
 

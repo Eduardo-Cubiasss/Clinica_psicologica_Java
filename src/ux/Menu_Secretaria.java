@@ -37,16 +37,17 @@ public class Menu_Secretaria implements ActionListener {
         this.vista39 = vista39;
         this.vista14 = vista14;
         this.vista141 = vista141;
+        this.controller14 = controller14;
         this.init = init;
         this.PanelesManager = PanelesManager;
-        this.controller14 = controller14;
-        cardLayout = (CardLayout) JPContenido.getLayout();
+        
         //Hacer this a PanelesManager
 
         this.vista39.getBtn05_JF039_S3_RH().addActionListener(this);
         this.vista39.getBtn06_JF039_S3_RH().addActionListener(this);
         this.vista39.getBtn08_JF039_S3_RH().addActionListener(this);
         this.vista39.getBtn09_JF039_S3_RH().addActionListener(this);
+        this.vista39.getBtn06_JF023_S3_RH().addActionListener(this);
     }
 
     @Override
@@ -57,7 +58,9 @@ public class Menu_Secretaria implements ActionListener {
 
             //Botón de mi perfil
         } else if (e.getSource() == vista39.getBtn06_JF039_S3_RH()) {
-
+            vista141.getBtnRedactarMensaje().setVisible(true);
+            vista141.getjLabel3().setText("Redactar");
+            vista141.getjLabel5().setText("Mensaje");
             init.mostrarOcultarPanel("panelSolicitudesDeEmpleados");
             controller14.procesarBtn1_JF014_S2();
             vista14.mostrarOcultarPanel(vista141);
@@ -72,6 +75,9 @@ public class Menu_Secretaria implements ActionListener {
 
             init.mostrarOcultarPanel("panelBuscadorPacientes");
 
+        }else if (e.getSource() == vista39.getBtn06_JF023_S3_RH()) {
+            
+            init.mostrarOcultarPanel("panelRedactarMensaje");
         }
     }
 }

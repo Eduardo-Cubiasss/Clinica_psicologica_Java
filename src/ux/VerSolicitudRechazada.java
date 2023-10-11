@@ -29,7 +29,7 @@ public class VerSolicitudRechazada implements ActionListener {
         this.modelEmpleado = modelEmpleado;
         this.JPContenido = JPContenido;
         this.vista19 = vista19;
-
+        this.init = init;
         this.vista19.getBtn1_JF019_S2_RH().addActionListener(this);
         this.vista19.getBtn2_JF019_S2_RH().addActionListener(this);
 
@@ -38,6 +38,7 @@ public class VerSolicitudRechazada implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista19.getBtn1_JF019_S2_RH()) {
+             init.mostrarOcultarPanel("panelSolicitudesDeEmpleados");
             //Botón para volver a un panel anterior
         } else if (e.getSource() == vista19.getBtn2_JF019_S2_RH()) {
             procesos.ActualizarPermiso(modelEmpleado, 1);

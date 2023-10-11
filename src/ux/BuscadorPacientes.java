@@ -106,12 +106,16 @@ public class BuscadorPacientes implements ActionListener {
                 vistaJP031.setJL_Edad_JF031_S3_RH(valorStr);
 
                 vistaJP031.setJL_Nombre_JF031_S3_RH(modelPacientes.getNombre());
-                           init.mostrarOcultarPanel("panelExpedienteDelPaciente"); 
+                init.mostrarOcultarPanel("panelExpedienteDelPaciente"); 
 
             } catch (Exception ex) {
                 // Captura la excepción y muestra un mensaje de error
                 JOptionPane.showMessageDialog(null, "Error al ver el expediente del paciente, seleccione un paciente por favor", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
             }
+        }
+        else if (e.getSource() == vistaJP024.getBtn3_JF024())
+        {
+            init.mostrarOcultarPanel("panelMenuTp");
         }
     }
 
