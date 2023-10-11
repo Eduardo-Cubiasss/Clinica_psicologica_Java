@@ -153,6 +153,10 @@ public class JP022_S3_AF extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("Estadísticas");
 
+        Btn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/sq.PNG"))); // NOI18N
+
+        Btn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/ds.PNG"))); // NOI18N
+
         javax.swing.GroupLayout sasasLayout = new javax.swing.GroupLayout(sasas);
         sasas.setLayout(sasasLayout);
         sasasLayout.setHorizontalGroup(
@@ -161,45 +165,45 @@ public class JP022_S3_AF extends javax.swing.JPanel {
             .addGroup(sasasLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(btn001_JF22_S3_AF)
-                .addGap(373, 373, 373)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 321, Short.MAX_VALUE)
+                .addGap(314, 314, 314)
                 .addComponent(jLabel4)
-                .addGap(18, 18, 18))
-            .addGroup(sasasLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(89, 89, 89)
-                .addComponent(Btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(545, 545, 545))
+                .addGap(20, 20, 20))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sasasLayout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(Btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(210, 210, 210)
+                .addComponent(Btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(221, Short.MAX_VALUE))
         );
         sasasLayout.setVerticalGroup(
             sasasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sasasLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
                 .addGroup(sasasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addGroup(sasasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel1)
-                        .addComponent(btn001_JF22_S3_AF)))
+                    .addGroup(sasasLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(btn001_JF22_S3_AF))
+                    .addGroup(sasasLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addComponent(Btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(181, 181, 181))
+            .addGroup(sasasLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(jLabel1)
+                .addGap(33, 33, 33)
+                .addComponent(Btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(sasasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sasasLayout.createSequentialGroup()
-                        .addGroup(sasasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(302, 302, 302))))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(sasas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(sasas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,7 +214,7 @@ public class JP022_S3_AF extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton Btn1;
-    public javax.swing.JButton Btn2;
+    private javax.swing.JButton Btn2;
     public javax.swing.JButton btn001_JF22_S3_AF;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel4;
