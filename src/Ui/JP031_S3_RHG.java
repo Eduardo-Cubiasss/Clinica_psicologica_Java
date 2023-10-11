@@ -177,10 +177,11 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
         JL_image_JF031_S3_RH = new javax.swing.JLabel();
         JL_Edad_JF031_S3_RH = new javax.swing.JLabel();
         JL_Correo_JF031_S3_RH = new javax.swing.JLabel();
-        txtEscribirMensaje_JP031_S3_RH = new javax.swing.JTextField();
         btn01_JP031_S3_RH = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtEscribirMensaje_JP031_S3_RH = new javax.swing.JTextArea();
         Btn4_JF031_S3_RH = new javax.swing.JButton();
         Btn2_JF031_S3_RH1 = new javax.swing.JButton();
         Btn3_JF031_S3_RH2 = new javax.swing.JButton();
@@ -232,10 +233,6 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
         JL_Correo_JF031_S3_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         JL_Correo_JF031_S3_RH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtEscribirMensaje_JP031_S3_RH.setBackground(new java.awt.Color(148, 177, 181));
-        txtEscribirMensaje_JP031_S3_RH.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        txtEscribirMensaje_JP031_S3_RH.setForeground(new java.awt.Color(255, 255, 255));
-
         btn01_JP031_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn01_JP031_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/corazao.png"))); // NOI18N
         btn01_JP031_S3_RH.setBorderPainted(false);
@@ -247,6 +244,12 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jLabel3.setText("Correo Electrónico");
 
+        txtEscribirMensaje_JP031_S3_RH.setBackground(new java.awt.Color(148, 177, 181));
+        txtEscribirMensaje_JP031_S3_RH.setColumns(20);
+        txtEscribirMensaje_JP031_S3_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        txtEscribirMensaje_JP031_S3_RH.setRows(5);
+        jScrollPane1.setViewportView(txtEscribirMensaje_JP031_S3_RH);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -256,26 +259,22 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JL_image_JF031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JL_Nombre_JF031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
+                .addGap(66, 66, 66)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(JL_Correo_JF031_S3_RH, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(JL_Edad_JF031_S3_RH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addContainerGap(197, Short.MAX_VALUE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(txtEscribirMensaje_JP031_S3_RH, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn01_JP031_S3_RH)
-                        .addGap(7, 7, 7))))
+                        .addGap(7, 7, 7))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(JL_Correo_JF031_S3_RH, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
+                            .addComponent(jLabel3)
+                            .addComponent(JL_Edad_JF031_S3_RH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(197, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -287,13 +286,15 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JL_Correo_JF031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtEscribirMensaje_JP031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                         .addComponent(btn01_JP031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)))
-                .addGap(14, 14, 14))
+                        .addGap(30, 30, 30))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(JL_Nombre_JF031_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -354,6 +355,7 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
     public javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    public javax.swing.JTextField txtEscribirMensaje_JP031_S3_RH;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtEscribirMensaje_JP031_S3_RH;
     // End of variables declaration//GEN-END:variables
 }

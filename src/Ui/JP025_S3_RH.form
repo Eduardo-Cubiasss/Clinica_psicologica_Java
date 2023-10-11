@@ -109,10 +109,6 @@
                                   <EmptySpace min="-2" pref="479" max="-2" attributes="0"/>
                                   <Component id="jLabel4" min="-2" pref="170" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="321" max="-2" attributes="0"/>
-                                  <Component id="btn04_JF025_S3_RH" min="-2" pref="193" max="-2" attributes="0"/>
-                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
                                   <Component id="Btnotrasconfig" min="-2" max="-2" attributes="0"/>
@@ -131,7 +127,9 @@
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="559" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="460" max="-2" attributes="0"/>
+                  <Component id="btn04_JF025_S3_RH" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="btn05_JF025_S3_RH" min="-2" pref="80" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -166,9 +164,8 @@
                           </Group>
                           <Component id="JP01_Foto_JF025_S3_RH" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="btn04_JF025_S3_RH" min="-2" pref="48" max="-2" attributes="0"/>
-                          <EmptySpace pref="137" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="185" max="32767" attributes="0"/>
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
@@ -190,9 +187,14 @@
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btn05_JF025_S3_RH" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="kGradientPanel1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="btn05_JF025_S3_RH" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="kGradientPanel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="btn04_JF025_S3_RH" min="-2" pref="48" max="-2" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -422,7 +424,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/imagenes/+Negro.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Actualizar"/>
+            <Property name="actionCommand" type="java.lang.String" value=""/>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
           <AuxValues>

@@ -306,7 +306,7 @@ public class JP025_S3_RH extends javax.swing.JPanel {
         btn04_JF025_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn04_JF025_S3_RH.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
         btn04_JF025_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/+Negro.png"))); // NOI18N
-        btn04_JF025_S3_RH.setText("Actualizar");
+        btn04_JF025_S3_RH.setActionCommand("");
         btn04_JF025_S3_RH.setBorderPainted(false);
 
         Btnotrasconfig.setBackground(new java.awt.Color(255, 255, 255));
@@ -362,9 +362,6 @@ public class JP025_S3_RH extends javax.swing.JPanel {
                                 .addGap(479, 479, 479)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(321, 321, 321)
-                                .addComponent(btn04_JF025_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(130, 130, 130)
                                 .addComponent(Btnotrasconfig))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -375,7 +372,9 @@ public class JP025_S3_RH extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(559, 559, 559)
+                .addGap(460, 460, 460)
+                .addComponent(btn04_JF025_S3_RH)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn05_JF025_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -402,9 +401,8 @@ public class JP025_S3_RH extends javax.swing.JPanel {
                             .addGap(17, 17, 17)
                             .addComponent(jLabel1))
                         .addComponent(JP01_Foto_JF025_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn04_JF025_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 185, Short.MAX_VALUE)
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -419,9 +417,12 @@ public class JP025_S3_RH extends javax.swing.JPanel {
                             .addComponent(TxtContraNueva_JF025_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JP02_Firma_JF025_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn05_JF025_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btn05_JF025_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn04_JF025_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         add(jPanel1, "card2");
