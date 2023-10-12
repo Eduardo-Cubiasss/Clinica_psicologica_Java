@@ -238,7 +238,7 @@ public class JP004_S2_AF extends javax.swing.JPanel {
         kGradientPanel2Layout.setHorizontalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
-                .addContainerGap(501, Short.MAX_VALUE)
+                .addContainerGap(461, Short.MAX_VALUE)
                 .addComponent(btn08_JF023_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(494, 494, 494))
         );
@@ -247,7 +247,7 @@ public class JP004_S2_AF extends javax.swing.JPanel {
             .addComponent(btn08_JF023_S3_RH, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
         );
 
-        JP001_S1_AF.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 1160, 80));
+        JP001_S1_AF.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 1120, 80));
 
         add(JP001_S1_AF, "card2");
     }// </editor-fold>//GEN-END:initComponents
