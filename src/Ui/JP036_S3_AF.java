@@ -8,6 +8,7 @@ package Ui;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import ux.BuscadorPacientes;
 import ux.PanelesInicializador;
@@ -61,14 +62,6 @@ public class JP036_S3_AF extends javax.swing.JPanel {
 
     public void setTxtHorario_JP036_S3_AF(JTextField txtHorario_JP036_S3_AF) {
         this.txtHorario_JP036_S3_AF = txtHorario_JP036_S3_AF;
-    }
-
-    public JTextField getTxtIndicaciones_JP036_S3_AF() {
-        return txtIndicaciones_JP036_S3_AF;
-    }
-
-    public void setTxtIndicaciones_JP036_S3_AF(JTextField txtIndicaciones_JP036_S3_AF) {
-        this.txtIndicaciones_JP036_S3_AF = txtIndicaciones_JP036_S3_AF;
     }
 
     public JTextField getTxtNombreMedicamento_JP036_S3_AF() {
@@ -181,6 +174,14 @@ public class JP036_S3_AF extends javax.swing.JPanel {
         this.jPanel4 = jPanel4;
     }
 
+    public JTextArea getTxtIndicaciones_JP036_S3_AF() {
+        return TxtIndicaciones_JP036_S3_AF;
+    }
+
+    public void setTxtIndicaciones_JP036_S3_AF(String text) {
+    TxtIndicaciones_JP036_S3_AF.setText(text);
+}
+
     
     
     
@@ -224,7 +225,7 @@ public class JP036_S3_AF extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        TxtIndicaciones_JP036_S3_AF = new javax.swing.JTextArea();
 
         setMaximumSize(new java.awt.Dimension(1120, 715));
         setMinimumSize(new java.awt.Dimension(1120, 715));
@@ -262,7 +263,7 @@ public class JP036_S3_AF extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Calibri", 2, 18)); // NOI18N
         jLabel1.setText("Busca un padecimiento, para ver una receta predeterminada");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
-        jPanel1.add(txtNombreMedicamento_JP036_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 270, 30));
+        jPanel1.add(txtNombreMedicamento_JP036_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 420, 30));
 
         btnagregar.setBackground(new java.awt.Color(255, 255, 255));
         btnagregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pd.PNG"))); // NOI18N
@@ -274,12 +275,12 @@ public class JP036_S3_AF extends javax.swing.JPanel {
 
         jLabel7.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel7.setText("Descripción");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 440, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel8.setText("Medicamento");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, -1, -1));
-        jPanel1.add(txtHorario_JP036_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, 270, 30));
+        jPanel1.add(txtHorario_JP036_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 410, 30));
 
         txtBuscar_JP036.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         txtBuscar_JP036.addActionListener(new java.awt.event.ActionListener() {
@@ -307,11 +308,11 @@ public class JP036_S3_AF extends javax.swing.JPanel {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 170, 90));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        TxtIndicaciones_JP036_S3_AF.setColumns(20);
+        TxtIndicaciones_JP036_S3_AF.setRows(5);
+        jScrollPane1.setViewportView(TxtIndicaciones_JP036_S3_AF);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, 350, 100));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 410, 100));
 
         jPanel3.add(jPanel1, "card2");
 
@@ -328,8 +329,9 @@ public class JP036_S3_AF extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JTextArea TxtIndicaciones_JP036_S3_AF;
     public javax.swing.JButton btn1_JF036;
-    private javax.swing.JButton btn3_JF012_A;
+    public javax.swing.JButton btn3_JF012_A;
     public javax.swing.JButton btnagregar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
@@ -342,7 +344,6 @@ public class JP036_S3_AF extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     public javax.swing.JTextField txtBuscar_JP036;
     private javax.swing.JTextField txtHorario_JP036_S3_AF;
     private javax.swing.JTextField txtNombreMedicamento_JP036_S3_AF;

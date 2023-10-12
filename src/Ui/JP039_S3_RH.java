@@ -157,14 +157,14 @@ public class JP039_S3_RH extends javax.swing.JPanel {
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1120, Short.MAX_VALUE)
+            .addGap(0, 1200, Short.MAX_VALUE)
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        jPanel1.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 30));
+        jPanel1.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 30));
 
         kGradientPanel2.setkEndColor(new java.awt.Color(0, 153, 153));
         kGradientPanel2.setkStartColor(new java.awt.Color(0, 153, 153));
@@ -178,49 +178,49 @@ public class JP039_S3_RH extends javax.swing.JPanel {
         kGradientPanel2Layout.setHorizontalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel2Layout.createSequentialGroup()
-                .addContainerGap(517, Short.MAX_VALUE)
+                .addContainerGap(552, Short.MAX_VALUE)
                 .addComponent(btn08_JF039_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(472, 472, 472))
+                .addGap(517, 517, 517))
         );
         kGradientPanel2Layout.setVerticalGroup(
             kGradientPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btn08_JF039_S3_RH, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
         );
 
-        jPanel1.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 1120, 80));
+        jPanel1.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 1200, 80));
 
         jLabel2.setFont(new java.awt.Font("Calibri", 2, 14)); // NOI18N
         jLabel2.setText("¡Aprende a utilizar el sistema!");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 40, 170, 90));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 40, 170, 90));
 
         btn05_JF039_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn05_JF039_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnPerfil.png"))); // NOI18N
         btn05_JF039_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn05_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 150, 180));
+        jPanel1.add(btn05_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 150, 180));
 
         btn06_JF039_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn06_JF039_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnSoli.png"))); // NOI18N
         btn06_JF039_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn06_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 150, 180));
+        jPanel1.add(btn06_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 270, 150, 180));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel3.setText("¿Qué desea realizar hoy secretari@?");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, -1, -1));
 
         btn09_JF039_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn09_JF039_S3_RH.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         btn09_JF039_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnPacientes.png"))); // NOI18N
         btn09_JF039_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn09_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 160, 180));
+        jPanel1.add(btn09_JF039_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 160, 180));
 
         btn06_JF023_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
         btn06_JF023_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnSolicitudesInc.png"))); // NOI18N
         btn06_JF023_S3_RH.setBorder(null);
         btn06_JF023_S3_RH.setBorderPainted(false);
-        jPanel1.add(btn06_JF023_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 270, -1, -1));
+        jPanel1.add(btn06_JF023_S3_RH, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 270, -1, -1));
 
         add(jPanel1, "card2");
     }// </editor-fold>//GEN-END:initComponents

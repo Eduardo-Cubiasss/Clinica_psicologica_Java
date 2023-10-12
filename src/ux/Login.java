@@ -83,7 +83,7 @@ public class Login implements ActionListener {
         this.modelTerap = modelTerap;
         this.modelEmpleado = modelEmpleado;
         this.ModelSecret = ModelSecret;
-        this.init = init; 
+        this.init = init;
 
         this.panelRegistro.getBtn2_JF001_S1_AF().addActionListener(this);
         this.panelRegistro.getBtn3_JF001_S1_AF().addActionListener(this);
@@ -109,12 +109,13 @@ public class Login implements ActionListener {
             vista.mostrarOcultarPanel("panelRegistro");
         } else if (e.getSource() == panelRegistro.getBtn4_JF001_S1_AF()) {
             //PanelesManager.eliminarPanel("panelInicioSesion");
-            vista.mostrarOcultarPanel("panelvalCorreo"); 
-         
+            vista.mostrarOcultarPanel("panelvalCorreo");
+
         }
     }
 
     private void accion() {
+        reiniciar();
         modelUsers.setUserName(panelRegistro.getTxtUsuario_JF001_S1_AF().getText());
         modelUsers.setContraseña(new String(panelRegistro.getPass_JF001_S1_AF().getPassword()));
         Procesos.Logear(modelUsers);
@@ -174,7 +175,7 @@ public class Login implements ActionListener {
                 case 2:
                     if (Primeruso == 1) {
                         Procesos.SaberIDSecre(modelUsers, ModelSecret);
-                       vista.mostrarOcultarPanel("panelPrimerUso");
+                        vista.mostrarOcultarPanel("panelPrimerUso");
                     } else {
                         Procesos.SaberIDSecre(modelUsers, ModelSecret);
                         vista.mostrarOcultarPanel("panelMenuSec");
@@ -194,12 +195,21 @@ public class Login implements ActionListener {
                     break;
             }
             Procesos.SaberIDClinica(modelClinica, modelUsers);
-            JPContenido.revalidate();
-            JPContenido.repaint();
-            PanelesManager.restaurarPanelEliminado();
         } else {
             JOptionPane.showMessageDialog(null, "Usuario no encontrado, compruebe el usuario y la contraseña de nuevo", "ERROR JF001DA", JOptionPane.INFORMATION_MESSAGE);
 
         }
+    }
+
+    private void reiniciar() {
+        modelUsers.setIDUsuario(0);
+        modelTerap.setIDTerapeuta(0);
+        modelTerap.setIDUsuario(0);
+        ModelSecret.setIDSecretaria(0);
+        ModelSecret.setIDUsuario(0);
+        modelAdmin.setIDUsuario(0);
+        modelAdmin.setIDAdministrador(0);
+        modelClinica.setIDClinica(null);
+        modelEmpleado.setIDUsuario(0);
     }
 }

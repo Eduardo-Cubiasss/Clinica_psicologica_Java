@@ -8,6 +8,7 @@ package Ui;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import ux.ExpedienteDelPaciente;
 import ux.Hints;
@@ -29,8 +30,7 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
     
     public JP031_S3_RHG(ExpedienteDelPaciente controlador) {
         initComponents();
-          LimiteCaracteres limiteDescripcion = new LimiteCaracteres(txtEscribirMensaje_JP031_S3_RH, 0, 300);
-        hint.addHint(txtEscribirMensaje_JP031_S3_RH, "Escribir mensaje");
+        hint.addHintToJTextArea(txtEscribirMensaje_JP031_S3_RH, "Escribir mensaje");
         this.controlador = controlador;
 
         str = new PanelesInicializador();
@@ -69,14 +69,6 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
 
     public void setBtn01_JP031_S3_RH(JButton btn01_JP031_S3_RH) {
         this.btn01_JP031_S3_RH = btn01_JP031_S3_RH;
-    }
-
-    public JTextField getTxtEscribirMensaje_JP031_S3_RH() {
-        return txtEscribirMensaje_JP031_S3_RH;
-    }
-
-    public void setTxtEscribirMensaje_JP031_S3_RH(JTextField txtEscribirMensaje_JP031_S3_RH) {
-        this.txtEscribirMensaje_JP031_S3_RH = txtEscribirMensaje_JP031_S3_RH;
     }
 
     public JLabel getJL_Correo_JF031_S3_RH() {
@@ -153,6 +145,14 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
 
     public void setjPanel2(JPanel jPanel2) {
         this.jPanel2 = jPanel2;
+    }
+
+    public JTextArea getTxtEscribirMensaje_JP031_S3_RH() {
+        return txtEscribirMensaje_JP031_S3_RH;
+    }
+
+    public void setTxtEscribirMensaje_JP031_S3_RH(String text) {
+        txtEscribirMensaje_JP031_S3_RH.setText(text);
     }
 
     
@@ -359,6 +359,6 @@ public class JP031_S3_RHG extends javax.swing.JPanel {
     public javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea txtEscribirMensaje_JP031_S3_RH;
+    public javax.swing.JTextArea txtEscribirMensaje_JP031_S3_RH;
     // End of variables declaration//GEN-END:variables
 }

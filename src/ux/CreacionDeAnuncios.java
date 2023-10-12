@@ -48,7 +48,7 @@ public class CreacionDeAnuncios implements ActionListener{
         if(e.getSource() == vista06.getBtn001_JF006_S2_AF())
         {
             
-                        init.mostrarOcultarPanel("panelMenuAdmin"); 
+            init.mostrarOcultarPanel("panelMenuAdmin"); 
 
              
             //Boton de la casita, es para devolverte al menú de administrador

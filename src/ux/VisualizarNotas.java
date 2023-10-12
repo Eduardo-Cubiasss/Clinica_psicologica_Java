@@ -27,13 +27,15 @@ public class VisualizarNotas implements ActionListener{
         this.vista35 = vista35;
         this.init = init;
         this.PanelesManager = PanelesManager;
-        this.vista35.getBtn1_JF035_S3_RH().addActionListener(this);
+        this.vista35.btn1_JF034_AF.setEnabled(true);
+        this.vista35.getBtn1_JF034_AF().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()== vista35.getBtn1_JF035_S3_RH())
-        {
+        if(e.getSource()== vista35.getBtn1_JF034_AF())
+        {   
+            System.out.println("Sigue sin vovoler whats");
             init.mostrarOcultarPanel("panelExpedienteDelPaciente");
             
             //Botón para volver un panel anterior

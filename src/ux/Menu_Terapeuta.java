@@ -29,6 +29,7 @@ public class Menu_Terapeuta implements ActionListener {
     private DocumentosDeApoyo ControllerArt;
     private Procesos_almacenados procesos;
     private Inicializador init;
+
     public Menu_Terapeuta(JPanel JPContenido, JP023_S3_RH panel, HabilitarPaneles PanelesManager, DocumentosDeApoyo ControllerArt,
             Articulos modelArt, Procesos_almacenados procesos, Inicializador init) {
         this.panel = panel;
@@ -38,7 +39,6 @@ public class Menu_Terapeuta implements ActionListener {
         this.modelArt = modelArt;
         this.procesos = procesos;
         this.init = init;
-        this.panel.btn02_JF023_S3_RH.addActionListener(this);
         this.panel.btn03_JF023_S3_RH.addActionListener(this);
         this.panel.btn04_JF023_S3_RH.addActionListener(this);
         this.panel.btn05_JF023_S3_RH.addActionListener(this);
@@ -50,47 +50,35 @@ public class Menu_Terapeuta implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == panel.btn02_JF023_S3_RH) {
-            
-            
+        if (e.getSource() == panel.btn03_JF023_S3_RH) {
 
-            // Código para la acción del botón de ver calendario 
-        } else if (e.getSource() == panel.btn03_JF023_S3_RH) {
-            
-            init.mostrarOcultarPanel("panelBuscadorPacientes");  
+            init.mostrarOcultarPanel("panelBuscadorPacientes");
 
             // Código para la acción del botón de ver pacientes
-            
-
         } else if (e.getSource() == panel.btn04_JF023_S3_RH) {
-            
+
             init.mostrarOcultarPanel("panelDocumentosView");
-            procesos.GenerarDocumentos(modelArt, ControllerArt);            
+            procesos.GenerarDocumentos(modelArt, ControllerArt);
             // Código para la acción del botón de ver documentos de apoyo
-            
 
         } else if (e.getSource() == panel.btn05_JF023_S3_RH) {
             // Código para la acción del botón de mi perfil
-            
+
             init.mostrarOcultarPanel("panelDetallesDeMiPerfil");
-            
 
         } else if (e.getSource() == panel.btn06_JF023_S3_RH) {
 
             init.mostrarOcultarPanel("panelRedactarMensaje");
-            
-            // Código para la acción del botón Solicitud de incapacidades
 
+            // Código para la acción del botón Solicitud de incapacidades
         } else if (e.getSource() == panel.btn07_JF023_S3_RH) {
 
             init.mostrarOcultarPanel("panelCreacionDePruebas");
-           
 
             // Código para la acción del botón Crear Pruebas
         } else if (e.getSource() == panel.btn08_JF023_S3_RH) {
 
             init.mostrarOcultarPanel("panelInicioSesion");
-           
 
             // Código para la acción del botón cerrar sesion
         } else if (e.getSource() == panel.btn09_JF023_S3_RH) {

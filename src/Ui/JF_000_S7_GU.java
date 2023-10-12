@@ -65,6 +65,7 @@ public class JF_000_S7_GU extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(1120, 666));
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JPbarra5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -131,7 +132,7 @@ public class JF_000_S7_GU extends javax.swing.JFrame {
                 .addComponent(JPContenido, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE))
         );
 
-        getContentPane().add(JPbarra5, java.awt.BorderLayout.CENTER);
+        getContentPane().add(JPbarra5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

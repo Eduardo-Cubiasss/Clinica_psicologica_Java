@@ -327,6 +327,7 @@ public class Inicializador {
         controladorSolicitudesDeIncapacidadRedactar = new SolicitudesDeIncapacidadRedactar(vista.JPContenido, panelSolicitudesDeIncapacidadRedactar, this);
         controladorFormularioInicio = new FormularioInicio(vista.JPContenido, this);
         controladorPrimerUso = new primer_uso(modelAdmin, vista.JPContenido, modelUsers, panelPrimerUso, Procesos, habilitarPaneles, modelGenero, ModelContactos, modelActivity, this);
+        
         // Agregar paneles a la vista
         paneles.put("panelSplash", panelSplash);
         paneles.put("panelInicioSesion", panelInicioSesion);
@@ -337,7 +338,7 @@ public class Inicializador {
         paneles.put("panelRec1Telefono", panelRec1Telefono);
         paneles.put("panelMenuTp", panelMenuTp);
         paneles.put("panelMenuSec", panelMenuSec);
-        paneles.put("panelVisualizarNotas", panelVisualizarNotas);
+        paneles.put("panelVisualizarNotas", PanelvisualizarNota);
         paneles.put("panelDocumentosView", panelDocumentosView);
         paneles.put("panelCreacionDeAnuncios", panelCreacionDeAnuncios);
         paneles.put("panelSeccionDeComentarios", panelSeccionDeComentarios);

@@ -178,8 +178,6 @@ public class EliminarAnunciosActuales implements ActionListener {
         } else if (e.getSource() == vista21.getBtn2_JF021_S3_RH()) {
             procesos.BorrarAnuncio(adds);
             procesos.GenerarAnunciosEli(adds, this);
-            vista21.revalidate();
-            vista21.repaint();
             //Eliminar anuncio
         } else if (e.getSource() == vista21.getBtn3_JF021_S3_RH()) {
             //Pos no eliminar y ya

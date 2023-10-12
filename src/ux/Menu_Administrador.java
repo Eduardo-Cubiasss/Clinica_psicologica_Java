@@ -43,7 +43,6 @@ public class Menu_Administrador implements ActionListener {
         this.panel.btn02_JF005_S2_AF.addActionListener(this);
         this.panel.btn03_JF005_S2_AF.addActionListener(this);
         this.panel.btn04_JF005_S2_AF.addActionListener(this);
-        this.panel.btn05_JF005_S2_AF.addActionListener(this);
         this.panel.btn08_JF023_S3_RH.addActionListener(this);
     }
 
@@ -74,12 +73,7 @@ public class Menu_Administrador implements ActionListener {
             controller14.procesarBtn1_JF014_S2();
             vista14.mostrarOcultarPanel(vista141);
 
-        } else if (e.getSource() == panel.getBtn05_JF005_S2_AF()) {
-
-            // Código para la acción del botón comentarios 
-            init.mostrarOcultarPanel("panelSeccionDeComentarios");
-
-        } else if (e.getSource() == panel.getBtn08_JF023_S3_RH()) {
+        }  else if (e.getSource() == panel.getBtn08_JF023_S3_RH()) {
 
             // Código para la acción del botón cerrar sesion
             init.mostrarOcultarPanel("panelInicioSesion");

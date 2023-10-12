@@ -8,6 +8,7 @@ package Ui;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import ux.ExpedienteDelPaciente;
 import ux.Hints;
@@ -85,13 +86,14 @@ public class JP032_S3_AF extends javax.swing.JPanel {
         this.jPanel2 = jPanel2;
     }
 
-    public JTextField getTxtDescrip() {
+    public JTextArea getTxtDescrip() {
         return TxtDescrip;
     }
 
-    public void setTxtDescrip(JTextField TxtDescrip) {
-        this.TxtDescrip = TxtDescrip;
+    public void setTxtDescrip(String text) {
+        TxtDescrip.setText(text);
     }
+    
     
     
     
@@ -101,8 +103,7 @@ public class JP032_S3_AF extends javax.swing.JPanel {
     public JP032_S3_AF(RedactarMensaje controlador) {
         this.controlador = controlador;
         initComponents();
-         LimiteCaracteres limiteDescripcion = new LimiteCaracteres(TxtDescrip, 0, 350);
-        hint.addHint(TxtDescrip, "Agregue su mensaje");
+        hint.addHintToJTextArea(TxtDescrip, "Agregue su mensaje");
 
          LimiteCaracteres limiteAsunto = new LimiteCaracteres(TxtAsunto, 0, 60);
         hint.addHint(TxtAsunto, "Agregue el asunto de su mensaje");
@@ -244,7 +245,7 @@ public class JP032_S3_AF extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton Btn1_JF028_S3_AF;
     public javax.swing.JTextField TxtAsunto;
-    private javax.swing.JTextArea TxtDescrip;
+    public javax.swing.JTextArea TxtDescrip;
     public javax.swing.JButton jButton1;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel4;

@@ -45,13 +45,6 @@ public class JP003_S1_RH extends javax.swing.JPanel {
         this.TxtCorreoRegister_JF003_S1_RH = TxtCorreoRegister_JF003_S1_RH;
     }
 
-    public JButton getBtn3_JF003_S1_RH() {
-        return btn3_JF003_S1_RH;
-    }
-
-    public void setBtn3_JF003_S1_RH(JButton btn3_JF003_S1_RH) {
-        this.btn3_JF003_S1_RH = btn3_JF003_S1_RH;
-    }
 
     public JLabel getjLabel11() {
         return jLabel11;
@@ -127,7 +120,6 @@ public class JP003_S1_RH extends javax.swing.JPanel {
         TxtCorreoRegister_JF003_S1_RH = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         Btn1_JF003_S1_RH = new javax.swing.JButton();
-        btn3_JF003_S1_RH = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         Btn2_JF003_S1_RH = new javax.swing.JButton();
@@ -181,13 +173,6 @@ public class JP003_S1_RH extends javax.swing.JPanel {
                 Btn1_JF003_S1_RHActionPerformed(evt);
             }
         });
-
-        btn3_JF003_S1_RH.setBackground(new java.awt.Color(255, 255, 255));
-        btn3_JF003_S1_RH.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        btn3_JF003_S1_RH.setForeground(new java.awt.Color(0, 102, 102));
-        btn3_JF003_S1_RH.setText("¿Quieres probar otro método de recuperación?");
-        btn3_JF003_S1_RH.setBorder(null);
-        btn3_JF003_S1_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel6.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jLabel6.setText("<html> Sigue las siguientes indicaciones para recuperar tu contraseña <br>    ");
@@ -245,7 +230,6 @@ public class JP003_S1_RH extends javax.swing.JPanel {
                     .addGroup(JP001_S1_RHLayout.createSequentialGroup()
                         .addGap(112, 112, 112)
                         .addGroup(JP001_S1_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn3_JF003_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TxtCorreoRegister_JF003_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11)))
                     .addGroup(JP001_S1_RHLayout.createSequentialGroup()
@@ -277,8 +261,6 @@ public class JP003_S1_RH extends javax.swing.JPanel {
                 .addComponent(Btn1_JF003_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Btn2_JF003_S1_RH)
-                .addGap(18, 18, 18)
-                .addComponent(btn3_JF003_S1_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP001_S1_RHLayout.createSequentialGroup()
                 .addGap(0, 12, Short.MAX_VALUE)
@@ -302,7 +284,6 @@ public class JP003_S1_RH extends javax.swing.JPanel {
     public javax.swing.JButton Btn2_JF003_S1_RH;
     private javax.swing.JPanel JP001_S1_RH;
     public javax.swing.JTextField TxtCorreoRegister_JF003_S1_RH;
-    private javax.swing.JButton btn3_JF003_S1_RH;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

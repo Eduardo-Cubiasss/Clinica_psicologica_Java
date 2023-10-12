@@ -8,6 +8,7 @@ package Ui;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import ux.DetallesDeMiPerfil;
 import ux.PanelesInicializador;
@@ -44,13 +45,15 @@ public class JP025_S3_RH extends javax.swing.JPanel {
         this.TxtContraseñaActual_JF025_S3_RH = TxtContraseñaActual_JF025_S3_RH;
     }
 
-    public JTextField getTxtDescrip_JF025_S3_RH() {
+    public JTextArea getTxtDescrip_JF025_S3_RH() {
         return TxtDescrip_JF025_S3_RH;
     }
 
-    public void setTxtDescrip_JF025_S3_RH(JTextField TxtDescrip_JF025_S3_RH) {
-        this.TxtDescrip_JF025_S3_RH = TxtDescrip_JF025_S3_RH;
+    public void setTxtDescrip_JF025_S3_RH(String text) {
+        TxtDescrip_JF025_S3_RH.setText(text);
     }
+
+
 
     public JButton getBtnotrasconfig() {
         return Btnotrasconfig;
@@ -93,13 +96,6 @@ public class JP025_S3_RH extends javax.swing.JPanel {
         this.Btn1_JF025_S3_RH = Btn1_JF025_S3_RH;
     }
 
-    public JPanel getJP01_Foto_JF025_S3_RH() {
-        return JP01_Foto_JF025_S3_RH;
-    }
-
-    public void setJP01_Foto_JF025_S3_RH(JPanel JP01_Foto_JF025_S3_RH) {
-        this.JP01_Foto_JF025_S3_RH = JP01_Foto_JF025_S3_RH;
-    }
 
     public JPanel getJP02_Firma_JF025_S3_RH() {
         return JP02_Firma_JF025_S3_RH;
@@ -170,9 +166,7 @@ public class JP025_S3_RH extends javax.swing.JPanel {
         
          // Establecer el valor de str aquí después de haberlo creado
         str.setJP025_S3_RH(this);
-    LimiteCaracteres limiteDescripcion = new LimiteCaracteres(TxtDescrip_JF025_S3_RH, 0, 300);
-        new Validaciones(getTxtDescrip_JF025_S3_RH(), "SoloLetras");
-        hint.addHint(getTxtDescrip_JF025_S3_RH(), "Describase brevemente");
+        hint.addHintToJTextArea(getTxtDescrip_JF025_S3_RH(), "Describase brevemente");
         
         LimiteCaracteres limiteContraseña1 = new LimiteCaracteres(TxtContraseñaActual_JF025_S3_RH, 0, 16);
         hint.addHint(getTxtContraseñaActual_JF025_S3_RH(), "Ingrese su contraseña actual");
@@ -401,7 +395,7 @@ public class JP025_S3_RH extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(btn05_JF025_S3_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel6)
@@ -437,7 +431,7 @@ public class JP025_S3_RH extends javax.swing.JPanel {
     public javax.swing.JPanel JP02_Firma_JF025_S3_RH;
     public javax.swing.JTextField TxtContraNueva_JF025_S3_RH;
     public javax.swing.JTextField TxtContraseñaActual_JF025_S3_RH;
-    private javax.swing.JTextArea TxtDescrip_JF025_S3_RH;
+    public javax.swing.JTextArea TxtDescrip_JF025_S3_RH;
     public javax.swing.JButton btn04_JF025_S3_RH;
     public javax.swing.JButton btn05_JF025_S3_RH;
     public javax.swing.JLabel jLabel1;

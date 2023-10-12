@@ -36,6 +36,7 @@ public class RcetarMedicamentos implements ActionListener{
         this.init = init;
         this.vista36.btn1_JF036.addActionListener(this);
         this.vista36.btnagregar.addActionListener(this);
+        this.vista36.getBtn3_JF012_A().addActionListener(this);
                 
     }
 
@@ -51,6 +52,10 @@ public class RcetarMedicamentos implements ActionListener{
         else if (e.getSource() == vista36.getBtn1_JF036())
         {
             this.reporte.mostrarReporteReceta(vista36.getTxtBuscar_JP036());
+        }
+        else if (e.getSource() == vista36.getBtn3_JF012_A())
+        {
+            init.mostrarOcultarPanel("panelExpedienteDelPaciente");
         }
     }
     

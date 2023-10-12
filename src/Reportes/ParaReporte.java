@@ -96,7 +96,7 @@ public class ParaReporte {
        
        public void mostrarReporteCantArticulo() {
         try {
-            JasperReport report = (JasperReport) JRLoader.loadObject(getClass().getResource("/Vista/ReporteCantArticulo.jasper"));
+            JasperReport report = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/ReporteCantArticulo.jasper"));
             JasperPrint jprint = JasperFillManager.fillReport(report, null, ConnectionSQL.getConexion());
 
             JasperViewer view = new JasperViewer(jprint, false);
@@ -111,7 +111,7 @@ public class ParaReporte {
        
         public void mostrarReporteContPermisos() {
         try {
-            JasperReport report = (JasperReport) JRLoader.loadObject(getClass().getResource("/Vista/ReporteContPermisos.jasper"));
+            JasperReport report = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/ReporteContPermisos.jasper"));
             JasperPrint jprint = JasperFillManager.fillReport(report, null, ConnectionSQL.getConexion());
 
             JasperViewer view = new JasperViewer(jprint, false);

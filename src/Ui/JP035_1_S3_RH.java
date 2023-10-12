@@ -25,13 +25,15 @@ public class JP035_1_S3_RH extends javax.swing.JPanel {
     private VisualizarNotas controlador;
     private PanelesInicializador str;
 
-    public JButton getBtn1_JF035_S3_RH() {
-        return Btn1_JF035_S3_RH;
+    public JButton getBtn1_JF034_AF() {
+        return btn1_JF034_AF;
     }
 
-    public void setBtn1_JF035_S3_RH(JButton Btn1_JF035_S3_RH) {
-        this.Btn1_JF035_S3_RH = Btn1_JF035_S3_RH;
+    public void setBtn1_JF034_AF(JButton btn1_JF034_AF) {
+        this.btn1_JF034_AF = btn1_JF034_AF;
     }
+
+
 
     public JLabel getjLabel5() {
         return jLabel5;
@@ -105,7 +107,7 @@ public class JP035_1_S3_RH extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        Btn1_JF035_S3_RH = new javax.swing.JButton();
+        btn1_JF034_AF = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         LbNotas = new javax.swing.JTextArea();
@@ -125,11 +127,10 @@ public class JP035_1_S3_RH extends javax.swing.JPanel {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
 
-        Btn1_JF035_S3_RH.setBackground(new java.awt.Color(255, 255, 255));
-        Btn1_JF035_S3_RH.setForeground(new java.awt.Color(255, 255, 255));
-        Btn1_JF035_S3_RH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector (1).png"))); // NOI18N
-        Btn1_JF035_S3_RH.setBorderPainted(false);
-        Btn1_JF035_S3_RH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn1_JF034_AF.setBackground(new java.awt.Color(255, 255, 255));
+        btn1_JF034_AF.setForeground(new java.awt.Color(255, 255, 255));
+        btn1_JF034_AF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Vector.png"))); // NOI18N
+        btn1_JF034_AF.setBorderPainted(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -161,8 +162,8 @@ public class JP035_1_S3_RH extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Btn1_JF035_S3_RH)
+                .addGap(24, 24, 24)
+                .addComponent(btn1_JF034_AF)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(273, 273, 273)
@@ -179,9 +180,10 @@ public class JP035_1_S3_RH extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel5)
-                        .addComponent(Btn1_JF035_S3_RH)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel5))
+                    .addComponent(btn1_JF034_AF, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(28, Short.MAX_VALUE))
@@ -192,8 +194,8 @@ public class JP035_1_S3_RH extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton Btn1_JF035_S3_RH;
     public javax.swing.JTextArea LbNotas;
+    public javax.swing.JButton btn1_JF034_AF;
     public javax.swing.JLabel jLabel4;
     public javax.swing.JLabel jLabel5;
     public javax.swing.JPanel jPanel1;
