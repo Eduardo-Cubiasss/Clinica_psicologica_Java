@@ -15,7 +15,11 @@ import javax.swing.JTextField;
 import keeptoo.KGradientPanel;
 import ux.AgregarEmpleados;
 import ux.AgregarPerfilesDeUsuario;
+import ux.Hints;
+import ux.LimiteCaracteres;
 import ux.PanelesInicializador;
+import ux.Validaciones;
+
 
 /**
  *
@@ -25,7 +29,8 @@ public class JP009_S2_RH extends javax.swing.JPanel {
     
     private AgregarPerfilesDeUsuario controlador;
     private PanelesInicializador str;
-
+    private Hints hint;
+    private LimiteCaracteres Limite;
     
 
     public AgregarPerfilesDeUsuario getControlador() {
@@ -265,6 +270,19 @@ public class JP009_S2_RH extends javax.swing.JPanel {
         
          // Establecer el valor de str aquí después de haberlo creado
         str.setJP009_S2_RH(this);
+        
+         LimiteCaracteres limiteUsuario = new LimiteCaracteres(TxtNombre_JF009_S2_RH, 0, 25);
+        new Validaciones(TxtNombre_JF009_S2_RH, "SoloLetras");
+        hint.addHint(getTxNombre_JF009_S2_RH(), "Ingrese su nombre de usuario");
+        
+        
+         LimiteCaracteres limiteContraseña = new LimiteCaracteres(TxtContraseña_JF009_S2_RH1, 0, 12);
+        new Validaciones(TxtContraseña_JF009_S2_RH1, "SoloLetras");
+        hint.addHint(getTxtContraseña_JF009_S2_RH(), "Ingrese su contraseña");  
+        
+         LimiteCaracteres limiteUsaurio = new LimiteCaracteres(TxtCorreoE_JF009_S2_RH, 0, 120);       
+        hint.addHint(getTxtCorreoE_JF009_S2_RH(), "Ingrese su correo");
+        
     }
     
     
@@ -333,7 +351,7 @@ public class JP009_S2_RH extends javax.swing.JPanel {
         );
         kGradientPanel3Layout.setVerticalGroup(
             kGradientPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 28, Short.MAX_VALUE)
+            .addGap(0, 46, Short.MAX_VALUE)
         );
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
@@ -360,6 +378,11 @@ public class JP009_S2_RH extends javax.swing.JPanel {
         TxtCorreoE_JF009_S2_RH.setForeground(new java.awt.Color(102, 102, 102));
         TxtCorreoE_JF009_S2_RH.setText("Insertar el correo electrónico");
         TxtCorreoE_JF009_S2_RH.setBorder(null);
+        TxtCorreoE_JF009_S2_RH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtCorreoE_JF009_S2_RHActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel5.setText("Correo electrónico");
@@ -367,6 +390,11 @@ public class JP009_S2_RH extends javax.swing.JPanel {
         TxtNombre_JF009_S2_RH.setForeground(new java.awt.Color(102, 102, 102));
         TxtNombre_JF009_S2_RH.setText("Insertar nombre de usuario");
         TxtNombre_JF009_S2_RH.setBorder(null);
+        TxtNombre_JF009_S2_RH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtNombre_JF009_S2_RHActionPerformed(evt);
+            }
+        });
 
         TxNombre_JF009_S2_RH.setForeground(new java.awt.Color(102, 102, 102));
         TxNombre_JF009_S2_RH.setBorder(null);
@@ -395,6 +423,11 @@ public class JP009_S2_RH extends javax.swing.JPanel {
         TxtContraseña_JF009_S2_RH1.setForeground(new java.awt.Color(102, 102, 102));
         TxtContraseña_JF009_S2_RH1.setText("Insertar contraseña");
         TxtContraseña_JF009_S2_RH1.setBorder(null);
+        TxtContraseña_JF009_S2_RH1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtContraseña_JF009_S2_RH1ActionPerformed(evt);
+            }
+        });
 
         Txt_imagen.setForeground(new java.awt.Color(255, 255, 255));
         Txt_imagen.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 3, 3, 3));
@@ -533,7 +566,7 @@ public class JP009_S2_RH extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Btn3_JF009_S2_RH1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Btn4_JF009_S2_RH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
+                .addGap(28, 28, 28)
                 .addComponent(kGradientPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
@@ -557,6 +590,18 @@ public class JP009_S2_RH extends javax.swing.JPanel {
     private void Txt_imagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_imagenActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Txt_imagenActionPerformed
+
+    private void TxtNombre_JF009_S2_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNombre_JF009_S2_RHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtNombre_JF009_S2_RHActionPerformed
+
+    private void TxtContraseña_JF009_S2_RH1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtContraseña_JF009_S2_RH1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtContraseña_JF009_S2_RH1ActionPerformed
+
+    private void TxtCorreoE_JF009_S2_RHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCorreoE_JF009_S2_RHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtCorreoE_JF009_S2_RHActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -138,7 +138,6 @@ public class JP017_1_S2_RH extends javax.swing.JPanel {
         LblAsunto.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         LblAsunto.setText("Asunto");
 
-        LbNotas.setBackground(new java.awt.Color(255, 255, 255));
         LbNotas.setColumns(20);
         LbNotas.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
         LbNotas.setForeground(new java.awt.Color(51, 51, 51));
@@ -160,8 +159,8 @@ public class JP017_1_S2_RH extends javax.swing.JPanel {
                         .addComponent(Btn2_JF017_S2_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(JPSolicitud_JP017_S2_RH1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(LblAsunto)))
-                .addContainerGap(293, Short.MAX_VALUE))
+                        .addComponent(LblAsunto, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(116, Short.MAX_VALUE))
             .addGroup(JPSolicitud_JP017_S2_RH1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(JPSolicitud_JP017_S2_RH1Layout.createSequentialGroup()
                     .addGap(34, 34, 34)
@@ -173,7 +172,7 @@ public class JP017_1_S2_RH extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPSolicitud_JP017_S2_RH1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(LblAsunto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 377, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 378, Short.MAX_VALUE)
                 .addComponent(Btn2_JF017_S2_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
             .addGroup(JPSolicitud_JP017_S2_RH1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,36 +190,35 @@ public class JP017_1_S2_RH extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(Btn1_JF017_S2_RH1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 837, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(Btn1_JF017_S2_RH1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addGap(200, 200, 200)))
                 .addComponent(JlLogo1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 186, Short.MAX_VALUE)
                 .addComponent(JPSolicitud_JP017_S2_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(141, 141, 141))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(415, 415, 415)
-                    .addComponent(jLabel3)
-                    .addContainerGap(445, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Btn1_JF017_S2_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(Btn1_JF017_S2_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(JlLogo1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(JPSolicitud_JP017_S2_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(82, 82, 82)
-                    .addComponent(jLabel3)
-                    .addContainerGap(528, Short.MAX_VALUE)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel3, "card2");

@@ -217,12 +217,12 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         initComponents();
         
         LimiteCaracteres limiteFecha = new LimiteCaracteres(txtFechaNa_JP0048, 0, 8);
-        new Validaciones(txtFechaNa_JP0048, "SoloNumeros2");
+        new Validaciones(txtFechaNa_JP0048, "Fecha10Digitos");
         hint.addHint(txtFechaNa_JP0048, "dd/MM/yyyy");
 
         
         LimiteCaracteres limiteDui = new LimiteCaracteres(txtDui_JP0048, 0, 9);
-        new Validaciones(txtDui_JP0048, "SoloNumeros2");
+        new Validaciones(txtDui_JP0048, "ValidarDUI");
         hint.addHint(txtDui_JP0048, "XXXXXXXX-X");
         
         // Establecer el valor de str aquí después de haberlo creado
@@ -297,6 +297,11 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         txtFechaNa_JP0048.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
 
         txtDui_JP0048.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        txtDui_JP0048.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDui_JP0048ActionPerformed(evt);
+            }
+        });
 
         btnEmpecemos.setBackground(new java.awt.Color(255, 255, 255));
         btnEmpecemos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnEmpecemos.png"))); // NOI18N
@@ -327,16 +332,16 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         kGradientPanel9Layout.setHorizontalGroup(
             kGradientPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel9Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         kGradientPanel9Layout.setVerticalGroup(
             kGradientPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel9Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(188, 188, 188))
+                .addGap(187, 187, 187))
         );
 
         btnOmitir.setBackground(new java.awt.Color(255, 255, 255));
@@ -359,12 +364,12 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jLabel10)
-                .addGap(562, 562, 562))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(jLabel10)
+                        .addGap(54, 54, 54))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
@@ -415,11 +420,11 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel12)
                                         .addGap(71, 71, 71)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addComponent(jLabel15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
                         .addComponent(jLabel13)
                         .addGap(169, 169, 169)))
                 .addComponent(kGradientPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -474,11 +479,11 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -491,6 +496,10 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
     private void btnOmitirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOmitirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnOmitirActionPerformed
+
+    private void txtDui_JP0048ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDui_JP0048ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDui_JP0048ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

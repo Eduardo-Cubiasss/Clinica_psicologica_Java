@@ -279,7 +279,7 @@ public class JP036_S3_AF extends javax.swing.JPanel {
 
         jLabel8.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel8.setText("Medicamento");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, -1, -1));
         jPanel1.add(txtHorario_JP036_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 410, 30));
 
         txtBuscar_JP036.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
@@ -302,7 +302,7 @@ public class JP036_S3_AF extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel3.setText("Nombre del padecimiento");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
 
         jLabel4.setBackground(new java.awt.Color(0, 153, 153));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N

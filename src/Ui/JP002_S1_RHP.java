@@ -220,10 +220,10 @@ public class JP002_S1_RHP extends javax.swing.JPanel {
 
 
         LimiteCaracteres limiteContraseña1 = new LimiteCaracteres(PassField_Contraseña_JF002_S1_RH, 0, 16);
-        hint.addHint(getPassField_Contraseña_JF002_S1_RH(), "Ingrese su contraseña");
+       
 
         LimiteCaracteres limiteContraseña2 = new LimiteCaracteres(PassField_ConfirmarContra_JF002_S1_RH, 0, 16);
-        hint.addHint(getPassField_ConfirmarContra_JF002_S1_RH(), "Confirme su nueva contraseña");
+        
 
         LimiteCaracteres limiteID = new LimiteCaracteres(TxtID_JF002_S1_RH3, 0, 5);
         hint.addHint(getTxtID_JF002_S1_RH3(), "XXXXX");

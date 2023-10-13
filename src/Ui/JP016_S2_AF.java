@@ -116,7 +116,7 @@ public class JP016_S2_AF extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setText("Solicitudes Aprobadas");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
 
         btn4_JF016_S2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/si.PNG"))); // NOI18N
         btn4_JF016_S2.setBorderPainted(false);

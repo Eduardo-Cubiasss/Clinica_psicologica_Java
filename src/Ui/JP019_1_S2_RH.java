@@ -154,7 +154,6 @@ public class JP019_1_S2_RH extends javax.swing.JPanel {
         LblAsunto.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         LblAsunto.setText("Asunto");
 
-        LbNotas.setBackground(new java.awt.Color(255, 255, 255));
         LbNotas.setColumns(20);
         LbNotas.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
         LbNotas.setForeground(new java.awt.Color(51, 51, 51));
@@ -175,20 +174,18 @@ public class JP019_1_S2_RH extends javax.swing.JPanel {
                         .addGap(283, 283, 283)
                         .addComponent(Btn2_JF019_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(JPSolicitud_JP019_S2_RHLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(JPSolicitud_JP019_S2_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(JPSolicitud_JP019_S2_RHLayout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(LblAsunto, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(32, 32, 32)
+                        .addGroup(JPSolicitud_JP019_S2_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 722, Short.MAX_VALUE)
+                            .addComponent(LblAsunto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         JPSolicitud_JP019_S2_RHLayout.setVerticalGroup(
             JPSolicitud_JP019_S2_RHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPSolicitud_JP019_S2_RHLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addComponent(LblAsunto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Btn2_JF019_S2_RH, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
