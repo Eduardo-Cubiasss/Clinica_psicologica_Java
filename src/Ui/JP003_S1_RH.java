@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import keeptoo.KGradientPanel;
+import ux.Hints;
+import ux.LimiteCaracteres;
 import ux.PanelesInicializador;
 import ux.ValidarCorreo;
 
@@ -20,7 +22,10 @@ public class JP003_S1_RH extends javax.swing.JPanel {
     
     private ValidarCorreo controlador;
     private PanelesInicializador str;
-
+     private Hints hint;
+    private LimiteCaracteres Limite;
+    
+    
     public JButton getBtn1_JF003_S1_RH() {
         return Btn1_JF003_S1_RH;
     }
@@ -102,6 +107,10 @@ public class JP003_S1_RH extends javax.swing.JPanel {
         this.controlador = controlador;
          str = new PanelesInicializador();
         initComponents();
+        
+           LimiteCaracteres limiteCodigoCorreo = new LimiteCaracteres(TxtCorreoRegister_JF003_S1_RH, 0, 50);
+        hint.addHint(getTxtCorreoRegister_JF003_S1_RH(), "Ingresa el código enviado al correo asociado");
+        
         
         // Establecer el valor de str aquí después de haberlo creado
         str.setJP003_S1_RH(this);

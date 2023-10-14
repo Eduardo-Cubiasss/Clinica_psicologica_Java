@@ -105,19 +105,17 @@ public class Validaciones implements KeyListener {
                 }
                 break;
                 
-               case "ValidarDUI":
+     case "ValidarDUI":
     String dui = textfieldenviado.getText();
-
     if (dui.length() != 10) {
         e.consume(); // Ignora la entrada si la longitud no es igual a 10
-    } else {
-        if (!dui.matches("\\d{8}-\\d")) {
-            e.consume(); // Ignora la entrada si no cumple con el formato "XXXXXXXX-X"
-        }
+    } else if (!dui.matches("\\d{8}-\\d")) {
+        e.consume(); // Ignora la entrada si no cumple con el formato "XXXXXXXX-X"
     }
     break;
+    
 
-     case "Fecha10Digitos":
+   case "Fecha10Digitos":
     String fecha = textfieldenviado.getText();
     if (fecha.length() >= 10) {
         e.consume(); // Ignora la entrada si ya hay 10 caracteres
@@ -125,6 +123,7 @@ public class Validaciones implements KeyListener {
         e.consume(); // Ignora la entrada si el carácter introducido no es un dígito
     }
     break;
+
 
                
     }

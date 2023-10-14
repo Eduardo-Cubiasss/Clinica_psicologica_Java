@@ -269,14 +269,18 @@ public class JP036_S3_AF extends javax.swing.JPanel {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, -1));
         jPanel1.add(txtNombreMedicamento_JP036_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 420, 30));
 
-        btnagregar.setBackground(new java.awt.Color(255, 255, 255));
-        btnagregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pd.PNG"))); // NOI18N
+        btnagregar.setBackground(new java.awt.Color(148, 177, 181));
+        btnagregar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        btnagregar.setText("Enviar Receta");
+        btnagregar.setBorderPainted(false);
+        btnagregar.setFocusCycleRoot(true);
+        btnagregar.setInheritsPopupMenu(true);
         btnagregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnagregarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnagregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 540, 120, 100));
+        jPanel1.add(btnagregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 560, 190, 50));
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel5.setText("Recetar Medicamentos");
@@ -317,7 +321,7 @@ public class JP036_S3_AF extends javax.swing.JPanel {
         TxtIndicaciones_JP036_S3_AF.setRows(5);
         jScrollPane1.setViewportView(TxtIndicaciones_JP036_S3_AF);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 420, 100));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 420, 100));
 
         jLabel4.setBackground(new java.awt.Color(0, 153, 153));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N

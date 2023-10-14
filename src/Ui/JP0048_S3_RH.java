@@ -223,17 +223,17 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         
               
         LimiteCaracteres limiteFecha = new LimiteCaracteres(txtFechaNa_JP0048, 0, 10);
-        new Validaciones(getTxtFechaNa_JP0048(), "Fecha10Digitos");
-        hint.addHint(txtFechaNa_JP0048, "dd/MM/yyyy");
+        new Validaciones(getTxtFechaNa_JP0048(),"Fecha10Digitos");
+        hint.addHint(txtFechaNa_JP0048,"dd/MM/yyyy");
 
         
         LimiteCaracteres limiteContaseña = new LimiteCaracteres(txtNumTel_JP0048, 0, 8);
         new Validaciones(getTxtNumTel_JP0048(), "SoloNumeros");
-        hint.addHint(txtNumTel_JP0048, "Ingrese su número de telefono");
+        hint.addHint(txtNumTel_JP0048,"Ingrese su número de telefono");
         
         LimiteCaracteres limiteDui = new LimiteCaracteres(txtDui_JP0048, 0, 9);
         new Validaciones(txtDui_JP0048, "ValidarDUI");
-        hint.addHint(txtDui_JP0048, "XXXXXXXX-X");
+        hint.addHint(txtDui_JP0048,"XXXXXXXX-X");
         
         
         // Establecer el valor de str aquí después de haberlo creado
