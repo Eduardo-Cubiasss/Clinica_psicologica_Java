@@ -57,13 +57,14 @@ public class JP017_1_S2_RH extends javax.swing.JPanel {
         this.LblAsunto = jLabel2;
     }
 
-    public JTextArea getLbNotas() {
+    public JLabel getLbNotas() {
         return LbNotas;
     }
 
     public void setLbNotasText(String texto) {
         this.LbNotas.setText(texto);
     }
+    
 
     public JLabel getLblAsunto() {
         return LblAsunto;
@@ -103,8 +104,8 @@ public class JP017_1_S2_RH extends javax.swing.JPanel {
         JPSolicitud_JP017_S2_RH1 = new javax.swing.JPanel();
         Btn2_JF017_S2_RH1 = new javax.swing.JButton();
         LblAsunto = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        LbNotas = new javax.swing.JTextArea();
+        JPSolicitud_JP017_S2_RH2 = new javax.swing.JPanel();
+        LbNotas = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1120, 640));
@@ -138,15 +139,29 @@ public class JP017_1_S2_RH extends javax.swing.JPanel {
         LblAsunto.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         LblAsunto.setText("Asunto");
 
-        LbNotas.setColumns(20);
-        LbNotas.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
-        LbNotas.setForeground(new java.awt.Color(51, 51, 51));
-        LbNotas.setRows(5);
-        LbNotas.setText("Contenido");
-        LbNotas.setBorder(null);
-        LbNotas.setCaretColor(new java.awt.Color(255, 255, 255));
-        LbNotas.setDisabledTextColor(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setViewportView(LbNotas);
+        JPSolicitud_JP017_S2_RH2.setBackground(new java.awt.Color(204, 204, 204));
+        JPSolicitud_JP017_S2_RH2.setMaximumSize(new java.awt.Dimension(1120, 540));
+
+        LbNotas.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        LbNotas.setText("jLabel1");
+        LbNotas.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        javax.swing.GroupLayout JPSolicitud_JP017_S2_RH2Layout = new javax.swing.GroupLayout(JPSolicitud_JP017_S2_RH2);
+        JPSolicitud_JP017_S2_RH2.setLayout(JPSolicitud_JP017_S2_RH2Layout);
+        JPSolicitud_JP017_S2_RH2Layout.setHorizontalGroup(
+            JPSolicitud_JP017_S2_RH2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPSolicitud_JP017_S2_RH2Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(LbNotas, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(58, Short.MAX_VALUE))
+        );
+        JPSolicitud_JP017_S2_RH2Layout.setVerticalGroup(
+            JPSolicitud_JP017_S2_RH2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPSolicitud_JP017_S2_RH2Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(LbNotas, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(75, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout JPSolicitud_JP017_S2_RH1Layout = new javax.swing.GroupLayout(JPSolicitud_JP017_S2_RH1);
         JPSolicitud_JP017_S2_RH1.setLayout(JPSolicitud_JP017_S2_RH1Layout);
@@ -160,26 +175,22 @@ public class JP017_1_S2_RH extends javax.swing.JPanel {
                     .addGroup(JPSolicitud_JP017_S2_RH1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(LblAsunto, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(116, Short.MAX_VALUE))
-            .addGroup(JPSolicitud_JP017_S2_RH1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(JPSolicitud_JP017_S2_RH1Layout.createSequentialGroup()
-                    .addGap(34, 34, 34)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(37, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPSolicitud_JP017_S2_RH1Layout.createSequentialGroup()
+                .addGap(0, 42, Short.MAX_VALUE)
+                .addComponent(JPSolicitud_JP017_S2_RH2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         JPSolicitud_JP017_S2_RH1Layout.setVerticalGroup(
             JPSolicitud_JP017_S2_RH1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPSolicitud_JP017_S2_RH1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(LblAsunto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 378, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(JPSolicitud_JP017_S2_RH2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(Btn2_JF017_S2_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
-            .addGroup(JPSolicitud_JP017_S2_RH1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(JPSolicitud_JP017_S2_RH1Layout.createSequentialGroup()
-                    .addGap(64, 64, 64)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(108, Short.MAX_VALUE)))
         );
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
@@ -201,7 +212,7 @@ public class JP017_1_S2_RH extends javax.swing.JPanel {
                 .addComponent(JlLogo1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 186, Short.MAX_VALUE)
+                .addGap(0, 157, Short.MAX_VALUE)
                 .addComponent(JPSolicitud_JP017_S2_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(141, 141, 141))
         );
@@ -218,7 +229,7 @@ public class JP017_1_S2_RH extends javax.swing.JPanel {
                         .addComponent(JlLogo1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(JPSolicitud_JP017_S2_RH1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel3, "card2");
@@ -231,12 +242,12 @@ public class JP017_1_S2_RH extends javax.swing.JPanel {
     public javax.swing.JButton Btn1_JF017_S2_RH1;
     public javax.swing.JButton Btn2_JF017_S2_RH1;
     public javax.swing.JPanel JPSolicitud_JP017_S2_RH1;
+    public javax.swing.JPanel JPSolicitud_JP017_S2_RH2;
     public javax.swing.JLabel JlLogo1;
-    public javax.swing.JTextArea LbNotas;
+    public javax.swing.JLabel LbNotas;
     public javax.swing.JLabel LblAsunto;
     public javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     public javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -131,6 +131,7 @@ public class primer_uso implements ActionListener {
         }
         else if (e.getSource() == vistaJP048.getBtn02_JF048_S3_RH())
         {
+            init.reiniciarControllers();
             init.mostrarOcultarPanel("panelInicioSesion");
         }
     }

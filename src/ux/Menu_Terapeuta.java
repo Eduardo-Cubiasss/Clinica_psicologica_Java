@@ -77,7 +77,7 @@ public class Menu_Terapeuta implements ActionListener {
 
             // Código para la acción del botón Crear Pruebas
         } else if (e.getSource() == panel.btn08_JF023_S3_RH) {
-
+            init.reiniciarControllers();
             init.mostrarOcultarPanel("panelInicioSesion");
 
             // Código para la acción del botón cerrar sesion

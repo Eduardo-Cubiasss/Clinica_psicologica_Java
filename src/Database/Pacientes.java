@@ -18,7 +18,18 @@ public class Pacientes {
     private String DUI;
     private String Mensajito;
     private String Apellido;
+    private boolean señal;
 
+    public boolean isSeñal() {
+        return señal;
+    }
+
+    public void setSeñal(boolean señal) {
+        this.señal = señal;
+    }
+    
+    
+    
     public int getIDpaciente() {
         return IDpaciente;
     }

@@ -48,6 +48,7 @@ public class Menu_Secretaria implements ActionListener {
         this.vista39.getBtn08_JF039_S3_RH().addActionListener(this);
         this.vista39.getBtn09_JF039_S3_RH().addActionListener(this);
         this.vista39.getBtn06_JF023_S3_RH().addActionListener(this);
+        this.vista39.getBtn03_JF005_S2_AF().addActionListener(this);
     }
 
     @Override
@@ -67,7 +68,7 @@ public class Menu_Secretaria implements ActionListener {
 
             //Botón de solicitud de incapacidades
         } else if (e.getSource() == vista39.getBtn08_JF039_S3_RH()) {
-
+            init.reiniciarControllers();
             init.mostrarOcultarPanel("panelInicioSesion");
 
             //Botón de Cerrar Sesión, lleva lleva al login dah
@@ -78,6 +79,10 @@ public class Menu_Secretaria implements ActionListener {
         }else if (e.getSource() == vista39.getBtn06_JF023_S3_RH()) {
             
             init.mostrarOcultarPanel("panelRedactarMensaje");
+        }
+        else if (e.getSource() == vista39.getBtn03_JF005_S2_AF())
+        {
+            init.mostrarOcultarPanel("panelCrearCita");
         }
     }
 }

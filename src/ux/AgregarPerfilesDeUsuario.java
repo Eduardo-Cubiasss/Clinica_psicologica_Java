@@ -51,8 +51,9 @@ public class AgregarPerfilesDeUsuario implements ActionListener {
         this.vista09 = vista09;
         this.modelUsers = modelUsers;
 
-        this.vista09.Btn3_JF009_S2_RH1.addActionListener(this);
-        this.vista09.Btn4_JF009_S2_RH.addActionListener(this);
+        this.vista09.getBtn3_JF009_S2_RH1().addActionListener(this);
+        this.vista09.getBtn4_JF009_S2_RH().addActionListener(this);
+        this.vista09.getBtn1_JF009_S2_RH().addActionListener(this);
         this.vista09.Txt_imagen.setEditable(false);
         this.vista09.Txt_imagen.setTransferHandler(new TransferHandler() {
             @Override
@@ -122,7 +123,7 @@ public class AgregarPerfilesDeUsuario implements ActionListener {
             vista09.getTxtCorreoE_JF009_S2_RH().setText(""); // Establece el JTextField en blanco
             vista09.getjComboBox1().setSelectedIndex(0); // Establece el JComboBox en su primer elemento (o el que desees)
         } else if (e.getSource() == vista09.getBtn1_JF009_S2_RH()) {
-            
+              System.out.println("Esta aqui pero no entra");
               init.mostrarOcultarPanel("panelPersonalClinica"); 
             //Para regresar al anterior
             

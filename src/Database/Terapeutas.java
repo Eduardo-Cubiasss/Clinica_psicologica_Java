@@ -23,7 +23,18 @@ public class Terapeutas {
     private int IDGenero;
     private int IDClinica;
     private int IDUsuario;
+    private boolean señal;
 
+    public boolean isSeñal() {
+        return señal;
+    }
+
+    public void setSeñal(boolean señal) {
+        this.señal = señal;
+    }
+    
+    
+    
     public int getIDTerapeuta() {
         return IDTerapeuta;
     }

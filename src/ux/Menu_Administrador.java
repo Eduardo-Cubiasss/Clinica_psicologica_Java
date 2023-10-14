@@ -60,9 +60,9 @@ public class Menu_Administrador implements ActionListener {
             // Código para la acción del botón estadisticas 
         } else if (e.getSource() == panel.getBtn03_JF005_S2_AF()) {
 
-            init.mostrarOcultarPanel("panelCreacionDeAnuncios");
+            init.mostrarOcultarPanel("panelCrearCita");
 
-            // Código para la acción del botón Anuncios 
+            // Código para la acción del botón CrearCita 
         } else if (e.getSource() == panel.getBtn04_JF005_S2_AF()) {
 
             // Código para la acción del botón incapacidades
@@ -74,7 +74,7 @@ public class Menu_Administrador implements ActionListener {
             vista14.mostrarOcultarPanel(vista141);
 
         }  else if (e.getSource() == panel.getBtn08_JF023_S3_RH()) {
-
+            init.reiniciarControllers();
             // Código para la acción del botón cerrar sesion
             init.mostrarOcultarPanel("panelInicioSesion");
 

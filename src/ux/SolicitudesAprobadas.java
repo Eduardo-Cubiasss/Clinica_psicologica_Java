@@ -77,7 +77,8 @@ public class SolicitudesAprobadas implements ActionListener {
             try {
                 procesos.viewpermiso(modelEmpleado, modelPermiso);
                 vista17.setLblAsunto(modelPermiso.getAsunto());
-                vista17.setLbNotasText(modelPermiso.getMensaje());
+                vista17.getLbNotas().setText(modelPermiso.getMensaje());
+                System.out.println("Esto es lo que contiene el mensaje :"+ modelPermiso.getMensaje());
                 vista17.LbNotas.setEnabled(false);
                 // Obtén el valor int que deseas mostrar
 
@@ -85,7 +86,7 @@ public class SolicitudesAprobadas implements ActionListener {
 
             } catch (Exception ex) {
                 // Captura la excepción y muestra un mensaje de error
-                JOptionPane.showMessageDialog(null, "Error al ver el expediente del paciente, seleccione un paciente por favor", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Error al ver el permiso de la persona del paciente, seleccione un paciente por favor", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
             }
         }
 

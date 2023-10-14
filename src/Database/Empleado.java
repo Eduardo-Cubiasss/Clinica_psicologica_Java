@@ -21,7 +21,17 @@ public class Empleado {
     private String DUI;
     private byte[] FotoPerfil;
     private int IDUsuario;
+    private boolean señal;
 
+    public boolean isSeñal() {
+        return señal;
+    }
+
+    public void setSeñal(boolean señal) {
+        this.señal = señal;
+    }
+    
+    
     public byte[] getFotoPerfil() {
         return FotoPerfil;
     }

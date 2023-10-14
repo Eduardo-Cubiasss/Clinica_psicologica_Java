@@ -43,16 +43,16 @@ public class JP001_S1_AFP extends javax.swing.JPanel {
         return Pass_JF001_S1_AF;
     }
 
-    public void setPass_JF001_S1_AF(JPasswordField Pass_JF001_S1_AF) {
-        this.Pass_JF001_S1_AF = Pass_JF001_S1_AF;
+    public void setPass_JF001_S1_AF(String password) {
+        this.Pass_JF001_S1_AF.setText(password);
     }
 
     public JTextField getTxtUsuario_JF001_S1_AF() {
         return TxtUsuario_JF001_S1_AF;
     }
 
-    public void setTxtUsuario_JF001_S1_AF(JTextField TxtUsuario_JF001_S1_AF) {
-        this.TxtUsuario_JF001_S1_AF = TxtUsuario_JF001_S1_AF;
+    public void setTxtUsuario_JF001_S1_AF(String usuario) {
+        this.TxtUsuario_JF001_S1_AF.setText(usuario);
     }
 
     public JButton getBtn4_JF001_S1_AF() {

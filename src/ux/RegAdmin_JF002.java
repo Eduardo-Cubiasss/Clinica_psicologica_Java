@@ -66,9 +66,6 @@ public class RegAdmin_JF002 implements ActionListener {
             System.out.println("Después de ejecutar el método");
 
             // Agrega el panel actual al historial antes de cambiar de panel
-            
-            PanelesManager.copiaPanel("JP002_S1_RHP");
-            vista.mostrarOcultarPanel("panelMenuAdmin");
 
         } else if (e.getSource() == vistaJP002.getBtn2_JF002_S1_RH()) {
             vista.mostrarOcultarPanel("panelInicioSesion");

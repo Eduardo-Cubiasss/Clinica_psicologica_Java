@@ -90,6 +90,11 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         return btn02_JF048_S3_RH;
     }
 
+    public void setBtn02_JF048_S3_RH(JButton btn02_JF048_S3_RH) {
+        this.btn02_JF048_S3_RH = btn02_JF048_S3_RH;
+    }
+    
+    
     public JComboBox<String> getCmbxGenero() {
         return CmbxGenero;
     }
@@ -216,14 +221,20 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
         str = new PanelesInicializador();
         initComponents();
         
-        LimiteCaracteres limiteFecha = new LimiteCaracteres(txtFechaNa_JP0048, 0, 8);
-        new Validaciones(txtFechaNa_JP0048, "Fecha10Digitos");
+              
+        LimiteCaracteres limiteFecha = new LimiteCaracteres(txtFechaNa_JP0048, 0, 10);
+        new Validaciones(getTxtFechaNa_JP0048(), "Fecha10Digitos");
         hint.addHint(txtFechaNa_JP0048, "dd/MM/yyyy");
 
+        
+        LimiteCaracteres limiteContaseña = new LimiteCaracteres(txtNumTel_JP0048, 0, 8);
+        new Validaciones(getTxtNumTel_JP0048(), "SoloNumeros");
+        hint.addHint(txtNumTel_JP0048, "Ingrese su número de telefono");
         
         LimiteCaracteres limiteDui = new LimiteCaracteres(txtDui_JP0048, 0, 9);
         new Validaciones(txtDui_JP0048, "ValidarDUI");
         hint.addHint(txtDui_JP0048, "XXXXXXXX-X");
+        
         
         // Establecer el valor de str aquí después de haberlo creado
         str.setJP0048_S3_RH(this);
@@ -293,8 +304,18 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
 
         txtNumTel_JP0048.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         txtNumTel_JP0048.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtNumTel_JP0048.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumTel_JP0048ActionPerformed(evt);
+            }
+        });
 
         txtFechaNa_JP0048.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        txtFechaNa_JP0048.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFechaNa_JP0048ActionPerformed(evt);
+            }
+        });
 
         txtDui_JP0048.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         txtDui_JP0048.addActionListener(new java.awt.event.ActionListener() {
@@ -420,7 +441,7 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel12)
                                         .addGap(71, 71, 71)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addComponent(jLabel15)
@@ -500,6 +521,14 @@ public class JP0048_S3_RH extends javax.swing.JPanel {
     private void txtDui_JP0048ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDui_JP0048ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDui_JP0048ActionPerformed
+
+    private void txtFechaNa_JP0048ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaNa_JP0048ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFechaNa_JP0048ActionPerformed
+
+    private void txtNumTel_JP0048ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumTel_JP0048ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumTel_JP0048ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

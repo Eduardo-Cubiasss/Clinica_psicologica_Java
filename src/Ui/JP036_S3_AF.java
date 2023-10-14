@@ -11,6 +11,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import ux.BuscadorPacientes;
+import ux.Hints;
+import ux.LimiteCaracteres;
 import ux.PanelesInicializador;
 import ux.RcetarMedicamentos;
 
@@ -22,6 +24,8 @@ public class JP036_S3_AF extends javax.swing.JPanel {
 
     private RcetarMedicamentos controlador;
     private PanelesInicializador str;
+    private Hints hint;
+    private LimiteCaracteres Limite;
 
     public JButton getBtnagregar() {
         return btnagregar;
@@ -223,9 +227,9 @@ public class JP036_S3_AF extends javax.swing.JPanel {
         txtBuscar_JP036 = new javax.swing.JTextField();
         btn1_JF036 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TxtIndicaciones_JP036_S3_AF = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(1120, 715));
         setMinimumSize(new java.awt.Dimension(1120, 715));
@@ -262,25 +266,30 @@ public class JP036_S3_AF extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Calibri", 2, 18)); // NOI18N
         jLabel1.setText("Busca un padecimiento, para ver una receta predeterminada");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
-        jPanel1.add(txtNombreMedicamento_JP036_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 420, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, -1));
+        jPanel1.add(txtNombreMedicamento_JP036_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 420, 30));
 
         btnagregar.setBackground(new java.awt.Color(255, 255, 255));
         btnagregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/pd.PNG"))); // NOI18N
-        jPanel1.add(btnagregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 590, 120, 100));
+        btnagregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnagregarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnagregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 540, 120, 100));
 
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel5.setText("Recetar Medicamentos");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel7.setText("Descripción");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 440, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel8.setText("Medicamento");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, -1, -1));
-        jPanel1.add(txtHorario_JP036_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 410, 30));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, -1, -1));
+        jPanel1.add(txtHorario_JP036_S3_AF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 410, 30));
 
         txtBuscar_JP036.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         txtBuscar_JP036.addActionListener(new java.awt.event.ActionListener() {
@@ -288,7 +297,7 @@ public class JP036_S3_AF extends javax.swing.JPanel {
                 txtBuscar_JP036ActionPerformed(evt);
             }
         });
-        jPanel1.add(txtBuscar_JP036, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 420, 40));
+        jPanel1.add(txtBuscar_JP036, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 420, 40));
 
         btn1_JF036.setBackground(new java.awt.Color(255, 255, 255));
         btn1_JF036.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/a.PNG"))); // NOI18N
@@ -298,21 +307,21 @@ public class JP036_S3_AF extends javax.swing.JPanel {
                 btn1_JF036ActionPerformed(evt);
             }
         });
-        jPanel1.add(btn1_JF036, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, -1, -1));
+        jPanel1.add(btn1_JF036, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 140, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel3.setText("Nombre del padecimiento");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
-
-        jLabel4.setBackground(new java.awt.Color(0, 153, 153));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 170, 90));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, -1, -1));
 
         TxtIndicaciones_JP036_S3_AF.setColumns(20);
         TxtIndicaciones_JP036_S3_AF.setRows(5);
         jScrollPane1.setViewportView(TxtIndicaciones_JP036_S3_AF);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 410, 100));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 420, 100));
+
+        jLabel4.setBackground(new java.awt.Color(0, 153, 153));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/log.PNG"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 170, 90));
 
         jPanel3.add(jPanel1, "card2");
 
@@ -326,6 +335,10 @@ public class JP036_S3_AF extends javax.swing.JPanel {
     private void btn1_JF036ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1_JF036ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn1_JF036ActionPerformed
+
+    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnagregarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -74,7 +74,7 @@ public class SolicitudesAprobadas2 implements ActionListener {
             try {
                 procesos.viewpermiso(modelEmpleado, modelPermiso);
                 vista19.setLblAsunto(modelPermiso.getAsunto());
-                vista19.setLbNotasText(modelPermiso.getMensaje());
+                vista19.getLbNotas().setText(modelPermiso.getMensaje());
                 vista19.LbNotas.setEnabled(false);
                 // Obtén el valor int que deseas mostrar
 

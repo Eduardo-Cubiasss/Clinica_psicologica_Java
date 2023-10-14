@@ -1545,4 +1545,40 @@ public class Procesos_almacenados {
         }
 
     }
+    public void Crearcita(Citas citas) {
+
+        Connection conn = null;
+        CallableStatement cs = null;
+
+        try {
+            conn = ConnectionSQL.getConexion();
+            cs = conn.prepareCall("INSERT INTO TbCitas(Fecha, IDTerapeuta, Hora, IDPaciente) VALUES (?,?,?,?)");
+            cs.setDate(1, (Date) citas.getFecha());
+            // cs.setDate(4, (Date) modelAdministrador.getFNacimiento()); 
+            cs.setInt(2, citas.getIDTerapeuta());
+            cs.setString(3, citas.getHora());
+            cs.setInt(4, citas.getIDPaciente());
+
+            cs.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Receta guardada", "Exito", JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (Exception e) {
+            System.out.println("Error #J00DA");
+            JOptionPane.showMessageDialog(null, "Error innesperado al cargar datos, reinicie su aplicación", "Error: J000DA", JOptionPane.INFORMATION_MESSAGE);
+
+            e.printStackTrace();
+        } finally {
+            try {
+                if (cs != null) {
+                    cs.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+
+    }
 }

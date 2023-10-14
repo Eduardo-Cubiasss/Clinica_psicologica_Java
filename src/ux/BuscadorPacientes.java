@@ -11,6 +11,7 @@ import Database.Procesos_almacenados;
 import Database.Usuarios;
 import Ui.JP024_S3_AF;
 import Ui.JP031_S3_RHG;
+import Ui.JP043_1_S3_RH;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -41,9 +42,10 @@ public class BuscadorPacientes implements ActionListener {
     private Contactos modelContacto;
     private JP031_S3_RHG vistaJP031;
     private Inicializador init;
+    private JP043_1_S3_RH vista43;
 
     public BuscadorPacientes(JPanel JPContenido, Pacientes modelPacientes, JP024_S3_AF vistaJP024, HabilitarPaneles PanelesManager, Procesos_almacenados procesos,
-            Resultado resultado, Usuarios modelUsuers, Contactos modelContacto, JP031_S3_RHG vistaJP031, Inicializador init) {
+            Resultado resultado, Usuarios modelUsuers, Contactos modelContacto, JP031_S3_RHG vistaJP031, Inicializador init, JP043_1_S3_RH vista43) {
         this.JPContenido = JPContenido;
         this.modelPacientes = modelPacientes;
         this.PanelesManager = PanelesManager;
@@ -54,6 +56,7 @@ public class BuscadorPacientes implements ActionListener {
         this.modelContacto = modelContacto;
         this.vistaJP031 = vistaJP031;
          this.init = init;
+         this.vista43 = vista43;
         this.vistaJP024.getBtn1_JF024().addActionListener(this);
         this.vistaJP024.getBtn3_JF024().addActionListener(this);
         this.vistaJP024.getBtnVer().addActionListener(this);
@@ -115,7 +118,15 @@ public class BuscadorPacientes implements ActionListener {
         }
         else if (e.getSource() == vistaJP024.getBtn3_JF024())
         {
+            if(modelPacientes.isSeñal() == true)
+            {
+                vista43.setTxtID_JP043_S3_RH(String.valueOf(modelPacientes.getIDpaciente()));
+                init.mostrarOcultarPanel("panelCrearCita");
+            }
+            else
+            {
             init.mostrarOcultarPanel("panelMenuTp");
+            }
         }
     }
 

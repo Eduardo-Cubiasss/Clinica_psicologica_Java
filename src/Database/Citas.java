@@ -16,8 +16,18 @@ public class Citas {
     private Date Fecha;
     private int IDTerapeuta;     
     private int IDSecretaria;
-    private int IDPaciente;       
+    private int IDPaciente;      
+    private String Hora;
 
+    public String getHora() {
+        return Hora;
+    }
+
+    public void setHora(String Hora) {
+        this.Hora = Hora;
+    }
+    
+    
     public int getIDCitas() {
         return IDCitas;
     }

@@ -32,6 +32,8 @@ public class DetallesDePerfil implements ActionListener {
         this.init = init;
         this.PanelesManager = PanelesManager;
         this.modelEmpleado = modelEmpleado;
+        
+        this.vista10.getBtn1_JF010_AF().addActionListener(this);
     }
 
     @Override
@@ -40,7 +42,7 @@ public class DetallesDePerfil implements ActionListener {
         
         if (e.getSource() == vista10.getBtn1_JF010_AF()) {
             
-                        init.mostrarOcultarPanel("panelBuscadorDeEmpleados"); 
+             init.mostrarOcultarPanel("panelBuscadorDeEmpleados"); 
 
            
             // Esto es para volver al menú de administrador

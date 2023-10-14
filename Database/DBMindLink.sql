@@ -131,6 +131,7 @@ Contraseña varbinary(64),
 FotoPerfil image,
 IDContacto int
 );
+UPDATE TbUsuarios SET FotoPerfil = ? WHERE IDUsuario = ?
 CREATE table TbContactos(
 IDContacto int identity(1,1) primary key,
 Correo varchar(300),
@@ -242,9 +243,14 @@ create table TbContPermisos(
 IDContPermiso int identity (1,1) primary key,
 nombre varchar(50),
 contAceptado int,
-IDPermiso int
+IDPermiso int,
+IDUsuario int
 );	
+ALTER TABLE TbContPermisos
+ADD IDUsuario int;
 
+
+SELECT * FROM TbContPermisos;
 --Aqui elimino o agrego campos que necesito
 ALTER TABLE TbCantidadArticulo
 ADD IDSecretaria int;
@@ -839,7 +845,7 @@ EXEC PDRegistrarpaciente 'prueba','prueba1','9-10-2001','52281','pruba2','contra
 /*
 Aqui empieza el proceso para Crear o actualizar un usuario de tipo empleado:
 */
-ALTER PROCEDURE PDCrearActualizarUsuario
+CREATE PROCEDURE PDCrearActualizarUsuario
     @nombreUsuario VARCHAR(50),
     @contraseña VARCHAR(50)
 AS
@@ -1839,7 +1845,7 @@ END;
 ---Descripción: El botón de rechazar solicitud Solo actualizará el campo aceptado a "2" en base a un IDUsuario y el de aceptar se actualizará a 1
 ---Información adicional: Este proceso es usado en 3 ventanas diferentes, cuando ve el mensaje desde recibidos y cuando ve el mensaje desde aceptados
 
-CREATE PROCEDURE ActualizarAceptado
+ALTER PROCEDURE ActualizarAceptado
 	@IDUsuario INT,
 	@case INT
 AS
@@ -2042,7 +2048,7 @@ END;
  ---AgrgarPerfilDeEmpleado---
  ---Descripción: Este procedimiento almacenado crea un usuario e interactúa con 3 tablas TbContactos, TbUsuario y TbTerpaeuta/TbSecretaria, se ejecuta con este exec:
  ---EXEC PDCrearEmpleado 27, 'whats@gmail.com', 'whats', 'Contraseña', 2, 'Doris';
- CREATE PROCEDURE PDCrearEmpleado
+ ALTER PROCEDURE PDCrearEmpleado
 	@IDAdministrador INT,
 	@Correo varchar(400),
 	@Username VARCHAR(100),
@@ -2086,7 +2092,7 @@ END;
 			IF (@Username IS NOT NULL AND @Contraseña IS NOT NULL)
 			BEGIN
 				INSERT INTO TbUsuarios(UserName, Contraseña, Primeruso, FotoPerfil)
-				VALUES (@Username, @newHash, 0, @imagen);
+				VALUES (@Username, @newHash, 1, @imagen);
 				SET @IDUsuario = (select IDUsuario FROM TbUsuarios WHERE UserName = @Username);
 				IF(@TipoDeEm = 1 AND @TipoDeEm IS NOT NULL)
 					BEGIN
@@ -2100,7 +2106,7 @@ END;
 		END
 
  END;
-
+ 
 CREATE PROCEDURE ObtenerIDTerapeuta
     @UserName varchar(50),
     @IDTerapeuta int OUTPUT

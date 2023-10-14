@@ -10,6 +10,7 @@ import Database.Empleado;
 import Database.Procesos_almacenados;
 import Ui.JP010_S2_AF;
 import Ui.JP012_S2_AF;
+import Ui.JP043_1_S3_RH;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.Image;
@@ -43,15 +44,18 @@ public class BuscadorEmpleados implements ActionListener {
     private HabilitarPaneles PanelesManager;
     private JP010_S2_AF vista10;
     private Inicializador init;
+    private JP043_1_S3_RH vista43;
 
     public BuscadorEmpleados(JPanel JPContenido, JP012_S2_AF vista12, Empleado modelEmpleado, ActividadesLaborales modelactivity, Procesos_almacenados procesos, HabilitarPaneles PanelesManager, Resultado resultado, JP010_S2_AF vista10,
-            Inicializador init) {
+            Inicializador init, JP043_1_S3_RH vista43) {
         this.JPContenido = JPContenido;
         this.modelEmpleado = modelEmpleado;
         this.modelactivity = modelactivity;
         this.procesos = procesos;
         this.vista12 = vista12;
         this.vista10 = vista10;
+        this.vista43 = vista43;
+        
         this.PanelesManager = PanelesManager;
         this.resultado = resultado;
          this.init = init;
@@ -91,8 +95,16 @@ public class BuscadorEmpleados implements ActionListener {
             //Es para eliminar una cuenta
         } else if (e.getSource() == vista12.getBtn3_JF012()) {
             
+            if(modelEmpleado.isSeñal() == true)
+            {
+                vista43.setTxtTerapeuta_JP043_S3_RH(String.valueOf(modelEmpleado.getIdEmpleado()));
+                init.mostrarOcultarPanel("panelCrearCita");
+            }
+            else
+            {
+                init.mostrarOcultarPanel("panelPersonalClinica"); 
+            }
             
-                        init.mostrarOcultarPanel("panelPersonalClinica"); 
 
             
             //Es para volver al panel anterior

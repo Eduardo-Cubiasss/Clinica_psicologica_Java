@@ -276,7 +276,7 @@ public class Inicializador {
 
         // Controladores
         controladorLogin = new Login(modelUsers, vista.JPContenido, Procesos, panelInicioSesion, panelHistory, habilitarPaneles, vista, panelPrimerUso, modelGenero, ModelContactos, modelActivity, modelAdmin, hint, panelDetallesDeMiPerfil, Terapeutas, modelEmpleado, modelClinica, Secretarias,
-                this);
+                this, modelPaciente);
         controladorRegistrar = new RegAdmin_JF002(modelAdmin, modelUsers, modelClinica, panelRegistro, vista.JPContenido, Procesos, panelHistory, habilitarPaneles, vista, this);
         controladorSolicitudesDeEmpleados = new SolicitudesDeEmpleados(vista.JPContenido, panelSolicitudesDeEmpleados, habilitarPaneles, this, panelSolicitudesAprobadas2, panelSolicitudAprobada, panelderiv, modelEmpleado, Incapacidades, Procesos, resultado, Secretarias);
         controladorMenuAd = new Menu_Administrador(vista.JPContenido, panelMenuAdmin, habilitarPaneles, this, panelSolicitudesDeEmpleados, panelderiv, controladorSolicitudesDeEmpleados);
@@ -295,7 +295,7 @@ public class Inicializador {
         controladorAnunciosActuales = new AnunciosActuales(vista.JPContenido, panelAnunciosActuales, habilitarPaneles, Anuncios, Procesos, this);
         controladorMBActualizarUsuario = new MBActualizarUsuario(vista.JPContenido, this);
         controladorMBEliminarUsuario = new MBEliminarUsuario(vista.JPContenido, this);
-        controladorBuscadorEmpleados = new BuscadorEmpleados(vista.JPContenido, panelBuscadorDeEmpleados, modelEmpleado, modelActivity, Procesos, habilitarPaneles, resultado, panelDetallesDePerfil, this);
+        controladorBuscadorEmpleados = new BuscadorEmpleados(vista.JPContenido, panelBuscadorDeEmpleados, modelEmpleado, modelActivity, Procesos, habilitarPaneles, resultado, panelDetallesDePerfil, this, panelCrearCita);
         controladorNuevaSolicitudDeEmpleado = new NuevaSolicitudDeEmpleado(vista.JPContenido, panelNuevaSolicitudDeEmpleado, habilitarPaneles, this, Procesos, modelEmpleado);
         controladorSolicitudesAprobadas = new SolicitudesAprobadas(vista.JPContenido, panelSolicitudAprobada, habilitarPaneles, this, modelEmpleado, Procesos, Incapacidades, panelSolicitudAprobadaMensaje);
         controladorVerSolicitudAprobada = new VerSolicitudAprobada(vista.JPContenido, panelSolicitudAprobadaMensaje, this, Procesos, modelEmpleado);
@@ -304,8 +304,8 @@ public class Inicializador {
         controladorVerSolicitudRechazada = new VerSolicitudRechazada(vista.JPContenido, panelSolicitudesRechazadas, this, Procesos, modelEmpleado);
         controladorEliminarAnunciosActuales = new EliminarAnunciosActuales(vista.JPContenido, panelEliminarAnunciosActuales, habilitarPaneles, Procesos, Anuncios, this);
         controladorEstadisticas = new Estadisticas(vista.JPContenido, panelEstadisticas, habilitarPaneles, reporte, this);
-        controladorBuscadorPacientes = new BuscadorPacientes(vista.JPContenido, modelPaciente, panelBuscadorPacientes, habilitarPaneles, Procesos, resultado, modelUsers, ModelContactos, panelExpedienteDelPaciente, this);
-        controladorDetallesDeMiPerfil = new DetallesDeMiPerfil(vista.JPContenido, panelDetallesDeMiPerfil, modelUsers, Procesos, habilitarPaneles, this, Terapeutas);
+        controladorBuscadorPacientes = new BuscadorPacientes(vista.JPContenido, modelPaciente, panelBuscadorPacientes, habilitarPaneles, Procesos, resultado, modelUsers, ModelContactos, panelExpedienteDelPaciente, this, panelCrearCita);
+        controladorDetallesDeMiPerfil = new DetallesDeMiPerfil(vista.JPContenido, panelDetallesDeMiPerfil, modelUsers, Procesos, habilitarPaneles, this, Terapeutas, panelPrimerUso);
         controladorAgregarArticulo = new AgregarArticulo(vista.JPContenido, panelAgregarArticulo, habilitarPaneles, Articulo, Procesos, Terapeutas, this);
         controladorMBEliminarArticulo = new MBEliminarArticulo(vista.JPContenido, this);
         controladorCreacionDeAnuncios = new CreacionDeAnuncios(vista.JPContenido, panelCreacionDeAnuncios, habilitarPaneles, controladorAnunciosActuales, Anuncios, Procesos, controladorEliminarAnunciosActuales, this);
@@ -315,13 +315,13 @@ public class Inicializador {
         controladorRedactarMensaje = new RedactarMensaje(vista.JPContenido, panelRedactarMensaje, habilitarPaneles, modelUsers, Incapacidades, Procesos, this, Terapeutas);
         controladorCreacionDePruebas = new CreacionDePruebas(vista.JPContenido, panelCreacionDePruebas, habilitarPaneles, this);
         controladorEscribirEnTuAgendaPersonal = new EscribirEnTuAgendaPersonal(vista.JPContenido, panelEscribirEnTuAgendaPersonal, habilitarPaneles, Procesos, Terapeutas, modelPaciente, Expedientes, this);
-        controladorRcetarMedicamentos = new RcetarMedicamentos(vista.JPContenido, panelRecetarMedicamentos, reporte, recetas, Procesos, this);
+        controladorRcetarMedicamentos = new RcetarMedicamentos(vista.JPContenido, panelRecetarMedicamentos, reporte, recetas, Procesos, this, ModelContactos);
         controladorCambiosPruebasActuales = new CambiosPruebasActuales(vista.JPContenido, PanelPruebasActualesCambios, this);
         controladorMBEliminarPrueba = new MBEliminarPrueba(vista.JPContenido, this);
         controladorVerMensajes = new VerMensajes(vista.JPContenido, panelVerMensaje, habilitarPaneles, this);
         controladorVerMensajeCH = new VerMensajeCH(vista.JPContenido, panelVerMensajeCH, habilitarPaneles, this);
         controladorMBEliminarCita = new MBEliminarCita(vista.JPContenido, this);
-        controladorCrearCita = new CrearCita(vista.JPContenido, panelCrearCita, habilitarPaneles, this);
+        controladorCrearCita = new CrearCita(vista.JPContenido, panelCrearCita, habilitarPaneles, this, Procesos, Citas, panelBuscadorPacientes, panelBuscadorDeEmpleados,Terapeutas, modelPaciente, modelAdmin, modelEmpleado, ModelContactos);
         controladorEstadisticaDeCitas = new EstadisticaDeCitas(vista.JPContenido, panelEstadisticaDeCitas, this);
         controladorPruebasDF = new PruebasDF(vista.JPContenido, panelPruebasDF, habilitarPaneles, this);
         controladorSolicitudesDeIncapacidadRedactar = new SolicitudesDeIncapacidadRedactar(vista.JPContenido, panelSolicitudesDeIncapacidadRedactar, this);
@@ -386,6 +386,10 @@ public class Inicializador {
     }
     public void mostrarOcultarPanel(String nombrePanel) {
         vista.mostrarOcultarPanel(nombrePanel);
+    }
+    public void reiniciarControllers()
+    {
+        controladorLogin.reiniciar();
     }
 
 }
